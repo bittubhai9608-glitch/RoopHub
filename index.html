@@ -20,6 +20,16 @@
   <button onclick="loadProducts('fashion')">Fashion</button>
 </nav>
 
+<section class="upload-panel">
+  <h2>Add Product (Client-side only)</h2>
+  <input type="text" id="productName" placeholder="Product Name" />
+  <input type="text" id="productPrice" placeholder="Product Price" />
+  <input type="url" id="productLink" placeholder="Product Link" />
+  <input type="file" id="productImage" accept="image/*" />
+  <button onclick="addProduct()">Upload Image & Add Product</button>
+  <p id="uploadStatus" aria-live="polite"></p>
+</section>
+
 <div class="container" id="productContainer"></div>
 
 <footer>

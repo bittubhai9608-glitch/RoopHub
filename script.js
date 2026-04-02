@@ -52,7 +52,11 @@ const products = {
   ]
 };
 
+let currentCategory = 'home';
+
 function loadProducts(category) {
+  currentCategory = category;
+
   const container = document.getElementById("productContainer");
   container.innerHTML = "";
 
@@ -64,7 +68,7 @@ function loadProducts(category) {
     div.className = "card";
 
     div.innerHTML = `
-      <img src="${p.img}">
+      <img src="${p.img}" alt="${p.name}">
       <h3>${p.name}</h3>
       <p class="price">${p.price}</p>
       <a href="${p.link}" target="_blank">
@@ -74,6 +78,54 @@ function loadProducts(category) {
 
     container.appendChild(div);
   });
+}
+
+function addProduct() {
+  const nameEl = document.getElementById('productName');
+  const priceEl = document.getElementById('productPrice');
+  const linkEl = document.getElementById('productLink');
+  const imageEl = document.getElementById('productImage');
+  const statusEl = document.getElementById('uploadStatus');
+
+  const name = nameEl.value.trim();
+  const price = priceEl.value.trim();
+  const link = linkEl.value.trim() || '#';
+  const file = imageEl.files[0];
+
+  if (!name || !price || !file) {
+    statusEl.textContent = 'Please enter product name, price and choose an image.';
+    statusEl.style.color = 'red';
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = function(event) {
+    const imageUrl = event.target.result;
+
+    products[currentCategory].unshift({
+      name,
+      price,
+      img: imageUrl,
+      link
+    });
+
+    nameEl.value = '';
+    priceEl.value = '';
+    linkEl.value = '';
+    imageEl.value = '';
+
+    statusEl.textContent = 'Image uploaded and product added successfully (client-only).';
+    statusEl.style.color = 'green';
+
+    loadProducts(currentCategory);
+  };
+
+  reader.onerror = function() {
+    statusEl.textContent = 'Failed to read image file. Please try a different image.';
+    statusEl.style.color = 'red';
+  };
+
+  reader.readAsDataURL(file);
 }
 
 loadProducts('home');
