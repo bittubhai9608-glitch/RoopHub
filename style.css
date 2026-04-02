@@ -100,6 +100,20 @@ footer {
   text-align: center;
 }
 
+.ad-container {
+  margin: 20px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 6px rgba(0,0,0,0.08);
+}
+
+.ad-container.hidden {
+  display: none;
+}
+
 .search-panel h2 {
   color: #2874f0;
   margin-bottom: 15px;
