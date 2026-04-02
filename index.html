@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Store</title>
   <link rel="stylesheet" href="style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7323884483465344"
+     crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -20,17 +22,35 @@
   <button onclick="loadProducts('fashion')">Fashion</button>
 </nav>
 
-<section class="upload-panel">
-  <h2>Add Product (Client-side only)</h2>
-  <input type="text" id="productName" placeholder="Product Name" />
-  <input type="text" id="productPrice" placeholder="Product Price" />
-  <input type="url" id="productLink" placeholder="Product Link" />
-  <input type="file" id="productImage" accept="image/*" />
-  <button onclick="addProduct()">Upload Image & Add Product</button>
-  <p id="uploadStatus" aria-live="polite"></p>
+<section class="search-panel">
+  <h2>🔍 Search Products</h2>
+  <input type="text" id="searchInput" placeholder="Search for products..." onkeyup="searchProducts()" />
+  <p id="searchStatus" aria-live="polite"></p>
 </section>
 
+<!-- Google AdSense Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7323884483465344"
+     data-ad-slot="1234567890"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 <div class="container" id="productContainer"></div>
+
+<!-- Google AdSense Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7323884483465344"
+     data-ad-slot="9876543210"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 <footer>
   <p>📌 About Us: Best Affiliate Store</p>

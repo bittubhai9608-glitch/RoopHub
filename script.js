@@ -80,52 +80,55 @@ function loadProducts(category) {
   });
 }
 
-function addProduct() {
-  const nameEl = document.getElementById('productName');
-  const priceEl = document.getElementById('productPrice');
-  const linkEl = document.getElementById('productLink');
-  const imageEl = document.getElementById('productImage');
-  const statusEl = document.getElementById('uploadStatus');
-
-  const name = nameEl.value.trim();
-  const price = priceEl.value.trim();
-  const link = linkEl.value.trim() || '#';
-  const file = imageEl.files[0];
-
-  if (!name || !price || !file) {
-    statusEl.textContent = 'Please enter product name, price and choose an image.';
-    statusEl.style.color = 'red';
+function searchProducts() {
+  const searchInput = document.getElementById('searchInput').value.toLowerCase().trim();
+  const statusEl = document.getElementById('searchStatus');
+  
+  if (!searchInput) {
+    loadProducts(currentCategory);
+    statusEl.textContent = '';
     return;
   }
 
-  const reader = new FileReader();
-  reader.onload = function(event) {
-    const imageUrl = event.target.result;
-
-    products[currentCategory].unshift({
-      name,
-      price,
-      img: imageUrl,
-      link
+  const container = document.getElementById('productContainer');
+  container.innerHTML = '';
+  
+  let foundProducts = [];
+  
+  // Search across all products
+  Object.values(products).forEach(categoryProducts => {
+    categoryProducts.forEach(product => {
+      if (product.name.toLowerCase().includes(searchInput) || 
+          product.price.toLowerCase().includes(searchInput)) {
+        foundProducts.push(product);
+      }
     });
+  });
 
-    nameEl.value = '';
-    priceEl.value = '';
-    linkEl.value = '';
-    imageEl.value = '';
+  if (foundProducts.length === 0) {
+    statusEl.textContent = `No products found for "${searchInput}"`;
+    statusEl.style.color = '#666';
+    return;
+  }
 
-    statusEl.textContent = 'Image uploaded and product added successfully (client-only).';
-    statusEl.style.color = 'green';
-
-    loadProducts(currentCategory);
-  };
-
-  reader.onerror = function() {
-    statusEl.textContent = 'Failed to read image file. Please try a different image.';
-    statusEl.style.color = 'red';
-  };
-
-  reader.readAsDataURL(file);
+  statusEl.textContent = `Found ${foundProducts.length} product(s)`;
+  statusEl.style.color = 'green';
+  
+  foundProducts.forEach(p => {
+    const div = document.createElement('div');
+    div.className = 'card';
+    
+    div.innerHTML = `
+      <img src="${p.img}" alt="${p.name}">
+      <h3>${p.name}</h3>
+      <p class="price">${p.price}</p>
+      <a href="${p.link}" target="_blank">
+        <button>Buy Now</button>
+      </a>
+    `;
+    
+    container.appendChild(div);
+  });
 }
 
 loadProducts('home');
