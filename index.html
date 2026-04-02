@@ -9,15 +9,33 @@
 <body>
 
 <header>
-  <h1>🛍️ RoopHub Online Affiliate Store</h1>
+  <h1 id="animatedHeading">🛍️ RoopHub Online Affiliate Store</h1>
   <p>"At RoopHub we bring you the best products from trusted online stores. We many earn a small commission when you purchase through our links, but we always recommend only genuine and high- quality products for you."</p>
 </header>
 
 <nav>
-  <button onclick="loadProducts('home')">Home</button>
-  <button onclick="loadProducts('health')">Health</button>
-  <button onclick="loadProducts('electronics')">Electronics</button>
-  <button onclick="loadProducts('fashion')">Fashion</button>
+  <div class="nav-left">
+    <button onclick="loadProducts('home')">Home🏠</button>
+    <button onclick="loadProducts('trend')">Trend🔥</button>
+    <button onclick="loadProducts('best')">Best⭐</button>
+    <button onclick="loadProducts('deals')">Deals💸</button>
+    <button onclick="loadProducts('gadget')">Gadget📱</button>
+    <button onclick="loadProducts('electro')">Electro🔌</button>
+    <button onclick="loadProducts('fashion')">Fashion👗</button>
+    <button onclick="loadProducts('health')">Health💪</button>
+    <button onclick="loadProducts('beauty')">Beauty💄</button>
+    <button onclick="loadProducts('mobile')">Mobile📲</button>
+    <button onclick="loadProducts('laptop')">Laptop💻</button>
+    <button onclick="loadProducts('kids')">Kids🧸</button>
+    <button onclick="loadProducts('gifts')">Gifts🎁</button>
+    <button onclick="loadProducts('books')">Books📚</button>
+    <button onclick="loadProducts('digital')">Digital🌐</button>
+  </div>
+  <div class="nav-right">
+    <button onclick="showAbout()">About Us</button>
+    <button onclick="showContact()">Contact</button>
+    <button onclick="showImportantInfo()">Important Info</button>
+  </div>
 </nav>
 
 <section class="search-panel">
@@ -30,12 +48,176 @@
 
 <div class="container" id="productContainer"></div>
 
-<footer>
-  <p>📌 About Us: Best Affiliate Store</p>
-  <p>📞 Contact: bittubhai96081@email.com</p>
-  <p>📞 MOB: 8271734883</p>
-  <p>📍 Location: Bihar,Muzaffarpur city Yadav Nagar Road No : 3</p>
+<footer class="footer-container">
+  <div class="footer-box about-box" onclick="showAbout()" style="cursor: pointer;">
+    <div class="footer-icon"> 🌐 </div>
+    <h3>About Us</h3>
+    <p>Best Affiliate Store</p>
+  </div>
+  
+  <div class="footer-box contact-box">
+    <div class="footer-icon"> ✉️ </div>
+    <h3>Email</h3>
+    <p><a href="mailto:bittubhai96081@email.com">bittubhai96081@email.com</a></p>
+  </div>
+  
+  <div class="footer-box mobile-box">
+    <div class="footer-icon">📱</div>
+    <h3>Mobile</h3>
+    <p><a href="tel:8271734883">8271734883</a></p>
+  </div>
+  
+  <div class="footer-box location-box">
+    <div class="footer-icon"> 🌏 </div>
+    <h3>Location</h3>
+    <p>Bihar, Muzaffarpur<br>Yadav Nagar Road No: 3</p>
+  </div>
 </footer>
+
+<!-- About Us Modal -->
+<div id="aboutModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>About RoopHub</h2>
+    <p id="aboutSummary">RoopHub is your ultimate online affiliate store, offering curated products from trusted brands. We provide genuine, high-quality items with affiliate commissions, ensuring customer satisfaction and value. Discover deals across health, fashion, electronics, and more.</p>
+    <button id="seeMoreBtn" onclick="showFullAbout()">See More</button>
+    <div id="aboutFull" style="display:none;">
+      <div id="aboutContent">
+        <h3>About RoopHub - Your Trusted Online Affiliate Shopping Destination</h3>
+
+        <p>Welcome to RoopHub, your ultimate destination for quality products at unbeatable prices. We are more than just an online store – we are your trusted partner in discovering genuine, high-quality products from the world's most trusted brands. At RoopHub, we believe that shopping should be easy, transparent, and rewarding. Our mission is to bring the best products directly to your doorstep while ensuring complete transparency about our affiliate partnerships and commission structure.</p>
+
+        <h4>Our Story and Vision</h4>
+        <p>RoopHub was founded with a simple vision: to create a trustworthy online platform where customers can confidently purchase products without worrying about authenticity or quality. We started in Muzaffarpur, Bihar, with a commitment to serve local customers and gradually expanded to reach customers across India. Our journey has been driven by customer feedback, market research, and a genuine desire to make online shopping accessible and reliable for everyone.</p>
+
+        <p>We understand that online shopping can be overwhelming with thousands of websites claiming to offer the best products. That's why we've carefully curated our product selection to include only items that meet our strict quality standards. Every product on RoopHub has been researched and evaluated to ensure it delivers genuine value to our customers.</p>
+
+        <h4>Our Product Categories</h4>
+        <p>RoopHub offers a diverse range of products across multiple categories to meet all your shopping needs. Our Health & Wellness category features premium supplements, fitness equipment, and nutritional products from trusted brands like CitrusBurn and ProstaVive. Whether you're looking to maintain a healthy lifestyle or achieve specific wellness goals, we have products tailored to your needs.</p>
+
+        <p>In our Electronics & Gadgets section, you'll find the latest smartphones, laptops, tablets, and innovative gadgets that incorporate cutting-edge technology. We carefully select electronics from reputable manufacturers to ensure you get the best performance and durability. Our Fashion & Lifestyle category brings you trendy clothing, accessories, and lifestyle products that help you express your personal style while staying within budget.</p>
+
+        <p>Beauty & Personal Care products at RoopHub include skincare, makeup, and personal care items from brands that prioritize quality and effectiveness. Home & Kitchen section features appliances, decor items, and essentials that help transform your living space. We also offer products specifically selected for Kids & Family, Books & Education, Gifts & Special Occasions, and a growing Digital Products section including subscriptions and online courses.</p>
+
+        <h4>How Our Affiliate Model Works</h4>
+        <p>RoopHub operates on a transparent affiliate marketing model. This means we earn a small commission when you purchase products through our links. However, this commission does not affect the price you pay – you get the same price whether you buy directly or through our link. This commission-based model actually benefits you because it allows us to provide detailed product information, honest reviews, and carefully curated recommendations without the overhead costs of maintaining physical inventory.</p>
+
+        <p>Our affiliate partnerships are with legitimate, well-established retailers and brands. We only promote products we genuinely believe in and would recommend to friends and family. We are completely transparent about our affiliate relationships and make no secret of how we earn revenue. This honesty is the foundation of trust between us and our customers.</p>
+
+        <h4>Quality Assurance Process</h4>
+        <p>Every product featured on RoopHub goes through our rigorous quality assurance process. Our team evaluates products based on brand reputation, manufacturing standards, customer reviews, product specifications, value for money, and safety certifications. We research each product thoroughly to ensure it meets our high standards before recommending it to you.</p>
+
+        <p>We don't simply list random products – we carefully select items that we believe offer genuine value. If a product doesn't meet our standards or if we find negative patterns in customer reviews, we remove it from our platform. Your satisfaction and trust are more important to us than any commission we might earn.</p>
+
+        <h4>Customer-First Philosophy</h4>
+        <p>At RoopHub, you are our priority. We are committed to providing transparent pricing with no hidden costs or surprise charges. All our product information is accurate and detailed, helping you make informed purchasing decisions. If you have questions about any product, our responsive customer support team is available via email at bittubhai96081@email.com or phone at 8271734883.</p>
+
+        <p>We continuously update our product inventory with trending items and new releases. Our team stays informed about market trends and customer preferences to ensure we always offer relevant and desirable products. We also welcome customer feedback and regularly review it to improve our services and product selection.</p>
+
+        <h4>Why Choose RoopHub?</h4>
+
+        <p><strong>Authenticity Guarantee:</strong> Every product is verified for authenticity and quality before being featured on our platform.</p>
+
+        <p><strong>Transparent Affiliate Relationships:</strong> We clearly disclose our affiliate partnerships and how commissions work.</p>
+
+        <p><strong>Curated Selection:</strong> We don't overwhelm you with thousands of options – instead, we carefully select products we genuinely recommend.</p>
+
+        <p><strong>Honest Reviews:</strong> Our product information is based on real customer experiences and expert evaluation.</p>
+
+        <p><strong>Local Support:</strong> Based in Bihar, Muzaffarpur, we understand the needs of our local community while serving customers nationwide.</p>
+
+        <p><strong>Responsive Customer Service:</strong> We're here to help with any questions or concerns about your shopping experience.</p>
+
+        <h4>Our Location and Contact Information</h4>
+
+        <p>RoopHub is proudly based in Bihar, specifically in Muzaffarpur city. Our physical address is Yadav Nagar Road No: 3, where our dedicated team works to serve your shopping needs. We maintain an active online presence and can be reached through multiple channels for any inquiries, suggestions, or support.</p>
+
+        <p>Email: bittubhai96081@email.com<br>
+        Phone: 8271734883<br>
+        Location: Yadav Nagar Road No: 3, Muzaffarpur, Bihar</p>
+
+        <h4>Our Commitment to You</h4>
+
+        <p>RoopHub is more than just a shopping platform – we're building a community of informed consumers who make smart purchasing decisions. We're committed to maintaining the highest standards of integrity, transparency, and customer service. As we continue to grow, we'll keep our core values intact: honesty, quality, and customer satisfaction.</p>
+
+        <p>Whether you're shopping for health supplements, the latest electronics, fashion items, beauty products, or gifts for loved ones, RoopHub is your trustworthy partner. We invite you to explore our carefully curated product selection and join the growing community of satisfied RoopHub customers.</p>
+
+        <p>Thank you for choosing RoopHub. Shop with confidence, shop with integrity, shop with RoopHub – where quality meets convenience!</p>
+      </div>
+      <div class="pagination">
+        <button id="prevPage" onclick="changePage(-1)" disabled>Previous</button>
+        <span id="pageInfo">Page 1 of 1</span>
+        <button id="nextPage" onclick="changePage(1)">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Important Info Modal -->
+<div id="importantInfoModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeImportantInfoModal()">&times;</span>
+    <h2>📋 Important Info - Community Guidelines</h2>
+    <div id="importantContent">
+      <h3>What NOT to Do on RoopHub</h3>
+      <p>To maintain a safe, trustworthy, and respectful community, please avoid the following:</p>
+
+      <div class="info-point">
+        <h4>❌ 1. Don't Share Personal Information</h4>
+        <p>Never share sensitive personal details like credit card numbers, passwords, social security numbers, or banking information in comments or product reviews. RoopHub will never ask for such information through the website.</p>
+      </div>
+
+      <div class="info-point">
+        <h4>❌ 2. Don't Post Spam or Promotional Content</h4>
+        <p>Avoid posting irrelevant links, promotional messages, or duplicate content across the website. This clutters the shopping experience for other customers and violates our community standards.</p>
+      </div>
+
+      <div class="info-point">
+        <h4>❌ 3. Don't Make False or Misleading Claims</h4>
+        <p>Do not post fake product reviews, fabricated testimonials, or misleading information to deceive customers. All reviews should be genuine and based on actual product experience.</p>
+      </div>
+
+      <div class="info-point">
+        <h4>❌ 4. Don't Engage in Harassment or Bullying</h4>
+        <p>Absolutely no harassment, hate speech, bullying, or personal attacks on other users or our team. Treat everyone with respect and maintain a civil tone in all interactions.</p>
+      </div>
+
+      <div class="info-point">
+        <h4>❌ 5. Don't Attempt to Hack or Manipulate</h4>
+        <p>Never attempt to access unauthorized areas, manipulate website functions, use bots, or engage in any form of hacking. Trying to bypass security measures violates our terms and applicable laws.</p>
+      </div>
+
+      <div class="info-point">
+        <h4>❌ 6. Don't Sell Illegal or Prohibited Items</h4>
+        <p>Do not attempt to sell or promote illegal products, counterfeit goods, or items prohibited by law in India. We strictly adhere to legal requirements and will remove such listings immediately.</p>
+      </div>
+
+      <div class="info-point">
+        <h4>❌ 7. Don't Copyright or Plagiarize Content</h4>
+        <p>Do not copy content from other websites, use copyrighted images without permission, or plagiarize others' work. All content must be original or properly licensed and attributed.</p>
+      </div>
+
+      <div class="info-point">
+        <h4>❌ 8. Don't Make Threats or Post Violent Content</h4>
+        <p>Never post threatening messages, violent content, or anything that could harm others. We have zero tolerance for threats, violence, or exploitation in any form.</p>
+      </div>
+
+      <div class="info-point">
+        <h4>❌ 9. Don't Manipulate Ratings or Create Fake Accounts</h4>
+        <p>Avoid creating multiple accounts to artificially boost ratings, post fake reviews, or manipulate product visibility. Each user should maintain only one account for fair and transparent rating systems.</p>
+      </div>
+
+      <div class="info-point">
+        <h4>❌ 10. Don't Ignore Our Terms of Service</h4>
+        <p>Always read and comply with RoopHub's Terms of Service, Privacy Policy, and Community Guidelines. Violation of these terms may result in account suspension, content removal, or legal action as per applicable laws.</p>
+      </div>
+
+      <div style="background: rgba(255, 193, 7, 0.1); border-left: 4px solid #FFC107; padding: 15px; border-radius: 5px; margin-top: 20px;">
+        <p style="margin: 0; color: #d32f2f; font-weight: bold;">⚠️ Important: Any violation of these guidelines will result in immediate action including warning, suspension, or permanent ban from RoopHub. We review all reports and take community safety seriously.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>

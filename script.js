@@ -1,4 +1,64 @@
 const products = {
+  trend: [
+    { name: "Trend Smartwatch", price: "₹2999", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Wireless Earbuds", price: "₹1499", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Fitness Band", price: "₹999", img: "https://via.placeholder.com/200", link: "https://example.com" }
+  ],
+  best: [
+    { name: "Premium Headphone", price: "₹3999", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Luxury Sunglasses", price: "₹1999", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Gaming Mouse", price: "₹1299", img: "https://via.placeholder.com/200", link: "https://example.com" }
+  ],
+  deals: [
+    { name: "Budget Tablet", price: "₹8999", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Home Speaker", price: "₹2199", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "LED Monitor", price: "₹10999", img: "https://via.placeholder.com/200", link: "https://example.com" }
+  ],
+  gadget: [
+    { name: "Clip-on Camera", price: "₹2999", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Tablet Stylus", price: "₹799", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Portable Charger", price: "₹1499", img: "https://via.placeholder.com/200", link: "https://example.com" }
+  ],
+  electro: [
+    { name: "Smart Bulb", price: "₹899", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Kitchen Blender", price: "₹2599", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Air Purifier", price: "₹3299", img: "https://via.placeholder.com/200", link: "https://example.com" }
+  ],
+  mobile: [
+    { name: "Android Phone", price: "₹13999", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Refurbished Phone", price: "₹8999", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Feature Phone", price: "₹1299", img: "https://via.placeholder.com/200", link: "https://example.com" }
+  ],
+  laptop: [
+    { name: "Gaming Laptop", price: "₹49999", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Business Laptop", price: "₹38999", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Student Laptop", price: "₹29999", img: "https://via.placeholder.com/200", link: "https://example.com" }
+  ],
+  kids: [
+    { name: "Toy Car", price: "₹499", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Puzzle Set", price: "₹699", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Drawing Kit", price: "₹399", img: "https://via.placeholder.com/200", link: "https://example.com" }
+  ],
+  gifts: [
+    { name: "Gift Box", price: "₹1299", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Flower Basket", price: "₹899", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Customized Mug", price: "₹499", img: "https://via.placeholder.com/200", link: "https://example.com" }
+  ],
+  books: [
+    { name: "Self Help Book", price: "₹299", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Science Book", price: "₹499", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Novel", price: "₹349", img: "https://via.placeholder.com/200", link: "https://example.com" }
+  ],
+  digital: [
+    { name: "Ebook Subscription", price: "₹999", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Online Course", price: "₹1499", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Streaming Plan", price: "₹599", img: "https://via.placeholder.com/200", link: "https://example.com" }
+  ],
+  beauty: [
+    { name: "Lipstick Set", price: "₹799", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Face Cream", price: "₹599", img: "https://via.placeholder.com/200", link: "https://example.com" },
+    { name: "Perfume", price: "₹1299", img: "https://via.placeholder.com/200", link: "https://example.com" }
+  ],
   home: [
     { name: "CitrusBurn Rapid Burn", price: "$69", img:"Images/citrusburn rapid burn.jpeg", link: "https://8e9e63ll3gh02xd2mfyl1y-kzl.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
     { name: "CitrusBurn Max", price: "$79", img: "Images/CirtusBurn.jpeg", link: "https://8e9e63ll3gh02xd2mfyl1y-kzl.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
@@ -151,6 +211,93 @@ function toggleAdsense() {
   const adContainer = document.getElementById('adContainer');
   if (!adContainer) return;
   adContainer.classList.toggle('hidden');
+}
+
+let currentPage = 1;
+const totalPages = 1;
+
+function showAbout() {
+  const modal = document.getElementById('aboutModal');
+  const aboutFull = document.getElementById('aboutFull');
+  const seeMoreBtn = document.getElementById('seeMoreBtn');
+  
+  if (modal) modal.style.display = 'flex';
+  if (aboutFull) aboutFull.style.display = 'none';
+  if (seeMoreBtn) seeMoreBtn.style.display = 'block';
+  currentPage = 1;
+}
+
+function closeModal() {
+  const modal = document.getElementById('aboutModal');
+  if (modal) modal.style.display = 'none';
+}
+
+function showFullAbout() {
+  const aboutFull = document.getElementById('aboutFull');
+  const seeMoreBtn = document.getElementById('seeMoreBtn');
+  const aboutContent = document.getElementById('aboutContent');
+  
+  if (aboutFull) aboutFull.style.display = 'block';
+  if (seeMoreBtn) seeMoreBtn.style.display = 'none';
+  if (aboutContent) {
+    aboutContent.scrollTop = 0;
+    aboutContent.style.display = 'block';
+  }
+  currentPage = 1;
+  loadPage(1);
+}
+
+function loadPage(page) {
+  const contentDiv = document.getElementById('aboutContent');
+  if (contentDiv) {
+    contentDiv.scrollTop = 0;
+    updatePagination();
+  }
+}
+
+function changePage(direction) {
+  const newPage = currentPage + direction;
+  if (newPage > 0 && newPage <= totalPages) {
+    currentPage = newPage;
+    loadPage(currentPage);
+  }
+}
+
+function updatePagination() {
+  const prevBtn = document.getElementById('prevPage');
+  const nextBtn = document.getElementById('nextPage');
+  const pageInfo = document.getElementById('pageInfo');
+  
+  if (prevBtn) prevBtn.disabled = currentPage === 1;
+  if (nextBtn) nextBtn.disabled = currentPage === totalPages;
+  if (pageInfo) pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+}
+
+function showContact() {
+  alert('Contact us at:\nEmail: bittubhai96081@email.com\nPhone: 8271734883');
+}
+
+function showImportantInfo() {
+  const modal = document.getElementById('importantInfoModal');
+  if (modal) modal.style.display = 'flex';
+}
+
+function closeImportantInfoModal() {
+  const modal = document.getElementById('importantInfoModal');
+  if (modal) modal.style.display = 'none';
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+  const aboutModal = document.getElementById('aboutModal');
+  const importantInfoModal = document.getElementById('importantInfoModal');
+  
+  if (event.target === aboutModal) {
+    aboutModal.style.display = 'none';
+  }
+  if (event.target === importantInfoModal) {
+    importantInfoModal.style.display = 'none';
+  }
 }
 
 loadProducts('home');
