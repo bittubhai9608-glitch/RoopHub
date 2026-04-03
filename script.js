@@ -287,6 +287,17 @@ function closeImportantInfoModal() {
   if (modal) modal.style.display = 'none';
 }
 
+// Mobile menu toggle
+const menuToggle = document.getElementById('menuToggle');
+const navItems = document.getElementById('navItems');
+const navRight = document.getElementById('navRight');
+if (menuToggle) {
+  menuToggle.addEventListener('click', () => {
+    navItems.classList.toggle('open');
+    navRight.classList.toggle('open');
+  });
+}
+
 // Close modal when clicking outside of it
 window.onclick = function(event) {
   const aboutModal = document.getElementById('aboutModal');

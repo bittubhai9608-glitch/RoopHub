@@ -14,7 +14,8 @@
 </header>
 
 <nav>
-  <div class="nav-left">
+  <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation">☰ Menu</button>
+  <div class="nav-left" id="navItems">
     <button onclick="loadProducts('home')">Home🏠</button>
     <button onclick="loadProducts('trend')">Trend🔥</button>
     <button onclick="loadProducts('best')">Best⭐</button>
@@ -31,7 +32,7 @@
     <button onclick="loadProducts('books')">Books📚</button>
     <button onclick="loadProducts('digital')">Digital🌐</button>
   </div>
-  <div class="nav-right">
+  <div class="nav-right" id="navRight">
     <button onclick="showAbout()">About Us</button>
     <button onclick="showContact()">Contact</button>
     <button onclick="showImportantInfo()">Important Info</button>
