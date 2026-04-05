@@ -60,33 +60,18 @@ const products = {
     { name: "Perfume", price: "₹1299", img: "https://via.placeholder.com/200", link: "https://example.com" }
   ],
   home: [
-    { name: "CitrusBurn Rapid Burn", price: "$69", img:"Images/citrusburn rapid burn.jpeg", link: "https://8e9e63ll3gh02xd2mfyl1y-kzl.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "CitrusBurn Max", price: "$79", img: "Images/CirtusBurn.jpeg", link: "https://8e9e63ll3gh02xd2mfyl1y-kzl.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "CitrusBurn Fat Cutter", price: "$49", img:"Images/citrusburnmax.jpeg", link: "https://8e9e63ll3gh02xd2mfyl1y-kzl.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "CitrusBurn ThermoX", price: "$39", img:"Images/thermox.jpeg", link: "https://8e9e63ll3gh02xd2mfyl1y-kzl.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "CitrusBurn Slim Booster", price: "$59", img:"Images/slimbooster.jpeg", link: "https://8e9e63ll3gh02xd2mfyl1y-kzl.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "CitrusBurn Active+", price: "$39", img:"Images/citrusburn active+.jpeg", link: "https://8e9e63ll3gh02xd2mfyl1y-kzl.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "CitrusBurn Fit Formula", price: "$39", img:"Images/citrusburn fit formula.jpeg", link: "https://8e9e63ll3gh02xd2mfyl1y-kzl.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "ProstaVive Elite", price: "₹$39", img: "Images/Prostaviveelite.jpeg", link: "https://8c8140sq3ljwet6b-82d35bxa0.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "ProstaVive Prime", price: "₹$41", img: "Images/ProstaVive Prome.jpeg", link: "https://8c8140sq3ljwet6b-82d35bxa0.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "ProstaVive X", price: "₹$45", img: "Images/prostavive x.jpeg", link: "https://8c8140sq3ljwet6b-82d35bxa0.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "ProstaVive Core", price: "₹$59", img: "Images/proatavive core.jpeg", link: "https://8c8140sq3ljwet6b-82d35bxa0.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "Purisaki Berberine Patches", price: "₹$34", img: "Images/purisaki2.jpeg", link: "https://ca114xufvmev4q3gvdqr-a76nn.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "CitrusBurn Rapid Burn", price: "$69", img:"Images/citrusburn rapid burn.jpeg", link: "https://826b60qrufg37v4a1j4hw66zxw.hop.clickbank.net/?&campaign=ads&ad=google" },
+   // { name: "ProstaVive Vitality", price: "₹$34", img: "Images/prostavive vitality.jpeg", link: "https://826b60qrufg37v4a1j4hw66zxw.hop.clickbank.net/?&campaign=ads&ad=google" },
+    { name: "KeySlim Drops", price: "₹$19", img: "Images/keyslimdrop.jpeg", link: "https://c4338wkh2nds4w6fojxgog6ras.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
     { name: "ProstaVive Vitality", price: "₹$34", img: "Images/prostavive vitality.jpeg", link: "https://8c8140sq3ljwet6b-82d35bxa0.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
   ],
 
   health: [
     { name: "CitrusBurn Rapid Burn", price: "$69", img:"Images/citrusburn rapid burn.jpeg", link: "https://8e9e63ll3gh02xd2mfyl1y-kzl.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "CitrusBurn Max", price: "$79", img: "Images/CirtusBurn.jpeg", link: "https://8e9e63ll3gh02xd2mfyl1y-kzl.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "CitrusBurn Fat Cutter", price: "$49", img:"Images/citrusburnmax.jpeg", link: "https://8e9e63ll3gh02xd2mfyl1y-kzl.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "CitrusBurn ThermoX", price: "$39", img:"Images/thermox.jpeg", link: "https://8e9e63ll3gh02xd2mfyl1y-kzl.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "CitrusBurn Slim Booster", price: "$59", img:"Images/slimbooster.jpeg", link: "https://8e9e63ll3gh02xd2mfyl1y-kzl.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "CitrusBurn Active+", price: "$39", img:"Images/citrusburn active+.jpeg", link: "https://8e9e63ll3gh02xd2mfyl1y-kzl.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "CitrusBurn Fit Formula", price: "$39", img:"Images/citrusburn fit formula.jpeg", link: "https://8e9e63ll3gh02xd2mfyl1y-kzl.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "ProstaVive Elite", price: "₹$39", img: "Images/Prostaviveelite.jpeg", link: "https://8c8140sq3ljwet6b-82d35bxa0.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "ProstaVive Prime", price: "₹$41", img: "Images/ProstaVive Prome.jpeg", link: "https://8c8140sq3ljwet6b-82d35bxa0.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "ProstaVive X", price: "₹$45", img: "Images/prostavive x.jpeg", link: "https://8c8140sq3ljwet6b-82d35bxa0.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "ProstaVive Core", price: "₹$59", img: "Images/proatavive core.jpeg", link: "https://8c8140sq3ljwet6b-82d35bxa0.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
     { name: "ProstaVive Vitality", price: "₹$34", img: "Images/prostavive vitality.jpeg", link: "https://8c8140sq3ljwet6b-82d35bxa0.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "Purisaki Berberine Patches", price: "₹$67", img: "Images/purisaki2.jpeg", link: "https://ca114xufvmev4q3gvdqr-a76nn.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "KeySlim Drops", price: "₹$19", img: "Images/keyslimdrop.jpeg", link: "https://c4338wkh2nds4w6fojxgog6ras.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
   ],
 
   electronics: [
@@ -132,7 +117,7 @@ function loadProducts(category) {
       <h3>${p.name}</h3>
       <p class="price">${p.price}</p>
       <a href="${p.link}" target="_blank">
-        <button>Buy Now</button>
+        <button>See Full Details</button>
       </a>
     `;
 
