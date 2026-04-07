@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KeySlim Drops</title>
+<style>
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',sans-serif; scroll-behavior:smooth; }
+body { background:#f5f5f5; color:#333; }
+
+/* Animated Gradient Hero */
+header {
+    position:relative;
+    text-align:center;
+    padding:80px 20px;
+    color:#fff;
+    background: linear-gradient(270deg,#1e90ff,#00bfff,#1e90ff);
+    background-size:600% 600%;
+    animation: gradientBG 15s ease infinite;
+    overflow:hidden;
+}
+@keyframes gradientBG {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+header h1 { font-size:3em; margin-bottom:15px; text-shadow:1px 1px 5px rgba(0,0,0,0.3);}
+header p { font-size:1.3em; margin-bottom:30px;}
+.cta-btn { display:inline-block; padding:15px 40px; background:#ff9800; color:#fff; font-size:1.2em; border-radius:10px; text-decoration:none; transition:0.3s; box-shadow:0 5px 15px rgba(0,0,0,0.3);}
+.cta-btn:hover { background:#e68a00; transform:translateY(-3px); }
+
+/* Container */
+.container { max-width:1200px; margin:0 auto; padding:20px; }
+
+/* Product Gallery */
+.gallery { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin:40px 0; }
+.gallery img { width:250px; border-radius:15px; transition:0.4s; box-shadow:0 8px 20px rgba(0,0,0,0.1); opacity:0; transform:translateY(50px); }
+.gallery img.visible { opacity:1; transform:translateY(0); }
+.gallery img:hover { transform: scale(1.05); box-shadow:0 12px 25px rgba(0,0,0,0.2); }
+
+/* Features / Specs Table */
+.specs { background:#fff; padding:30px; border-radius:15px; box-shadow:0 8px 20px rgba(0,0,0,0.1); margin-bottom:40px; opacity:0; transform:translateY(50px); transition:0.8s;}
+.specs.visible { opacity:1; transform:translateY(0);}
+.specs h2 { color:#1e90ff; margin-bottom:20px;}
+table { width:100%; border-collapse:collapse;}
+table th, table td { padding:12px 15px; border:1px solid #ddd; text-align:left; }
+table th { background:#1e90ff; color:#fff; }
+
+/* Description */
+.description { background:#f0f8ff; padding:30px; border-radius:15px; margin-bottom:40px; opacity:0; transform:translateY(50px); transition:0.8s;}
+.description.visible { opacity:1; transform:translateY(0);}
+.description h2 { color:#1e90ff; margin-bottom:20px; }
+.description p { margin-bottom:15px; line-height:1.6; }
+
+/* Reviews */
+.reviews { background:#fff; padding:30px; border-radius:15px; margin-bottom:40px; box-shadow:0 8px 20px rgba(0,0,0,0.1); opacity:0; transform:translateY(50px); transition:0.8s;}
+.reviews.visible { opacity:1; transform:translateY(0);}
+.reviews h2 { color:#1e90ff; margin-bottom:20px; }
+.review { border-bottom:1px solid #ddd; padding:15px 0; }
+.review:last-child { border-bottom:none; }
+.stars { color:#ff9800; }
+
+/* Badges */
+.badges { display:flex; justify-content:center; gap:30px; margin-bottom:40px; flex-wrap:wrap; opacity:0; transform:translateY(50px); transition:0.8s;}
+.badges.visible { opacity:1; transform:translateY(0);}
+.badge { background:#1e90ff; color:#fff; padding:10px 20px; border-radius:10px; font-weight:bold; box-shadow:0 5px 15px rgba(0,0,0,0.2); }
+
+/* Buy Section */
+.buy-section { text-align:center; margin-bottom:50px; opacity:0; transform:translateY(50px); transition:0.8s;}
+.buy-section.visible { opacity:1; transform:translateY(0);}
+.buy-section a { display:inline-block; padding:20px 50px; background:#ff9800; color:#fff; font-size:1.5em; border-radius:15px; text-decoration:none; transition:0.3s; box-shadow:0 8px 25px rgba(0,0,0,0.3);}
+.buy-section a:hover { background:#e68a00; transform:translateY(-5px); }
+
+/* Footer */
+footer { background:#222; color:#ccc; text-align:center; padding:20px; }
+
+/* Responsive */
+@media(max-width:768px){
+    header h1 { font-size:2em; }
+    .gallery img { width:200px; }
+    .buy-section a { font-size:1.3em; padding:15px 40px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>KeySlim Drops</h1>
+    <p>Tez, Natural and Effective-Perfect for your Fitness and Health!</p>
+    <a href="#buy" class="cta-btn">Buy Now</a>
+</header>
+
+<div class="container">
+
+    <!-- Product Gallery -->
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?fit=crop&w=600&h=400" alt="Laptop Front">
+        <img src="https://images.unsplash.com/photo-1581091870626-25e16a7b09b3?fit=crop&w=600&h=400" alt="Laptop Side">
+        <img src="https://images.unsplash.com/photo-1580910051074-6cce1ee0f3f3?fit=crop&w=600&h=400" alt="Laptop Open">
+        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?fit=crop&w=600&h=400" alt="Laptop Usage">
+    </div>
+
+    <!-- Specs Table -->
+    <div class="specs">
+        <h2>Specifications</h2>
+        <table>
+            <tr><th>Feature</th><th>Details</th></tr>
+            <tr><td>Product Name</td><td>KeySlim Drops</td></tr>
+            <tr><td>Formula</td><td>24-in-1 Natural Herbal Blend</td></tr>
+            <tr><td>Main Ingredients</td><td>African Mango, Green Tea, Gymnema Sylvestre</td></tr>
+            <tr><td>Quantity</td><td>All Quantities Available(60ml,180ml,360ml)</td></tr>
+            <tr><td>Form</td><td>Liquid Drops(Sublingual)</td></tr>
+            <tr><td>Benefit</td><td>Metabolism Booster & Appetite Support</td></tr>
+            <tr><td>Quality Standard</td><td>GMP Certified & Nn-GMO</td></tr>
+            <tr><td>Origin</td><td>Made in USA</td></tr>
+        </table>
+    </div>
+
+    <!-- Description -->
+    <div class="description">
+        <h2>Why Choose KeySlim Drops?</h2>
+        <p>100% Natural Formula :Made with a powerfulblend of 24 herbal ingredients for sale and effective results.</p>
+        <p>All Size Available: Choose the pact that fits your goal-60ml, 180ml, 360ml options are all in stock.</p>
+        <p>Fast-Acting Liquid Drops: Designed for quick absorption, making it more effective and easier to use than standard pills.</p>
+        <p>Crush Your Cravings: Helps control your appetite and reduces the urge for unhealthy snacking or sugary treats.</p>
+        <p>Boost energy & Fitness: Supports your metabolisum so you say active, energized, and focused throughout the day.</p>
+    </div>
+
+    <!-- Reviews -->
+    <div class="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="review">
+            <p class="stars">⭐⭐⭐⭐⭐</p>
+            <p>"Hight Quality Ingredients for Better Energy and Maximum  Health Benifits."</p>
+        </div>
+        <div class="review">
+            <p class="stars">⭐⭐⭐⭐⭐</p>
+            <p>"100% Natural Formula for Fast and Effective Weight Management Results."</p>
+        </div>
+        <div class="review">
+            <p class="stars">⭐⭐⭐⭐</p>
+            <p>"All Size Available With Quick Delivery and Great Customer Service."</p>
+        </div>
+    </div>
+
+    <!-- Trust Badges -->
+    <div class="badges">
+        <div class="badge">Official Product</div>
+        <div class="badge">100% Satisfaction Guarantee</div>
+        <div class="badge">Fast Shipping</div>
+    </div>
+
+    <!-- Buy Section -->
+     <div class="buy-section" id="buy">
+    <a href="javascript:void(0);" onclick="openOfficialSite()">Buy Now</a>
+        </div>
+        <script src="Keyslimdropslanding.js"></script>
+<!-- </div>
+
+    <div class="buy-section" id="buy">
+        <a href="https://c4338wkh2nds4w6fojxgog6ras.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" target="myFrame">Buy Now</a>
+<iframe name="myFrame" width="100%" height="800px" style="border:none;"></iframe>
+
+</div>  -->
+
+<footer>
+    &copy; 2026 KeySlim Drops. Payment Officially Secured
+</footer>
+
+<script>
+// Scroll Animation
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+        }
+    });
+},{threshold:0.2});
+
+document.querySelectorAll('.gallery img, .specs, .description, .reviews, .badges, .buy-section')
+.forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
