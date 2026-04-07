@@ -61,7 +61,7 @@ const products = {
   ],
   home: [
     { name: "Purisaki Berberine Patches", price: "₹$34", img: "Images/purisaki2.jpeg", link: "https://ca114xufvmev4q3gvdqr-a76nn.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "CitrusBurn Rapid Burn", price: "$69", img:"Images/citrusburn rapid burn.jpeg", link: "https://826b60qrufg37v4a1j4hw66zxw.hop.clickbank.net/?&campaign=ads&ad=google" },
+    { name: "CitrusBurn Rapid Burn", price: "$49", img:"Images/citrusburn rapid burn.jpeg", link: "CitrusBurnRapidBurnLandingPage.html" },
    // { name: "ProstaVive Vitality", price: "₹$34", img: "Images/prostavive vitality.jpeg", link: "https://826b60qrufg37v4a1j4hw66zxw.hop.clickbank.net/?&campaign=ads&ad=google" },
     { name: "KeySlim Drops", price: "₹$19", img: "Images/keyslimdrop.jpeg", link: "keyslimdropslandingpage.html" },
     { name: "ProstaVive Vitality", price: "₹$34", img: "Images/prostavive vitality.jpeg", link: "https://8c8140sq3ljwet6b-82d35bxa0.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
@@ -71,7 +71,7 @@ const products = {
   ],
 
   health: [
-    { name: "CitrusBurn Rapid Burn", price: "$69", img:"Images/citrusburn rapid burn.jpeg", link: "https://8e9e63ll3gh02xd2mfyl1y-kzl.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "CitrusBurn Rapid Burn", price: "$49", img:"Images/citrusburn rapid burn.jpeg", link: "CitrusBurnRapidBurnLandingPage.html" },
     { name: "ProstaVive Vitality", price: "₹$34", img: "Images/prostavive vitality.jpeg", link: "https://8c8140sq3ljwet6b-82d35bxa0.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
     { name: "Purisaki Berberine Patches", price: "₹$67", img: "Images/purisaki2.jpeg", link: "https://ca114xufvmev4q3gvdqr-a76nn.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
     { name: "KeySlim Drops", price: "₹$19", img: "Images/keyslimdrop.jpeg", link: "keyslimdropslandingpage.html"},
