@@ -60,24 +60,24 @@ const products = {
     { name: "Perfume", price: "₹1299", img: "https://via.placeholder.com/200", link: "https://example.com" }
   ],
   home: [
-    { name: "Purisaki Berberine Patches", price: "₹$34", img: "Images/purisaki2.jpeg", link: "https://ca114xufvmev4q3gvdqr-a76nn.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "Purisaki Berberine Patches", price: "₹$39", img: "Images/purisaki2.jpeg", link: "https://ca114xufvmev4q3gvdqr-a76nn.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
     { name: "CitrusBurn Rapid Burn", price: "$49", img:"Images/citrusburn rapid burn.jpeg", link: "CitrusBurnRapidBurnLandingPage.html" },
    // { name: "ProstaVive Vitality", price: "₹$34", img: "Images/prostavive vitality.jpeg", link: "https://826b60qrufg37v4a1j4hw66zxw.hop.clickbank.net/?&campaign=ads&ad=google" },
-    { name: "KeySlim Drops", price: "₹$19", img: "Images/keyslimdrop.jpeg", link: "keyslimdropslandingpage.html" },
-    { name: "ProstaVive Vitality", price: "₹$34", img: "Images/prostavive vitality.jpeg", link: "https://8c8140sq3ljwet6b-82d35bxa0.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "Neuro Serge", price: "₹$48", img: "Images/neuroserge.jpeg", link: "NeuroSergelLandingPage.html" },
-    { name: "iGenics Premium", price: "₹$32", img: "Images/igenics.jpeg", link: "https://674b1zlrulc0anegd5r9o2w5y5.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "Visiflora Precision Vision", price: "$17", img:"Images/visiflora.jpeg", link: "https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "KeySlim Drops", price: "₹$39", img: "Images/keyslimdrop.jpeg", link: "keyslimdropslandingpage.html" },
+    { name: "ProstaVive Vitality", price: "₹$39", img: "Images/prostavive vitality.jpeg", link: "ProstaViveVitalityLandingPage.html" },
+    { name: "Neuro Serge", price: "₹$49", img: "Images/neuroserge.jpeg", link: "NeuroSergelLandingPage.html" },
+    { name: "iGenics Premium", price: "₹$39", img: "Images/igenics.jpeg", link: "https://674b1zlrulc0anegd5r9o2w5y5.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "Visiflora Precision Vision", price: "$49", img:"Images/visiflora.jpeg", link: "https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
   ],
 
   health: [
     { name: "CitrusBurn Rapid Burn", price: "$49", img:"Images/citrusburn rapid burn.jpeg", link: "CitrusBurnRapidBurnLandingPage.html" },
-    { name: "ProstaVive Vitality", price: "₹$34", img: "Images/prostavive vitality.jpeg", link: "https://8c8140sq3ljwet6b-82d35bxa0.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "Purisaki Berberine Patches", price: "₹$67", img: "Images/purisaki2.jpeg", link: "https://ca114xufvmev4q3gvdqr-a76nn.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "KeySlim Drops", price: "₹$19", img: "Images/keyslimdrop.jpeg", link: "keyslimdropslandingpage.html"},
-    { name: "Neuro Serge", price: "₹$48", img: "Images/neuroserge.jpeg", link: "NeuroSergelLandingPage.html" },
-    { name: "iGenics Premium", price: "₹$32", img: "Images/igenics.jpeg", link: "https://674b1zlrulc0anegd5r9o2w5y5.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "Visiflora Precision Vision", price: "$17", img:"Images/visiflora.jpeg", link: "https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "ProstaVive Vitality", price: "₹$39", img: "Images/prostavive vitality.jpeg", link: "ProstaViveVitalityLandingPage.html" },
+    { name: "Purisaki Berberine Patches", price: "₹$39", img: "Images/purisaki2.jpeg", link: "https://ca114xufvmev4q3gvdqr-a76nn.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "KeySlim Drops", price: "₹$39", img: "Images/keyslimdrop.jpeg", link: "keyslimdropslandingpage.html"},
+    { name: "Neuro Serge", price: "₹$49", img: "Images/neuroserge.jpeg", link: "NeuroSergelLandingPage.html" },
+    { name: "iGenics Premium", price: "₹$39", img: "Images/igenics.jpeg", link: "https://674b1zlrulc0anegd5r9o2w5y5.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "Visiflora Precision Vision", price: "$49", img:"Images/visiflora.jpeg", link: "https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
   ],
 
   electronics: [
