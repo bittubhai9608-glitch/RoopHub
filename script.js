@@ -1,65 +1,5 @@
 const products = {
-  trend: [
-    { name: "Trend Smartwatch", price: "₹2999", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Wireless Earbuds", price: "₹1499", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Fitness Band", price: "₹999", img: "https://via.placeholder.com/200", link: "https://example.com" }
-  ],
-  best: [
-    { name: "Premium Headphone", price: "₹3999", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Luxury Sunglasses", price: "₹1999", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Gaming Mouse", price: "₹1299", img: "https://via.placeholder.com/200", link: "https://example.com" }
-  ],
-  deals: [
-    { name: "Budget Tablet", price: "₹8999", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Home Speaker", price: "₹2199", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "LED Monitor", price: "₹10999", img: "https://via.placeholder.com/200", link: "https://example.com" }
-  ],
-  gadget: [
-    { name: "Clip-on Camera", price: "₹2999", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Tablet Stylus", price: "₹799", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Portable Charger", price: "₹1499", img: "https://via.placeholder.com/200", link: "https://example.com" }
-  ],
-  electro: [
-    { name: "Smart Bulb", price: "₹899", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Kitchen Blender", price: "₹2599", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Air Purifier", price: "₹3299", img: "https://via.placeholder.com/200", link: "https://example.com" }
-  ],
-  mobile: [
-    { name: "Android Phone", price: "₹13999", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Refurbished Phone", price: "₹8999", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Feature Phone", price: "₹1299", img: "https://via.placeholder.com/200", link: "https://example.com" }
-  ],
-  laptop: [
-    { name: "Gaming Laptop", price: "₹49999", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Business Laptop", price: "₹38999", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Student Laptop", price: "₹29999", img: "https://via.placeholder.com/200", link: "https://example.com" }
-  ],
-  kids: [
-    { name: "Toy Car", price: "₹499", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Puzzle Set", price: "₹699", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Drawing Kit", price: "₹399", img: "https://via.placeholder.com/200", link: "https://example.com" }
-  ],
-  gifts: [
-    { name: "Gift Box", price: "₹1299", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Flower Basket", price: "₹899", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Customized Mug", price: "₹499", img: "https://via.placeholder.com/200", link: "https://example.com" }
-  ],
-  books: [
-    { name: "Self Help Book", price: "₹299", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Science Book", price: "₹499", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Novel", price: "₹349", img: "https://via.placeholder.com/200", link: "https://example.com" }
-  ],
-  digital: [
-    { name: "Ebook Subscription", price: "₹999", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Online Course", price: "₹1499", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Streaming Plan", price: "₹599", img: "https://via.placeholder.com/200", link: "https://example.com" }
-  ],
-  beauty: [
-    { name: "Lipstick Set", price: "₹799", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Face Cream", price: "₹599", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Perfume", price: "₹1299", img: "https://via.placeholder.com/200", link: "https://example.com" }
-  ],
-  home: [
+  "Men Health": [
     { name: "Purisaki Berberine Patches", price: "₹$39", img: "Images/purisaki2.jpeg", link: "https://ca114xufvmev4q3gvdqr-a76nn.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
     { name: "CitrusBurn Rapid Burn", price: "$49", img:"Images/citrusburn rapid burn.jpeg", link: "CitrusBurnRapidBurnLandingPage.html" },
    // { name: "ProstaVive Vitality", price: "₹$34", img: "Images/prostavive vitality.jpeg", link: "https://826b60qrufg37v4a1j4hw66zxw.hop.clickbank.net/?&campaign=ads&ad=google" },
@@ -70,7 +10,17 @@ const products = {
     { name: "Visiflora Precision Vision", price: "$49", img:"Images/visiflora.jpeg", link: "https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
   ],
 
-  health: [
+  "Weight Loss": [
+    { name: "CitrusBurn Rapid Burn", price: "🔥Limited Time Offer", img:"Images/citrusburn rapid burn.jpeg", link: "CitrusBurnRapidBurnLandingPage.html" },
+    { name: "ProstaVive Vitality", price: "₹$39", img: "Images/prostavive vitality.jpeg", link: "ProstaViveVitalityLandingPage.html" },
+    { name: "Purisaki Berberine Patches", price: "₹$39", img: "Images/purisaki2.jpeg", link: "https://ca114xufvmev4q3gvdqr-a76nn.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "KeySlim Drops", price: "₹$39", img: "Images/keyslimdrop.jpeg", link: "keyslimdropslandingpage.html"},
+    { name: "Neuro Serge", price: "₹$49", img: "Images/neuroserge.jpeg", link: "NeuroSergelLandingPage.html" },
+    { name: "iGenics Premium", price: "₹$39", img: "Images/igenics.jpeg", link: "https://674b1zlrulc0anegd5r9o2w5y5.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "Visiflora Precision Vision", price: "$49", img:"Images/visiflora.jpeg", link: "https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+  ],
+
+  "Brain Boost": [
     { name: "CitrusBurn Rapid Burn", price: "$49", img:"Images/citrusburn rapid burn.jpeg", link: "CitrusBurnRapidBurnLandingPage.html" },
     { name: "ProstaVive Vitality", price: "₹$39", img: "Images/prostavive vitality.jpeg", link: "ProstaViveVitalityLandingPage.html" },
     { name: "Purisaki Berberine Patches", price: "₹$39", img: "Images/purisaki2.jpeg", link: "https://ca114xufvmev4q3gvdqr-a76nn.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
@@ -80,30 +30,18 @@ const products = {
     { name: "Visiflora Precision Vision", price: "$49", img:"Images/visiflora.jpeg", link: "https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
   ],
 
-  electronics: [
-    { name: "Mobile", price: "₹10000", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Laptop", price: "₹50000", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Headphones", price: "₹1200", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Speaker", price: "₹1500", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Camera", price: "₹25000", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "TV", price: "₹40000", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Mouse", price: "₹300", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Keyboard", price: "₹700", img: "https://via.placeholder.com/200", link: "https://example.com" }
-  ],
-
-  fashion: [
-    { name: "Shirt", price: "₹500", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Jeans", price: "₹1200", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Shoes", price: "₹1500", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "T-shirt", price: "₹400", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Jacket", price: "₹2000", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Cap", price: "₹200", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Watch", price: "₹800", img: "https://via.placeholder.com/200", link: "https://example.com" },
-    { name: "Belt", price: "₹300", img: "https://via.placeholder.com/200", link: "https://example.com" }
+  "Skin Care": [
+     { name: "CitrusBurn Rapid Burn", price: "$49", img:"Images/citrusburn rapid burn.jpeg", link: "CitrusBurnRapidBurnLandingPage.html" },
+    { name: "ProstaVive Vitality", price: "₹$39", img: "Images/prostavive vitality.jpeg", link: "ProstaViveVitalityLandingPage.html" },
+    { name: "Purisaki Berberine Patches", price: "₹$39", img: "Images/purisaki2.jpeg", link: "https://ca114xufvmev4q3gvdqr-a76nn.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "KeySlim Drops", price: "₹$39", img: "Images/keyslimdrop.jpeg", link: "keyslimdropslandingpage.html"},
+    { name: "Neuro Serge", price: "₹$49", img: "Images/neuroserge.jpeg", link: "NeuroSergelLandingPage.html" },
+    { name: "iGenics Premium", price: "₹$39", img: "Images/igenics.jpeg", link: "https://674b1zlrulc0anegd5r9o2w5y5.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "Visiflora Precision Vision", price: "$49", img:"Images/visiflora.jpeg", link: "https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
   ]
 };
 
-let currentCategory = 'home';
+let currentCategory = 'View Top Deals';
 
 function loadProducts(category) {
   currentCategory = category;
@@ -130,7 +68,7 @@ function loadProducts(category) {
   <img src="${p.img}" alt="${p.name}">
   <h3>${p.name}</h3>
   <p class="price">${p.price}</p>
-  <button onclick="openProduct('${p.link}')">See Full Details</button>
+  <button onclick="openProduct('${p.link}')">Get Discount Now</button>
 `;
 
     container.appendChild(div);
@@ -309,7 +247,7 @@ window.onclick = function(event) {
   }
 }
 
-loadProducts('home');
+loadProducts('Men Health');
 function openProduct(link) {
   window.location.href = link;
 }

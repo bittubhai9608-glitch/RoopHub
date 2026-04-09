@@ -3,23 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Store</title>
+  <title>RoopHub</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header style="display: flex; align-items: center; justify-content: center; gap: 15px; padding: 10px;">
+    
+    <img src="Images/RoophubLogo.jpeg" style="height: 60px; filter: brightness(1) contrast(1);">
+    <div style="display: flex; flex-direction: column; text-align: left;">
+        <h1 id="animatedHeading" style="margin: 0; color: #fe083e; font-size: 26px; font-weight: bold;">
+            ROOPHUB
+        </h1>
+        <span style="color: #00ff99; font-size: 14px; margin-top: -5px;">
+            Online Affiliate Wellness
+        </span>
+    </div>
 
-<header>
-  <h1 id="animatedHeading">🛍️ RoopHub Online Affiliate Store</h1>
-  <p>"At RoopHub we bring you the best products from trusted online stores. We many earn a small commission when you purchase through our links, but we always recommend only genuine and high- quality products for you."</p>
 </header>
-
 <nav>
-  <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation">☰ Menu</button>
+  <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation">View Top Deals</button>
   <div class="nav-left" id="navItems">
-    <button onclick="loadProducts('home')">Home🏠</button>
-    <button onclick="loadProducts('trend')">Trend🔥</button>
-    <button onclick="loadProducts('best')">Best⭐</button>
-    <button onclick="loadProducts('deals')">Deals💸</button>
+    <button onclick="loadProducts('Men Health')">Men Health</button>
+    <button onclick="loadProducts('Weight Loss')">Weight Loss</button>
+    <button onclick="loadProducts('Brain Boost')">Brain Boost</button>
+    <button onclick="loadProducts('Skin Care')">Skin Care</button>
+    <!--
     <button onclick="loadProducts('gadget')">Gadget📱</button>
     <button onclick="loadProducts('electro')">Electro🔌</button>
     <button onclick="loadProducts('fashion')">Fashion👗</button>
@@ -30,7 +38,7 @@
     <button onclick="loadProducts('kids')">Kids🧸</button>
     <button onclick="loadProducts('gifts')">Gifts🎁</button>
     <button onclick="loadProducts('books')">Books📚</button>
-    <button onclick="loadProducts('digital')">Digital🌐</button>
+    <button onclick="loadProducts('digital')">Digital🌐</button> -->
   </div>
   <div class="nav-right" id="navRight">
     <button onclick="showAbout()">About Us</button>
@@ -40,8 +48,8 @@
 </nav>
 
 <section class="search-panel">
-  <h2>🔍 Search Products</h2>
-  <input type="text" id="searchInput" placeholder="Search for products..." onkeyup="searchProducts()" />
+  <h2>🔍 Find Your Perfect Product</h2>
+  <input type="text" id="searchInput" placeholder="Search best deals & offers..." onkeyup="searchProducts()" />
   <p id="searchStatus" aria-live="polite"></p>
 </section>
 
@@ -49,29 +57,20 @@
 
 <div class="container" id="productContainer"></div>
 
-<footer class="footer-container">
-  <div class="footer-box about-box" onclick="showAbout()" style="cursor: pointer;">
-    <div class="footer-icon"> 🌐 </div>
-    <h3>About Us</h3>
-    <p>Best Affiliate Store</p>
+<footer
+ class="footer-container">
+  <div class="" onclick="showAbout()" style="cursor: pointer;">
+    <div class="footer-icon"></div>
+    <h3>About Us</h3>A curated affiliate store, guiding you to<br>high-quality wellnes from trused<br>partners.<p>Best Affiliate Store</p>
   </div>
   
-  <div class="footer-box contact-box">
-    <div class="footer-icon"> ✉️ </div>
-    <h3>Email</h3>
-    <p><a href="mailto:bittupandit96081@email.com">bittupandit96081@email.com</a></p>
+  <div class="Links">
+    <h2>Links</h2>
+    Home<br>FAQ<br>Disclaimer<br>Terms<br>Privacy Policy<br>
   </div>
   
-  <div class="footer-box mobile-box">
-    <div class="footer-icon">📱</div>
-    <h3>Mobile</h3>
-    <p><a href="tel:8271734883">8271734883</a></p>
-  </div>
-  
-  <div class="footer-box location-box">
-    <div class="footer-icon"> 🌏 </div>
-    <h3>Location</h3>
-    <p>Bihar, Muzaffarpur<br>Yadav Nagar Road No: 3</p>
+  <div class="CONNCEPT">
+    <h2>Connect With Us</h2>✉️bittupandit96081@gmail.com<br>📞8271734883<br>▶️ YouTube<br>
   </div>
 </footer>
 
