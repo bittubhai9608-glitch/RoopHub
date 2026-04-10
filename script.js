@@ -1,43 +1,23 @@
 const products = {
   "Men Health": [
-    { name: "Purisaki Berberine Patches", price: "₹$39", img: "Images/purisaki2.jpeg", link: "https://ca114xufvmev4q3gvdqr-a76nn.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "CitrusBurn Rapid Burn", price: "$49", img:"Images/citrusburn rapid burn.jpeg", link: "CitrusBurnRapidBurnLandingPage.html" },
-   // { name: "ProstaVive Vitality", price: "₹$34", img: "Images/prostavive vitality.jpeg", link: "https://826b60qrufg37v4a1j4hw66zxw.hop.clickbank.net/?&campaign=ads&ad=google" },
-    { name: "KeySlim Drops", price: "₹$39", img: "Images/keyslimdrop.jpeg", link: "keyslimdropslandingpage.html" },
-    { name: "ProstaVive Vitality", price: "₹$39", img: "Images/prostavive vitality.jpeg", link: "ProstaViveVitalityLandingPage.html" },
-    { name: "Neuro Serge", price: "₹$49", img: "Images/neuroserge.jpeg", link: "NeuroSergelLandingPage.html" },
-    { name: "iGenics Premium", price: "₹$39", img: "Images/igenics.jpeg", link: "https://674b1zlrulc0anegd5r9o2w5y5.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "Visiflora Precision Vision", price: "$49", img:"Images/visiflora.jpeg", link: "https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "ProstaVive Vitality", price: "Special Discount Available", img: "Images/prostavive vitality.jpeg", link: "ProstaViveVitalityLandingPage.html" },
+   
   ],
 
   "Weight Loss": [
-    { name: "CitrusBurn Rapid Burn", price: "🔥Limited Time Offer", img:"Images/citrusburn rapid burn.jpeg", link: "CitrusBurnRapidBurnLandingPage.html" },
-    { name: "ProstaVive Vitality", price: "₹$39", img: "Images/prostavive vitality.jpeg", link: "ProstaViveVitalityLandingPage.html" },
-    { name: "Purisaki Berberine Patches", price: "₹$39", img: "Images/purisaki2.jpeg", link: "https://ca114xufvmev4q3gvdqr-a76nn.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "KeySlim Drops", price: "₹$39", img: "Images/keyslimdrop.jpeg", link: "keyslimdropslandingpage.html"},
-    { name: "Neuro Serge", price: "₹$49", img: "Images/neuroserge.jpeg", link: "NeuroSergelLandingPage.html" },
-    { name: "iGenics Premium", price: "₹$39", img: "Images/igenics.jpeg", link: "https://674b1zlrulc0anegd5r9o2w5y5.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "Visiflora Precision Vision", price: "$49", img:"Images/visiflora.jpeg", link: "https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "CitrusBurn Rapid Burn", price: "Limited Time Offer", img:"Images/citrusburn rapid burn.jpeg", link: "CitrusBurnRapidBurnLandingPage.html" },
+    { name: "KeySlim Drops", price: "Best Price Guaranteed", img: "Images/keyslimdrop.jpeg", link: "keyslimdropslandingpage.html"},
   ],
 
   "Brain Boost": [
-    { name: "CitrusBurn Rapid Burn", price: "$49", img:"Images/citrusburn rapid burn.jpeg", link: "CitrusBurnRapidBurnLandingPage.html" },
-    { name: "ProstaVive Vitality", price: "₹$39", img: "Images/prostavive vitality.jpeg", link: "ProstaViveVitalityLandingPage.html" },
-    { name: "Purisaki Berberine Patches", price: "₹$39", img: "Images/purisaki2.jpeg", link: "https://ca114xufvmev4q3gvdqr-a76nn.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "KeySlim Drops", price: "₹$39", img: "Images/keyslimdrop.jpeg", link: "keyslimdropslandingpage.html"},
-    { name: "Neuro Serge", price: "₹$49", img: "Images/neuroserge.jpeg", link: "NeuroSergelLandingPage.html" },
-    { name: "iGenics Premium", price: "₹$39", img: "Images/igenics.jpeg", link: "https://674b1zlrulc0anegd5r9o2w5y5.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "Neuro Serge", price: "Limited Time Offer", img: "Images/neuroserge.jpeg", link: "NeuroSergelLandingPage.html" },
     { name: "Visiflora Precision Vision", price: "$49", img:"Images/visiflora.jpeg", link: "https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
   ],
 
   "Skin Care": [
-     { name: "CitrusBurn Rapid Burn", price: "$49", img:"Images/citrusburn rapid burn.jpeg", link: "CitrusBurnRapidBurnLandingPage.html" },
-    { name: "ProstaVive Vitality", price: "₹$39", img: "Images/prostavive vitality.jpeg", link: "ProstaViveVitalityLandingPage.html" },
-    { name: "Purisaki Berberine Patches", price: "₹$39", img: "Images/purisaki2.jpeg", link: "https://ca114xufvmev4q3gvdqr-a76nn.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "KeySlim Drops", price: "₹$39", img: "Images/keyslimdrop.jpeg", link: "keyslimdropslandingpage.html"},
-    { name: "Neuro Serge", price: "₹$49", img: "Images/neuroserge.jpeg", link: "NeuroSergelLandingPage.html" },
-    { name: "iGenics Premium", price: "₹$39", img: "Images/igenics.jpeg", link: "https://674b1zlrulc0anegd5r9o2w5y5.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "Visiflora Precision Vision", price: "$49", img:"Images/visiflora.jpeg", link: "https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "Purisaki Berberine Patches", price: "Click to Check Price", img: "Images/purisaki2.jpeg", link: "https://ca114xufvmev4q3gvdqr-a76nn.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "iGenics Premium", price: "Limited Time Offer", img: "Images/igenics.jpeg", link: "https://674b1zlrulc0anegd5r9o2w5y5.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+
   ]
 };
 
@@ -65,12 +45,19 @@ function loadProducts(category) {
     //   </a>
     // `;
     div.innerHTML = `
-  <img src="${p.img}" alt="${p.name}">
-  <h3>${p.name}</h3>
-  <p class="price">${p.price}</p>
-  <button onclick="openProduct('${p.link}')">Get Discount Now</button>
-`;
+  <div class="img-box">
+    <span class="category">${category}</span>
+    <img src="${p.img}" alt="${p.name}">
+  </div>
 
+  <h3>${p.name}</h3>
+
+  <p class="tag">⭐ 4.7 Rating | Best Seller</p>
+
+  <p class="price">${p.price}</p>
+
+  <button onclick="openProduct('${p.link}')">Check Offer</button>
+`;
     container.appendChild(div);
   });
 }
@@ -114,14 +101,19 @@ function searchProducts() {
     div.className = 'card';
     
     div.innerHTML = `
-      <img src="${p.img}" alt="${p.name}">
-      <h3>${p.name}</h3>
-      <p class="price">${p.price}</p>
-      // <a href="${p.link}" target="_blank">
-      //   <button>Buy Now</button>
-      // </a>
-      <button onclick="openProduct('${p.link}')">Buy Now</button>
-    `;
+  <div class="img-box">
+    <span class="category">${currentCategory}</span>
+    <img src="${p.img}" alt="${p.name}">
+  </div>
+
+  <h3>${p.name}</h3>
+
+  <p class="tag">⭐ 4.7 Rating | Best Seller</p>
+
+  <p class="price">${p.price}</p>
+
+  <button onclick="openProduct('${p.link}')">Check Offer</button>
+`;
     
     container.appendChild(div);
   });
