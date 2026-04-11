@@ -162,6 +162,55 @@ nav .nav-left,
 nav button:hover {
   background: #2874f0;
 }
+/* MOBILE IMPROVEMENTS */
+@media(max-width:768px){
+  header h1{font-size:20px}
+  nav button{font-size:12px;padding:6px}
+}
+
+/* STICKY BOTTOM NAV */
+.bottom-nav{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background:#111;
+  display:flex;
+  justify-content:space-around;
+  padding:10px 0;
+  z-index:999;
+}
+.bottom-nav button{
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:12px;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp{
+  position:fixed;
+  bottom:70px;
+  right:15px;
+  background:#25D366;
+  color:#fff;
+  padding:12px;
+  border-radius:50%;
+  font-size:20px;
+  z-index:999;
+}
+
+/* SCROLL TOP */
+.scrollTop{
+  position:fixed;
+  bottom:130px;
+  right:15px;
+  background:#ff9800;
+  color:#fff;
+  padding:10px;
+  border-radius:50%;
+  cursor:pointer;
+  display:none;
+}
 
 /* Grid Layout */
 .container {
