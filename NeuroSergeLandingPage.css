@@ -6,7 +6,7 @@
 }
 
 body{
-    background:#f5f5f5;
+    background:#eaeaea;
     font-family:sans-serif;
 }
 
@@ -26,6 +26,7 @@ body{
 .slider img {
     width:100%;
     max-width:500px;
+    background: #000; /* 👉 dark background for better contrast */
     border-radius:15px;
     transition: opacity 0.5s ease-in-out, transform 0.5s;
 }
@@ -35,7 +36,7 @@ body{
     position:absolute;
     top:50%;
     transform:translateY(-50%);
-    background:rgba(0,0,0,0.4);
+    background:rgba(0,0,0,0.6);
     color:white;
     border:none;
     padding:8px 12px;
@@ -48,7 +49,7 @@ body{
 
 /* CONTENT */
 .box{
-    background:white;
+    background:#f9f9f9;
     padding:15px;
     margin-top:10px;
     border-radius:10px;
@@ -67,4 +68,86 @@ body{
     .slider img{
         max-height:300px;
     }
+}
+/* 🔥 HERO SECTION */
+.hero{
+    background: linear-gradient(135deg, #1e88e5, #1565c0);
+    height: 240px;
+    background-size: 90%;
+    background-position: center;
+    padding:40px 15px;
+    text-align:center;
+    color:white;
+}
+/* MOBILE FIRST REVIEW DESIGN */
+#reviews{
+max-width:100%;
+padding:10px;
+}
+
+/* REVIEW CARD */
+.review-box{
+background:#fff;
+padding:12px;
+margin-bottom:10px;
+border-radius:12px;
+box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* NAME */
+.review-box h4{
+font-size:15px;
+margin-bottom:5px;
+}
+
+/* TEXT */
+.review-box p{
+font-size:13px;
+line-height:1.4;
+}
+
+/* FORM MOBILE */
+#reviewForm{
+width:100%;
+padding:15px;
+background:#fff;
+border-radius:12px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* INPUTS BIG FOR TOUCH */
+#reviewForm input,
+#reviewForm select,
+#reviewForm textarea{
+width:100%;
+padding:12px;
+margin:8px 0;
+font-size:16px; /* IMPORTANT for mobile */
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+/* BUTTON FULL WIDTH */
+#reviewForm button{
+width:100%;
+padding:14px;
+font-size:17px;
+background:#28a745;
+color:#fff;
+border:none;
+border-radius:12px;
+font-weight:bold;
+}
+
+/* READ BUTTON */
+#showReviewsBtn{
+width:90%;
+margin:10px auto;
+display:block;
+padding:12px;
+font-size:16px;
+background:#1e90ff;
+color:#fff;
+border:none;
+border-radius:10px;
 }
