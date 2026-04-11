@@ -1,25 +1,40 @@
 const products = {
   "Men Health": [
-    { name: "ProstaVive Vitality", price: "Special Discount Available", img: "Images/prostavive vitality.jpeg", link: "ProstaViveVitalityLandingPage.html" },
+    { name: "ProstaVive Vitality",rating:"4.9", price: "Special Discount Available", img: "Images/prostavive vitality.jpeg", link: "ProstaViveVitalityLandingPage.html" },
    
   ],
 
   "Weight Loss": [
-    { name: "CitrusBurn Rapid Burn", price: "Limited Time Offer", img:"Images/citrusburn rapid burn.jpeg", link: "CitrusBurnRapidBurnLandingPage.html" },
-    { name: "KeySlim Drops", price: "Best Price Guaranteed", img: "Images/keyslimdrop.jpeg", link: "keyslimdropslandingpage.html"},
+    { name: "CitrusBurn Rapid Burn", rating:"4.8", price: "Limited Time Offer", img:"Images/citrusburn rapid burn.jpeg", link: "CitrusBurnRapidBurnLandingPage.html" },
+    { name: "KeySlim Drops", rating:"4.6", price: "Best Price Guaranteed", img: "Images/keyslimdrop.jpeg", link: "keyslimdropslandingpage.html"},
   ],
 
   "Brain Boost": [
-    { name: "Neuro Serge", price: "Limited Time Offer", img: "Images/neuroserge.jpeg", link: "NeuroSergelLandingPage.html" },
-    { name: "Visiflora Precision Vision", price: "$49", img:"Images/visiflora.jpeg", link: "https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "Neuro Serge", rating:"4.9", price: "Limited Time Offer", img: "Images/neuroserge.jpeg", link: "NeuroSergelLandingPage.html" },
+    { name: "Visiflora Precision Vision", rating:"4.5", price: "$49", img:"Images/visiflora.jpeg", link: "https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
   ],
 
   "Skin Care": [
-    { name: "Purisaki Berberine Patches", price: "Click to Check Price", img: "Images/purisaki2.jpeg", link: "https://ca114xufvmev4q3gvdqr-a76nn.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-    { name: "iGenics Premium", price: "Limited Time Offer", img: "Images/igenics.jpeg", link: "https://674b1zlrulc0anegd5r9o2w5y5.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "Purisaki Berberine Patches", rating:"4.7", price: "Click to Check Price", img: "Images/purisaki2.jpeg", link: "https://ca114xufvmev4q3gvdqr-a76nn.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
+    { name: "iGenics Premium", rating:"4.8", price: "Limited Time Offer", img: "Images/igenics.jpeg", link: "https://674b1zlrulc0anegd5r9o2w5y5.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
 
   ]
 };
+
+// SCROLL TO TOP
+function scrollToTop(){
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+// SHOW BUTTON
+window.addEventListener("scroll", ()=>{
+  let btn=document.querySelector(".scrollTop");
+  if(window.scrollY>200){
+    btn.style.display="block";
+  }else{
+    btn.style.display="none";
+  }
+});
 
 let currentCategory = 'View Top Deals';
 
@@ -44,7 +59,7 @@ function loadProducts(category) {
     //     <button>See Full Details</button>
     //   </a>
     // `;
-    div.innerHTML = `
+   div.innerHTML = `
   <div class="img-box">
     <span class="category">${category}</span>
     <img src="${p.img}" alt="${p.name}">
@@ -52,7 +67,7 @@ function loadProducts(category) {
 
   <h3>${p.name}</h3>
 
-  <p class="tag">⭐ 4.7 Rating | Best Seller</p>
+  <p class="tag">⭐ ${p.rating} Rating | Best Seller</p>
 
   <p class="price">${p.price}</p>
 
@@ -216,6 +231,7 @@ function closeImportantInfoModal() {
 }
 
 // Mobile menu toggle
+
 const menuToggle = document.getElementById('menuToggle');
 const navItems = document.getElementById('navItems');
 const navRight = document.getElementById('navRight');
@@ -238,6 +254,7 @@ window.onclick = function(event) {
     importantInfoModal.style.display = 'none';
   }
 }
+
 
 loadProducts('Men Health');
 function openProduct(link) {
