@@ -165,7 +165,34 @@ margin-top:20px;
 
 <!-- DATA BOX -->
 <div class="box">
-<p>Neuro Surge is a natural brain support supplement designed to improve focus, memory, and mental clarity. It uses powerful herbal ingredients to boost brain performance safely.</p>
+    <div class="box-container">
+  
+  <div class="box">
+    <table>
+
+    <tr><th>🔴 Problem Section</th></tr>
+    <tr><td>
+        <ul>
+    <li>Lack of Focus</li>
+    <li>Weak Memory</li>
+    <li>Mental Fatigue</li>
+    <li>Low Productivity</li>
+        </ul>
+    </table>
+  </div>
+
+  <div class="box">
+    <table>
+      <tr><th>🟢 Solution Section</th></tr>
+      <tr><td>✔ Improves Focus</td></tr>
+      <tr><td>✔ Supports Memory</td></tr>
+      <tr><td>✔ Boosts Mental Energy</td></tr>
+      <tr><td>✔ Enhances Productivity</td></tr>
+    </table>
+  </div>
+
+</div>
+<p>This product is not intended to diagnose, treat, cure, or prevent any disease. Results may vary from person to person.</p>
 </div>
 
 </div>
@@ -200,8 +227,197 @@ margin-top:20px;
         <tr><td>Made with natural ingredients for safe use.</td></tr>
     </table>
 </div>
-<div id="reviews"></div>
+<style>
+body {
+    background: linear-gradient(135deg, #74ebd5, #9face6);
+    font-family: Arial, sans-serif;
+}
 
+/* Main Box */
+.review-box {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* Top Layout */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Left side */
+.left-info {
+    font-size: 14px;
+}
+
+/* Right side buttons */
+.right-actions button {
+    margin-left: 5px;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-size: 12px;
+}
+
+.all-btn { background: #007bff; }
+.write-btn { background: #28a745; }
+.submit-btn { background: #ff5722; }
+
+/* Form */
+#reviewForm {
+    display: none;
+}
+
+#reviewForm input,
+#reviewForm select,
+#reviewForm textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 6px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* Reviews */
+.review-list {
+    margin-top: 10px;
+    display: none;
+}
+
+.review-item {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+</style>
+
+<div class="review-box">
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="left-info">
+            <strong>Customer Reviews ⭐⭐⭐⭐☆</strong><br>
+            Name • Gmail • Rating
+        </div>
+
+        <div class="right-actions">
+            <button class="all-btn" onclick="toggleReviews()">All Review</button>
+            <button class="write-btn" onclick="toggleForm()">Write</button>
+            <button class="submit-btn" onclick="submitForm()">Submit</button>
+        </div>
+    </div>
+
+    <!-- FORM -->
+    <form id="reviewForm" autocomplete="off">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Gmail" required>
+
+        <select id="rating" required>
+            <option value="">Rating</option>
+            <option value="5">⭐⭐⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="1">⭐</option>
+        </select>
+
+        <textarea id="comment" placeholder="Write your review..." required></textarea>
+    </form>
+
+    <!-- REVIEWS -->
+    <div id="reviewList" class="review-list"></div>
+    <button id="seeMoreBtn" onclick="loadMoreReviews()" style="display:none;">
+See More
+</button>
+
+</div>
+
+<script>
+// Load saved reviews OR default fake reviews
+let reviews = JSON.parse(localStorage.getItem("reviews")) || [
+    {name:"Rahul", email:"rahul@gmail.com", rating:5, comment:"बहुत बढ़िया product 👍"},
+    {name:"Pooja", email:"pooja@gmail.com", rating:4, comment:"Quality achhi hai 😊"},
+    {name:"Amit", email:"amit@gmail.com", rating:5, comment:"Fast delivery 🚀"},
+    {name:"Amit", email:"amit@gmail.com", rating:5, comment:"Fast delivery 🚀"},
+    {name:"Amit", email:"amit@gmail.com", rating:5, comment:"Fast delivery 🚀"},
+    {name:"Amit", email:"amit@gmail.com", rating:5, comment:"Fast delivery 🚀"},
+    {name:"Neha", email:"neha@gmail.com", rating:4, comment:"Value for money 💰"},
+    {name:"Ravi", email:"ravi@gmail.com", rating:5, comment:"Highly recommended 🔥"}
+];
+
+// Show/Hide reviews
+function toggleReviews(){
+    let list = document.getElementById("reviewList");
+
+    if(list.style.display === "none"){
+        displayReviews();
+        list.style.display = "block";
+    } else {
+        list.style.display = "none";
+    }
+}
+
+// Show form
+function toggleForm(){
+    let form = document.getElementById("reviewForm");
+    form.style.display = (form.style.display === "none") ? "block" : "none";
+}
+
+// Submit review
+function submitForm(){
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let rating = document.getElementById("rating").value;
+    let comment = document.getElementById("comment").value;
+
+    if(name.length < 2 || comment.length < 5){
+        alert("Proper review likho");
+        return;
+    }
+
+    let newReview = {name,email,rating,comment};
+
+    // Always top par add
+    reviews.unshift(newReview);
+
+    // Permanent save
+    localStorage.setItem("reviews", JSON.stringify(reviews));
+
+    // Show updated reviews
+    displayReviews();
+    document.getElementById("reviewList").style.display = "block";
+
+    // Reset form
+    document.getElementById("reviewForm").reset();
+}
+
+// Display reviews
+function displayReviews(){
+    let list = document.getElementById("reviewList");
+    list.innerHTML = "";
+
+    reviews.forEach(r => {
+        list.innerHTML += `
+        <div class="review-item">
+            <strong>${r.name}</strong> (${r.email}) - ${"⭐".repeat(r.rating)}<br>
+            ${r.comment}
+        </div>
+        `;
+    });
+}
+</script>
+<!--
+<div id="reviews"></div>
+<div>
 <button id="showReviewsBtn">📖 Read All Reviews</button>
 
 <h3 class="review-title">Write a Review</h3>
@@ -220,7 +436,7 @@ margin-top:20px;
     <textarea id="comment" rows="4" placeholder="Write your review..." required></textarea>
 
     <button type="submit">✅ Submit Your Review</button>
-</form>
+</form> -->
 <!--
 <div id="reviews"></div>
 <h3 class="review-title">Write a Review</h3>
@@ -248,35 +464,125 @@ margin-top:20px;
 
 <!-- BADGES -->
 <div class="badges">
-<div>✔ Official Product</div>
-<div>✔ Money-Back Guarantee</div>
-<div>✔ 100% Natural Ingredients</div>
-<div>✔ Made in USA || ✔ Fast Shipping </div>
+    <table>
+        <tr><th>✔ Official Product</th><th>✔ Made in USA | ✔ Fast Shipping</th></tr>
+        <tr><th>✔ Money-Back Guarantee</th><th>✔ 100% Natural Ingredients</th></td></tr>
+    </table>
 </div>
 
 <!-- BUY -->
 <div class="buy-section" id="buy">
-<a href="#">Order Now 35% Off</a>
+<a href="">Order Now 35% Off</a>
 </div>
 
-<!-- ✅ STICKY BUY -->
+<!-- ✅ STICKY BUY 
 <div class="sticky">
 <a href="#">🔥 Buy Now - Limited Offer</a>
 </div>
+-->
+
 
 <footer class="footer">
   <p>© 2026 RoopHUb official</p>
-  
-  <div class="footer-links">
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="disclaimer.html">Disclaimer</a>
-    <a href="terms.html">Terms</a>
+
+  <div class="bottom-menu">
+    <button onclick="openModal('about')">About Us</button>
+    <button onclick="openModal('contact')">Contact</button>
+    <button onclick="openModal('faq')">FAQ</button>
+    <button onclick="openModal('terms')">Terms</button>
   </div>
 </footer>
 <script>
-// SLIDER
+
+// Fake reviews (always top)
+let fakeReviews = [
+    {name:"Michael Johnson", email:"michaeljo37@gmail.com", rating:5, comment:"Good product. Works well for me.👍"},
+    {name:"Daniel M.", email:"daniel009gmail.com", rating:4, comment:"I was struggling with this issue for a long time and tried multiple products, but nothing really worked. After using this, I started noticing changes within a few days. The best part is that it’s very easy to use and doesn’t feel complicated at all. I feel much more confident now and would definitely recommend it to others."},
+    {name:"Kavin R.", email:"kavin@gmail.com", rating:5, comment:"like how convenient this is. After regular use, I felt a bit more consistent with my daily activities.”"},
+    {name:"Ashley Thompson", email:"ashleyt9@gmail.com", rating:4, comment:"“At first, I wasn’t sure if this would make any difference, but after trying it consistently, I started noticing small changes. It’s easy to include in my routine and doesn’t take much effort. Worth trying if you’re curious."},
+];
+
+// Load real reviews (user वाले)
+let realReviews = JSON.parse(localStorage.getItem("realReviews")) || [];
+
+
+// Show/Hide reviews
+function toggleReviews(){
+    let list = document.getElementById("reviewList");
+
+    if(list.style.display === "none"){
+        displayReviews();
+        list.style.display = "block";
+    } else {
+        list.style.display = "none";
+    }
+}
+
+// Show form
+function toggleForm(){
+    let form = document.getElementById("reviewForm");
+    form.style.display = (form.style.display === "none") ? "block" : "none";
+}
+
+// Submit review
+function submitForm(){
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let rating = document.getElementById("rating").value;
+    let comment = document.getElementById("comment").value;
+
+    if(name.length < 2 || comment.length < 5){
+        alert("Proper review likho");
+        return;
+    }
+
+    let newReview = {name,email,rating,comment};
+
+    // fake ke niche add hoga
+    realReviews.push(newReview);
+
+    // save permanently
+    localStorage.setItem("realReviews", JSON.stringify(realReviews));
+
+    displayReviews();
+    document.getElementById("reviewList").style.display = "block";
+
+    document.getElementById("reviewForm").reset();
+}
+
+// Display reviews
+function displayReviews(){
+    let list = document.getElementById("reviewList");
+    let btn = document.getElementById("seeMoreBtn");
+
+    list.innerHTML = "";
+
+    let allReviews = [...fakeReviews, ...realReviews];
+
+    allReviews.slice(0, visibleCount).forEach(r => {
+        list.innerHTML += `
+        <div class="review-item">
+            <strong>${r.name}</strong> (${r.email}) - ${"⭐".repeat(r.rating)}<br>
+            ${r.comment}
+        </div>
+        `;
+    });
+
+    // See More button show/hide
+    if(allReviews.length > visibleCount){
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+}
+
+// ✅ PAGE LOAD FIX (सब कुछ load होने के बाद चलेगा)
+window.onload = function(){
+
+/* =========================
+   🔥 SLIDER FIX
+========================= */
+
 let images=[
 "Images/Neuroserge1.jpeg",
 "Images/Neuroserge2.jpeg",
@@ -288,36 +594,46 @@ let index=0;
 let img=document.getElementById("sliderImage");
 
 function showImage(i){
-img.style.opacity=0;
-setTimeout(()=>{
-img.src=images[i];
-img.style.opacity=1;
-},300);
+    if(!img) return;
+    img.style.opacity=0;
+
+    setTimeout(()=>{
+        img.src=images[i];
+        img.style.opacity=1;
+    },300);
 }
 
 function nextImage(){
-index=(index+1)%images.length;
-showImage(index);
+    index=(index+1)%images.length;
+    showImage(index);
 }
 
 function prevImage(){
-index=(index-1+images.length)%images.length;
-showImage(index);
+    index=(index-1+images.length)%images.length;
+    showImage(index);
 }
 
+// button ke liye global bana diya
+window.nextImage = nextImage;
+window.prevImage = prevImage;
+
+// auto slider
 setInterval(nextImage,3000);
 
 
-// COUNTDOWN (FIXED - NO RESET + 24 HOURS)
+/* =========================
+   ⏳ COUNTDOWN FIX (24hr stable)
+========================= */
+
 let endTime = localStorage.getItem("endTime");
 
-// FORCE CLEAN VALUE (safe fix)
 if (!endTime || isNaN(endTime)) {
   endTime = Date.now() + 24 * 60 * 60 * 1000;
   localStorage.setItem("endTime", endTime);
 }
 
 setInterval(() => {
+
   let remaining = Math.floor((endTime - Date.now()) / 1000);
 
   if (remaining <= 0) {
@@ -330,18 +646,101 @@ setInterval(() => {
   let min = Math.floor((remaining % 3600) / 60);
   let sec = remaining % 60;
 
-  sec = sec < 10 ? "0" + sec : sec;
-
   document.getElementById("countdown").innerHTML =
-    hours + ":" + min + ":" + sec;
+    hours + ":" + min + ":" + (sec<10?"0"+sec:sec);
 
-}, 1000);
+},1000);
 
 
-// LIVE USERS
-setInterval(()=>{
-document.getElementById("users").innerHTML=Math.floor(Math.random()*50)+20;
-},3000);
+/* =========================
+   ⭐ REVIEWS FIX
+========================= */
+
+let fakeReviews = [
+{name:"Rahul", email:"rahul@gmail.com", rating:5, comment:"बहुत बढ़िया product 👍"},
+{name:"Pooja", email:"pooja@gmail.com", rating:4, comment:"Quality achhi hai 😊"},
+{name:"Amit", email:"amit@gmail.com", rating:5, comment:"Fast delivery 🚀"},
+{name:"Neha", email:"neha@gmail.com", rating:4, comment:"Value for money 💰"},
+{name:"Ravi", email:"ravi@gmail.com", rating:5, comment:"Highly recommended 🔥"}
+];
+
+let realReviews = JSON.parse(localStorage.getItem("realReviews")) || [];
+let visibleCount = 5;
+
+function displayReviews(){
+    let list = document.getElementById("reviewList");
+    let btn = document.getElementById("seeMoreBtn");
+
+    if(!list) return;
+
+    list.innerHTML = "";
+
+    let allReviews = [...fakeReviews, ...realReviews];
+
+    allReviews.slice(0, visibleCount).forEach(r=>{
+        list.innerHTML += `
+        <div class="review-item">
+        <strong>${r.name}</strong> (${r.email}) - ${"⭐".repeat(r.rating)}<br>
+        ${r.comment}
+        </div>`;
+    });
+
+    btn.style.display = allReviews.length>visibleCount ? "block":"none";
+}
+
+function toggleReviews(){
+    let list = document.getElementById("reviewList");
+
+    if(list.style.display==="none" || list.style.display===""){
+        displayReviews();
+        list.style.display="block";
+    }else{
+        list.style.display="none";
+    }
+}
+
+function toggleForm(){
+    let form=document.getElementById("reviewForm");
+    form.style.display = (form.style.display==="none"||form.style.display==="")?"block":"none";
+}
+
+function submitForm(){
+
+    let name=document.getElementById("name").value;
+    let email=document.getElementById("email").value;
+    let rating=document.getElementById("rating").value;
+    let comment=document.getElementById("comment").value;
+
+    if(name.length<2 || comment.length<5){
+        alert("Proper review likho");
+        return;
+    }
+
+    let newReview={name,email,rating,comment};
+
+    realReviews.push(newReview);
+    localStorage.setItem("realReviews",JSON.stringify(realReviews));
+
+    displayReviews();
+    document.getElementById("reviewList").style.display="block";
+
+    document.getElementById("reviewForm").reset();
+}
+
+
+// button access
+window.toggleReviews = toggleReviews;
+window.toggleForm = toggleForm;
+window.submitForm = submitForm;
+window.loadMoreReviews = function(){
+    visibleCount+=5;
+    displayReviews();
+};
+
+}; // 🔥 window.onload END
+
+
 </script>
+
 </body>
 </html>

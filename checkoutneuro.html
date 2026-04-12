@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout Page</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  margin:0;
+  background:#f5f5f5;
+}
+
+/* HEADER */
+header{
+  background:#1e90ff;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+  font-size:22px;
+}
+
+/* CONTAINER */
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+/* BOX */
+.box{
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* PRODUCT */
+.product{
+  display:flex;
+  gap:15px;
+  align-items:center;
+}
+
+.product img{
+  width:80px;
+  border-radius:10px;
+}
+
+/* FORM */
+input, textarea, select{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+/* ORDER BUTTON */
+button{
+  width:100%;
+  padding:12px;
+  background:#ff9800;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#e68900;
+}
+
+/* SUMMARY */
+.summary p{
+  display:flex;
+  justify-content:space-between;
+}
+
+/* SUCCESS */
+.success{
+  display:none;
+  text-align:center;
+  padding:20px;
+  background:#d4edda;
+  color:#155724;
+  border-radius:10px;
+  margin-top:20px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .container{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+🛒 Secure Checkout
+</header>
+
+<div class="container">
+
+<!-- LEFT SIDE -->
+<div class="box">
+
+  <h2>Shipping Details</h2>
+
+  <input type="text" id="name" placeholder="Full Name" required>
+  <input type="email" id="email" placeholder="Email Address" required>
+  <input type="text" id="phone" placeholder="Phone Number" required>
+  <textarea id="address" placeholder="Full Address" required></textarea>
+  <input type="text" id="pincode" placeholder="PIN Code" required>
+
+  <h3>Payment Method</h3>
+
+  <select id="payment">
+    <option value="cod">Cash on Delivery</option>
+    <option value="card">Debit/Credit Card</option>
+    <option value="upi">UPI Payment</option>
+  </select>
+
+</div>
+
+<!-- RIGHT SIDE -->
+<div class="box">
+
+  <h2>Order Summary</h2>
+
+  <div class="product">
+    <img src="https://via.placeholder.com/80" alt="">
+    <div>
+      <b>Neuro Serge</b>
+      <p>Brain Support Supplement</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="summary">
+    <p><span>Product Price</span><span>₹999</span></p>
+    <p><span>Discount</span><span>-₹300</span></p>
+    <p><span>Shipping</span><span>FREE</span></p>
+    <hr>
+    <p><b>Total</b><b>₹699</b></p>
+  </div>
+
+  <button onclick="placeOrder()">Place Order</button>
+
+  <div class="success" id="success">
+    🎉 Order Placed Successfully!<br>
+    We will contact you soon.
+  </div>
+
+</div>
+
+</div>
+
+<script>
+
+function placeOrder(){
+
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let phone = document.getElementById("phone").value;
+  let address = document.getElementById("address").value;
+  let pincode = document.getElementById("pincode").value;
+
+  if(name=="" || email=="" || phone=="" || address=="" || pincode==""){
+    alert("Please fill all details");
+    return;
+  }
+
+  // Save order (demo)
+  let order = {
+    name,email,phone,address,pincode,
+    time: new Date()
+  };
+
+  let orders = JSON.parse(localStorage.getItem("orders")) || [];
+  orders.push(order);
+  localStorage.setItem("orders", JSON.stringify(orders));
+
+  document.getElementById("success").style.display="block";
+
+  setTimeout(()=>{
+    location.reload();
+  },3000);
+}
+
+</script>
+
+</body>
+</html>
