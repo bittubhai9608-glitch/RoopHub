@@ -225,3 +225,9 @@ img.addEventListener("touchend", e=>{
 
 
 
+
+
+
+
+
+

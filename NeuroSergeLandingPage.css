@@ -175,21 +175,16 @@ border-radius:10px;
 .footer-links a:hover {
   text-decoration: underline;
 }
-<!-- BOx 
+
+
+
+
+
 .box-container {
   display: grid;
   grid-template-columns: 1fr 1fr; /* 2 column (left-right) */
   gap: 10px;
   padding: 10px;
-}
-
-.box {
-  background: linear-gradient(135deg, #4facfe, #8e44ad);
-  color: white;
-  padding: 15px;
-  border-radius: 12px;
-  text-align: left;
-  font-size: 14px;
 }
 
 .box h3 {
@@ -201,6 +196,10 @@ border-radius:10px;
     grid-template-columns: 1fr 1fr 1fr; /* desktop me 3 box */
   }
 }
+
+
+
+
 
 
 

@@ -338,54 +338,7 @@ body {
     <button id="seeMoreBtn" onclick="loadMoreReviews()" style="display:none;">
 See More
 </button>
-
 </div>
-<!--
-<div id="reviews"></div>
-<div>
-<button id="showReviewsBtn">📖 Read All Reviews</button>
-
-<h3 class="review-title">Write a Review</h3>
-<form id="reviewForm">
-    <input type="text" id="name" placeholder="Your Name" required>
-
-    <select id="rating" required>
-        <option value="">Select Rating</option>
-        <option value="5">⭐⭐⭐⭐⭐</option>
-        <option value="4">⭐⭐⭐⭐</option>
-        <option value="3">⭐⭐⭐</option>
-        <option value="2">⭐⭐</option>
-        <option value="1">⭐</option>
-    </select>
-
-    <textarea id="comment" rows="4" placeholder="Write your review..." required></textarea>
-
-    <button type="submit">✅ Submit Your Review</button>
-</form> -->
-<!--
-<div id="reviews"></div>
-<h3 class="review-title">Write a Review</h3>
-<form id="reviewForm">
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name" required><br>
-    <label for="rating">Rating:</label><br>
-    <select id="rating" name="rating" required>
-        <option value="">Select</option>
-        <option value="5">⭐⭐⭐⭐⭐</option>
-        <option value="4">⭐⭐⭐⭐</option>
-        <option value="3">⭐⭐⭐</option>
-        <option value="2">⭐⭐</option>
-        <option value="1">⭐</option>
-    </select><br>
-    <label for="comment">Comment:</label><br>
-    <textarea id="comment" name="comment" rows="4" required></textarea><br>
-    <button type="submit">✅ Submit Your Review</button>
--->
-<!-- REVIEWS 
-<div class="reviews">
-<h2>Customer Reviews</h2>
-<p>⭐⭐⭐⭐⭐ Amazing results!</p>
-</div> -->
 
 <!-- BADGES -->
 <div class="badges">
@@ -400,11 +353,6 @@ See More
 <a href="">Order Now 35% Off</a>
 </div>
 
-<!-- ✅ STICKY BUY 
-<div class="sticky">
-<a href="#">🔥 Buy Now - Limited Offer</a>
-</div>
--->
 
 
 <footer class="footer">
@@ -421,28 +369,30 @@ See More
 
 // Fake reviews (always top)
 let fakeReviews = [
-    { name: "These are general user experiences based on research and feedback." },
-    {name:"Michael Johnson", email:"michaeljo37@gmail.com", rating:5, comment:"Good product. Works well for me.👍"},
-    {name:"Daniel M.", email:"daniel009gmail.com", rating:4, comment:"I was struggling with this issue for a long time and tried multiple products, but nothing really worked. After using this, I started noticing changes within a few days. The best part is that it’s very easy to use and doesn’t feel complicated at all. I feel much more confident now and would definitely recommend it to others."},
-    {name:"Kavin R.", email:"kavin@gmail.com", rating:5, comment:"like how convenient this is. After regular use, I felt a bit more consistent with my daily activities.”"},
-    {name:"Ashley Thompson", email:"ashleyt9@gmail.com", rating:4, comment:"“At first, I wasn’t sure if this would make any difference, but after trying it consistently, I started noticing small changes. It’s easy to include in my routine and doesn’t take much effort. Worth trying if you’re curious."},
+    { name: "These are general user experiences based on research and feedback.", country_name:"", rating:"0", comment:""},
+    {name:"Michael Johnson", country_name:"USA", rating:5, comment:"Good product. Works well for me.👍"},
+    {name:"Liam Smith", country_name:"Canada", rating:4, comment:"I was struggling with this issue for a long time and tried multiple products, but nothing really worked. After using this, I started noticing changes within a few days. The best part is that it’s very easy to use and doesn’t feel complicated at all. I feel much more confident now and would definitely recommend it to others."},
+    {name:"Kavin Rayav", country_name:"India", rating:5, comment:"like how convenient this is. After regular use, I felt a bit more consistent with my daily activities.”"},
+    {name:"Oliver Brown", country_name:"UK", rating:4, comment:"“At first, I wasn’t sure if this would make any difference, but after trying it consistently, I started noticing small changes. It’s easy to include in my routine and doesn’t take much effort. Worth trying if you’re curious."},
 ];
 
 // Load real reviews (user वाले)
 let realReviews = JSON.parse(localStorage.getItem("realReviews")) || [];
+let visibleCount = 5;
 
 
 // Show/Hide reviews
 function toggleReviews(){
     let list = document.getElementById("reviewList");
 
-    if(list.style.display === "none"){
+    if(list.style.display === "none" || list.style.display === ""){
         displayReviews();
         list.style.display = "block";
     } else {
         list.style.display = "none";
     }
 }
+
 
 // Show form
 function toggleForm(){
@@ -462,7 +412,7 @@ function submitForm(){
         return;
     }
 
-    let newReview = {name,email,rating,comment};
+    let newReview = {name,country_name,rating,comment};
 
     // fake ke niche add hoga
     realReviews.push(newReview);
@@ -488,11 +438,12 @@ function displayReviews(){
     allReviews.slice(0, visibleCount).forEach(r => {
         list.innerHTML += `
         <div class="review-item">
-            <strong>${r.name}</strong> (${r.email}) - ${"⭐".repeat(r.rating)}<br>
+            <strong>${r.name}</strong> (${r.country_name}) - ${"⭐".repeat(r.rating)}<br>
             ${r.comment}
         </div>
         `;
     });
+    
 
     // See More button show/hide
     if(allReviews.length > visibleCount){
@@ -502,8 +453,17 @@ function displayReviews(){
     }
 }
 
+
 // ✅ PAGE LOAD FIX (सब कुछ load होने के बाद चलेगा)
 window.onload = function(){
+    window.toggleReviews = toggleReviews;
+window.toggleForm = toggleForm;
+window.submitForm = submitForm;
+window.loadMoreReviews = function(){
+    visibleCount+=5;
+    displayReviews();
+};
+    
 
 /* =========================
    🔥 SLIDER FIX
@@ -582,85 +542,9 @@ setInterval(() => {
    ⭐ REVIEWS FIX
 ========================= */
 
-let fakeReviews = [
-     { name: "👉These are general user experiences based on research and feedback." },
-     {name:"Michael Johnson", email:"michaeljo37@gmail.com", rating:5, comment:"Good product. Works well for me.👍"},
-    {name:"Daniel M.", email:"daniel009gmail.com", rating:4, comment:"I was struggling with this issue for a long time and tried multiple products, but nothing really worked. After using this, I started noticing changes within a few days. The best part is that it’s very easy to use and doesn’t feel complicated at all. I feel much more confident now and would definitely recommend it to others."},
-    {name:"Kavin R.", email:"kavin@gmail.com", rating:5, comment:"like how convenient this is. After regular use, I felt a bit more consistent with my daily activities.”"},
-    {name:"Ashley Thompson", email:"ashleyt9@gmail.com", rating:4, comment:"“At first, I wasn’t sure if this would make any difference, but after trying it consistently, I started noticing small changes. It’s easy to include in my routine and doesn’t take much effort. Worth trying if you’re curious."},
-];
-let realReviews = JSON.parse(localStorage.getItem("realReviews")) || [];
-let visibleCount = 5;
-
-function displayReviews(){
-    let list = document.getElementById("reviewList");
-    let btn = document.getElementById("seeMoreBtn");
-
-    if(!list) return;
-
-    list.innerHTML = "";
-
-    let allReviews = [...fakeReviews, ...realReviews];
-
-    allReviews.slice(0, visibleCount).forEach(r=>{
-        list.innerHTML += `
-        <div class="review-item">
-        <strong>${r.name}</strong> (${r.email}) - ${"⭐".repeat(r.rating)}<br>
-        ${r.comment}
-        </div>`;
-    });
-
-    btn.style.display = allReviews.length>visibleCount ? "block":"none";
-}
-
-function toggleReviews(){
-    let list = document.getElementById("reviewList");
-
-    if(list.style.display==="none" || list.style.display===""){
-        displayReviews();
-        list.style.display="block";
-    }else{
-        list.style.display="none";
-    }
-}
-
-function toggleForm(){
-    let form=document.getElementById("reviewForm");
-    form.style.display = (form.style.display==="none"||form.style.display==="")?"block":"none";
-}
-
-function submitForm(){
-
-    let name=document.getElementById("name").value;
-    let email=document.getElementById("email").value;
-    let rating=document.getElementById("rating").value;
-    let comment=document.getElementById("comment").value;
-
-    if(name.length<2 || comment.length<5){
-        alert("Proper review likho");
-        return;
-    }
-
-    let newReview={name,email,rating,comment};
-
-    realReviews.push(newReview);
-    localStorage.setItem("realReviews",JSON.stringify(realReviews));
-
-    displayReviews();
-    document.getElementById("reviewList").style.display="block";
-
-    document.getElementById("reviewForm").reset();
-}
-
 
 // button access
-window.toggleReviews = toggleReviews;
-window.toggleForm = toggleForm;
-window.submitForm = submitForm;
-window.loadMoreReviews = function(){
-    visibleCount+=5;
-    displayReviews();
-};
+
 
 }; // 🔥 window.onload END
 
