@@ -768,42 +768,27 @@ nav button:hover {
 
 
 
-/* Default (Desktop bhi same reh sakta hai) */
-.footer-menu {
+/* Default */
+.nav-right {
   display: flex;
-  justify-content: space-between;
-  padding: 20px;
+  gap: 10px;
 }
 
-/* Har column */
-.column {
-  flex: 1;
-}
-
-/* 📱 Mobile view */
+/* 📱 Mobile ke liye */
 @media (max-width: 600px) {
-  .footer-menu {
-    flex-direction: row;   /* 3 column side by side */
-    text-align: center;
+  .nav-right {
+    flex-direction: row;        /* 🔥 horizontal */
+    justify-content: space-between;
   }
 
-  .column {
-    flex: 1;
-  }
-
-  .column h4 {
-    margin-bottom: 10px;
-  }
-
-  .column p {
-    margin: 5px 0;
+  .nav-right button {
+    flex: 1;                   /* equal width */
+    padding: 10px;
     font-size: 14px;
   }
 }
-.column {
-  border-right: 1px solid #ddd;
-}
-
-.column:last-child {
-  border-right: none;
+@media (max-width: 600px) {
+  .nav-right {
+    overflow-x: auto;   /* scroll ho jayega */
+  }
 }
