@@ -628,24 +628,15 @@ nav button:hover {
     justify-content: center;
   }
   .nav-left, .nav-right {
-  width: 100%;
-  justify-content: space-between;   /* 🔥 main fix */
-  gap: 6px;
-}
-
-/* 🔥 button alag likhna hai */
-.nav-right button {
-  flex: 1;   /* equal size */
-  min-width: 0;
-}
+    width: 100%;
+    justify-content: center;
+    gap: 6px;
+  }
   nav button {
     font-size: 13px;
     padding: 8px 10px;
-    min-width: 0;
+    min-width: 110px;
   }
-  .nav-right button {
-  flex: 1;
-}
 }
 
 @media (max-width: 768px) {
@@ -705,7 +696,7 @@ nav button:hover {
     font-size: 12px;
     padding: 6px 8px;
     min-width: 70px;
-    flex: 1;
+    flex: 1 1 calc(50% - 10px);
   }
   .nav-left, .nav-right {
     justify-content: center;
@@ -768,33 +759,4 @@ nav button:hover {
     width: 100vw;
     overflow-x: hidden;
   }
-}
-
-
-
-
-
-
-
-/* 🔥 FINAL FIX - MOBILE HORIZONTAL MENU */
-@media (max-width: 600px) {
-
-  /* navRight ko force show karo */
-  #navRight {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    width: 100% !important;
-  }
-
-  /* buttons ko line me lao */
-  #navRight button {
-    flex: 1 !important;
-    margin: 2px;
-    padding: 8px 5px;
-    font-size: 12px;
-    min-width: 0 !important;
-    white-space: nowrap; /* text break na ho */
-  }
-
 }
