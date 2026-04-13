@@ -138,8 +138,8 @@ margin-top:20px;
 <body>
 
 <header>
-<h1>Neuro Serge – Unlock Your Brain’s Full Potential</h1>
-<p>Boost Memory, Achieve Laser Focus & Improve Mental Clarity in Just Days – Without Harmful Chemicals</p>
+<h1>Neuro Serge</h1>
+<p>Boost memory, improve focus & get mental clarity — naturally</p>
 <a href="#buy" class="cta-btn">Get Discount Now</a><br><b>⭐⭐⭐⭐⭐ 4.8/5 (2,347 Reviews)</b>
     <br><b><i>✔ Trusted by 3,000+ users</i></b>
 </header>
@@ -340,81 +340,6 @@ See More
 </button>
 
 </div>
-
-<script>
-// Load saved reviews OR default fake reviews
-let reviews = JSON.parse(localStorage.getItem("reviews")) || [
-    {name:"Rahul", email:"rahul@gmail.com", rating:5, comment:"बहुत बढ़िया product 👍"},
-    {name:"Pooja", email:"pooja@gmail.com", rating:4, comment:"Quality achhi hai 😊"},
-    {name:"Amit", email:"amit@gmail.com", rating:5, comment:"Fast delivery 🚀"},
-    {name:"Amit", email:"amit@gmail.com", rating:5, comment:"Fast delivery 🚀"},
-    {name:"Amit", email:"amit@gmail.com", rating:5, comment:"Fast delivery 🚀"},
-    {name:"Amit", email:"amit@gmail.com", rating:5, comment:"Fast delivery 🚀"},
-    {name:"Neha", email:"neha@gmail.com", rating:4, comment:"Value for money 💰"},
-    {name:"Ravi", email:"ravi@gmail.com", rating:5, comment:"Highly recommended 🔥"}
-];
-
-// Show/Hide reviews
-function toggleReviews(){
-    let list = document.getElementById("reviewList");
-
-    if(list.style.display === "none"){
-        displayReviews();
-        list.style.display = "block";
-    } else {
-        list.style.display = "none";
-    }
-}
-
-// Show form
-function toggleForm(){
-    let form = document.getElementById("reviewForm");
-    form.style.display = (form.style.display === "none") ? "block" : "none";
-}
-
-// Submit review
-function submitForm(){
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let rating = document.getElementById("rating").value;
-    let comment = document.getElementById("comment").value;
-
-    if(name.length < 2 || comment.length < 5){
-        alert("Proper review likho");
-        return;
-    }
-
-    let newReview = {name,email,rating,comment};
-
-    // Always top par add
-    reviews.unshift(newReview);
-
-    // Permanent save
-    localStorage.setItem("reviews", JSON.stringify(reviews));
-
-    // Show updated reviews
-    displayReviews();
-    document.getElementById("reviewList").style.display = "block";
-
-    // Reset form
-    document.getElementById("reviewForm").reset();
-}
-
-// Display reviews
-function displayReviews(){
-    let list = document.getElementById("reviewList");
-    list.innerHTML = "";
-
-    reviews.forEach(r => {
-        list.innerHTML += `
-        <div class="review-item">
-            <strong>${r.name}</strong> (${r.email}) - ${"⭐".repeat(r.rating)}<br>
-            ${r.comment}
-        </div>
-        `;
-    });
-}
-</script>
 <!--
 <div id="reviews"></div>
 <div>
@@ -496,6 +421,7 @@ function displayReviews(){
 
 // Fake reviews (always top)
 let fakeReviews = [
+    { name: "These are general user experiences based on research and feedback." },
     {name:"Michael Johnson", email:"michaeljo37@gmail.com", rating:5, comment:"Good product. Works well for me.👍"},
     {name:"Daniel M.", email:"daniel009gmail.com", rating:4, comment:"I was struggling with this issue for a long time and tried multiple products, but nothing really worked. After using this, I started noticing changes within a few days. The best part is that it’s very easy to use and doesn’t feel complicated at all. I feel much more confident now and would definitely recommend it to others."},
     {name:"Kavin R.", email:"kavin@gmail.com", rating:5, comment:"like how convenient this is. After regular use, I felt a bit more consistent with my daily activities.”"},
@@ -657,13 +583,12 @@ setInterval(() => {
 ========================= */
 
 let fakeReviews = [
-{name:"Rahul", email:"rahul@gmail.com", rating:5, comment:"बहुत बढ़िया product 👍"},
-{name:"Pooja", email:"pooja@gmail.com", rating:4, comment:"Quality achhi hai 😊"},
-{name:"Amit", email:"amit@gmail.com", rating:5, comment:"Fast delivery 🚀"},
-{name:"Neha", email:"neha@gmail.com", rating:4, comment:"Value for money 💰"},
-{name:"Ravi", email:"ravi@gmail.com", rating:5, comment:"Highly recommended 🔥"}
+     { name: "👉These are general user experiences based on research and feedback." },
+     {name:"Michael Johnson", email:"michaeljo37@gmail.com", rating:5, comment:"Good product. Works well for me.👍"},
+    {name:"Daniel M.", email:"daniel009gmail.com", rating:4, comment:"I was struggling with this issue for a long time and tried multiple products, but nothing really worked. After using this, I started noticing changes within a few days. The best part is that it’s very easy to use and doesn’t feel complicated at all. I feel much more confident now and would definitely recommend it to others."},
+    {name:"Kavin R.", email:"kavin@gmail.com", rating:5, comment:"like how convenient this is. After regular use, I felt a bit more consistent with my daily activities.”"},
+    {name:"Ashley Thompson", email:"ashleyt9@gmail.com", rating:4, comment:"“At first, I wasn’t sure if this would make any difference, but after trying it consistently, I started noticing small changes. It’s easy to include in my routine and doesn’t take much effort. Worth trying if you’re curious."},
 ];
-
 let realReviews = JSON.parse(localStorage.getItem("realReviews")) || [];
 let visibleCount = 5;
 
