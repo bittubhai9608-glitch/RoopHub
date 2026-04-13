@@ -734,7 +734,7 @@ nav button:hover {
     padding: 12px;
   }
   .card h3 {
-    font-size: 1rem;
+    font-size: rem;
   }
   .card p, .price {
     font-size: 0.95rem;
@@ -760,3 +760,10 @@ nav button:hover {
     overflow-x: hidden;
   }
 }
+
+
+
+
+
+
+
