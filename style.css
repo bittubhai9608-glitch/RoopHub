@@ -760,3 +760,50 @@ nav button:hover {
     overflow-x: hidden;
   }
 }
+
+
+
+
+
+
+
+
+/* Default (Desktop bhi same reh sakta hai) */
+.footer-menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* Har column */
+.column {
+  flex: 1;
+}
+
+/* 📱 Mobile view */
+@media (max-width: 600px) {
+  .footer-menu {
+    flex-direction: row;   /* 3 column side by side */
+    text-align: center;
+  }
+
+  .column {
+    flex: 1;
+  }
+
+  .column h4 {
+    margin-bottom: 10px;
+  }
+
+  .column p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+}
+.column {
+  border-right: 1px solid #ddd;
+}
+
+.column:last-child {
+  border-right: none;
+}
