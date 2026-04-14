@@ -401,17 +401,361 @@ See More
 
 
 
+
+
+
+
+
 <footer class="footer">
   <p>© 2026 RoopHUb official</p>
 
   <div class="bottom-menu">
     <button onclick="openModal('about')">About Us</button>
     <button onclick="openModal('contact')">Contact</button>
+    <button onclick="openModal('disclaimer')">Disclaimer</button>
     <button onclick="openModal('faq')">FAQ</button>
-    <button onclick="openModal('terms')">Terms</button>
+    <button onclick="openModal('terms')">Terms & Conditions</button>
+    <button onclick="openModal('privacy')">Privacy Policy</button>
   </div>
 </footer>
+
+
+
+<!-- PRIVACY POLICY FULL PAGE MODAL -->
+<div id="privacyModal" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+z-index:9999;
+overflow-y:scroll;
+padding:20px;
+">
+
+    <button onclick="closeModal()" style="
+    position:fixed;
+    right:20px;
+    top:20px;
+    padding:10px 15px;
+    background:red;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    ">
+    Close ✖
+    </button>
+
+    <h1>Privacy Policy - RoopHub</h1>
+
+    <p>
+    At RoopHub, we respect your privacy and are committed to protecting any personal information you share with us.  
+    This Privacy Policy explains how we collect, use, and safeguard your information when you use our website.
+
+    We may collect basic user data such as name, email, and interaction details when you use features like contact forms or reviews.  
+    This information is used only to improve user experience and provide better services.
+
+    We do not sell, trade, or rent your personal information to third parties.  
+    However, we may use trusted third-party services for analytics or advertisements to improve our platform.
+
+    Cookies may be used to enhance your browsing experience and analyze website traffic.  
+    You can choose to disable cookies through your browser settings if you prefer.
+
+    We take appropriate security measures to protect your data from unauthorized access or misuse.  
+    However, no online system is 100% secure, so we cannot guarantee absolute security.
+
+    By using RoopHub, you agree to this Privacy Policy and consent to the data practices described here.  
+    We may update this policy from time to time, and users are encouraged to review it regularly.
+    </p>
+
+</div>
+<!-- TERMS & CONDITIONS FULL PAGE MODAL -->
+<div id="termsModal" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+z-index:9999;
+overflow-y:scroll;
+padding:20px;
+">
+
+    <button onclick="closeModal()" style="
+    position:fixed;
+    right:20px;
+    top:20px;
+    padding:10px 15px;
+    background:red;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    ">
+    Close ✖
+    </button>
+
+    <h1>Terms & Conditions - RoopHub</h1>
+
+    <p>
+    Welcome to RoopHub. By accessing and using this website, you agree to be bound by the following terms and conditions.  
+    If you do not agree with any part of these terms, please do not use our website.
+
+    RoopHub provides content, product information, and digital services for general informational purposes only.  
+    We reserve the right to modify or update these terms at any time without prior notice.
+
+    Users agree to use this website only for lawful purposes. Any misuse, hacking attempt, or harmful activity is strictly prohibited.  
+    We are not responsible for any loss or damage caused by the use of our website.
+
+    All content on RoopHub, including text, images, and design, is protected and may not be copied or reused without permission.
+
+    We may include third-party links or advertisements. We are not responsible for their content or services.
+
+    By continuing to use RoopHub, you agree that you have read, understood, and accepted these Terms & Conditions.
+    </p>
+
+</div>
+<!-- FAQ FULL PAGE MODAL -->
+<div id="faqModal" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+z-index:9999;
+overflow-y:scroll;
+padding:20px;
+">
+
+    <button onclick="closeModal()" style="
+    position:fixed;
+    right:20px;
+    top:20px;
+    padding:10px 15px;
+    background:red;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    ">
+    Close ✖
+    </button>
+
+    <h1>Frequently Asked Questions (FAQ)</h1>
+
+    <h3>1. What is RoopHub?</h3>
+    <p>
+    RoopHub is a digital platform designed to provide users with simple, fast and useful online experience.
+    </p>
+
+    <h3>2. Is this product safe?</h3>
+    <p>
+    Yes, all products and information shared on RoopHub are based on general research and safe usage guidelines.
+    </p>
+
+    <h3>3. How can I contact support?</h3>
+    <p>
+    You can use the Contact Us section to send your message or query. We usually reply within 24–48 hours.
+    </p>
+
+    <h3>4. Do you provide refunds?</h3>
+    <p>
+    Refund policies depend on the product or service provider. Please check individual product details.
+    </p>
+
+    <h3>5. Is RoopHub free to use?</h3>
+    <p>
+    Yes, browsing and using RoopHub is completely free for all users.
+    </p>
+
+    <h3>6. Can I trust the information?</h3>
+    <p>
+    We try our best to provide accurate and updated information, but users should always verify important details.
+    </p>
+
+</div>
+<!-- DISCLAIMER FULL PAGE MODAL -->
+<div id="disclaimerModal" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+z-index:9999;
+overflow-y:scroll;
+padding:20px;
+">
+
+    <button onclick="closeModal()" style="
+    position:fixed;
+    right:20px;
+    top:20px;
+    padding:10px 15px;
+    background:red;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    ">
+    Close ✖
+    </button>
+
+    <h1>Disclaimer - RoopHub</h1>
+
+    <p>
+    The information provided on RoopHub is for general informational and educational purposes only.  
+    All content on this website is published in good faith and for general use.
+
+    We do not make any warranties about the completeness, reliability, and accuracy of this information.  
+    Any action you take based on the information on this website is strictly at your own risk.  
+    RoopHub will not be liable for any losses and/or damages in connection with the use of our website.
+
+    Our content may include product descriptions, reviews, and recommendations.  
+    These are based on general research, user feedback, and available information at the time.  
+    Individual results may vary from person to person.
+
+    RoopHub may also contain affiliate links or promotional content.  
+    This means we may earn a small commission if you purchase through certain links, at no extra cost to you.
+
+    We always aim to provide honest and useful content, but we encourage users to do their own research before making any decisions.
+
+    By using our website, you hereby consent to our disclaimer and agree to its terms.
+    </p>
+
+</div>
+<!-- CONTACT US FULL PAGE MODAL -->
+<div id="contactModal" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+z-index:9999;
+overflow-y:scroll;
+padding:20px;
+">
+
+    <button onclick="closeModal()" style="
+    position:fixed;
+    right:20px;
+    top:20px;
+    padding:10px 15px;
+    background:red;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    ">
+    Close ✖
+    </button>
+
+    <h1>Contact RoopHub</h1>
+
+    <p>
+    If you have any questions, suggestions, or business inquiries, feel free to contact us.  
+    We are always ready to help our users and respond as quickly as possible.
+
+    RoopHub values every user message and feedback because it helps us improve our platform.  
+    Whether it is a technical issue, product query, or general question, our team is here to assist you.
+
+    You can reach us anytime through email or social channels. We try to respond within 24–48 hours.  
+    Your satisfaction is our priority and we always aim to provide the best support experience.
+
+    Thank you for being part of RoopHub.
+    </p>
+
+    <hr>
+
+    <h3>Email</h3>
+    <p>support@roophub.com</p>
+
+    <h3>Phone</h3>
+    <p>+91 98765 43210</p>
+
+    <h3>Location</h3>
+    <p>India</p>
+
+    <h3>Send Message</h3>
+
+    <input type="text" placeholder="Your Name" style="width:100%;padding:10px;margin:5px 0;">
+    <input type="email" placeholder="Your Email" style="width:100%;padding:10px;margin:5px 0;">
+    <textarea placeholder="Your Message" style="width:100%;padding:10px;margin:5px 0;height:120px;"></textarea>
+
+    <button style="
+    padding:12px 20px;
+    background:green;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    ">
+    Send Message
+    </button>
+
+</div>
+
+<!-- ABOUT US FULL PAGE MODAL -->
+<div id="aboutModal" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+z-index:9999;
+overflow-y:scroll;
+padding:20px;
+">
+
+    <button onclick="closeModal()" style="
+    position:fixed;
+    right:20px;
+    top:20px;
+    padding:10px 15px;
+    background:red;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    ">
+    Close ✖
+    </button>
+
+    <h1>About RoopHub</h1>
+
+    <p>
+    RoopHub is a modern digital platform designed to provide users with a smooth, fast, and reliable online experience. Our goal is to make technology simple and accessible for everyone, regardless of their technical background. We focus on delivering high-quality content, tools, and services that help users improve their daily digital life.
+
+    RoopHub was created with a vision to build a user-friendly ecosystem where people can explore information, products, and services without confusion. We believe that the internet should be easy, clean, and helpful, not complicated. That is why our platform is designed with simplicity and performance in mind.
+
+    Our mission is to continuously improve and upgrade the user experience. We listen carefully to user feedback and try to implement changes that matter. Every feature we build is tested for speed, usability, and mobile responsiveness so that users can enjoy a seamless experience on any device.
+
+    At RoopHub, we value trust and transparency. We make sure that all the information provided on our platform is reliable and useful. Whether you are browsing content, exploring products, or interacting with features, our aim is to give you a smooth journey.
+
+    We also focus on innovation. The digital world is changing rapidly, and we want to stay ahead by introducing smart features and modern design improvements. Our team works constantly to enhance performance and add new functionalities that make the platform more powerful.
+
+    Security and user safety are also our top priorities. We ensure that user data is protected and the platform remains safe for everyone. We do not compromise on quality or privacy.
+
+    RoopHub is not just a website, it is a growing digital ecosystem built for users who want simplicity and performance together. We are committed to making it better every day and providing long-term value to our users.
+
+    Thank you for being part of RoopHub. Your support motivates us to improve and innovate continuously.
+    </p>
+
+</div>
 <script>
+    
 
 // Fake reviews (always top)
 let fakeReviews = [
@@ -614,6 +958,8 @@ setInterval(() => {
 },1000);
 
 
+
+
 /* =========================
    ⭐ REVIEWS FIX
 ========================= */
@@ -624,6 +970,152 @@ setInterval(() => {
 
 }; // 🔥 window.onload END
 
+function openModal(type){
+    if(type === "about"){
+        document.getElementById("aboutModal").style.display = "block";
+    }
+}
+
+function closeModal(){
+    document.getElementById("aboutModal").style.display = "none";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+function openModal(type){
+    if(type === "about"){
+        document.getElementById("aboutModal").style.display = "block";
+    }
+
+    if(type === "contact"){
+        document.getElementById("contactModal").style.display = "block";
+    }
+}
+
+function closeModal(){
+    document.getElementById("aboutModal").style.display = "none";
+    document.getElementById("contactModal").style.display = "none";
+}
+function openModal(type){
+
+    if(type === "about"){
+        document.getElementById("aboutModal").style.display = "block";
+    }
+
+    if(type === "contact"){
+        document.getElementById("contactModal").style.display = "block";
+    }
+
+    if(type === "disclaimer"){
+        document.getElementById("disclaimerModal").style.display = "block";
+    }
+}
+
+function closeModal(){
+    document.getElementById("aboutModal").style.display = "none";
+    document.getElementById("contactModal").style.display = "none";
+    document.getElementById("disclaimerModal").style.display = "none";
+}
+function openModal(type){
+
+    if(type === "about"){
+        document.getElementById("aboutModal").style.display = "block";
+    }
+
+    if(type === "contact"){
+        document.getElementById("contactModal").style.display = "block";
+    }
+
+    if(type === "disclaimer"){
+        document.getElementById("disclaimerModal").style.display = "block";
+    }
+
+    if(type === "faq"){
+        document.getElementById("faqModal").style.display = "block";
+    }
+}
+
+function closeModal(){
+    document.getElementById("aboutModal").style.display = "none";
+    document.getElementById("contactModal").style.display = "none";
+    document.getElementById("disclaimerModal").style.display = "none";
+    document.getElementById("faqModal").style.display = "none";
+}
+
+function openModal(type){
+
+    if(type === "about"){
+        document.getElementById("aboutModal").style.display = "block";
+    }
+
+    if(type === "contact"){
+        document.getElementById("contactModal").style.display = "block";
+    }
+
+    if(type === "disclaimer"){
+        document.getElementById("disclaimerModal").style.display = "block";
+    }
+
+    if(type === "faq"){
+        document.getElementById("faqModal").style.display = "block";
+    }
+
+    if(type === "terms"){
+        document.getElementById("termsModal").style.display = "block";
+    }
+}
+
+function closeModal(){
+    document.getElementById("aboutModal").style.display = "none";
+    document.getElementById("contactModal").style.display = "none";
+    document.getElementById("disclaimerModal").style.display = "none";
+    document.getElementById("faqModal").style.display = "none";
+    document.getElementById("termsModal").style.display = "none";
+}
+function openModal(type){
+
+    if(type === "about"){
+        document.getElementById("aboutModal").style.display = "block";
+    }
+
+    if(type === "contact"){
+        document.getElementById("contactModal").style.display = "block";
+    }
+
+    if(type === "disclaimer"){
+        document.getElementById("disclaimerModal").style.display = "block";
+    }
+
+    if(type === "faq"){
+        document.getElementById("faqModal").style.display = "block";
+    }
+
+    if(type === "terms"){
+        document.getElementById("termsModal").style.display = "block";
+    }
+
+    if(type === "privacy"){
+        document.getElementById("privacyModal").style.display = "block";
+    }
+}
+
+function closeModal(){
+    document.getElementById("aboutModal").style.display = "none";
+    document.getElementById("contactModal").style.display = "none";
+    document.getElementById("disclaimerModal").style.display = "none";
+    document.getElementById("faqModal").style.display = "none";
+    document.getElementById("termsModal").style.display = "none";
+    document.getElementById("privacyModal").style.display = "none";
+}
 
 </script>
 
