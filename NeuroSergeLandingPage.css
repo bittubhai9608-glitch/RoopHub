@@ -4,10 +4,10 @@
     padding:0;
     box-sizing:border-box;
 }
-
 body{
     background:#eaeaea;
-    font-family:sans-serif;
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.5;
 }
 
 /* CONTAINER */
@@ -25,7 +25,7 @@ body{
 /* IMAGE */
 .slider img {
     width:100%;
-    max-width:500px;
+    max-width:100px;
     background: #000; /* 👉 dark background for better contrast */
     border-radius:15px;
     transition: opacity 0.5s ease-in-out, transform 0.5s;
@@ -73,7 +73,7 @@ body{
 .hero{
     background: linear-gradient(135deg, #1e88e5, #1565c0);
     height: 240px;
-    background-size: 90%;
+    background-size: cover;
     background-position: center;
     padding:40px 15px;
     text-align:center;
@@ -102,8 +102,8 @@ margin-bottom:5px;
 
 /* TEXT */
 .review-box p{
-font-size:13px;
-line-height:1.4;
+font-size:15px;
+line-height:1.6;
 }
 
 /* FORM MOBILE */
@@ -151,13 +151,15 @@ color:#fff;
 border:none;
 border-radius:10px;
 }
-.footer {
-  text-align: center;
-  padding: 15px;
-  background: #111;
-  color: white;
+.footer-container {
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  text-align:center;
+  padding:15px;
+  background:#111;
+  color:white;
 }
-
 .footer-links {
   display: flex;
   justify-content: center;
@@ -182,7 +184,7 @@ border-radius:10px;
 
 .box-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 column (left-right) */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 10px;
   padding: 10px;
 }
@@ -195,6 +197,107 @@ border-radius:10px;
   .box-container {
     grid-template-columns: 1fr 1fr 1fr; /* desktop me 3 box */
   }
+}
+
+
+
+/* HEADER CLEAN */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
+}
+
+.logo {
+  height: 60px;
+  filter: brightness(1) contrast(1);
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+#animatedHeading {
+  margin: 0;
+  color: #fe083e;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.tagline {
+  color: #00ff99;
+  font-size: 14px;
+  margin-top: -5px;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .box-container {
+    grid-template-columns: 1fr;
+  }
+
+  .slider img {
+    max-height: 220px;
+    object-fit: cover;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+}
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .box-container {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+ /* =========================
+   ABOUT MODAL SCROLL FIX
+========================= */
+
+#aboutFull {
+  max-height: 80vh;   /* screen height limit */
+  overflow-y: auto;   /* SCROLL ON */
+  padding: 10px;
+}
+
+.modal-content {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+
+#aboutFull {
+  scroll-behavior: smooth;
 }
 
 
