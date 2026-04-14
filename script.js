@@ -260,3 +260,44 @@ loadProducts('Men Health');
 function openProduct(link) {
   window.location.href = link;
 }
+
+
+document.getElementById("aboutFull").style.display = "block";
+document.getElementById("aboutFull").style.display = "none";
+
+function openPrivacyPolicy(){
+  document.getElementById("privacyPolicyModal").style.display = "block";
+}
+
+function closePrivacyPolicy(){
+  document.getElementById("privacyPolicyModal").style.display = "none";
+}
+
+
+
+function openTerms(){
+  document.getElementById("termsModal").style.display = "block";
+}
+
+function closeTerms(){
+  document.getElementById("termsModal").style.display = "none";
+}
+
+
+
+function openDisclaimer(){
+  document.getElementById("disclaimerModal").style.display = "block";
+}
+
+function closeDisclaimer(){
+  document.getElementById("disclaimerModal").style.display = "none";
+}
+
+
+function openFAQ(){
+  document.getElementById("faqModal").style.display = "block";
+}
+
+function closeFAQ(){
+  document.getElementById("faqModal").style.display = "none";
+}

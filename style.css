@@ -762,6 +762,127 @@ nav button:hover {
 }
 
 
+ /* =========================
+   ABOUT MODAL SCROLL FIX
+========================= */
+
+#aboutFull {
+  max-height: 80vh;   /* screen height limit */
+  overflow-y: auto;   /* SCROLL ON */
+  padding: 10px;
+}
+
+.modal-content {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+
+#aboutFull {
+  scroll-behavior: smooth;
+}
+
+
+
+
+
+#privacyPolicyModal .modal-content{
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+
+
+#termsModal .modal-content{
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+
+
+#disclaimerModal .modal-content{
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+
+#faqModal .modal-content{
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+
+
+
+
+
+
+/* AMAZON STYLE FOOTER */
+.amazon-footer{
+  background:#232f3e;
+  color:white;
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  padding:40px 20px;
+}
+
+/* COLUMN */
+.footer-col{
+  min-width:200px;
+  margin:10px;
+}
+
+.footer-col h3{
+  font-size:16px;
+  margin-bottom:12px;
+  color:#ffffff;
+}
+
+/* LIST */
+.footer-col ul{
+  list-style:none;
+  padding:0;
+}
+
+.footer-col ul li{
+  margin:8px 0;
+  font-size:14px;
+  color:#ddd;
+  cursor:pointer;
+}
+
+.footer-col ul li:hover{
+  color:#ff9900;
+  text-decoration:underline;
+}
+
+/* LINKS */
+.footer-col a{
+  color:#ff9900;
+  text-decoration:none;
+}
+
+.footer-col a:hover{
+  text-decoration:underline;
+}
+
+/* BOTTOM BAR */
+.amazon-bottom{
+  background:#131a22;
+  color:#aaa;
+  text-align:center;
+  padding:12px;
+  font-size:13px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .amazon-footer{
+    flex-direction:column;
+    text-align:center;
+  }
+}
 
 
 

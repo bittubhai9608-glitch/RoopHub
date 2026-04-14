@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RoopHub</title>
   <link rel="stylesheet" href="style.css">
+  <meta name="description" content="RoopHub Affiliate Wellness Store India">
+<meta name="keywords" content="health, affiliate, wellness, products India">
 </head>
 <body>
-  <header style="display: flex; align-items: center; justify-content: center; gap: 15px; padding: 10px;">
-    
-    <img src="Images/RoophubLogo.jpeg" style="height: 60px; filter: brightness(1) contrast(1);">
-    <div style="display: flex; flex-direction: column; text-align: left;">
-        <h1 id="animatedHeading" style="margin: 0; color: #fe083e; font-size: 26px; font-weight: bold;">
+  <header>
+    <div class="header-text">
+        <h1 id="animatedHeading">
             ROOPHUB
         </h1>
-        <span style="color: #00ff99; font-size: 14px; margin-top: -5px;">
+        <span class="tagline">
             Online Affiliate Wellness
         </span>
     </div>
@@ -23,27 +23,15 @@
 <nav>
   <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation">View Top Deals</button>
   <div class="nav-left" id="navItems">
-    <button onclick="loadProducts('Men Health')">Men Health</button>
-    <button onclick="loadProducts('Weight Loss')">Weight Loss</button>
-    <button onclick="loadProducts('Brain Boost')">Brain Boost</button>
-    <button onclick="loadProducts('Skin Care')">Skin Care</button>
-    <!--
-    <button onclick="loadProducts('gadget')">Gadget📱</button>
-    <button onclick="loadProducts('electro')">Electro🔌</button>
-    <button onclick="loadProducts('fashion')">Fashion👗</button>
-    <button onclick="loadProducts('health')">Health💪</button>
-    <button onclick="loadProducts('beauty')">Beauty💄</button>
-    <button onclick="loadProducts('mobile')">Mobile📲</button>
-    <button onclick="loadProducts('laptop')">Laptop💻</button>
-    <button onclick="loadProducts('kids')">Kids🧸</button>
-    <button onclick="loadProducts('gifts')">Gifts🎁</button>
-    <button onclick="loadProducts('books')">Books📚</button>
-    <button onclick="loadProducts('digital')">Digital🌐</button> -->
+    <button onclick="loadProducts('Men Health')" aria-label="Men Health Products">Men Health</button>
+    <button onclick="loadProducts('Weight Loss')" aria-label="Weight Loss Products">Weight Loss</button>
+    <button onclick="loadProducts('Brain Boost')" aria-label="Brain Boost Products">Brain Boost</button>
+    <button onclick="loadProducts('Skin Care')" aria-label="Skin Care Products">Skin Care</button>
   </div>
   <div class="nav-right" id="navRight">
-    <button onclick="showAbout()">About Us</button>
-    <button onclick="showContact()">Contact</button>
-    <button onclick="showImportantInfo()">Important Info</button>
+    <button onclick="showAbout()" aria-label="About Us">About Us</button>
+    <button onclick="showContact()" aria-label="Contact">Contact</button>
+    <button onclick="showImportantInfo()" aria-label="Important Info">Important Info</button>
   </div>
 </nav>
 
@@ -57,23 +45,41 @@
 
 <div class="container" id="productContainer"></div>
 
-<footer
- class="footer-container">
-  <div class="" onclick="showAbout()" style="cursor: pointer;">
-    <div class="footer-icon"></div>
-    <h3>About Us</h3>A curated affiliate store, guiding you to<br>high-quality wellnes from trused<br>partners.<p>Best Affiliate Store</p>
+<footer class="amazon-footer">
+
+  <!-- COLUMN 1 -->
+  <div class="footer-col">
+    <h3>Get to Know Us</h3>
+    <ul>
+      <li onclick="showAbout()" style="cursor:pointer;">About RoopHub</li>
+      <li onclick="openFAQ()" style="cursor:pointer;">FAQ</li>
+      <li onclick="openDisclaimer()" style="cursor:pointer;">Disclaimer</li>
+    </ul>
   </div>
-  
-  <div class="Links">
-    <h2>Links</h2>
-    Home<br>FAQ<br>Disclaimer<br>Terms<br>Privacy Policy<br>
+
+  <!-- COLUMN 2 -->
+  <div class="footer-col">
+    <h3>Legal</h3>
+    <ul>
+      <li onclick="openPrivacyPolicy()" style="cursor:pointer;">Privacy Policy</li>
+      <li onclick="openTerms()" style="cursor:pointer;">Terms & Conditions</li>
+      <li onclick="showImportantInfo()" style="cursor:pointer;">Important Info</li>
+    </ul>
   </div>
-  
-  <div class="CONNCEPT">
-    <h2>Connect With Us</h2>✉️bittupandit96081@gmail.com<br>📞8271734883<br>▶️ YouTube<br>
+
+  <!-- COLUMN 3 -->
+  <div class="footer-col">
+    <h3>Connect With Us</h3>
+    <P><a href="mailto:bittupandit96081@email.com">✉️Email</a><a href="tel:8271734883"> 📞 Phone</a></p>
+    <p><a href="https://www.youtube.com" target="_blank">▶️YouTube</a> <a href="https://www.google.com/maps?q=Yadav+Nagar+Road+No+3+Muzaffarpur+Bihar" target="_blank">📍Location</a><br></p>
+    📘 <a href="https://www.facebook.com" target="_blank">Facebook</a> <a href="https://wa.me/918271734883" target="_blank">💬WhatsApp Channel</a><br>
   </div>
 </footer>
 
+<!-- Bottom bar -->
+<div class="amazon-bottom">
+  © 2026 RoopHub. All Rights Reserved.
+</div>
 <!-- About Us Modal -->
 <div id="aboutModal" class="modal">
   <div class="modal-content">
@@ -81,7 +87,7 @@
     <h2>About RoopHub</h2>
     <p id="aboutSummary">RoopHub is your ultimate online affiliate store, offering curated products from trusted brands. We provide genuine, high-quality items with affiliate commissions, ensuring customer satisfaction and value. Discover deals across health, fashion, electronics, and more.</p>
     <button id="seeMoreBtn" onclick="showFullAbout()">See More</button>
-    <div id="aboutFull" style="display:none;">
+    <div id="aboutFull"></div>
       <div id="aboutContent">
         <h3>About RoopHub - Your Trusted Online Affiliate Shopping Destination</h3>
 
@@ -215,6 +221,174 @@
       <div style="background: rgba(255, 193, 7, 0.1); border-left: 4px solid #FFC107; padding: 15px; border-radius: 5px; margin-top: 20px;">
         <p style="margin: 0; color: #d32f2f; font-weight: bold;">⚠️ Important: Any violation of these guidelines will result in immediate action including warning, suspension, or permanent ban from RoopHub. We review all reports and take community safety seriously.</p>
       </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Privacy Policy Modal -->
+<div id="privacyPolicyModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closePrivacyPolicy()">&times;</span>
+
+    <h2>🔒 Privacy Policy - RoopHub</h2>
+
+    <div id="privacyContent">
+
+      <h3>1. Information We Collect</h3>
+      <p>We may collect basic information such as name, email, and browsing activity to improve user experience.</p>
+
+      <h3>2. How We Use Information</h3>
+      <p>Your information is used only to improve our services, recommend products, and provide better support.</p>
+
+      <h3>3. Cookies</h3>
+      <p>We use cookies to remember user preferences and improve website performance.</p>
+
+      <h3>4. Third-Party Links</h3>
+      <p>Our website may contain affiliate links. We are not responsible for external websites' privacy policies.</p>
+
+      <h3>5. Data Protection</h3>
+      <p>We take security seriously and protect your data using standard security measures.</p>
+
+      <h3>6. No Selling of Data</h3>
+      <p>We do NOT sell or share your personal data with any third party.</p>
+
+      <h3>7. Changes to Policy</h3>
+      <p>We may update this privacy policy anytime. Changes will be posted on this page.</p>
+
+      <h3>8. Contact Us</h3>
+      <p>Email: bittupandit96081@email.com<br>
+         Phone: 8271734883</p>
+
+      <div style="background: rgba(0,0,0,0.05); padding: 10px; margin-top: 15px; border-radius: 8px;">
+        <b>⚠️ Note:</b> By using RoopHub, you agree to this Privacy Policy.
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Terms & Conditions Modal -->
+<div id="termsModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeTerms()">&times;</span>
+
+    <h2>📜 Terms & Conditions - RoopHub</h2>
+
+    <div id="termsContent">
+
+      <h3>1. Acceptance of Terms</h3>
+      <p>By using RoopHub, you agree to follow all our terms and conditions.</p>
+
+      <h3>2. Use of Website</h3>
+      <p>You agree to use this website only for lawful purposes and not misuse any service.</p>
+
+      <h3>3. Affiliate Disclosure</h3>
+      <p>RoopHub earns commission from affiliate links, but product prices remain unchanged.</p>
+
+      <h3>4. User Responsibility</h3>
+      <p>Users are responsible for any actions taken on external affiliate websites.</p>
+
+      <h3>5. Content Accuracy</h3>
+      <p>We try to keep information accurate but do not guarantee 100% correctness of product details.</p>
+
+      <h3>6. No Warranty</h3>
+      <p>All services are provided "as is" without any guarantees.</p>
+
+      <h3>7. Changes</h3>
+      <p>We can update terms anytime without prior notice.</p>
+
+      <h3>8. Contact</h3>
+      <p>Email: bittupandit96081@email.com<br>
+         Phone: 8271734883</p>
+
+      <div style="background: rgba(0,0,0,0.05); padding:10px; margin-top:10px; border-radius:8px;">
+        ⚠️ By continuing to use RoopHub, you accept these Terms & Conditions.
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Disclaimer Modal -->
+<div id="disclaimerModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeDisclaimer()">&times;</span>
+
+    <h2>⚠️ Disclaimer - RoopHub</h2>
+
+    <div id="disclaimerContent">
+
+      <h3>1. Affiliate Website</h3>
+      <p>RoopHub is an affiliate website. We do not directly sell products, we only recommend them.</p>
+
+      <h3>2. Product Information</h3>
+      <p>All product details, prices, and availability are provided by third-party websites. We are not responsible for changes.</p>
+
+      <h3>3. No Guarantee</h3>
+      <p>We do not guarantee product quality, delivery time, or service from external sellers.</p>
+
+      <h3>4. External Links</h3>
+      <p>Our website contains affiliate links. Once you leave RoopHub, their policies apply.</p>
+
+      <h3>5. Earnings</h3>
+      <p>We may earn a small commission when you purchase through our links, at no extra cost to you.</p>
+
+      <h3>6. User Responsibility</h3>
+      <p>Users are responsible for verifying product details before purchase.</p>
+
+      <h3>7. Updates</h3>
+      <p>This disclaimer may change anytime without notice.</p>
+
+      <h3>8. Contact</h3>
+      <p>Email: bittupandit96081@email.com<br>
+         Phone: 8271734883</p>
+
+      <div style="background: rgba(0,0,0,0.05); padding:10px; margin-top:10px; border-radius:8px;">
+        ⚠️ By using RoopHub, you agree to this Disclaimer.
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- FAQ Modal -->
+<div id="faqModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeFAQ()">&times;</span>
+
+    <h2>❓ FAQ - RoopHub</h2>
+
+    <div id="faqContent">
+
+      <h3>Q1: RoopHub kya hai?</h3>
+      <p>RoopHub ek affiliate wellness store hai jahan hum trusted products recommend karte hain.</p>
+
+      <h3>Q2: Kya RoopHub products sell karta hai?</h3>
+      <p>Nahi, hum directly products sell nahi karte. Hum sirf affiliate links provide karte hain.</p>
+
+      <h3>Q3: Kya price same rehta hai?</h3>
+      <p>Haan, aapko same price milta hai. Hume commission seller se milta hai.</p>
+
+      <h3>Q4: Kya RoopHub safe hai?</h3>
+      <p>Haan, hum sirf trusted brands aur verified products recommend karte hain.</p>
+
+      <h3>Q5: Payment kahan hota hai?</h3>
+      <p>Payment external website (Amazon/other affiliate partner) par hota hai.</p>
+
+      <h3>Q6: Kya return policy RoopHub handle karta hai?</h3>
+      <p>Nahi, return/refund policy seller website ke rules ke according hoti hai.</p>
+
+      <h3>Q7: Contact kaise kare?</h3>
+      <p>Email: bittupandit96081@email.com<br>
+         Phone: 8271734883</p>
+
+      <div style="background: rgba(0,0,0,0.05); padding:10px; margin-top:10px; border-radius:8px;">
+        ✔ Still have questions? Contact us anytime!
+      </div>
+
     </div>
   </div>
 </div>
