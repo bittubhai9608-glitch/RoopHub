@@ -163,6 +163,29 @@ margin-top:20px;
 <button class="next" onclick="nextImage()">❯</button>
 </div>
 
+
+
+
+
+
+<!-- 🎥 VIDEO BOX -->
+<div id="videoBox" style="display:block; text-align:center; margin-top:20px;">
+    
+   <iframe id="ytVideo"
+    width="100%" height="180"
+    src="https://www.youtube.com/embed/DBBk_u1uJ7M?autoplay=1&mute=1"
+    frameborder="0"
+    allow="autoplay"
+    allowfullscreen>
+</iframe>
+
+    <br><br>
+
+    <button onclick="soundOn()">🔊 Sound On</button>
+    <button onclick="soundOff()">🔇 Sound Off</button>
+
+</div>
+
 <!-- DATA BOX -->
 <div class="box">
     <div class="box-container">
@@ -456,6 +479,26 @@ function displayReviews(){
 
 // ✅ PAGE LOAD FIX (सब कुछ load होने के बाद चलेगा)
 window.onload = function(){
+
+
+    // 🎥 VIDEO AUTO PLAY FIX
+let video = document.getElementById("ytVideo");
+
+// autoplay reload
+video.src = video.src;
+
+// 🔊 SOUND ON
+window.soundOn = function(){
+    video.src = "https://www.youtube.com/embed/DBBk_u1uJ7M?autoplay=1&mute=0";
+}
+
+// 🔇 SOUND OFF
+window.soundOff = function(){
+    video.src = "https://www.youtube.com/embed/DBBk_u1uJ7M?autoplay=1&mute=1";
+}
+
+
+
     window.toggleReviews = toggleReviews;
 window.toggleForm = toggleForm;
 window.submitForm = submitForm;
