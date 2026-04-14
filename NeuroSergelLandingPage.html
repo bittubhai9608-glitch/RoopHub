@@ -363,6 +363,29 @@ See More
 </button>
 </div>
 
+
+
+
+<div class="box faq">
+
+<h2>Frequently Asked Questions (FAQ)</h2>
+
+<div class="faq-item">
+    <button class="faq-question">Is this product safe?</button>
+    <div class="faq-answer">Yes, it is made from natural ingredients.</div>
+</div>
+
+<div class="faq-item">
+    <button class="faq-question">How long to see results?</button>
+    <div class="faq-answer">Usually within a few weeks.</div>
+</div>
+
+<div class="faq-item">
+    <button class="faq-question">Is it available in India?</button>
+    <div class="faq-answer">Yes, delivery available across India.</div>
+</div>
+</div>
+
 <!-- BADGES -->
 <div class="badges">
     <table>
@@ -498,6 +521,16 @@ window.soundOff = function(){
 }
 
 
+
+
+
+// FAQ toggle
+document.querySelectorAll(".faq-question").forEach(btn=>{
+    btn.addEventListener("click", function(){
+        let ans = this.nextElementSibling;
+        ans.style.display = (ans.style.display === "block") ? "none" : "block";
+    });
+});
 
     window.toggleReviews = toggleReviews;
 window.toggleForm = toggleForm;

@@ -304,6 +304,17 @@ header {
 
 
 
+.faq-answer{
+    display: none !important;
+    padding:10px;
+    background:#1fde1b;
+    border-radius:8px;
+    margin-top:5px;
+}
+
+
+
+
 
 
 
