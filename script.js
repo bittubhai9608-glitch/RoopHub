@@ -301,3 +301,71 @@ function openFAQ(){
 function closeFAQ(){
   document.getElementById("faqModal").style.display = "none";
 }
+
+
+
+
+
+
+
+
+let chatHistory = JSON.parse(localStorage.getItem("chatHistory")) || [];
+
+function toggleChat(){
+    let box = document.getElementById("aiPopup");
+    box.style.display = (box.style.display === "block") ? "none" : "block";
+    renderMessages();
+}
+
+function detectLanguage(text){
+    return /[\u0900-\u097F]/.test(text) ? "hi" : "en";
+}
+
+function sendMessage(){
+    let input = document.getElementById("chatInput");
+    let msg = input.value.trim();
+    if(msg === "") return;
+
+    chatHistory.push({role:"user", text:msg});
+    renderMessages();
+    input.value = "";
+
+    fetch("http://127.0.0.1:5000/chat", {
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({
+            message:msg,
+            lang:detectLanguage(msg)
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        chatHistory.push({role:"ai", text:data.reply});
+        localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
+        renderMessages();
+    })
+    .catch(err => {
+        alert("❌ Flask server start karo");
+        console.log(err);
+    });
+}
+
+function renderMessages(){
+    let box = document.getElementById("aiMessages");
+    box.innerHTML = "";
+
+    chatHistory.forEach(m => {
+        box.innerHTML += `
+        <div style="
+        margin:5px;
+        padding:8px;
+        border-radius:8px;
+        background:${m.role==='ai'?'#f1f1f1':'#d1f0ff'}
+        ">
+        <b>${m.role==='ai'?'AI':'You'}:</b> ${m.text}
+        </div>
+        `;
+    });
+
+    box.scrollTop = box.scrollHeight;
+}
