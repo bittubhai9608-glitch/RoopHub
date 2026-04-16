@@ -1,2 +1,6 @@
 Flask
 gunicorn
+app.py
+requirements.txt
+Procfile
+flask-cors
