@@ -754,6 +754,42 @@ padding:20px;
     </p>
 
 </div>
+
+<!-- AI CHAT BUTTON -->
+<div onclick="toggleChat()" style="
+position:fixed;
+bottom:80px;
+right:20px;
+background:#2874f0;
+color:white;
+padding:12px;
+border-radius:50%;
+cursor:pointer;
+z-index:9999;
+">
+💬
+</div>
+
+<!-- AI POPUP -->
+<div id="aiPopup" style="
+display:none;
+position:fixed;
+bottom:140px;
+right:20px;
+width:300px;
+height:400px;
+background:white;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.3);
+z-index:9999;
+">
+
+<div id="aiMessages" style="height:80%;overflow:auto;padding:10px;"></div>
+
+<input id="chatInput" placeholder="Type..." style="width:70%">
+<button onclick="sendMessage()">Send</button>
+
+</div>
 <script>
     
 
@@ -1116,6 +1152,8 @@ function closeModal(){
     document.getElementById("termsModal").style.display = "none";
     document.getElementById("privacyModal").style.display = "none";
 }
+
+
 
 </script>
 
