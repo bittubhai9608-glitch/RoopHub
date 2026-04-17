@@ -755,41 +755,45 @@ padding:20px;
 
 </div>
 
-<!-- AI CHAT BUTTON -->
-<div onclick="toggleChat()" style="
-position:fixed;
-bottom:80px;
-right:20px;
-background:#2874f0;
-color:white;
-padding:12px;
-border-radius:50%;
-cursor:pointer;
-z-index:9999;
-">
-💬
+<div id="chat-container" style="position:fixed; bottom:20px; right:20px; width:300px; border:1px solid #ccc; background:#fff; padding:10px; border-radius:10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    <div id="chat-box" style="height:200px; overflow-y:auto; margin-bottom:10px; border-bottom:1px solid #eee;">
+        <p><b>Bot:</b> Namaste! Main aapki kya madad kar sakta hoon?</p>
+    </div>
+    <input type="text" id="user-input" placeholder="Type message..." style="width:75%;">
+    <button onclick="sendMessage()" style="width:20%;">Send</button>
 </div>
 
-<!-- AI POPUP -->
-<div id="aiPopup" style="
-display:none;
-position:fixed;
-bottom:140px;
-right:20px;
-width:300px;
-height:400px;
-background:white;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.3);
-z-index:9999;
-">
+<script>
+async function sendMessage() {
+    const input = document.getElementById('user-input');
+    const chatBox = document.getElementById('chat-box');
+    const message = input.value;
 
-<div id="aiMessages" style="height:80%;overflow:auto;padding:10px;"></div>
+    if(!message) return;
 
-<input id="chatInput" placeholder="Type..." style="width:70%">
-<button onclick="sendMessage()">Send</button>
+    // User ka message dikhayein
+    chatBox.innerHTML += `<p><b>You:</b> ${message}</p>`;
+    input.value = '';
 
-</div>
+    // Backend (Render) se baat karein
+    try {
+        const response = await fetch('https://roophub.onrender.com/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: message, lang: 'hi' }) // Hindi mode for default
+        });
+        
+        const data = await response.json();
+        
+        // Bot ka reply dikhayein
+        chatBox.innerHTML += `<p style="color:blue;"><b>Bot:</b> ${data.reply}</p>`;
+        chatBox.scrollTop = chatBox.scrollHeight;
+    } catch (error) {
+        console.error("Error:", error);
+        chatBox.innerHTML += `<p style="color:red;">Error: Backend connect nahi ho raha.</p>`;
+    }
+}
+</script>
 <script>
     
 
