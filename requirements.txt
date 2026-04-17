@@ -1,6 +1,6 @@
 Flask
 gunicorn
-flask-color
+flask-cors
 blinker==1.9.0
 click==8.3.2
 colorama==0.4.6
