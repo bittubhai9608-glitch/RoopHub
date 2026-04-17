@@ -160,69 +160,79 @@
 </div>
 
 <!-- Important Info Modal -->
-<div id="importantInfoModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeImportantInfoModal()">&times;</span>
-    <h2>📋 Important Info - Community Guidelines</h2>
-    <div id="importantContent">
-      <h3>What NOT to Do on RoopHub</h3>
-      <p>To maintain a safe, trustworthy, and respectful community, please avoid the following:</p>
+     <div id="importantInfoModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:white; z-index:9999; overflow-y:scroll; padding:20px; font-family: 'Segoe UI', Roboto, sans-serif; color: #333; line-height: 1.6;">
 
-      <div class="info-point">
-        <h4>❌ 1. Don't Share Personal Information</h4>
-        <p>Never share sensitive personal details like credit card numbers, passwords, social security numbers, or banking information in comments or product reviews. RoopHub will never ask for such information through the website.</p>
+    <button onclick="closeModal()" style="position:fixed; right:20px; top:20px; padding:10px 20px; background:#1006d2; color:white; border:none; border-radius:50px; cursor:pointer; font-weight:bold; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+    Close ✖
+    </button>
+
+    <div style="max-width: 850px; margin: 50px auto;">
+      <h2 style="color: #2c3e50; border-bottom: 3px solid #f1c40f; padding-bottom: 10px;">What NOT to Do on RoopHub</h2>
+      <p style="font-size: 1.1em; color: #555;">To maintain a safe, trustworthy, and respectful community, all users are required to strictly avoid the following prohibited activities. Failure to comply can lead to permanent restrictions.</p>
+
+      <div style="margin-top: 25px; padding: 15px; border-left: 4px solid #e74c3c; background: #fff5f5;">
+        <h4 style="margin: 0; color: #c0392b;">❌ 1. Don't Share Personal Information</h4>
+        <p>User safety is our top priority. Never share sensitive personal details like credit card numbers, passwords, social security numbers, or banking information in comments or product reviews. Please be aware that <strong>RoopHub Official will never ask for such sensitive information</strong> through public website sections or unverified emails. Protecting your digital identity is a shared responsibility.</p>
       </div>
 
-      <div class="info-point">
-        <h4>❌ 2. Don't Post Spam or Promotional Content</h4>
-        <p>Avoid posting irrelevant links, promotional messages, or duplicate content across the website. This clutters the shopping experience for other customers and violates our community standards.</p>
+      <div style="margin-top: 25px; padding: 15px; border-left: 4px solid #e74c3c; background: #fff5f5;">
+        <h4 style="margin: 0; color: #c0392b;">❌ 2. Don't Post Spam or Promotional Content</h4>
+        <p>RoopHub is a platform for genuine wellness discovery. Avoid posting irrelevant external links, repetitive promotional messages, or duplicate content. This clutter ruins the shopping experience for other customers and is considered a direct violation of our community standards. Automated spamming is strictly monitored and blocked.</p>
       </div>
 
-      <div class="info-point">
-        <h4>❌ 3. Don't Make False or Misleading Claims</h4>
-        <p>Do not post fake product reviews, fabricated testimonials, or misleading information to deceive customers. All reviews should be genuine and based on actual product experience.</p>
+      <div style="margin-top: 25px; padding: 15px; border-left: 4px solid #e74c3c; background: #fff5f5;">
+        <h4 style="margin: 0; color: #c0392b;">❌ 3. Don't Make False or Misleading Claims</h4>
+        <p>Trust is the foundation of our brand. Do not post fake product reviews, fabricated testimonials, or any misleading information designed to deceive other customers. All user-generated content and reviews must be 100% genuine and based on actual product experience. Integrity ensures everyone makes the right health decisions.</p>
       </div>
 
-      <div class="info-point">
-        <h4>❌ 4. Don't Engage in Harassment or Bullying</h4>
-        <p>Absolutely no harassment, hate speech, bullying, or personal attacks on other users or our team. Treat everyone with respect and maintain a civil tone in all interactions.</p>
+      <div style="margin-top: 25px; padding: 15px; border-left: 4px solid #e74c3c; background: #fff5f5;">
+        <h4 style="margin: 0; color: #c0392b;">❌ 4. Don't Engage in Harassment or Bullying</h4>
+        <p>We maintain a "Zero Tolerance" policy for harassment, hate speech, bullying, or personal attacks on other users or our editorial team. Treat everyone with dignity and maintain a civil, helpful tone in all public interactions. We strive to keep RoopHub a positive space for wellness growth.</p>
       </div>
 
-      <div class="info-point">
-        <h4>❌ 5. Don't Attempt to Hack or Manipulate</h4>
-        <p>Never attempt to access unauthorized areas, manipulate website functions, use bots, or engage in any form of hacking. Trying to bypass security measures violates our terms and applicable laws.</p>
+      <div style="margin-top: 25px; padding: 15px; border-left: 4px solid #e74c3c; background: #fff5f5;">
+        <h4 style="margin: 0; color: #c0392b;">❌ 5. Don't Attempt to Hack or Manipulate</h4>
+        <p>Security is non-negotiable. Never attempt to access unauthorized backend areas, manipulate website algorithms, use scraping bots, or engage in any form of cyber-attacks. Any attempt to bypass our security measures is a violation of our terms and will be reported to cyber-crime authorities as per applicable laws.</p>
       </div>
 
-      <div class="info-point">
-        <h4>❌ 6. Don't Sell Illegal or Prohibited Items</h4>
-        <p>Do not attempt to sell or promote illegal products, counterfeit goods, or items prohibited by law in India. We strictly adhere to legal requirements and will remove such listings immediately.</p>
+      <div style="margin-top: 25px; padding: 15px; border-left: 4px solid #e74c3c; background: #fff5f5;">
+        <h4 style="margin: 0; color: #c0392b;">❌ 6. Don't Sell Illegal or Prohibited Items</h4>
+        <p>RoopHub operates strictly within the legal framework of India. Do not attempt to sell or promote illegal products, counterfeit goods, or items prohibited by law. We strictly adhere to all regulatory requirements and will immediately remove such listings and report suspicious activity.</p>
       </div>
 
-      <div class="info-point">
-        <h4>❌ 7. Don't Copyright or Plagiarize Content</h4>
-        <p>Do not copy content from other websites, use copyrighted images without permission, or plagiarize others' work. All content must be original or properly licensed and attributed.</p>
+      <div style="margin-top: 25px; padding: 15px; border-left: 4px solid #e74c3c; background: #fff5f5;">
+        <h4 style="margin: 0; color: #c0392b;">❌ 7. Don't Copyright or Plagiarize Content</h4>
+        <p>Intellectual property is respected here. Do not copy content from other wellness websites, use copyrighted images without permission, or plagiarize the work of others. All user-submitted information must be original. Plagiarism devalues the platform and can lead to legal complications.</p>
       </div>
 
-      <div class="info-point">
-        <h4>❌ 8. Don't Make Threats or Post Violent Content</h4>
-        <p>Never post threatening messages, violent content, or anything that could harm others. We have zero tolerance for threats, violence, or exploitation in any form.</p>
+      <div style="margin-top: 25px; padding: 15px; border-left: 4px solid #e74c3c; background: #fff5f5;">
+        <h4 style="margin: 0; color: #c0392b;">❌ 8. Don't Make Threats or Post Violent Content</h4>
+        <p>RoopHub is a safe zone. Never post threatening messages, violent imagery, or content that promotes harm. We do not tolerate any form of violent rhetoric, exploitation, or dangerous behavior. Content of this nature is removed instantly and reported.</p>
       </div>
 
-      <div class="info-point">
-        <h4>❌ 9. Don't Manipulate Ratings or Create Fake Accounts</h4>
-        <p>Avoid creating multiple accounts to artificially boost ratings, post fake reviews, or manipulate product visibility. Each user should maintain only one account for fair and transparent rating systems.</p>
+      <div style="margin-top: 25px; padding: 15px; border-left: 4px solid #e74c3c; background: #fff5f5;">
+        <h4 style="margin: 0; color: #c0392b;">❌ 9. Don't Manipulate Ratings or Create Fake Accounts</h4>
+        <p>Transparency is key to our rating system. Avoid creating multiple accounts to artificially boost product ratings, post multiple fake reviews, or manipulate search visibility. Each user is permitted only one account to maintain a fair and honest ecosystem for all wellness enthusiasts.</p>
       </div>
 
-      <div class="info-point">
-        <h4>❌ 10. Don't Ignore Our Terms of Service</h4>
-        <p>Always read and comply with RoopHub's Terms of Service, Privacy Policy, and Community Guidelines. Violation of these terms may result in account suspension, content removal, or legal action as per applicable laws.</p>
+      <div style="margin-top: 25px; padding: 15px; border-left: 4px solid #e74c3c; background: #fff5f5;">
+        <h4 style="margin: 0; color: #c0392b;">❌ 10. Don't Ignore Our Terms of Service</h4>
+        <p>Knowledge of our rules is essential. Always read and comply with RoopHub's full Terms of Service, Privacy Policy, and these Community Guidelines. Failure to follow these documented terms may result in immediate account suspension, content deletion, or legal action where necessary.</p>
       </div>
 
-      <div style="background: rgba(255, 193, 7, 0.1); border-left: 4px solid #FFC107; padding: 15px; border-radius: 5px; margin-top: 20px;">
-        <p style="margin: 0; color: #d32f2f; font-weight: bold;">⚠️ Important: Any violation of these guidelines will result in immediate action including warning, suspension, or permanent ban from RoopHub. We review all reports and take community safety seriously.</p>
+      <div style="background: #fff3cd; border: 1px solid #ffeeba; padding: 20px; border-radius: 8px; margin-top: 30px; border-left: 6px solid #ffc107;">
+        <p style="margin: 0; color: #856404; font-weight: bold; font-size: 1.1em;">
+          ⚠️ Enforcement Notice:
+        </p>
+        <p style="margin: 5px 0 0; color: #721c24;">
+          Any violation of these guidelines will lead to immediate action, including formal warnings, account suspension, or a permanent ban from RoopHub Official. We take community safety and platform integrity seriously and review all user reports manually.
+        </p>
       </div>
+
+      <p style="text-align: center; margin-top: 40px; color: #999; font-size: 0.9em;">
+        Thank you for helping us keep RoopHub Official a trusted space for wellness.
+      </p>
     </div>
-  </div>
 </div>
 
 
@@ -232,8 +242,6 @@
     <span class="close" onclick="closePrivacyPolicy()">&times;</span>
 
     <h2>🔒 Privacy Policy - RoopHub</h2>
-
-    <div id="privacyContent">
 
       <h3>1. Information We Collect</h3>
       <p>We may collect basic information such as name, email, and browsing activity to improve user experience.</p>

@@ -369,3 +369,25 @@ function renderMessages(){
 
     box.scrollTop = box.scrollHeight;
 }
+
+
+
+
+// Modal band karne ke liye function
+function closeModal() {
+    // Agar aapke modal ki ID 'importantInfoModal' hai toh:
+    var modal = document.getElementById('importantInfoModal');
+    
+    // Agar ID kuch aur hai toh yahan wo ID likhein
+    if (modal) {
+        modal.style.display = 'none';
+        // Main page ka scroll wapas chalu karne ke liye
+        document.body.style.overflow = 'auto'; 
+    }
+}
+
+// Modal kholne ke liye function (Example)
+function openModal() {
+    document.getElementById('importantInfoModal').style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Screen ko lock karne ke liye
+}
