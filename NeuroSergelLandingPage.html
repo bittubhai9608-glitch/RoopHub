@@ -418,6 +418,19 @@ See More
     <button onclick="openModal('privacy')">Privacy Policy</button>
     <button onclick="openModal('affiliate')">Affiliate Disclosure</button>
   </div>
+
+  <div id="contactModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:10000;">
+    <div style="background:white; width:90%; max-width:450px; margin:50px auto; padding:20px; border-radius:15px; position:relative;">
+        <button onclick="closeModal()" style="position:absolute; right:15px; top:10px; border:none; background:none; font-size:20px; cursor:pointer;">✖</button>
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <input type="text" name="Name" placeholder="Aapka Naam" style="width:100%; padding:10px; margin:10px 0;" required>
+            <input type="email" name="Email" placeholder="Aapka Email" style="width:100%; padding:10px; margin:10px 0;" required>
+            <textarea name="Message" placeholder="Aapka Sawal" style="width:100%; padding:10px; height:80px;" required></textarea>
+            <button type="submit" id="contact-btn" style="width:100%; padding:12px; background:#ff9800; color:white; border:none; border-radius:8px; cursor:pointer;">Send Information</button>
+        </form>
+    </div>
+</div>
 </footer>
 
 
@@ -1394,6 +1407,72 @@ function closeModal(){
 
 
 
+// Modal Controls
+function openModal(type) {
+    if(type === 'contact') document.getElementById('contactModal').style.display = 'block';
+}
+function closeModal() {
+    document.getElementById('contactModal').style.display = 'none';
+}
+
+// GOOGLE SHEET LINKING (Main Logic)
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyEJmb4hiDCHjL8KMfg0L9k_CMfsITWIuR70e8Xox-bByPxVb79egsUaYF7_Y8rqUH_/exec'; // <--- Apna Google Script Link yahan daalein
+
+// 1. Contact Form Submit
+const contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = document.getElementById('contact-btn');
+    btn.disabled = true;
+    btn.innerText = "Sending...";
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(contactForm)})
+        .then(response => {
+            alert("Information successfully sent!");
+            btn.disabled = false;
+            btn.innerText = "Send Information";
+            contactForm.reset();
+            closeModal();
+        })
+        .catch(error => alert("Error! Data not sent."));
+});
+
+// 2. Review Form Submit (Iska ID 'reviewForm' hai aapke code mein)
+const reviewForm = document.getElementById('reviewForm');
+// Note: Aapke Submit button par onclick="submitForm()" hai, usse hata kar 
+// id="review-submit-btn" de sakte hain aur isi tarah fetch logic laga sakte hain.
+
+
+
+function submitForm() {
+    const rForm = document.getElementById('reviewForm');
+    const submitBtn = document.querySelector('.submit-btn');
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyEJmb4hiDCHjL8KMfg0L9k_CMfsITWIuR70e8Xox-bByPxVb79egsUaYF7_Y8rqUH_/exec'; // <--- Wahi URL daalein jo contact mein hai
+
+    // Validation
+    if(document.getElementById('name').value === "" || document.getElementById('comment').value === "") {
+        alert("Please saari fields bharein!");
+        return;
+    }
+
+    submitBtn.innerText = "Sending...";
+    submitBtn.disabled = true;
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(rForm)})
+    .then(response => {
+        alert("Dhanyawad! Aapka Review submit ho gaya hai.");
+        submitBtn.innerText = "Submit";
+        submitBtn.disabled = false;
+        rForm.reset(); // Form khali karne ke liye
+        rForm.style.display = 'none'; // Form chhupane ke liye
+    })
+    .catch(error => {
+        console.error('Error!', error.message);
+        alert("Error! Review send nahi hua.");
+        submitBtn.innerText = "Submit";
+        submitBtn.disabled = false;
+    });
+}
 </script>
 
 </body>
