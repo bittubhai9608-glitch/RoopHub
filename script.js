@@ -40,6 +40,9 @@ let currentCategory = 'View Top Deals';
 
 function loadProducts(category) {
   currentCategory = category;
+  
+  // Agar category exist nahi karti toh default 'Men Health' dikhao
+  if (!products[category]) category = "Men Health";
 
   const container = document.getElementById("productContainer");
   container.innerHTML = "";
@@ -123,7 +126,7 @@ function searchProducts() {
 
   <h3>${p.name}</h3>
 
-  <p class="tag">⭐ 4.7 Rating | Best Seller</p>
+  <p class="tag">⭐ ${p.rating || '4.7'} Rating | Best Seller</p>
 
   <p class="price">${p.price}</p>
 
@@ -168,11 +171,6 @@ function showAbout() {
   if (aboutFull) aboutFull.style.display = 'none';
   if (seeMoreBtn) seeMoreBtn.style.display = 'block';
   currentPage = 1;
-}
-
-function closeModal() {
-  const modal = document.getElementById('aboutModal');
-  if (modal) modal.style.display = 'none';
 }
 
 function showFullAbout() {
@@ -340,9 +338,23 @@ function sendMessage(){
     })
     .then(res => res.json())
     .then(data => {
-        chatHistory.push({role:"ai", text:data.reply});
-        localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
-        renderMessages();
+        // Typing animation for main script.js
+        let botReply = "";
+        const words = data.reply.split(" ");
+        let i = 0;
+        
+        const timer = setInterval(() => {
+            if(i < words.length) {
+                botReply += words[i] + " ";
+                i++;
+                // UI update logic here if needed
+            } else {
+                clearInterval(timer);
+                chatHistory.push({role:"ai", text:data.reply});
+                localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
+                renderMessages();
+            }
+        }, 100);
     })
     .catch(err => {
         alert("❌ Flask server start karo");
@@ -373,17 +385,19 @@ function renderMessages(){
 
 
 
-// Modal band karne ke liye function
+// Generic Modal close function
 function closeModal() {
-    // Agar aapke modal ki ID 'importantInfoModal' hai toh:
-    var modal = document.getElementById('importantInfoModal');
+    const modals = [
+        'aboutModal', 'importantInfoModal', 'privacyPolicyModal', 
+        'termsModal', 'disclaimerModal', 'faqModal', 'contactModal',
+        'privacyModal', 'affiliateModal'
+    ];
     
-    // Agar ID kuch aur hai toh yahan wo ID likhein
-    if (modal) {
-        modal.style.display = 'none';
-        // Main page ka scroll wapas chalu karne ke liye
-        document.body.style.overflow = 'auto'; 
-    }
+    modals.forEach(id => {
+        let m = document.getElementById(id);
+        if (m) m.style.display = 'none';
+    });
+    document.body.style.overflow = 'auto';
 }
 
 // Modal kholne ke liye function (Example)

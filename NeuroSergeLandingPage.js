@@ -225,7 +225,36 @@ img.addEventListener("touchend", e=>{
 
 
 
+function submitForm() {
+    const rForm = document.getElementById('reviewForm');
+    const submitBtn = document.querySelector('.submit-btn');
+    const scriptURL = 'APNA_URL_YAHAN_PASTE_KAREIN'; 
 
+    submitBtn.innerText = "Sending...";
+    submitBtn.disabled = true;
+
+    // FormData variable banayein
+
+    const formData = new FormData(rForm);
+
+    fetch(scriptURL, { method: 'POST', body: formData })
+    .then(response => {
+        if(response.ok) {
+            alert("Success! Review save ho gaya.");
+            rForm.reset();
+            submitBtn.innerText = "Submit";
+            submitBtn.disabled = false;
+        } else {
+            throw new Error('Network response was not ok.');
+        }
+    })
+    .catch(error => {
+        console.error('Error details:', error); // F12 console mein error dikhayega
+        alert("Error! Data nahi gaya. Check Console (F12)");
+        submitBtn.innerText = "Submit";
+        submitBtn.disabled = false;
+    });
+}
 
 
 
