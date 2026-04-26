@@ -447,7 +447,7 @@
 <!-- FLOAT BUTTON -->
 <div id="aiFloat" onclick="toggleChat()" style="
 position:fixed;
-bottom:20px;
+bottom:80px;
 right:20px;
 background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
 color:#fff;
@@ -470,7 +470,7 @@ animation: pulse-blue 2s infinite;
 <div id="aiPopup" style="
 display:none;
 position:fixed;
-bottom:80px;
+bottom:140px;
 right:20px;
 width:300px;
 max-width:90vw;
@@ -517,6 +517,34 @@ font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
 </div>
 <script src="script.js"></script>
+<script>
+function openModal(id) {
+    const m = document.getElementById(id);
+    if (m) m.style.display = "block";
+}
+function closeModal(id) {
+    if (id) {
+        const m = document.getElementById(id);
+        if (m) m.style.display = "none";
+    } else {
+        const modals = ['aboutModal', 'importantInfoModal', 'privacyPolicyModal', 'termsModal', 'disclaimerModal', 'faqModal', 'affiliateModal'];
+        modals.forEach(mId => { const m = document.getElementById(mId); if (m) m.style.display = "none"; });
+    }
+}
+function showAbout() { openModal('aboutModal'); }
+function openFAQ() { openModal('faqModal'); }
+function openDisclaimer() { openModal('disclaimerModal'); }
+function openPrivacyPolicy() { openModal('privacyPolicyModal'); }
+function openTerms() { openModal('termsModal'); }
+function showImportantInfo() { openModal('importantInfoModal'); }
+function showContact() { alert("Email us at: bittupandit96081@email.com"); }
+
+// compatibility with specific close calls
+function closePrivacyPolicy() { closeModal('privacyPolicyModal'); }
+function closeTerms() { closeModal('termsModal'); }
+function closeDisclaimer() { closeModal('disclaimerModal'); }
+function closeFAQ() { closeModal('faqModal'); }
+</script>
 
 </body>
 </html>

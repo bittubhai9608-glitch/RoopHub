@@ -28,6 +28,25 @@ function scrollToTop(){
 
 let currentCategory = 'View Top Deals';
 
+/**
+ * Utility to create a product card element to keep the UI consistent.
+ */
+function createProductCard(product, categoryLabel) {
+  const div = document.createElement("div");
+  div.className = "card";
+  div.innerHTML = `
+    <div class="img-box">
+      <span class="category">${categoryLabel}</span>
+      <img src="${product.img}" alt="${product.name}">
+    </div>
+    <h3>${product.name}</h3>
+    <p class="tag">⭐ ${product.rating || '4.7'} Rating | Best Seller</p>
+    <p class="price">${product.price}</p>
+    <button onclick="openProduct('${product.link}')">Check Offer</button>
+  `;
+  return div;
+}
+
 function loadProducts(category) {
   currentCategory = category;
   
@@ -41,32 +60,7 @@ function loadProducts(category) {
   items.sort(() => 0.5 - Math.random());
 
   items.forEach(p => {
-    const div = document.createElement("div");
-    div.className = "card";
-
-    // div.innerHTML = `
-    //   <img src="${p.img}" alt="${p.name}">
-    //   <h3>${p.name}</h3>
-    //   <p class="price">${p.price}</p>
-    //   <a href="${p.link}" target="_blank">
-    //     <button>See Full Details</button>
-    //   </a>
-    // `;
-   div.innerHTML = `
-  <div class="img-box">
-    <span class="category">${category}</span>
-    <img src="${p.img}" alt="${p.name}">
-  </div>
-
-  <h3>${p.name}</h3>
-
-  <p class="tag">⭐ ${p.rating} Rating | Best Seller</p>
-
-  <p class="price">${p.price}</p>
-
-  <button onclick="openProduct('${p.link}')">Check Offer</button>
-`;
-    container.appendChild(div);
+    container.appendChild(createProductCard(p, category));
   });
 }
 
@@ -86,11 +80,14 @@ function searchProducts() {
   let foundProducts = [];
   
   // Search across all products
-  Object.values(products).forEach(categoryProducts => {
-    categoryProducts.forEach(product => {
+  Object.keys(products).forEach(categoryName => {
+    products[categoryName].forEach(product => {
       if (product.name.toLowerCase().includes(searchInput) || 
           product.price.toLowerCase().includes(searchInput)) {
-        foundProducts.push(product);
+        foundProducts.push({
+          ...product,
+          categorySource: categoryName
+        });
       }
     });
   });
@@ -105,25 +102,7 @@ function searchProducts() {
   statusEl.style.color = 'green';
   
   foundProducts.forEach(p => {
-    const div = document.createElement('div');
-    div.className = 'card';
-    
-    div.innerHTML = `
-  <div class="img-box">
-    <span class="category">${currentCategory}</span>
-    <img src="${p.img}" alt="${p.name}">
-  </div>
-
-  <h3>${p.name}</h3>
-
-  <p class="tag">⭐ ${p.rating || '4.7'} Rating | Best Seller</p>
-
-  <p class="price">${p.price}</p>
-
-  <button onclick="openProduct('${p.link}')">Check Offer</button>
-`;
-    
-    container.appendChild(div);
+    container.appendChild(createProductCard(p, p.categorySource));
   });
 }
 
@@ -149,44 +128,20 @@ function toggleAdsense() {
   adContainer.classList.toggle('hidden');
 }
 
-let currentPage = 1;
-const totalPages = 1;
-
-function showAbout() {
-  const modal = document.getElementById('aboutModal');
-  const aboutFull = document.getElementById('aboutFull');
-  const seeMoreBtn = document.getElementById('seeMoreBtn');
-  
-  if (modal) modal.style.display = 'flex';
-  if (aboutFull) aboutFull.style.display = 'none';
-  if (seeMoreBtn) seeMoreBtn.style.display = 'block';
-  currentPage = 1;
-}
-
 function showFullAbout() {
   const aboutFull = document.getElementById('aboutFull');
   const seeMoreBtn = document.getElementById('seeMoreBtn');
   const aboutContent = document.getElementById('aboutContent');
   
-  if (aboutFull) aboutFull.style.display = 'block';
-  if (seeMoreBtn) seeMoreBtn.style.display = 'none';
+  if (aboutFull) aboutFull.style.display = "block";
+  if (seeMoreBtn) seeMoreBtn.style.display = "none";
   if (aboutContent) {
     aboutContent.scrollTop = 0;
-    aboutContent.style.display = 'block';
-  }
-  currentPage = 1;
-  loadPage(1);
-}
-
-function loadPage(page) {
-  const contentDiv = document.getElementById('aboutContent');
-  if (contentDiv) {
-    contentDiv.scrollTop = 0;
-    updatePagination();
+    aboutContent.style.display = "block";
   }
 }
 
-function changePage(direction) {
+function changePage(direction) { // Placeholder for future pagination
   const newPage = currentPage + direction;
   if (newPage > 0 && newPage <= totalPages) {
     currentPage = newPage;
@@ -205,17 +160,11 @@ function updatePagination() {
 }
 
 function showContact() {
-  alert('Contact us at:\nEmail: bittubhai96081@email.com\nPhone: 8271734883');
+  openModal('contact');
 }
 
 function showImportantInfo() {
-  const modal = document.getElementById('importantInfoModal');
-  if (modal) modal.style.display = 'flex';
-}
-
-function closeImportantInfoModal() {
-  const modal = document.getElementById('importantInfoModal');
-  if (modal) modal.style.display = 'none';
+  openModal('info');
 }
 
 // Mobile menu toggle
@@ -462,3 +411,8 @@ function openModal(type) {
         document.body.style.overflow = 'hidden';
     }
 }
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+  loadProducts('Men Health');
+});
