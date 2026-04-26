@@ -486,11 +486,11 @@ body {
     <!-- FORM -->
     <form id="reviewForm" autocomplete="off" style="margin-bottom: 20px; padding: 15px; background: #fdfdfd; border: 1px dashed #ccc; border-radius: 10px;">
         <h4 style="margin-bottom: 10px;">Share your experience</h4>
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="email" id="email" placeholder="Email Address (Will not be published)" required>
+        <input type="text" id="name" name="Name" placeholder="Your Name" required>
+        <input type="email" id="email" name="Email" placeholder="Email Address (Will not be published)" required>
         <div style="display:flex; gap: 10px; align-items:center; margin: 10px 0;">
             <label style="font-size: 14px;">Rating:</label>
-            <select id="rating" required style="width: auto; margin:0;">
+            <select id="rating" name="Rating" required style="width: auto; margin:0;">
                 <option value="5">5 Stars - Excellent</option>
                 <option value="4">4 Stars - Very Good</option>
                 <option value="3">3 Stars - Average</option>
@@ -498,8 +498,8 @@ body {
                 <option value="1">1 Star - Terrible</option>
             </select>
         </div>
-        <textarea id="comment" placeholder="What did you like or dislike about Neuro Serge?" required style="height: 100px;"></textarea>
-        <button type="button" class="submit-btn" onclick="submitForm()" style="width:100%; margin-top:10px; padding:12px; background:#27ae60; color:white; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">Post Review</button>
+        <textarea id="comment" name="Comment" placeholder="What did you like or dislike about Neuro Serge?" required style="height: 100px;"></textarea>
+        <button type="submit" class="submit-btn" style="width:100%; margin-top:10px; padding:12px; background:#27ae60; color:white; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">Post Review</button>
     </form>
 
     <!-- REVIEWS -->
@@ -1463,8 +1463,8 @@ contactForm.addEventListener('submit', e => {
     btn.disabled = true;
     btn.innerText = "Sending...";
 
-    fetch(scriptURL, { method: 'POST', body: new FormData(contactForm)})
-        .then(response => {
+    fetch(scriptURL, { method: 'POST', body: new FormData(contactForm), mode: 'no-cors'})
+        .then(() => {
             alert("Information successfully sent!");
             btn.disabled = false;
             btn.innerText = "Send Information";
@@ -1488,8 +1488,8 @@ reviewForm.addEventListener('submit', e => {
     submitBtn.disabled = true;
     submitBtn.innerText = "Saving...";
 
-    fetch(scriptURL, { method: 'POST', body: new FormData(reviewForm)})
-        .then(response => {
+    fetch(scriptURL, { method: 'POST', body: new FormData(reviewForm), mode: 'no-cors'})
+        .then(() => {
             alert("✅ Review shared successfully and saved to Google Sheets!");
             submitBtn.disabled = false;
             submitBtn.innerText = "Post Review";
