@@ -234,6 +234,10 @@ if (menuToggle) {
 window.onclick = function(event) {
   const aboutModal = document.getElementById('aboutModal');
   const importantInfoModal = document.getElementById('importantInfoModal');
+  const privacyPolicyModal = document.getElementById('privacyPolicyModal');
+  const termsModal = document.getElementById('termsModal');
+  const disclaimerModal = document.getElementById('disclaimerModal');
+  const faqModal = document.getElementById('faqModal');
   
   if (event.target === aboutModal) {
     aboutModal.style.display = 'none';
@@ -241,7 +245,28 @@ window.onclick = function(event) {
   if (event.target === importantInfoModal) {
     importantInfoModal.style.display = 'none';
   }
+  if (event.target === privacyPolicyModal) {
+    privacyPolicyModal.style.display = 'none';
+  }
+  if (event.target === termsModal) {
+    termsModal.style.display = 'none';
+  }
+  if (event.target === faqModal) {
+    faqModal.style.display = 'none';
+  }
 }
+
+// Enter key support for chat
+document.addEventListener("DOMContentLoaded", () => {
+  const chatInput = document.getElementById("chatInput");
+  if (chatInput) {
+    chatInput.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        sendMessage();
+      }
+    });
+  }
+});
 
 
 loadProducts('Men Health');

@@ -101,6 +101,15 @@ def ai_reply(message, lang):
     # User happiness focus: Agree, Smile, Laughing suggestions
     happy_suggestions = ["I Agree! 🤝", "Nice! 😊", "Haha! 😂", "Tell me more! ✨"]
 
+    if "i agree" in msg or "🤝" in msg:
+        return "Glad we are on the same page! 🤝 Hum hamesha quality और सच्चाई पर फोकस करते हैं। ✨", happy_suggestions
+    if "nice" in msg or "😊" in msg:
+        return "Shukriya! 😊 Hume khushi hui ki aapko hamari service pasand aayi। ✨", happy_suggestions
+    if "haha" in msg or "😂" in msg:
+        return "Haha! 😂 Haste rahiye, health aur happiness dono hi zaroori hain! 🌟", happy_suggestions
+    if "tell me more" in msg or "✨" in msg:
+        return "Zaroor! ✨ RoopHub par aapko best health supplements milenge jo pure natural ingredients se bane hain। Aap aur kya jaanna chahte hain? 🤔", happy_suggestions
+
     if product:
         reply = f"{product['desc']} Iske mukhya fayde {product['benefit']} hain. Iska result {product['result']} me dikhta hai."
         return reply, happy_suggestions
