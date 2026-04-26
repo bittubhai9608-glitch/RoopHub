@@ -44,19 +44,48 @@ except:
 # --- 2. AAPKA PRODUCT DATABASE (No changes) ---
 products = {
     "neuro serge": {
-        "name": "Neuro Serge",
         "desc": "Ye brain booster supplement hai jo memory aur focus improve karta hai.",
         "benefit": "Focus, concentration aur mental clarity better karta hai.",
-        "use": "Students aur working professionals ke liye useful hai.",
         "result": "2-4 weeks me improvement feel ho sakta hai."
     },
     "prostavive": {
-        "name": "ProstaVive Vitality",
         "desc": "Ye men health supplement hai jo energy aur prostate support karta hai.",
         "benefit": "Stamina aur overall wellness improve karta hai.",
-        "use": "40+ men ke liye useful hai.",
         "result": "Regular use se gradual improvement milta hai."
+    },
+    "citrusburn": {
+        "desc": "Ye natural fat burner hai jo metabolism boost karta hai.",
+        "benefit": "Rapid weight loss aur daily energy.",
+        "result": "30 days me changes dikh sakte hain."
+    },
+    "keyslim": {
+        "desc": "Ye liquid weight loss drops hain jo appetite control karte hain.",
+        "benefit": "Craving control aur fast metabolism.",
+        "result": "Consistent use se best results milte hain."
+    },
+    "visiflora": {
+        "desc": "Ye eye health supplement hai jo vision support karta hai.",
+        "benefit": "Sharper vision aur eye strain se relief.",
+        "result": "Monthly use me difference feel hoga."
+    },
+    "purisaki": {
+        "desc": "Ye patches skin aur blood sugar support ke liye hain.",
+        "benefit": "Natural healing aur better skin texture.",
+        "result": "Regular use se benefit milta hai."
+    },
+    "igenics": {
+        "desc": "Ye premium vision support formula hai.",
+        "benefit": "Eye health aur clear vision maintenance.",
+        "result": "Supports long term eye wellness."
     }
+}
+
+category_triggers = {
+    "weight": "Weight loss ke liye hamare paas 'CitrusBurn' aur 'KeySlim Drops' hain.",
+    "skin": "Skin care ke liye 'Purisaki Patches' ek badhiya option hai.",
+    "eye": "Vision support ke liye 'Visiflora' ya 'iGenics' ka use kar sakte hain.",
+    "brain": "Memory aur focus ke liye 'Neuro Serge' sabse popular hai.",
+    "men": "Men vitality ke liye 'ProstaVive Vitality' design kiya gaya hai."
 }
 
 def find_product(user_msg):
@@ -69,24 +98,26 @@ def ai_reply(message, lang):
     msg = message.lower()
     product = find_product(msg)
     
-    suggestions = ["Neuro Serge", "ProstaVive", "Contact Us", "How to use?"]
+    # User happiness focus: Agree, Smile, Laughing suggestions
+    happy_suggestions = ["I Agree! 🤝", "Nice! 😊", "Haha! 😂", "Tell me more! ✨"]
 
     if product:
-        reply = f"{product['name']}: {product['desc']} Iske mukhya fayde {product['benefit']} hain. Iska result {product['result']} me dikhta hai."
-        return reply, ["Order Now", "Benefits", "How to use?"]
+        reply = f"{product['desc']} Iske mukhya fayde {product['benefit']} hain. Iska result {product['result']} me dikhta hai."
+        return reply, happy_suggestions
+
+    # Detect category from keywords
+    for key, text in category_triggers.items():
+        if key in msg:
+            return text, happy_suggestions
 
     if lang == "hi":
-        if "hello" in msg or "hi" in msg: 
-            return "Namaste 🙏 RoopHub AI me aapka swagat hai! Main aapki kaise madad kar sakta hoon?", suggestions
-        elif "problem" in msg: 
-            return "Main samajh sakta hoon. Kya aap kisi specific health product ke bare me janna chahte hain?", ["Yes", "No", "Supplements"]
-        else: 
-            return "Main aapki behtar madad kar sakta hoon agar aap product ka naam likhein.", suggestions
+        if any(x in msg for x in ["hello", "hi", "namaste", "hey"]): 
+            return "Namaste 🙏 RoopHub AI me aapka swagat hai! Main aapki kaise madad kar sakta hoon?", happy_suggestions
+        return "Main aapki behtar madad kar sakta hoon agar aap product ka naam likhein.", happy_suggestions
     else:
         if "hello" in msg: 
-            return "Hello 👋 Welcome! Which product are you interested in today?", suggestions
-        else: 
-            return "I'm here to assist you with health supplements and wellness info.", suggestions
+            return "Hello 👋 Welcome! Which product are you interested in today?", happy_suggestions
+        return "I'm here to assist you with health supplements and wellness info.", happy_suggestions
 
 # --- 3. ROUTES ---
 @app.route("/", methods=["GET"])
