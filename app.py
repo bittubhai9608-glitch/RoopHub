@@ -2,6 +2,7 @@ import os
 import json
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import difflib
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
@@ -44,54 +45,83 @@ except:
 # --- 2. AAPKA PRODUCT DATABASE (No changes) ---
 products = {
     "neuro serge": {
-        "desc": "Ye brain booster supplement hai jo memory aur focus improve karta hai.",
-        "benefit": "Focus, concentration aur mental clarity better karta hai.",
-        "result": "2-4 weeks me improvement feel ho sakta hai."
+        "name": "Neuro Serge",
+        "desc": "a premium brain booster designed to improve memory and mental focus naturally.",
+        "benefits": "It helps increase concentration, sharpens mental clarity, and supports overall brain health.",
+        "usage": "For best results, take it daily as directed on the label.",
+        "results": "Most users notice a positive difference in focus and energy within 2 to 4 weeks."
     },
     "prostavive": {
-        "desc": "Ye men health supplement hai jo energy aur prostate support karta hai.",
-        "benefit": "Stamina aur overall wellness improve karta hai.",
-        "result": "Regular use se gradual improvement milta hai."
+        "name": "ProstaVive Vitality",
+        "desc": "a powerful supplement for men's health that supports vitality and prostate function.",
+        "benefits": "It helps improve stamina, boosts daily energy levels, and supports overall well-being.",
+        "usage": "Consistency is key; follow the recommended daily dosage.",
+        "results": "Benefits are usually felt gradually over a few weeks of regular use."
     },
     "citrusburn": {
-        "desc": "Ye natural fat burner hai jo metabolism boost karta hai.",
-        "benefit": "Rapid weight loss aur daily energy.",
-        "result": "30 days me changes dikh sakte hain."
+        "name": "CitrusBurn",
+        "desc": "a natural fat burner that uses citrus extracts to speed up your metabolism.",
+        "benefits": "It supports healthy weight loss, increases energy, and helps burn calories faster.",
+        "usage": "Take it consistently alongside a healthy diet for maximum impact.",
+        "results": "Visible changes in energy and weight are often seen within 30 days."
     },
     "keyslim": {
-        "desc": "Ye liquid weight loss drops hain jo appetite control karte hain.",
-        "benefit": "Craving control aur fast metabolism.",
-        "result": "Consistent use se best results milte hain."
+        "name": "KeySlim Drops",
+        "desc": "a specialized liquid formula designed to help you lose weight by controlling hunger.",
+        "benefits": "It helps stop food cravings, boosts metabolism, and is very easy to use.",
+        "usage": "Just take a few drops daily as per the instructions.",
+        "results": "Best results are achieved with regular use over 2 to 3 months."
     },
     "visiflora": {
-        "desc": "Ye eye health supplement hai jo vision support karta hai.",
-        "benefit": "Sharper vision aur eye strain se relief.",
-        "result": "Monthly use me difference feel hoga."
+        "name": "Visiflora",
+        "desc": "a natural eye health supplement created to support and protect your vision.",
+        "benefits": "It helps provide sharper vision, reduces eye strain from screens, and supports long-term eye health.",
+        "usage": "Simply take the recommended amount every day.",
+        "results": "Many users report clearer vision and less eye fatigue after one month."
     },
     "purisaki": {
-        "desc": "Ye patches skin aur blood sugar support ke liye hain.",
-        "benefit": "Natural healing aur better skin texture.",
-        "result": "Regular use se benefit milta hai."
+        "name": "Purisaki Patches",
+        "desc": "natural healing patches designed to support skin health and detoxification.",
+        "benefits": "They help improve skin texture, support natural body healing, and promote better wellness.",
+        "usage": "Apply the patches to the skin as instructed for continuous support.",
+        "results": "Users feel refreshed and notice better skin quality with consistent use."
     },
     "igenics": {
-        "desc": "Ye premium vision support formula hai.",
-        "benefit": "Eye health aur clear vision maintenance.",
-        "result": "Supports long term eye wellness."
+        "name": "iGenics",
+        "desc": "a high-quality vision support formula made with natural antioxidants.",
+        "benefits": "It protects eye cells from damage and helps maintain clear, healthy vision as you age.",
+        "usage": "Take it daily to provide your eyes with essential nutrients.",
+        "results": "It provides long-term support for healthy eyes and vision clarity."
     }
 }
 
 category_triggers = {
-    "weight": "Weight loss ke liye hamare paas 'CitrusBurn' aur 'KeySlim Drops' hain.",
-    "skin": "Skin care ke liye 'Purisaki Patches' ek badhiya option hai.",
-    "eye": "Vision support ke liye 'Visiflora' ya 'iGenics' ka use kar sakte hain.",
-    "brain": "Memory aur focus ke liye 'Neuro Serge' sabse popular hai.",
-    "men": "Men vitality ke liye 'ProstaVive Vitality' design kiya gaya hai."
+    "weight": "For effective weight loss, we recommend 'CitrusBurn' or 'KeySlim Drops'. Both are very popular and natural.",
+    "skin": "For skin care and body detox, 'Purisaki Patches' are an excellent choice.",
+    "eye": "To support your vision and eye health, you can use 'Visiflora' or 'iGenics' capsules.",
+    "brain": "For better memory and sharper focus, 'Neuro Serge' is our most recommended product.",
+    "men": "For men's health and daily vitality, 'ProstaVive Vitality' is specially formulated for you."
 }
 
 def find_product(user_msg):
-    user_msg = user_msg.lower()
+    words = user_msg.lower().split()
+    product_keys = list(products.keys())
+    
+    # 1. Direct check (Full match)
     for key in products:
-        if key in user_msg: return products[key]
+        if key in user_msg.lower() or key.replace(" ", "") in user_msg.lower().replace(" ", ""): 
+            return products[key]
+            
+    # 2. Fuzzy check (Handling typos)
+    all_variations = product_keys + [k.replace(" ", "") for k in product_keys]
+    for word in words:
+        matches = difflib.get_close_matches(word, all_variations, n=1, cutoff=0.7)
+        if matches:
+            matched_val = matches[0]
+            # Find the original key if a flat variation was matched
+            for original_key in products:
+                if original_key == matched_val or original_key.replace(" ", "") == matched_val:
+                    return products[original_key]
     return None
 
 def ai_reply(message, lang):
@@ -102,31 +132,35 @@ def ai_reply(message, lang):
     happy_suggestions = ["I Agree! 🤝", "Nice! 😊", "Haha! 😂", "Tell me more! ✨"]
 
     if "i agree" in msg or "🤝" in msg:
-        return "Glad we are on the same page! 🤝 Hum hamesha quality और सच्चाई पर फोकस करते हैं। ✨", happy_suggestions
+        return "Glad we are on the same page! 🤝 We always focus on quality and honesty in all our recommendations. ✨", happy_suggestions
     if "nice" in msg or "😊" in msg:
-        return "Shukriya! 😊 Hume khushi hui ki aapko hamari service pasand aayi। ✨", happy_suggestions
+        return "Thank you! 😊 We are happy to know that you liked our service. Please let us know if you need more info! ✨", happy_suggestions
     if "haha" in msg or "😂" in msg:
-        return "Haha! 😂 Haste rahiye, health aur happiness dono hi zaroori hain! 🌟", happy_suggestions
+        return "Haha! 😂 Keep smiling! Good health and happiness always go hand in hand! 🌟", happy_suggestions
     if "tell me more" in msg or "✨" in msg:
-        return "Zaroor! ✨ RoopHub par aapko best health supplements milenge jo pure natural ingredients se bane hain। Aap aur kya jaanna chahte hain? 🤔", happy_suggestions
+        return "Certainly! ✨ At RoopHub, we provide the best health supplements made from 100% natural ingredients. What else would you like to know? 🤔", happy_suggestions
 
     if product:
-        reply = f"{product['desc']} Iske mukhya fayde {product['benefit']} hain. Iska result {product['result']} me dikhta hai."
+        reply = f"{product['name']} is {product['desc']} {product['benefits']} {product['usage']} {product['results']}"
         return reply, happy_suggestions
 
     # Detect category from keywords
+    category_keys = list(category_triggers.keys())
     for key, text in category_triggers.items():
-        if key in msg:
+        # Direct check
+        if key in msg: return text, happy_suggestions
+        # Fuzzy check for category typos (e.g., 'weightt')
+        if difflib.get_close_matches(msg, [key], n=1, cutoff=0.8):
             return text, happy_suggestions
 
-    if lang == "hi":
+    if lang == "hi": # Even if detected Hindi, we can reply in English or Mixed
         if any(x in msg for x in ["hello", "hi", "namaste", "hey"]): 
-            return "Namaste 🙏 RoopHub AI me aapka swagat hai! Main aapki kaise madad kar sakta hoon?", happy_suggestions
-        return "Main aapki behtar madad kar sakta hoon agar aap product ka naam likhein.", happy_suggestions
+            return "Hello! 🙏 Welcome to RoopHub AI Assistant. How can I help you find the right supplement today?", happy_suggestions
+        return "I can help you better if you mention a specific product or health category like 'Weight Loss' or 'Focus'.", happy_suggestions
     else:
         if "hello" in msg: 
             return "Hello 👋 Welcome! Which product are you interested in today?", happy_suggestions
-        return "I'm here to assist you with health supplements and wellness info.", happy_suggestions
+        return "I am here to assist you with natural health supplements. Feel free to ask about any product or health goal!", happy_suggestions
 
 # --- 3. ROUTES ---
 @app.route("/", methods=["GET"])
@@ -170,9 +204,18 @@ def submit_review():
 def get_reviews():
     try:
         target = review_sheet if review_sheet else sheet
+        if not target: return jsonify([])
         all_data = target.get_all_values()
-        # Sirf wahi data uthayenge jiske end mein REVIEW_ENTRY likha hai
-        reviews = [{"name": r[0], "rating": int(r[2]), "comment": r[3]} for r in all_data if len(r) > 4 and r[4] == "REVIEW_ENTRY"]
+        reviews = []
+        for r in all_data:
+            if len(r) >= 5 and r[4] == "REVIEW_ENTRY":
+                try:
+                    reviews.append({
+                        "name": r[0],
+                        "rating": int(r[2]) if r[2].isdigit() else 5,
+                        "comment": r[3]
+                    })
+                except: continue
         return jsonify(reviews)
     except:
         return jsonify([])
