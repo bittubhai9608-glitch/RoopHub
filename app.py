@@ -31,15 +31,15 @@ except Exception as e:
     sheet = None
     print(f"❌ Connection Error: {e}")
 
-# Review sheet ko separately handle karne ke liye (Optional: sheet1 hi use kar rahe hain simple rakhne ke liye)
+# Review sheet error handling
 try:
-    if client:
+    if 'client' in locals() and client:
         # Agar aapne Google Sheet mein "Reviews" naam ka tab banaya hai toh ye use hoga
         review_sheet = client.open("RoopHub Leads").worksheet("Reviews")
     else:
         review_sheet = None
 except:
-    review_sheet = None # Agar tab nahi hai toh main sheet hi use hogi
+    review_sheet = None 
 
 
 # --- 2. AAPKA PRODUCT DATABASE (No changes) ---
@@ -192,7 +192,7 @@ def submit_review():
     
     try:
         # Data format: Name, Email, Rating, Comment, Date
-        row = [data.get("name"), data.get("email"), data.get("rating"), data.get("comment"), "REVIEW_ENTRY"]
+        row = [data.get("name"), data.get("email"), data.get("rating"), data.get("comment"), "REVIEW_ENTRY", data.get("product", "General")]
         target = review_sheet if review_sheet else sheet
         if target:
             target.append_row(row)
