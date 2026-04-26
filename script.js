@@ -26,16 +26,6 @@ function scrollToTop(){
   window.scrollTo({top:0, behavior:'smooth'});
 }
 
-// SHOW BUTTON
-window.addEventListener("scroll", ()=>{
-  let btn=document.querySelector(".scrollTop");
-  if(window.scrollY>200){
-    btn.style.display="block";
-  }else{
-    btn.style.display="none";
-  }
-});
-
 let currentCategory = 'View Top Deals';
 
 function loadProducts(category) {
@@ -319,14 +309,16 @@ function detectLanguage(text){
     return /[\u0900-\u097F]/.test(text) ? "hi" : "en";
 }
 
-function sendMessage(){
+function sendMessage(manualMsg = null){
     let input = document.getElementById("chatInput");
-    let msg = input.value.trim();
+    let msg = manualMsg || input.value.trim();
     if(msg === "") return;
 
     chatHistory.push({role:"user", text:msg});
     renderMessages();
     input.value = "";
+    // Clear suggestions while AI is thinking
+    document.getElementById("aiSuggestions").innerHTML = "";
 
     fetch("https://roophub.onrender.com/chat", {
         method:"POST",
@@ -338,27 +330,48 @@ function sendMessage(){
     })
     .then(res => res.json())
     .then(data => {
-        // Typing animation for main script.js
-        let botReply = "";
+        // Add initial AI bubble for typing effect
+        let box = document.getElementById("aiMessages");
+        let botMsgDiv = document.createElement("div");
+        botMsgDiv.style = "margin:5px; padding:8px; border-radius:8px; background:#f1f1f1; align-self: flex-start;";
+        botMsgDiv.innerHTML = "<b>AI:</b> <span class='typing-text'></span>";
+        box.appendChild(botMsgDiv);
+        
+        let typingSpan = botMsgDiv.querySelector(".typing-text");
         const words = data.reply.split(" ");
         let i = 0;
-        
+
         const timer = setInterval(() => {
             if(i < words.length) {
-                botReply += words[i] + " ";
+                typingSpan.textContent += words[i] + " ";
                 i++;
-                // UI update logic here if needed
+                box.scrollTop = box.scrollHeight;
             } else {
                 clearInterval(timer);
                 chatHistory.push({role:"ai", text:data.reply});
                 localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
-                renderMessages();
+                renderQuickReplies(data.suggestions);
             }
-        }, 100);
+        }, 50); // Speed of typing
     })
     .catch(err => {
-        alert("❌ Flask server start karo");
         console.log(err);
+    });
+}
+
+function renderQuickReplies(suggestions) {
+    let sugBox = document.getElementById("aiSuggestions");
+    sugBox.innerHTML = "";
+    if (!suggestions) return;
+
+    suggestions.forEach(text => {
+        let btn = document.createElement("button");
+        btn.innerText = text;
+        btn.style = "background:#eff6ff; border:1px solid #bfdbfe; color:#1e40af; padding:6px 12px; border-radius:20px; cursor:pointer; font-size:13px; font-weight:500; transition:0.2s;";
+        btn.onclick = () => sendMessage(text);
+        btn.onmouseover = () => { btn.style.background = "#dbeafe"; btn.style.transform = "translateY(-1px)"; };
+        btn.onmouseout = () => { btn.style.background = "#eff6ff"; btn.style.transform = "translateY(0)"; };
+        sugBox.appendChild(btn);
     });
 }
 
@@ -401,7 +414,21 @@ function closeModal() {
 }
 
 // Modal kholne ke liye function (Example)
-function openModal() {
-    document.getElementById('importantInfoModal').style.display = 'block';
-    document.body.style.overflow = 'hidden'; // Screen ko lock karne ke liye
+function openModal(type) {
+    const modalMap = {
+        'about': 'aboutModal',
+        'info': 'importantInfoModal',
+        'contact': 'contactModal',
+        'faq': 'faqModal',
+        'disclaimer': 'disclaimerModal',
+        'terms': 'termsModal',
+        'privacy': 'privacyPolicyModal',
+        'affiliate': 'affiliateModal'
+    };
+    const id = modalMap[type] || type;
+    const modal = document.getElementById(id);
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
 }

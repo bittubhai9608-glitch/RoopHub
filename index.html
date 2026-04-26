@@ -62,6 +62,7 @@
     <h3>Legal</h3>
     <ul>
       <li onclick="openPrivacyPolicy()" style="cursor:pointer;">Privacy Policy</li>
+      <li onclick="openModal('affiliate')" style="cursor:pointer;">Affiliate Disclosure</li>
       <li onclick="openTerms()" style="cursor:pointer;">Terms & Conditions</li>
       <li onclick="showImportantInfo()" style="cursor:pointer;">Important Info</li>
     </ul>
@@ -400,27 +401,71 @@
     </div>
   </div>
 </div>
-<!-- ✅ WHATSAPP BUTTON -->
-<a href="https://wa.me/918271734883" class="whatsapp">💬</a>
 
-<!-- ✅ SCROLL TO TOP -->
-<div class="scrollTop" onclick="scrollToTop()">⬆</div>
+<!-- AFFILIATE DISCLOSURE FULL PAGE MODAL -->
+<div id="affiliateModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:white; z-index:9999; overflow-y:scroll; padding:20px; font-family: 'Segoe UI', sans-serif; color: #333;">
+    <button onclick="closeModal()" style="position:fixed; right:20px; top:20px; padding:10px 15px; background:rgb(107, 37, 228); color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold; z-index:10000;">
+    Close ✖
+    </button>
 
+    <div style="max-width: 800px; margin: 40px auto;">
+        <h2 style="color: #2c3e50; border-bottom: 3px solid #6b25e4; padding-bottom: 10px;">Affiliate Disclosure & Full Earnings Disclaimer</h2>
+        <p><strong>Last Updated: April 17, 2026</strong></p>
 
+        <p style="line-height: 1.8;">Welcome to RoopHUB Official (roophub.online). We believe in complete transparency and honesty when it comes to our relationship with our readers and the products we discuss. In compliance with the Federal Trade Commission (FTC) guidelines and Google AdSense program policies, this page serves as our official disclosure regarding affiliate relationships.</p>
 
+        <h3 style="color: #6b25e4;">1. What is an Affiliate Relationship?</h3>
+        <p style="line-height: 1.8;">Many of the links found on RoopHUB are "affiliate links." If you click on a link and subsequently make a purchase, we may receive a small commission from that sale. This is a referral fee provided by the brand at <strong>no additional cost to you</strong>.</p>
+
+        <h3 style="color: #6b25e4;">2. Why Do We Use Affiliate Links?</h3>
+        <p style="line-height: 1.8;">Affiliate marketing is our primary business model, allowing us to keep our content free for all users. Instead of charging a subscription fee, we earn through these commissions to cover hosting, research, and technical maintenance costs.</p>
+
+        <h3 style="color: #6b25e4;">3. Our Commitment to Editorial Integrity</h3>
+        <p style="line-height: 1.8;">Our reputation is our most valuable asset. We do not accept payment to provide a "fake" positive review. Our evaluation of products like Neuro Serge is based on official manufacturer data and ingredient analysis. We only affiliate with products that we believe offer genuine value.</p>
+
+        <h3 style="color: #6b25e4;">4. Transparency Regarding Product Claims</h3>
+        <p style="line-height: 1.8;">Any product claim, statistic, or quote about a product should be verified with the manufacturer. Results can vary significantly from person to person. We encourage perform your own due diligence before making any purchase.</p>
+
+        <h3 style="color: #6b25e4;">5. Google AdSense and Third-Party Advertisements</h3>
+        <p style="line-height: 1.8;">RoopHUB may participate in the Google AdSense program. Ads served by Google are generated based on your browsing history. Our inclusion of these ads does not constitute an endorsement of the advertised products.</p>
+
+        <h3 style="color: #6b25e4;">6. Ethical Standards</h3>
+        <p style="line-height: 1.8;">We strictly adhere to ethical marketing practices. We do not use deceptive tactics, such as fake countdown timers or misleading testimonials. We believe an informed customer is a happy customer.</p>
+
+        <h3 style="color: #6b25e4;">7. Social Media and External Communications</h3>
+        <p style="line-height: 1.8;">This disclosure applies to all communications from RoopHUB, including YouTube channel content, email newsletters, and social media posts.</p>
+
+        <h3 style="color: #6b25e4;">8. Contact and Further Questions</h3>
+        <p style="line-height: 1.8;">If you have any questions regarding this Affiliate Disclosure, please do not hesitate to reach out to us through our Contact Us page.</p>
+
+        <p style="margin-top: 50px; text-align: center; color: #999; font-size: 0.85em;">
+            By continuing to use this website, you acknowledge that you have read and understood this Affiliate Disclosure.
+        </p>
+    </div>
+</div>
 
 <!-- FLOAT BUTTON -->
 <div id="aiFloat" onclick="toggleChat()" style="
 position:fixed;
 bottom:20px;
 right:20px;
-background:#000;
+background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
 color:#fff;
-padding:12px 15px;
-border-radius:50%;
+padding:10px 20px;
+border-radius:50px;
 cursor:pointer;
 z-index:999;
-">🤖</div>
+border: 2px solid rgba(255,255,255,0.2);
+box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+font-weight: 600;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: transform 0.3s;
+">
+    <span style="font-size: 18px;">✨</span>
+    <span style="font-size: 14px; letter-spacing: 0.5px;">How can I help?</span>
+</div>
 
 <!-- CHAT BOX -->
 <div id="aiPopup" style="
@@ -428,32 +473,41 @@ display:none;
 position:fixed;
 bottom:80px;
 right:20px;
-width:300px;
+width:380px;
+max-width:90vw;
 background:#fff;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.2);
+border-radius:15px;
+box-shadow: 0 15px 35px rgba(0,0,0,0.2);
 z-index:999;
+overflow:hidden;
 ">
 
     <div style="
-    background:#000;
+    background: #2563eb;
     color:#fff;
-    padding:10px;
-    border-radius:10px 10px 0 0;
+    padding:15px;
+    font-weight: 600;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
     ">
-        AI Assistant
+        <span>✨ RoopHub AI Assistant</span>
         <span onclick="toggleChat()" style="float:right;cursor:pointer;">✖</span>
     </div>
 
     <div id="aiMessages" style="
-    height:200px;
+    height:260px; /* Thoda chota kiya gaya professional look ke liye */
     overflow-y:auto;
     padding:10px;
+    background: #f8fafc;
     "></div>
 
-    <div style="display:flex;">
-        <input type="text" id="chatInput" placeholder="Type..." style="flex:1;padding:8px;">
-        <button onclick="sendMessage()">Send</button>
+    <!-- Quick Replies Container -->
+    <div id="aiSuggestions" style="display:flex; flex-wrap:wrap; gap:8px; padding:12px; background:#fff; border-top:1px solid #e2e8f0;"></div>
+
+    <div style="display:flex; padding:10px; border-top:1px solid #e2e8f0; background:#fff;">
+        <input type="text" id="chatInput" placeholder="Write something happy..." style="flex:1; padding:10px; border:1px solid #cbd5e1; border-radius:8px; outline:none;">
+        <button onclick="sendMessage()" style="margin-left:8px; background:#2563eb; color:white; border:none; padding:8px 15px; border-radius:8px; cursor:pointer; font-weight:600;">Send</button>
     </div>
 
 </div>
