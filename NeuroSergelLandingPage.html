@@ -132,6 +132,11 @@ text-align:center;
 padding:20px;
 margin-top:20px;
 }
+@keyframes pulse-blue {
+  0% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(0, 123, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0); }
+}
 </style>
 </head>
 
@@ -954,14 +959,14 @@ Close ✖
 
 </div>
 
-<div id="chat-icon" onclick="toggleChat()" style="position:fixed; bottom:20px; right:20px; background:#007bff; color:white; width:60px; height:60px; border-radius:50%; text-align:center; line-height:60px; cursor:pointer; font-size:30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index:1000;">
-How I can Help?
+<div id="chat-icon" onclick="toggleChat()" style="position:fixed; bottom:20px; right:20px; background:#007bff; color:white; padding: 10px 20px; border-radius:50px; text-align:center; cursor:pointer; font-size:16px; font-weight:600; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index:1000; animation: pulse-blue 2s infinite;">
+✨How can I help?
 </div>
 
 <div id="chat-container" style="display:none; position:fixed; bottom:90px; right:20px; width:320px; border:1px solid #ccc; background:#fff; border-radius:15px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index:1000; overflow:hidden; font-family: Arial, sans-serif;">
     
     <div style="background:#007bff; color:white; padding:15px; font-weight:bold; display:flex; justify-content:space-between; align-items:center;">
-        <span>How can I help?</span>
+        <span>✨RoopHub AI Assistant</span>
         <span onclick="toggleChat()" style="cursor:pointer; font-size:20px;">&times;</span>
     </div>
     

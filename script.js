@@ -358,8 +358,8 @@ function sendMessage(manualMsg = null){
         // Add initial AI bubble for typing effect
         let box = document.getElementById("aiMessages");
         let botMsgDiv = document.createElement("div");
-        botMsgDiv.style = "margin:5px; padding:8px; border-radius:8px; background:#f1f1f1; align-self: flex-start;";
-        botMsgDiv.innerHTML = "<b>AI:</b> <span class='typing-text'></span>";
+        botMsgDiv.style = "padding: 10px 14px; border-radius: 18px; max-width: 85%; font-size: 14px; line-height: 1.5; background: #e2e8f0; color: #1e293b; align-self: flex-start; border-bottom-left-radius: 4px;";
+        botMsgDiv.innerHTML = "<span class='typing-text'></span>";
         box.appendChild(botMsgDiv);
         
         let typingSpan = botMsgDiv.querySelector(".typing-text");
@@ -405,14 +405,19 @@ function renderMessages(){
     box.innerHTML = "";
 
     chatHistory.forEach(m => {
+        const isAi = m.role === 'ai';
         box.innerHTML += `
         <div style="
-        margin:5px;
-        padding:8px;
-        border-radius:8px;
-        background:${m.role==='ai'?'#f1f1f1':'#d1f0ff'}
+        padding: 10px 14px;
+        border-radius: 18px;
+        max-width: 85%;
+        font-size: 14px;
+        line-height: 1.5;
+        ${isAi 
+            ? 'background: #e2e8f0; color: #1e293b; align-self: flex-start; border-bottom-left-radius: 4px;' 
+            : 'background: #2563eb; color: #ffffff; align-self: flex-end; border-bottom-right-radius: 4px;'}
         ">
-        <b>${m.role==='ai'?'AI':'You'}:</b> ${m.text}
+        ${m.text}
         </div>
         `;
     });
