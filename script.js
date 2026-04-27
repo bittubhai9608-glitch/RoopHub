@@ -382,7 +382,7 @@ function closeModal() {
     const modals = [
         'aboutModal', 'importantInfoModal', 'privacyPolicyModal', 
         'termsModal', 'disclaimerModal', 'faqModal', 'contactModal',
-        'privacyModal', 'affiliateModal'
+        'privacyModal', 'affiliateModal', 'authModal'
     ];
     
     modals.forEach(id => {
@@ -402,13 +402,33 @@ function openModal(type) {
         'disclaimer': 'disclaimerModal',
         'terms': 'termsModal',
         'privacy': 'privacyPolicyModal',
-        'affiliate': 'affiliateModal'
+        'affiliate': 'affiliateModal',
+        'auth': 'authModal'
     };
     const id = modalMap[type] || type;
     const modal = document.getElementById(id);
     if (modal) {
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
+    }
+}
+
+function toggleAuth(type) {
+    const signInForm = document.getElementById('signInForm');
+    const signUpForm = document.getElementById('signUpForm');
+    const signInTab = document.getElementById('signInTab');
+    const signUpTab = document.getElementById('signUpTab');
+    
+    if (type === 'signin') {
+        signInForm.style.display = 'flex';
+        signUpForm.style.display = 'none';
+        signInTab.classList.add('active-tab');
+        signUpTab.classList.remove('active-tab');
+    } else {
+        signInForm.style.display = 'none';
+        signUpForm.style.display = 'flex';
+        signInTab.classList.remove('active-tab');
+        signUpTab.classList.add('active-tab');
     }
 }
 

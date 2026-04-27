@@ -30,29 +30,74 @@ html {
 
 /* Header */
 header {
-  background: linear-gradient(45deg, #2874f0, #6a11cb);
+  background: radial-gradient(circle at center, #1e40af 0%, #0f172a 100%);
+  background-size: 200% 200%;
+  animation: headerFlow 10s ease infinite;
   color: white;
   text-align: center;
-  padding: 20px 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  padding: 50px 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border-bottom: 3px solid #fbbf24;
+  position: relative;
+  overflow: hidden;
 }
 
-header h1 {
-  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 8px rgba(0,0,0,0.15);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+/* Corner Auth Button */
+.header-auth-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #fbbf24;
+  color: #0f172a;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 100;
+  transition: transform 0.2s, background 0.2s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.heading-fade {
-  opacity: 0.2;
-  transform: translateY(-8px);
+.header-auth-btn:hover {
+  transform: scale(1.05);
+  background: #f59e0b;
 }
-header p {
-  max-width: 860px;
-  margin: 0 auto;
-  font-size: 1rem;
-  opacity: 0.94;
+
+#animatedHeading {
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  background: linear-gradient(to right, #ffffff 20%, #fbbf24 40%, #fbbf24 60%, #ffffff 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+  text-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.tagline {
+  color: #fbbf24;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  display: block;
+  opacity: 0.9;
+}
+
+@keyframes headerFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shine {
+  to { background-position: 200% center; }
 }
 
 /* Navbar */
@@ -747,6 +792,12 @@ nav button:hover {
     max-width: 560px;
     height: 92vh;
     margin: 8px;
+  }
+  .header-auth-btn {
+    top: 10px;
+    right: 10px;
+    padding: 8px 14px;
+    font-size: 12px;
   }
 }
 
