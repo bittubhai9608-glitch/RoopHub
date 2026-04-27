@@ -86,12 +86,46 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* SECTIONS */
-.specs,.description,.reviews,.badges,.buy-section{
+.specs,.description,.reviews,.buy-section{
 background:#fff;
 padding:25px;
 margin:20px;
 border-radius:15px;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+.badges {
+    overflow: hidden;
+    padding: 10px 0;
+    white-space: nowrap;
+    position: relative;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.5);
+}
+.badge-track {
+    display: flex;
+    width: max-content;
+    gap: 15px;
+    animation: scrollBadges 25s linear infinite;
+}
+.badge-track:hover {
+    animation-play-state: paused; /* User jab ungli rakhega toh ruk jayega */
+}
+@keyframes scrollBadges {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.badge-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #475569;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
 }
 
 /* TABLE */
@@ -100,13 +134,65 @@ th,td{border:1px solid #ddd;padding:10px}
 th{background:#1e90ff;color:#fff}
 
 /* BUY */
-.buy-section{text-align:center}
-.buy-section a{
-padding:15px 40px;
-background:#ff9800;
-color:#fff;
-border-radius:10px;
-text-decoration:none;
+.buy-section {
+    text-align: center;
+    padding: 15px 10px;
+    background: #f9f9f9;
+    margin: 20px auto;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    max-width: 380px;
+}
+.buy-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+    transition: all 0.3s ease;
+    animation: heartBeat 2s infinite;
+    cursor: pointer;
+    border: none;
+}
+.buy-btn:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 15px 30px rgba(230, 81, 0, 0.6);
+    background: linear-gradient(135deg, #e65100 0%, #ff9800 100%);
+}
+/* MINI BUY SECTION */
+.buy-section-sm {
+    text-align: center;
+    padding: 10px;
+    background: #ffffff;
+    margin: 15px auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    max-width: 320px;
+}
+.buy-btn-sm {
+    display: inline-block;
+    padding: 8px 20px;
+    background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    animation: heartBeat 2s infinite;
+}
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.1); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.1); }
+    70% { transform: scale(1); }
 }
 
 /* STICKY BUTTON */
@@ -354,6 +440,14 @@ margin-top:20px;
 
 </div>
 
+<!-- MINI BUY -->
+<div class="buy-section-sm">
+    <div style="font-size: 12px; color: #1e40af; font-weight: 800; margin-bottom: 5px;">🛡️ SECURE CHECKOUT: SAVE 35%</div>
+    <a href="https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" class="buy-btn-sm">
+        🔒 Order Now 35% Off
+    </a>
+</div>
+
 <!-- SPECS -->
 <div class="specs">
     <h2>Product Specifications</h2>
@@ -543,15 +637,28 @@ See More
 
 <!-- BADGES -->
 <div class="badges">
-    <table>
-        <tr><th>✔ Official Product</th><th>✔ Made in USA | ✔ Fast Shipping</th></tr>
-        <tr><th>✔ Money-Back Guarantee</th><th>✔ 100% Natural Ingredients</th></td></tr>
-    </table>
+    <div class="badge-track">
+        <div class="badge-item" style="border-left: 3px solid #1e90ff;">✅ Official Product</div>
+        <div class="badge-item" style="border-left: 3px solid #27ae60;">✅ Made in USA</div>
+        <div class="badge-item" style="border-left: 3px solid #ff9800;">✅ Fast Shipping</div>
+        <div class="badge-item" style="border-left: 3px solid #e74c3c;">✅ Money-Back Guarantee</div>
+        <div class="badge-item" style="border-left: 3px solid #9b59b6;">✅ 100% Natural</div>
+        <!-- Loop ke liye duplicate items -->
+        <div class="badge-item" style="border-left: 3px solid #1e90ff;">✅ Official Product</div>
+        <div class="badge-item" style="border-left: 3px solid #27ae60;">✅ Made in USA</div>
+        <div class="badge-item" style="border-left: 3px solid #ff9800;">✅ Fast Shipping</div>
+        <div class="badge-item" style="border-left: 3px solid #e74c3c;">✅ Money-Back Guarantee</div>
+        <div class="badge-item" style="border-left: 3px solid #9b59b6;">✅ 100% Natural</div>
+    </div>
 </div>
 
 <!-- BUY -->
 <div class="buy-section" id="buy">
-<a href="https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google">Order Now 35% Off</a>
+    <div style="font-size: 14px; color: #1e40af; font-weight: 800; margin-bottom: 8px;">🛡️ SECURE ORDER: SAVE 35% TODAY</div>
+    <a href="https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" class="buy-btn">
+        🔒 Order Now 35% Off
+    </a>
+    <div style="margin-top: 8px; font-weight: 600; color: #4b5563; font-size: 11px;">100% Risk-Free Guarantee | SSL Encrypted</div>
 </div>
 
 
