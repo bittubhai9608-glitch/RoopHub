@@ -10,6 +10,7 @@
 </head>
 <body>
   <header>
+    <button onclick="openModal('authModal')" class="header-auth-btn" aria-label="Sign In">Sign In / Join</button>
     <div class="header-text">
         <h1 id="animatedHeading">
             ROOPHUB
@@ -442,6 +443,30 @@
             By continuing to use this website, you acknowledge that you have read and understood this Affiliate Disclosure.
         </p>
     </div>
+</div>
+
+<!-- Sign In / Sign Up Modal -->
+<div id="authModal" class="modal">
+  <div class="modal-content auth-modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="auth-tabs">
+        <h3 id="signInTab" onclick="toggleAuth('signin')" class="active-tab">Sign In</h3>
+        <h3 id="signUpTab" onclick="toggleAuth('signup')">Sign Up</h3>
+    </div>
+    
+    <form id="signInForm" class="auth-form">
+        <input type="email" placeholder="Email Address" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit" class="auth-btn signin-btn">Login to RoopHub</button>
+    </form>
+
+    <form id="signUpForm" class="auth-form" style="display: none;">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="password" placeholder="Create Password" required>
+        <button type="submit" class="auth-btn signup-btn">Create Account</button>
+    </form>
+  </div>
 </div>
 
 <!-- FLOAT BUTTON -->

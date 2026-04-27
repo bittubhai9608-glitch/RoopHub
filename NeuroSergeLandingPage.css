@@ -203,11 +203,11 @@ border-radius:10px;
 
 /* HEADER CLEAN */
 header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  padding: 10px;
+  background: radial-gradient(circle at top, #1e40af, #0f172a);
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 4px solid #fbbf24;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
@@ -218,20 +218,26 @@ header {
 .header-text {
   display: flex;
   flex-direction: column;
-  text-align: left;
+  text-align: center;
 }
 
 #animatedHeading {
   margin: 0;
-  color: #fe083e;
-  font-size: 26px;
-  font-weight: bold;
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 
 .tagline {
-  color: #00ff99;
-  font-size: 14px;
-  margin-top: -5px;
+  color: #fbbf24;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  margin-top: 5px;
+  text-transform: uppercase;
 }
 
 @media (max-width: 768px) {
