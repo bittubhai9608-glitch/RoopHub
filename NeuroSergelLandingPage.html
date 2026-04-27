@@ -86,12 +86,80 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* SECTIONS */
-.specs,.description,.reviews,.buy-section{
-background:#fff;
-padding:25px;
-margin:20px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+.specs {
+    background: #ffffff;
+    padding: 25px;
+    margin: 30px auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    border: 1px solid #edf2f7;
+    max-width: 850px;
+}
+.specs h2 {
+    font-size: 22px;
+    color: #1a202c;
+    margin-bottom: 20px;
+    border-left: 5px solid #1e90ff;
+    padding-left: 15px;
+    letter-spacing: -0.5px;
+}
+.specs-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.specs-table tr {
+    transition: all 0.2s ease;
+}
+.specs-table tr:nth-child(even) { background-color: #f8fafc; }
+.specs-table tr:hover { background-color: #f1f5f9; }
+
+.specs-table td {
+    padding: 12px 16px;
+    color: #4a5568;
+    vertical-align: top;
+    font-size: 14px;
+    border-bottom: 1px solid #edf2f7;
+}
+.spec-label {
+    font-weight: 600;
+    color: #2d3748;
+    width: 35%;
+}
+
+/* WHY CHOOSE SECTION */
+.description {
+    background: #ffffff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+    max-width: 850px;
+}
+.description h2 {
+    font-size: 20px;
+    color: #1a202c;
+    margin-bottom: 15px;
+    border-left: 5px solid #27ae60;
+    padding-left: 12px;
+}
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+}
+.benefit-card {
+    background: #f0fff4;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #c6f6d5;
+    color: #2f855a;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 .badges {
     overflow: hidden;
@@ -278,17 +346,17 @@ margin-top:20px;
 /* FAQ Professional Styling */
 .faq-section {
     background: #fff;
-    padding: 20px 15px;
+    padding: 30px 20px;
     margin: 20px auto;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    max-width: 600px; /* Reduced width for compactness */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    max-width: 750px;
 }
 .faq-section h2 {
     text-align: center;
     color: #2c3e50;
     margin-bottom: 15px;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
 }
 .faq-item {
@@ -303,8 +371,7 @@ margin-top:20px;
 }
 .faq-question {
     width: 100%;
-    padding: 14px 18px;
-    background: #007bff; /* Professional Blue */
+    padding: 16px 20px;
     padding: 12px 16px;
     background: #1e90ff; /* Bright Professional Blue */
     color: #ffffff; /* White text for contrast */
@@ -335,22 +402,16 @@ margin-top:20px;
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: all 0.4s ease-out;
-    background: #d4edda; /* Clear Professional Green */
     transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    background: #f0fff4; /* Soft Professional Green */
-    border-top: 1px solid rgba(0,0,0,0.05);
+    background: #ffffff;
+    border-top: 1px solid #edf2f7;
 }
 .faq-answer p {
-    padding: 15px 18px;
-    color: #155724; /* Darker green for text */
+    padding: 18px 22px;
+    color: #4a5568;
     line-height: 1.6;
-    padding: 12px 16px;
-    color: #2f855a; /* Deep green for readability */
-    line-height: 1.5;
     font-size: 15px;
     margin: 0;
-    font-weight: 500;
 }
 </style>
 </head>
@@ -451,32 +512,30 @@ margin-top:20px;
 <!-- SPECS -->
 <div class="specs">
     <h2>Product Specifications</h2>
-<table>
-<tr><th>Feature</th><th>Details</th></tr>
-<tr><td>Product Name</td><td>Neuro Serge</td></tr>
-<tr><td>Formula Type</td><td>Natural herbal brain support formula</td></tr>
-<tr><td>Main Ingredients</td><td>Olive leaf, Green tea,Grape seed,Bilberry,Cinnamon bark,Licorice extract,and other natural herbs</td></tr>
-<tr><td>Product Form</td><td>Capsules(pills)</td></tr>
-<tr><td>Quantity</td><td>60 Capsules in 1 bottle(about 30 days supply)</td></tr>
-<tr><td>How to Use</td><td>Take daily as written on label (usually 1-2 capsules per day)</td></tr>
-<tr><td>Main Benefits</td><td>Helps memory, improves focus,supports clear thinking,reduces tiredness in brain, supports brain health</td></tr>
-<tr><td>Quality Standard</td><td>Made with controlled herbal formula(safe and tested quality process)</td></tr>
-<tr><td>Manufacturing</td><td>United States (USA)</td></tr>
-<tr><td>Product Type</td><td>Health supplement(not medicine)</td></tr>
-<tr><td>Safety</td><td>Made from natural ingredients, not-addictive, non-GMO</td></tr>
-<tr><td>Important Note</td><td>This is not a medicine. It does not cure or treat any disease</td></tr>
+<table class="specs-table">
+<tr><td class="spec-label">Product Name</td><td>Neuro Serge</td></tr>
+<tr><td class="spec-label">Formula Type</td><td>Natural herbal brain support formula</td></tr>
+<tr><td class="spec-label">Main Ingredients</td><td>Olive leaf, Green tea, Grape seed, Bilberry, Cinnamon bark, Licorice extract, and other natural herbs</td></tr>
+<tr><td class="spec-label">Product Form</td><td>Capsules (pills)</td></tr>
+<tr><td class="spec-label">Quantity</td><td>60 Capsules in 1 bottle (about 30 days supply)</td></tr>
+<tr><td class="spec-label">How to Use</td><td>Take daily as written on label (usually 1-2 capsules per day)</td></tr>
+<tr><td class="spec-label">Main Benefits</td><td>Helps memory, improves focus, supports clear thinking, reduces tiredness in brain, supports brain health</td></tr>
+<tr><td class="spec-label">Quality Standard</td><td>Made with controlled herbal formula (safe and tested quality process)</td></tr>
+<tr><td class="spec-label">Manufacturing</td><td>United States (USA)</td></tr>
+<tr><td class="spec-label">Product Type</td><td>Health supplement (not medicine)</td></tr>
+<tr><td class="spec-label">Safety</td><td>Made from natural ingredients, non-addictive, non-GMO</td></tr>
+<tr><td class="spec-label">Important Note</td><td>This is not a medicine. It does not cure or treat any disease</td></tr>
 </table>
 </div>
-
 <!-- DESCRIPTION -->
 <div class="description">
-    <table>
-        <tr><th>Why Choose Neuro Serge?</th></tr>
-        <tr><td>Improves memory, focus & mental clarity.</td></tr>
-        <tr><td>Supports overall brain health and function.</td></tr>
-        <tr><td>Reduces brain fatigue and supports energy levels.</td></tr>
-        <tr><td>Made with natural ingredients for safe use.</td></tr>
-    </table>
+    <h2>Why Choose Neuro Serge?</h2>
+    <div class="benefit-grid">
+        <div class="benefit-card"><span>✅</span> Improves memory, focus & mental clarity.</div>
+        <div class="benefit-card"><span>✅</span> Supports overall brain health and function.</div>
+        <div class="benefit-card"><span>✅</span> Reduces brain fatigue & supports energy.</div>
+        <div class="benefit-card"><span>✅</span> 100% Natural ingredients for safe use.</div>
+    </div>
 </div>
 <style>
 body {
@@ -607,31 +666,30 @@ See More
 
 
 <div class="faq-section">
-
-<h2>FAQs</h2>
+    <h2>Frequently Asked Questions</h2>
 
 <div class="faq-item">
     <button class="faq-question">
-        Is this product safe?
+        🛡️ Is Neuro Serge safe for daily use?
         <span class="faq-icon">+</span>
     </button>
-    <div class="faq-answer"><p>Yes, Neuro Serge is 100% natural and safe for daily use.</p></div>
+    <div class="faq-answer"><p>Absolutely. <strong>Neuro Serge</strong> is formulated with 100% high-quality, natural herbal extracts. It is non-GMO, non-addictive, and manufactured in a controlled facility following strict quality standards to ensure maximum safety for our users.</p></div>
 </div>
 
 <div class="faq-item">
     <button class="faq-question">
-        How long until I see results?
+        ⏳ When can I expect to see visible results?
         <span class="faq-icon">+</span>
     </button>
-    <div class="faq-answer"><p>Most users see results within 2 to 4 weeks of consistent use.</p></div>
+    <div class="faq-answer"><p>While every individual is unique, most of our customers report a noticeable improvement in focus and mental clarity within <strong>2 to 4 weeks</strong> of consistent daily use. For long-term brain health support, we recommend a 90-day supply.</p></div>
 </div>
 
 <div class="faq-item">
     <button class="faq-question">
-        Do you ship worldwide?
+        🌍 Do you provide fast international shipping?
         <span class="faq-icon">+</span>
     </button>
-    <div class="faq-answer"><p>Yes, we ship to India, USA, UK and many other countries fast.</p></div>
+    <div class="faq-answer"><p>Yes, we provide express shipping to the <strong>India, USA, UK, Canada</strong>, and many other countries. All orders are processed within 24 hours and shipped in discreet packaging to ensure your privacy and product safety.</p></div>
 </div>
 </div>
 
