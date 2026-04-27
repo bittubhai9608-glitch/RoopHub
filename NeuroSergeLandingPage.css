@@ -305,21 +305,12 @@ header {
 
 
 .faq-answer{
-    display: none !important;
-    padding:10px;
-    background:#1fde1b;
-    border-radius:8px;
-    margin-top:5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    background: #d1fae5; /* Pleasant Success Green */
+    color: #064e3b;
+    border-radius: 0 0 10px 10px;
+    margin-top: 0;
+    border: none !important;
 }
-
-
-
-
-
-
-
-
-
-
-
-

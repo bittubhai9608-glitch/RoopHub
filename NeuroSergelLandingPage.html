@@ -10,37 +10,134 @@
 body{background:#f5f5f5;color:#333}
 
 /* HEADER */
-header{
-text-align:center;
-padding:80px 20px;
-color:#fff;
-background: linear-gradient(270deg,#1e90ff,#00bfff,#1e90ff);
-background-size:600% 600%;
-animation: gradientBG 15s ease infinite;
+header {
+    text-align: center;
+    padding: 40px 20px 50px;
+    color: #fff;
+    background: radial-gradient(circle at top, #1e40af, #0f172a);
+    border-bottom: 4px solid #fbbf24;
+    position: relative;
+    overflow: hidden;
 }
-@keyframes gradientBG{
-0%{background-position:0%}
-50%{background-position:100%}
-100%{background-position:0%}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fbbf24;
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+    background: linear-gradient(to bottom, #ffffff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+header p.sub-headline {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    line-height: 1.4;
+    position: relative;
 }
 
 .cta-btn{
-padding:15px 40px;
-background:#ff9800;
-color:#fff;
-border-radius:10px;
-text-decoration:none;
-display:inline-block;
-margin-top:20px;
+    padding: 14px 35px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 800;
+    font-size: 16px;
+    text-transform: uppercase;
+    box-shadow: 0 10px 25px rgba(217, 119, 6, 0.4);
+    transition: 0.3s transform;
+    position: relative;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.cta-btn:hover {
+    transform: scale(1.05);
+}
+
+.trust-bar {
+    margin-top: 25px;
+    position: relative;
+}
+
+.rating-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.trusted-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 /* NEW FEATURES */
 .timer{
-background:#ff0000;
-color:#fff;
-text-align:center;
-padding:10px;
-font-weight:bold;
+    background: linear-gradient(90deg, #7f1d1d 0%, #ef4444 50%, #7f1d1d 100%);
+    color: #fff;
+    text-align: center;
+    padding: 6px 10px;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+#countdown {
+    background: rgba(0,0,0,0.25);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: monospace;
 }
 
 .live{
@@ -387,28 +484,30 @@ margin-top:20px;
     transition: background 0.3s ease;
 }
 .faq-icon {
-    font-size: 20px;
     font-size: 18px;
     color: #ffffff;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     font-weight: bold;
+    display: inline-block;
 }
 /* Style for active state */
 .faq-item.active { border-color: #0056b3; }
 .faq-item.active { border-color: #1e90ff; box-shadow: 0 4px 10px rgba(30, 144, 255, 0.2); }
-.faq-item.active .faq-icon { transform: rotate(45deg); }
+.faq-item.active .faq-icon { transform: rotate(135deg); }
 .faq-item.active .faq-question { background: #0056b3; }
 .faq-item.active .faq-question { background: #187bcd; }
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    background: #ffffff;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #dcffe4; /* Vibrant Success Green */
+    color: #14532d;
     border-top: 1px solid #edf2f7;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
 }
 .faq-answer p {
-    padding: 18px 22px;
-    color: #4a5568;
+    padding: 20px;
+    color: #166534;
     line-height: 1.6;
     font-size: 15px;
     margin: 0;
@@ -446,15 +545,21 @@ margin-top:20px;
 <body>
 
 <header>
-<h1>Neuro Serge</h1>
-<p>Boost memory, improve focus & get mental clarity — naturally</p>
-<a href="#buy" class="cta-btn">Get Discount Now</a><br><b>⭐⭐⭐⭐⭐ 4.8/5 (2,347 Reviews)</b>
-    <br><b><i>✔ Trusted by 3,000+ users</i></b>
+    <div class="hero-badge">🧠 Natural Cognitive Support</div>
+    <h1>Neuro Serge</h1>
+    <p class="sub-headline">Boost memory, improve focus & get mental clarity — naturally</p>
+    
+    <a href="#buy" class="cta-btn">Get Discount Now</a>
+    
+    <div class="trust-bar">
+        <span class="rating-text">⭐⭐⭐⭐⭐ 4.8/5 (2,347 Reviews)</span>
+        <div class="trusted-badge">✔ Trusted by 3,000+ users globally</div>
+    </div>
 </header>
 
 <!-- ✅ NEW TIMER -->
 <div class="timer">
-⏳ Offer Ends In: <span id="countdown"></span>
+    <span>⚡ Limited Time Offer</span> <span id="countdown">Loading...</span>
 </div>
 
 <!-- ✅ NEW LIVE USERS -->
@@ -695,26 +800,34 @@ See More
 
 <div class="faq-item">
     <button class="faq-question">
-        🛡️ Is Neuro Serge safe for daily use?
+        🛡️ Is Neuro Serge 100% safe and natural for long-term use?
         <span class="faq-icon">+</span>
     </button>
-    <div class="faq-answer"><p>Absolutely. <strong>Neuro Serge</strong> is formulated with 100% high-quality, natural herbal extracts. It is non-GMO, non-addictive, and manufactured in a controlled facility following strict quality standards to ensure maximum safety for our users.</p></div>
+    <div class="faq-answer"><p><strong>Yes, absolutely!</strong> Neuro Serge is crafted with pure, lab-tested herbal ingredients. It is 100% non-GMO, non-addictive, and safe for daily use. Thousands of users trust it every day for sustained mental clarity without any side effects.</p></div>
 </div>
 
 <div class="faq-item">
     <button class="faq-question">
-        ⏳ When can I expect to see visible results?
+        🚀 How quickly will I notice a boost in my focus and memory?
         <span class="faq-icon">+</span>
     </button>
-    <div class="faq-answer"><p>While every individual is unique, most of our customers report a noticeable improvement in focus and mental clarity within <strong>2 to 4 weeks</strong> of consistent daily use. For long-term brain health support, we recommend a 90-day supply.</p></div>
+    <div class="faq-answer"><p>Many users feel a difference in their alertness and focus within the <strong>first 7-10 days</strong>. For the best "Life-Changing" results in memory and cognitive speed, we recommend consistent use for at least 30 to 60 days. It only gets better with time!</p></div>
 </div>
 
 <div class="faq-item">
     <button class="faq-question">
-        🌍 Do you provide fast international shipping?
+        ⭐ Why is Neuro Serge rated #1 compared to other brain boosters?
         <span class="faq-icon">+</span>
     </button>
-    <div class="faq-answer"><p>Yes, we provide express shipping to the <strong>India, USA, UK, Canada</strong>, and many other countries. All orders are processed within 24 hours and shipped in discreet packaging to ensure your privacy and product safety.</p></div>
+    <div class="faq-answer"><p>Unlike typical caffeine-filled pills, Neuro Serge uses a <strong>science-backed herbal synergy</strong> that nourishes your brain cells. It provides clean energy and sharp focus without the "crashes" or jitters, making it the most reliable choice for professionals and students.</p></div>
+</div>
+
+<div class="faq-item">
+    <button class="faq-question">
+        🛡️ What if I am not 100% satisfied with my results?
+        <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer"><p>Your purchase is completely **Risk-Free!** We are so confident in Neuro Serge that we offer a 100% Satisfaction Guarantee. If you don't feel sharper and more focused, your investment is protected. We value your trust above everything else.</p></div>
 </div>
 </div>
 
@@ -1401,15 +1514,45 @@ let fakeReviews = [
 let realReviews = [];
 let visibleCount = 5;
 
+// Function to render reviews in the UI
+function displayReviews() {
+    const list = document.getElementById("reviewList");
+    const btn = document.getElementById("seeMoreBtn");
+    if (!list) return;
+
+    list.innerHTML = "";
+    const allReviews = [...fakeReviews, ...realReviews];
+
+    // Pehla element disclaimer hai, usse skip ya handle karein
+    allReviews.slice(0, visibleCount).forEach(r => {
+        if (r.rating == "0") return; 
+        list.innerHTML += `
+            <div class="review-card">
+                <div class="card-header">
+                    <div class="user-avatar">${r.name ? r.name.charAt(0) : 'U'}</div>
+                    <div>
+                        <div style="font-weight:bold;">${r.name} ${r.country_name ? '('+r.country_name+')' : ''}</div>
+                        <div style="color:#ff9800;">${"⭐".repeat(parseInt(r.rating) || 5)}</div>
+                    </div>
+                </div>
+                <p class="review-text">${r.comment}</p>
+                <div class="verified-badge" style="color:#27ae60; font-size:12px; margin-top:5px;">✔ Verified Purchase</div>
+            </div>`;
+    });
+
+    if (btn) {
+        btn.style.display = allReviews.length > visibleCount ? "block" : "none";
+    }
+}
+
 // Fetch reviews from server on load
 async function fetchServerReviews() {
     try {
         const res = await fetch('https://roophub.onrender.com/get-reviews');
         realReviews = await res.json();
-        if (document.getElementById("reviewList").style.display === "block") displayReviews();
+        displayReviews();
     } catch (e) { console.log("Reviews fetch failed"); }
 }
-fetchServerReviews();
 
 // Show/Hide reviews
 function toggleReviews(){
@@ -1430,71 +1573,22 @@ function toggleForm(){
     form.style.display = (form.style.display === "none") ? "block" : "none";
 }
 
-// Display reviews
-function displayReviews(){
-    let list = document.getElementById("reviewList");
-    let btn = document.getElementById("seeMoreBtn");
-
-    list.innerHTML = "";
-
-    let allReviews = [...fakeReviews, ...realReviews];
-
-    allReviews.slice(0, visibleCount).forEach(r => {
-        const initial = r.name.charAt(0).toUpperCase();
-        list.innerHTML += `
-        <div class="review-card">
-            <div class="card-header">
-                <div class="user-avatar">${initial}</div>
-                <div>
-                    <div style="font-weight: 700; font-size: 15px;">${r.name}</div>
-                    <div class="verified-badge">✓ Verified Buyer • ${r.country_name || 'Global'}</div>
-                </div>
-            </div>
-            <div style="color: #ff9800; margin-bottom: 8px;">${"⭐".repeat(r.rating)}</div>
-            <div class="review-text">${r.comment}</div>
-        </div>
-        `;
-    });
-    
-
-    // See More button show/hide
-    if(allReviews.length > visibleCount){
-        btn.style.display = "block";
-    } else {
-        btn.style.display = "none";
-    }
-}
-
+/* ---------- 🎥 VIDEO FUNCTIONS ---------- */
+const video = document.getElementById("ytVideo");
+function soundOn(){ video.src = "https://www.youtube.com/embed/DBBk_u1uJ7M?autoplay=1&mute=0"; }
+function soundOff(){ video.src = "https://www.youtube.com/embed/DBBk_u1uJ7M?autoplay=1&mute=1"; }
+window.soundOn = soundOn;
+window.soundOff = soundOff;
 
 // ✅ PAGE LOAD FIX (सब कुछ load होने के बाद चलेगा)
 window.onload = function(){
-
-
-    // 🎥 VIDEO AUTO PLAY FIX
-let video = document.getElementById("ytVideo");
-
-// autoplay reload
-video.src = video.src;
-
-// 🔊 SOUND ON
-window.soundOn = function(){
-    video.src = "https://www.youtube.com/embed/DBBk_u1uJ7M?autoplay=1&mute=0";
-}
-
-// 🔇 SOUND OFF
-window.soundOff = function(){
-    video.src = "https://www.youtube.com/embed/DBBk_u1uJ7M?autoplay=1&mute=1";
-}
-
-
+    fetchServerReviews();
     window.toggleReviews = toggleReviews;
-window.toggleForm = toggleForm;
-window.submitForm = submitForm;
-window.loadMoreReviews = function(){
-    visibleCount+=5;
-    displayReviews();
-};
-    
+    window.toggleForm = toggleForm;
+    window.loadMoreReviews = function(){
+        visibleCount += 5;
+        displayReviews();
+    };
 
 /* =========================
    🔥 SLIDER FIX
@@ -1539,44 +1633,43 @@ setInterval(nextImage,3000);
 
 
 /* =========================
-   ⏳ COUNTDOWN FIX (24hr stable)
+   ⏳ COUNTDOWN FIX (27hr stable & persistent)
 ========================= */
 
-let endTime = localStorage.getItem("endTime");
+function initTimer() {
+    const duration = 27 * 60 * 60 * 1000; // 27 Hours in ms
+    let storedEndTime = localStorage.getItem("neuro_27h_timer");
+    let neuroEndTime;
+    
+    if (!storedEndTime || Date.now() > parseInt(storedEndTime)) {
+        neuroEndTime = Date.now() + duration;
+        localStorage.setItem("neuro_27h_timer", neuroEndTime);
+    } else {
+        neuroEndTime = parseInt(storedEndTime);
+    }
 
-if (!endTime || isNaN(endTime)) {
-  endTime = Date.now() + 24 * 60 * 60 * 1000;
-  localStorage.setItem("endTime", endTime);
+    function updateDisplay() {
+        let now = Date.now();
+        let remaining = neuroEndTime - now;
+
+        if (remaining <= 0) {
+            neuroEndTime = Date.now() + duration;
+            localStorage.setItem("neuro_27h_timer", neuroEndTime);
+            remaining = duration;
+        }
+
+        let h = Math.floor(remaining / 3600000);
+        let m = Math.floor((remaining % 3600000) / 60000);
+        let s = Math.floor((remaining % 60000) / 1000);
+
+        document.getElementById("countdown").innerHTML = 
+            (h < 10 ? "0" + h : h) + "h " + (m < 10 ? "0" + m : m) + "m " + (s < 10 ? "0" + s : s) + "s";
+    }
+
+    setInterval(updateDisplay, 1000);
+    updateDisplay();
 }
-
-setInterval(() => {
-
-  let remaining = Math.floor((endTime - Date.now()) / 1000);
-
-  if (remaining <= 0) {
-    endTime = Date.now() + 24 * 60 * 60 * 1000;
-    localStorage.setItem("endTime", endTime);
-    remaining = 24 * 60 * 60;
-  }
-
-  let hours = Math.floor(remaining / 3600);
-  let min = Math.floor((remaining % 3600) / 60);
-  let sec = remaining % 60;
-
-  document.getElementById("countdown").innerHTML =
-    hours + ":" + min + ":" + (sec<10?"0"+sec:sec);
-
-},1000);
-
-
-
-
-/* =========================
-   ⭐ REVIEWS FIX
-========================= */
-
-
-// button access
+initTimer();
 
 
 }; // 🔥 window.onload END (Slider/Timer Logic)
