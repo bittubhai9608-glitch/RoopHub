@@ -541,6 +541,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const userData = { name, email, password };
       localStorage.setItem("roophub_user", JSON.stringify(userData));
       
+      // Sign Up data direct Google Sheet mein store hoga via Python Backend
+      fetch("https://roophub.onrender.com/auth-action", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, password, type: "SIGNUP" })
+      })
+      .then(res => res.json())
+      .catch(err => console.error("Sheet logic error:", err));
+
       closeModal('authModal');
       checkAuthStatus();
       alert(`Welcome ${name}! Your account has been created successfully. 🎉`);
@@ -557,6 +566,15 @@ document.addEventListener('DOMContentLoaded', () => {
       
       const savedUser = JSON.parse(localStorage.getItem("roophub_user"));
       if (savedUser && savedUser.email === email && savedUser.password === password) {
+        // Sign In data bhi log hoga
+        fetch("https://roophub.onrender.com/auth-action", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name: savedUser.name, email, password, type: "SIGNIN" })
+        })
+        .then(res => res.json())
+        .catch(err => console.error("Sheet logic error:", err));
+
         closeModal('authModal');
         checkAuthStatus();
         alert(`Welcome back, ${savedUser.name}!`);

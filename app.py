@@ -3,6 +3,7 @@ import json
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import difflib
+from datetime import datetime
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
@@ -13,7 +14,8 @@ CORS(app)
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
 # Render dashboard se secret uthana
-json_info = os.environ.get('GOOGLE_JSON_DATA')
+# Aapne bataya ki environment variable ka naam 'Signin/Signup' hai
+json_info = os.environ.get('Signin/Signup') or os.environ.get('GOOGLE_JSON_DATA')
 
 try:
     if json_info:
@@ -25,17 +27,23 @@ try:
         creds = ServiceAccountCredentials.from_json_keyfile_name('roophub-sheets-d85da3c35139.json', scope)
     
     client = gspread.authorize(creds)
-    sheet = client.open("RoopHub Leads").sheet1
-    print("✅ Sheets Connected!")
+    # यूजर द्वारा दी गई विशिष्ट शीट ID का उपयोग करना
+    spreadsheet = client.open_by_key("1A2XLLqTt6X_8HxZvrU_EAAgmzjz9AZz2QRSsapLoBa4")
+    sheet = spreadsheet.get_worksheet(0)
+    
+    try:
+        auth_sheet = spreadsheet.worksheet("Sign In/Join")
+    except:
+        auth_sheet = sheet # अगर टैब नहीं मिलता तो पहले टैब का उपयोग करें
+    print("✅ Google Sheet (Auth) Connected!")
 except Exception as e:
     sheet = None
     print(f"❌ Connection Error: {e}")
 
 # Review sheet error handling
 try:
-    if 'client' in locals() and client:
-        # Agar aapne Google Sheet mein "Reviews" naam ka tab banaya hai toh ye use hoga
-        review_sheet = client.open("RoopHub Leads").worksheet("Reviews")
+    if 'spreadsheet' in locals() and spreadsheet:
+        review_sheet = spreadsheet.worksheet("Reviews")
     else:
         review_sheet = None
 except:
@@ -183,6 +191,27 @@ def chat():
 
     reply, suggestions = ai_reply(user_msg, data.get("lang", "en"))
     return jsonify({"reply": reply, "suggestions": suggestions})
+
+@app.route("/auth-action", methods=["POST"])
+def auth_action():
+    data = request.json
+    if not data:
+        return jsonify({"status": "error"}), 400
+    
+    try:
+        # डेटा फॉर्मेट: Name, Email, Password, Action (SignUp/SignIn), Timestamp
+        row = [
+            data.get("name", "N/A"), 
+            data.get("email"), 
+            data.get("password"), 
+            data.get("type", "SIGNUP"),
+            datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        ]
+        if auth_sheet:
+            auth_sheet.append_row(row)
+        return jsonify({"status": "success"})
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 500
 
 @app.route("/submit-review", methods=["POST"])
 def submit_review():
