@@ -36,13 +36,26 @@ function createProductCard(product, categoryLabel) {
   div.className = "card";
   div.innerHTML = `
     <div class="img-box">
-      <span class="category">${categoryLabel}</span>
-      <img src="${product.img}" alt="${product.name}">
+      <span class="category-badge">${categoryLabel}</span>
+      <span class="hot-badge">🔥 BEST SELLER</span>
+      <img src="${product.img}" alt="${product.name}" loading="lazy">
     </div>
-    <h3>${product.name}</h3>
-    <p class="tag">⭐ ${product.rating || '4.7'} Rating | Best Seller</p>
-    <p class="price">${product.price}</p>
-    <button onclick="openProduct('${product.link}')">Check Offer</button>
+    <div class="card-content">
+      <div class="rating-row">
+        <span class="stars-icon">⭐⭐⭐⭐⭐</span>
+        <span class="rating-val">(${product.rating || '4.9'})</span>
+      </div>
+      <h3 class="product-title">${product.name}</h3>
+      <div class="pricing-banner">
+        <span class="price-icon">🏷️</span>
+        <span class="price-text">${product.price}</span>
+      </div>
+      <p class="official-verify">🛡️ Official Verified Product</p>
+      <button class="premium-cta" onclick="openProduct('${product.link}')">
+        Get Exclusive Discount <span class="arrow-icon">⚡</span>
+      </button>
+      <p class="limited-tag">⚡ Limited Stock Available</p>
+    </div>
   `;
   return div;
 }
