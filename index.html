@@ -453,6 +453,18 @@
         <h3 id="signInTab" onclick="toggleAuth('signin')" class="active-tab">Sign In</h3>
         <h3 id="signUpTab" onclick="toggleAuth('signup')">Sign Up</h3>
     </div>
+
+    <!-- Social Login Section -->
+    <div class="social-auth-container">
+        <button class="social-btn google-login" onclick="alert('Redirecting to Google Login...')">
+            <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" alt="G"> Continue with Google
+        </button>
+        <button class="social-btn facebook-login" onclick="alert('Redirecting to Facebook Login...')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="F"> Continue with Facebook
+        </button>
+    </div>
+
+    <div class="auth-divider"><span>OR</span></div>
     
     <form id="signInForm" class="auth-form">
         <input type="email" placeholder="Email Address" required>
