@@ -24,20 +24,21 @@ try:
         creds = ServiceAccountCredentials.from_json_keyfile_dict(info, scope)
     else:
         # Local computer par testing ke liye
-        creds = ServiceAccountCredentials.from_json_keyfile_name('roophub-sheets-d85da3c35139.json', scope)
+        creds = ServiceAccountCredentials.from_json_keyfile_name('creds.json', scope)
     
     client = gspread.authorize(creds)
-    # यूजर द्वारा दी गई विशिष्ट शीट ID का उपयोग करना
+    # Aapki specific Google Sheet ID
     spreadsheet = client.open_by_key("1A2XLLqTt6X_8HxZvrU_EAAgmzjz9AZz2QRSsapLoBa4")
     sheet = spreadsheet.get_worksheet(0)
     
     try:
+        # Sign In/Join tab ko target karna
         auth_sheet = spreadsheet.worksheet("Sign In/Join")
     except:
-        auth_sheet = sheet # अगर टैब नहीं मिलता तो पहले टैब का उपयोग करें
-    print("✅ Google Sheet (Auth) Connected!")
+        auth_sheet = sheet # Agar tab nahi mila toh default sheet use karega
+    print(f"✅ Google Sheet Connected! Target: {auth_sheet.title}")
 except Exception as e:
-    sheet = None
+    sheet = auth_sheet = spreadsheet = None
     print(f"❌ Connection Error: {e}")
 
 # Review sheet error handling
@@ -207,8 +208,7 @@ def auth_action():
             data.get("type", "SIGNUP"),
             datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         ]
-        if auth_sheet:
-            auth_sheet.append_row(row)
+        auth_sheet.append_row(row)
         return jsonify({"status": "success"})
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
