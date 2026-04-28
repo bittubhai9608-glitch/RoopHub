@@ -26,6 +26,10 @@ function scrollToTop(){
   window.scrollTo({top:0, behavior:'smooth'});
 }
 
+// Pagination state
+let currentPage = 1;
+let totalPages = 1;
+
 let currentCategory = '🔥 Exclusive Deals';
 
 /**
@@ -219,9 +223,14 @@ window.onclick = function(event) {
   const termsModal = document.getElementById('termsModal');
   const disclaimerModal = document.getElementById('disclaimerModal');
   const faqModal = document.getElementById('faqModal');
+  const authModal = document.getElementById('authModal');
+  const profileModal = document.getElementById('profileModal');
   
   if (event.target === aboutModal) {
     aboutModal.style.display = 'none';
+  }
+  if (profileModal && event.target === profileModal) {
+    closeModal('profileModal');
   }
   if (event.target === importantInfoModal) {
     importantInfoModal.style.display = 'none';
@@ -235,29 +244,14 @@ window.onclick = function(event) {
   if (event.target === faqModal) {
     faqModal.style.display = 'none';
   }
-}
-
-// Enter key support for chat
-document.addEventListener("DOMContentLoaded", () => {
-  const chatInput = document.getElementById("chatInput");
-  if (chatInput) {
-    chatInput.addEventListener("keypress", function(event) {
-      if (event.key === "Enter") {
-        sendMessage();
-      }
-    });
+  if (authModal && event.target === authModal) {
+    closeModal('authModal');
   }
-});
+};
 
-
-loadProducts('Men Health');
 function openProduct(link) {
-  window.location.href = link;
+  if (link) window.location.href = link;
 }
-
-
-document.getElementById("aboutFull").style.display = "block";
-document.getElementById("aboutFull").style.display = "none";
 
 function openPrivacyPolicy(){
   document.getElementById("privacyPolicyModal").style.display = "block";
@@ -405,20 +399,40 @@ function renderMessages(){
 
     box.scrollTop = box.scrollHeight;
 }
+// Password Reset Logic
+function handleForgotPassword(e) {
+    e.preventDefault();
+    const email = prompt("Apna registered email address enter karein:");
+    if (!email) return;
 
-
-
+    const savedUser = JSON.parse(localStorage.getItem("roophub_user"));
+    if (savedUser && savedUser.email.toLowerCase() === email.toLowerCase().trim()) {
+        const newPassword = prompt("Naya password set karein (Min 6 characters):");
+        if (newPassword && newPassword.length >= 6) {
+            savedUser.password = newPassword;
+            localStorage.setItem("roophub_user", JSON.stringify(savedUser));
+            alert("✅ Password kamiyabi se update ho gaya hai! Ab naye password se Sign In karein.");
+            toggleAuth('signin');
+        } else if (newPassword) {
+            alert("❌ Password kam se kam 6 characters ka hona chahiye.");
+        }
+    } else {
+        alert("❌ Is email se koi account nahi mila. Pehle Sign Up karein.");
+        toggleAuth('signup');
+    }
+}
 
 // Generic Modal close function
-function closeModal() {
+function closeModal(id) {
     const modals = [
         'aboutModal', 'importantInfoModal', 'privacyPolicyModal', 
         'termsModal', 'disclaimerModal', 'faqModal', 'contactModal',
-        'privacyModal', 'affiliateModal', 'authModal'
+        'privacyModal', 'affiliateModal', 'authModal', 'profileModal'
     ];
     
-    modals.forEach(id => {
-        let m = document.getElementById(id);
+    const targetModals = id ? [id] : modals;
+    targetModals.forEach(mId => {
+        let m = document.getElementById(mId);
         if (m) m.style.display = 'none';
     });
     document.body.style.overflow = 'auto';
@@ -435,7 +449,8 @@ function openModal(type) {
         'terms': 'termsModal',
         'privacy': 'privacyPolicyModal',
         'affiliate': 'affiliateModal',
-        'auth': 'authModal'
+        'auth': 'authModal',
+        'profile': 'profileModal'
     };
     const id = modalMap[type] || type;
     const modal = document.getElementById(id);
@@ -448,60 +463,113 @@ function openModal(type) {
 function checkAuthStatus() {
     const user = JSON.parse(localStorage.getItem("roophub_user"));
     const btn = document.querySelector('.header-auth-btn');
-    if (user && btn) {
+    if (user && user.name && btn) {
         btn.textContent = user.name.split(' ')[0];
-        btn.onclick = () => {
-            alert(`Welcome back, ${user.name}! Your account is active.`);
+        btn.onclick = (e) => {
+            if(e) e.preventDefault();
+            showProfile();
         };
+    } else if (btn) {
+        btn.textContent = "Sign In / Join";
+        btn.onclick = () => openModal('auth');
     }
 }
 
-function submitQuickAuth() {
-    const name = document.getElementById('authName').value;
-    const contact = document.getElementById('authContact').value;
-    const address = document.getElementById('authAddress').value;
-    const pin = document.getElementById('authPin').value;
+function showProfile() {
+    const user = JSON.parse(localStorage.getItem("roophub_user"));
+    if (!user) return;
 
-    if (!name || !contact || !address || !pin) {
-        alert("Please fill all details to continue.");
-        return;
-    }
-
-    const userData = { name, contact, address, pin };
-    localStorage.setItem("roophub_user", JSON.stringify(userData));
-    
-    closeModal();
-    checkAuthStatus();
-    alert("Account created successfully! 🎉");
-}
-
-function setupAuthModalUI() {
-    const authContainer = document.getElementById('authModal');
-    if (!authContainer) return;
-
-    authContainer.innerHTML = `
-        <div class="modal-content" style="max-width: 280px; height: auto; padding: 25px 20px 20px 20px;">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <div class="auth-form-compact">
-                <input type="text" id="authName" placeholder="Name">
-                <input type="text" id="authContact" placeholder="Mobile or Gmail">
-                <input type="text" id="authAddress" placeholder="Address">
-                <input type="text" id="authPin" placeholder="Pin">
-                <button class="auth-submit-btn" onclick="submitQuickAuth()">Create Account</button>
+    const details = document.getElementById('profileDetails');
+    if (details) {
+        details.innerHTML = `
+            <div style="border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px;">
+                <p style="margin: 8px 0;"><strong>👤 Name:</strong> ${user.name}</p>
+                <p style="margin: 8px 0;"><strong>📧 Email:</strong> ${user.email}</p>
             </div>
-        </div>
-    `;
+            <p style="font-size: 13px; color: #64748b; line-height: 1.4;">Aap RoopHub ke active member hain. Account se nikalne ke liye niche Logout par click karein.</p>
+        `;
+    }
+    openModal('profile');
+}
+
+function logoutUser() {
+    localStorage.removeItem("roophub_user");
+    closeModal('profileModal');
+    checkAuthStatus();
+    alert("Aap kamiyabi se logout ho gaye hain.");
 }
 
 function toggleAuth(type) {
-    const user = localStorage.getItem("roophub_user");
-    if (user) return; // User already logged in
-    setupAuthModalUI();
-    openModal('auth');
+    const signInForm = document.getElementById('signInForm');
+    const signUpForm = document.getElementById('signUpForm');
+    const signInTab = document.getElementById('signInTab');
+    const signUpTab = document.getElementById('signUpTab');
+
+    if (!signInForm || !signUpForm) return;
+
+    if (type === 'signin') {
+        signInForm.style.display = 'block';
+        signUpForm.style.display = 'none';
+        signInTab.classList.add('active-tab');
+        signUpTab.classList.remove('active-tab');
+    } else {
+        signInForm.style.display = 'none';
+        signUpForm.style.display = 'block';
+        signInTab.classList.remove('active-tab');
+        signUpTab.classList.add('active-tab');
+    }
+}
+
+function showAbout() {
+    openModal('about');
 }
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
   loadProducts('Men Health');
   checkAuthStatus();
+  
+  // Sign Up Logic
+  const signUpForm = document.getElementById('signUpForm');
+  if (signUpForm) {
+    signUpForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('signUpName').value;
+      const email = document.getElementById('signUpEmail').value;
+      const password = document.getElementById('signUpPassword').value;
+
+      const userData = { name, email, password };
+      localStorage.setItem("roophub_user", JSON.stringify(userData));
+      
+      closeModal('authModal');
+      checkAuthStatus();
+      alert(`Welcome ${name}! Your account has been created successfully. 🎉`);
+    });
+  }
+
+  // Sign In Logic
+  const signInForm = document.getElementById('signInForm');
+  if (signInForm) {
+    signInForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('signInEmail').value;
+      const password = document.getElementById('signInPassword').value;
+      
+      const savedUser = JSON.parse(localStorage.getItem("roophub_user"));
+      if (savedUser && savedUser.email === email && savedUser.password === password) {
+        closeModal('authModal');
+        checkAuthStatus();
+        alert(`Welcome back, ${savedUser.name}!`);
+      } else {
+        alert("Invalid email or password. Please Sign Up first if you don't have an account.");
+      }
+    });
+  }
+
+  const chatInput = document.getElementById("chatInput");
+  if (chatInput) {
+    chatInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") sendMessage();
+    });
+  }
 });
