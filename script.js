@@ -174,8 +174,9 @@ const navItems = document.getElementById('navItems');
 const navRight = document.getElementById('navRight');
 if (menuToggle) {
   menuToggle.addEventListener('click', () => {
-    navItems.classList.toggle('open');
-    navRight.classList.toggle('open');
+    const isVisible = navItems.style.display === 'flex';
+    navItems.style.display = isVisible ? 'none' : 'flex';
+    navRight.style.display = isVisible ? 'none' : 'flex';
   });
 }
 
