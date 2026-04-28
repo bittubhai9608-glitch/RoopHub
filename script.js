@@ -119,6 +119,14 @@ function searchProducts() {
   });
 }
 
+function setSearchValue(val) {
+  const input = document.getElementById('searchInput');
+  if (input) {
+    input.value = val;
+    searchProducts();
+  }
+}
+
 function showAdsensePlaceholder() {
   const adContainer = document.getElementById('adContainer');
   if (!adContainer) return;
