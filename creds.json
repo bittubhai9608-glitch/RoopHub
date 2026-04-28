@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "roophub-sheets",
+  "private_key_id": "21184992fdd928213302f9a81028c3ba614b9b1a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDAbGS7dRo9oy/a\n66vRdlIdKmttsprxMYXAT6q1WYUG3AI9Ob1sN51YxThxHVbwPhrPp3778ZUVYJFO\nTIIo7f4oEO/CP2aSihbbEFF4tn6eyPn0d8J+osWdy2oWfFXfCGbJoXotAIbRoYA9\nfvzIBVK2Y3oVDtvt6WXmlOm4b+Qit8BXkZcwmOmKMR1MgDTeo+GbEtRGQgQHmudh\ny5IlXMyhtDZ7qxCeNV5mqB6vB3b4kNsGX2Tl25EyWCegstZJmOUhgu/De7L2vPSM\nwFKxpBz6q4TyQpCyCxXaXo9yEnShyxXXFF/Y9EB3iIwQM7HeATMzzlR61ttTuhfW\nKxUMUtUNAgMBAAECggEAC/z0zaT/DIYFLjtuie84MG77IGt3Mb2nGpMcDI5WNlYw\noYXeYkaYu/YVjR6J0w/bdcJ2q9WiNyG8C8fCeDBTnEVp2o0+o7SMtfsvSDj+bIAS\n6oMnj+IuM6V/p4T5iJqqZLd1uCYHQDoyliI6N2/1dj1+Vp+FXi4jVhlC8mWuLedu\n3/DpoUjQhe3mHY/FW0pRD+pkj1DsoCRU3lbgs1bOSqaoYEqHw9nPdEgmPbaSAWvQ\nMq+2mXtX8hM4DMOOdDLDTpo3/eNkcJohJNq578bhNTZBbTvkafjTrjQDqWqcibSh\njWhm234hSSxyj7LjsEUIE/7uXSIrWpirVJW/BbhxtQKBgQD+R8vlhl1xGYeC/DID\ncJG+uKRoUIRqBK3+YhshNx5/sqNigwp/7EuSOQcIEns/LoUzUFE9eUwB5xRILJnk\nFsa6p09t+tMl8cQEjOz0oX6fDtHrGtlE5MRQKoXh4JieN76z0LKeOGdK2lq3SEhD\nIr0mRiCM8VE2G75tWEPj3EV6+wKBgQDBuYMCWKIO3vx88RKiWNYceYHkLBH/hFa+\n0q/v4ewwIFmuuzAkc94t24S3MTgH40MKzpN/ML/ftefitwWfAyf4G24X4OYZx23T\nCIyH2gx51xFM4QwFpnNffFOzr43nctDNfRLtVcBi8SZS7BGXieBmZe9XDRgEWQYk\nLLP93uPxlwKBgQDlVhPLu1fjfcb+mD7zYz/P5/BANP54MChNWmZlmrTjL1a0rsN1\nhMTT6KMy4JhP78Eq+rGK5C9tN+DPB4r0cKZkCipVYve1LUxBXmkIae8tvcwOY3S5\n8ioss210v4BmkphozT2L/gsLM8zFqWejRV2be3w4Ih3A01z4ebchd7UiqQKBgEIV\nWk9ulLml71NfmQ+wZjmIaXrAXdNf/YdSr5mQ49T29CDa0e1daSkTfQ5Qx+BI8hG5\nri7xHkLd9qAr9srrdLL6CHA008lvclNO00F0bFUTvF8RVdyHj0u/SX4+IJYXYIr4\nY4B6hAo8YOpghQ/AhL/pfd+gI9U32RR1+2BarD85AoGBAJDzZGGaS+gPc7NUdZ67\nQVCbc2qA8th+2/HTlDBxT1ecKbD/dEPfZUb9vmFUH49AH58lDaaflhSeRxjMhVOB\nEu0EfaQHjT94t+tNzDz39IwYAu7/cqmiHFkf/D6DjspPayOrcOsIN2zxsShFLAM9\nlkavmjyYe0EaUZz/dmuRMQpI\n-----END PRIVATE KEY-----\n",
+  "client_email": "roophub-bot@roophub-sheets.iam.gserviceaccount.com",
+  "client_id": "115252809227979637048",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/roophub-bot%40roophub-sheets.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
