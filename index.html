@@ -37,9 +37,19 @@
 </nav>
 
 <section class="search-panel">
-  <h2>🔍 Find Your Perfect Product</h2>
-  <input type="text" id="searchInput" placeholder="Search best deals & offers..." onkeyup="searchProducts()" />
-  <p id="searchStatus" aria-live="polite"></p>
+  <div class="search-inner">
+    <h2>🔍 Find Your Perfect Wellness Solution</h2>
+    <div class="search-bar-wrapper">
+      <input type="text" id="searchInput" placeholder="Search premium, natural supplements..." onkeyup="searchProducts()" />
+      <button onclick="searchProducts()" class="search-btn">Search</button>
+    </div>
+    <div class="search-trust-row">
+      <span>🛡️ Verified Products</span>
+      <span>🔒 Secure Results</span>
+      <span>⭐ Top Rated Brands</span>
+    </div>
+    <p id="searchStatus" aria-live="polite"></p>
+  </div>
 </section>
 
 <div id="adContainer" class="ad-container"></div>
