@@ -133,12 +133,14 @@ header p.sub-headline {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 25px; /* Added gap from live message */
 }
 #countdown {
     background: rgba(0,0,0,0.25);
     padding: 2px 8px;
     border-radius: 4px;
     font-family: monospace;
+    
 }
 
 .live{
@@ -146,11 +148,11 @@ text-align:center;
 color:green;
 font-weight:bold;
 margin:10px;
+margin-bottom: 25px; /* Added gap from main container */
 }
 
 /* CONTAINER */
 .container{max-width:1000px;margin:auto;padding:20px}
-
 /* SLIDER */
 .slider{position:relative;text-align:center}
 .slider img{
@@ -178,7 +180,7 @@ border-radius:50%;
 .box{
 background:#fff;
 padding:20px;
-margin-top:20px;
+margin: 25px auto; /* Standardized margin for main boxes */
 border-radius:15px;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
@@ -187,7 +189,7 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 .specs {
     background: #ffffff;
     padding: 25px;
-    margin: 30px auto;
+    margin: 25px auto; /* Standardized margin for main boxes */
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.04);
     border: 1px solid #edf2f7;
@@ -228,8 +230,8 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 /* WHY CHOOSE SECTION */
 .description {
     background: #ffffff;
-    padding: 20px;
-    margin: 20px auto;
+    padding: 25px;
+    margin: 25px auto; /* Standardized margin for main boxes */
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     border: 1px solid #e2e8f0;
@@ -245,7 +247,7 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 .benefit-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 12px;
+    gap: 8px;
 }
 .benefit-card {
     background: #f0fff4;
@@ -264,13 +266,13 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
     padding: 10px 0;
     white-space: nowrap;
     position: relative;
-    margin: 10px 0;
+    margin: 25px 0; /* Standardized margin for badges section */
     background: rgba(255, 255, 255, 0.5);
 }
 .badge-track {
     display: flex;
     width: max-content;
-    gap: 15px;
+    gap: 10px;
     animation: scrollBadges 25s linear infinite;
 }
 .badge-track:hover {
@@ -303,7 +305,7 @@ th{background:#1e90ff;color:#fff}
 .buy-section {
     text-align: center;
     padding: 15px 10px;
-    background: #f9f9f9;
+    background: #ffffff;
     margin: 20px auto;
     border: 1px solid #d1d5db;
     border-radius: 12px;
@@ -335,7 +337,7 @@ th{background:#1e90ff;color:#fff}
 .buy-section-sm {
     text-align: center;
     padding: 10px;
-    background: #ffffff;
+    background: #f9f9f9;
     margin: 15px auto;
     border: 1px solid #e2e8f0;
     border-radius: 10px;
@@ -381,8 +383,8 @@ footer{
 background:#222;
 color:#ccc;
 text-align:center;
-padding:20px;
-margin-top:20px;
+padding: 25px;
+margin-top: 25px;
 }
 @keyframes pulse-blue {
   0% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7); }
@@ -394,7 +396,7 @@ margin-top:20px;
 .review-stats {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     margin-bottom: 25px;
     padding-bottom: 20px;
     border-bottom: 1px solid #eee;
@@ -518,7 +520,7 @@ margin-top:20px;
 .comparison-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 10px;
     margin-top: 20px;
 }
 .comp-card {
