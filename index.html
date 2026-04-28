@@ -459,35 +459,67 @@
 <div id="authModal" class="modal">
   <div class="modal-content auth-modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
+    <div class="auth-header">
+        <h2 class="auth-title">Welcome to RoopHub!</h2>
+        <p class="auth-tagline">Join our community for exclusive deals and a personalized experience.</p>
+    </div>
+
     <div class="auth-tabs">
         <h3 id="signInTab" onclick="toggleAuth('signin')" class="active-tab">Sign In</h3>
         <h3 id="signUpTab" onclick="toggleAuth('signup')">Sign Up</h3>
     </div>
 
-    <!-- Social Login Section -->
-    <div class="social-auth-container">
-        <button class="social-btn google-login" onclick="alert('Redirecting to Google Login...')">
-            <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" alt="G"> Continue with Google
-        </button>
-        <button class="social-btn facebook-login" onclick="alert('Redirecting to Facebook Login...')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="F"> Continue with Facebook
-        </button>
-    </div>
-
-    <div class="auth-divider"><span>OR</span></div>
-    
     <form id="signInForm" class="auth-form">
-        <input type="email" placeholder="Email Address" required>
-        <input type="password" placeholder="Password" required>
-        <button type="submit" class="auth-btn signin-btn">Login to RoopHub</button>
+        <div class="input-group">
+            <label for="signInEmail">Email Address</label>
+            <input type="email" id="signInEmail" placeholder="your@example.com" required>
+        </div>
+        <div class="input-group">
+            <label for="signInPassword">Password</label>
+            <input type="password" id="signInPassword" placeholder="••••••••" required>
+        </div>
+        <a href="#" class="forgot-password" onclick="handleForgotPassword(event)">Forgot Password?</a>
+        <button type="submit" class="auth-btn signin-btn">Sign In Securely</button>
+        <p class="auth-privacy-note">By signing in, you agree to our <a href="#" onclick="openModal('privacy')">Privacy Policy</a>.</p>
+        <div class="social-login-divider"><span>OR</span></div>
+        <button type="button" class="social-btn google-btn"><img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="Google icon"/> Continue with Google</button>
+        <button type="button" class="social-btn facebook-btn"><img src="https://img.icons8.com/color/16/000000/facebook-new.png" alt="Facebook icon"/> Continue with Facebook</button>
     </form>
 
     <form id="signUpForm" class="auth-form" style="display: none;">
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email Address" required>
-        <input type="password" placeholder="Create Password" required>
-        <button type="submit" class="auth-btn signup-btn">Create Account</button>
+        <div class="input-group">
+            <label for="signUpName">Full Name</label>
+            <input type="text" id="signUpName" placeholder="John Doe" required>
+        </div>
+        <div class="input-group">
+            <label for="signUpEmail">Email Address</label>
+            <input type="email" id="signUpEmail" placeholder="your@example.com" required>
+        </div>
+        <div class="input-group">
+            <label for="signUpPassword">Create Password</label>
+            <input type="password" id="signUpPassword" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="auth-btn signup-btn">Create Your Free Account</button>
+        <p class="auth-privacy-note">By creating an account, you agree to our <a href="#" onclick="openModal('privacy')">Privacy Policy</a>.</p>
+        <div class="social-login-divider"><span>OR</span></div>
+        <button type="button" class="social-btn google-btn"><img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="Google icon"/> Sign Up with Google</button>
+        <button type="button" class="social-btn facebook-btn"><img src="https://img.icons8.com/color/16/000000/facebook-new.png" alt="Facebook icon"/> Sign Up with Facebook</button>
     </form>
+  </div>
+</div>
+
+<!-- User Profile Modal -->
+<div id="profileModal" class="modal">
+  <div class="modal-content auth-modal-content" style="height: auto; max-width: 400px; padding: 30px;">
+    <span class="close" onclick="closeModal('profileModal')">&times;</span>
+    <div style="text-align: center;">
+        <h2 style="color: #1e40af; margin-bottom: 10px;">RoopHub Swagat Karta Hai! 🙏</h2>
+        <p style="color: #64748b; font-size: 14px; margin-bottom: 20px;">Aapka account active hai.</p>
+        <div id="profileDetails" style="margin: 20px 0; text-align: left; background: #f8fafc; padding: 15px; border-radius: 10px; border: 1px solid #e2e8f0; color: #333;">
+            <!-- User info dynamically injected here -->
+        </div>
+        <button onclick="logoutUser()" class="auth-btn" style="background: #ef4444; width: 100%; border: none; padding: 12px; border-radius: 8px; color: white; font-weight: bold; cursor: pointer; margin-top: 10px;">Log Out</button>
+    </div>
   </div>
 </div>
 
@@ -564,34 +596,6 @@ font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
 </div>
 <script src="script.js"></script>
-<script>
-function openModal(id) {
-    const m = document.getElementById(id);
-    if (m) m.style.display = "block";
-}
-function closeModal(id) {
-    if (id) {
-        const m = document.getElementById(id);
-        if (m) m.style.display = "none";
-    } else {
-        const modals = ['aboutModal', 'importantInfoModal', 'privacyPolicyModal', 'termsModal', 'disclaimerModal', 'faqModal', 'affiliateModal'];
-        modals.forEach(mId => { const m = document.getElementById(mId); if (m) m.style.display = "none"; });
-    }
-}
-function showAbout() { openModal('aboutModal'); }
-function openFAQ() { openModal('faqModal'); }
-function openDisclaimer() { openModal('disclaimerModal'); }
-function openPrivacyPolicy() { openModal('privacyPolicyModal'); }
-function openTerms() { openModal('termsModal'); }
-function showImportantInfo() { openModal('importantInfoModal'); }
-function showContact() { alert("Email us at: bittupandit96081@email.com"); }
-
-// compatibility with specific close calls
-function closePrivacyPolicy() { closeModal('privacyPolicyModal'); }
-function closeTerms() { closeModal('termsModal'); }
-function closeDisclaimer() { closeModal('disclaimerModal'); }
-function closeFAQ() { closeModal('faqModal'); }
-</script>
 
 </body>
 </html>
