@@ -28,14 +28,14 @@ html {
 
 /* Header */
 header {
-  background: radial-gradient(circle at center, #1e40af 0%, #0f172a 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
   background-size: 200% 200%;
   animation: headerFlow 10s ease infinite;
   color: white;
   text-align: center;
-  padding: 50px 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  border-bottom: 3px solid #fbbf24;
+  padding: 35px 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  border-bottom: 4px solid #fbbf24;
   position: relative;
   overflow: hidden;
 }
@@ -43,32 +43,71 @@ header {
 /* Corner Auth Button */
 .header-auth-btn {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 15px;
+  right: 15px;
   background: #fbbf24;
   color: #0f172a;
   border: none;
-  padding: 8px 15px;
-  border-radius: 8px;
-  font-weight: 800;
-  font-size: 14px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 11px;
   cursor: pointer;
   z-index: 100;
-  transition: transform 0.2s, background 0.2s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  text-transform: uppercase;
 }
 
 .header-auth-btn:hover {
   transform: scale(1.05);
-  background: #f59e0b;
+  background: #fbbf24;
+  color: #0f172a;
+}
+
+/* Compact Auth Form */
+.auth-form-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.auth-form-compact input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #f8fafc;
+}
+
+.auth-form-compact input:focus {
+  border-color: #1e40af;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.1);
+  transform: translateY(-1px);
+}
+
+.auth-submit-btn {
+  background: #1e40af;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
 }
 
 #animatedHeading {
   margin: 0;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 900;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 8px;
+  letter-spacing: 3px;
   background: linear-gradient(to right, #ffffff 20%, #fbbf24 40%, #fbbf24 60%, #ffffff 80%);
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -80,9 +119,9 @@ header {
 
 .tagline {
   color: #fbbf24;
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 2px;
   text-transform: uppercase;
   margin-top: 10px;
   display: block;
@@ -102,44 +141,45 @@ header {
 /* Navbar */
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap; /* Added to allow items to wrap to the next line */
   align-items: center;
-  background: linear-gradient(90deg, #1c2a52, #0e162f);
-  padding: 8px 12px;
-  border-bottom: 3px solid #2874f0;
-  gap: 10px;
+  background: #ffffff;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  scrollbar-width: none; /* Firefox */
 }
 
-.nav-left,
-.nav-right {
-  display: flex;
-  gap: 8px;
+nav::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 nav button {
-  background: linear-gradient(45deg, rgba(10, 94, 238, 0.08), rgba(255,255,255,0.16));
-  border: 1px solid rgba(255, 0, 0, 0.28);
-  color: #ffffff;
-  padding: 12px 12px;
-  font-size: 14px;
+  background: #f1f5f9;
+  border: 2px solid transparent;
+  color: #64748b;
+  padding: 10px 24px;
+  font-size: 13px;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
 }
 
 nav button:hover {
-  transform: translateY(-1px);
-  background: linear-gradient(45deg, rgba(6, 236, 117, 0.28), rgba(21, 230, 94, 0.42));
-  box-shadow: 0 6px 12px rgba(167, 227, 0, 0.24);
+  color: #1e40af;
+  background: #eff6ff;
 }
 
-nav button:active {
-  transform: translateY(0);
-  box-shadow: 0 3px 9px rgba(11, 44, 164, 0.2);
+nav button.active-category {
+  background: #1e40af;
+  color: #ffffff;
+  border-color: #1e40af;
+  box-shadow: 0 4px 15px rgba(30, 64, 175, 0.25);
 }
-
 .menu-toggle {
   display: none;
   background: linear-gradient(135deg, #2874f0, #6a11cb);

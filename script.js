@@ -26,7 +26,7 @@ function scrollToTop(){
   window.scrollTo({top:0, behavior:'smooth'});
 }
 
-let currentCategory = 'View Top Deals';
+let currentCategory = '🔥 Exclusive Deals';
 
 /**
  * Utility to create a product card element to keep the UI consistent.
@@ -63,6 +63,16 @@ function createProductCard(product, categoryLabel) {
 function loadProducts(category) {
   currentCategory = category;
   
+  // Highlight Active Button for better UX
+  const allNavButtons = document.querySelectorAll('nav button');
+  allNavButtons.forEach(btn => {
+    if (btn.textContent.trim().includes(category)) {
+      btn.classList.add('active-category');
+    } else {
+      btn.classList.remove('active-category');
+    }
+  });
+
   // Agar category exist nahi karti toh default 'Men Health' dikhao
   if (!products[category]) category = "Men Health";
 
@@ -435,26 +445,63 @@ function openModal(type) {
     }
 }
 
-function toggleAuth(type) {
-    const signInForm = document.getElementById('signInForm');
-    const signUpForm = document.getElementById('signUpForm');
-    const signInTab = document.getElementById('signInTab');
-    const signUpTab = document.getElementById('signUpTab');
-    
-    if (type === 'signin') {
-        signInForm.style.display = 'flex';
-        signUpForm.style.display = 'none';
-        signInTab.classList.add('active-tab');
-        signUpTab.classList.remove('active-tab');
-    } else {
-        signInForm.style.display = 'none';
-        signUpForm.style.display = 'flex';
-        signInTab.classList.remove('active-tab');
-        signUpTab.classList.add('active-tab');
+function checkAuthStatus() {
+    const user = JSON.parse(localStorage.getItem("roophub_user"));
+    const btn = document.querySelector('.header-auth-btn');
+    if (user && btn) {
+        btn.textContent = user.name.split(' ')[0];
+        btn.onclick = () => {
+            alert(`Welcome back, ${user.name}! Your account is active.`);
+        };
     }
+}
+
+function submitQuickAuth() {
+    const name = document.getElementById('authName').value;
+    const contact = document.getElementById('authContact').value;
+    const address = document.getElementById('authAddress').value;
+    const pin = document.getElementById('authPin').value;
+
+    if (!name || !contact || !address || !pin) {
+        alert("Please fill all details to continue.");
+        return;
+    }
+
+    const userData = { name, contact, address, pin };
+    localStorage.setItem("roophub_user", JSON.stringify(userData));
+    
+    closeModal();
+    checkAuthStatus();
+    alert("Account created successfully! 🎉");
+}
+
+function setupAuthModalUI() {
+    const authContainer = document.getElementById('authModal');
+    if (!authContainer) return;
+
+    authContainer.innerHTML = `
+        <div class="modal-content" style="max-width: 280px; height: auto; padding: 25px 20px 20px 20px;">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="auth-form-compact">
+                <input type="text" id="authName" placeholder="Name">
+                <input type="text" id="authContact" placeholder="Mobile or Gmail">
+                <input type="text" id="authAddress" placeholder="Address">
+                <input type="text" id="authPin" placeholder="Pin">
+                <button class="auth-submit-btn" onclick="submitQuickAuth()">Create Account</button>
+            </div>
+        </div>
+    `;
+}
+
+function toggleAuth(type) {
+    const user = localStorage.getItem("roophub_user");
+    if (user) return; // User already logged in
+    setupAuthModalUI();
+    openModal('auth');
 }
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
   loadProducts('Men Health');
+  checkAuthStatus();
 });
