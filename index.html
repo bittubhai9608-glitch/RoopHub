@@ -65,6 +65,7 @@
       <li onclick="showAbout()" style="cursor:pointer;">About RoopHub</li>
       <li onclick="openFAQ()" style="cursor:pointer;">FAQ</li>
       <li onclick="openDisclaimer()" style="cursor:pointer;">Disclaimer</li>
+      <li onclick="showContact()" style="cursor:pointer;">Contact Us</li>
     </ul>
   </div>
 
@@ -82,7 +83,7 @@
   <!-- COLUMN 3 -->
   <div class="footer-col">
     <h3>Connect With Us</h3>
-    <P><a href="mailto:bittupandit96081@email.com">✉️Email</a><a href="tel:8271734883"> 📞 Phone</a></p>
+    <P><a href="mailto:support@roophub.com">✉️Email</a><a href="tel:8271734883"> 📞 Phone</a></p>
     <p><a href="https://www.youtube.com" target="_blank">▶️YouTube</a> <a href="https://www.google.com/maps?q=Yadav+Nagar+Road+No+3+Muzaffarpur+Bihar" target="_blank">📍Location</a><br></p>
     📘 <a href="https://www.facebook.com" target="_blank">Facebook</a> <a href="https://wa.me/918271734883" target="_blank">💬WhatsApp Channel</a><br>
   </div>
@@ -92,83 +93,146 @@
 <div class="amazon-bottom">
   © 2026 RoopHub. All Rights Reserved.
 </div>
-<!-- About Us Modal -->
-<div id="aboutModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <h2>About RoopHub</h2>
-    <p id="aboutSummary">RoopHub is your ultimate online affiliate store, offering curated products from trusted brands. We provide genuine, high-quality items with affiliate commissions, ensuring customer satisfaction and value. Discover deals across health, fashion, electronics, and more.</p>
-    <button id="seeMoreBtn" onclick="showFullAbout()">See More</button>
-    <div id="aboutFull"></div>
-      <div id="aboutContent">
-        <h3>About RoopHub - Your Trusted Online Affiliate Shopping Destination</h3>
+<!-- About Us Full Page Modal -->
+<div id="aboutModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:white; z-index:9999; overflow-y:scroll; padding:20px; font-family: 'Segoe UI', sans-serif; color: #333;">
 
-        <p>Welcome to RoopHub, your ultimate destination for quality products at unbeatable prices. We are more than just an online store – we are your trusted partner in discovering genuine, high-quality products from the world's most trusted brands. At RoopHub, we believe that shopping should be easy, transparent, and rewarding. Our mission is to bring the best products directly to your doorstep while ensuring complete transparency about our affiliate partnerships and commission structure.</p>
+    <button onclick="closeModal()" style="position:fixed; right:20px; top:20px; padding:10px 15px; background:rgb(13, 32, 210); color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold; z-index:10000;">
+    Close ✖
+    </button>
+    
+    <div style="max-width: 800px; margin: 40px auto;">
+        <h1 style="text-align:center; color:#27ae60; font-size:2.5em; margin-bottom:10px;">About RoopHUB Official</h1>
+        <p style="text-align:center; color:#7f8c8d; font-style:italic; margin-bottom:40px;">"Empowering Your Wellness Journey Through Transparency and Truth."</p>
 
-        <h4>Our Story and Vision</h4>
-        <p>RoopHub was founded with a simple vision: to create a trustworthy online platform where customers can confidently purchase products without worrying about authenticity or quality. We started in Muzaffarpur, Bihar, with a commitment to serve local customers and gradually expanded to reach customers across India. Our journey has been driven by customer feedback, market research, and a genuine desire to make online shopping accessible and reliable for everyone.</p>
+        <section>
+            <h2 style="color:#2c3e50; border-bottom:2px solid #27ae60; padding-bottom:5px;">Our Story: The Birth of RoopHUB</h2>
+            <p>Welcome to <strong>RoopHUB Official (roophub.online)</strong>. Our journey began with a simple yet powerful observation: the digital world is flooded with health advice, but finding trustworthy, unbiased, and scientifically backed information is becoming increasingly difficult. In an era where "clickbait" and exaggerated claims dominate the wellness industry, RoopHUB was founded to be a sanctuary of clarity.</p>
+            <p>The name "Roop" signifies form, beauty, and essence, while "HUB" represents a central point of connection. Together, RoopHUB is your central destination for discovering the true essence of wellness. We started as a small digital initiative focused on affiliate marketing, but with a major difference—we decided to put <strong>Integrity over Income</strong>. We realized that people aren't just looking for products; they are looking for solutions that actually work without being misled by false promises.</p>
+        </section>
 
-        <p>We understand that online shopping can be overwhelming with thousands of websites claiming to offer the best products. That's why we've carefully curated our product selection to include only items that meet our strict quality standards. Every product on RoopHub has been researched and evaluated to ensure it delivers genuine value to our customers.</p>
+        <section style="margin-top:40px; background:#f9f9f9; padding:20px; border-radius:10px;">
+            <h2 style="color:#2c3e50;">Our Core Mission & Vision</h2>
+            <p>Our mission is to bridge the gap between high-quality wellness manufacturers and health-conscious individuals. We specialize in deep-diving into the world of dietary supplements, cognitive enhancers (like <em>Neuro Serge</em>), and vitality boosters. Our vision is to become the most trusted affiliate wellness store globally, known not for the volume of products we sell, but for the quality of advice we provide.</p>
+            <p>We believe that an informed customer is a happy customer. By providing detailed ingredient analyses, manufacturing standards, and realistic expectation guides, we empower you to take control of your health with confidence.</p>
+        </section>
 
-        <h4>Our Product Categories</h4>
-        <p>RoopHub offers a diverse range of products across multiple categories to meet all your shopping needs. Our Health & Wellness category features premium supplements, fitness equipment, and nutritional products from trusted brands like CitrusBurn and ProstaVive. Whether you're looking to maintain a healthy lifestyle or achieve specific wellness goals, we have products tailored to your needs.</p>
+        <section style="margin-top:40px;">
+            <h2 style="color:#2c3e50;">The "No Fake Reviews" Guarantee</h2>
+            <p>One of the strongest pillars of RoopHUB Official is our unwavering commitment to <strong>Ethical Marketing</strong>. In the affiliate industry, it is common to see fake testimonials, doctored "before and after" photos, and falsified identities used to drive sales. At RoopHUB, we have a strict "No Fake" policy.</p>
+            <p><strong>What this means for you:</strong>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>No Deceptive Testimonials:</strong> We do not create or buy fake reviews to make a product look better than it is.</li>
+                    <li><strong>Honest Evaluations:</strong> If a product has a flaw or isn't suitable for everyone, we mention it.</li>
+                    <li><strong>Verified Sources:</strong> Our data comes from official manufacturer records and real-world market reputation.</li>
+                </ul>
+            </p>
+            <p>We believe that trust is earned over time, and we are willing to lose a sale to keep your trust. This ethical approach is what sets us apart from thousands of other affiliate sites.</p>
+        </section>
 
-        <p>In our Electronics & Gadgets section, you'll find the latest smartphones, laptops, tablets, and innovative gadgets that incorporate cutting-edge technology. We carefully select electronics from reputable manufacturers to ensure you get the best performance and durability. Our Fashion & Lifestyle category brings you trendy clothing, accessories, and lifestyle products that help you express your personal style while staying within budget.</p>
+        <section style="margin-top:40px;">
+            <h2 style="color:#2c3e50;">Expertise and Research Process</h2>
+            <p>How do we choose the products featured on roophub.online? Our research process is rigorous. We don't just look at the shiny packaging. We look at:
+                <ol style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Ingredient Synergy:</strong> Do the ingredients work together effectively based on nutritional science?</li>
+                    <li><strong>Facility Standards:</strong> Is the product made in an FDA-registered or GMP-certified facility?</li>
+                    <li><strong>Brand Transparency:</strong> Does the company provide clear contact info and a solid money-back guarantee?</li>
+                </ol>
+            </p>
+        </section>
 
-        <p>Beauty & Personal Care products at RoopHub include skincare, makeup, and personal care items from brands that prioritize quality and effectiveness. Home & Kitchen section features appliances, decor items, and essentials that help transform your living space. We also offer products specifically selected for Kids & Family, Books & Education, Gifts & Special Occasions, and a growing Digital Products section including subscriptions and online courses.</p>
-
-        <h4>How Our Affiliate Model Works</h4>
-        <p>RoopHub operates on a transparent affiliate marketing model. This means we earn a small commission when you purchase products through our links. However, this commission does not affect the price you pay – you get the same price whether you buy directly or through our link. This commission-based model actually benefits you because it allows us to provide detailed product information, honest reviews, and carefully curated recommendations without the overhead costs of maintaining physical inventory.</p>
-
-        <p>Our affiliate partnerships are with legitimate, well-established retailers and brands. We only promote products we genuinely believe in and would recommend to friends and family. We are completely transparent about our affiliate relationships and make no secret of how we earn revenue. This honesty is the foundation of trust between us and our customers.</p>
-
-        <h4>Quality Assurance Process</h4>
-        <p>Every product featured on RoopHub goes through our rigorous quality assurance process. Our team evaluates products based on brand reputation, manufacturing standards, customer reviews, product specifications, value for money, and safety certifications. We research each product thoroughly to ensure it meets our high standards before recommending it to you.</p>
-
-        <p>We don't simply list random products – we carefully select items that we believe offer genuine value. If a product doesn't meet our standards or if we find negative patterns in customer reviews, we remove it from our platform. Your satisfaction and trust are more important to us than any commission we might earn.</p>
-
-        <h4>Customer-First Philosophy</h4>
-        <p>At RoopHub, you are our priority. We are committed to providing transparent pricing with no hidden costs or surprise charges. All our product information is accurate and detailed, helping you make informed purchasing decisions. If you have questions about any product, our responsive customer support team is available via email at bittubhai96081@email.com or phone at 8271734883.</p>
-
-        <p>We continuously update our product inventory with trending items and new releases. Our team stays informed about market trends and customer preferences to ensure we always offer relevant and desirable products. We also welcome customer feedback and regularly review it to improve our services and product selection.</p>
-
-        <h4>Why Choose RoopHub?</h4>
-
-        <p><strong>Authenticity Guarantee:</strong> Every product is verified for authenticity and quality before being featured on our platform.</p>
-
-        <p><strong>Transparent Affiliate Relationships:</strong> We clearly disclose our affiliate partnerships and how commissions work.</p>
-
-        <p><strong>Curated Selection:</strong> We don't overwhelm you with thousands of options – instead, we carefully select products we genuinely recommend.</p>
-
-        <p><strong>Honest Reviews:</strong> Our product information is based on real customer experiences and expert evaluation.</p>
-
-        <p><strong>Local Support:</strong> Based in Bihar, Muzaffarpur, we understand the needs of our local community while serving customers nationwide.</p>
-
-        <p><strong>Responsive Customer Service:</strong> We're here to help with any questions or concerns about your shopping experience.</p>
-
-        <h4>Our Location and Contact Information</h4>
-
-        <p>RoopHub is proudly based in Bihar, specifically in Muzaffarpur city. Our physical address is Yadav Nagar Road No: 3, where our dedicated team works to serve your shopping needs. We maintain an active online presence and can be reached through multiple channels for any inquiries, suggestions, or support.</p>
-
-        <p>Email: bittupandit96081@email.com<br>
-        Phone: 8271734883<br>
-        Location: Yadav Nagar Road No: 3, Muzaffarpur, Bihar</p>
-
-        <h4>Our Commitment to You</h4>
-
-        <p>RoopHub is more than just a shopping platform – we're building a community of informed consumers who make smart purchasing decisions. We're committed to maintaining the highest standards of integrity, transparency, and customer service. As we continue to grow, we'll keep our core values intact: honesty, quality, and customer satisfaction.</p>
-
-        <p>Whether you're shopping for health supplements, the latest electronics, fashion items, beauty products, or gifts for loved ones, RoopHub is your trustworthy partner. We invite you to explore our carefully curated product selection and join the growing community of satisfied RoopHub customers.</p>
-
-        <p>Thank you for choosing RoopHub. Shop with confidence, shop with integrity, shop with RoopHub – where quality meets convenience!</p>
-      </div>
-      <div class="pagination">
-        <button id="prevPage" onclick="changePage(-1)" disabled>Previous</button>
-        <span id="pageInfo">Page 1 of 1</span>
-        <button id="nextPage" onclick="changePage(1)">Next</button>
-      </div>
+        <section style="margin-top:40px; text-align:center; border-top:1px solid #eee; padding-top:30px;">
+            <h2 style="color:#2c3e50;">Why Trust RoopHUB?</h2>
+            <p>We are more than just an "online store." We are a community-focused platform. Whether you are looking to improve your focus, boost your daily energy, or find natural wellness solutions, RoopHUB is here to guide you. We are constantly updating our content to reflect the latest trends and safety standards in the wellness industry.</p>
+            <p>Thank you for choosing RoopHUB Official as your trusted partner in health. We are excited to be a part of your journey toward a better, healthier version of yourself.</p>
+            
+            <div style="margin-top:20px;">
+                <p><strong>Follow Our Journey</strong></p>
+                <p>Explore our latest reviews, check out our YouTube storytelling projects, or reach out to us directly through our Contact page. Together, let's redefine wellness.</p>
+            </div>
+        </section>
     </div>
-  </div>
+</div>
+
+<!-- CONTACT US FULL PAGE MODAL -->
+<div id="contactModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:white; z-index:9999; overflow-y:scroll; padding:20px; font-family: 'Segoe UI', Tahoma, sans-serif; color: #333;">
+
+    <button onclick="closeModal()" style="position:fixed; right:20px; top:20px; padding:10px 15px; background:rgb(13, 32, 210); color:white; border:none; border-radius:8px; cursor:pointer; font-weight: bold; z-index: 10000;">
+    Close ✖
+    </button>
+
+    <div style="max-width: 800px; margin: 40px auto;">
+        <h1 style="color: #2c3e50; border-bottom: 3px solid #4CAF50; padding-bottom: 10px;">Contact RoopHub Official</h1>
+
+        <p style="font-size: 1.1em; line-height: 1.8;">
+            Welcome to the <strong>RoopHub Official</strong> support center. We understand that in the fast-paced world of digital wellness and affiliate marketing, having a reliable point of contact is essential for building trust and ensuring a smooth user experience. If you have any questions, suggestions, or business inquiries, feel free to contact us at any time. We are always ready to help our users and respond as quickly as possible.
+        </p>
+        
+        <p style="line-height: 1.8;">
+            RoopHub values every user message and feedback because it helps us improve our platform. Whether it is a technical issue regarding our website's performance, a product query about the supplements we review (like Neuro Serge or Prostavive), or a general question about how affiliate marketing works, our team is here to assist you. Our goal is to provide you with the most accurate, well-researched, and transparent information so that you can make informed decisions about your health and wellness journey.
+        </p>
+
+        <h3 style="color: #27ae60; margin-top: 30px;">Why Should You Reach Out to Us?</h3>
+        <p style="line-height: 1.8;">
+            At RoopHub, we believe that communication is the key to community growth. You might want to reach out to us for several reasons. Perhaps you have noticed a technical glitch on our landing page, or maybe you want more clarity on the ingredient profile of a wellness product we have featured. We encourage our readers to be proactive. If you are a brand owner looking for an ethical affiliate partner who values "No Fake Reviews" and "Clean Design," we are eager to hear your proposal.
+        </p>
+        <p style="line-height: 1.8;">
+            Furthermore, if you are a customer who has clicked on one of our affiliate links and has a question about the redirection process, our support staff can guide you. Please remember, however, that since we do not manufacture or ship products directly, specific order-related issues (like tracking numbers or billing) are best handled by the official product manufacturer. But, if you cannot find their contact details, we will go the extra mile to find them for you.
+        </p>
+
+        <h3 style="color: #27ae60; margin-top: 30px;">Our Commitment to Your Privacy</h3>
+        <p style="line-height: 1.8;">
+            When you send us a message through our contact form or via email, we ensure that your data is handled with the utmost care. We do not sell your personal information or email addresses to third-party marketers. Your satisfaction is our priority, and we always aim to provide the best support experience while maintaining a secure digital environment. We use your feedback solely to enhance the quality of our reviews and the technical stability of roophub.online.
+        </p>
+
+        <hr style="margin: 40px 0; border: 0; border-top: 1px solid #eee;">
+
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
+            <div style="flex: 1; min-width: 250px; background: #f9f9f9; padding: 20px; border-radius: 10px;">
+                <h3 style="margin-top: 0; color: #2c3e50;">Email Support</h3>
+                <p style="font-weight: bold; font-size: 1.1em; color: #2980b9;">support@roophub.com</p>
+                <p style="font-size: 0.9em; color: #666;">For general inquiries, technical support, and partnership proposals.</p>
+            </div>
+
+            <div style="flex: 1; min-width: 250px; background: #f9f9f9; padding: 20px; border-radius: 10px;">
+                <h3 style="margin-top: 0; color: #2c3e50;">Phone & Location</h3>
+                <p style="font-weight: bold; color: #333;">Phone: +91 82717 34883</p>
+                <p style="font-weight: bold; color: #333;">Location: India (Global Support)</p>
+                <p style="font-size: 0.9em; color: #666;">Available Monday to Friday, 10:00 AM to 6:00 PM IST.</p>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 40px; color: #2c3e50;">Send Us a Direct Message</h3>
+        <p style="color: #666;">Fill out the form below and our team will get back to you within 24–48 hours.</p>
+
+        <div style="background: #ffffff; border: 1px solid #eee; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <form id="contact-form">
+                <label style="font-weight: bold; display: block; margin-bottom: 5px;">Your Full Name</label>
+                <input type="text" name="Name" placeholder="Enter your name" style="width:100%; padding:12px; margin-bottom:20px; border: 1px solid #ccc; border-radius: 6px;" required>
+                
+                <label style="font-weight: bold; display: block; margin-bottom: 5px;">Email Address</label>
+                <input type="email" name="Email" placeholder="Enter your email" style="width:100%; padding:12px; margin-bottom:20px; border: 1px solid #ccc; border-radius: 6px;" required>
+                
+                <label style="font-weight: bold; display: block; margin-bottom: 5px;">Subject</label>
+                <select name="Subject" style="width:100%; padding:12px; margin-bottom:20px; border: 1px solid #ccc; border-radius: 6px;">
+                    <option>General Inquiry</option>
+                    <option>Technical Issue</option>
+                    <option>Product Question</option>
+                    <option>Partnership/Affiliate</option>
+                </select>
+
+                <label style="font-weight: bold; display: block; margin-bottom: 5px;">Your Message</label>
+                <textarea name="Message" placeholder="How can we help you?" style="width:100%; padding:12px; margin-bottom:20px; height:150px; border: 1px solid #ccc; border-radius: 6px;" required></textarea>
+
+                <button type="submit" id="contact-btn" style="width: 100%; padding:15px; background:#27ae60; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 1.1em; font-weight: bold; transition: background 0.3s;">
+                Send Message Now
+                </button>
+            </form>
+        </div>
+
+        <p style="margin-top: 50px; text-align: center; color: #999; font-size: 0.85em;">
+            Thank you for being part of the RoopHub wellness community. We strive to maintain the highest standards of digital integrity and user support. Your feedback is the engine of our improvement.
+        </p>
+    </div>
 </div>
 
 <!-- Important Info Modal -->
