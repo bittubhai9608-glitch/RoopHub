@@ -395,86 +395,105 @@
   </div>
 </div>
 
-<!-- Disclaimer Modal -->
-<div id="disclaimerModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeDisclaimer()">&times;</span>
+<!-- Disclaimer Full Page Modal -->
+<div id="disclaimerModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:white; z-index:9999; overflow-y:scroll; padding:20px; font-family: 'Segoe UI', Tahoma, sans-serif; color: #333;">
 
-    <h2>⚠️ Disclaimer - RoopHub</h2>
+    <button onclick="closeModal()" style="position:fixed; right:20px; top:20px; padding:10px 15px; background:rgb(13, 32, 210); color:white; border:none; border-radius:8px; cursor:pointer; font-weight: bold; z-index: 10000;">
+    Close ✖
+    </button>
 
-    <div id="disclaimerContent">
+    <div style="max-width: 800px; margin: 40px auto;">
+        <h1 style="color: #2c3e50; border-bottom: 3px solid #e74c3c; padding-bottom: 10px;">Medical & Earnings Disclaimer</h1>
+        <p><strong>Last Updated: April 17, 2026</strong></p>
 
-      <h3>1. Affiliate Website</h3>
-      <p>RoopHub is an affiliate website. We do not directly sell products, we only recommend them.</p>
+        <p style="margin-top: 20px;">Please read this Disclaimer carefully before using the RoopHUB Official website (roophub.online). By accessing this site, you acknowledge and agree to the following terms regarding the information provided and the products promoted.</p>
 
-      <h3>2. Product Information</h3>
-      <p>All product details, prices, and availability are provided by third-party websites. We are not responsible for changes.</p>
+        <h3 style="color: #c0392b; margin-top: 30px;">1. Not Medical Advice (Health Disclaimer)</h3>
+        <p>The content provided on RoopHUB Official, including text, graphics, images, and other material, is for informational and educational purposes only. None of the content on this website is intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or another qualified health provider with any questions you may have regarding a medical condition or health goals.</p>
+        <p>Never disregard professional medical advice or delay in seeking it because of something you have read on this website. If you think you may have a medical emergency, call your doctor or emergency services immediately. Reliance on any information provided by RoopHUB Official is solely at your own risk.</p>
 
-      <h3>3. No Guarantee</h3>
-      <p>We do not guarantee product quality, delivery time, or service from external sellers.</p>
+        <h3 style="color: #c0392b; margin-top: 30px;">2. Individual Results May Vary</h3>
+        <p>When discussing health supplements such as Neuro Serge, Prostavive, or any other wellness products, it is important to understand that <strong>individual results will vary</strong>. Health supplements are not "magic pills" and their effectiveness depends on various factors including age, genetics, diet, exercise, and overall health condition. Testimonials or case studies found on this site or on the official product pages represent exceptional results and do not guarantee that you will achieve the same outcome. We make no guarantees, warranties, or representations regarding the specific health benefits you may experience.</p>
 
-      <h3>4. External Links</h3>
-      <p>Our website contains affiliate links. Once you leave RoopHub, their policies apply.</p>
+        <h3 style="color: #c0392b; margin-top: 30px;">3. Affiliate & Earnings Disclaimer</h3>
+        <p>RoopHUB Official is a participant in various affiliate marketing programs. This means that we may earn a commission if you click on a link and make a purchase through our site. This commission is paid by the product manufacturer at no additional cost to you. Our reviews and recommendations are based on our independent research and analysis. While we strive to provide honest and unbiased information, please be aware that our financial relationship with product owners may influence the placement or order of products on this website.</p>
 
-      <h3>5. Earnings</h3>
-      <p>We may earn a small commission when you purchase through our links, at no extra cost to you.</p>
+        <h3 style="color: #c0392b; margin-top: 30px;">4. Product Safety & Responsibility</h3>
+        <p>RoopHUB Official does not manufacture, store, or ship any of the products mentioned on this site. We are strictly an informational and referral platform. Before consuming any supplement, we strongly recommend that you read the full ingredient list on the official product label to avoid potential allergic reactions or adverse effects. If you are pregnant, nursing, taking medication, or have a history of heart conditions, consult a licensed healthcare professional before use. Any issues related to product quality, shipping delays, or billing must be addressed directly with the product manufacturer’s customer support.</p>
 
-      <h3>6. User Responsibility</h3>
-      <p>Users are responsible for verifying product details before purchase.</p>
+        <h3 style="color: #c0392b; margin-top: 30px;">5. Accuracy of Information</h3>
+        <p>While we make every effort to ensure that the information on this website is accurate and up-to-date, health research is constantly evolving. RoopHUB Official does not warrant or guarantee the completeness, reliability, or accuracy of the information provided. Any action you take based on the information found on this website is strictly at your own risk, and we will not be liable for any losses or damages in connection with the use of our website.</p>
 
-      <h3>7. Updates</h3>
-      <p>This disclaimer may change anytime without notice.</p>
+        <h3 style="color: #c0392b; margin-top: 30px;">6. External Links Disclaimer</h3>
+        <p>Our website contains links to external websites (official product pages) that are not provided or maintained by or in any way affiliated with RoopHUB Official. Please note that we do not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites. Once you leave our domain, you are subject to the privacy policies and terms of the third-party site.</p>
 
-      <h3>8. Contact</h3>
-      <p>Email: bittupandit96081@email.com<br>
-         Phone: 8271734883</p>
+        <h3 style="color: #c0392b; margin-top: 30px;">7. No Warranties</h3>
+        <p>This website is provided "as is" without any representations or warranties, express or implied. RoopHUB Official makes no representations or warranties in relation to this website or the information and materials provided on this website. We do not warrant that this website will be constantly available, or available at all; or that the information on this website is complete, true, accurate or non-misleading.</p>
 
-      <div style="background: rgba(0,0,0,0.05); padding:10px; margin-top:10px; border-radius:8px;">
-        ⚠️ By using RoopHub, you agree to this Disclaimer.
-      </div>
+        <h3 style="color: #c0392b; margin-top: 30px;">8. Consent</h3>
+        <p>By using our website, you hereby consent to our disclaimer and agree to its terms. We reserve the right to update, amend or make any changes to this document at any time without prior notice.</p>
 
+        <div style="background: #fff3cd; border-left: 5px solid #ffc107; padding: 20px; margin-top: 40px; border-radius: 8px;">
+            <p style="margin: 0; color: #856404; font-weight: bold;">Note:</p>
+            <p style="margin-top: 10px; color: #856404;">Statements regarding dietary supplements have not been evaluated by the FDA (Food and Drug Administration). These products are not intended to diagnose, treat, cure, or prevent any disease.</p>
+        </div>
     </div>
-  </div>
 </div>
 
 
-<!-- FAQ Modal -->
-<div id="faqModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeFAQ()">&times;</span>
+<!-- FAQ Full Page Modal -->
+<div id="faqModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:white; z-index:9999; overflow-y:scroll; padding:20px; font-family: 'Segoe UI', Tahoma, sans-serif; color: #333;">
 
-    <h2>❓ FAQ - RoopHub</h2>
+    <button onclick="closeModal()" style="position:fixed; right:20px; top:20px; padding:10px 15px; background:rgb(43, 233, 113); color:white; border:none; border-radius:8px; cursor:pointer; font-weight: bold; z-index: 10000;">
+    Close ✖
+    </button>
 
-    <div id="faqContent">
+    <div style="max-width: 800px; margin: 40px auto;">
+        <h1 style="text-align: center; color: #2c3e50;">Frequently Asked Questions (FAQ)</h1>
+        <p style="text-align: center; color: #7f8c8d; margin-bottom: 30px;">Find answers to the most common questions about our platform and the products we review.</p>
 
-      <h3>Q1: RoopHub kya hai?</h3>
-      <p>RoopHub ek affiliate wellness store hai jahan hum trusted products recommend karte hain.</p>
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">1. What is RoopHUB Official and how does it work?</h3>
+            <p style="line-height: 1.6;">RoopHUB Official is a dedicated wellness and health information platform. Our mission is to research, analyze, and present the most effective health supplements and wellness products available in the market today. We act as a bridge between you and the official product manufacturers. We provide detailed insights, ingredient breakdowns, and usage guides so that you can make an informed decision before purchasing. When you decide to buy a product through our links, we redirect you to the secure, official website of the brand to ensure you get genuine products and the best possible price.</p>
+        </div>
 
-      <h3>Q2: Kya RoopHub products sell karta hai?</h3>
-      <p>Nahi, hum directly products sell nahi karte. Hum sirf affiliate links provide karte hain.</p>
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">2. Is the information provided on this website medical advice?</h3>
+            <p style="line-height: 1.6;">No, the information provided on RoopHUB Official is for educational and informational purposes only. While we take great care in researching the products we feature, such as Neuro Serge, we are not medical professionals or licensed doctors. The content on this site should not be used to diagnose, treat, or cure any disease. Every individual has a unique medical history, and what works for one person may not work for another. We strongly recommend consulting with a healthcare professional before starting any new dietary supplement, especially if you have pre-existing health conditions or are taking prescription medication.</p>
+        </div>
 
-      <h3>Q3: Kya price same rehta hai?</h3>
-      <p>Haan, aapko same price milta hai. Hume commission seller se milta hai.</p>
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">3. Are the products mentioned on RoopHUB sold directly by you?</h3>
+            <p style="line-height: 1.6;">No, RoopHUB does not sell, manufacture, or ship any physical products directly. We are an independent affiliate partner. Our role is to provide information and direct you to the official source. When you click an "Order Now" or "Official Website" button, you are taken to the manufacturer's secure checkout page. This ensures that your payment is handled by a verified brand and that you receive an authentic product with all applicable money-back guarantees provided by the company.</p>
+        </div>
 
-      <h3>Q4: Kya RoopHub safe hai?</h3>
-      <p>Haan, hum sirf trusted brands aur verified products recommend karte hain.</p>
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">4. Do I have to pay extra if I buy through your affiliate links?</h3>
+            <p style="line-height: 1.6;">Absolutely not. One of our core principles is transparency. Buying through an affiliate link on RoopHUB does not cost you a single extra penny. In fact, it is often the opposite. Because we maintain professional relationships with these brands, we are sometimes able to offer our readers exclusive discount codes or special bundle pricing that you might not find by visiting the website directly. The commission we earn is paid by the manufacturer as a marketing fee, and it does not affect your final purchase price in any way.</p>
+        </div>
 
-      <h3>Q5: Payment kahan hota hai?</h3>
-      <p>Payment external website (Amazon/other affiliate partner) par hota hai.</p>
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">5. How do you choose which products to promote?</h3>
+            <p style="line-height: 1.6;">We take our reputation very seriously. We refuse to promote products that use deceptive marketing, fake testimonials, or hidden ingredients. Our selection process involves checking the purity of ingredients, the reputation of the manufacturing facility (such as FDA-registered or GMP-certified facilities), and real customer feedback. If a product does not meet our high standards for safety and transparency, it will not be featured on our platform. Our goal is to build long-term trust with our community by only recommending high-quality wellness solutions.</p>
+        </div>
 
-      <h3>Q6: Kya return policy RoopHub handle karta hai?</h3>
-      <p>Nahi, return/refund policy seller website ke rules ke according hoti hai.</p>
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">6. Can I get a refund if the product doesn't work for me?</h3>
+            <p style="line-height: 1.6;">Since the actual purchase happens on the official manufacturer's website, their specific refund policy will apply. Most high-quality supplements we feature come with a 60-day or 90-day money-back guarantee. We always encourage our users to read the "Refund Policy" or "Terms of Sale" on the official product page before completing a purchase. If you need help finding where to contact their support team, you can reach out to us, and we will do our best to guide you to the right place.</p>
+        </div>
 
-      <h3>Q7: Contact kaise kare?</h3>
-      <p>Email: bittupandit96081@email.com<br>
-         Phone: 8271734883</p>
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">7. Is my data safe when browsing RoopHUB Official?</h3>
+            <p style="line-height: 1.6;">Yes, your security is a top priority for us. Our website uses SSL encryption to ensure that your browsing experience is private and secure. As detailed in our Privacy Policy, we do not collect or store sensitive personal information like your credit card details or home address. We use cookies only to track affiliate referrals and to improve our website's performance. You can browse our articles and reviews with complete peace of mind knowing that your privacy is respected.</p>
+        </div>
 
-      <div style="background: rgba(0,0,0,0.05); padding:10px; margin-top:10px; border-radius:8px;">
-        ✔ Still have questions? Contact us anytime!
-      </div>
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">8. How can I contact the RoopHUB team?</h3>
+            <p style="line-height: 1.6;">We love hearing from our community! Whether you have a question about a specific review, want to suggest a product for us to analyze, or have a technical issue with our website, you can reach out to us through our official Contact Us page. We aim to respond to all legitimate inquiries within 24-48 hours. Providing clear communication is part of our commitment to being a transparent and reliable source in the health and wellness space.</p>
+        </div>
 
     </div>
-  </div>
+</div>
 </div>
 
 <!-- AFFILIATE DISCLOSURE FULL PAGE MODAL -->

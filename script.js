@@ -273,10 +273,6 @@ function openFAQ(){
   document.getElementById("faqModal").style.display = "block";
 }
 
-function closeFAQ(){
-  document.getElementById("faqModal").style.display = "none";
-}
-
 
 
 
