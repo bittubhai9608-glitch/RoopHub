@@ -163,19 +163,6 @@ function toggleAdsense() {
   adContainer.classList.toggle('hidden');
 }
 
-function showFullAbout() {
-  const aboutFull = document.getElementById('aboutFull');
-  const seeMoreBtn = document.getElementById('seeMoreBtn');
-  const aboutContent = document.getElementById('aboutContent');
-  
-  if (aboutFull) aboutFull.style.display = "block";
-  if (seeMoreBtn) seeMoreBtn.style.display = "none";
-  if (aboutContent) {
-    aboutContent.scrollTop = 0;
-    aboutContent.style.display = "block";
-  }
-}
-
 function changePage(direction) { // Placeholder for future pagination
   const newPage = currentPage + direction;
   if (newPage > 0 && newPage <= totalPages) {
