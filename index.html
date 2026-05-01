@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RoopHub</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth-profile.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <meta name="description" content="RoopHub Affiliate Wellness Store India">
 <meta name="keywords" content="health, affiliate, wellness, products India">
@@ -16,7 +17,7 @@
         <h1 id="animatedHeading">
             ROOPHUB
         </h1>
-        <span class="tagline">
+        <span class="tagline" data-i18n="hero_desc">
             Online Affiliate Wellness
         </span>
     </div>
@@ -25,15 +26,15 @@
 <nav>
   <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation">View Top Deals</button>
   <div class="nav-left" id="navItems">
-    <button onclick="loadProducts('Men Health')" aria-label="Men Health Products">Men Health</button>
-    <button onclick="loadProducts('Weight Loss')" aria-label="Weight Loss Products">Weight Loss</button>
-    <button onclick="loadProducts('Brain Boost')" aria-label="Brain Boost Products">Brain Boost</button>
-    <button onclick="loadProducts('Skin Care')" aria-label="Skin Care Products">Skin Care</button>
+    <button onclick="loadProducts('Men Health')" data-i18n="nav_men">Men Health</button>
+    <button onclick="loadProducts('Weight Loss')" data-i18n="nav_weight">Weight Loss</button>
+    <button onclick="loadProducts('Brain Boost')" data-i18n="nav_brain">Brain Boost</button>
+    <button onclick="loadProducts('Skin Care')" data-i18n="nav_skin">Skin Care</button>
   </div>
   <div class="nav-right" id="navRight">
-    <button onclick="showAbout()" aria-label="About Us">About Us</button>
-    <button onclick="showContact()" aria-label="Contact">Contact</button>
-    <button onclick="showImportantInfo()" aria-label="Important Info">Important Info</button>
+    <button onclick="showAbout()" data-i18n="footer_about">About Us</button>
+    <button onclick="showContact()" data-i18n="contact">Contact</button>
+    <button onclick="showImportantInfo()" data-i18n="footer_legal">Important Info</button>
   </div>
 </nav>
 
@@ -85,7 +86,7 @@
   <div class="footer-col">
     <h3>Connect With Us</h3>
     <div class="social-icons">
-      <a href="mailto:support@roophub.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="javascript:void(0)" onclick="showContact()" title="Email Support Form"><i class="fa-solid fa-envelope"></i></a>
       <a href="tel:8271734883" title="Phone"><i class="fa-solid fa-phone"></i></a>
       <a href="https://www.youtube.com" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
       <a href="https://www.google.com/maps?q=Yadav+Nagar+Road+No+3+Muzaffarpur+Bihar" target="_blank" title="Location"><i class="fa-solid fa-location-dot"></i></a>
@@ -229,6 +230,9 @@
 
                 <label style="font-weight: bold; display: block; margin-bottom: 5px;">Your Message</label>
                 <textarea name="Message" placeholder="How can we help you?" style="width:100%; padding:12px; margin-bottom:20px; height:150px; border: 1px solid #ccc; border-radius: 6px;" required></textarea>
+
+                <label style="font-weight: bold; display: block; margin-bottom: 5px;">Attachments (Optional - Select multiple)</label>
+                <input type="file" name="attachments" multiple style="margin-bottom:20px;">
 
                 <button type="submit" id="contact-btn" style="width: 100%; padding:15px; background:#27ae60; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 1.1em; font-weight: bold; transition: background 0.3s;">
                 Send Message Now

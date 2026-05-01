@@ -1,7 +1,8 @@
 import os
 import json
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
+from flask_mail import Mail, Message
 import difflib
 from datetime import datetime
 import gspread
@@ -10,8 +11,22 @@ from oauth2client.service_account import ServiceAccountCredentials
 app = Flask(__name__)
 CORS(app)
 
+# --- 0. EMAIL CONFIGURATION ---
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'your-email@gmail.com' # अपना ईमेल यहाँ डालें
+app.config['MAIL_PASSWORD'] = 'your-app-password'    # अपना Gmail App Password यहाँ डालें
+mail = Mail(app)
+
 # --- 1. GOOGLE SHEETS SETUP ---
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+
+# Initialize sheet, auth_sheet, review_sheet to None
+sheet = None
+auth_sheet = None
+review_sheet = None
+spreadsheet = None
 
 # Render dashboard se secret uthana
 # Aapne bataya ki environment variable ka naam 'Signin/Signup' hai
@@ -19,27 +34,30 @@ json_info = os.environ.get('Signin/Signup') or os.environ.get('GOOGLE_JSON_DATA'
 
 try:
     if json_info:
-        # Jab Render par deploy hoga
         info = json.loads(json_info)
         creds = ServiceAccountCredentials.from_json_keyfile_dict(info, scope)
     else:
-        # Local computer par testing ke liye
         creds = ServiceAccountCredentials.from_json_keyfile_name('creds.json', scope)
     
     client = gspread.authorize(creds)
-    # Aapki specific Google Sheet ID
     spreadsheet = client.open_by_key("1A2XLLqTt6X_8HxZvrU_EAAgmzjz9AZz2QRSsapLoBa4")
     sheet = spreadsheet.get_worksheet(0)
     
     try:
         # Sign In/Join tab ko target karna
         auth_sheet = spreadsheet.worksheet("Sign In/Join")
-    except:
+    except gspread.exceptions.WorksheetNotFound:
         auth_sheet = sheet # Agar tab nahi mila toh default sheet use karega
-    print(f"✅ Google Sheet Connected! Target: {auth_sheet.title}")
+    except Exception as e:
+        print(f"❌ Error getting 'Sign In/Join' worksheet: {e}")
+        auth_sheet = None
+
+    if auth_sheet:
+        print(f"✅ Google Sheet Connected! Target: {auth_sheet.title}")
+    else:
+        print("✅ Google Sheet Connected, but 'Sign In/Join' worksheet could not be determined.")
 except Exception as e:
-    sheet = auth_sheet = spreadsheet = None
-    print(f"❌ Connection Error: {e}")
+    print(f"❌ Google Sheets Connection Error: {e}")
 
 # Review sheet error handling
 try:
@@ -47,8 +65,11 @@ try:
         review_sheet = spreadsheet.worksheet("Reviews")
     else:
         review_sheet = None
-except:
-    review_sheet = None 
+except gspread.exceptions.WorksheetNotFound:
+    review_sheet = sheet # Fallback to default sheet if 'Reviews' not found
+except Exception as e:
+    print(f"❌ Error setting up Review Sheet: {e}")
+    review_sheet = None
 
 
 # --- 2. AAPKA PRODUCT DATABASE (No changes) ---
@@ -185,9 +206,12 @@ def chat():
     user_msg = data.get("message", "")
     
     # User ka data sheet mein save karna
-    try:
-        sheet.append_row([user_msg, data.get("lang", "en")]) 
-    except:
+    try: # Add a check for 'sheet' before attempting to append
+        if sheet:
+            sheet.append_row([user_msg, data.get("lang", "en")]) 
+        else:
+            print("Warning: Google Sheet not available for chat logging.")
+    except Exception as e:
         pass
 
     reply, suggestions = ai_reply(user_msg, data.get("lang", "en"))
@@ -208,7 +232,10 @@ def auth_action():
             data.get("type", "SIGNUP"),
             datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         ]
-        auth_sheet.append_row(row)
+        if auth_sheet: # Add a check for 'auth_sheet' before attempting to append
+            auth_sheet.append_row(row)
+        else:
+            print("Warning: Auth sheet not available for logging auth actions.")
         return jsonify({"status": "success"})
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
@@ -248,6 +275,47 @@ def get_reviews():
         return jsonify(reviews)
     except:
         return jsonify([])
+
+@app.route("/send-email", methods=["POST"])
+def send_email():
+    try:
+        # JSON के बजाय Form data का उपयोग करें क्योंकि इसमें फाइल्स होती हैं
+        name = request.form.get("name")
+        email = request.form.get("email")
+        subject = request.form.get("subject")
+        message = request.form.get("message")
+        
+        # फाइल प्राप्त करें
+        files = request.files.getlist("attachments")
+
+        # ईमेल तैयार करें
+        msg = Message(subject=f"New Contact: {subject}",
+                      sender=app.config['MAIL_USERNAME'],
+                      recipients=['your-destination-email@gmail.com']) # जहाँ ईमेल प्राप्त करना है
+        
+        # Plain text fallback (अगर HTML लोड न हो)
+        msg.body = f"New message from {name} ({email}): {message}"
+        
+        # HTML Template Render करें
+        msg.html = render_template('contact_email.html', 
+                                   name=name, 
+                                   email=email, 
+                                   subject=subject, 
+                                   message=message)
+
+        # अटैचमेंट जोड़ें (यदि फाइल मौजूद है)
+        for file in files:
+            if file.filename:
+                msg.attach(
+                    filename=file.filename,
+                    content_type=file.content_type,
+                    data=file.read()
+                )
+
+        mail.send(msg)
+        return jsonify({"status": "success"})
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 500
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)

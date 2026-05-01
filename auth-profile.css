@@ -1,0 +1,121 @@
+/* Shared Theme Variables for All Pages */
+:root {
+  --bg-color: #f5f5f5;
+  --card-bg: #ffffff;
+  --text-main: #333333;
+  --border-color: #eef2f6;
+}
+
+.dark-mode {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-main: #f8fafc;
+  --border-color: #334155;
+}
+
+/* General Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+.close:hover, .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Auth Modal Specific Styles */
+.auth-modal-content {
+    padding: 30px;
+    text-align: center;
+    max-width: 450px;
+    margin: 5% auto;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.auth-header { margin-bottom: 25px; }
+.auth-title { font-size: 24px; color: #1e40af; margin-bottom: 8px; }
+.auth-tagline { font-size: 14px; color: #64748b; }
+.auth-tabs { display: flex; justify-content: center; margin-bottom: 25px; border-bottom: 1px solid #e2e8f0; }
+.auth-tabs h3 { padding: 10px 20px; cursor: pointer; font-size: 16px; font-weight: 600; color: #94a3b8; border-bottom: 3px solid transparent; transition: all 0.3s ease; }
+.auth-tabs h3.active-tab { color: #1e40af; border-bottom-color: #1e40af; }
+.auth-form { text-align: left; }
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; font-size: 13px; color: #475569; margin-bottom: 5px; font-weight: 600; }
+.input-group input { width: calc(100% - 24px); padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; color: #334155; }
+.forgot-password { display: block; text-align: right; font-size: 12px; color: #2563eb; text-decoration: none; margin-top: -10px; margin-bottom: 15px; }
+.auth-btn { width: 100%; padding: 12px; background: #2563eb; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background 0.3s ease; }
+.auth-btn:hover { background: #1e40af; }
+.auth-privacy-note { font-size: 11px; color: #64748b; text-align: center; margin-top: 15px; }
+.auth-privacy-note a { color: #2563eb; text-decoration: none; }
+.social-login-divider { display: flex; align-items: center; text-align: center; margin: 25px 0; color: #94a3b8; }
+.social-login-divider::before, .social-login-divider::after { content: ''; flex: 1; border-bottom: 1px solid #e2e8f0; }
+.social-login-divider:not(:empty)::before { margin-right: .25em; }
+.social-login-divider:not(:empty)::after { margin-left: .25em; }
+.social-btn { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; color: #334155; font-size: 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 10px; transition: background 0.3s ease; }
+.social-btn:hover { background: #f1f5f9; }
+.social-btn img { width: 18px; height: 18px; }
+
+/* Header Auth Button Styling */
+.header-auth-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 5px 12px;
+    background: #fbbf24;
+    color: #1e293b;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+.header-auth-btn:hover {
+    background: #eab308;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
