@@ -447,13 +447,26 @@ function checkAuthStatus() {
     const user = JSON.parse(localStorage.getItem("roophub_user"));
     const btn = document.querySelector('.header-auth-btn');
     if (user && user.name && btn) {
-        btn.textContent = user.name.split(' ')[0];
+        // Name hatakar sirf profile picture ya initials dikhane ki logic
+        const initials = user.name.split(' ').map(n => n[0]).join('').toUpperCase();
+        const avatarHtml = user.profilePic 
+            ? `<img src="${user.profilePic}" style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover; border: 2px solid #fbbf24; display: block;">`
+            : `<div style="width: 35px; height: 35px; background: #fbbf24; color: #0f172a; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: bold; border: 2px solid #fff;">${initials}</div>`;
+        
+        btn.innerHTML = avatarHtml;
+        btn.style.padding = "0";
+        btn.style.background = "transparent";
+        btn.style.boxShadow = "none";
+
         btn.onclick = (e) => {
             if(e) e.preventDefault();
             showProfile();
         };
     } else if (btn) {
-        btn.textContent = "Sign In / Join";
+        btn.innerHTML = "Sign In / Join";
+        btn.style.padding = "5px 12px";
+        btn.style.background = "#fbbf24";
+        btn.style.boxShadow = "0 2px 8px rgba(0,0,0,0.2)";
         btn.onclick = () => openModal('auth');
     }
 }
@@ -464,15 +477,249 @@ function showProfile() {
 
     const details = document.getElementById('profileDetails');
     if (details) {
-        details.innerHTML = `
-            <div style="border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px;">
-                <p style="margin: 8px 0;"><strong>👤 Name:</strong> ${user.name}</p>
-                <p style="margin: 8px 0;"><strong>📧 Email:</strong> ${user.email}</p>
-            </div>
-            <p style="font-size: 13px; color: #64748b; line-height: 1.4;">Aap RoopHub ke active member hain. Account se nikalne ke liye niche Logout par click karein.</p>
-        `;
+        switchProfileTab('overview');
     }
     openModal('profile');
+}
+
+function switchProfileTab(tab) {
+    const user = JSON.parse(localStorage.getItem("roophub_user"));
+    const details = document.getElementById('profileDetails');
+    const initials = user.name.split(' ').map(n => n[0]).join('').toUpperCase();
+
+    const avatarHtml = user.profilePic 
+        ? `<img src="${user.profilePic}" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid #2563eb;">`
+        : `<div style="width: 50px; height: 50px; background: linear-gradient(135deg, #2563eb, #1e40af); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold;">${initials}</div>`;
+
+    const memberId = "RH-9532"; // As per your requirement
+    const joinDate = "1 May 2026"; // As per your requirement
+
+    let tabContent = '';
+
+    if (tab === 'overview') {
+        tabContent = `
+            <div style="font-size: 14px; color: #475569;">
+                <p style="margin: 15px 0; display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 8px;"><strong>📧 Email:</strong> <span style="color: #1e293b;">${user.email}</span></p>
+                <p style="margin: 15px 0; display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 8px;"><strong>🆔 Member ID:</strong> <span style="color: #1e293b; font-family: monospace; font-weight: bold;">${memberId}</span></p>
+                <p style="margin: 15px 0; display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 8px;"><strong>📅 Joined:</strong> <span style="color: #1e293b;">${joinDate}</span></p>
+                <p style="margin: 15px 0; display: flex; justify-content: space-between;"><strong>✅ Status:</strong> <span style="color: #166534; font-weight: bold;">Active Account</span></p>
+                <p style="margin: 15px 0; display: flex; justify-content: space-between; border-top: 1px dashed #eee; padding-top: 8px;"><strong>🌟 Membership Tier:</strong> <span style="color: #854d0e; font-weight: bold;">Gold Member</span></p>
+                <p style="margin: 15px 0; display: flex; justify-content: space-between;"><strong>⏰ Last Login:</strong> <span style="color: #1e293b;">${new Date().toLocaleString()}</span></p>
+            </div>
+        `;
+    } else if (tab === 'settings') {
+        const isDark = document.body.classList.contains('dark-mode');
+        tabContent = `
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f8fafc; border-radius: 8px;">
+                    <span style="font-size: 13px; font-weight: 600;">🌙 Dark Mode</span>
+                    <button onclick="toggleDarkMode()" style="padding: 5px 12px; border-radius: 15px; border: 1px solid #cbd5e1; cursor: pointer; background: ${isDark ? '#1e40af' : '#fff'}; color: ${isDark ? '#fff' : '#000'};">
+                        ${isDark ? 'ON' : 'OFF'}
+                    </button>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f8fafc; border-radius: 8px;">
+                    <span style="font-size: 13px; font-weight: 600;">🔔 Email Notifications</span>
+                    <input type="checkbox" checked style="width: 18px; height: 18px; cursor: pointer;">
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f8fafc; border-radius: 8px;">
+                    <span style="font-size: 13px; font-weight: 600;">📩 Newsletter Sub</span>
+                    <input type="checkbox" checked style="width: 18px; height: 18px; cursor: pointer;">
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f8fafc; border-radius: 8px;">
+                    <span style="font-size: 13px; font-weight: 600;">🖼️ Profile Photo</span>
+                    <input type="file" accept="image/*" onchange="handleProfilePicUpload(event)" style="font-size: 11px; width: 150px;">
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f8fafc; border-radius: 8px;">
+                    <span style="font-size: 13px; font-weight: 600;">🌐 Language</span>
+                    <select onchange="changeLanguage(this.value)" style="padding: 5px 8px; border-radius: 6px; border: 1px solid #cbd5e1; width: 150px; cursor: pointer;">
+                        <option value="en" ${(localStorage.getItem('language') || 'en') === 'en' ? 'selected' : ''}>English</option>
+                        <option value="hi" ${(localStorage.getItem('language') || 'en') === 'hi' ? 'selected' : ''}>Hindi</option>
+                        <option value="es" ${(localStorage.getItem('language') || 'en') === 'es' ? 'selected' : ''}>Spanish</option>
+                        <option value="fr" ${(localStorage.getItem('language') || 'en') === 'fr' ? 'selected' : ''}>French (Français)</option>
+                        <option value="de" ${(localStorage.getItem('language') || 'en') === 'de' ? 'selected' : ''}>German (Deutsch)</option>
+                        <option value="ar" ${(localStorage.getItem('language') || 'en') === 'ar' ? 'selected' : ''}>Arabic (العربية)</option>
+                        <option value="pt" ${(localStorage.getItem('language') || 'en') === 'pt' ? 'selected' : ''}>Portuguese (Português)</option>
+                        <option value="zh" ${(localStorage.getItem('language') || 'en') === 'zh' ? 'selected' : ''}>Chinese (中文)</option>
+                        <option value="ja" ${(localStorage.getItem('language') || 'en') === 'ja' ? 'selected' : ''}>Japanese (日本語)</option>
+                        <option value="ru" ${(localStorage.getItem('language') || 'en') === 'ru' ? 'selected' : ''}>Russian (Русский)</option>
+                    </select>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f8fafc; border-radius: 8px;">
+                    <span style="font-size: 13px; font-weight: 600;">🌍 Time Zone</span>
+                    <select onchange="localStorage.setItem('timezone', this.value)" style="padding: 5px 8px; border-radius: 6px; border: 1px solid #cbd5e1; width: 150px; cursor: pointer;">
+                        <option value="utc" ${(localStorage.getItem('timezone') || 'utc') === 'utc' ? 'selected' : ''}>UTC (Universal)</option>
+                        <option value="ist">IST (India - GMT+5:30)</option>
+                        <option value="est">EST (US East - GMT-5)</option>
+                        <option value="cst">CST (US Central - GMT-6)</option>
+                        <option value="pst">PST (US West - GMT-8)</option>
+                        <option value="gmt">GMT (London - GMT+0)</option>
+                        <option value="cet">CET (Europe - GMT+1)</option>
+                        <option value="msk">MSK (Moscow - GMT+3)</option>
+                        <option value="gst">GST (Dubai - GMT+4)</option>
+                        <option value="jst">JST (Tokyo - GMT+9)</option>
+                        <option value="aest">AEST (Sydney - GMT+10)</option>
+                        <option value="brt">BRT (Brazil - GMT-3)</option>
+                        <option value="nzst">NZST (New Zealand - GMT+12)</option>
+                    </select>
+                </div>
+                <div style="display: flex; gap: 10px; margin-top: 5px;">
+                    <button onclick="alert('Preferences Saved!')" style="flex: 1; background: #1e40af; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: 600; cursor: pointer;">Save</button>
+                    <button onclick="resetToDefaultSettings()" style="flex: 1; background: #fff5f5; color: #dc2626; border: 1px solid #feb2b2; padding: 10px; border-radius: 6px; font-weight: 600; cursor: pointer;">Reset</button>
+                </div>
+                <p style="font-size: 11px; color: #64748b; margin: 5px 0;">Preferences update hone mein thoda samay lag sakta hai.</p>
+            </div>
+        `;
+    } else if (tab === 'security') {
+        tabContent = `
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                <div class="input-group">
+                    <label style="font-size: 12px; font-weight: 600;">Update Name</label>
+                    <input type="text" id="updateName" value="${user.name}" style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;">
+                </div>
+                <div class="input-group">
+                    <label style="font-size: 12px; font-weight: 600;">New Password</label>
+                    <input type="password" id="updatePass" placeholder="Leave blank to keep same" style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;">
+                </div>
+                <button onclick="alert('Profile Security Updated!')" style="background: #1e40af; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: 600; cursor: pointer; margin-top: 5px;">Save Profile</button>
+
+                <div style="margin-top: 25px; border-top: 1px dashed #e2e8f0; padding-top: 20px;">
+                    <h4 style="margin: 0 0 15px 0; font-size: 14px; color: #1e293b; font-weight: 600;">Security Shield</h4>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f8fafc; border-radius: 8px; margin-bottom: 8px;">
+                        <span style="font-size: 13px; font-weight: 600;">📩 Login Alerts</span>
+                        <input type="checkbox" checked style="width: 18px; height: 18px; cursor: pointer;">
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f8fafc; border-radius: 8px; margin-bottom: 8px;">
+                        <span style="font-size: 13px; font-weight: 600;">🕵️ Privacy Mode</span>
+                        <input type="checkbox" style="width: 18px; height: 18px; cursor: pointer;">
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px;">
+                        <span style="font-size: 13px; font-weight: 600; color: #166534;">🛡️ Security Level</span>
+                        <span style="font-size: 12px; font-weight: 700; color: #15803d;">OPTIMIZED</span>
+                    </div>
+                    <p style="font-size: 11px; color: #64748b; margin-top: 10px;">Aapka account currently secured hai aur tracking protection active hai.</p>
+                </div>
+
+                <div style="margin-top: 25px; padding: 10px; background: #fff5f5; border-radius: 8px; border: 1px solid #fed7d7;">
+                    <h4 style="margin: 0 0 5px 0; font-size: 13px; color: #c53030; font-weight: 600;">Danger Zone</h4>
+                    <button onclick="confirm('Permanent delete?') && logoutUser()" style="background: none; border: none; color: #dc2626; font-size: 12px; cursor: pointer; padding: 0; text-decoration: underline;">❌ Delete Account Forever</button>
+                </div>
+            </div>
+        `;
+    } else if (tab === 'help') {
+        tabContent = `
+            <div style="text-align: center; padding: 10px;">
+                <div style="font-size: 30px; margin-bottom: 10px;">🎧</div>
+                <h4 style="margin: 0; font-size: 15px;">24/7 Support</h4>
+                <p style="font-size: 13px; color: #64748b;">Aapko kisi help ki zaroorat hai? Humse sampark karein.</p>
+                <a href="mailto:support@roophub.com" style="display: block; background: #1e40af; color: white; text-decoration: none; padding: 10px; border-radius: 6px; margin-top: 10px; font-weight: 600;">Contact Support</a>
+                <p style="font-size: 11px; margin-top: 15px;">Avg. Response Time: 2 Hours</p>
+            </div>
+        `;
+    }
+
+    details.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            ${avatarHtml}
+            <div>
+                <h3 style="margin: 0; color: #1e293b; font-size: 16px;">${user.name}</h3>
+                <span style="color: #64748b; font-size: 12px;">Premium Member</span>
+            </div>
+        </div>
+
+        <!-- Professional Tab Navigation -->
+        <div style="display: flex; border-bottom: 2px solid #f1f5f9; margin-bottom: 20px; gap: 20px;">
+            <button onclick="switchProfileTab('overview')" style="background:none; border:none; padding: 10px 0; cursor:pointer; font-size:13px; font-weight:600; color: ${tab === 'overview' ? '#2563eb' : '#94a3b8'}; border-bottom: 2px solid ${tab === 'overview' ? '#2563eb' : 'transparent'}; margin-bottom: -2px;">Overview</button>
+            <button onclick="switchProfileTab('settings')" style="background:none; border:none; padding: 10px 0; cursor:pointer; font-size:13px; font-weight:600; color: ${tab === 'settings' ? '#2563eb' : '#94a3b8'}; border-bottom: 2px solid ${tab === 'settings' ? '#2563eb' : 'transparent'}; margin-bottom: -2px;">Settings</button>
+            <button onclick="switchProfileTab('security')" style="background:none; border:none; padding: 10px 0; cursor:pointer; font-size:13px; font-weight:600; color: ${tab === 'security' ? '#2563eb' : '#94a3b8'}; border-bottom: 2px solid ${tab === 'security' ? '#2563eb' : 'transparent'}; margin-bottom: -2px;">Security</button>
+            <button onclick="switchProfileTab('help')" style="background:none; border:none; padding: 10px 0; cursor:pointer; font-size:13px; font-weight:600; color: ${tab === 'help' ? '#2563eb' : '#94a3b8'}; border-bottom: 2px solid ${tab === 'help' ? '#2563eb' : 'transparent'}; margin-bottom: -2px;">Help</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div id="tabContentArea" style="min-height: 200px; max-height: calc(100vh - 350px); overflow-y: auto; padding-right: 5px; scrollbar-width: thin; -webkit-overflow-scrolling: touch;">
+            ${tabContent}
+        </div>
+    `;
+}
+
+function handleProfilePicUpload(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const user = JSON.parse(localStorage.getItem("roophub_user"));
+            user.profilePic = e.target.result;
+            localStorage.setItem("roophub_user", JSON.stringify(user));
+            switchProfileTab('settings');
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDark);
+    switchProfileTab('settings'); // UI update karne ke liye
+}
+
+function changeLanguage(lang) {
+    localStorage.setItem('language', lang);
+    applyLanguage(lang);
+    switchProfileTab('settings'); // Modal UI ko refresh karne ke liye
+}
+
+function applyLanguage(lang) {
+    const translations = {
+        en: { welcome: "ROOPHUB", search: "Search", discount: "Get Exclusive Discount", aiWelcome: "Hello! 👋 Welcome to RoopHub. How can I help you today?" },
+        hi: { welcome: "रूपहब", search: "खोजें", discount: "खास छूट प्राप्त करें", aiWelcome: "नमस्ते! 🙏 रूपहब में आपका स्वागत है। आज मैं आपकी क्या मदद कर सकता हूँ?" },
+        es: { welcome: "ROOPHUB", search: "Buscar", discount: "Obtener Descuento", aiWelcome: "¡Hola! 👋 Bienvenido a RoopHub. ¿Cómo puedo ayudarte hoy?" },
+        fr: { welcome: "ROOPHUB", search: "Chercher", discount: "Obtenir une remise", aiWelcome: "Bonjour! 👋 Bienvenue sur RoopHub. Comment puis-je vous aider?" },
+        de: { welcome: "ROOPHUB", search: "Suche", discount: "Rabatt erhalten", aiWelcome: "Hallo! 👋 Willkommen bei RoopHub. Wie kann ich Ihnen heute helfen?" },
+        ar: { welcome: "رووبهوب", search: "بحث", discount: "احصل على خصم", aiWelcome: "مرحباً! 👋 أهلاً بكم في رووبهوب. كيف يمكنني مساعدتك اليوم؟" },
+        pt: { welcome: "ROOPHUB", search: "Buscar", discount: "Obter desconto", aiWelcome: "Olá! 👋 Bem-vindo ao RoopHub. Como posso ajudar você hoje?" },
+        zh: { welcome: "ROOPHUB", search: "搜索", discount: "获取专属折扣", aiWelcome: "你好！ 👋 欢迎来到 RoopHub。今天我能帮你什么忙？" },
+        ja: { welcome: "ROOPHUB", search: "検索", discount: "限定割引を受ける", aiWelcome: "こんにちは！ 👋 RoopHubへようこそ。今日はどのようなご用件でしょうか？" },
+        ru: { welcome: "ROOPHUB", search: "Поиск", discount: "Получить скидку", aiWelcome: "Привет! 👋 Добро пожаловать в RoopHub. Чем я могу вам помочь сегодня?" }
+    };
+
+    const t = translations[lang] || translations.en;
+
+    // Main Heading update karein
+    const heading = document.getElementById('animatedHeading');
+    if (heading) heading.textContent = t.welcome;
+
+    // Search Button update karein
+    const searchBtn = document.querySelector('.search-btn');
+    if (searchBtn) searchBtn.textContent = t.search;
+
+    // Saare product card buttons ko update karein
+    document.querySelectorAll('.premium-cta').forEach(btn => {
+        btn.innerHTML = `${t.discount} <span class="arrow-icon">⚡</span>`;
+    });
+
+    // Chatbot Welcome Message logic
+    if (chatHistory.length === 0) {
+        chatHistory.push({ role: "ai", text: t.aiWelcome });
+        localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
+        renderMessages();
+    } else if (chatHistory.length === 1 && chatHistory[0].role === 'ai') {
+        // Agar sirf welcome message hai aur user ne chat shuru nahi ki, toh use update karein
+        chatHistory[0].text = t.aiWelcome;
+        localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
+        renderMessages();
+    }
+}
+
+function resetToDefaultSettings() {
+    if (confirm("Reset all settings to default?")) {
+        localStorage.removeItem('darkMode');
+        localStorage.removeItem('language');
+        localStorage.removeItem('timezone');
+        document.body.classList.remove('dark-mode');
+        applyLanguage('en');
+        switchProfileTab('settings');
+        alert("Settings have been reset to default values.");
+    }
 }
 
 function logoutUser() {
@@ -510,6 +757,7 @@ function showAbout() {
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
   loadProducts('Men Health');
+  applyLanguage(localStorage.getItem('language') || 'en');
   checkAuthStatus();
   
   // Sign Up Logic

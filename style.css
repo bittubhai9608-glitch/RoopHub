@@ -1,8 +1,27 @@
+:root {
+  --bg-color: #c2c8d1;
+  --card-bg: #ffffff;
+  --text-main: #0f172a;
+  --text-sub: #475569;
+  --nav-bg: #ffffff;
+  --border-color: #eef2f6;
+}
+
+.dark-mode {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-main: #f8fafc;
+  --text-sub: #94a3b8;
+  --nav-bg: #1e293b;
+  --border-color: #334155;
+}
+
 html, body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #c2c8d1;
+  background: var(--bg-color);
+  color: var(--text-main);
   width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
@@ -118,9 +137,9 @@ nav {
   justify-content: center;
   flex-wrap: wrap; /* Added to allow items to wrap to the next line */
   align-items: center;
-  background: #ffffff;
+  background: var(--nav-bg);
   padding: 15px 20px;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--border-color);
   gap: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   scrollbar-width: none; /* Firefox */
@@ -467,12 +486,12 @@ nav button:hover {
 
 /* Card */
 .card {
-  background: #ffffff;
+  background: var(--card-bg);
   border-radius: 20px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border: 1px solid #eef2f6;
+  border: 1px solid var(--border-color);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -550,7 +569,7 @@ nav button:hover {
 .product-title {
   font-size: 1.1rem;
   font-weight: 800;
-  color: #0f172a;
+  color: var(--text-main);
   margin: 5px 0 15px;
   line-height: 1.3;
 }
