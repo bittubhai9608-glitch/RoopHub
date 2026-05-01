@@ -40,8 +40,8 @@ function createProductCard(product, categoryLabel) {
   div.className = "card";
   div.innerHTML = `
     <div class="img-box">
-      <span class="category-badge">${categoryLabel}</span>
-      <span class="hot-badge">🔥 BEST SELLER</span>
+      <span class="category-badge" data-i18n="cat_${categoryLabel.replace(/\s+/g, '_')}">${categoryLabel}</span>
+      <span class="hot-badge" data-i18n="best_seller">🔥 BEST SELLER</span>
       <img src="${product.img}" alt="${product.name}" loading="lazy">
     </div>
     <div class="card-content">
@@ -52,13 +52,13 @@ function createProductCard(product, categoryLabel) {
       <h3 class="product-title">${product.name}</h3>
       <div class="pricing-banner">
         <span class="price-icon">🏷️</span>
-        <span class="price-text">${product.price}</span>
+        <span class="price-text" data-i18n="special_offer">${product.price}</span>
       </div>
-      <p class="official-verify">🛡️ Official Verified Product</p>
-      <button class="premium-cta" onclick="openProduct('${product.link}')">
+      <p class="official-verify" data-i18n="verified">🛡️ Official Verified Product</p>
+      <button class="premium-cta" onclick="openProduct('${product.link}')" data-i18n="get_discount">
         Get Exclusive Discount <span class="arrow-icon">⚡</span>
       </button>
-      <p class="limited-tag">⚡ Limited Stock Available</p>
+      <p class="limited-tag" data-i18n="limited_stock">⚡ Limited Stock Available</p>
     </div>
   `;
   return div;
@@ -81,6 +81,7 @@ function loadProducts(category) {
   if (!products[category]) category = "Men Health";
 
   const container = document.getElementById("productContainer");
+  if (!container) return; // Exit if not on home page
   container.innerHTML = "";
 
   let items = [...products[category]];
@@ -182,6 +183,7 @@ function updatePagination() {
 }
 
 function showContact() {
+  closeModal(); // पुराने किसी भी खुले मोडल को बंद करें
   openModal('contact');
 }
 
@@ -301,7 +303,8 @@ function sendMessage(manualMsg = null){
     renderMessages();
     input.value = "";
     // Clear suggestions while AI is thinking
-    document.getElementById("aiSuggestions").innerHTML = "";
+    const sugBox = document.getElementById("aiSuggestions");
+    if (sugBox) sugBox.innerHTML = "";
 
     fetch("https://roophub.onrender.com/chat", {
         method:"POST",
@@ -383,6 +386,33 @@ function renderMessages(){
     box.scrollTop = box.scrollHeight;
 }
 // Password Reset Logic
+function saveProfileChanges() {
+    let user = JSON.parse(localStorage.getItem("roophub_user"));
+    if (!user) {
+        alert("User not logged in.");
+        return;
+    }
+
+    const newName = document.getElementById('updateName').value.trim();
+    const newPassword = document.getElementById('updatePass').value;
+
+    if (newName && newName !== user.name) {
+        user.name = newName;
+    }
+
+    if (newPassword) {
+        if (newPassword.length >= 6) { // Basic validation
+            user.password = newPassword;
+        } else {
+            alert("New password must be at least 6 characters long.");
+            return;
+        }
+    }
+    localStorage.setItem("roophub_user", JSON.stringify(user));
+    alert("✅ Profile updated successfully!");
+    checkAuthStatus(); // Update header button if name changed
+    switchProfileTab('security'); // Re-render the security tab to show updated name
+}
 function handleForgotPassword(e) {
     e.preventDefault();
     const email = prompt("Apna registered email address enter karein:");
@@ -430,7 +460,7 @@ function openModal(type) {
         'faq': 'faqModal',
         'disclaimer': 'disclaimerModal',
         'terms': 'termsModal',
-        'privacy': 'privacyPolicyModal',
+        'privacy': document.getElementById('privacyPolicyModal') ? 'privacyPolicyModal' : 'privacyModal',
         'affiliate': 'affiliateModal',
         'auth': 'authModal',
         'profile': 'profileModal'
@@ -441,6 +471,19 @@ function openModal(type) {
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
     }
+}
+
+function applyThemeAndSettings() {
+    // Apply Dark Mode
+    const isDark = localStorage.getItem('darkMode') === 'true';
+    if (isDark) {
+        document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
+    }
+    // Apply Language (यह applyLanguage फंक्शन द्वारा पहले से ही हैंडल किया जाता है, लेकिन यह सुनिश्चित करने के लिए कि इसे कॉल किया गया है)
+    applyLanguage(localStorage.getItem('language') || 'en');
+    // Timezone आमतौर पर डिस्प्ले/आंतरिक लॉजिक के लिए क्लाइंट-साइड JS द्वारा हैंडल किया जाता है, न कि एक वैश्विक सेटिंग जो UI को बदलती है।
 }
 
 function checkAuthStatus() {
@@ -580,7 +623,7 @@ function switchProfileTab(tab) {
                     <label style="font-size: 12px; font-weight: 600;">New Password</label>
                     <input type="password" id="updatePass" placeholder="Leave blank to keep same" style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;">
                 </div>
-                <button onclick="alert('Profile Security Updated!')" style="background: #1e40af; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: 600; cursor: pointer; margin-top: 5px;">Save Profile</button>
+                <button onclick="saveProfileChanges()" style="background: #1e40af; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: 600; cursor: pointer; margin-top: 5px;">Save Profile</button>
 
                 <div style="margin-top: 25px; border-top: 1px dashed #e2e8f0; padding-top: 20px;">
                     <h4 style="margin: 0 0 15px 0; font-size: 14px; color: #1e293b; font-weight: 600;">Security Shield</h4>
@@ -608,11 +651,14 @@ function switchProfileTab(tab) {
     } else if (tab === 'help') {
         tabContent = `
             <div style="text-align: center; padding: 10px;">
-                <div style="font-size: 30px; margin-bottom: 10px;">🎧</div>
-                <h4 style="margin: 0; font-size: 15px;">24/7 Support</h4>
-                <p style="font-size: 13px; color: #64748b;">Aapko kisi help ki zaroorat hai? Humse sampark karein.</p>
-                <a href="mailto:support@roophub.com" style="display: block; background: #1e40af; color: white; text-decoration: none; padding: 10px; border-radius: 6px; margin-top: 10px; font-weight: 600;">Contact Support</a>
-                <p style="font-size: 11px; margin-top: 15px;">Avg. Response Time: 2 Hours</p>
+                <div style="font-size: 32px; margin-bottom: 10px;">🎧</div>
+                <h4 style="margin: 0 0 10px 0; font-size: 16px; color: #1e293b;">How can we help?</h4>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <button onclick="showContact()" style="display: block; width: 100%; background: #1e40af; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 13px; cursor: pointer;">📧 Email Support</button>
+                    <a href="https://wa.me/918271734883" target="_blank" style="display: block; background: #22c55e; color: white; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 13px;">💬 WhatsApp Help</a>
+                </div>
+                <p style="font-size: 12px; color: #64748b; margin-top: 15px;"><strong>Call us:</strong> +91 82717 34883</p>
+                <p style="font-size: 11px; color: #94a3b8; margin-top: 5px;">Average response time: 2 hours</p>
             </div>
         `;
     }
@@ -670,31 +716,90 @@ function changeLanguage(lang) {
 
 function applyLanguage(lang) {
     const translations = {
-        en: { welcome: "ROOPHUB", search: "Search", discount: "Get Exclusive Discount", aiWelcome: "Hello! 👋 Welcome to RoopHub. How can I help you today?" },
-        hi: { welcome: "रूपहब", search: "खोजें", discount: "खास छूट प्राप्त करें", aiWelcome: "नमस्ते! 🙏 रूपहब में आपका स्वागत है। आज मैं आपकी क्या मदद कर सकता हूँ?" },
-        es: { welcome: "ROOPHUB", search: "Buscar", discount: "Obtener Descuento", aiWelcome: "¡Hola! 👋 Bienvenido a RoopHub. ¿Cómo puedo ayudarte hoy?" },
-        fr: { welcome: "ROOPHUB", search: "Chercher", discount: "Obtenir une remise", aiWelcome: "Bonjour! 👋 Bienvenue sur RoopHub. Comment puis-je vous aider?" },
-        de: { welcome: "ROOPHUB", search: "Suche", discount: "Rabatt erhalten", aiWelcome: "Hallo! 👋 Willkommen bei RoopHub. Wie kann ich Ihnen heute helfen?" },
-        ar: { welcome: "رووبهوب", search: "بحث", discount: "احصل على خصم", aiWelcome: "مرحباً! 👋 أهلاً بكم في رووبهوب. كيف يمكنني مساعدتك اليوم؟" },
-        pt: { welcome: "ROOPHUB", search: "Buscar", discount: "Obter desconto", aiWelcome: "Olá! 👋 Bem-vindo ao RoopHub. Como posso ajudar você hoje?" },
-        zh: { welcome: "ROOPHUB", search: "搜索", discount: "获取专属折扣", aiWelcome: "你好！ 👋 欢迎来到 RoopHub。今天我能帮你什么忙？" },
-        ja: { welcome: "ROOPHUB", search: "検索", discount: "限定割引を受ける", aiWelcome: "こんにちは！ 👋 RoopHubへようこそ。今日はどのようなご用件でしょうか？" },
-        ru: { welcome: "ROOPHUB", search: "Поиск", discount: "Получить скидку", aiWelcome: "Привет! 👋 Добро пожаловать в RoopHub. Чем я могу вам помочь сегодня?" }
+        en: { 
+            welcome: "ROOPHUB", 
+            search: "Search", 
+            discount: "Get Exclusive Discount", 
+            aiWelcome: "Hello! 👋 Welcome to RoopHub. How can I help you today?",
+            hero_desc: "Online Affiliate Wellness",
+            nav_men: "Men Health",
+            nav_weight: "Weight Loss",
+            nav_brain: "Brain Boost",
+            nav_skin: "Skin Care",
+            footer_about: "About Us",
+            contact: "Contact",
+            footer_legal: "Important Info",
+            verified: "🛡️ Official Verified Product",
+            limited_stock: "⚡ Limited Stock Available",
+            best_seller: "🔥 BEST SELLER",
+            special_offer: "Special Discount Available",
+            neuro_title: "Neuro Serge",
+            neuro_desc: "Boost memory, improve focus & get mental clarity — naturally"
+        },
+        hi: { 
+            welcome: "रूपहब", 
+            search: "खोजें", 
+            discount: "खास छूट प्राप्त करें", 
+            aiWelcome: "नमस्ते! 🙏 रूपहब में आपका स्वागत है। आज मैं आपकी क्या मदद कर सकता हूँ?",
+            hero_desc: "ऑनलाइन एफिलिएट वेलनेस स्टोर",
+            nav_men: "पुरुष स्वास्थ्य",
+            nav_weight: "वजन घटाना",
+            nav_brain: "दिमाग तेज करें",
+            nav_skin: "त्वचा की देखभाल",
+            footer_about: "हमारे बारे में",
+            contact: "संपर्क करें",
+            footer_legal: "ज़रूरी सूचना",
+            verified: "🛡️ आधिकारिक सत्यापित उत्पाद",
+            limited_stock: "⚡ स्टॉक सीमित है",
+            best_seller: "🔥 बेस्ट सेलर",
+            special_offer: "विशेष छूट उपलब्ध है",
+            neuro_title: "न्यूरो सर्ज",
+            neuro_desc: "याददाश्त बढ़ाएं, फोकस सुधारें और मानसिक स्पष्टता पाएं — प्राकृतिक रूप से"
+        },
+        es: { welcome: "ROOPHUB", search: "Buscar", discount: "Obtener Descuento", aiWelcome: "¡Hola! 👋 Bienvenido a RoopHub. ¿Cómo puedo ayudarte hoy?", hero_desc: "Bienestar de Afiliados en Línea" },
+        fr: { welcome: "ROOPHUB", search: "Chercher", discount: "Obtenir une remise", aiWelcome: "Bonjour! 👋 Bienvenue sur RoopHub. Comment puis-je vous aider?", hero_desc: "Bien-être d'Affiliation en Ligne" },
+        de: { welcome: "ROOPHUB", search: "Suche", discount: "Rabatt erhalten", aiWelcome: "Hallo! 👋 Willkommen bei RoopHub. Wie kann ich Ihnen heute helfen?", hero_desc: "Online-Affiliate-Wellness" },
+        ar: { welcome: "رووبهوب", search: "بحث", discount: "احصل على خصم", aiWelcome: "مرحباً! 👋 أهلاً بكم في رووبهوب. كيف يمكنني مساعدتك اليوم؟", hero_desc: "العافية التابعة عبر الإنترنت" },
+        ru: { welcome: "ROOPHUB", search: "Поиск", discount: "Получить скидку", aiWelcome: "Привет! 👋 Добро пожаловать в RoopHub. Чем я могу вам помочь сегодня?", hero_desc: "Интернет-магазин велнеса" }
     };
 
     const t = translations[lang] || translations.en;
 
     // Main Heading update karein
-    const heading = document.getElementById('animatedHeading');
+    const heading = document.getElementById('animatedHeading') || document.querySelector('header h1');
     if (heading) heading.textContent = t.welcome;
 
     // Search Button update karein
     const searchBtn = document.querySelector('.search-btn');
     if (searchBtn) searchBtn.textContent = t.search;
 
-    // Saare product card buttons ko update karein
-    document.querySelectorAll('.premium-cta').forEach(btn => {
+    // Saare buttons (Home + Landing pages) ko update karein
+    document.querySelectorAll('.premium-cta, .cta-btn, .buy-btn, .buy-btn-sm').forEach(btn => {
+        // Agar button ke paas khud ka data-i18n key hai, toh use use karein
+        const key = btn.getAttribute('data-i18n');
+        if (key && t[key]) {
+            btn.innerHTML = `${t[key]} <span class="arrow-icon">⚡</span>`;
+            return;
+        }
         btn.innerHTML = `${t.discount} <span class="arrow-icon">⚡</span>`;
+    });
+
+    // Generic Translation Loop: Saare elements jinme data-i18n hai
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key]) {
+            // Agar element input hai toh placeholder badlein, warna textContent
+            if (el.tagName === 'INPUT') {
+                el.placeholder = t[key];
+            } else {
+                // Check if the translation contains HTML (like icons)
+                if (t[key].includes('<')) {
+                    el.innerHTML = t[key];
+                } else {
+                    el.textContent = t[key];
+                }
+            }
+        }
     });
 
     // Chatbot Welcome Message logic
@@ -756,8 +861,8 @@ function showAbout() {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
-  loadProducts('Men Health');
-  applyLanguage(localStorage.getItem('language') || 'en');
+  if (document.getElementById('productContainer')) loadProducts('Men Health'); // केवल उन पेजों पर प्रोडक्ट्स लोड करें जहाँ productContainer है
+  applyThemeAndSettings(); // लोकल स्टोरेज से सभी सेटिंग्स लागू करें
   checkAuthStatus();
   
   // Sign Up Logic
@@ -819,6 +924,52 @@ document.addEventListener('DOMContentLoaded', () => {
   if (chatInput) {
     chatInput.addEventListener("keypress", (e) => {
       if (e.key === "Enter") sendMessage();
+    });
+  }
+
+  // Contact Form Submission logic
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('contact-btn');
+      const formData = new FormData(contactForm);
+
+      const payload = new FormData();
+      payload.append("name", formData.get("Name"));
+      payload.append("email", formData.get("Email"));
+      payload.append("subject", formData.get("Subject"));
+      payload.append("message", formData.get("Message"));
+
+      const fileInput = contactForm.querySelector('input[type="file"]');
+      if (fileInput && fileInput.files.length > 0) {
+        for (let i = 0; i < fileInput.files.length; i++) {
+          payload.append("attachments", fileInput.files[i]);
+        }
+      }
+
+      btn.disabled = true;
+      btn.innerText = "Sending Email...";
+
+      fetch("https://roophub.onrender.com/send-email", {
+        method: "POST",
+        body: payload // Content-Type हेडर खुद ब्राउज़र सेट करेगा (multipart/form-data)
+      })
+      .then(res => res.json())
+      .then(result => {
+        if(result.status === "success") {
+          alert("✅ Success! Your message has been sent to our email.");
+          contactForm.reset();
+          closeModal('contactModal');
+        } else {
+          alert("❌ Error sending email: " + result.message);
+        }
+      })
+      .catch(err => alert("❌ Server connection failed."))
+      .finally(() => {
+        btn.disabled = false;
+        btn.innerText = "Send Message Now";
+      });
     });
   }
 });

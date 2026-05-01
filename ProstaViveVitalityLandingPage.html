@@ -10,6 +10,115 @@
 body { background:#f5f5f5; color:#333; }
 
 /* Animated Gradient Hero */
+/* General Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  backdrop-filter: blur(5px); /* Optional: for a frosted glass effect */
+  -webkit-backdrop-filter: blur(5px); /* Safari support */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  max-width: 500px; /* Max width for better readability */
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Auth Modal Specific Styles */
+.auth-modal-content {
+    padding: 30px;
+    text-align: center;
+    max-width: 450px;
+    margin: 5% auto;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.auth-header { margin-bottom: 25px; }
+.auth-title { font-size: 24px; color: #1e40af; margin-bottom: 8px; }
+.auth-tagline { font-size: 14px; color: #64748b; }
+.auth-tabs { display: flex; justify-content: center; margin-bottom: 25px; border-bottom: 1px solid #e2e8f0; }
+.auth-tabs h3 { padding: 10px 20px; cursor: pointer; font-size: 16px; font-weight: 600; color: #94a3b8; border-bottom: 3px solid transparent; transition: all 0.3s ease; }
+.auth-tabs h3.active-tab { color: #1e40af; border-bottom-color: #1e40af; }
+.auth-form { text-align: left; }
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; font-size: 13px; color: #475569; margin-bottom: 5px; font-weight: 600; }
+.input-group input { width: calc(100% - 24px); padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; color: #334155; }
+.forgot-password { display: block; text-align: right; font-size: 12px; color: #2563eb; text-decoration: none; margin-top: -10px; margin-bottom: 15px; }
+.auth-btn { width: 100%; padding: 12px; background: #2563eb; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background 0.3s ease; }
+.auth-btn:hover { background: #1e40af; }
+.auth-privacy-note { font-size: 11px; color: #64748b; text-align: center; margin-top: 15px; }
+.auth-privacy-note a { color: #2563eb; text-decoration: none; }
+.social-login-divider { display: flex; align-items: center; text-align: center; margin: 25px 0; color: #94a3b8; }
+.social-login-divider::before, .social-login-divider::after { content: ''; flex: 1; border-bottom: 1px solid #e2e8f0; }
+.social-login-divider:not(:empty)::before { margin-right: .25em; }
+.social-login-divider:not(:empty)::after { margin-left: .25em; }
+.social-btn { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; color: #334155; font-size: 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 10px; transition: background 0.3s ease; }
+.social-btn:hover { background: #f1f5f9; }
+.social-btn img { width: 18px; height: 18px; }
+
+/* Header Auth Button Styling */
+.header-auth-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 5px 12px;
+    background: #fbbf24;
+    color: #1e293b;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 100; /* Ensure it's above other header elements */
+}
+.header-auth-btn:hover {
+    background: #eab308;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
 header {
     position:relative;
     text-align:center;
@@ -26,6 +135,7 @@ header {
     100%{background-position:0% 50%}
 }
 header h1 { font-size:3em; margin-bottom:15px; text-shadow:1px 1px 5px rgba(0,0,0,0.3);}
+header .header-auth-btn { top: 20px; right: 20px; }
 header p { font-size:1.3em; margin-bottom:30px;}
 .cta-btn { display:inline-block; padding:15px 40px; background:#ff9800; color:#fff; font-size:1.2em; border-radius:10px; text-decoration:none; transition:0.3s; box-shadow:0 5px 15px rgba(0,0,0,0.3);}
 .cta-btn:hover { background:#e68a00; transform:translateY(-3px); }
@@ -86,6 +196,7 @@ footer { background:#222; color:#ccc; text-align:center; padding:20px; }
 <body>
 
 <header>
+    <button onclick="openModal('auth')" class="header-auth-btn" aria-label="Sign In">Sign In / Join</button>
     <h1>ProstaVive Vitality</h1>
     <p>"ProstaVive is a natural formula designed to boost prostate health, improve blood flow, and enhance energy levels for overall vitality."</p>
     <a href="#buy" class="cta-btn">Buy Now</a>
@@ -186,6 +297,76 @@ footer { background:#222; color:#ccc; text-align:center; padding:20px; }
 </footer>
 
 <script>
+// Sign In / Sign Up Modal
+document.body.insertAdjacentHTML('beforeend', `
+<div id="authModal" class="modal">
+  <div class="modal-content auth-modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="auth-header">
+        <h2 class="auth-title">Welcome to RoopHub!</h2>
+        <p class="auth-tagline">Join our community for exclusive deals and a personalized experience.</p>
+    </div>
+
+    <div class="auth-tabs">
+        <h3 id="signInTab" onclick="toggleAuth('signin')" class="active-tab">Sign In</h3>
+        <h3 id="signUpTab" onclick="toggleAuth('signup')">Sign Up</h3>
+    </div>
+
+    <form id="signInForm" class="auth-form">
+        <div class="input-group">
+            <label for="signInEmail">Email Address</label>
+            <input type="email" id="signInEmail" placeholder="your@example.com" required>
+        </div>
+        <div class="input-group">
+            <label for="signInPassword">Password</label>
+            <input type="password" id="signInPassword" placeholder="••••••••" required>
+        </div>
+        <a href="#" class="forgot-password" onclick="handleForgotPassword(event)">Forgot Password?</a>
+        <button type="submit" class="auth-btn signin-btn">Sign In Securely</button>
+        <p class="auth-privacy-note">By signing in, you agree to our <a href="#" onclick="openModal('privacy')">Privacy Policy</a>.</p>
+        <div class="social-login-divider"><span>OR</span></div>
+        <button type="button" class="social-btn google-btn"><img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="Google icon"/> Continue with Google</button>
+        <button type="button" class="social-btn facebook-btn"><img src="https://img.icons8.com/color/16/000000/facebook-new.png" alt="Facebook icon"/> Continue with Facebook</button>
+    </form>
+
+    <form id="signUpForm" class="auth-form" style="display: none;">
+        <div class="input-group">
+            <label for="signUpName">Full Name</label>
+            <input type="text" id="signUpName" placeholder="John Doe" required>
+        </div>
+        <div class="input-group">
+            <label for="signUpEmail">Email Address</label>
+            <input type="email" id="signUpEmail" placeholder="your@example.com" required>
+        </div>
+        <div class="input-group">
+            <label for="signUpPassword">Create Password</label>
+            <input type="password" id="signUpPassword" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="auth-btn signup-btn">Create Your Free Account</button>
+        <p class="auth-privacy-note">By creating an account, you agree to our <a href="#" onclick="openModal('privacy')">Privacy Policy</a>.</p>
+        <div class="social-login-divider"><span>OR</span></div>
+        <button type="button" class="social-btn google-btn"><img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="Google icon"/> Sign Up with Google</button>
+        <button type="button" class="social-btn facebook-btn"><img src="https://img.icons8.com/color/16/000000/facebook-new.png" alt="Facebook icon"/> Sign Up with Facebook</button>
+    </form>
+  </div>
+</div>
+
+<!-- User Profile Modal -->
+<div id="profileModal" class="modal">
+  <div class="modal-content auth-modal-content" style="height: auto; max-width: 400px; padding: 30px;">
+    <span class="close" onclick="closeModal('profileModal')">&times;</span>
+    <div style="text-align: center;">
+        <h2 style="color: #1e40af; margin-bottom: 10px;">RoopHub Swagat Karta Hai! 🙏</h2>
+        <p style="color: #64748b; font-size: 14px; margin-bottom: 20px;">Aapka account active hai.</p>
+        <div id="profileDetails" style="margin: 20px 0; text-align: left; background: #f8fafc; padding: 15px; border-radius: 10px; border: 1px solid #e2e8f0; color: #333;">
+            <!-- User info dynamically injected here -->
+        </div>
+        <button onclick="logoutUser()" class="auth-btn" style="background: #ef4444; width: 100%; border: none; padding: 12px; border-radius: 8px; color: white; font-weight: bold; cursor: pointer; margin-top: 10px;">Log Out</button>
+    </div>
+  </div>
+</div>
+`);
+
 // Scroll Animation
 const observer = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
@@ -198,6 +379,7 @@ const observer = new IntersectionObserver((entries)=>{
 document.querySelectorAll('.gallery img, .specs, .description, .reviews, .badges, .buy-section')
 .forEach(el=>observer.observe(el));
 </script>
+<script src="script.js"></script>
 
 </body>
 </html>
