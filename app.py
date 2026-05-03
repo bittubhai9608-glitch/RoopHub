@@ -41,35 +41,28 @@ try:
     
     client = gspread.authorize(creds)
     spreadsheet = client.open_by_key("1A2XLLqTt6X_8HxZvrU_EAAgmzjz9AZz2QRSsapLoBa4")
-    sheet = spreadsheet.get_worksheet(0)
-    
+
+    # 1. Auth Sheet (Sign In/Join) Setup
     try:
-        # Sign In/Join tab ko target karna
         auth_sheet = spreadsheet.worksheet("Sign In/Join")
     except gspread.exceptions.WorksheetNotFound:
-        auth_sheet = sheet # Agar tab nahi mila toh default sheet use karega
-    except Exception as e:
-        print(f"❌ Error getting 'Sign In/Join' worksheet: {e}")
-        auth_sheet = None
+        # Agar tab nahi hai toh naya banayein aur headers dalein
+        auth_sheet = spreadsheet.add_worksheet(title="Sign In/Join", rows="100", cols="10")
+        auth_sheet.append_row(["Name", "Email", "Password", "Action Type", "Timestamp"])
 
-    if auth_sheet:
-        print(f"✅ Google Sheet Connected! Target: {auth_sheet.title}")
-    else:
-        print("✅ Google Sheet Connected, but 'Sign In/Join' worksheet could not be determined.")
+    # 2. Review Sheet Setup
+    try:
+        review_sheet = spreadsheet.worksheet("Reviews")
+    except gspread.exceptions.WorksheetNotFound:
+        # Agar tab nahi hai toh naya banayein aur headers dalein
+        review_sheet = spreadsheet.add_worksheet(title="Reviews", rows="100", cols="10")
+        review_sheet.append_row(["Name", "Email", "Rating", "Comment", "Entry Type", "Product"])
+
+    sheet = spreadsheet.get_worksheet(0) # Default sheet for general logging
+    print("✅ Database Linked: 'Sign In/Join' and 'Reviews' sheets are ready.")
+
 except Exception as e:
     print(f"❌ Google Sheets Connection Error: {e}")
-
-# Review sheet error handling
-try:
-    if 'spreadsheet' in locals() and spreadsheet:
-        review_sheet = spreadsheet.worksheet("Reviews")
-    else:
-        review_sheet = None
-except gspread.exceptions.WorksheetNotFound:
-    review_sheet = sheet # Fallback to default sheet if 'Reviews' not found
-except Exception as e:
-    print(f"❌ Error setting up Review Sheet: {e}")
-    review_sheet = None
 
 
 # --- 2. AAPKA PRODUCT DATABASE (No changes) ---
@@ -224,7 +217,7 @@ def auth_action():
         return jsonify({"status": "error"}), 400
     
     try:
-        # डेटा फॉर्मेट: Name, Email, Password, Action (SignUp/SignIn), Timestamp
+        # डेटा फॉर्मेट: Name, Email, Password, Action (SignUp/SignIn/UPDATE), Timestamp
         row = [
             data.get("name", "N/A"), 
             data.get("email"), 
@@ -232,11 +225,10 @@ def auth_action():
             data.get("type", "SIGNUP"),
             datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         ]
-        if auth_sheet: # Add a check for 'auth_sheet' before attempting to append
+        if auth_sheet:
             auth_sheet.append_row(row)
-        else:
-            print("Warning: Auth sheet not available for logging auth actions.")
-        return jsonify({"status": "success"})
+            return jsonify({"status": "success"})
+        return jsonify({"status": "error", "message": "Auth sheet not found"}), 500
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
 

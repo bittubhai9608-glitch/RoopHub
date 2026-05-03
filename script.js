@@ -410,9 +410,57 @@ function saveProfileChanges() {
     }
     localStorage.setItem("roophub_user", JSON.stringify(user));
     alert("✅ Profile updated successfully!");
-    checkAuthStatus(); // Update header button if name changed
-    switchProfileTab('security'); // Re-render the security tab to show updated name
+
+    // Sync with Backend
+    fetch("https://roophub.onrender.com/auth-action", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ 
+            name: user.name, 
+            email: user.email, 
+            password: user.password, 
+            type: "UPDATE" 
+        })
+    }).catch(err => console.error("Sync error:", err));
+
+    checkAuthStatus(); 
+    switchProfileTab('security'); 
 }
+
+function ensureAuthModals() {
+    if (!document.getElementById('authModal')) {
+        const modalHTML = `
+            <div id="authModal" class="modal">
+                <div class="modal-content auth-modal-content">
+                    <span class="close" onclick="closeModal('authModal')">&times;</span>
+                    <div class="auth-tabs">
+                        <h3 id="signInTab" onclick="toggleAuth('signin')" class="active-tab">Sign In</h3>
+                        <h3 id="signUpTab" onclick="toggleAuth('signup')">Sign Up</h3>
+                    </div>
+                    <form id="signInForm" class="auth-form">
+                        <input type="email" id="signInEmail" placeholder="Email" required>
+                        <input type="password" id="signInPassword" placeholder="Password" required>
+                        <button type="submit" class="auth-btn">Sign In</button>
+                    </form>
+                    <form id="signUpForm" class="auth-form" style="display:none;">
+                        <input type="text" id="signUpName" placeholder="Full Name" required>
+                        <input type="email" id="signUpEmail" placeholder="Email" required>
+                        <input type="password" id="signUpPassword" placeholder="Password" required>
+                        <button type="submit" class="auth-btn">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+            <div id="profileModal" class="modal">
+                <div class="modal-content auth-modal-content">
+                    <span class="close" onclick="closeModal('profileModal')">&times;</span>
+                    <div id="profileDetails"></div>
+                    <button onclick="logoutUser()" class="auth-btn" style="background:#ef4444; margin-top:10px;">Log Out</button>
+                </div>
+            </div>`;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+    }
+}
+
 function handleForgotPassword(e) {
     e.preventDefault();
     const email = prompt("Apna registered email address enter karein:");
@@ -862,6 +910,7 @@ function showAbout() {
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('productContainer')) loadProducts('Men Health'); // केवल उन पेजों पर प्रोडक्ट्स लोड करें जहाँ productContainer है
+  ensureAuthModals(); 
   applyThemeAndSettings(); // लोकल स्टोरेज से सभी सेटिंग्स लागू करें
   checkAuthStatus();
   
