@@ -782,7 +782,9 @@ function applyLanguage(lang) {
             best_seller: "🔥 BEST SELLER",
             special_offer: "Special Discount Available",
             neuro_title: "Neuro Serge",
-            neuro_desc: "Boost memory, improve focus & get mental clarity — naturally"
+            neuro_desc: "Boost memory, improve focus & get mental clarity — naturally",
+            unmute_video: "🔊 Unmute Video",
+            mute_video: "🔇 Mute Video"
         },
         hi: { 
             welcome: "रूपहब", 
@@ -802,7 +804,9 @@ function applyLanguage(lang) {
             best_seller: "🔥 बेस्ट सेलर",
             special_offer: "विशेष छूट उपलब्ध है",
             neuro_title: "न्यूरो सर्ज",
-            neuro_desc: "याददाश्त बढ़ाएं, फोकस सुधारें और मानसिक स्पष्टता पाएं — प्राकृतिक रूप से"
+            neuro_desc: "याददाश्त बढ़ाएं, फोकस सुधारें और मानसिक स्पष्टता पाएं — प्राकृतिक रूप से",
+            unmute_video: "🔊 वीडियो आवाज़ चालू करें",
+            mute_video: "🔇 आवाज़ बंद करें"
         },
         es: { welcome: "ROOPHUB", search: "Buscar", discount: "Obtener Descuento", aiWelcome: "¡Hola! 👋 Bienvenido a RoopHub. ¿Cómo puedo ayudarte hoy?", hero_desc: "Bienestar de Afiliados en Línea" },
         fr: { welcome: "ROOPHUB", search: "Chercher", discount: "Obtenir une remise", aiWelcome: "Bonjour! 👋 Bienvenue sur RoopHub. Comment puis-je vous aider?", hero_desc: "Bien-être d'Affiliation en Ligne" },
@@ -826,7 +830,12 @@ function applyLanguage(lang) {
         // Agar button ke paas khud ka data-i18n key hai, toh use use karein
         const key = btn.getAttribute('data-i18n');
         if (key && t[key]) {
-            btn.innerHTML = `${t[key]} <span class="arrow-icon">⚡</span>`;
+            // Video buttons ke liye lightning bolt nahi dikhayenge
+            if (key.includes('video')) {
+                btn.innerHTML = t[key];
+            } else {
+                btn.innerHTML = `${t[key]} <span class="arrow-icon">⚡</span>`;
+            }
             return;
         }
         btn.innerHTML = `${t.discount} <span class="arrow-icon">⚡</span>`;
@@ -973,6 +982,105 @@ document.addEventListener('DOMContentLoaded', () => {
   if (chatInput) {
     chatInput.addEventListener("keypress", (e) => {
       if (e.key === "Enter") sendMessage();
+    });
+  }
+
+  // Centralized Video Player Logic
+  function loadVideo(placeholderElement) {
+      const videoId = placeholderElement.dataset.videoId;
+      if (!videoId) return;
+  
+      const iframe = document.createElement('iframe');
+      iframe.id = 'ytVideo'; // Keep the ID for existing sound controls
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&rel=0`;
+      iframe.frameborder = '0';
+      iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+      iframe.allowFullscreen = true;
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+      iframe.style.position = 'absolute';
+      iframe.style.top = '0';
+      iframe.style.left = '0';
+  
+      const videoWrapper = placeholderElement.parentElement;
+      videoWrapper.innerHTML = ''; // Clear placeholder
+      videoWrapper.appendChild(iframe);
+      videoWrapper.classList.add('video-loaded'); // Add class to adjust wrapper if needed
+  }
+  
+  function soundOn() {
+      const video = document.getElementById("ytVideo");
+      if (video && video.tagName === 'IFRAME') {
+          const currentSrc = video.src;
+          if (currentSrc.includes('mute=1')) {
+              video.src = currentSrc.replace('mute=1', 'mute=0');
+          }
+      }
+  }
+  
+  function soundOff() {
+      const video = document.getElementById("ytVideo");
+      if (video && video.tagName === 'IFRAME') {
+          const currentSrc = video.src;
+          if (currentSrc.includes('mute=0')) {
+              video.src = currentSrc.replace('mute=0', 'mute=1');
+          } else if (!currentSrc.includes('mute=1')) {
+              // If mute parameter is not present, add it
+              video.src = currentSrc + '&mute=1';
+          }
+      }
+  }
+
+  // Make sound functions globally accessible if they are called from HTML
+  window.soundOn = soundOn;
+  window.soundOff = soundOff;
+
+  document.querySelectorAll('.video-placeholder').forEach(placeholder => {
+      placeholder.addEventListener('click', () => loadVideo(placeholder));
+  });
+
+  // Centralized Review Form Submission logic
+  const reviewForm = document.getElementById('reviewForm');
+  if (reviewForm) {
+    reviewForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = reviewForm.querySelector('.submit-btn');
+      // Dynamically get the product name from the H1 tag or badge
+      const productName = document.querySelector('h1')?.innerText || "General Product";
+      
+      const formData = new FormData(reviewForm);
+      const payload = {
+        name: formData.get("Name"),
+        email: formData.get("Email"),
+        rating: formData.get("Rating"),
+        comment: formData.get("Comment"),
+        product: productName
+      };
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Saving to Database...";
+
+      fetch("https://roophub.onrender.com/submit-review", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      })
+      .then(res => res.json())
+      .then(result => {
+        if(result.status === "success") {
+          alert("✅ Review shared successfully and saved to Database!");
+          reviewForm.reset();
+          reviewForm.style.display = 'none';
+          if (typeof fetchServerReviews === 'function') fetchServerReviews();
+        } else {
+          alert("❌ Error: " + (result.message || "Failed to save review"));
+        }
+      })
+      .catch(err => alert("❌ Server connection failed. Data not stored."))
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Post Review";
+      });
     });
   }
 
