@@ -26,6 +26,7 @@ scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/au
 sheet = None
 auth_sheet = None
 review_sheet = None
+contact_sheet = None # Add contact_sheet
 spreadsheet = None
 
 # Render dashboard se secret uthana
@@ -46,20 +47,32 @@ try:
     try:
         auth_sheet = spreadsheet.worksheet("Sign In/Join")
     except gspread.exceptions.WorksheetNotFound:
-        # Agar tab nahi hai toh naya banayein aur headers dalein
-        auth_sheet = spreadsheet.add_worksheet(title="Sign In/Join", rows="100", cols="10")
+        auth_sheet = spreadsheet.add_worksheet(title="Sign In/Join", rows="1000", cols="10")
+    
+    # Ensure Headers exist if sheet is empty
+    if not auth_sheet.get_all_values():
         auth_sheet.append_row(["Name", "Email", "Password", "Action Type", "Timestamp"])
 
     # 2. Review Sheet Setup
     try:
         review_sheet = spreadsheet.worksheet("Reviews")
     except gspread.exceptions.WorksheetNotFound:
-        # Agar tab nahi hai toh naya banayein aur headers dalein
-        review_sheet = spreadsheet.add_worksheet(title="Reviews", rows="100", cols="10")
-        review_sheet.append_row(["Name", "Email", "Rating", "Comment", "Entry Type", "Product"])
+        review_sheet = spreadsheet.add_worksheet(title="Reviews", rows="1000", cols="10")
+
+    if not review_sheet.get_all_values():
+        review_sheet.append_row(["Name", "Email", "Rating", "Comment", "Entry Type", "Product", "Timestamp"])
+
+    # 3. Contact Sheet Setup
+    try:
+        contact_sheet = spreadsheet.worksheet("Contact_Messages")
+    except gspread.exceptions.WorksheetNotFound:
+        contact_sheet = spreadsheet.add_worksheet(title="Contact_Messages", rows="1000", cols="10")
+
+    if not contact_sheet.get_all_values():
+        contact_sheet.append_row(["Name", "Email", "Subject", "Message", "Timestamp"])
 
     sheet = spreadsheet.get_worksheet(0) # Default sheet for general logging
-    print("✅ Database Linked: 'Sign In/Join' and 'Reviews' sheets are ready.")
+    print("✅ Database Linked: 'Sign In/Join', 'Reviews', and 'Contact_Messages' sheets are ready.")
 
 except Exception as e:
     print(f"❌ Google Sheets Connection Error: {e}")
@@ -198,13 +211,12 @@ def chat():
     
     user_msg = data.get("message", "")
     
-    # User ka data sheet mein save karna
+    # Chat history logging (Safely appending)
     try: # Add a check for 'sheet' before attempting to append
         if sheet:
-            sheet.append_row([user_msg, data.get("lang", "en")]) 
-        else:
-            print("Warning: Google Sheet not available for chat logging.")
+            sheet.append_row([user_msg, data.get("lang", "en"), datetime.now().strftime("%Y-%m-%d %H:%M:%S")]) 
     except Exception as e:
+        print(f"Log Error: {e}")
         pass
 
     reply, suggestions = ai_reply(user_msg, data.get("lang", "en"))
@@ -228,7 +240,7 @@ def auth_action():
         if auth_sheet:
             auth_sheet.append_row(row)
             return jsonify({"status": "success"})
-        return jsonify({"status": "error", "message": "Auth sheet not found"}), 500
+        return jsonify({"status": "error", "message": "Database Connection Issue"}), 500
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
 
@@ -239,8 +251,16 @@ def submit_review():
         return jsonify({"status": "error"}), 400
     
     try:
-        # Data format: Name, Email, Rating, Comment, Date
-        row = [data.get("name"), data.get("email"), data.get("rating"), data.get("comment"), "REVIEW_ENTRY", data.get("product", "General")]
+        # Safely Appending Review: Name, Email, Rating, Comment, Type, Product, Time
+        row = [
+            data.get("name"), 
+            data.get("email"), 
+            data.get("rating"), 
+            data.get("comment"), 
+            "REVIEW_ENTRY", 
+            data.get("product", "General"),
+            datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        ]
         target = review_sheet if review_sheet else sheet
         if target:
             target.append_row(row)
@@ -254,13 +274,15 @@ def get_reviews():
         target = review_sheet if review_sheet else sheet
         if not target: return jsonify([])
         all_data = target.get_all_values()
+        if len(all_data) <= 1: return jsonify([]) # Only header exists
+
         reviews = []
-        for r in all_data:
-            if len(r) >= 5 and r[4] == "REVIEW_ENTRY":
+        for r in all_data[1:]: # Skip header row to prevent errors
+            if len(r) >= 5 and (r[4] == "REVIEW_ENTRY" or review_sheet):
                 try:
                     reviews.append({
                         "name": r[0],
-                        "rating": int(r[2]) if r[2].isdigit() else 5,
+                        "rating": int(r[2]) if str(r[2]).isdigit() else 5,
                         "comment": r[3]
                     })
                 except: continue
@@ -305,6 +327,12 @@ def send_email():
                 )
 
         mail.send(msg)
+
+        # Store contact message in Google Sheet
+        if contact_sheet:
+            contact_sheet.append_row([name, email, subject, message, datetime.now().strftime("%Y-%m-%d %H:%M:%S")])
+        else:
+            print("Warning: Contact sheet not available for logging.")
         return jsonify({"status": "success"})
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
