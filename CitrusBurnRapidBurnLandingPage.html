@@ -197,7 +197,7 @@ footer { background:#222; color:#ccc; text-align:center; padding:20px; }
 
 <header>
     <button onclick="openModal('auth')" class="header-auth-btn" aria-label="Sign In">Sign In / Join</button>
-    <h1>CitrusBurn Rapid Burn</h1>
+    <h1>CitrusBurn Rapid Burn</h1> <!-- Changed from Neuro Serge -->
     <p>CitrusBurn Rapid Burn uses a natural citrus formula to boost metabolism, torch fat, and increase energy.</p>
     <a href="#buy" class="cta-btn">Buy Now</a>
 </header>
@@ -206,10 +206,10 @@ footer { background:#222; color:#ccc; text-align:center; padding:20px; }
 
     <!-- Product Gallery -->
     <div class="gallery">
-        <img src="Images/citrusburn1.jpeg" alt="CitrusBurn Front">
-        <img src="Images/citrusburn2.jpeg" alt="CitrusBurn Side">
-        <img src="Images/citrusburn3.jpeg" alt="CitrusBurn Open">
-        <img src="Images/citrusburn4.jpeg" alt="CitrusBurn Usage">
+        <img id="sliderImage" src="Images/citrusburn1.jpeg" alt="CitrusBurn Front" style="max-height: 180px; object-fit: contain;">
+        <button class="prev" onclick="prevImage()">❮</button>
+        <button class="next" onclick="nextImage()">❯</button>
+
     </div>
 
     <!-- Specs Table -->
@@ -275,7 +275,7 @@ footer { background:#222; color:#ccc; text-align:center; padding:20px; }
 
     <!-- Buy Section -->
      <div class="buy-section" id="buy">
-    <a href="javascript:void(0);" onclick="openOfficialSite()">Buy Now</a>
+    <a href="https://952d5-squse55k99xk3r5x3lus.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" class="buy-btn">Buy Now</a>
         </div>
         <script src="CitrusBurnRapidBurnLandingPage.js"></script>
 <!-- </div>
