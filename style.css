@@ -1275,7 +1275,7 @@ nav button:hover {
 }
 .social-icons a {
   font-size: 20px; /* Smaller size for Font Awesome icons */
-  text-deecoration: none;
+  text-decoration: none;
   color: #4a1be4; /* Brand color for social icons */
   transition: transform 0.3s ease;
 }
