@@ -81,7 +81,7 @@ header p.sub-headline {
     position: relative;
 }
 
-.cta-btn{
+a.cta-btn{ /* Specificity for header CTA */
     padding: 14px 35px;
     background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
     color: #fff;
@@ -91,7 +91,7 @@ header p.sub-headline {
     font-weight: 800;
     font-size: 16px;
     text-transform: uppercase;
-    box-shadow: 0 10px 25px rgba(217, 119, 6, 0.4);
+    box-shadow: 0 10px 25px rgba(217, 119, 6, 0.4); /* Keep original shadow */
     transition: 0.3s transform;
     position: relative;
     border: 2px solid rgba(255,255,255,0.2);
@@ -667,8 +667,7 @@ margin-top: 25px;
     <div class="hero-badge">⚖️ Natural Weight Loss Support</div>
     <h1 data-i18n="neuro_title">Neuro Serge</h1>
     <p class="sub-headline" data-i18n="neuro_desc">Boost memory, improve focus & get mental clarity — naturally</p>
-    
-    <a href="#buy" class="cta-btn" data-i18n="get_discount">Get Discount Now</a>
+    <a href="#buy" class="cta-btn">Get Discount Now</a>
     
     <div class="trust-bar">
         <span class="rating-text">⭐⭐⭐⭐⭐ 4.8/5 (2,347 Reviews)</span>
@@ -750,8 +749,8 @@ margin-top: 25px;
 <!-- MINI BUY -->
 <div class="buy-section-sm">
     <div style="font-size: 12px; color: #1e40af; font-weight: 800; margin-bottom: 5px;">🛡️ SECURE CHECKOUT: SAVE 35%</div>
-    <a href="https://keyslimdrops.com/offer/" class="buy-btn-sm">
-        🔒 Order Now 35% Off
+    <a href="https://keyslimdrops.com/offer/" class="buy-btn-sm" data-i18n="visit_store">
+        🔒 Visit Official Store
     </a>
 </div>
 
@@ -967,8 +966,8 @@ See More
 <!-- BUY -->
 <div class="buy-section" id="buy">
     <div style="font-size: 14px; color: #1e40af; font-weight: 800; margin-bottom: 8px;">🛡️ SECURE ORDER: SAVE 35% TODAY</div>
-    <a href="https://keyslimdrops.com/offer/" class="buy-btn">
-        🔒 Order Now 35% Off
+    <a href="https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" class="buy-btn" data-i18n="visit_store">
+        🔒 Visit Official Store
     </a>
     <div style="margin-top: 8px; font-weight: 600; color: #4b5563; font-size: 11px;">100% Risk-Free Guarantee | SSL Encrypted</div>
 </div>
