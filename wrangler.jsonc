@@ -1,11 +1,16 @@
 {
+<<<<<<< HEAD
   "$schema": "https://raw.githubusercontent.com/cloudflare/workers-sdk/main/packages/wrangler/config-schema.json",
+=======
+  "$schema": "node_modules/wrangler/config-schema.json",
+>>>>>>> 4a9df62883a4f757b84b4da528ea479c41e94b0f
   "name": "roophub",
   "compatibility_date": "2026-05-07",
   "observability": {
     "enabled": true
   },
   "assets": {
+<<<<<<< HEAD
     "directory": ".",
     "exclude": [
       "**/node-*.msi",
@@ -17,8 +22,15 @@
       "creds.json",
       "requirements.txt"
     ]
+=======
+    "directory": "."
+>>>>>>> 4a9df62883a4f757b84b4da528ea479c41e94b0f
   },
   "compatibility_flags": [
     "nodejs_compat"
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 4a9df62883a4f757b84b4da528ea479c41e94b0f

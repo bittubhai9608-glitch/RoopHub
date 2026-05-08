@@ -3,6 +3,17 @@ creds.json
 .venv-1/
 .venv-2/
 __pycache__/
+<<<<<<< HEAD
 Images/*.msi
 *.msi
 *.exe
+=======
+Images/node-v24.12.0-x64.msi
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
+>>>>>>> 4a9df62883a4f757b84b4da528ea479c41e94b0f
