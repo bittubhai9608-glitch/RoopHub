@@ -5,16 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RoopHub</title>
 <link rel="stylesheet" href="auth-profile.css">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter', sans-serif;}
 body {
-    background-color: #f8fafc;
-    /* Subtle Dot Grid Pattern */
-    background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
-    background-size: 30px 30px;
-    color: #1e293b;
-    cursor: none; /* Hide default cursor */
+    /* Professional, Calming, Doctor-Recommended Background */
+    background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 50%, #f0f9ff 100%);
+    background-size: 400% 400%;
+    animation: medicalGlow 15s ease infinite;
+    color: #334155; /* Slate dark text for premium readability */
+}
+@keyframes medicalGlow {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
 }
 
 /* --- Subtle Floating Particles Background --- */
@@ -38,38 +44,6 @@ body {
     50% { background-position: 100% 100%; }
     75% { background-position: 50% 0%; }
     100% { background-position: 0% 0%; }
-}
-
-/* --- Custom Professional Cursor --- */
-.cursor-outer {
-    width: 35px;
-    height: 35px;
-    border: 2px solid #3b82f6;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 99999;
-    transform: translate(-50%, -50%);
-    transition: width 0.3s, height 0.3s, background 0.3s, border-color 0.3s, transform 0.15s ease-out;
-}
-
-.cursor-inner {
-    width: 6px;
-    height: 6px;
-    background: #3b82f6;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 99999;
-    transform: translate(-50%, -50%);
-    transition: transform 0.05s ease-out;
-}
-
-.cursor-outer.hover {
-    width: 60px;
-    height: 60px;
-    background: rgba(59, 130, 246, 0.15);
-    border-color: rgba(59, 130, 246, 0.5);
 }
 
 /* HEADER */
@@ -754,9 +728,6 @@ margin-top: 25px;
     .review-stats { flex-direction: column; text-align: center; }
     .slider { min-height: 200px; } /* Reduce slider container height for mobile */
     .rating-bars { width: 100%; }
-    /* Disable custom cursor on mobile for better UX */
-    .cursor-outer, .cursor-inner { display: none; }
-    body { cursor: auto; }
     a, button, .faq-question { cursor: pointer; }
 }
 
@@ -799,6 +770,47 @@ margin-top: 25px;
     transition: 0.2s;
 }
 .faq-popup-close:hover { background: #14532d; transform: scale(1.05); }
+
+/* ✨ BENEFIT POPUP STYLES (Blue Theme) */
+#benefitPopupOverlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(8px);
+    z-index: 100000;
+}
+#benefitPopupBox {
+    display: none;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 90%;
+    max-width: 500px;
+    background: #ffffff;
+    border: 4px solid #2563eb;
+    border-radius: 25px;
+    padding: 35px;
+    z-index: 100001;
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: #1e293b;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.benefit-popup-close {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 25px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: 0.2s;
+}
+.benefit-popup-close:hover { background: #1e40af; transform: scale(1.05); }
 </style>
 </head>
 
@@ -807,8 +819,6 @@ margin-top: 25px;
 <div class="subtle-particles"></div>
 
 <header>
-    <div class="cursor-outer"></div>
-    <div class="cursor-inner"></div>
     <button onclick="openModal('auth')" class="header-auth-btn" aria-label="Sign In">Sign In / Join</button>
     <div class="hero-badge">🧠 Natural Cognitive Support</div>
     <h1 data-i18n="neuro_title">Neuro Serge</h1>
@@ -930,7 +940,7 @@ margin-top: 25px;
 </div>
 
 <!-- SPECS -->
-<div class="specs">
+<div class="specs" id="specs">
     <h2>Product Specifications</h2>
 <table class="specs-table">
 <tr><td class="spec-label">Product Name</td><td>Neuro Serge</td></tr>
@@ -949,12 +959,12 @@ margin-top: 25px;
 </div>
 <!-- DESCRIPTION -->
 <div class="description">
-    <h2>Why Choose Neuro Serge?</h2>
-    <div class="benefit-grid">
-        <div class="benefit-card"><span>✅</span> Improves memory, focus & mental clarity.</div>
-        <div class="benefit-card"><span>✅</span> Supports overall brain health and function.</div>
-        <div class="benefit-card"><span>✅</span> Reduces brain fatigue & supports energy.</div>
-        <div class="benefit-card"><span>✅</span> 100% Natural ingredients for safe use.</div>
+    <h2>The Science of Excellence: Why Choose Neuro Serge?</h2>
+    <div class="benefit-grid" id="benefitGrid">
+        <div class="benefit-card" data-key="memory_focus"><span>✅</span> Advanced Cognitive Enhancement & Memory Precision</div>
+        <div class="benefit-card" data-key="brain_health"><span>✅</span> Holistic Neuroprotection & Cellular Longevity</div>
+        <div class="benefit-card" data-key="fatigue_energy"><span>✅</span> Optimized Neural Energy & Sustained Focus</div>
+        <div class="benefit-card" data-key="natural_ingredients"><span>✅</span> Premium, Lab-Verified Botanical Synergy</div>
     </div>
 </div>
 <style>
@@ -1168,9 +1178,6 @@ See More
   </div>
 </footer>
 
-<div class="cursor-outer"></div>
-<div class="cursor-inner"></div>
-
 <!-- ✨ FAQ POPUP OVERLAY STRUCTURE -->
 <div id="faqPopupOverlay" onclick="closeFaqPopup()"></div>
 <div id="faqPopupBox">
@@ -1245,6 +1252,13 @@ See More
         <button onclick="logoutUser()" class="auth-btn" style="background: #ef4444; width: 100%; border: none; padding: 12px; border-radius: 8px; color: white; font-weight: bold; cursor: pointer; margin-top: 10px;">Log Out</button>
     </div>
   </div>
+</div>
+
+<!-- ✨ BENEFIT POPUP OVERLAY STRUCTURE -->
+<div id="benefitPopupOverlay" onclick="closeBenefitPopup()"></div>
+<div id="benefitPopupBox">
+    <div id="benefitPopupContent"></div>
+    <button class="benefit-popup-close" onclick="closeBenefitPopup()">Got it, Thanks! ✅</button>
 </div>
 
 <script src="script.js"></script>
@@ -1768,6 +1782,14 @@ Close ✖
     <p>By continuing to use this website, you acknowledge that you have read and understood this Affiliate Disclosure and agree to its terms. Thank you for supporting RoopHUB Official.</p>
 </div>
 
+<!-- ✨ BENEFIT POPUP OVERLAY STRUCTURE -->
+<div id="benefitPopupOverlay" onclick="closeBenefitPopup()"></div>
+<div id="benefitPopupBox">
+    <div id="benefitPopupContent"></div>
+    <button class="benefit-popup-close" onclick="closeBenefitPopup()">Got it, Thanks! ✅</button>
+</div>
+
+
 </div>
 
 <div id="chat-icon" onclick="toggleChat()" style="position:fixed; bottom:80px; right:20px; background:#007bff; color:white; padding: 10px 20px; border-radius:50px; text-align:center; cursor:pointer; font-size:16px; font-weight:600; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index:1000; animation: pulse-blue 2s infinite;">
@@ -2064,31 +2086,6 @@ if (vTitle) {
     type();
 }
 
-/* =========================
-   ✨ PROFESSIONAL CURSOR LOGIC
-========================= */
-const cursorOuter = document.querySelector('.cursor-outer');
-const cursorInner = document.querySelector('.cursor-inner');
-
-document.addEventListener('mousemove', (e) => {
-    // Inner dot follows mouse instantly
-    cursorInner.style.left = e.clientX + 'px';
-    cursorInner.style.top = e.clientY + 'px';
-    
-    // Outer ring follows with a slight smooth delay (handled by CSS transition)
-    cursorOuter.style.left = e.clientX + 'px';
-    cursorOuter.style.top = e.clientY + 'px';
-});
-
-// Hover effect for all interactive elements
-const interactiveElements = document.querySelectorAll('button, a, .faq-question, .video-placeholder, .prev, .next, .buy-btn');
-
-interactiveElements.forEach(el => {
-    el.addEventListener('mouseenter', () => cursorOuter.classList.add('hover'));
-    el.addEventListener('mouseleave', () => cursorOuter.classList.remove('hover'));
-});
-
-
 }; // 🔥 window.onload END (Slider/Timer Logic)
 
 /* ========================= FAQ POPUP LOGIC ========================= */
@@ -2127,96 +2124,117 @@ document.addEventListener("click", function(e) {
     openFaqPopup(questionText, answerHtml);
 });
 
-// GOOGLE SHEET LINKING (Main Logic)
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyEJmb4hiDCHjL8KMfg0L9k_CMfsITWIuR70e8Xox-bByPxVb79egsUaYF7_Y8rqUH_/exec'; // <--- Apna Google Script Link yahan daalein
+/* ========================= BENEFIT POPUP LOGIC ========================= */
+function openBenefitPopup(content) {
+    const box = document.getElementById('benefitPopupBox');
+    const overlay = document.getElementById('benefitPopupOverlay');
+    const contentArea = document.getElementById('benefitPopupContent');
+    
+    if(box && overlay && contentArea) {
+        contentArea.innerHTML = content;
+        overlay.style.display = 'block';
+        box.style.display = 'block';
+        setTimeout(() => {
+            box.style.transform = 'translate(-50%, -50%) scale(1)';
+            box.style.opacity = '1';
+        }, 10);
+    }
+}
 
-// 1. Contact Form Submit
-const contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const btn = document.getElementById('contact-btn');
-    btn.disabled = true;
-    btn.innerText = "Sending...";
+function closeBenefitPopup() {
+    const box = document.getElementById('benefitPopupBox');
+    if(box) {
+        box.style.transform = 'translate(-50%, -50%) scale(0.8)';
+        box.style.opacity = '0';
+        setTimeout(() => {
+            document.getElementById('benefitPopupOverlay').style.display = 'none';
+            box.style.display = 'none';
+        }, 250);
+    }
+}
 
-    fetch(scriptURL, { method: 'POST', body: new FormData(contactForm), mode: 'no-cors'})
-        .then(() => {
-            alert("Information successfully sent!");
-            btn.disabled = false;
-            btn.innerText = "Send Information";
-            contactForm.reset();
-            closeModal();
-        })
-        .catch(error => alert("Error! Data not sent."));
+// Detailed Content Mapping
+const benefitPopupData = {
+    "memory_focus": {
+        title: "Cognitive Precision & Neural Speed",
+        icon: "🧠",
+        desc: "Neuro Serge utilizes a high-potency blend of neuro-nutrients designed to optimize synaptic signaling. By enhancing neural plasticity, it facilitates accelerated information processing, ultra-sharp recall, and the ability to maintain executive focus during complex cognitive tasks."
+    },
+    "brain_health": {
+        title: "Neuroprotection & Cellular Integrity",
+        icon: "🛡️",
+        desc: "Our clinical-grade formula prioritizes long-term neurological health. By leveraging powerful antioxidants like Grape Seed and Olive Leaf extracts, Neuro Serge shields neurons from oxidative stress and supports the structural integrity of the blood-brain barrier for lifelong cognitive wellness."
+    },
+    "fatigue_energy": {
+        title: "Metabolic Brain Energy & Clarity",
+        icon: "⚡",
+        desc: "By optimizing cerebral blood flow and mitochondrial efficiency, Neuro Serge effectively eliminates 'brain fog'. It provides a clean, ATP-driven energy source for your mind, ensuring peak mental performance throughout the day without the jittery 'crash' associated with synthetic stimulants."
+    },
+    "natural_ingredients": {
+        title: "Pharmacopoeia-Grade Botanical Synergy",
+        icon: "🌿",
+        desc: "We adhere to rigorous quality protocols, utilizing only lab-verified, high-bioavailability botanical extracts. Our formulation is strictly non-GMO, gluten-free, and completely free from synthetic fillers or habit-forming substances, offering a clean, safe, and professional path to mental excellence."
+    }
+};
+
+document.addEventListener("click", function(e) {
+    const card = e.target.closest(".benefit-card");
+    if (card) {
+        const key = card.getAttribute('data-key');
+        const data = benefitPopupData[key];
+        if (!data) return;
+
+        const popupContent = `
+            <div style="font-size: 55px; margin-bottom: 20px; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));">${data.icon}</div>
+            <h3 style="margin-bottom: 15px; color: #1e40af; font-size: 24px; font-weight: 800; text-transform: uppercase;">${data.title}</h3>
+            <p style="font-size: 17px; line-height: 1.7; color: #334155; background: #ffffff; padding: 25px; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
+                ${data.desc}
+            </p>
+            <div style="margin-top: 15px;">
+                <a href="#specs" onclick="closeBenefitPopup()" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 5px;">
+                    🔍 Know More about Ingredients &rarr;
+                </a>
+            </div>
+        `;
+        openBenefitPopup(popupContent);
+    }
 });
 
-// 2. Review Form Submit (Iska ID 'reviewForm' hai aapke code mein)
-const reviewForm = document.getElementById('reviewForm');
-// Note: Aapke Submit button par onclick="submitForm()" hai, usse hata kar 
-// id="review-submit-btn" de sakte hain aur isi tarah fetch logic laga sakte hain.
+/* ========================= FORM SUBMISSION LOGIC ========================= */
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyEJmb4hiDCHjL8KMfg0L9k_CMfsITWIuR70e8Xox-bByPxVb79egsUaYF7_Y8rqUH_/exec';
 
+document.addEventListener('submit', e => {
+    if (e.target.id === 'contact-form' || e.target.id === 'reviewForm') {
+        e.preventDefault();
+        const form = e.target;
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerText;
+        
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Processing...";
 
-
-// Review Form Submit (Linked to Google Sheets)
-reviewForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const submitBtn = document.querySelector('.submit-btn');
-    submitBtn.disabled = true;
-    submitBtn.innerText = "Saving...";
-
-    fetch(scriptURL, { method: 'POST', body: new FormData(reviewForm), mode: 'no-cors'})
-        .then(() => {
-            alert("✅ Review shared successfully and saved to Google Sheets!");
-            submitBtn.disabled = false;
-            submitBtn.innerText = "Post Review";
-            reviewForm.reset();
-            reviewForm.style.display = 'none';
-            fetchServerReviews(); // पुरानी लिस्ट रिफ्रेश करने के लिए
-        })
-        .catch(error => {
-            alert("Error! Data not sent to Sheet.");
-            submitBtn.disabled = false;
-            submitBtn.innerText = "Post Review";
-        });
+        fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors'})
+            .then(() => {
+                alert("✅ Submitted successfully!");
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalText;
+                form.reset();
+                if (form.id === 'reviewForm') {
+                    form.style.display = 'none';
+                    if (typeof fetchServerReviews === 'function') fetchServerReviews();
+                } else {
+                    closeModal();
+                }
+            })
+            .catch(error => {
+                alert("❌ Submission error. Please try again.");
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalText;
+            });
+    }
 });
 </script>
 
-
-</body>
-</html>
-
-</body>
-</html>
-// 2. Review Form Submit (Iska ID 'reviewForm' hai aapke code mein)
-const reviewForm = document.getElementById('reviewForm');
-// Note: Aapke Submit button par onclick="submitForm()" hai, usse hata kar 
-// id="review-submit-btn" de sakte hain aur isi tarah fetch logic laga sakte hain.
-
-
-
-// Review Form Submit (Linked to Google Sheets)
-reviewForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const submitBtn = document.querySelector('.submit-btn');
-    submitBtn.disabled = true;
-    submitBtn.innerText = "Saving...";
-
-    fetch(scriptURL, { method: 'POST', body: new FormData(reviewForm), mode: 'no-cors'})
-        .then(() => {
-            alert("✅ Review shared successfully and saved to Google Sheets!");
-            submitBtn.disabled = false;
-            submitBtn.innerText = "Post Review";
-            reviewForm.reset();
-            reviewForm.style.display = 'none';
-            fetchServerReviews(); // पुरानी लिस्ट रिफ्रेश करने के लिए
-        })
-        .catch(error => {
-            alert("Error! Data not sent to Sheet.");
-            submitBtn.disabled = false;
-            submitBtn.innerText = "Post Review";
-        });
-});
-</script>
-
-
+<script src="script.js"></script>
 </body>
 </html>
