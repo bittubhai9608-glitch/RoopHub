@@ -1,0 +1,24 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cloudflare/workers-sdk/main/packages/wrangler/config-schema.json",
+  "name": "roophub",
+  "compatibility_date": "2026-05-07",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": ".",
+    "exclude": [
+      "**/node-*.msi",
+      "**/*.msi",
+      "**/*.exe",
+      "venv",
+      ".venv*",
+      "__pycache__",
+      "creds.json",
+      "requirements.txt"
+    ]
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
