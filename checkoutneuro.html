@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <title>Checkout Page</title>
 
 <style>
@@ -101,16 +102,16 @@ body{
 /* Header Auth Button Styling */
 .header-auth-btn {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 5px 12px;
-    background: #fbbf24;
-    color: #1e293b;
+    top: 5px;
+    left: 5px;
+    padding: 4px 8px;
+    background: #27ae60;
+    color: #ffffff;
     border: none;
     border-radius: 25px;
     font-weight: 600;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
     z-index: 100; /* Ensure it's above other header elements */
@@ -215,7 +216,7 @@ button:hover{
 <body>
 
 <header>
-    <button onclick="openModal('auth')" class="header-auth-btn" aria-label="Sign In">Sign In / Join</button>
+    <button onclick="openAuthOrProfileModal()" class="header-auth-btn" aria-label="Open Menu"><i class="fa-solid fa-bars"></i></button>
 🛒 Secure Checkout
 </header>
 

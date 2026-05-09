@@ -534,31 +534,27 @@ function applyThemeAndSettings() {
     // Timezone आमतौर पर डिस्प्ले/आंतरिक लॉजिक के लिए क्लाइंट-साइड JS द्वारा हैंडल किया जाता है, न कि एक वैश्विक सेटिंग जो UI को बदलती है।
 }
 
+// New function to handle opening auth or profile modal based on login status
+function openAuthOrProfileModal() {
+    const user = JSON.parse(localStorage.getItem("roophub_user"));
+    if (user && user.name) {
+        showProfile(); // User logged in, show profile modal
+    } else {
+        openModal('auth'); // User not logged in, show auth modal
+    }
+}
+
 function checkAuthStatus() {
     const user = JSON.parse(localStorage.getItem("roophub_user"));
     const btn = document.querySelector('.header-auth-btn');
     if (user && user.name && btn) {
-        // Name hatakar sirf profile picture ya initials dikhane ki logic
-        const initials = user.name.split(' ').map(n => n[0]).join('').toUpperCase();
-        const avatarHtml = user.profilePic 
-            ? `<img src="${user.profilePic}" style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover; border: 2px solid #fbbf24; display: block;">`
-            : `<div style="width: 35px; height: 35px; background: #fbbf24; color: #0f172a; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: bold; border: 2px solid #fff;">${initials}</div>`;
-        
-        btn.innerHTML = avatarHtml;
-        btn.style.padding = "0";
-        btn.style.background = "transparent";
-        btn.style.boxShadow = "none";
-
-        btn.onclick = (e) => {
-            if(e) e.preventDefault();
-            showProfile();
-        };
-    } else if (btn) {
-        btn.innerHTML = "Sign In / Join";
-        btn.style.padding = "5px 12px";
-        btn.style.background = "#fbbf24";
+        // Always show the hamburger icon, regardless of login status
+        btn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        btn.style.padding = "8px 12px";
+        btn.style.background = "#27ae60";
+        btn.style.color = "#ffffff";
         btn.style.boxShadow = "0 2px 8px rgba(0,0,0,0.2)";
-        btn.onclick = () => openModal('auth');
+        btn.onclick = openAuthOrProfileModal; // Use the new function
     }
 }
 
