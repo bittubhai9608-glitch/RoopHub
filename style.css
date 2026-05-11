@@ -287,6 +287,253 @@ html {
   margin-right: 5px;
 }
 
+/* New Trust Icons with better styling */
+.header-trust-icons .trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.header-trust-icons .trust-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+.header-trust-icons .trust-item i {
+  color: #fbbf24;
+  font-size: 14px;
+}
+
+/* New Header Logo Section */
+.header-logo-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #1e40af 0%, #0f766e 100%);
+  color: white;
+  z-index: 50;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  font-size: 28px;
+  color: #fbbf24;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  50% { transform: scale(1); }
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.brand-name {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.brand-name span {
+  color: #fbbf24;
+}
+
+.brand-tagline {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.9;
+  color: #e0f2fe;
+}
+
+/* Header Main Content */
+.header-main-content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-info-section {
+  position: relative;
+  width: 100%;
+}
+
+.header-banner-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+/* Product Categories Preview */
+.product-categories-preview {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px 14px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.category-badge:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.category-badge i {
+  font-size: 14px;
+  color: #fbbf24;
+}
+
+/* Main Heading Enhancement */
+.main-heading {
+  margin: 12px 0;
+  line-height: 1.2;
+  text-shadow: 3px 5px 20px rgba(0,0,0,0.8);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2.8rem, 10vw, 5.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  color: #ffffff;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  display: inline-block;
+}
+
+.main-heading .highlight {
+  color: #fbbf24;
+  margin-left: 8px;
+}
+
+.main-heading:hover {
+  transform: scale(1.02);
+  text-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+}
+
+/* Responsive Header Logo */
+@media (max-width: 768px) {
+  .header-logo-section {
+    padding: 10px 15px;
+  }
+
+  .logo-icon {
+    font-size: 24px;
+  }
+
+  .brand-name {
+    font-size: 16px;
+  }
+
+  .brand-tagline {
+    font-size: 9px;
+  }
+
+  .product-categories-preview {
+    gap: 8px;
+  }
+
+  .category-badge {
+    padding: 6px 12px;
+    font-size: 10px;
+  }
+
+  .main-heading {
+    font-size: clamp(2rem, 8vw, 4rem);
+  }
+
+  .header-text-container {
+    padding: 20px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-logo-section {
+    padding: 8px 12px;
+  }
+
+  .logo-container {
+    gap: 8px;
+  }
+
+  .logo-icon {
+    font-size: 20px;
+  }
+
+  .brand-name {
+    font-size: 14px;
+  }
+
+  .product-categories-preview {
+    gap: 6px;
+  }
+
+  .category-badge {
+    padding: 5px 10px;
+    font-size: 9px;
+  }
+
+  .header-text-container {
+    padding: 15px 20px;
+    border-radius: 15px;
+  }
+
+  .main-heading {
+    font-size: clamp(1.5rem, 6vw, 3rem);
+  }
+
+  .header-subtitle {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .header-tagline {
+    font-size: 10px;
+  }
+}
+
 .tagline {
   color: #fbbf24;
   font-size: 14px;

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoopHub - Video Library</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="video.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header class="video-header">
+    <button onclick="window.location.href='index.html'" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</button>
+    <h1>📺 Video Library</h1>
+    <p class="video-subtitle">Learn more about our wellness products with expert videos</p>
+  </header>
+
+  <nav class="video-nav">
+    <button onclick="window.location.href='index.html'" data-i18n="nav_home">Home</button>
+    <button onclick="loadProducts('Men Health')" data-i18n="nav_men">Men Health</button>
+    <button onclick="loadProducts('Weight Loss')" data-i18n="nav_weight">Weight Loss</button>
+    <button onclick="loadProducts('Brain Boost')" data-i18n="nav_brain">Brain Boost</button>
+    <button onclick="loadProducts('Skin Care')" data-i18n="nav_skin">Skin Care</button>
+  </nav>
+
+  <div class="video-container">
+    <!-- Videos Landing Page -->
+    <div id="videosLanding" class="videos-landing">
+      <h2>Choose a Category</h2>
+      <div class="category-grid">
+        
+        <!-- Men Health Category -->
+        <div class="category-card" onclick="openCategory('menHealth')">
+          <div class="category-icon">💪</div>
+          <h3>Men Health</h3>
+          <p>Health supplements and wellness products for men</p>
+          <span class="arrow">→</span>
+        </div>
+
+        <!-- Weight Loss Category -->
+        <div class="category-card" onclick="openCategory('weightLoss')">
+          <div class="category-icon">⚖️</div>
+          <h3>Weight Loss</h3>
+          <p>Fitness and weight management solutions</p>
+          <span class="arrow">→</span>
+        </div>
+
+        <!-- Brain Boost Category -->
+        <div class="category-card" onclick="openCategory('brainBoost')">
+          <div class="category-icon">🧠</div>
+          <h3>Brain Boost</h3>
+          <p>Cognitive enhancement and mental clarity products</p>
+          <span class="arrow">→</span>
+        </div>
+
+        <!-- Skin Care Category -->
+        <div class="category-card" onclick="openCategory('skinCare')">
+          <div class="category-icon">✨</div>
+          <h3>Skin Care</h3>
+          <p>Natural skin care and beauty solutions</p>
+          <span class="arrow">→</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Video Type Selection -->
+    <div id="videoTypeSelection" class="video-type-selection" style="display:none;">
+      <button onclick="goBackToCategories()" class="back-to-categories">← Back to Categories</button>
+      <h2 id="categoryTitleType"></h2>
+      
+      <div class="video-options">
+        <div class="video-option long-video" onclick="loadVideoList('long')">
+          <div class="video-option-header">
+            <span class="video-type-badge">Long Videos</span>
+            <span class="time-badge">15-30 min</span>
+          </div>
+          <div class="video-option-content">
+            <i class="fa-solid fa-video"></i>
+            <h3>Detailed Explanations</h3>
+            <p>In-depth information about ingredients, benefits, and usage</p>
+          </div>
+        </div>
+
+        <div class="video-option short-video" onclick="loadVideoList('short')">
+          <div class="video-option-header">
+            <span class="video-type-badge">Short Videos</span>
+            <span class="time-badge">5-10 min</span>
+          </div>
+          <div class="video-option-content">
+            <i class="fa-solid fa-play-circle"></i>
+            <h3>Quick Overview</h3>
+            <p>Fast and essential information in a compact format</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video List Display Area -->
+    <div id="videoListDisplay" class="video-list-display" style="display:none;">
+      <button onclick="goBackToVideoType()" class="back-to-categories">← Back to Video Types</button>
+      <h2 id="videoListTitle"></h2>
+      <p class="video-list-subtitle">Select a video to watch</p>
+      
+      <div id="videoListContainer" class="video-list-container">
+        <!-- Videos will be populated here by JavaScript -->
+      </div>
+    </div>
+
+    <!-- Video Player Modal -->
+    <div id="videoPlayerModal" class="video-modal" style="display:none;">
+      <button onclick="closeVideoPlayer()" class="close-video-btn">✖</button>
+      
+      <div class="video-player-content">
+        <div class="video-player">
+          <div id="videoPlaceholder" class="video-placeholder">
+            <i class="fa-solid fa-play"></i>
+            <p id="videoTitle"></p>
+          </div>
+          <iframe id="videoFrame" width="100%" height="500" style="display:none; border:none; border-radius:10px;" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="video-info">
+          <h2 id="videoInfoTitle"></h2>
+          <p id="videoInfoDescription"></p>
+          
+          <div class="video-details">
+            <div class="detail-item">
+              <span class="detail-label">Category:</span>
+              <span id="videoCategory"></span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Duration:</span>
+              <span id="videoDuration"></span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Type:</span>
+              <span id="videoType"></span>
+            </div>
+          </div>
+
+          <div class="video-text-content">
+            <h3>📝 Key Points:</h3>
+            <p id="videoKeyPoints"></p>
+          </div>
+
+          <div class="video-full-text-content">
+            <h3>📖 Full Information:</h3>
+            <div id="videoFullText" class="full-text-wrapper"></div>
+          </div>
+
+          <button onclick="closeVideoPlayer()" class="close-btn">Close Video</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="amazon-footer">
+    <div class="footer-col">
+      <h3>Get to Know Us</h3>
+      <ul>
+        <li onclick="window.location.href='index.html#about'" style="cursor:pointer;">About RoopHub</li>
+        <li onclick="window.location.href='index.html'" style="cursor:pointer;">Back to Home</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Connect With Us</h3>
+      <div class="social-icons">
+        <a href="https://wa.me/918271734883" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="tel:8271734883" title="Phone"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://www.youtube.com" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li onclick="window.location.href='index.html'" style="cursor:pointer;">Products</li>
+        <li onclick="window.location.href='index.html'" style="cursor:pointer;">Contact</li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Bottom bar -->
+  <div class="amazon-bottom">
+    © 2026 RoopHub. All Rights Reserved.
+  </div>
+
+  <script src="video.js"></script>
+</body>
+</html>
