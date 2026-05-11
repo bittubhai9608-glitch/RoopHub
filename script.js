@@ -1,16 +1,43 @@
 const products = {
   "Men Health": [
-    { name: "ProstaVive Vitality",rating:"4.9", price: "Special Discount Available", img: "Images/prostavive vitality.jpeg", link: "ProstaViveVitalityLandingPage.html" },
-   
+    { 
+      name: "ProstaVive Vitality", 
+      rating: "4.9", 
+      price: "Special Discount Available", 
+      img: "Images/prostavive vitality.jpeg", 
+      link: "ProstaViveVitalityLandingPage.html",
+      features: ["Supports Healthy Prostate", "Boosts Vitality & Energy", "60-Day Money Back"]
+    },
   ],
 
   "Weight Loss": [
-    { name: "CitrusBurn Rapid Burn", rating:"4.8", price: "Limited Time Offer", img:"Images/citrusburn rapid burn.jpeg", link: "CitrusBurnRapidBurnLandingPage.html" },
-    { name: "KeySlim Drops", rating:"4.6", price: "Best Price Guaranteed", img: "Images/keyslimdrop.jpeg", link: "keyslimdropslandingpage.html"},
+    { 
+      name: "CitrusBurn Rapid Burn", 
+      rating: "4.8", 
+      price: "Limited Time Offer", 
+      img: "Images/citrusburn rapid burn.jpeg", 
+      link: "CitrusBurnRapidBurnLandingPage.html",
+      features: ["Natural Metabolism Boost", "Citrus-Based Formula", "Suppresses Cravings"]
+    },
+    { 
+      name: "KeySlim Drops", 
+      rating: "4.6", 
+      price: "Best Price Guaranteed", 
+      img: "Images/keyslimdrop.jpeg", 
+      link: "keyslimdropslandingpage.html",
+      features: ["Easy-to-use Liquid Formula", "Fast Absorption", "GMP Certified"]
+    },
   ],
 
   "Brain Boost": [
-    { name: "Neuro Serge", rating:"4.9", price: "Limited Time Offer", img: "Images/neuroserge.jpeg", link: "NeuroSergelLandingPage.html" },
+    { 
+      name: "Neuro Serge", 
+      rating: "4.9", 
+      price: "Limited Time Offer", 
+      img: "Images/neuroserge.jpeg", 
+      link: "NeuroSergelLandingPage.html",
+      features: ["Sharpen Mental Clarity", "Enhance Memory Recall", "100% Drug-Free"]
+    },
     { name: "Visiflora Precision Vision", rating:"4.5", price: "$49", img:"Images/visiflora.jpeg", link: "https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
   ],
 
@@ -54,9 +81,12 @@ function createProductCard(product, categoryLabel) {
         <span class="price-icon">🏷️</span>
         <span class="price-text" data-i18n="special_offer">${product.price}</span>
       </div>
+      <ul class="product-features">
+        ${(product.features || ["FDA Registered Facility", "Third Party Lab Tested", "Safe & Natural"]).map(f => `<li><i class="fa-solid fa-check"></i> ${f}</li>`).join('')}
+      </ul>
       <p class="official-verify" data-i18n="verified">🛡️ Official Verified Product</p>
       <button class="premium-cta" onclick="openProduct('${product.link}')" data-i18n="get_discount">
-        Get Exclusive Discount <span class="arrow-icon">⚡</span>
+        Check Official Price <span class="arrow-icon">⚡</span>
       </button>
       <p class="limited-tag" data-i18n="limited_stock">⚡ Limited Stock Available</p>
     </div>
@@ -917,6 +947,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('productContainer')) loadProducts('Men Health'); // केवल उन पेजों पर प्रोडक्ट्स लोड करें जहाँ productContainer है
   ensureAuthModals(); 
   applyThemeAndSettings(); // लोकल स्टोरेज से सभी सेटिंग्स लागू करें
+  updateHeaderTimeContext();
+  setInterval(updateHeaderTimeContext, 60000); // Check for time-based updates every minute
   checkAuthStatus();
   
   // Sign Up Logic
