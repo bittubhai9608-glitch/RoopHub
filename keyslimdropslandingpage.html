@@ -1659,7 +1659,7 @@ async function sendMessage(manualMsg = null) {
                 // Show Quick Replies after typing finished
                 renderQuickReplies(data.suggestions);
             }
-        }, 80); // Speed of typing (80ms per word)
+        }, 20); // Speed of typing (increased from 80ms to 20ms)
 
     } catch (error) {
         chatBox.innerHTML += `<p style="color:red; font-size:12px;">Connection error!</p>`;
