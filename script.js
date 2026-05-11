@@ -368,7 +368,7 @@ function sendMessage(manualMsg = null){
                 localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
                 renderQuickReplies(data.suggestions);
             }
-        }, 50); // Speed of typing
+        }, 1); // Speed of typing (increased from 20ms to 10ms)
     })
     .catch(err => {
         console.log(err);

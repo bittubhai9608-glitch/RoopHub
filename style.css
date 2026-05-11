@@ -89,7 +89,7 @@ html {
 /* Top Affiliate Trust Bar */
 .top-trust-bar {
   width: 100%;
-  background: #0f172a;
+  background: #0A4F3A; /* Deep professional green */
   color: #fff;
   padding: 8px 20px;
   font-size: 11px;
@@ -104,7 +104,7 @@ html {
 /* New: Header Value Proposition Bar */
 .header-value-proposition {
   width: 100%;
-  background: #1e40af; /* A slightly lighter blue than the top bar */
+  background: #1E8449; /* A professional medical green */
   color: #e0f2fe; /* Light blue text */
   padding: 8px 20px;
   font-size: 11px;
@@ -150,7 +150,7 @@ html {
 
 /* Header Text Container (Glassmorphism Effect) */
 .header-text-container {
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(10, 79, 58, 0.8); /* Dark green transparent */
   backdrop-filter: blur(12px);
   display: inline-block;
   padding: 30px 50px;
@@ -283,7 +283,7 @@ html {
 }
 
 .header-trust-icons span i {
-  color: #93c5fd;
+  color: #A7D9B5; /* Light green for icons */
   margin-right: 5px;
 }
 

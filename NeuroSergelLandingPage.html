@@ -987,8 +987,8 @@ margin-top: 25px;
         </div>
     </div>
     <div class="video-controls">
-        <button class="cta-btn" data-i18n="unmute_video" style="padding: 12px 10px; font-size: 13px; background: #1e40af; flex: 1; white-space: nowrap;" onclick="soundOn()">🔊 Unmute Video</button>
-        <button class="cta-btn" data-i18n="mute_video" style="padding: 12px 10px; font-size: 13px; background: #4b5563; box-shadow: none; flex: 1; white-space: nowrap;" onclick="soundOff()">🔇 Mute Video</button>
+        <button class="cta-btn" data-i18n="unmute_video" style="padding: 12px 10px; font-size: 13px; background: #15e76d; flex: 1; white-space: nowrap;" onclick="soundOn()">🔊 Unmute Video</button>
+        <button class="cta-btn" data-i18n="mute_video" style="padding: 12px 10px; font-size: 13px; background: #05e4b8; box-shadow: none; flex: 1; white-space: nowrap;" onclick="soundOff()">🔇 Mute Video</button>
     </div>
 </div>
 
@@ -1265,13 +1265,13 @@ See More
 <footer class="footer">
   <!-- Social Media Icons Section -->
   <div class="social-icons">
-    <a href="javascript:void(0)" onclick="openModal('contact')" class="social-link" title="Email Support"><i class="fa-solid fa-envelope"></i></a>
+    <a href="javascript:void(0)" onclick="openModal('contact')" class="supportroophub@gmail.com" title="Email Support"><i class="fa-solid fa-envelope"></i></a>
     <a href="tel:8271734883" class="social-link" title="Phone"><i class="fa-solid fa-phone"></i></a>
-    <a href="https://www.youtube.com" target="_blank" class="social-link" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    <a href="https://www.youtube.com" target="_blank" class="https://youtube.com/@roophub-official?si=p-hF3XMVk5vbwgHG" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
     <a href="https://www.google.com/maps?q=Yadav+Nagar+Road+No+3+Muzaffarpur+Bihar" target="_blank" class="social-link" title="Location"><i class="fa-solid fa-location-dot"></i></a>
-    <a href="https://www.facebook.com" target="_blank" class="social-link" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-    <a href="https://wa.me/918271734883" target="_blank" class="social-link" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-    <a href="https://twitter.com" target="_blank" class="social-link" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="https://www.facebook.com" target="_blank" class="https://www.facebook.com/share/1E2q8n11CD/" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://wa.me/918271734883" target="_blank" class="https://whatsapp.com/channel/0029Vb7Y2ft3QxS4drpeQV02" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="https://twitter.com" target="_blank" class="https://x.com/Roophub191378" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
   </div>
 
   <div class="bottom-menu">
@@ -1901,8 +1901,8 @@ Close ✖
 
 </div>
 
-<div id="chat-icon" onclick="toggleChat()" style="position:fixed; bottom:80px; right:20px; background:#007bff; color:white; padding: 10px 20px; border-radius:50px; text-align:center; cursor:pointer; font-size:16px; font-weight:600; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index:1000; animation: pulse-blue 2s infinite;">
-✨How can I help?
+<div id="chat-icon" onclick="toggleChat()" style="position:fixed; bottom:80px; right:20px; background:#007bff; color:white; padding: 10px 20px; border-radius:50px; text-align:center; cursor:pointer; font-size:9px; font-weight:600; box-shadow: 0 3px 6px rgba(0,0,0,0.3); z-index:1000; animation: pulse-blue 2s infinite;">
+✨AI Help
 </div>
 
 <div id="chat-container" style="display:none; position:fixed; bottom:150px; right:20px; width:320px; border:1px solid #ccc; background:#fff; border-radius:15px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index:1000; overflow:hidden; font-family: Arial, sans-serif;">
@@ -1975,7 +1975,7 @@ async function sendMessage(manualMsg = null) {
                 // Show Quick Replies after typing finished
                 renderQuickReplies(data.suggestions);
             }
-        }, 80); // Speed of typing (80ms per word)
+        }, 20); // Speed of typing (increased from 80ms to 20ms)
 
     } catch (error) {
         chatBox.innerHTML += `<p style="color:red; font-size:12px;">Connection error!</p>`;
