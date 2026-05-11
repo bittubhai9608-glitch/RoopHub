@@ -1,0 +1,322 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    background:#eaeaea;
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.5;
+}
+
+/* CONTAINER */
+.container{
+    padding:15px;
+}
+
+/* 🔥 SLIDER FIX */
+.slider{
+    width:100%;
+    position:relative;
+    margin-bottom:20px;   /* 👉 space banata hai */
+}
+
+/* IMAGE */
+.slider img {
+    width:100%;
+    max-width:100px;
+    background: #000; /* 👉 dark background for better contrast */
+    border-radius:15px;
+    transition: opacity 0.5s ease-in-out, transform 0.5s;
+}
+
+/* BUTTON */
+.slider button{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.6);
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:50%;
+}
+
+/* BUTTON POSITION */
+.prev{ left:10px; }
+.next{ right:10px; }
+
+/* CONTENT */
+.box{
+    background:#f9f9f9;
+    padding:15px;
+    margin-top:10px;
+    border-radius:10px;
+}
+
+/* 📱 MOBILE ONLY IMAGE SIZE */
+@media(max-width:768px){
+    .slider img{
+        max-height:220px;   /* 👉 mobile ke liye fixed */
+        object-fit:cover;
+    }
+}
+
+/* 💻 LAPTOP */
+@media(min-width:769px){
+    .slider img{
+        max-height:300px;
+    }
+}
+/* 🔥 HERO SECTION */
+.hero{
+    background: linear-gradient(135deg, #1e88e5, #1565c0);
+    height: 240px;
+    background-size: cover;
+    background-position: center;
+    padding:40px 15px;
+    text-align:center;
+    color:white;
+}
+/* MOBILE FIRST REVIEW DESIGN */
+#reviews{
+max-width:100%;
+padding:10px;
+}
+
+/* REVIEW CARD */
+.review-box{
+background:#fff;
+padding:12px;
+margin-bottom:10px;
+border-radius:12px;
+box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* NAME */
+.review-box h4{
+font-size:15px;
+margin-bottom:5px;
+}
+
+/* TEXT */
+.review-box p{
+font-size:15px;
+line-height:1.6;
+}
+
+/* FORM MOBILE */
+#reviewForm{
+width:100%;
+padding:15px;
+background:#fff;
+border-radius:12px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* INPUTS BIG FOR TOUCH */
+#reviewForm input,
+#reviewForm select,
+#reviewForm textarea{
+width:100%;
+padding:12px;
+margin:8px 0;
+font-size:16px; /* IMPORTANT for mobile */
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+/* BUTTON FULL WIDTH */
+#reviewForm button{
+width:100%;
+padding:14px;
+font-size:17px;
+background:#28a745;
+color:#fff;
+border:none;
+border-radius:12px;
+font-weight:bold;
+}
+
+/* READ BUTTON */
+#showReviewsBtn{
+width:90%;
+margin:10px auto;
+display:block;
+padding:12px;
+font-size:16px;
+background:#1e90ff;
+color:#fff;
+border:none;
+border-radius:10px;
+}
+.footer-container {
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  text-align:center;
+  padding:15px;
+  background:#111;
+  color:white;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* space between links */
+  flex-wrap: wrap; /* mobile me adjust ho jayega */
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+
+.box h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+@media (min-width: 768px) {
+  .box-container {
+    grid-template-columns: 1fr 1fr 1fr; /* desktop me 3 box */
+  }
+}
+
+
+
+/* HEADER CLEAN */
+header {
+  background: radial-gradient(circle at top, #1e40af, #0f172a);
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 4px solid #fbbf24;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  height: 60px;
+  filter: brightness(1) contrast(1);
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#animatedHeading {
+  margin: 0;
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.tagline {
+  color: #fbbf24;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .box-container {
+    grid-template-columns: 1fr;
+  }
+
+  .slider img {
+    max-height: 220px;
+    object-fit: cover;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+}
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .box-container {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+ /* =========================
+   ABOUT MODAL SCROLL FIX
+========================= */
+
+#aboutFull {
+  max-height: 80vh;   /* screen height limit */
+  overflow-y: auto;   /* SCROLL ON */
+  padding: 10px;
+}
+
+.modal-content {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+
+#aboutFull {
+  scroll-behavior: smooth;
+}
+
+
+
+
+
+.faq-answer{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    background: #d1fae5; /* Pleasant Success Green */
+    color: #064e3b;
+    border-radius: 0 0 10px 10px;
+    margin-top: 0;
+    border: none !important;
+}
