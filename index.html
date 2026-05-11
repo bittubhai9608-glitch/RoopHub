@@ -15,7 +15,7 @@
 </head>
 <body>
   <header class="main-header">
-    <!-- Top Affiliate Trust Bar -->
+    <!-- Top Premium Bar -->
     <div class="top-trust-bar">
         <div style="display: flex; gap: 15px; align-items: center;">
             <span><i class="fa-solid fa-circle-check" style="color: #2ecc71;"></i> Official Affiliate Partner</span>
@@ -27,37 +27,95 @@
         </div>
     </div>
 
-    <!-- New: Value Proposition Bar -->
+    <!-- Value Proposition Bar -->
     <div class="header-value-proposition header-hide-mobile">
         <span>✨ Curated by Health Experts | Your Trusted Wellness Partner ✨</span>
     </div>
 
-    <button onclick="openAuthOrProfileModal()" class="header-auth-btn" aria-label="Open Menu"><i class="fa-solid fa-bars"></i></button>
-    
+    <!-- Main Header Content -->
+    <div class="header-main-content">
+      <!-- Logo and Brand Section -->
+      <div class="header-logo-section">
+        <div class="logo-container">
+          <div class="logo-icon">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <div class="logo-text">
+            <h2 class="brand-name">ROOP<span>HUB</span></h2>
+            <p class="brand-tagline">Authentic Wellness Solutions</p>
+          </div>
+        </div>
+        
+        <!-- Auth Button -->
+        <button onclick="openAuthOrProfileModal()" class="header-auth-btn" aria-label="Open Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Header Main Info Section -->
+      <div class="header-info-section">
+        <div class="header-banner-wrapper">
+          <div id="headerOverlay" class="header-overlay"></div>
+          <img src="Images/header.jpeg" alt="RoopHub Header Banner" class="header-banner-img">
+          
+          <div class="header-content-wrapper">
+            <div class="header-text-container">
+              <p class="header-subtitle">🏥 PREMIUM HEALTH & WELLNESS PRODUCTS</p>
+              <h1 class="main-heading">Your Complete <span class="highlight">Wellness Destination</span></h1>
+              <p class="header-tagline"><i class="fa-solid fa-hand-holding-heart"></i> Trusted by thousands for authentic, research-backed health solutions</p>
+              
+              <!-- Product Categories Quick View -->
+              <div class="product-categories-preview">
+                <div class="category-badge">
+                  <i class="fa-solid fa-dumbbell"></i>
+                  <span>Men Health</span>
+                </div>
+                <div class="category-badge">
+                  <i class="fa-solid fa-scale-balanced"></i>
+                  <span>Weight Loss</span>
+                </div>
+                <div class="category-badge">
+                  <i class="fa-solid fa-brain"></i>
+                  <span>Brain Boost</span>
+                </div>
+                <div class="category-badge">
+                  <i class="fa-solid fa-leaf"></i>
+                  <span>Skin Care</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust & Quality Indicators -->
+        <div class="header-trust-icons header-hide-mobile">
+          <div class="trust-item">
+            <i class="fa-solid fa-flask"></i>
+            <span>Lab Tested</span>
+          </div>
+          <div class="trust-item">
+            <i class="fa-solid fa-leaf"></i>
+            <span>100% Organic</span>
+          </div>
+          <div class="trust-item">
+            <i class="fa-solid fa-award"></i>
+            <span>GMP Certified</span>
+          </div>
+          <div class="trust-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Verified Safe</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Floating Verified Seal -->
     <div class="header-float-badge header-hide-mobile">
         <div class="seal-icon"><i class="fa-solid fa-shield-heart"></i></div>
         <div class="seal-text">
-            <span class="seal-title">HEALTH HUB</span>
-            <span class="seal-desc">100% VERIFIED</span>
+            <span class="seal-title">ROOP<span>HUB</span></span>
+            <span class="seal-desc">AUTHENTIC & VERIFIED</span>
         </div>
-    </div>
-
-    <div id="headerOverlay" class="header-overlay"></div>
-    <img src="Images/header.jpeg" alt="RoopHub Header Banner" class="header-banner-img">
-    <div class="header-content-wrapper">
-      <div class="header-text-container">
-          <p class="header-subtitle">RESEARCH-BASED WELLNESS SOLUTIONS</p>
-          <h1 id="animatedHeading">ROOP<span>HUB</span></h1>
-          <p class="header-tagline"><i class="fa-solid fa-hand-holding-heart"></i> Your Daily Dose of Authentic Care</p>
-      </div>
-    </div>
-
-    <!-- Bottom Trust Badges row -->
-    <div class="header-trust-icons header-hide-mobile">
-        <span><i class="fa-solid fa-flask"></i> Lab Tested</span>
-        <span><i class="fa-solid fa-leaf"></i> 100% Organic</span>
-        <span><i class="fa-solid fa-award"></i> GMP Certified</span>
     </div>
 </header>
 <nav>
@@ -69,6 +127,7 @@
     <button onclick="loadProducts('Skin Care')" data-i18n="nav_skin">Skin Care</button>
   </div>
   <div class="nav-right" id="navRight">
+    <button onclick="window.location.href='video.html'" data-i18n="videos">Videos</button>
     <button onclick="showAbout()" data-i18n="footer_about">About Us</button>
     <button onclick="showContact()" data-i18n="contact">Contact</button>
     <button onclick="showImportantInfo()" data-i18n="footer_legal">Important Info</button>
