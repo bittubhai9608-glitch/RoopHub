@@ -980,6 +980,29 @@ function updateHeaderTimeContext() {
   }
 }
 
+// FAQ Toggle Function
+function toggleFAQ(button) {
+  const answer = button.nextElementSibling;
+  const isActive = button.classList.contains('active');
+  
+  // Close all other FAQs
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    if (btn !== button && btn.classList.contains('active')) {
+      btn.classList.remove('active');
+      btn.nextElementSibling.classList.remove('show');
+    }
+  });
+  
+  // Toggle current FAQ
+  if (isActive) {
+    button.classList.remove('active');
+    answer.classList.remove('show');
+  } else {
+    button.classList.add('active');
+    answer.classList.add('show');
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('productContainer')) loadProducts('Men Health'); // केवल उन पेजों पर प्रोडक्ट्स लोड करें जहाँ productContainer है
   ensureAuthModals(); 
