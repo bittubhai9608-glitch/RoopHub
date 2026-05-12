@@ -97,29 +97,50 @@ function createProductCard(product, categoryLabel) {
 function loadProducts(category) {
   currentCategory = category;
   
-  // Highlight Active Button for better UX
-  const allNavButtons = document.querySelectorAll('nav button');
-  allNavButtons.forEach(btn => {
-    if (btn.textContent.trim().includes(category)) {
-      btn.classList.add('active-category');
+  // Highlight Active Button for better UX - Updated for new filter buttons
+  const allFilterButtons = document.querySelectorAll('.filter-btn');
+  allFilterButtons.forEach(btn => {
+    if (btn.textContent.toLowerCase().includes(category.toLowerCase())) {
+      btn.classList.add('active');
     } else {
-      btn.classList.remove('active-category');
+      btn.classList.remove('active');
     }
   });
 
-  // Agar category exist nahi karti toh default 'Men Health' dikhao
+  // Fallback to 'Men Health' if category doesn't exist
   if (!products[category]) category = "Men Health";
 
   const container = document.getElementById("productContainer");
   if (!container) return; // Exit if not on home page
+  
+  // Show loading state
+  const loadingState = document.getElementById("loadingState");
+  if (loadingState) loadingState.style.display = 'block';
+  
   container.innerHTML = "";
 
-  let items = [...products[category]];
-  items.sort(() => 0.5 - Math.random());
+  // Simulate loading delay for UX
+  setTimeout(() => {
+    if (loadingState) loadingState.style.display = 'none';
+    
+    let items = [...products[category]];
+    items.sort(() => 0.5 - Math.random());
 
-  items.forEach(p => {
-    container.appendChild(createProductCard(p, category));
-  });
+    if (items.length === 0) {
+      container.innerHTML = `
+        <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px;">
+          <i class="fa-solid fa-inbox" style="font-size: 48px; color: #ddd; margin-bottom: 20px;"></i>
+          <h3 style="color: #666; margin: 20px 0;">No Products Found</h3>
+          <p style="color: #999;">Please try another category</p>
+        </div>
+      `;
+      return;
+    }
+
+    items.forEach(p => {
+      container.appendChild(createProductCard(p, category));
+    });
+  }, 300);
 }
 
 function searchProducts() {
@@ -943,6 +964,22 @@ function showAbout() {
 }
 
 // Initialize
+// Update header context based on time
+function updateHeaderTimeContext() {
+  const hour = new Date().getHours();
+  const greeting = document.querySelector('[data-greeting]');
+  
+  if (greeting) {
+    if (hour < 12) {
+      greeting.textContent = '🌅 Good Morning';
+    } else if (hour < 18) {
+      greeting.textContent = '☀️ Good Afternoon';
+    } else {
+      greeting.textContent = '🌙 Good Evening';
+    }
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('productContainer')) loadProducts('Men Health'); // केवल उन पेजों पर प्रोडक्ट्स लोड करें जहाँ productContainer है
   ensureAuthModals(); 

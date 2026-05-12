@@ -2,267 +2,385 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RoopHub</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>RoopHub - Authentic Wellness Solutions | Premium Health Products</title>
+  <meta name="description" content="RoopHub - Your trusted wellness destination with authentic, research-backed health solutions. Curated premium supplements for men's health, weight loss, brain boost & skincare.">
+  <meta name="keywords" content="wellness, supplements, health products, men health, weight loss, brain boost, skincare, India">
+  <meta name="theme-color" content="#27ae60">
+  <link rel="stylesheet" href="style-professional.css">
   <link rel="stylesheet" href="auth-profile.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <meta name="description" content="RoopHub Affiliate Wellness Store India">
-<meta name="keywords" content="health, affiliate, wellness, products India">
 </head>
 <body>
+  <!-- Top Trust Bar -->
+  <div class="trust-bar">
+    <div class="trust-bar-content">
+      <div class="trust-item-group">
+        <span class="trust-item"><i class="fa-solid fa-circle-check"></i>Official Partner</span>
+        <span class="trust-item hide-mobile"><i class="fa-solid fa-star"></i>Hand-Picked Deals</span>
+      </div>
+      <div class="trust-item-group">
+        <span class="trust-item"><i class="fa-solid fa-shield-halved"></i>Secure Links</span>
+        <span class="trust-item hide-mobile"><i class="fa-solid fa-truck-fast"></i>Direct Shipping</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
   <header class="main-header">
-    <!-- Top Premium Bar -->
-    <div class="top-trust-bar">
-        <div style="display: flex; gap: 15px; align-items: center;">
-            <span><i class="fa-solid fa-circle-check" style="color: #2ecc71;"></i> Official Affiliate Partner</span>
-            <span class="header-hide-mobile"><i class="fa-solid fa-star" style="color: #fbbf24;"></i> Hand-Picked Deals</span>
+    <div class="header-top">
+      <div class="logo-container">
+        <div class="logo-icon">
+          <i class="fa-solid fa-heart-pulse"></i>
         </div>
-        <div style="display: flex; gap: 15px; align-items: center;">
-            <span><i class="fa-solid fa-shield-halved" style="color: #93c5fd;"></i> Secure Official Links</span>
-            <span class="header-hide-mobile"><i class="fa-solid fa-truck-fast"></i> Brand Direct Shipping</span>
+        <div class="logo-text">
+          <h1 class="brand-name">ROOP<span>HUB</span></h1>
+          <p class="brand-tagline">Authentic Wellness</p>
         </div>
+      </div>
+      <button onclick="openAuthOrProfileModal()" class="menu-button" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
 
-    <!-- Value Proposition Bar -->
-    <div class="header-value-proposition header-hide-mobile">
-        <span>✨ Curated by Health Experts | Your Trusted Wellness Partner ✨</span>
+    <!-- Header Value Proposition -->
+    <div class="header-value-prop hide-mobile">
+      <span>✨ Curated by Health Experts | Your Trusted Wellness Partner ✨</span>
     </div>
 
-    <!-- Main Header Content -->
-    <div class="header-main-content">
-      <!-- Logo and Brand Section -->
-      <div class="header-logo-section">
-        <div class="logo-container">
-          <div class="logo-icon">
-            <i class="fa-solid fa-heart-pulse"></i>
-          </div>
-          <div class="logo-text">
-            <h2 class="brand-name">ROOP<span>HUB</span></h2>
-            <p class="brand-tagline">Authentic Wellness Solutions</p>
-          </div>
-        </div>
+    <!-- Hero Banner -->
+    <div class="hero-banner-wrapper">
+      <div class="hero-overlay"></div>
+      <img src="Images/header.jpeg" alt="RoopHub Wellness Products" class="hero-banner-img">
+      <div class="hero-content">
+        <p class="hero-subtitle">🏥 PREMIUM HEALTH & WELLNESS PRODUCTS</p>
+        <h2 class="hero-title">Your Complete <span class="highlight">Wellness Destination</span></h2>
+        <p class="hero-description"><i class="fa-solid fa-hand-holding-heart"></i>Trusted by thousands for authentic, research-backed health solutions</p>
         
-        <!-- Auth Button -->
-        <button onclick="openAuthOrProfileModal()" class="header-auth-btn" aria-label="Open Menu">
-          <i class="fa-solid fa-bars"></i>
+        <div class="category-showcase">
+          <div class="category-item">
+            <i class="fa-solid fa-dumbbell"></i>
+            <span>Men Health</span>
+          </div>
+          <div class="category-item">
+            <i class="fa-solid fa-scale-balanced"></i>
+            <span>Weight Loss</span>
+          </div>
+          <div class="category-item">
+            <i class="fa-solid fa-brain"></i>
+            <span>Brain Boost</span>
+          </div>
+          <div class="category-item">
+            <i class="fa-solid fa-leaf"></i>
+            <span>Skin Care</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust Indicators -->
+    <div class="trust-indicators hide-mobile">
+      <div class="indicator">
+        <i class="fa-solid fa-flask"></i>
+        <span>Lab Tested</span>
+      </div>
+      <div class="indicator">
+        <i class="fa-solid fa-leaf"></i>
+        <span>100% Organic</span>
+      </div>
+      <div class="indicator">
+        <i class="fa-solid fa-award"></i>
+        <span>GMP Certified</span>
+      </div>
+      <div class="indicator">
+        <i class="fa-solid fa-circle-check"></i>
+        <span>Verified Safe</span>
+      </div>
+    </div>
+
+    <!-- Floating Badge -->
+    <div class="floating-badge hide-mobile">
+      <div class="badge-icon"><i class="fa-solid fa-shield-heart"></i></div>
+      <div class="badge-text">
+        <span class="badge-title">ROOP<span>HUB</span></span>
+        <span class="badge-desc">AUTHENTIC & VERIFIED</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <button id="menuToggle" class="nav-toggle">
+      <i class="fa-solid fa-fire"></i> View Top Deals
+    </button>
+    <div class="nav-menu" id="navItems">
+      <button onclick="loadProducts('Men Health')" class="nav-link">
+        <i class="fa-solid fa-dumbbell"></i>Men Health
+      </button>
+      <button onclick="loadProducts('Weight Loss')" class="nav-link">
+        <i class="fa-solid fa-scale-balanced"></i>Weight Loss
+      </button>
+      <button onclick="loadProducts('Brain Boost')" class="nav-link">
+        <i class="fa-solid fa-brain"></i>Brain Boost
+      </button>
+      <button onclick="loadProducts('Skin Care')" class="nav-link">
+        <i class="fa-solid fa-leaf"></i>Skin Care
+      </button>
+    </div>
+    <div class="nav-menu-right" id="navRight">
+      <button onclick="window.location.href='video.html'" class="nav-link">
+        <i class="fa-solid fa-play-circle"></i>Videos
+      </button>
+      <button onclick="showAbout()" class="nav-link">
+        <i class="fa-solid fa-circle-info"></i>About
+      </button>
+      <button onclick="showContact()" class="nav-link">
+        <i class="fa-solid fa-envelope"></i>Contact
+      </button>
+      <button onclick="showImportantInfo()" class="nav-link">
+        <i class="fa-solid fa-file-contract"></i>Info
+      </button>
+    </div>
+  </nav>
+
+  <!-- Deal Banner -->
+  <div class="deal-banner">
+    <div class="deal-wrapper">
+      <span class="deal-icon">⚡</span>
+      <div class="deal-info">
+        <p class="deal-title">Deal of the Day!</p>
+        <p class="deal-desc">Exclusive discounts on top wellness products. Limited stock!</p>
+      </div>
+      <button class="deal-btn" onclick="window.location.href='#productContainer'">
+        Shop Now <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Search Panel -->
+  <section class="search-section">
+    <div class="search-container">
+      <h2>🔍 Find Your Perfect Wellness Solution</h2>
+      <div class="search-wrapper">
+        <input type="text" id="searchInput" placeholder="Search premium, natural supplements..." onkeyup="searchProducts()" class="search-input" />
+        <button onclick="searchProducts()" class="search-button">Search</button>
+      </div>
+      <div class="search-badges">
+        <span>🛡️ Verified Products</span>
+        <span class="hide-mobile">🔒 Secure Results</span>
+        <span>⭐ Top Rated</span>
+      </div>
+      <p id="searchStatus" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- Ads Container -->
+  <div id="adContainer" class="ad-container"></div>
+
+  <!-- Products Section -->
+  <section class="products-section">
+    <!-- Product Header -->
+    <div class="products-header">
+      <div class="products-header-content">
+        <h2 class="products-title">🌟 Premium Wellness Products</h2>
+        <p class="products-subtitle">Curated by health experts | Verified authentic | Premium quality</p>
+      </div>
+    </div>
+
+    <!-- Product Filters -->
+    <div class="products-filters">
+      <div class="filters-container">
+        <button class="filter-btn active" onclick="loadProducts('Men Health')">
+          <i class="fa-solid fa-dumbbell"></i>
+          <span>Men Health</span>
+        </button>
+        <button class="filter-btn" onclick="loadProducts('Weight Loss')">
+          <i class="fa-solid fa-scale-balanced"></i>
+          <span>Weight Loss</span>
+        </button>
+        <button class="filter-btn" onclick="loadProducts('Brain Boost')">
+          <i class="fa-solid fa-brain"></i>
+          <span>Brain Boost</span>
+        </button>
+        <button class="filter-btn" onclick="loadProducts('Skin Care')">
+          <i class="fa-solid fa-leaf"></i>
+          <span>Skin Care</span>
         </button>
       </div>
+    </div>
 
-      <!-- Header Main Info Section -->
-      <div class="header-info-section">
-        <div class="header-banner-wrapper">
-          <div id="headerOverlay" class="header-overlay"></div>
-          <img src="Images/header.jpeg" alt="RoopHub Header Banner" class="header-banner-img">
+    <!-- Loading State -->
+    <div id="loadingState" style="display: none; text-align: center; padding: 40px 20px;">
+      <div style="display: inline-block;">
+        <div style="border: 4px solid rgba(39, 174, 96, 0.1); border-top-color: #27ae60; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite;"></div>
+      </div>
+      <p style="color: #666; margin-top: 16px; font-weight: 600;">Loading premium products...</p>
+    </div>
+
+    <!-- Products Container -->
+    <div class="container" id="productContainer">
+      <!-- Products will be loaded here by JavaScript -->
+    </div>
+
+    <!-- Product Template (Hidden, for rendering) -->
+    <template id="productTemplate">
+      <div class="product-card">
+        <div style="position: relative; overflow: hidden;">
+          <img src="" alt="" class="product-image">
+          <span class="product-badge" style="display: none;">Special Offer</span>
+        </div>
+        <div class="product-content">
+          <span class="product-category"></span>
+          <h3 class="product-name"></h3>
+          <p class="product-description"></p>
           
-          <div class="header-content-wrapper">
-            <div class="header-text-container">
-              <p class="header-subtitle">🏥 PREMIUM HEALTH & WELLNESS PRODUCTS</p>
-              <h1 class="main-heading">Your Complete <span class="highlight">Wellness Destination</span></h1>
-              <p class="header-tagline"><i class="fa-solid fa-hand-holding-heart"></i> Trusted by thousands for authentic, research-backed health solutions</p>
-              
-              <!-- Product Categories Quick View -->
-              <div class="product-categories-preview">
-                <div class="category-badge">
-                  <i class="fa-solid fa-dumbbell"></i>
-                  <span>Men Health</span>
-                </div>
-                <div class="category-badge">
-                  <i class="fa-solid fa-scale-balanced"></i>
-                  <span>Weight Loss</span>
-                </div>
-                <div class="category-badge">
-                  <i class="fa-solid fa-brain"></i>
-                  <span>Brain Boost</span>
-                </div>
-                <div class="category-badge">
-                  <i class="fa-solid fa-leaf"></i>
-                  <span>Skin Care</span>
-                </div>
-              </div>
+          <div class="product-rating">
+            <div class="product-stars">★★★★★</div>
+            <span class="product-rating-count">(0 reviews)</span>
+          </div>
+
+          <div class="product-price-section">
+            <span class="product-price">₹0</span>
+            <span class="product-original-price" style="display: none;">₹0</span>
+            <span class="product-discount" style="display: none;">0% OFF</span>
+          </div>
+
+          <div class="product-benefits">
+            <div class="product-benefit-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Authentic & Verified</span>
+            </div>
+            <div class="product-benefit-item">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>100% Safe & Secure</span>
+            </div>
+            <div class="product-benefit-item">
+              <i class="fa-solid fa-truck-fast"></i>
+              <span>Fast Delivery</span>
+            </div>
+          </div>
+
+          <div class="product-cta-section">
+            <button class="product-btn product-btn-primary" onclick="viewProduct(event)">
+              View Details
+            </button>
+            <button class="product-btn product-btn-secondary" onclick="addToWishlist(event)">
+              <i class="fa-solid fa-heart"></i>
+            </button>
+          </div>
+
+          <div class="product-footer">
+            <div class="product-info">
+              <i class="fa-solid fa-clock"></i>
+              <span>In Stock</span>
             </div>
           </div>
         </div>
+      </div>
+    </template>
+  </section>
 
-        <!-- Trust & Quality Indicators -->
-        <div class="header-trust-icons header-hide-mobile">
-          <div class="trust-item">
-            <i class="fa-solid fa-flask"></i>
-            <span>Lab Tested</span>
-          </div>
-          <div class="trust-item">
-            <i class="fa-solid fa-leaf"></i>
-            <span>100% Organic</span>
-          </div>
-          <div class="trust-item">
-            <i class="fa-solid fa-award"></i>
-            <span>GMP Certified</span>
-          </div>
-          <div class="trust-item">
-            <i class="fa-solid fa-circle-check"></i>
-            <span>Verified Safe</span>
-          </div>
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Know Us</h3>
+        <ul>
+          <li><a onclick="showAbout()" style="cursor:pointer;">About RoopHub</a></li>
+          <li><a onclick="openFAQ()" style="cursor:pointer;">FAQ</a></li>
+          <li><a onclick="openDisclaimer()" style="cursor:pointer;">Disclaimer</a></li>
+          <li><a onclick="showContact()" style="cursor:pointer;">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Legal</h3>
+        <ul>
+          <li><a onclick="openPrivacyPolicy()" style="cursor:pointer;">Privacy Policy</a></li>
+          <li><a onclick="openModal('affiliate')" style="cursor:pointer;">Affiliate Disclosure</a></li>
+          <li><a onclick="openTerms()" style="cursor:pointer;">Terms & Conditions</a></li>
+          <li><a onclick="showImportantInfo()" style="cursor:pointer;">Important Info</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Connect</h3>
+        <div class="social-icons">
+          <a href="javascript:void(0)" onclick="showContact()" title="Email Support">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="tel:8271734883" title="Phone">
+            <i class="fa-solid fa-phone"></i>
+          </a>
+          <a href="https://www.youtube.com" target="_blank" title="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="https://wa.me/918271734883" target="_blank" title="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="https://www.facebook.com" target="_blank" title="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com" target="_blank" title="Twitter">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
         </div>
       </div>
     </div>
-
-    <!-- Floating Verified Seal -->
-    <div class="header-float-badge header-hide-mobile">
-        <div class="seal-icon"><i class="fa-solid fa-shield-heart"></i></div>
-        <div class="seal-text">
-            <span class="seal-title">ROOP<span>HUB</span></span>
-            <span class="seal-desc">AUTHENTIC & VERIFIED</span>
-        </div>
-    </div>
-</header>
-<nav>
-  <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation">View Top Deals</button>
-  <div class="nav-left" id="navItems">
-    <button onclick="loadProducts('Men Health')" data-i18n="nav_men">Men Health</button>
-    <button onclick="loadProducts('Weight Loss')" data-i18n="nav_weight">Weight Loss</button>
-    <button onclick="loadProducts('Brain Boost')" data-i18n="nav_brain">Brain Boost</button>
-    <button onclick="loadProducts('Skin Care')" data-i18n="nav_skin">Skin Care</button>
-  </div>
-  <div class="nav-right" id="navRight">
-    <button onclick="window.location.href='video.html'" data-i18n="videos">Videos</button>
-    <button onclick="showAbout()" data-i18n="footer_about">About Us</button>
-    <button onclick="showContact()" data-i18n="contact">Contact</button>
-    <button onclick="showImportantInfo()" data-i18n="footer_legal">Important Info</button>
-  </div>
-</nav>
-
-<!-- Deal of the Day Banner -->
-<div class="deal-of-the-day-banner">
-  <div class="deal-content">
-    <span class="deal-icon">⚡</span>
-    <div class="deal-text">
-      <p class="deal-title">Deal of the Day!</p>
-      <p class="deal-description">Exclusive discounts on top wellness products. Limited stock!</p>
-    </div>
-    <button class="deal-cta" onclick="window.location.href='#productContainer'">Shop Now <i class="fa-solid fa-arrow-right"></i></button>
-  </div>
-</div>
-
-
-<section class="search-panel">
-  <div class="search-inner">
-    <h2>🔍 Find Your Perfect Wellness Solution</h2>
-    <div class="search-bar-wrapper">
-      <input type="text" id="searchInput" placeholder="Search premium, natural supplements..." onkeyup="searchProducts()" />
-      <button onclick="searchProducts()" class="search-btn">Search</button>
-    </div>
-    <div class="search-trust-row">
-      <span>🛡️ Verified Products</span>
-      <span>🔒 Secure Results</span>
-      <span>⭐ Top Rated Brands</span>
-    </div>
-    <p id="searchStatus" aria-live="polite"></p>
-  </div>
-</section>
-
-<div id="adContainer" class="ad-container"></div>
-
-<div class="container" id="productContainer"></div>
-
-<footer class="amazon-footer">
-
-  <!-- COLUMN 1 -->
-  <div class="footer-col">
-    <h3>Get to Know Us</h3>
-    <ul>
-      <li onclick="showAbout()" style="cursor:pointer;">About RoopHub</li>
-      <li onclick="openFAQ()" style="cursor:pointer;">FAQ</li>
-      <li onclick="openDisclaimer()" style="cursor:pointer;">Disclaimer</li>
-      <li onclick="showContact()" style="cursor:pointer;">Contact Us</li>
-    </ul>
-  </div>
-
-  <!-- COLUMN 2 -->
-  <div class="footer-col">
-    <h3>Legal</h3>
-    <ul>
-      <li onclick="openPrivacyPolicy()" style="cursor:pointer;">Privacy Policy</li>
-      <li onclick="openModal('affiliate')" style="cursor:pointer;">Affiliate Disclosure</li>
-      <li onclick="openTerms()" style="cursor:pointer;">Terms & Conditions</li>
-      <li onclick="showImportantInfo()" style="cursor:pointer;">Important Info</li>
-    </ul>
-  </div>
-
-  <!-- COLUMN 3 -->
-  <div class="footer-col">
-    <h3>Connect With Us</h3>
-    <div class="social-icons">
-      <a href="javascript:void(0)" onclick="showContact()" title="Email Support Form"><i class="fa-solid fa-envelope"></i></a>
-      <a href="tel:8271734883" title="Phone"><i class="fa-solid fa-phone"></i></a>
-      <a href="https://www.youtube.com" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-      <a href="https://www.google.com/maps?q=Yadav+Nagar+Road+No+3+Muzaffarpur+Bihar" target="_blank" title="Location"><i class="fa-solid fa-location-dot"></i></a>
-      <a href="https://www.facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="https://wa.me/918271734883" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-      <a href="https://twitter.com" target="_blank" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
-    </div>
-  </div>
-</footer>
-
-<!-- Bottom bar -->
-<div class="amazon-bottom">
-  © 2026 RoopHub. All Rights Reserved.
-</div>
-<!-- About Us Full Page Modal -->
-<div id="aboutModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#f8fafc; z-index:9999; overflow-y:scroll; padding:20px; font-family: 'Segoe UI', sans-serif; color: #333;">
-
-    <button onclick="closeModal()" style="position:fixed; right:20px; top:20px; padding:10px 15px; background:rgb(13, 32, 210); color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold; z-index:10000;">
-    Close ✖
-    </button>
     
-    <div style="max-width: 800px; margin: 40px auto;">
-        <h1 style="text-align:center; color:#27ae60; font-size:2.5em; margin-bottom:10px;">About RoopHUB Official</h1>
-        <p style="text-align:center; color:#7f8c8d; font-style:italic; margin-bottom:40px;">"Empowering Your Wellness Journey Through Transparency and Truth."</p>
+    <div class="footer-bottom">
+      <p>&copy; 2026 RoopHub. All Rights Reserved. | Authentic Wellness Solutions for Everyone</p>
+    </div>
+  </footer>
+<!-- About Us Modal -->
+<div id="aboutModal" class="full-modal">
+    <button onclick="closeModal()" class="modal-close-btn">Close ✖</button>
+    <div class="modal-wrapper">
+        <h1 class="modal-title">About RoopHUB Official</h1>
+        <p class="modal-subtitle">"Empowering Your Wellness Journey Through Transparency and Truth."</p>
 
-        <section>
-            <h2 style="color:#2c3e50; border-bottom:2px solid #27ae60; padding-bottom:5px;">Our Story: The Birth of RoopHUB</h2>
+        <section class="modal-section">
+            <h2>Our Story: The Birth of RoopHUB</h2>
             <p>Welcome to <strong>RoopHUB Official (roophub.online)</strong>. Our journey began with a simple yet powerful observation: the digital world is flooded with health advice, but finding trustworthy, unbiased, and scientifically backed information is becoming increasingly difficult. In an era where "clickbait" and exaggerated claims dominate the wellness industry, RoopHUB was founded to be a sanctuary of clarity.</p>
             <p>The name "Roop" signifies form, beauty, and essence, while "HUB" represents a central point of connection. Together, RoopHUB is your central destination for discovering the true essence of wellness. We started as a small digital initiative focused on affiliate marketing, but with a major difference—we decided to put <strong>Integrity over Income</strong>. We realized that people aren't just looking for products; they are looking for solutions that actually work without being misled by false promises.</p>
         </section>
 
-        <section style="margin-top:40px; background:#f9f9f9; padding:20px; border-radius:10px;">
-            <h2 style="color:#2c3e50;">Our Core Mission & Vision</h2>
-            <p>Our mission is to bridge the gap between high-quality wellness manufacturers and health-conscious individuals. We specialize in deep-diving into the world of dietary supplements, cognitive enhancers (like <em>Neuro Serge</em>), and vitality boosters. Our vision is to become the most trusted affiliate wellness store globally, known not for the volume of products we sell, but for the quality of advice we provide.</p>
+        <section class="modal-section" style="background: #f9f9f9; padding: 20px; border-radius: 12px;">
+            <h2>Our Core Mission & Vision</h2>
+            <p>Our mission is to bridge the gap between high-quality wellness manufacturers and health-conscious individuals. We specialize in deep-diving into the world of dietary supplements, cognitive enhancers, and vitality boosters. Our vision is to become the most trusted affiliate wellness store globally, known not for the volume of products we sell, but for the quality of advice we provide.</p>
             <p>We believe that an informed customer is a happy customer. By providing detailed ingredient analyses, manufacturing standards, and realistic expectation guides, we empower you to take control of your health with confidence.</p>
         </section>
 
-        <section style="margin-top:40px;">
-            <h2 style="color:#2c3e50;">The "No Fake Reviews" Guarantee</h2>
+        <section class="modal-section">
+            <h2>The "No Fake Reviews" Guarantee</h2>
             <p>One of the strongest pillars of RoopHUB Official is our unwavering commitment to <strong>Ethical Marketing</strong>. In the affiliate industry, it is common to see fake testimonials, doctored "before and after" photos, and falsified identities used to drive sales. At RoopHUB, we have a strict "No Fake" policy.</p>
-            <p><strong>What this means for you:</strong>
-                <ul style="margin-left: 20px; line-height: 1.8;">
-                    <li><strong>No Deceptive Testimonials:</strong> We do not create or buy fake reviews to make a product look better than it is.</li>
-                    <li><strong>Honest Evaluations:</strong> If a product has a flaw or isn't suitable for everyone, we mention it.</li>
-                    <li><strong>Verified Sources:</strong> Our data comes from official manufacturer records and real-world market reputation.</li>
-                </ul>
-            </p>
+            <p><strong>What this means for you:</strong></p>
+            <ul>
+                <li><strong>No Deceptive Testimonials:</strong> We do not create or buy fake reviews to make a product look better than it is.</li>
+                <li><strong>Honest Evaluations:</strong> If a product has a flaw or isn't suitable for everyone, we mention it.</li>
+                <li><strong>Verified Sources:</strong> Our data comes from official manufacturer records and real-world market reputation.</li>
+            </ul>
             <p>We believe that trust is earned over time, and we are willing to lose a sale to keep your trust. This ethical approach is what sets us apart from thousands of other affiliate sites.</p>
         </section>
 
-        <section style="margin-top:40px;">
-            <h2 style="color:#2c3e50;">Expertise and Research Process</h2>
-            <p>How do we choose the products featured on roophub.online? Our research process is rigorous. We don't just look at the shiny packaging. We look at:
-                <ol style="margin-left: 20px; line-height: 1.8;">
-                    <li><strong>Ingredient Synergy:</strong> Do the ingredients work together effectively based on nutritional science?</li>
-                    <li><strong>Facility Standards:</strong> Is the product made in an FDA-registered or GMP-certified facility?</li>
-                    <li><strong>Brand Transparency:</strong> Does the company provide clear contact info and a solid money-back guarantee?</li>
-                </ol>
-            </p>
+        <section class="modal-section">
+            <h2>Expertise and Research Process</h2>
+            <p>How do we choose the products featured on roophub.online? Our research process is rigorous. We don't just look at the shiny packaging. We look at:</p>
+            <ol>
+                <li><strong>Ingredient Synergy:</strong> Do the ingredients work together effectively based on nutritional science?</li>
+                <li><strong>Facility Standards:</strong> Is the product made in an FDA-registered or GMP-certified facility?</li>
+                <li><strong>Brand Transparency:</strong> Does the company provide clear contact info and a solid money-back guarantee?</li>
+            </ol>
         </section>
 
-        <section style="margin-top:40px; text-align:center; border-top:1px solid #eee; padding-top:30px;">
-            <h2 style="color:#2c3e50;">Why Trust RoopHUB?</h2>
+        <section class="modal-section text-center">
+            <h2>Why Trust RoopHUB?</h2>
             <p>We are more than just an "online store." We are a community-focused platform. Whether you are looking to improve your focus, boost your daily energy, or find natural wellness solutions, RoopHUB is here to guide you. We are constantly updating our content to reflect the latest trends and safety standards in the wellness industry.</p>
             <p>Thank you for choosing RoopHUB Official as your trusted partner in health. We are excited to be a part of your journey toward a better, healthier version of yourself.</p>
-            
-            <div style="margin-top:20px;">
+            <div style="margin-top: 20px;">
                 <p><strong>Follow Our Journey</strong></p>
                 <p>Explore our latest reviews, check out our YouTube storytelling projects, or reach out to us directly through our Contact page. Together, let's redefine wellness.</p>
             </div>
@@ -270,230 +388,206 @@
     </div>
 </div>
 
-<!-- CONTACT US FULL PAGE MODAL -->
-<div id="contactModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#f8fafc; z-index:9999; overflow-y:scroll; padding:20px; font-family: 'Segoe UI', Tahoma, sans-serif; color: #333;">
+<!-- Contact Modal -->
+<div id="contactModal" class="full-modal">
+    <button onclick="closeModal()" class="modal-close-btn">Close ✖</button>
+    <div class="modal-wrapper">
+        <h1 class="modal-title">Contact RoopHub Official</h1>
+        <p>Welcome to the RoopHub support center. We're here to assist with any questions, suggestions, or business inquiries.</p>
 
-    <button onclick="closeModal()" style="position:fixed; right:20px; top:20px; padding:10px 15px; background:rgb(13, 32, 210); color:white; border:none; border-radius:8px; cursor:pointer; font-weight: bold; z-index: 10000;">
-    Close ✖
-    </button>
+        <section class="modal-section">
+            <h3>Why Should You Reach Out to Us?</h3>
+            <p>We believe that communication is the key to community growth. Whether you have noticed a technical issue on our landing page, have a product question, or are a brand owner looking for an ethical affiliate partner, we are eager to hear from you.</p>
+        </section>
 
-    <div style="max-width: 800px; margin: 40px auto;">
-        <h1 style="color: #2c3e50; border-bottom: 3px solid #4CAF50; padding-bottom: 10px;">Contact RoopHub Official</h1>
+        <section class="modal-section">
+            <h3>Our Commitment to Your Privacy</h3>
+            <p>When you send us a message through our contact form or via email, we ensure that your data is handled with utmost care. We do not sell your personal information or email addresses to third-party marketers. Your satisfaction and security are our priorities.</p>
+        </section>
 
-        <p style="font-size: 1.1em; line-height: 1.8;">
-            Welcome to the <strong>RoopHub Official</strong> support center. We understand that in the fast-paced world of digital wellness and affiliate marketing, having a reliable point of contact is essential for building trust and ensuring a smooth user experience. If you have any questions, suggestions, or business inquiries, feel free to contact us at any time. We are always ready to help our users and respond as quickly as possible.
-        </p>
-        
-        <p style="line-height: 1.8;">
-            RoopHub values every user message and feedback because it helps us improve our platform. Whether it is a technical issue regarding our website's performance, a product query about the supplements we review (like Neuro Serge or Prostavive), or a general question about how affiliate marketing works, our team is here to assist you. Our goal is to provide you with the most accurate, well-researched, and transparent information so that you can make informed decisions about your health and wellness journey.
-        </p>
+        <div class="divider"></div>
 
-        <h3 style="color: #27ae60; margin-top: 30px;">Why Should You Reach Out to Us?</h3>
-        <p style="line-height: 1.8;">
-            At RoopHub, we believe that communication is the key to community growth. You might want to reach out to us for several reasons. Perhaps you have noticed a technical glitch on our landing page, or maybe you want more clarity on the ingredient profile of a wellness product we have featured. We encourage our readers to be proactive. If you are a brand owner looking for an ethical affiliate partner who values "No Fake Reviews" and "Clean Design," we are eager to hear your proposal.
-        </p>
-        <p style="line-height: 1.8;">
-            Furthermore, if you are a customer who has clicked on one of our affiliate links and has a question about the redirection process, our support staff can guide you. Please remember, however, that since we do not manufacture or ship products directly, specific order-related issues (like tracking numbers or billing) are best handled by the official product manufacturer. But, if you cannot find their contact details, we will go the extra mile to find them for you.
-        </p>
-
-        <h3 style="color: #27ae60; margin-top: 30px;">Our Commitment to Your Privacy</h3>
-        <p style="line-height: 1.8;">
-            When you send us a message through our contact form or via email, we ensure that your data is handled with the utmost care. We do not sell your personal information or email addresses to third-party marketers. Your satisfaction is our priority, and we always aim to provide the best support experience while maintaining a secure digital environment. We use your feedback solely to enhance the quality of our reviews and the technical stability of roophub.online.
-        </p>
-
-        <hr style="margin: 40px 0; border: 0; border-top: 1px solid #eee;">
-
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
-            <div style="flex: 1; min-width: 250px; background: #f9f9f9; padding: 20px; border-radius: 10px;">
-                <h3 style="margin-top: 0; color: #2c3e50;">Email Support</h3>
-                <p style="font-weight: bold; font-size: 1.1em; color: #2980b9;">support@roophub.com</p>
-                <p style="font-size: 0.9em; color: #666;">For general inquiries, technical support, and partnership proposals.</p>
+        <div class="content-grid">
+            <div class="contact-card">
+                <h3>Email Support</h3>
+                <p><strong>support@roophub.com</strong></p>
+                <p class="text-muted">For general inquiries, technical support, and partnership proposals.</p>
             </div>
 
-            <div style="flex: 1; min-width: 250px; background: #f9f9f9; padding: 20px; border-radius: 10px;">
-                <h3 style="margin-top: 0; color: #2c3e50;">Phone & Location</h3>
-                <p style="font-weight: bold; color: #333;">Phone: +91 82717 34883</p>
-                <p style="font-weight: bold; color: #333;">Location: India (Global Support)</p>
-                <p style="font-size: 0.9em; color: #666;">Available Monday to Friday, 10:00 AM to 6:00 PM IST.</p>
+            <div class="contact-card">
+                <h3>Phone & Location</h3>
+                <p><strong>Phone:</strong> +91 8271734883</p>
+                <p><strong>Location:</strong> India (Global Support)</p>
+                <p class="text-muted">Mon-Fri, 10:00 AM - 6:00 PM IST</p>
             </div>
         </div>
 
-        <h3 style="margin-top: 40px; color: #2c3e50;">Send Us a Direct Message</h3>
-        <p style="color: #666;">Fill out the form below and our team will get back to you within 24–48 hours.</p>
+        <section class="modal-section">
+            <h3>Send Us a Direct Message</h3>
+            <p>Fill out the form below and our team will respond within 24–48 hours.</p>
 
-        <div style="background: #ffffff; border: 1px solid #eee; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-            <form id="contact-form">
-                <label style="font-weight: bold; display: block; margin-bottom: 5px;">Your Full Name</label>
-                <input type="text" name="Name" placeholder="Enter your name" style="width:100%; padding:12px; margin-bottom:20px; border: 1px solid #ccc; border-radius: 6px;" required>
-                
-                <label style="font-weight: bold; display: block; margin-bottom: 5px;">Email Address</label>
-                <input type="email" name="Email" placeholder="Enter your email" style="width:100%; padding:12px; margin-bottom:20px; border: 1px solid #ccc; border-radius: 6px;" required>
-                
-                <label style="font-weight: bold; display: block; margin-bottom: 5px;">Subject</label>
-                <select name="Subject" style="width:100%; padding:12px; margin-bottom:20px; border: 1px solid #ccc; border-radius: 6px;">
-                    <option>General Inquiry</option>
-                    <option>Technical Issue</option>
-                    <option>Product Question</option>
-                    <option>Partnership/Affiliate</option>
-                </select>
+            <div class="form-wrapper">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" name="Name" placeholder="Enter your name" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" name="Email" placeholder="Enter your email" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Subject</label>
+                        <select name="Subject" class="form-select">
+                            <option>General Inquiry</option>
+                            <option>Technical Issue</option>
+                            <option>Product Question</option>
+                            <option>Partnership/Affiliate</option>
+                        </select>
+                    </div>
 
-                <label style="font-weight: bold; display: block; margin-bottom: 5px;">Your Message</label>
-                <textarea name="Message" placeholder="How can we help you?" style="width:100%; padding:12px; margin-bottom:20px; height:150px; border: 1px solid #ccc; border-radius: 6px;" required></textarea>
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea name="Message" placeholder="How can we help you?" class="form-textarea" required></textarea>
+                    </div>
 
-                <label style="font-weight: bold; display: block; margin-bottom: 5px;">Attachments (Optional - Select multiple)</label>
-                <input type="file" name="attachments" multiple style="margin-bottom:20px;">
+                    <div class="form-group">
+                        <label class="form-label">Attachments (Optional)</label>
+                        <input type="file" name="attachments" multiple class="form-input">
+                    </div>
 
-                <button type="submit" id="contact-btn" style="width: 100%; padding:15px; background:#27ae60; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 1.1em; font-weight: bold; transition: background 0.3s;">
-                Send Message Now
-                </button>
-            </form>
-        </div>
+                    <button type="submit" id="contact-btn" class="form-submit">Send Message Now</button>
+                </form>
+            </div>
+        </section>
 
-        <p style="margin-top: 50px; text-align: center; color: #999; font-size: 0.85em;">
-            Thank you for being part of the RoopHub wellness community. We strive to maintain the highest standards of digital integrity and user support. Your feedback is the engine of our improvement.
-        </p>
+        <p class="text-center text-muted mt-large">Thank you for being part of the RoopHub wellness community. We strive for the highest standards of digital integrity and user support.</p>
     </div>
 </div>
 
 <!-- Important Info Modal -->
-     <div id="importantInfoModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#f8fafc; z-index:9999; overflow-y:scroll; padding:20px; font-family: 'Segoe UI', Roboto, sans-serif; color: #333; line-height: 1.6;">
+<div id="importantInfoModal" class="full-modal">
+    <button onclick="closeModal()" class="modal-close-btn">Close ✖</button>
+    <div class="modal-wrapper">
+        <h1 class="modal-title">What NOT to Do on RoopHub</h1>
+        <p>To maintain a safe, trustworthy, and respectful community, all users must avoid the following prohibited activities.</p>
 
-    <button onclick="closeModal()" style="position:fixed; right:20px; top:20px; padding:10px 20px; background:#1006d2; color:white; border:none; border-radius:50px; cursor:pointer; font-weight:bold; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-    Close ✖
-    </button>
+        <div class="error-box">
+            <h4>❌ 1. Don't Share Personal Information</h4>
+            <p>User safety is our top priority. Never share sensitive details like credit card numbers, passwords, or social security numbers. RoopHub will never ask for such information through unverified emails.</p>
+        </div>
 
-    <div style="max-width: 850px; margin: 50px auto;">
-      <h2 style="color: #2c3e50; border-bottom: 3px solid #f1c40f; padding-bottom: 10px;">What NOT to Do on RoopHub</h2>
-      <p style="font-size: 1.1em; color: #555;">To maintain a safe, trustworthy, and respectful community, all users are required to strictly avoid the following prohibited activities. Failure to comply can lead to permanent restrictions.</p>
+        <div class="error-box">
+            <h4>❌ 2. Don't Post Spam or Promotional Content</h4>
+            <p>RoopHub is a platform for genuine wellness discovery. Avoid posting irrelevant external links or repetitive promotional messages. Automated spamming is strictly monitored and blocked.</p>
+        </div>
 
-      <div style="margin-top: 25px; padding: 15px; border-left: 4px solid #e74c3c; background: #fff5f5;">
-        <h4 style="margin: 0; color: #c0392b;">❌ 1. Don't Share Personal Information</h4>
-        <p>User safety is our top priority. Never share sensitive personal details like credit card numbers, passwords, social security numbers, or banking information in comments or product reviews. Please be aware that <strong>RoopHub Official will never ask for such sensitive information</strong> through public website sections or unverified emails. Protecting your digital identity is a shared responsibility.</p>
-      </div>
+        <div class="error-box">
+            <h4>❌ 3. Don't Make False or Misleading Claims</h4>
+            <p>Trust is fundamental. Do not post fake product reviews, fabricated testimonials, or misleading information. All content must be 100% genuine and based on actual experience.</p>
+        </div>
 
-      <div style="margin-top: 25px; padding: 15px; border-left: 4px solid #e74c3c; background: #fff5f5;">
-        <h4 style="margin: 0; color: #c0392b;">❌ 2. Don't Post Spam or Promotional Content</h4>
-        <p>RoopHub is a platform for genuine wellness discovery. Avoid posting irrelevant external links, repetitive promotional messages, or duplicate content. This clutter ruins the shopping experience for other customers and is considered a direct violation of our community standards. Automated spamming is strictly monitored and blocked.</p>
-      </div>
+        <div class="error-box">
+            <h4>❌ 4. Don't Engage in Harassment or Bullying</h4>
+            <p>We maintain a Zero Tolerance policy for harassment, hate speech, or personal attacks. Treat everyone with dignity and maintain a civil, helpful tone in all public interactions.</p>
+        </div>
 
-      <div style="margin-top: 25px; padding: 15px; border-left: 4px solid #e74c3c; background: #fff5f5;">
-        <h4 style="margin: 0; color: #c0392b;">❌ 3. Don't Make False or Misleading Claims</h4>
-        <p>Trust is the foundation of our brand. Do not post fake product reviews, fabricated testimonials, or any misleading information designed to deceive other customers. All user-generated content and reviews must be 100% genuine and based on actual product experience. Integrity ensures everyone makes the right health decisions.</p>
-      </div>
+        <div class="error-box">
+            <h4>❌ 5. Don't Attempt to Hack or Manipulate</h4>
+            <p>Security is non-negotiable. Never attempt unauthorized access, use scraping bots, or engage in cyber-attacks. Any violation will be reported to cyber-crime authorities.</p>
+        </div>
 
-      <div style="margin-top: 25px; padding: 15px; border-left: 4px solid #e74c3c; background: #fff5f5;">
-        <h4 style="margin: 0; color: #c0392b;">❌ 4. Don't Engage in Harassment or Bullying</h4>
-        <p>We maintain a "Zero Tolerance" policy for harassment, hate speech, bullying, or personal attacks on other users or our editorial team. Treat everyone with dignity and maintain a civil, helpful tone in all public interactions. We strive to keep RoopHub a positive space for wellness growth.</p>
-      </div>
+        <div class="error-box">
+            <h4>❌ 6. Don't Sell Illegal or Prohibited Items</h4>
+            <p>RoopHub operates strictly within India's legal framework. Do not attempt to sell counterfeit goods or prohibited items. We will immediately remove such listings.</p>
+        </div>
 
-      <div style="margin-top: 25px; padding: 15px; border-left: 4px solid #e74c3c; background: #fff5f5;">
-        <h4 style="margin: 0; color: #c0392b;">❌ 5. Don't Attempt to Hack or Manipulate</h4>
-        <p>Security is non-negotiable. Never attempt to access unauthorized backend areas, manipulate website algorithms, use scraping bots, or engage in any form of cyber-attacks. Any attempt to bypass our security measures is a violation of our terms and will be reported to cyber-crime authorities as per applicable laws.</p>
-      </div>
+        <div class="error-box">
+            <h4>❌ 7. Don't Copyright or Plagiarize Content</h4>
+            <p>Intellectual property is respected here. Do not copy content from other websites or plagiarize the work of others. All submissions must be original.</p>
+        </div>
 
-      <div style="margin-top: 25px; padding: 15px; border-left: 4px solid #e74c3c; background: #fff5f5;">
-        <h4 style="margin: 0; color: #c0392b;">❌ 6. Don't Sell Illegal or Prohibited Items</h4>
-        <p>RoopHub operates strictly within the legal framework of India. Do not attempt to sell or promote illegal products, counterfeit goods, or items prohibited by law. We strictly adhere to all regulatory requirements and will immediately remove such listings and report suspicious activity.</p>
-      </div>
+        <div class="error-box">
+            <h4>❌ 8. Don't Make Threats or Post Violent Content</h4>
+            <p>RoopHub is a safe zone. Never post threatening messages or violent imagery. Such content is removed instantly and reported.</p>
+        </div>
 
-      <div style="margin-top: 25px; padding: 15px; border-left: 4px solid #e74c3c; background: #fff5f5;">
-        <h4 style="margin: 0; color: #c0392b;">❌ 7. Don't Copyright or Plagiarize Content</h4>
-        <p>Intellectual property is respected here. Do not copy content from other wellness websites, use copyrighted images without permission, or plagiarize the work of others. All user-submitted information must be original. Plagiarism devalues the platform and can lead to legal complications.</p>
-      </div>
+        <div class="error-box">
+            <h4>❌ 9. Don't Manipulate Ratings or Create Fake Accounts</h4>
+            <p>Transparency is key. Avoid creating multiple accounts to artificially boost ratings or post multiple fake reviews. Each user is permitted only one account.</p>
+        </div>
 
-      <div style="margin-top: 25px; padding: 15px; border-left: 4px solid #e74c3c; background: #fff5f5;">
-        <h4 style="margin: 0; color: #c0392b;">❌ 8. Don't Make Threats or Post Violent Content</h4>
-        <p>RoopHub is a safe zone. Never post threatening messages, violent imagery, or content that promotes harm. We do not tolerate any form of violent rhetoric, exploitation, or dangerous behavior. Content of this nature is removed instantly and reported.</p>
-      </div>
+        <div class="error-box">
+            <h4>❌ 10. Don't Ignore Our Terms of Service</h4>
+            <p>Always read and comply with RoopHub's full Terms of Service, Privacy Policy, and Community Guidelines. Failure to comply may result in suspension or legal action.</p>
+        </div>
 
-      <div style="margin-top: 25px; padding: 15px; border-left: 4px solid #e74c3c; background: #fff5f5;">
-        <h4 style="margin: 0; color: #c0392b;">❌ 9. Don't Manipulate Ratings or Create Fake Accounts</h4>
-        <p>Transparency is key to our rating system. Avoid creating multiple accounts to artificially boost product ratings, post multiple fake reviews, or manipulate search visibility. Each user is permitted only one account to maintain a fair and honest ecosystem for all wellness enthusiasts.</p>
-      </div>
+        <div class="warning-box">
+            <p>⚠️ <strong>Enforcement Notice:</strong></p>
+            <p>Any violation will lead to immediate action, including formal warnings, account suspension, or permanent ban. We review all user reports manually and take community safety seriously.</p>
+        </div>
 
-      <div style="margin-top: 25px; padding: 15px; border-left: 4px solid #e74c3c; background: #fff5f5;">
-        <h4 style="margin: 0; color: #c0392b;">❌ 10. Don't Ignore Our Terms of Service</h4>
-        <p>Knowledge of our rules is essential. Always read and comply with RoopHub's full Terms of Service, Privacy Policy, and these Community Guidelines. Failure to follow these documented terms may result in immediate account suspension, content deletion, or legal action where necessary.</p>
-      </div>
-
-      <div style="background: #fff3cd; border: 1px solid #ffeeba; padding: 20px; border-radius: 8px; margin-top: 30px; border-left: 6px solid #ffc107;">
-        <p style="margin: 0; color: #856404; font-weight: bold; font-size: 1.1em;">
-          ⚠️ Enforcement Notice:
-        </p>
-        <p style="margin: 5px 0 0; color: #721c24;">
-          Any violation of these guidelines will lead to immediate action, including formal warnings, account suspension, or a permanent ban from RoopHub Official. We take community safety and platform integrity seriously and review all user reports manually.
-        </p>
-      </div>
-
-      <p style="text-align: center; margin-top: 40px; color: #999; font-size: 0.9em;">
-        Thank you for helping us keep RoopHub Official a trusted space for wellness.
-      </p>
+        <p class="text-center text-muted mt-large">Thank you for helping us keep RoopHub Official a trusted space for wellness.</p>
     </div>
 </div>
 
 
-<!-- Privacy Policy Full Page Modal -->
-<div id="privacyPolicyModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#f8fafc; z-index:9999; overflow-y:scroll; padding:20px; font-family: 'Segoe UI', sans-serif; color: #333;">
+<!-- Privacy Policy Modal -->
+<div id="privacyPolicyModal" class="full-modal">
+    <button onclick="closeModal()" class="modal-close-btn">Close ✖</button>
+    <div class="modal-wrapper">
+        <h1 class="modal-title">Privacy Policy for RoopHub Official</h1>
+        <p class="text-muted"><strong>Last Updated: April 17, 2026</strong></p>
 
-    <button onclick="closeModal()" style="position:fixed; right:20px; top:20px; padding:10px 15px; background:rgb(40, 167, 43); color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold; z-index:10000;">
-    Close ✖
-    </button>
-    
-    <div style="max-width: 800px; margin: 40px auto;">
-        <h1 style="color: #2c3e50; border-bottom: 3px solid #28a745; padding-bottom: 10px;">Privacy Policy for RoopHub Official</h1>
-        <p><strong>Last Updated: April 17, 2026</strong></p>
+        <section class="modal-section">
+            <p>At RoopHUB Official (accessible from roophub.online), one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by RoopHUB and how we use it.</p>
+        </section>
 
-        <p style="line-height: 1.8;">At RoopHUB Official (accessible from roophub.online), one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by RoopHUB and how we use it. We are committed to protecting your personal data and providing a transparent environment for our users. If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
+        <section class="modal-section">
+            <h2>1. Information We Collect</h2>
+            <p>The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information. If you contact us directly, we may receive additional information about you such as your name, email address, phone number, and the contents of any attachments you may send us.</p>
+            <p>As an affiliate marketing platform, we do not directly process payments or store credit card details. When you click on a product link, you are redirected to the official manufacturer's website, and any information provided there is subject to their specific privacy policy.</p>
+        </section>
 
-        <h3 style="color: #27ae60; margin-top: 30px;">1. Information We Collect</h3>
-        <p style="line-height: 1.8;">The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information. If you contact us directly, we may receive additional information about you such as your name, email address, phone number, the contents of the message and/or attachments you may send us, and any other information you may choose to provide.</p>
-        <p style="line-height: 1.8;">As an affiliate marketing platform, we do not directly process payments or store credit card details. When you click on a product link, you are redirected to the official manufacturer's website, and any information provided there is subject to their specific privacy policy.</p>
+        <section class="modal-section">
+            <h2>2. How We Use Your Information</h2>
+            <p>We use the information we collect in various ways, including to:</p>
+            <ul>
+                <li>Provide, operate, and maintain our website</li>
+                <li>Improve, personalize, and expand our website's user experience</li>
+                <li>Understand and analyze how you use our website</li>
+                <li>Develop new products, services, features, and functionality</li>
+                <li>Communicate with you and provide updates</li>
+                <li>Find and prevent fraud</li>
+            </ul>
+        </section>
 
-        <h3 style="color: #27ae60; margin-top: 30px;">2. How We Use Your Information</h3>
-        <p style="line-height: 1.8;">We use the information we collect in various ways, including to:</p>
-        <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Provide, operate, and maintain our website.</li>
-            <li>Improve, personalize, and expand our website's user experience.</li>
-            <li>Understand and analyze how you use our website.</li>
-            <li>Develop new products, services, features, and functionality.</li>
-            <li>Communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the website, and for marketing and promotional purposes.</li>
-            <li>Find and prevent fraud.</li>
-        </ul>
+        <section class="modal-section">
+            <h2>3. Log Files and Analytics</h2>
+            <p>RoopHUB follows a standard procedure of using log files. These files log visitors when they visit websites. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks.</p>
+        </section>
 
-        <h3 style="color: #27ae60; margin-top: 30px;">3. Log Files and Analytics</h3>
-        <p style="line-height: 1.8;">RoopHUB follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this as part of hosting services' analytics. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.</p>
+        <section class="modal-section">
+            <h2>4. Cookies and Web Beacons</h2>
+            <p>Like any other website, RoopHUB uses "cookies". These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
+        </section>
 
-        <h3 style="color: #27ae60; margin-top: 30px;">4. Cookies and Web Beacons</h3>
-        <p style="line-height: 1.8;">Like any other website, RoopHUB uses "cookies". These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
+        <section class="modal-section">
+            <h2>5. CCPA & GDPR Rights</h2>
+            <p>Under the CCPA and GDPR, you have rights including access to your data, correction, erasure, and restriction of processing. If you make a request, we have one month to respond to you.</p>
+        </section>
 
-        <h3 style="color: #27ae60; margin-top: 30px;">5. Google DoubleClick DART Cookie</h3>
-        <p style="line-height: 1.8;">Google is one of the third-party vendors on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to our site and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL – <a href="https://policies.google.com/technologies/ads" target="_blank">https://policies.google.com/technologies/ads</a></p>
+        <section class="modal-section">
+            <h2>6. Children's Information</h2>
+            <p>RoopHUB does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately.</p>
+        </section>
 
-        <h3 style="color: #27ae60; margin-top: 30px;">6. Advertising Partners and Affiliate Links</h3>
-        <p style="line-height: 1.8;">Some of the advertisers and affiliate partners on our site may use cookies and web beacons. Our advertising partners include Google AdSense and various affiliate networks. Each of our advertising partners has their own Privacy Policy for their policies on user data. For easier access, we hyperlinked to their Privacy Policies below.</p>
-        <p style="line-height: 1.8;">Third-party ad servers or ad networks use technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on RoopHUB, which are sent directly to users' browsers. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</p>
-        <p style="line-height: 1.8;">Note that RoopHUB has no access to or control over these cookies that are used by third-party advertisers or affiliate programs.</p>
-
-        <h3 style="color: #27ae60; margin-top: 30px;">7. Third-Party Privacy Policies</h3>
-        <p style="line-height: 1.8;">RoopHUB's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites.</p>
-
-        <h3 style="color: #27ae60; margin-top: 30px;">8. CCPA Privacy Rights (Do Not Sell My Personal Information)</h3>
-        <p style="line-height: 1.8;">Under the CCPA, among other rights, California consumers have the right to request that a business that collects a consumer's personal data disclose the categories and specific pieces of personal data that a business has collected about consumers. You also have the right to request that a business delete any personal data about the consumer that a business has collected. RoopHUB fully respects these rights for all our users worldwide. If you make a request, we have one month to respond to you.</p>
-
-        <h3 style="color: #27ae60; margin-top: 30px;">9. GDPR Data Protection Rights</h3>
-        <p style="line-height: 1.8;">We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:</p>
-        <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>The right to access – You have the right to request copies of your personal data.</li>
-            <li>The right to rectification – You have the right to request that we correct any information you believe is inaccurate.</li>
-            <li>The right to erasure – You have the right to request that we erase your personal data, under certain conditions.</li>
-            <li>The right to restrict processing – You have the right to request that we restrict the processing of your personal data.</li>
-        </ul>
-
-        <h3 style="color: #27ae60; margin-top: 30px;">10. Children's Information</h3>
-        <p style="line-height: 1.6;">Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity. RoopHUB does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
-
-        <h3 style="color: #27ae60; margin-top: 30px;">11. Consent</h3>
-        <p style="line-height: 1.6;">By using our website, you hereby consent to our Privacy Policy and agree to its terms and conditions. This policy is designed to ensure a safe and trustworthy browsing experience for all our wellness community members.</p>
+        <section class="modal-section">
+            <h2>7. Consent</h2>
+            <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms and conditions.</p>
+        </section>
     </div>
 </div>
 </div>
