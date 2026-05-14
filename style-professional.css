@@ -14,9 +14,7 @@
   --danger: #e53e3e;
   --text-dark: #1a202c;
   --text-light: #718096;
-  --bg-light: #f8fafc;
-  --bg-gray: #f7fafc;
-  --bg-dark: #0f1419;
+  --bg-light: #f1419;
   --border: #e2e8f0;
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   --shadow-md: 0 4px 6px rgba(0,0,0,0.07), 0 10px 15px rgba(0,0,0,0.1);
@@ -289,11 +287,8 @@ html, body {
   transform: translateY(0) scale(0.98);
 }
     display: none;
-  }
-}
 
-/* Desktop header nav placement */
-.main-header .main-nav {
+/* Desktop enav pn-nav {
   position: relative;
   max-width: 1400px;
   margin: 0 auto;
@@ -1610,20 +1605,24 @@ html, body {
 }
 
 .social-icons a {
-  width: 50px;
-  height: 50px;
+  width: 36px; /* Smaller social icons */
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
-  border-radius: var(--radius-xl);
-  font-size: 20px;
+  border-radius: 50%;
+  font-size: 16px; /* Compact icon size */
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid var(--glass-border);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   position: relative;
   overflow: hidden;
+}
+
+.social-icons a i {
+  color: #3b82f6; /* Professional Blue Color */
 }
 
 .social-icons a::before {
@@ -1656,18 +1655,31 @@ html, body {
 .footer-bottom {
   background: rgba(0,0,0,0.6);
   backdrop-filter: blur(10px);
-  padding: 32px 20px;
+  padding: 10px 20px; /* Smaller height for compact look */
   text-align: center;
-  font-size: 14px;
+  font-size: 11px; /* Small professional font */
   color: #94a3b8;
   border-top: 1px solid rgba(255,255,255,0.1);
   position: relative;
   z-index: 1;
+
+  /* Horizontal layout */
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  gap: 5px 30px; /* Elegant horizontal spacing */
 }
 
 .footer-bottom p {
-  margin: 12px 0;
+  margin: 0; /* Remove vertical space to keep it strictly horizontal */
   font-weight: 500;
+}
+
+.footer-bottom i {
+  color: #3b82f6; /* Blue icons in footer bottom */
+  margin-right: 5px;
+  font-size: 12px;
 }
 
 .footer-bottom p:first-child {
@@ -1680,7 +1692,7 @@ html, body {
 }
 
 .footer-bottom .affiliate-badge {
-  margin: 8px 0;
+  margin: 0; /* Remove margin as parent flex handles spacing */
   display: inline-block;
 }
 
@@ -1945,8 +1957,6 @@ html, body {
     font-size: 12px;
   }
 }
-  }
-}
 
 @media (min-width: 768px) {
   .hide-mobile {
@@ -2005,10 +2015,9 @@ html, body {
 
 /* ===== PRODUCTS SECTION ===== */
 .products-section {
-  background: white;
+  background: linear-gradient(180deg, #f0f9f4 0%, #e6f4ea 100%); /* Premium Mint to Sage Gradient */
   border-top: 1px solid var(--border);
 }
-
 .products-section .container {
   min-height: 400px;
 }
@@ -2054,11 +2063,10 @@ html, body {
 
 /* ===== PRODUCT FILTERS ===== */
 .products-filters {
-  background: white;
+  background: #f0f9f4; /* Matching Soft Mint background */
   border-bottom: 1px solid var(--border);
   padding: 16px;
   position: sticky;
-  top: 0;
   z-index: 50;
   box-shadow: 0 2px 8px rgba(0,0,0,0.02);
 }
@@ -2620,4 +2628,3 @@ html, body {
 .mb-large {
   margin-bottom: 32px;
 }
-
