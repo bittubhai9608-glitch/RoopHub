@@ -10,6 +10,43 @@
   <link rel="stylesheet" href="style-professional.css">
   <link rel="stylesheet" href="auth-profile.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    /* Professional Horizontal Footer Navigation */
+    .footer-nav-horizontal {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px 30px;
+      margin-bottom: 40px;
+      list-style: none;
+      padding: 0;
+      width: 100%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding-bottom: 30px;
+    }
+    .footer-nav-horizontal li a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .footer-nav-horizontal li a:hover {
+      color: #27ae60;
+    }
+    .main-footer .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .footer-social-section { margin-top: 10px; }
+    .footer-social-section h3 { font-size: 14px; margin-bottom: 20px; color: #fff; text-transform: uppercase; letter-spacing: 2px; }
+  </style>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -83,21 +120,21 @@
 
     <!-- Trust Indicators -->
     <div class="trust-indicators hide-mobile">
-      <div class="indicator">
+      <div class="indicator" style="background: #4444b6;">
         <i class="fa-solid fa-flask"></i>
-        <span>Lab Tested</span>
+        <span background: #27ae60;">Lab Tested</span>
       </div>
-      <div class="indicator">
+      <div class="indicator" style="background: #6d70c6;">
         <i class="fa-solid fa-leaf"></i>
-        <span>100% Organic</span>
+        <span background: #27ae60;">100% Organic</span>
       </div>
-      <div class="indicator">
+      <div class="indicator" style="background: #484c93;">
         <i class="fa-solid fa-award"></i>
-        <span>GMP Certified</span>
+        <span background: #27ae60;">GMP Certified</span>
       </div>
-      <div class="indicator">
+      <div class="indicator" style="background: #564eab;">
         <i class="fa-solid fa-circle-check"></i>
-        <span>Verified Safe</span>
+        <span background: #27ae60;">Verified Safe</span>
       </div>
     </div>
 
@@ -287,27 +324,19 @@
   <!-- Footer -->
   <footer class="main-footer">
     <div class="footer-content">
-      <div class="footer-column">
-        <h3>Know Us</h3>
-        <ul>
-          <li><a onclick="showAbout()" style="cursor:pointer;">About RoopHub</a></li>
-          <li><a onclick="openFAQ()" style="cursor:pointer;">FAQ</a></li>
-          <li><a onclick="openDisclaimer()" style="cursor:pointer;">Disclaimer</a></li>
-          <li><a onclick="showContact()" style="cursor:pointer;">Contact</a></li>
-        </ul>
-      </div>
+      <!-- Combined Professional Horizontal Navigation Bar -->
+      <ul class="footer-nav-horizontal">
+        <li><a onclick="showAbout()">About Us</a></li>
+        <li><a onclick="openFAQ()">FAQ</a></li>
+        <li><a onclick="openDisclaimer()">Disclaimer</a></li>
+        <li><a onclick="openPrivacyPolicy()">Privacy Policy</a></li>
+        <li><a onclick="openModal('affiliate')">Affiliate Disclosure</a></li>
+        <li><a onclick="openTerms()">Terms & Conditions</a></li>
+        <li><a onclick="showImportantInfo()">Important Info</a></li>
+        <li><a onclick="showContact()">Contact</a></li>
+      </ul>
 
-      <div class="footer-column">
-        <h3>Legal</h3>
-        <ul>
-          <li><a onclick="openPrivacyPolicy()" style="cursor:pointer;">Privacy Policy</a></li>
-          <li><a onclick="openModal('affiliate')" style="cursor:pointer;">Affiliate Disclosure</a></li>
-          <li><a onclick="openTerms()" style="cursor:pointer;">Terms & Conditions</a></li>
-          <li><a onclick="showImportantInfo()" style="cursor:pointer;">Important Info</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-column">
+      <div class="footer-social-section">
         <h3>Connect</h3>
         <div class="social-icons">
           <a href="javascript:void(0)" onclick="showContact()" title="Email Support">
