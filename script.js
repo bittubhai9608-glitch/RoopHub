@@ -35,7 +35,7 @@ const products = {
       rating: "4.9", 
       price: "Limited Time Offer", 
       img: "Images/neuroserge.jpeg", 
-      link: "NeuroSergelLandingPage.html",
+      link: "NeuroSerge.html",
       features: ["Sharpen Mental Clarity", "Enhance Memory Recall", "100% Drug-Free"]
     },
     { name: "Visiflora Precision Vision", rating:"4.5", price: "$49", img:"Images/visiflora.jpeg", link: "https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
