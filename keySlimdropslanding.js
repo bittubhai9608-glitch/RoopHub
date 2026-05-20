@@ -118,10 +118,10 @@ window.addEventListener("load", function(){
 
 /* ---------- IMAGE PRELOAD (MOBILE FAST) ---------- */
 let images=[
-"Images/Neuroserge1.jpeg",
-"Images/Neuroserge2.jpeg",
-"Images/Neuroserge3.jpeg",
-"Images/Neuroserge4.jpeg"
+"Images/keyslim1.jpeg",
+"Images/keyslim2.jpeg",
+"Images/keyslim3.jpeg",
+"Images/keyslim4.jpeg"
 ];
 
 images.forEach(src=>{
