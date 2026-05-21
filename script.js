@@ -10,25 +10,6 @@ const products = {
     },
   ],
 
-  "Weight Loss": [
-    { 
-      name: "CitrusBurn Rapid Burn", 
-      rating: "4.8", 
-      price: "Limited Time Offer", 
-      img: "Images/citrusburn rapid burn.jpeg", 
-      link: "CitrusBurnRapidBurnLandingPage.html",
-      features: ["Natural Metabolism Boost", "Citrus-Based Formula", "Suppresses Cravings"]
-    },
-    { 
-      name: "KeySlim Drops", 
-      rating: "4.6", 
-      price: "Best Price Guaranteed", 
-      img: "Images/keyslimdrop.jpeg", 
-      link: "keyslimdropslandingpage.html",
-      features: ["Easy-to-use Liquid Formula", "Fast Absorption", "GMP Certified"]
-    },
-  ],
-
   "Brain Boost": [
     { 
       name: "Neuro Serge", 
@@ -44,7 +25,6 @@ const products = {
   "Skin Care": [
     { name: "Purisaki Berberine Patches", rating:"4.7", price: "Click to Check Price", img: "Images/purisaki2.jpeg", link: "https://ca114xufvmev4q3gvdqr-a76nn.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
     { name: "iGenics Premium", rating:"4.8", price: "Limited Time Offer", img: "Images/igenics.jpeg", link: "https://674b1zlrulc0anegd5r9o2w5y5.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-
   ]
 };
 
