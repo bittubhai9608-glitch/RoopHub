@@ -284,30 +284,11 @@ html, body {
 .menu-button:active {
   transform: translateY(0) scale(0.98);
 }
-    display::after none
 
-/* Desktop enav pn-nav {
-  position: relative;
-  max-width: 1400px;
-  margin: 0 auto;
+/* ऊपर वाले पुराने नेविगेशन और 'Shop Now' बटन को हटाया गया है */
+.main-nav, .nav-cta, nav {
+  display: none !important;
 }
-
-.nav-cta {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  color: white;
-  border: none;
-  padding: 10px 14px;
-  border-radius: 8px;
-  font-weight: 700;
-  margin-left: 8px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: transform 0.15s ease;
-}
-
-.nav-cta:hover { transform: translateY(-2px); }
 
 /* ===== HEADER VALUE PROP ===== */
 .header-value-prop {
@@ -1103,6 +1084,7 @@ html, body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 16px;
+  perspective: 1200px;
 }
 
 @media (min-width: 768px) {
@@ -1116,6 +1098,7 @@ html, body {
 @media (min-width: 1024px) {
   .container {
     grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -1155,6 +1138,10 @@ html, body {
   box-shadow: var(--shadow-premium);
   transform: translateY(-8px) scale(1.02);
   border-color: rgba(102, 126, 234, 0.2);
+  box-shadow: var(--shadow-premium), 0 20px 50px rgba(39, 174, 96, 0.15);
+  transform: translateY(-15px) scale(1.04) rotateX(3deg) rotateY(1deg);
+  border-color: var(--primary);
+  z-index: 10;
 }
 
 .product-image {
@@ -1179,10 +1166,24 @@ html, body {
   background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(245, 87, 108, 0.05) 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+  z-index: 5;
+  transition: none;
 }
 
 .product-card:hover .product-image::before {
   opacity: 1;
+  animation: shine-sweep 0.75s ease-in-out;
 }
 
 .product-image img {
@@ -1194,6 +1195,7 @@ html, body {
 
 .product-card:hover .product-image img {
   transform: scale(1.05);
+  transform: scale(1.1) rotate(1deg);
 }
 
 .product-badge {
@@ -1216,6 +1218,11 @@ html, body {
 @keyframes badge-pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
+}
+
+@keyframes shine-sweep {
+  0% { left: -150%; }
+  100% { left: 150%; }
 }
 
 .product-content {
@@ -1296,6 +1303,11 @@ html, body {
   font-weight: 800;
   color: var(--primary);
   text-shadow: 0 1px 2px rgba(102, 126, 234, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-price {
+  transform: scale(1.1);
 }
 
 .product-original-price {
@@ -1391,6 +1403,11 @@ html, body {
   background: var(--gradient-primary);
   color: white;
   box-shadow: var(--shadow-lg);
+}
+
+.product-card:hover .product-btn-primary {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(39, 174, 96, 0.3);
 }
 
 .product-btn-primary:hover {

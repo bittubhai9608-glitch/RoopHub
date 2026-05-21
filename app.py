@@ -89,10 +89,17 @@ products = {
     },
     "prostavive": {
         "name": "ProstaVive Vitality",
-        "desc": "a powerful supplement for men's health that supports vitality and prostate function.",
-        "benefits": "It helps improve stamina, boosts daily energy levels, and supports overall well-being.",
+        "desc": "a high-performance supplement for men's health designed to optimize prostate function and natural vitality.",
+        "benefits": "It supports healthy inflammatory response, improves physical stamina, and boosts daily energy using clinical-grade botanical extracts.",
         "usage": "Consistency is key; follow the recommended daily dosage.",
         "results": "Benefits are usually felt gradually over a few weeks of regular use."
+    },
+    "alpha tonic": {
+        "name": "Alpha Tonic Elite",
+        "desc": "a premium physical performance booster for men looking to improve strength and stamina.",
+        "benefits": "It supports healthy circulation, increases physical energy, and helps in lean muscle development using natural minerals.",
+        "usage": "Mix one scoop with water or your favorite beverage daily.",
+        "results": "Most users report significant improvements in energy and strength within 3 to 5 weeks."
     },
     "citrusburn": {
         "name": "CitrusBurn",
@@ -136,7 +143,7 @@ category_triggers = {
     "skin": "For skin care and body detox, 'Purisaki Patches' are an excellent choice.",
     "eye": "To support your vision and eye health, you can use 'Visiflora' or 'iGenics' capsules.",
     "brain": "For better memory and sharper focus, 'Neuro Serge' is our most recommended product.",
-    "men": "For men's health and daily vitality, 'ProstaVive Vitality' is specially formulated for you."
+    "men": "For men's health and daily vitality, we recommend 'ProstaVive Vitality' or 'Alpha Tonic Elite'. Both are highly effective for natural performance."
 }
 
 def find_product(user_msg):
