@@ -6,7 +6,20 @@ const products = {
       price: "Special Discount Available", 
       img: "Images/prostavive vitality.jpeg", 
       link: "ProstaViveVitalityLandingPage.html",
-      features: ["Supports Healthy Prostate", "Boosts Vitality & Energy", "60-Day Money Back"]
+      features: [
+        "Supports Optimal Prostate Wellness",
+        "Boosts Natural Vitality & Physical Energy",
+        "100% Pure Natural & Organic Ingredients",
+        "60-Day Risk-Free Money Back Guarantee"
+      ]
+    },
+    { 
+      name: "Alpha Tonic Elite", 
+      rating: "4.8", 
+      price: "Exclusive Limited Time Offer", 
+      img: "Images/alphatonic.jpeg", 
+      link: "https://www.example.com",
+      features: ["Supports Healthy Testosterone Levels", "Increases Lean Muscle & Strength", "Third-Party Laboratory Tested"]
     },
   ],
 
