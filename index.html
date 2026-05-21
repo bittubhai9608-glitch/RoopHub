@@ -71,28 +71,6 @@
       </div>
     </div>
 
-    <div class="trust-indicators hide-mobile">
-      <div style="text-align: center; padding: 20px; border-radius: 12px; background: linear-gradient(135deg, #f0fdf4 0%, #dbeafe 100%); border: 1px solid #d1fae5;">
-        <i class="fa-solid fa-flask" style="font-size: 24px; color: #27ae60; margin-bottom: 8px;"></i>
-        <p style="margin: 8px 0 0 0; font-size: 13px; font-weight: 700; color: #1e293b;"></p>
-        <p style="margin: 4px 0 0 0; font-size: 11px; color: #64748b;"></p>
-      </div>
-      <div style="text-align: center; padding: 20px; border-radius: 12px; background: linear-gradient(135deg, #f0fdf4 0%, #dbeafe 100%); border: 1px solid #d1fae5;">
-        <i class="fa-solid fa-leaf" style="font-size: 24px; color: #27ae60; margin-bottom: 8px;"></i>
-        <p style="margin: 8px 0 0 0; font-size: 13px; font-weight: 700; color: #1e293b;"></p>
-        <p style="margin: 4px 0 0 0; font-size: 11px; color: #64748b;"></p>
-      </div>
-      <div style="text-align: center; padding: 20px; border-radius: 12px; background: linear-gradient(135deg, #f0fdf4 0%, #dbeafe 100%); border: 1px solid #d1fae5;">
-        <i class="fa-solid fa-award" style="font-size: 24px; color: #27ae60; margin-bottom: 8px;"></i>
-        <p style="margin: 8px 0 0 0; font-size: 13px; font-weight: 700; color: #1e293b;"></p>
-        <p style="margin: 4px 0 0 0; font-size: 11px; color: #64748b;"></p>
-      </div>
-      <div style="text-align: center; padding: 20px; border-radius: 12px; background: linear-gradient(135deg, #f0fdf4 0%, #dbeafe 100%); border: 1px solid #d1fae5;">
-        <i class="fa-solid fa-circle-check" style="font-size: 24px; color: #27ae60; margin-bottom: 8px;"></i>
-        <p style="margin: 8px 0 0 0; font-size: 13px; font-weight: 700; color: #1e293b;"></p>
-        <p style="margin: 4px 0 0 0; font-size: 11px; color: #64748b;"></p>
-      </div>
-    </div>
   </header>
 
   <nav class="main-nav" role="navigation" aria-label="Main Navigation">
@@ -145,27 +123,28 @@
 
   <section class="search-section">
     <div class="search-container">
-      <h2>🔍 Find Your Perfect Wellness Solution</h2>
       <div class="search-wrapper">
-        <input type="text" id="searchInput" placeholder="Search premium supplements..." onkeyup="searchProducts()" class="search-input" />
-        <button onclick="searchProducts()" class="search-button"><i class="fa-solid fa-search"></i>Search</button>
+        <div class="search-input-group">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()" class="search-input" />
+        </div>
+        <button onclick="searchProducts()" class="search-button">Search</button>
       </div>
-      <div class="search-badges">
-        <span><i class="fa-solid fa-shield" style="color: #27ae60;"></i>Verified Products</span>
-        <span class="hide-mobile"><i class="fa-solid fa-lock" style="color: #27ae60;"></i>Secure Results</span>
-        <span><i class="fa-solid fa-star" style="color: #fbbf24;"></i>Top Rated</span>
-      </div>
-      <p id="searchStatus" aria-live="polite"></p>
+      <p id="searchStatus" aria-live="polite" class="search-status-msg"></p>
     </div>
   </section>
-
-  <div id="adContainer" class="ad-container"></div>
 
   <section class="products-section">
     <div class="products-header">
       <div class="products-header-content">
         <h2 class="products-title">🌟 Premium Health Products</h2>
-        <p class="products-subtitle">Handpicked & Verified | Guaranteed Authenticity | Best Deals Online</p>
+        <div class="products-subtitle">
+          <span class="subtitle-tag"><i class="fa-solid fa-circle-check"></i> Handpicked & Verified</span>
+          <span class="subtitle-divider hide-mobile">•</span>
+          <span class="subtitle-tag"><i class="fa-solid fa-shield-halved"></i> Guaranteed Authenticity</span>
+          <span class="subtitle-divider hide-mobile">•</span>
+          <span class="subtitle-tag"><i class="fa-solid fa-tag"></i> Best Deals Online</span>
+        </div>
       </div>
     </div>
 
@@ -186,6 +165,14 @@
         <button class="filter-btn" onclick="loadProducts('Skin Care')">
           <i class="fa-solid fa-leaf"></i>
           <span>Skin Care</span>
+        </button>
+        <button class="filter-btn" onclick="window.location.href='video.html'">
+          <i class="fa-solid fa-play-circle"></i>
+          <span>Videos</span>
+        </button>
+        <button class="filter-btn" onclick="showContact()">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Contact</span>
         </button>
       </div>
     </div>
