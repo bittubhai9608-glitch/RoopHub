@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RoopHub</title>
+<title>Keyslim Drops</title>
 <link rel="stylesheet" href="auth-profile.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,8 +54,8 @@ header {
     text-align: center;
     padding: 40px 20px 50px;
     color: #fff;
-    background: radial-gradient(circle at top, #1e40af, #0f172a);
-    border-bottom: 4px solid #fbbf24;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-bottom: 4px solid #38ef7d;
     position: relative;
     overflow: hidden;
 }
@@ -78,8 +78,8 @@ header::before {
 
 .hero-badge {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(10px);
     padding: 6px 16px;
     border-radius: 50px;
     font-size: 11px;
@@ -87,8 +87,8 @@ header::before {
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 15px;
-    border: 1px solid rgba(255,255,255,0.2);
-    color: #fbbf24;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #38ef7d;
     position: relative;
 }
 
@@ -97,7 +97,7 @@ header h1 {
     font-weight: 800;
     margin-bottom: 10px;
     letter-spacing: -1px;
-    background: linear-gradient(to bottom, #ffffff, #94a3b8);
+    background: linear-gradient(to bottom, #ffffff, #e0e7ff);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -115,7 +115,7 @@ header p.sub-headline {
 
 a.cta-btn{ /* Specificity for header CTA */
     padding: 14px 35px;
-    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
     color: #fff;
     border-radius: 50px;
     text-decoration: none;
@@ -123,14 +123,15 @@ a.cta-btn{ /* Specificity for header CTA */
     font-weight: 800;
     font-size: 16px;
     text-transform: uppercase;
-    box-shadow: 0 10px 25px rgba(217, 119, 6, 0.4); /* Keep original shadow */
-    transition: 0.3s transform;
+    box-shadow: 0 10px 25px rgba(17, 153, 142, 0.4);
+    transition: 0.3s transform, 0.3s box-shadow;
     position: relative;
     border: 2px solid rgba(255,255,255,0.2);
 }
 
 .cta-btn:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 15px 35px rgba(17, 153, 142, 0.5);
 }
 
 .trust-bar {
@@ -150,17 +151,18 @@ a.cta-btn{ /* Specificity for header CTA */
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(34, 197, 94, 0.2);
-    color: #4ade80;
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.15) 0%, rgba(17, 153, 142, 0.15) 100%);
+    color: #38ef7d;
     padding: 4px 12px;
     border-radius: 4px;
     font-size: 14px;
     font-weight: 600;
+    border: 1px solid rgba(34, 197, 94, 0.3);
 }
 
 /* NEW FEATURES */
 .timer{
-    background: linear-gradient(90deg, #7f1d1d 0%, #ef4444 50%, #7f1d1d 100%);
+    background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
     color: #fff;
     text-align: center;
     padding: 6px 10px;
@@ -172,8 +174,8 @@ a.cta-btn{ /* Specificity for header CTA */
     gap: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    margin-bottom: 25px; /* Added gap from live message */
+    box-shadow: 0 2px 10px rgba(245, 87, 108, 0.3);
+    margin-bottom: 25px;
 }
 #countdown {
     background: rgba(0,0,0,0.25);
@@ -186,16 +188,16 @@ a.cta-btn{ /* Specificity for header CTA */
 .live{
     /* Existing styles for the badge container */
     text-align: center;
-    color: #15803d;
-    background: #f0fdf4;
-    border: 1px solid #bbf7d0;
+    color: #166534;
+    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+    border: 2px solid #22c55e;
     padding: 5px 15px;
     border-radius: 50px;
     font-weight: 700;
     font-size: 12px;
     width: fit-content;
     margin: 5px auto 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 10px rgba(34, 197, 94, 0.2);
 }
 
 /* CONTAINER */
@@ -300,8 +302,8 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 .specs-table tr {
     transition: all 0.2s ease;
 }
-.specs-table tr:nth-child(even) { background-color: #f8fafc; }
-.specs-table tr:hover { background-color: #f1f5f9; }
+.specs-table tr:nth-child(even) { background-color: #f8fafb; }
+.specs-table tr:hover { background-color: #f0f4ff; }
 
 .specs-table td {
     padding: 12px 16px;
@@ -315,10 +317,10 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
     transition: background-color 0.2s ease;
 }
 .spec-row:hover {
-    background-color: #e0f2fe !important;
+    background-color: #e8ecff !important;
 }
 .spec-row:active {
-    background-color: #bae6fd !important;
+    background-color: #d0d9ff !important;
 }
 .spec-label {
     font-weight: 600;
@@ -400,31 +402,31 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
     max-width: 200px;
     padding: 12px 10px;
     font-size: 13px;
-    background: #1e40af;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     white-space: nowrap;
     border-radius: 8px;
     box-shadow: none;
 }
 
 .video-controls .cta-btn:last-child {
-    background: #4b5563;
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
 }
 
 /* WHY CHOOSE SECTION */
 .description {
-    background: #ffffff;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
     padding: 25px;
-    margin: 25px auto; /* Standardized margin for main boxes */
+    margin: 25px auto;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
+    border: 1px solid rgba(102, 126, 234, 0.1);
     width: 100%;
 }
 .description h2 {
     font-size: 18px;
-    color: #1a202c;
+    color: #2d3748;
     margin-bottom: 15px;
-    border-left: 5px solid #27ae60;
+    border-left: 5px solid #11998e;
     padding-left: 12px;
 }
 .benefit-grid {
@@ -433,11 +435,11 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
     gap: 8px;
 }
 .benefit-card {
-    background: #f0fff4;
+    background: linear-gradient(135deg, #f0fff4 0%, #dcfce7 100%);
     padding: 12px 15px;
     border-radius: 10px;
-    border: 1px solid #c6f6d5;
-    color: #2f855a;
+    border: 2px solid #22c55e;
+    color: #166534;
     font-size: 15px;
     font-weight: 600;
     display: flex;
@@ -449,9 +451,9 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 .benefit-card:hover {
     transform: translateY(-5px);
-    background-color: #dcfce7;
-    border-color: #22c55e;
-    box-shadow: 0 12px 25px rgba(34, 197, 94, 0.2);
+    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+    border-color: #16a34a;
+    box-shadow: 0 12px 25px rgba(34, 197, 94, 0.3);
 }
 .benefit-card:active {
     transform: scale(0.96);
@@ -461,8 +463,10 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
     padding: 10px 0;
     white-space: nowrap;
     position: relative;
-    margin: 25px 0; /* Standardized margin for badges section */
-    background: #fff;
+    margin: 25px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.08);
 }
 .badge-track {
     display: flex;
@@ -479,13 +483,13 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 .badge-item {
     background: #ffffff;
-    border: 1px solid #e2e8f0;
+    border: 2px solid #667eea;
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 11px;
     font-weight: 700;
-    color: #475569;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    color: #667eea;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
     display: flex;
     align-items: center;
     white-space: nowrap;
@@ -500,25 +504,25 @@ th{background:#1e90ff;color:#fff}
 .buy-section {
     text-align: center;
     padding: 15px 10px;
-    background: #ffffff;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
     margin: 20px auto;
-    border: 1px solid #d1d5db;
+    border: 2px solid rgba(102, 126, 234, 0.2);
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.08);
     max-width: 600px;
     width: 95%;
 }
 .buy-btn {
     display: inline-block;
     padding: 10px 25px;
-    background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
     color: #fff;
     border-radius: 8px;
     text-decoration: none;
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
-    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+    box-shadow: 0 4px 15px rgba(17, 153, 142, 0.3);
     transition: all 0.3s ease;
     animation: heartBeat 2s infinite;
     cursor: pointer;
@@ -526,23 +530,23 @@ th{background:#1e90ff;color:#fff}
 }
 .buy-btn:hover {
     transform: scale(1.05) translateY(-3px);
-    box-shadow: 0 15px 30px rgba(230, 81, 0, 0.6);
-    background: linear-gradient(135deg, #e65100 0%, #ff9800 100%);
+    box-shadow: 0 15px 30px rgba(17, 153, 142, 0.5);
+    background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
 }
 /* MINI BUY SECTION */
 .buy-section-sm {
     text-align: center;
     padding: 10px;
-    background: #f9f9f9;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
     margin: 15px auto;
-    border: 1px solid #e2e8f0;
+    border: 2px solid rgba(102, 126, 234, 0.15);
     border-radius: 10px;
     max-width: 320px;
 }
 .buy-btn-sm {
     display: inline-block;
     padding: 8px 20px;
-    background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
     color: #fff;
     border-radius: 6px;
     text-decoration: none;
@@ -564,20 +568,22 @@ th{background:#1e90ff;color:#fff}
 position:fixed;
 bottom:0;
 width:100%;
-background:#ff9800;
+background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
 text-align:center;
 padding:15px;
+box-shadow: 0 -5px 20px rgba(102, 126, 234, 0.2);
 }
 .sticky a{
 color:#fff;
 text-decoration:none;
 font-size:18px;
+font-weight: 700;
 }
 
 /* FOOTER */
 footer{
-background:#131a22; /* गहरा काला रंग */
-color:#aaa; /* हल्का ग्रे टेक्स्ट */
+background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+color:#cbd5e1;
 text-align:center;
 padding: 15px 10px;
 margin-top: 25px;
@@ -590,13 +596,13 @@ margin-top: 25px;
     margin-bottom: 20px;
 }
 .social-link {
-    color: #2563eb; /* नीला रंग */
+    color: #667eea;
     font-size: 22px;
     transition: all 0.3s ease;
     text-decoration: none;
 }
 .social-link:hover {
-    color: #ffffff;
+    color: #38ef7d;
     transform: translateY(-5px);
 }
 /* Bottom Menu Styling */
@@ -610,16 +616,16 @@ margin-top: 25px;
 .bottom-menu button {
     background: none;
     border: none;
-    color: #aaa; /* हल्का ग्रे टेक्स्ट */
+    color: #cbd5e1;
     cursor: pointer;
     font-size: 13px;
     font-weight: 500;
     transition: color 0.3s ease;
-    border-right: 1px solid rgba(255,255,255,0.3); /* सफेद लाइन */
-    padding-right: 15px; /* Space for the line */
+    border-right: 1px solid rgba(255,255,255,0.2);
+    padding-right: 15px;
 }
 .bottom-menu button:hover {
-    color: #2563eb; /* नीला रंग */
+    color: #38ef7d;
     text-decoration: underline;
 }
 /* Remove border from the last button */
@@ -665,44 +671,47 @@ margin-top: 25px;
 }
 .bar-fill { 
     height: 100%; 
-    background: #ffa41c; 
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
     border-radius: 4px;
     transition: width 1s ease-in-out;
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
 }
 
 .review-card {
-    background: #fff;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 15px;
-    border: 1px solid #f0f0f0;
+    border: 1px solid rgba(102, 126, 234, 0.1);
     transition: 0.3s;
 }
-.review-card:hover { border-color: #3498db; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.review-card:hover { 
+    border-color: #667eea; 
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.12); 
+}
 .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
 .user-avatar {
     width: 40px; height: 40px;
-    background: #eef2f7;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-weight: bold; color: #3498db;
+    font-weight: bold; color: #ffffff;
 }
 .verified-badge { color: #27ae60; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 4px; }
 .review-text { font-size: 14px; line-height: 1.6; color: #555; }
 
 /* FAQ Professional Styling */
 .faq-section {
-    background: #fff;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
     padding: 30px 20px;
     margin: 20px auto;
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.1);
     width: 100%;
 }
 .faq-section h2 {
     text-align: center;
-    color: #2c3e50;
+    color: #2d3748;
     margin-bottom: 15px;
     font-size: 24px;
     font-weight: 700;
@@ -721,8 +730,8 @@ margin-top: 25px;
     width: 100%;
     padding: 16px 20px;
     padding: 12px 16px;
-    background: #1e90ff; /* Bright Professional Blue */
-    color: #ffffff; /* White text for contrast */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
     border: 1px solid rgba(255,255,255,0.1);
     display: flex;
     justify-content: space-between;
@@ -742,11 +751,11 @@ margin-top: 25px;
     display: inline-block;
 }
 /* Style for active state */
-.faq-item.active { border-color: #0056b3; }
-.faq-item.active { border-color: #1e90ff; box-shadow: 0 4px 10px rgba(30, 144, 255, 0.2); }
+.faq-item.active { border-color: #667eea; }
+.faq-item.active { border-color: #667eea; box-shadow: 0 4px 10px rgba(102, 126, 234, 0.25); }
 .faq-item.active .faq-icon { transform: rotate(135deg); }
-.faq-item.active .faq-question { background: #0056b3; }
-.faq-item.active .faq-question { background: #187bcd; }
+.faq-item.active .faq-question { background: linear-gradient(135deg, #764ba2 0%, #667eea 100%); }
+.faq-item.active .faq-question { background: linear-gradient(135deg, #764ba2 0%, #667eea 100%); }
 .faq-answer {
     max-height: 0;
     overflow: hidden;
@@ -772,18 +781,19 @@ margin-top: 25px;
     margin-top: 30px;
 }
 .comp-card {
-    background: #fff;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
     padding: 30px;
     border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.08);
     border-top: 5px solid;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .comp-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
 }
-.struggle-card { border-top-color: #e74c3c; }
-.benefit-card-side { border-top-color: #27ae60; }
+.struggle-card { border-top-color: #f5576c; }
+.benefit-card-side { border-top-color: #11998e; }
 .comp-card h3 { margin-bottom: 15px; font-size: 18px; color: #2d3748; }
 .comp-card ul { list-style: none; }
 .comp-card li { 
@@ -819,7 +829,7 @@ margin-top: 25px;
     }
     .slider img { max-width: 100%; }
     .big-rating { font-size: 42px; }
-    .review-stats { flex-direction: column; text-align: center; }
+        .review-stats { flex-direction: column; text-align: center; }
     .slider { min-height: 200px; } /* Reduce slider container height for mobile */
     .rating-bars { width: 100%; }
     a, button, .faq-question { cursor: pointer; }
@@ -841,8 +851,8 @@ margin-top: 25px;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%) scale(0.8);
     width: 90%;
-    max-width: 800px; /* Horizontal wide layout */
-    background: #f0fdf4; /* Professional Green */
+    max-width: 800px;
+    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
     border: 4px solid #22c55e;
     border-radius: 25px;
     padding: 35px;
@@ -852,7 +862,7 @@ margin-top: 25px;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .faq-popup-close {
-    background: #166534;
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
     color: white;
     border: none;
     padding: 12px 30px;
@@ -863,7 +873,10 @@ margin-top: 25px;
     font-size: 14px;
     transition: 0.2s;
 }
-.faq-popup-close:hover { background: #14532d; transform: scale(1.05); }
+.faq-popup-close:hover { 
+    background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
+    transform: scale(1.05); 
+}
 
 /* ✨ BENEFIT POPUP STYLES (Blue Theme) */
 #benefitPopupOverlay {
@@ -883,7 +896,7 @@ margin-top: 25px;
     width: 90%;
     max-width: 500px;
     background: #ffffff;
-    border: 4px solid #2563eb;
+    border: 4px solid #667eea;
     border-radius: 25px;
     padding: 35px;
     z-index: 100001;
@@ -893,7 +906,7 @@ margin-top: 25px;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .benefit-popup-close {
-    background: #2563eb;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
     padding: 12px 30px;
@@ -902,6 +915,12 @@ margin-top: 25px;
     margin-top: 25px;
     font-weight: 700;
     font-size: 14px;
+    transition: 0.2s;
+}
+.benefit-popup-close:hover { 
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: scale(1.05); 
+
     transition: 0.2s;
 }
 .benefit-popup-close:hover { background: #1e40af; transform: scale(1.05); }
@@ -914,15 +933,15 @@ margin-top: 25px;
 
 <header>
     <button onclick="openModal('auth')" class="header-auth-btn" aria-label="Sign In">Sign In / Join</button>
-    <div class="hero-badge">🧠 Natural Cognitive Support</div>
-    <h1 data-i18n="neuro_title">Neuro Serge</h1>
-    <p class="sub-headline" data-i18n="neuro_desc">Boost memory, improve focus & get mental clarity naturally</p>
+    <div class="hero-badge">🧠 keyslim drops are good drops for eyes</div>
+    <h1 data-i18n="keyslim_Drops_title">Keyslim Drops</h1>
+    <p class="sub-headline" data-i18n="keyslim_Drops_desc">Boost memory, improve focus & get mental clarity naturally</p>
     
     <a href="#buy" class="cta-btn">Get Discount Now</a>
     
     <div class="trust-bar">
-        <span class="rating-text">⭐⭐⭐⭐⭐ 4.8/5 (2,347 Reviews)</span>
-        <div class="trusted-badge">✔ Trusted by 3,000+ users globally</div>
+        <span class="rating-text">⭐⭐⭐⭐⭐ 4.9/5 (2,547 Reviews)</span>
+        <div class="trusted-badge">✔ Trusted by 4,000+ users globally</div>
     </div>
 </header>
 <!-- ✅ NEW TIMER -->
@@ -939,7 +958,7 @@ margin-top: 25px;
 
 <!-- SLIDER -->
 <div class="slider">
-<img id="sliderImage" src="Images/Neuroserge1.jpeg" style="max-height: 180px; object-fit: contain;">
+<img id="sliderImage" src="Images/keyslim1.jpeg" style="max-height: 180px; object-fit: contain;">
 <button class="prev" onclick="prevImage()">❮</button>
 <button class="next" onclick="nextImage()">❯</button>
 </div>
@@ -954,18 +973,18 @@ margin-top: 25px;
     <style>
         .video-section-title {
             text-align: center;
-            color: #1e40af; /* Dark blue from header */
-            background: #e0f2f7; /* Light blue background */
+            color: #ffffff;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 12px 25px;
             border-radius: 10px;
-            font-size: 22px; /* Slightly larger */
+            font-size: 22px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin: 0 auto 25px; /* Center and add margin-bottom */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Subtle shadow */
-            width: fit-content; /* Make it a block that fits its content */
-            border: 1px solid #a7d9f0; /* Light border */
+            margin: 0 auto 25px;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+            width: fit-content;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         @media (max-width: 768px) {
             .video-section-title {
@@ -1066,7 +1085,7 @@ margin-top: 25px;
 </div>
 <style>
 body {
-    background: linear-gradient(135deg, #74ebd5, #9face6);
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     font-family: Arial, sans-serif;
 }
 
@@ -1076,8 +1095,9 @@ body {
     margin: 20px auto;
     padding: 15px;
     border-radius: 15px;
-    background: #ffffff;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.12);
+    border: 1px solid rgba(102, 126, 234, 0.1);
 }
 
 /* Top Layout */

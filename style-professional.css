@@ -286,7 +286,7 @@ html, body {
 .menu-button:active {
   transform: translateY(0) scale(0.98);
 }
-    display: none;
+    display::after none
 
 /* Desktop enav pn-nav {
   position: relative;
