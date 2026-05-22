@@ -551,7 +551,7 @@ function openModal(type) {
         'contact': 'contactModal',
         'faq': 'faqModal',
         'disclaimer': 'disclaimerModal',
-        'terms': 'termsModal',
+        'terms': document.getElementById('termsModal') ? 'termsModal' : 'termsModal', // Ensure it points to the correct ID
         'privacy': document.getElementById('privacyPolicyModal') ? 'privacyPolicyModal' : 'privacyModal',
         'affiliate': 'affiliateModal',
         'auth': 'authModal',
