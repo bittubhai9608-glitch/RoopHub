@@ -805,10 +805,10 @@ function changeLanguage(lang) {
 function applyLanguage(lang) {
     const translations = {
         en: { 
-            welcome: "ProstVive", 
+            welcome: "ROOPHUB", 
             search: "Search", 
             discount: "Get Exclusive Discount", 
-            aiWelcome: "Hello! 👋 Welcome to ProstVive. How can I help you today?",
+            aiWelcome: "Hello! 👋 Welcome to ROOPHUB. How can I help you today?",
             hero_desc: "Online Affiliate Wellness",
             nav_men: "Men Health",
             nav_weight: "Weight Loss",
@@ -827,10 +827,10 @@ function applyLanguage(lang) {
             mute_video: "🔇 Mute Video"
         },
         hi: { 
-            welcome: "प्रोस्टवाइव", 
+            welcome: "ROOPHUB", 
             search: "खोजें", 
             discount: "खास छूट प्राप्त करें", 
-            aiWelcome: "नमस्ते! 🙏 प्रोस्टवाइव में आपका स्वागत है। आज मैं आपकी क्या मदद कर सकता हूँ?",
+            aiWelcome: "नमस्ते! 🙏 ROOPHUB में आपका स्वागत है। आज मैं आपकी क्या मदद कर सकता हूँ?",
             hero_desc: "ऑनलाइन एफिलिएट वेलनेस स्टोर",
             nav_men: "पुरुष स्वास्थ्य",
             nav_weight: "वजन घटाना",
@@ -848,11 +848,11 @@ function applyLanguage(lang) {
             unmute_video: "🔊 वीडियो आवाज़ चालू करें",
             mute_video: "🔇 आवाज़ बंद करें"
         },
-        es: { welcome: "ProstVive", search: "Buscar", discount: "Obtener Descuento", aiWelcome: "¡Hola! 👋 Bienvenido a ProstVive. ¿Cómo puedo ayudarte hoy?", hero_desc: "Bienestar de Afiliados en Línea" },
-        fr: { welcome: "ProstVive", search: "Chercher", discount: "Obtenir une remise", aiWelcome: "Bonjour! 👋 Bienvenue sur ProstVive. Comment puis-je vous aider?", hero_desc: "Bien-être d'Affiliation en Ligne" },
-        de: { welcome: "ProstVive", search: "Suche", discount: "Rabatt erhalten", aiWelcome: "Hallo! 👋 Willkommen bei ProstVive. Wie kann ich Ihnen heute helfen?", hero_desc: "Online-Affiliate-Wellness" },
-        ar: { welcome: "بروستا-فايف", search: "بحث", discount: "احصل على خصم", aiWelcome: "مرحباً! 👋 أهلاً بكم في بروستا-فايف. كيف يمكنني مساعدتك اليوم؟", hero_desc: "العافية التابعة عبر الإنترنت" },
-        ru: { welcome: "ProstVive", search: "Поиск", discount: "Получить скидку", aiWelcome: "Привет! 👋 Добро пожаловать в ProstVive. Чем я могу вам помочь сегодня?", hero_desc: "Интернет-магазин веलनेसा" }
+        es: { welcome: "ROOPHUB", search: "Buscar", discount: "Obtener Descuento", aiWelcome: "¡Hola! 👋 Bienvenido a ROOPHUB. ¿Cómo puedo ayudarte hoy?", hero_desc: "Bienestar de Afiliados en Línea" },
+        fr: { welcome: "ROOPHUB", search: "Chercher", discount: "Obtenir une remise", aiWelcome: "Bonjour! 👋 Bienvenue sur ROOPHUB. Comment puis-je vous aider?", hero_desc: "Bien-être d'Affiliation en Ligne" },
+        de: { welcome: "ROOPHUB", search: "Suche", discount: "Rabatt erhalten", aiWelcome: "Hallo! 👋 Willkommen bei ROOPHUB. Wie kann ich Ihnen heute helfen?", hero_desc: "Online-Affiliate-Wellness" },
+        ar: { welcome: "ROOPHUB", search: "بحث", discount: "احصل على خصم", aiWelcome: "مرحباً! 👋 أهلاً بكم في ROOPHUB. كيف يمكنني مساعدتك اليوم؟", hero_desc: "العافية التابعة عبر الإنترنت" },
+        ru: { welcome: "ROOPHUB", search: "Поиск", discount: "Получить скидку", aiWelcome: "Привет! 👋 Добро пожаловать в ROOPHUB. Чем я могу вам помочь сегодня?", hero_desc: "Интернет-магазин велнеसा" }
     };
 
     const t = translations[lang] || translations.en;
