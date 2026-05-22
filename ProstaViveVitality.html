@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RoopHub</title>
+<title>ProstaVive Vitality</title>
 <link rel="stylesheet" href="auth-profile.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +18,12 @@ body {
     background-size: 400% 400%;
     animation: medicalGlow 15s ease infinite;
     color: #334155; /* Slate dark text for premium readability */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    display: flex;
+    flex-direction: column; /* Allow footer to stick to bottom */
+}
+html {
+    min-height: 100vh; /* Ensure html takes full viewport height */
 }
 @keyframes medicalGlow {
     0% { background-position: 0% 0%; }
@@ -905,6 +911,62 @@ margin-top: 25px;
     transition: 0.2s;
 }
 .benefit-popup-close:hover { background: #1e40af; transform: scale(1.05); }
+
+/* ============================================================
+   ✨ MODAL CONTENT DECORATION (Privacy, Terms, Disclaimer etc.)
+   ============================================================ */
+#privacyModal, #termsModal, #faqModal, #disclaimerModal, #contactModal, #aboutModal, #affiliateModal {
+    background-color: #f8fafc !important; /* Soft premium background */
+    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Headings Decoration */
+#privacyModal h1, #privacyModal h2, #termsModal h1, #termsModal h2, 
+#disclaimerModal h1, #disclaimerModal h2, #aboutModal h1, #affiliateModal h2, #faqModal h1 {
+    color: #1e40af !important; /* Deep Navy Blue */
+    font-weight: 800;
+    margin-top: 40px;
+    border-bottom: 3px solid #3b82f6; /* Accent line */
+    padding-bottom: 12px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#privacyModal h3, #termsModal h3, #disclaimerModal h3, #affiliateModal h3, #aboutModal h2 {
+    color: #0369a1 !important; /* Professional Blue */
+    margin-top: 30px;
+    font-weight: 700;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Paragraphs & List Items */
+#privacyModal p, #termsModal p, #disclaimerModal p, #affiliateModal p, #aboutModal p, #faqModal p,
+#privacyModal li, #termsModal li, #disclaimerModal li, #affiliateModal li, #aboutModal li {
+    color: #334155 !important; /* Dark Slate Grey for readability */
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Container-like feel for Lists */
+#privacyModal ul, #termsModal ul, #disclaimerModal ul, #aboutModal ul {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+    padding: 30px 50px;
+    max-width: 900px;
+    margin: 20px auto;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
 </style>
 </head>
 
@@ -914,15 +976,15 @@ margin-top: 25px;
 
 <header>
     <button onclick="openModal('auth')" class="header-auth-btn" aria-label="Sign In">Sign In / Join</button>
-    <div class="hero-badge">🧠 Natural Cognitive Support</div>
-    <h1 data-i18n="neuro_title">Neuro Serge</h1>
-    <p class="sub-headline" data-i18n="neuro_desc">Boost memory, improve focus & get mental clarity naturally</p>
-    
+    <div class="hero-badge">🛡️ Natural Prostate & Vitality Support</div>
+    <h1 data-i18n="ProstaVive_title">ProstaVive</h1>
+    <p class="sub-headline" data-i18n="ProstaVive_desc">Support healthy prostate function, urinary flow & natural stamina</p>
+
     <a href="#buy" class="cta-btn">Get Discount Now</a>
     
     <div class="trust-bar">
-        <span class="rating-text">⭐⭐⭐⭐⭐ 4.8/5 (2,347 Reviews)</span>
-        <div class="trusted-badge">✔ Trusted by 3,000+ users globally</div>
+        <span class="rating-text">⭐⭐⭐⭐⭐ 4.8/5 (2,547 Reviews)</span>
+        <div class="trusted-badge">✔ Trusted by 3,500+ users globally</div>
     </div>
 </header>
 <!-- ✅ NEW TIMER -->
@@ -939,7 +1001,7 @@ margin-top: 25px;
 
 <!-- SLIDER -->
 <div class="slider">
-<img id="sliderImage" src="Images/Neuroserge1.jpeg" style="max-height: 180px; object-fit: contain;">
+<img id="sliderImage" src="Images/prostavive1.jpeg" style="max-height: 180px; object-fit: contain;">
 <button class="prev" onclick="prevImage()">❮</button>
 <button class="next" onclick="nextImage()">❯</button>
 </div>
@@ -1000,20 +1062,20 @@ margin-top: 25px;
         <div class="comp-card struggle-card">
             <h3>🔴 Common Struggles</h3>
             <ul>
-                <li class="comp-item" data-key="struggle_focus"><span>❌</span> Lack of Focus</li>
-                <li class="comp-item" data-key="struggle_memory"><span>❌</span> Weak Memory</li>
-                <li class="comp-item" data-key="struggle_fatigue"><span>❌</span> Mental Fatigue</li>
-                <li class="comp-item" data-key="struggle_productivity"><span>❌</span> Low Productivity</li>
+                <li class="comp-item" data-key="struggle_focus"><span>❌</span> Frequent Urination</li>
+                <li class="comp-item" data-key="struggle_memory"><span>❌</span> Midnight Trips</li>
+                <li class="comp-item" data-key="struggle_fatigue"><span>❌</span> Weak Stream</li>
+                <li class="comp-item" data-key="struggle_productivity"><span>❌</span> Low Stamina</li>
             </ul>
         </div>
         <!-- Benefits Card -->
         <div class="comp-card benefit-card-side">
-            <h3>🟢 How Neuro Serge Helps</h3>
+            <h3>🟢 How ProstaVive Helps</h3>
             <ul>
-                <li class="comp-item" data-key="help_focus"><span>✅</span> Improves Focus</li>
-                <li class="comp-item" data-key="help_memory"><span>✅</span> Supports Memory</li>
-                <li class="comp-item" data-key="help_energy"><span>✅</span> Boosts Mental Energy</li>
-                <li class="comp-item" data-key="help_productivity"><span>✅</span> Enhances Productivity</li>
+                <li class="comp-item" data-key="help_focus"><span>✅</span> Supports Prostate Health</li>
+                <li class="comp-item" data-key="help_memory"><span>✅</span> Improved Urinary Flow</li>
+                <li class="comp-item" data-key="help_energy"><span>✅</span> Deeper Restful Sleep</li>
+                <li class="comp-item" data-key="help_productivity"><span>✅</span> Boosted Natural Stamina</li>
             </ul>
         </div>
     </div>
@@ -1036,13 +1098,13 @@ margin-top: 25px;
 <div class="specs" id="specs">
     <h2>Product Specifications</h2>
 <table class="specs-table">
-<tr class="spec-row" data-key="product_name"><td class="spec-label">Product Name</td><td>Neuro Serge</td></tr>
-<tr class="spec-row" data-key="formula_type"><td class="spec-label">Formula Type</td><td>Natural herbal brain support formula</td></tr>
-<tr class="spec-row" data-key="ingredients"><td class="spec-label">Main Ingredients</td><td>Olive leaf, Green tea, Grape seed, Bilberry...</td></tr>
+<tr class="spec-row" data-key="product_name"><td class="spec-label">Product Name</td><td>ProstaVive</td></tr>
+<tr class="spec-row" data-key="formula_type"><td class="spec-label">Formula Type</td><td>Clinical-grade prostate support formula</td></tr>
+<tr class="spec-row" data-key="ingredients"><td class="spec-label">Main Ingredients</td><td>Hibiscus, Garlic, Saw Palmetto, Pumpkin Seed...</td></tr>
 <tr class="spec-row" data-key="form"><td class="spec-label">Product Form</td><td>Capsules (pills)</td></tr>
 <tr class="spec-row" data-key="quantity"><td class="spec-label">Quantity</td><td>60 Capsules in 1 bottle</td></tr>
 <tr class="spec-row" data-key="usage"><td class="spec-label">How to Use</td><td>Take daily as written on label</td></tr>
-<tr class="spec-row" data-key="benefits_summary"><td class="spec-label">Main Benefits</td><td>Helps memory, improves focus...</td></tr>
+<tr class="spec-row" data-key="benefits_summary"><td class="spec-label">Main Benefits</td><td>Supports healthy flow & vitality</td></tr>
 <tr class="spec-row" data-key="quality"><td class="spec-label">Quality Standard</td><td>Made with controlled herbal formula</td></tr>
 <tr class="spec-row" data-key="manufacturing"><td class="spec-label">Manufacturing</td><td>United States (USA)</td></tr>
 <tr class="spec-row" data-key="product_type"><td class="spec-label">Product Type</td><td>Health supplement (not medicine)</td></tr>
@@ -1052,16 +1114,16 @@ margin-top: 25px;
 </div>
 <!-- DESCRIPTION -->
 <div class="description">
-    <h2>The Science of Excellence: Why Choose Neuro Serge?</h2>
+    <h2>The Power of ProstaVive: Advanced Prostate Wellness</h2>
     <div class="benefit-grid" id="benefitGrid">
-        <div class="benefit-card" data-key="memory_focus"><span>✅</span> Advanced Cognitive Enhancement & Memory Precision</div>
-        <div class="benefit-card" data-key="brain_health"><span>✅</span> Holistic Neuroprotection & Cellular Longevity</div>
-        <div class="benefit-card" data-key="fatigue_energy"><span>✅</span> Optimized Neural Energy & Sustained Focus</div>
-        <div class="benefit-card" data-key="natural_ingredients"><span>✅</span> Premium, Lab-Verified Botanical Synergy</div>
-        <div class="benefit-card" data-key="stress_mood"><span>✅</span> Advanced Stress Adaptation & Mood Balance</div>
-        <div class="benefit-card" data-key="learning_retention"><span>✅</span> Enhanced Learning Capacity & Information Retention</div>
-        <div class="benefit-card" data-key="sleep_quality"><span>✅</span> Restorative Sleep Cycle & Brain Rejuvenation</div>
-        <div class="benefit-card" data-key="neurotransmitter_support"><span>✅</span> Balanced Neurotransmitter Synthesis</div>
+        <div class="benefit-card" data-key="memory_focus"><span>✅</span> Prostate Wellness & Long-term Longevity</div>
+        <div class="benefit-card" data-key="brain_health"><span>✅</span> Enhanced Urinary Flow & Bladder Control</div>
+        <div class="benefit-card" data-key="fatigue_energy"><span>✅</span> Restful Nights & Deeper Restorative Sleep</div>
+        <div class="benefit-card" data-key="natural_ingredients"><span>✅</span> Natural Energy & Physical Stamina Boost</div>
+        <div class="benefit-card" data-key="stress_mood"><span>✅</span> Healthy Inflammatory Response Support</div>
+        <div class="benefit-card" data-key="learning_retention"><span>✅</span> Hormonal Balance & Natural Vitality</div>
+        <div class="benefit-card" data-key="sleep_quality"><span>✅</span> Potent Antioxidant & Cellular Protection</div>
+        <div class="benefit-card" data-key="neurotransmitter_support"><span>✅</span> Clinical-Grade Botanical Synergy</div>
     </div>
 </div>
 <style>
@@ -1163,7 +1225,6 @@ body {
         <button onclick="toggleForm()" style="flex: 1; padding: 12px; background: #2c3e50; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Write a Review</button>
         <button onclick="toggleReviews()" id="toggleListBtn" style="flex: 1; padding: 12px; background: #f8f9fa; color: #2c3e50; border: 1px solid #ddd; border-radius: 8px; font-weight: 600; cursor: pointer;">Show All Reviews</button>
     </div>
-
     <!-- FORM -->
     <form id="reviewForm" autocomplete="off" style="margin-bottom: 20px; padding: 15px; background: #fdfdfd; border: 1px dashed #ccc; border-radius: 10px;">
         <h4 style="margin-bottom: 10px;">Share your experience</h4>
@@ -1178,8 +1239,8 @@ body {
                 <option value="2">2 Stars - Poor</option>
                 <option value="1">1 Star - Terrible</option>
             </select>
-        </div>
-        <textarea id="comment" name="Comment" placeholder="What did you like or dislike about Neuro Serge?" required style="height: 100px;"></textarea>
+        </div> 
+        <textarea id="comment" name="Comment" placeholder="What did you like or dislike about ProstaVive?" required style="height: 100px;"></textarea>
         <button type="submit" class="submit-btn" style="width:100%; margin-top:10px; padding:12px; background:#27ae60; color:white; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">Post Review</button>
     </form>
 
@@ -1198,34 +1259,34 @@ See More
 
 <div class="faq-item">
     <button class="faq-question">
-        🛡️ Is Neuro Serge 100% safe and natural for long-term use?
+        🛡️ Is ProstaVive 100% safe and natural for long-term use?
         <span class="faq-icon">+</span>
     </button>
-    <div class="faq-answer"><p><strong>Yes, absolutely!</strong> Neuro Serge is crafted with pure, lab-tested herbal ingredients. It is 100% non-GMO, non-addictive, and safe for daily use. Thousands of users trust it every day for sustained mental clarity without any side effects.</p></div>
+    <div class="faq-answer"><p><strong>Yes, absolutely!</strong> ProstaVive is crafted with clinical-grade, lab-tested natural ingredients. It is 100% non-GMO and safe for daily use. Thousands of men trust it every day for healthy prostate support without any reported side effects.</p></div>
 </div>
 
 <div class="faq-item">
     <button class="faq-question">
-        🚀 How quickly will I notice a boost in my focus and memory?
+        🚀 How quickly will I notice an improvement in my flow?
         <span class="faq-icon">+</span>
     </button>
-    <div class="faq-answer"><p>Many users feel a difference in their alertness and focus within the <strong>first 7-10 days</strong>. For the best "Life-Changing" results in memory and cognitive speed, we recommend consistent use for at least 30 to 60 days. It only gets better with time!</p></div>
+    <div class="faq-answer"><p>Many users feel a difference in their urinary comfort within the <strong>first 2-3 weeks</strong>. For the best long-term results in prostate wellness and stamina, we recommend consistent use for at least 60 to 90 days. It only gets better with time!</p></div>
 </div>
 
 <div class="faq-item">
     <button class="faq-question">
-        ⭐ Why is Neuro Serge rated #1 compared to other brain boosters?
+        ⭐ Why is ProstaVive rated #1 for Men's Health?
         <span class="faq-icon">+</span>
     </button>
-    <div class="faq-answer"><p>Unlike typical caffeine-filled pills, Neuro Serge uses a <strong>science-backed herbal synergy</strong> that nourishes your brain cells. It provides clean energy and sharp focus without the "crashes" or jitters, making it the most reliable choice for professionals and students.</p></div>
+    <div class="faq-answer"><p>Unlike typical supplements, ProstaVive uses a <strong>proprietary botanical blend</strong> designed to target the root causes of prostate issues. It provides natural vitality and flow support, making it the most reliable choice for men looking to reclaim their energy.</p></div>
 </div>
 
 <div class="faq-item">
     <button class="faq-question">
-        🛡️ What if I am not 100% satisfied with my results?
+        🛡️ What if I am not 100% satisfied with ProstaVive?
         <span class="faq-icon">+</span>
     </button>
-    <div class="faq-answer"><p>Your purchase is completely **Risk-Free!** We are so confident in Neuro Serge that we offer a 100% Satisfaction Guarantee. If you don't feel sharper and more focused, your investment is protected. We value your trust above everything else.</p></div>
+    <div class="faq-answer"><p>Your purchase is completely **Risk-Free!** We are so confident in ProstaVive that we offer a 100% Satisfaction Guarantee. If you don't feel a significant improvement in your health and vitality, your investment is protected by our refund policy. We value your trust above everything else.</p></div>
 </div>
 </div>
 
@@ -1256,36 +1317,144 @@ See More
 </div>
 
 
+<footer class="main-footer">
+    <div class="footer-content">
+      
+      <!-- Ultra-Compact Horizontal Links -->
+      <ul class="footer-nav-horizontal">
+        <li><a onclick="showAbout()">About</a></li>
+        <li><a onclick="openFAQ()">FAQ</a></li>
+        <li><a onclick="openDisclaimer()">Disclaimer</a></li>
+        <li><a onclick="openPrivacyPolicy()">Privacy</a></li>
+        <li><a onclick="openModal('affiliate')">Affiliate</a></li>
+        <li><a onclick="openTerms()">Terms</a></li>
+        <li><a onclick="showImportantInfo()">Info</a></li>
+        <li><a onclick="showContact()">Contact</a></li>
+      </ul>
 
-
-
-
-
-
-<footer class="footer">
-  <!-- Social Media Icons Section -->
-  <div class="social-icons">
-    <a href="javascript:void(0)" onclick="openModal('contact')" class="supportroophub@gmail.com" title="Email Support"><i class="fa-solid fa-envelope"></i></a>
-    <a href="tel:8271734883" class="social-link" title="Phone"><i class="fa-solid fa-phone"></i></a>
-    <a href="https://www.youtube.com" target="_blank" class="https://youtube.com/@roophub-official?si=p-hF3XMVk5vbwgHG" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-    <a href="https://www.google.com/maps?q=Yadav+Nagar+Road+No+3+Muzaffarpur+Bihar" target="_blank" class="social-link" title="Location"><i class="fa-solid fa-location-dot"></i></a>
-    <a href="https://www.facebook.com" target="_blank" class="https://www.facebook.com/share/1E2q8n11CD/" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-    <a href="https://wa.me/918271734883" target="_blank" class="https://whatsapp.com/channel/0029Vb7Y2ft3QxS4drpeQV02" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-    <a href="https://twitter.com" target="_blank" class="https://x.com/Roophub191378" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
-  </div>
-
-  <div class="bottom-menu">
-    <button onclick="openModal('about')">About Us</button>
-    <button onclick="openModal('contact')">Contact</button>
-    <button onclick="openModal('disclaimer')">Disclaimer</button>
-    <button onclick="openModal('faq')">FAQ</button>
-    <button onclick="openModal('terms')">Terms & Conditions</button>
-    <button onclick="openModal('privacy')">Privacy Policy</button>
-    <button onclick="openModal('affiliate')">Affiliate Disclosure</button>
-  </div>
-
-  <p style="font-size: 12px; color: #aaa; border-top: 1px solid #334155; padding-top: 12px;">© 2026 RoopHub Official. All rights reserved.</p>
+      <!-- Integrated Social & Copyright -->
+      <div class="footer-bottom-section">
+        <div class="social-icons">
+          <a href="javascript:void(0)" onclick="showContact()" title="Email Support"><i class="fa-solid fa-envelope"></i></a>
+          <a href="tel:8271734883" title="Phone Support"><i class="fa-solid fa-phone"></i></a>
+          <a href="https://www.youtube.com" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://wa.me/918271734883" target="_blank" title="WhatsApp Support"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        
+        <p class="footer-copyright">&copy; 2026 ProstVive Official.</p>
+        <span class="affiliate-badge"><i class="fa-solid fa-handshake"></i>Partner</span>
+      </div>
+      
+    </div>
 </footer>
+
+<style>
+    /* Footer styles moved from inline to here */
+    .main-footer {
+        padding: 12px 0;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        background: #131a22;
+        color: #cbd5e1; /* Default text color for footer */
+        z-index: 999; /* Ensure footer is above other elements like chat */
+        margin-top: auto; /* Push footer to the bottom */
+    }
+    .main-footer .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 0 20px;
+        gap: 15px;
+    }
+    .main-footer .footer-nav-horizontal {
+        margin: 0;
+        padding: 0;
+        border: none;
+        display: flex;
+        gap: 12px;
+        list-style: none;
+        flex-wrap: wrap;
+    }
+    .main-footer .footer-nav-horizontal li a {
+        font-size: 11px;
+        color: #cbd5e1;
+        cursor: pointer;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    .main-footer .footer-nav-horizontal li a:hover {
+        color: #3b82f6; /* Highlight color on hover */
+    }
+    .main-footer .footer-bottom-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    .main-footer .social-icons {
+        margin: 0;
+        display: flex;
+        gap: 8px;
+    }
+    .main-footer .social-icons a {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.05);
+        color: #3b82f6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+    .main-footer .social-icons a:hover {
+        background: #3b82f6;
+        color: white;
+    }
+    .main-footer .footer-copyright {
+        font-size: 10px;
+        margin: 0;
+        color: #94a3b8;
+        opacity: 0.8;
+    }
+    .main-footer .affiliate-badge {
+        padding: 2px 6px;
+        font-size: 9px;
+        margin: 0;
+        background: #27ae60;
+        color: white;
+        border-radius: 3px;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .main-footer .affiliate-badge i {
+        font-size: 8px;
+    }
+
+    /* Responsive adjustments for footer */
+    @media (max-width: 768px) {
+        .main-footer .footer-content {
+            flex-direction: column;
+            text-align: center;
+            padding: 10px 15px;
+        }
+        .main-footer .footer-nav-horizontal {
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .main-footer .footer-bottom-section {
+            flex-direction: column;
+            gap: 10px;
+        }
+        .main-footer .social-icons {
+            justify-content: center;
+        }
+    }
+</style>
 
 <!-- ✨ FAQ POPUP OVERLAY STRUCTURE -->
 <div id="faqPopupOverlay" onclick="closeFaqPopup()"></div>
@@ -1300,7 +1469,7 @@ See More
   <div class="modal-content auth-modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
     <div class="auth-header">
-        <h2 class="auth-title">Welcome to RoopHub!</h2>
+        <h2 class="auth-title">Welcome to ProstaVive!</h2>
         <p class="auth-tagline">Join our community for exclusive deals and a personalized experience.</p>
     </div>
 
@@ -1353,7 +1522,7 @@ See More
   <div class="modal-content auth-modal-content" style="height: auto; max-width: 400px; padding: 30px;">
     <span class="close" onclick="closeModal('profileModal')">&times;</span>
     <div style="text-align: center;">
-        <h2 style="color: #1e40af; margin-bottom: 10px;">RoopHub Swagat Karta Hai! 🙏</h2>
+        <h2 style="color: #1e40af; margin-bottom: 10px;">ProstaVive Swagat Karta Hai! 🙏</h2>
         <p style="color: #64748b; font-size: 14px; margin-bottom: 20px;">Aapka account active hai.</p>
         <div id="profileDetails" style="margin: 20px 0; text-align: left; background: #f8fafc; padding: 15px; border-radius: 10px; border: 1px solid #e2e8f0; color: #333;">
             <!-- User info dynamically injected here -->
@@ -1400,10 +1569,10 @@ padding:20px;
     Close ✖
     </button>
 
-    <h2>Privacy Policy for RoopHub Official</h2>
+    <h2>Privacy Policy for ProstaVive Official</h2>
     <p><strong>Last Updated: April 17, 2026</strong></p>
 
-    <p>At RoopHUB Official (accessible from roophub.online), one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by RoopHUB and how we use it. We are committed to protecting your personal data and providing a transparent environment for our users. If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
+    <p>At ProstaVive Official (accessible from roophub.online), one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by ProstaVive and how we use it. We are committed to protecting your personal data and providing a transparent environment for our users. If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
 
     <h3>1. Information We Collect</h3>
     <p>The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information. If you contact us directly, we may receive additional information about you such as your name, email address, phone number, the contents of the message and/or attachments you may send us, and any other information you may choose to provide.</p>
@@ -1422,10 +1591,10 @@ padding:20px;
     </p>
 
     <h3>3. Log Files and Analytics</h3>
-    <p>RoopHUB follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this as part of hosting services' analytics. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.</p>
+    <p>ProstaVive follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this as part of hosting services' analytics. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.</p>
 
     <h3>4. Cookies and Web Beacons</h3>
-    <p>Like any other website, RoopHUB uses "cookies". These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
+    <p>Like any other website, ProstaVive uses "cookies". These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
 
     <h3>5. Google DoubleClick DART Cookie</h3>
     <p>Google is one of the third-party vendors on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to our site and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL – <a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a></p>
@@ -1433,13 +1602,13 @@ padding:20px;
     <h3>6. Advertising Partners and Affiliate Links</h3>
     <p>Some of the advertisers and affiliate partners on our site may use cookies and web beacons. Our advertising partners include Google AdSense and various affiliate networks. Each of our advertising partners has their own Privacy Policy for their policies on user data. For easier access, we hyperlinked to their Privacy Policies below.</p>
     <p>Third-party ad servers or ad networks use technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on RoopHUB, which are sent directly to users' browsers. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</p>
-    <p>Note that RoopHUB has no access to or control over these cookies that are used by third-party advertisers or affiliate programs.</p>
+    <p>Note that ProstaVive has no access to or control over these cookies that are used by third-party advertisers or affiliate programs.</p>
 
     <h3>7. Third-Party Privacy Policies</h3>
-    <p>RoopHUB's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites.</p>
+    <p>ProstaVive's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites.</p>
 
     <h3>8. CCPA Privacy Rights (Do Not Sell My Personal Information)</h3>
-    <p>Under the CCPA, among other rights, California consumers have the right to request that a business that collects a consumer's personal data disclose the categories and specific pieces of personal data that a business has collected about consumers. You also have the right to request that a business delete any personal data about the consumer that a business has collected. RoopHUB fully respects these rights for all our users worldwide. If you make a request, we have one month to respond to you.</p>
+    <p>Under the CCPA, among other rights, California consumers have the right to request that a business that collects a consumer's personal data disclose the categories and specific pieces of personal data that a business has collected about consumers. You also have the right to request that a business delete any personal data about the consumer that a business has collected. ProstaVive fully respects these rights for all our users worldwide. If you make a request, we have one month to respond to you.</p>
 
     <h3>9. GDPR Data Protection Rights</h3>
     <p>We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:
@@ -1452,7 +1621,7 @@ padding:20px;
     </p>
 
     <h3>10. Children's Information</h3>
-    <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity. RoopHUB does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
+    <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity. ProstaVive does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
 
     <h3>11. Consent</h3>
     <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms and conditions. This policy is designed to ensure a safe and trustworthy browsing experience for all our wellness community members.</p>
@@ -1486,13 +1655,13 @@ padding:20px;
     Close ✖
     </button>
 
-    <h2>Terms and Conditions for RoopHub Official</h2>
+    <h2>Terms and Conditions for ProstaVive Official</h2>
     <p><strong>Last Updated: April 17, 2026</strong></p>
 
-    <p>Welcome to RoopHUB Official (roophub.online). These terms and conditions outline the rules and regulations for the use of RoopHUB's Website. By accessing this website, we assume you accept these terms and conditions in full. Do not continue to use RoopHUB Official if you do not agree to all of the terms and conditions stated on this page.</p>
+    <p>Welcome to ProstaVive Official (roophub.online). These terms and conditions outline the rules and regulations for the use of ProstaVive's Website. By accessing this website, we assume you accept these terms and conditions in full. Do not continue to use ProstaVive Official if you do not agree to all of the terms and conditions stated on this page.</p>
 
     <h3>1. Intellectual Property Rights</h3>
-    <p>Unless otherwise stated, RoopHUB and/or its licensors own the intellectual property rights for all material on RoopHUB Official. All intellectual property rights are reserved. You may view and/or print pages from roophub.online for your own personal use subject to restrictions set in these terms and conditions.</p>
+    <p>Unless otherwise stated, ProstaVive and/or its licensors own the intellectual property rights for all material on ProstaVive Official. All intellectual property rights are reserved. You may view and/or print pages from roophub.online for your own personal use subject to restrictions set in these terms and conditions.</p>
     <p>You must not:
     <ul>
         <li>Republish material from roophub.online without proper attribution.</li>
@@ -1502,31 +1671,31 @@ padding:20px;
     </p>
 
     <h3>2. Affiliate Disclosure & Third-Party Links</h3>
-    <p>RoopHUB Official is an affiliate marketing website. This means we provide information about third-party products and include links to the official manufacturers' websites. When you click on these links and make a purchase, we may receive a commission. We do not own, manufacture, or ship the products mentioned on our site. Your purchase is made directly from the official brand, and any issues regarding shipping, billing, or product quality must be resolved with the respective manufacturer.</p>
+    <p>ProstaVive Official is an affiliate marketing website. This means we provide information about third-party products and include links to the official manufacturers' websites. When you click on these links and make a purchase, we may receive a commission. We do not own, manufacture, or ship the products mentioned on our site. Your purchase is made directly from the official brand, and any issues regarding shipping, billing, or product quality must be resolved with the respective manufacturer.</p>
 
     <h3>3. Medical & Results Disclaimer</h3>
-    <p>The content provided on RoopHUB is for informational and educational purposes only. It is not intended to be a substitute for professional medical advice, diagnosis, or treatment. We discuss supplements like Neuro Serge and others based on publicly available data and official claims. However, individual results vary, and we do not guarantee any specific health outcomes. Always seek the advice of your physician or other qualified health providers with any questions you may have regarding a medical condition.</p>
+    <p>The content provided on ProstaVive is for informational and educational purposes only. It is not intended to be a substitute for professional medical advice, diagnosis, or treatment. We discuss supplements like Neuro Serge and others based on publicly available data and official claims. However, individual results vary, and we do not guarantee any specific health outcomes. Always seek the advice of your physician or other qualified health providers with any questions you may have regarding a medical condition.</p>
 
     <h3>4. User Comments & Feedback</h3>
-    <p>Parts of this website may offer users the opportunity to post and exchange opinions, information, or data. RoopHUB does not screen, edit, or review Comments prior to their appearance on the website and Comments do not reflect the views or opinions of RoopHUB, its agents, or affiliates. We reserve the right to monitor all Comments and to remove any Comments which it considers in its absolute discretion to be inappropriate, offensive, or otherwise in breach of these Terms and Conditions.</p>
+    <p>Parts of this website may offer users the opportunity to post and exchange opinions, information, or data. ProstaVive does not screen, edit, or review Comments prior to their appearance on the website and Comments do not reflect the views or opinions of ProstaVive, its agents, or affiliates. We reserve the right to monitor all Comments and to remove any Comments which it considers in its absolute discretion to be inappropriate, offensive, or otherwise in breach of these Terms and Conditions.</p>
 
     <h3>5. Limitation of Liability</h3>
-    <p>In no event shall RoopHUB, nor any of its officers, directors, and employees, be liable to you for anything arising out of or in any way connected with your use of this website, whether such liability is under contract, tort, or otherwise. RoopHUB, including its officers and employees, shall not be liable for any indirect, consequential, or special liability arising out of or in any way related to your use of this website or the products promoted herein.</p>
+    <p>In no event shall ProstaVive, nor any of its officers, directors, and employees, be liable to you for anything arising out of or in any way connected with your use of this website, whether such liability is under contract, tort, or otherwise. ProstaVive, including its officers and employees, shall not be liable for any indirect, consequential, or special liability arising out of or in any way related to your use of this website or the products promoted herein.</p>
 
     <h3>6. Accuracy of Materials</h3>
-    <p>The materials appearing on RoopHUB Official's website could include technical, typographical, or photographic errors. RoopHUB does not warrant that any of the materials on its website are accurate, complete, or current. We may make changes to the materials contained on our website at any time without notice. However, we do not make any commitment to update the materials regularly.</p>
+    <p>The materials appearing on ProstaVive Official's website could include technical, typographical, or photographic errors. ProstaVive does not warrant that any of the materials on its website are accurate, complete, or current. We may make changes to the materials contained on our website at any time without notice. However, we do not make any commitment to update the materials regularly.</p>
 
     <h3>7. Google AdSense & Advertising</h3>
-    <p>RoopHUB uses Google AdSense to serve advertisements. By using this site, you agree to comply with Google’s Advertising Policies. Any interaction with ads is subject to Google’s terms and your own browsing preferences. We are not responsible for the content or claims of the automated ads displayed via the AdSense network.</p>
+    <p>ProstaVive uses Google AdSense to serve advertisements. By using this site, you agree to comply with Google’s Advertising Policies. Any interaction with ads is subject to Google’s terms and your own browsing preferences. We are not responsible for the content or claims of the automated ads displayed via the AdSense network.</p>
 
     <h3>8. Governing Law</h3>
     <p>These terms and conditions are governed by and construed in accordance with the laws of India, and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location. This ensures a transparent legal framework for our digital operations and affiliate partnerships.</p>
 
     <h3>9. Variation of Terms</h3>
-    <p>RoopHUB is permitted to revise these terms at any time as it sees fit, and by using this website you are expected to review such terms on a regular basis to ensure you understand all terms and conditions governing the use of this website.</p>
+    <p>ProstaVive is permitted to revise these terms at any time as it sees fit, and by using this website you are expected to review such terms on a regular basis to ensure you understand all terms and conditions governing the use of this website.</p>
 
     <h3>10. Entire Agreement</h3>
-    <p>These Terms, including any legal notices and disclaimers contained on this website, constitute the entire agreement between RoopHUB and you in relation to your use of this website, and supersede all prior agreements and understandings with respect to the same.</p>
+    <p>These Terms, including any legal notices and disclaimers contained on this website, constitute the entire agreement between ProstaVive and you in relation to your use of this website, and supersede all prior agreements and understandings with respect to the same.</p>
 
     <h3>11. Contact Us</h3>
     <p>If you have any questions about these Terms and Conditions, please contact us via our official contact page. We value our community and are committed to maintaining a fair and transparent platform for all wellness enthusiasts.</p>
@@ -1566,23 +1735,23 @@ padding:20px;
     <p style="text-align: center; color: #7f8c8d; margin-bottom: 30px;">Find answers to the most common questions about our platform and the products we review.</p>
 
     <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-        <h3 style="color: #34495e;">1. What is RoopHUB Official and how does it work?</h3>
-        <p>RoopHUB Official is a dedicated wellness and health information platform. Our mission is to research, analyze, and present the most effective health supplements and wellness products available in the market today. We act as a bridge between you and the official product manufacturers. We provide detailed insights, ingredient breakdowns, and usage guides so that you can make an informed decision before purchasing. When you decide to buy a product through our links, we redirect you to the secure, official website of the brand to ensure you get genuine products and the best possible price.</p>
+        <h3 style="color: #34495e;">1. What is ProstaVive Official and how does it work?</h3>
+        <p>ProstaVive Official is a dedicated wellness and health information platform. Our mission is to research, analyze, and present the most effective health supplements and wellness products available in the market today. We act as a bridge between you and the official product manufacturers. We provide detailed insights, ingredient breakdowns, and usage guides so that you can make an informed decision before purchasing. When you decide to buy a product through our links, we redirect you to the secure, official website of the brand to ensure you get genuine products and the best possible price.</p>
     </div>
 
     <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
         <h3 style="color: #34495e;">2. Is the information provided on this website medical advice?</h3>
-        <p>No, the information provided on RoopHUB Official is for educational and informational purposes only. While we take great care in researching the products we feature, such as Neuro Serge, we are not medical professionals or licensed doctors. The content on this site should not be used to diagnose, treat, or cure any disease. Every individual has a unique medical history, and what works for one person may not work for another. We strongly recommend consulting with a healthcare professional before starting any new dietary supplement, especially if you have pre-existing health conditions or are taking prescription medication.</p>
+        <p>No, the information provided on ProstaVive Official is for educational and informational purposes only. While we take great care in researching the products we feature, such as Neuro Serge, we are not medical professionals or licensed doctors. The content on this site should not be used to diagnose, treat, or cure any disease. Every individual has a unique medical history, and what works for one person may not work for another. We strongly recommend consulting with a healthcare professional before starting any new dietary supplement, especially if you have pre-existing health conditions or are taking prescription medication.</p>
     </div>
 
     <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-        <h3 style="color: #34495e;">3. Are the products mentioned on RoopHUB sold directly by you?</h3>
-        <p>No, RoopHUB does not sell, manufacture, or ship any physical products directly. We are an independent affiliate partner. Our role is to provide information and direct you to the official source. When you click an "Order Now" or "Official Website" button, you are taken to the manufacturer's secure checkout page. This ensures that your payment is handled by a verified brand and that you receive an authentic product with all applicable money-back guarantees provided by the company.</p>
+        <h3 style="color: #34495e;">3. Are the products mentioned on ProstaVive sold directly by you?</h3>
+        <p>No, ProstaVive does not sell, manufacture, or ship any physical products directly. We are an independent affiliate partner. Our role is to provide information and direct you to the official source. When you click an "Order Now" or "Official Website" button, you are taken to the manufacturer's secure checkout page. This ensures that your payment is handled by a verified brand and that you receive an authentic product with all applicable money-back guarantees provided by the company.</p>
     </div>
 
     <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
         <h3 style="color: #34495e;">4. Do I have to pay extra if I buy through your affiliate links?</h3>
-        <p>Absolutely not. One of our core principles is transparency. Buying through an affiliate link on RoopHUB does not cost you a single extra penny. In fact, it is often the opposite. Because we maintain professional relationships with these brands, we are sometimes able to offer our readers exclusive discount codes or special bundle pricing that you might not find by visiting the website directly. The commission we earn is paid by the manufacturer as a marketing fee, and it does not affect your final purchase price in any way.</p>
+        <p>Absolutely not. One of our core principles is transparency. Buying through an affiliate link on ProstaVive does not cost you a single extra penny. In fact, it is often the opposite. Because we maintain professional relationships with these brands, we are sometimes able to offer our readers exclusive discount codes or special bundle pricing that you might not find by visiting the website directly. The commission we earn is paid by the manufacturer as a marketing fee, and it does not affect your final purchase price in any way.</p>
     </div>
 
     <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
@@ -1596,12 +1765,12 @@ padding:20px;
     </div>
 
     <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-        <h3 style="color: #34495e;">7. Is my data safe when browsing RoopHUB Official?</h3>
+        <h3 style="color: #34495e;">7. Is my data safe when browsing ProstaVive Official?</h3>
         <p>Yes, your security is a top priority for us. Our website uses SSL encryption to ensure that your browsing experience is private and secure. As detailed in our Privacy Policy, we do not collect or store sensitive personal information like your credit card details or home address. We use cookies only to track affiliate referrals and to improve our website's performance. You can browse our articles and reviews with complete peace of mind knowing that your privacy is respected.</p>
     </div>
 
     <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-        <h3 style="color: #34495e;">8. How can I contact the RoopHUB team?</h3>
+        <h3 style="color: #34495e;">8. How can I contact the ProstaVive team?</h3>
         <p>We love hearing from our community! Whether you have a question about a specific review, want to suggest a product for us to analyze, or have a technical issue with our website, you can reach out to us through our official Contact Us page. We aim to respond to all legitimate inquiries within 24-48 hours. Providing clear communication is part of our commitment to being a transparent and reliable source in the health and wellness space.</p>
     </div>
 </div>
@@ -1638,29 +1807,29 @@ padding:20px;
     <h2 style="color:#0e28e9; border-bottom: 2px solid #eee; padding-bottom:10px;">Medical & Earnings Disclaimer</h2>
     <p><strong>Last Updated: April 17, 2026</strong></p>
 
-    <p>Please read this Disclaimer carefully before using the RoopHUB Official website (roophub.online). By accessing this site, you acknowledge and agree to the following terms regarding the information provided and the products promoted.</p>
+    <p>Please read this Disclaimer carefully before using the ProstaVive Official website (roophub.online). By accessing this site, you acknowledge and agree to the following terms regarding the information provided and the products promoted.</p>
 
     <h3>1. Not Medical Advice (Health Disclaimer)</h3>
-    <p>The content provided on RoopHUB Official, including text, graphics, images, and other material, is for informational and educational purposes only. None of the content on this website is intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or another qualified health provider with any questions you may have regarding a medical condition or health goals.</p>
-    <p>Never disregard professional medical advice or delay in seeking it because of something you have read on this website. If you think you may have a medical emergency, call your doctor or emergency services immediately. Reliance on any information provided by RoopHUB Official is solely at your own risk.</p>
+    <p>The content provided on ProstaVive Official, including text, graphics, images, and other material, is for informational and educational purposes only. None of the content on this website is intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or another qualified health provider with any questions you may have regarding a medical condition or health goals.</p>
+    <p>Never disregard professional medical advice or delay in seeking it because of something you have read on this website. If you think you may have a medical emergency, call your doctor or emergency services immediately. Reliance on any information provided by ProstaVive Official is solely at your own risk.</p>
 
     <h3>2. Individual Results May Vary</h3>
     <p>When discussing health supplements such as Neuro Serge, Prostavive, or any other wellness products, it is important to understand that <strong>individual results will vary</strong>. Health supplements are not "magic pills" and their effectiveness depends on various factors including age, genetics, diet, exercise, and overall health condition. Testimonials or case studies found on this site or on the official product pages represent exceptional results and do not guarantee that you will achieve the same outcome. We make no guarantees, warranties, or representations regarding the specific health benefits you may experience.</p>
 
     <h3>3. Affiliate & Earnings Disclaimer</h3>
-    <p>RoopHUB Official is a participant in various affiliate marketing programs. This means that we may earn a commission if you click on a link and make a purchase through our site. This commission is paid by the product manufacturer at no additional cost to you. Our reviews and recommendations are based on our independent research and analysis. While we strive to provide honest and unbiased information, please be aware that our financial relationship with product owners may influence the placement or order of products on this website.</p>
+    <p>ProstaVive Official is a participant in various affiliate marketing programs. This means that we may earn a commission if you click on a link and make a purchase through our site. This commission is paid by the product manufacturer at no additional cost to you. Our reviews and recommendations are based on our independent research and analysis. While we strive to provide honest and unbiased information, please be aware that our financial relationship with product owners may influence the placement or order of products on this website.</p>
 
     <h3>4. Product Safety & Responsibility</h3>
-    <p>RoopHUB Official does not manufacture, store, or ship any of the products mentioned on this site. We are strictly an informational and referral platform. Before consuming any supplement, we strongly recommend that you read the full ingredient list on the official product label to avoid potential allergic reactions or adverse effects. If you are pregnant, nursing, taking medication, or have a history of heart conditions, consult a licensed healthcare professional before use. Any issues related to product quality, shipping delays, or billing must be addressed directly with the product manufacturer’s customer support.</p>
+    <p>ProstaVive Official does not manufacture, store, or ship any of the products mentioned on this site. We are strictly an informational and referral platform. Before consuming any supplement, we strongly recommend that you read the full ingredient list on the official product label to avoid potential allergic reactions or adverse effects. If you are pregnant, nursing, taking medication, or have a history of heart conditions, consult a licensed healthcare professional before use. Any issues related to product quality, shipping delays, or billing must be addressed directly with the product manufacturer’s customer support.</p>
 
     <h3>5. Accuracy of Information</h3>
-    <p>While we make every effort to ensure that the information on this website is accurate and up-to-date, health research is constantly evolving. RoopHUB Official does not warrant or guarantee the completeness, reliability, or accuracy of the information provided. Any action you take based on the information found on this website is strictly at your own risk, and we will not be liable for any losses or damages in connection with the use of our website.</p>
+    <p>While we make every effort to ensure that the information on this website is accurate and up-to-date, health research is constantly evolving. ProstaVive Official does not warrant or guarantee the completeness, reliability, or accuracy of the information provided. Any action you take based on the information found on this website is strictly at your own risk, and we will not be liable for any losses or damages in connection with the use of our website.</p>
 
     <h3>6. External Links Disclaimer</h3>
-    <p>Our website contains links to external websites (official product pages) that are not provided or maintained by or in any way affiliated with RoopHUB Official. Please note that we do not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites. Once you leave our domain, you are subject to the privacy policies and terms of the third-party site.</p>
+    <p>Our website contains links to external websites (official product pages) that are not provided or maintained by or in any way affiliated with ProstaVive Official. Please note that we do not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites. Once you leave our domain, you are subject to the privacy policies and terms of the third-party site.</p>
 
     <h3>7. No Warranties</h3>
-    <p>This website is provided "as is" without any representations or warranties, express or implied. RoopHUB Official makes no representations or warranties in relation to this website or the information and materials provided on this website. We do not warrant that this website will be constantly available, or available at all; or that the information on this website is complete, true, accurate or non-misleading.</p>
+    <p>This website is provided "as is" without any representations or warranties, express or implied. ProstaVive Official makes no representations or warranties in relation to this website or the information and materials provided on this website. We do not warrant that this website will be constantly available, or available at all; or that the information on this website is complete, true, accurate or non-misleading.</p>
 
     <h3>8. Consent</h3>
     <p>By using our website, you hereby consent to our disclaimer and agree to its terms. We reserve the right to update, amend or make any changes to this document at any time without prior notice.</p>
@@ -1678,19 +1847,19 @@ padding:20px;
     </button>
 
     <div style="max-width: 800px; margin: 40px auto;">
-        <h1 style="color: #2c3e50; border-bottom: 3px solid #4CAF50; padding-bottom: 10px;">Contact RoopHub Official</h1>
+        <h1 style="color: #2c3e50; border-bottom: 3px solid #4CAF50; padding-bottom: 10px;">Contact ProstaVive Official</h1>
 
         <p style="font-size: 1.1em; line-height: 1.8;">
-            Welcome to the <strong>RoopHub Official</strong> support center. We understand that in the fast-paced world of digital wellness and affiliate marketing, having a reliable point of contact is essential for building trust and ensuring a smooth user experience. If you have any questions, suggestions, or business inquiries, feel free to contact us at any time. We are always ready to help our users and respond as quickly as possible.
+            Welcome to the <strong>ProstaVive Official</strong> support center. We understand that in the fast-paced world of digital wellness and affiliate marketing, having a reliable point of contact is essential for building trust and ensuring a smooth user experience. If you have any questions, suggestions, or business inquiries, feel free to contact us at any time. We are always ready to help our users and respond as quickly as possible.
         </p>
         
         <p style="line-height: 1.8;">
-            RoopHub values every user message and feedback because it helps us improve our platform. Whether it is a technical issue regarding our website's performance, a product query about the supplements we review (like Neuro Serge or Prostavive), or a general question about how affiliate marketing works, our team is here to assist you. Our goal is to provide you with the most accurate, well-researched, and transparent information so that you can make informed decisions about your health and wellness journey.
+            ProstaVive values every user message and feedback because it helps us improve our platform. Whether it is a technical issue regarding our website's performance, a product query about the supplements we review (like Neuro Serge or Prostavive), or a general question about how affiliate marketing works, our team is here to assist you. Our goal is to provide you with the most accurate, well-researched, and transparent information so that you can make informed decisions about your health and wellness journey.
         </p>
 
         <h3 style="color: #27ae60; margin-top: 30px;">Why Should You Reach Out to Us?</h3>
         <p style="line-height: 1.8;">
-            At RoopHub, we believe that communication is the key to community growth. You might want to reach out to us for several reasons. Perhaps you have noticed a technical glitch on our landing page, or maybe you want more clarity on the ingredient profile of a wellness product we have featured. We encourage our readers to be proactive. If you are a brand owner looking for an ethical affiliate partner who values "No Fake Reviews" and "Clean Design," we are eager to hear your proposal.
+            At ProstaVive, we believe that communication is the key to community growth. You might want to reach out to us for several reasons. Perhaps you have noticed a technical glitch on our landing page, or maybe you want more clarity on the ingredient profile of a wellness product we have featured. We encourage our readers to be proactive. If you are a brand owner looking for an ethical affiliate partner who values "No Fake Reviews" and "Clean Design," we are eager to hear your proposal.
         </p>
         <p style="line-height: 1.8;">
             Furthermore, if you are a customer who has clicked on one of our affiliate links and has a question about the redirection process, our support staff can guide you. Please remember, however, that since we do not manufacture or ship products directly, specific order-related issues (like tracking numbers or billing) are best handled by the official product manufacturer. But, if you cannot find their contact details, we will go the extra mile to find them for you.
@@ -1780,13 +1949,13 @@ padding:20px;
     Close ✖
     </button>
     
-    <h1 style="text-align:center; color:#27ae60; font-size:2.5em; margin-bottom:10px;">About RoopHUB Official</h1>
+    <h1 style="text-align:center; color:#27ae60; font-size:2.5em; margin-bottom:10px;">About ProstaVive Official</h1>
     <p style="text-align:center; color:#7f8c8d; font-style:italic; margin-bottom:40px;">"Empowering Your Wellness Journey Through Transparency and Truth."</p>
 
     <section>
-        <h2 style="color:#2c3e50; border-bottom:2px solid #27ae60; padding-bottom:5px;">Our Story: The Birth of RoopHUB</h2>
-        <p>Welcome to <strong>RoopHUB Official (roophub.online)</strong>. Our journey began with a simple yet powerful observation: the digital world is flooded with health advice, but finding trustworthy, unbiased, and scientifically backed information is becoming increasingly difficult. In an era where "clickbait" and exaggerated claims dominate the wellness industry, RoopHUB was founded to be a sanctuary of clarity.</p>
-        <p>The name "Roop" signifies form, beauty, and essence, while "HUB" represents a central point of connection. Together, RoopHUB is your central destination for discovering the true essence of wellness. We started as a small digital initiative focused on affiliate marketing, but with a major difference—we decided to put <strong>Integrity over Income</strong>. We realized that people aren't just looking for products; they are looking for solutions that actually work without being misled by false promises.</p>
+        <h2 style="color:#2c3e50; border-bottom:2px solid #27ae60; padding-bottom:5px;">Our Story: The Birth of ProstaVive</h2>
+        <p>Welcome to <strong>ProstaVive Official (roophub.online)</strong>. Our journey began with a simple yet powerful observation: the digital world is flooded with health advice, but finding trustworthy, unbiased, and scientifically backed information is becoming increasingly difficult. In an era where "clickbait" and exaggerated claims dominate the wellness industry, ProstaVive was founded to be a sanctuary of clarity.</p>
+        <p>The name "Roop" signifies form, beauty, and essence, while "HUB" represents a central point of connection. Together, ProstaVive is your central destination for discovering the true essence of wellness. We started as a small digital initiative focused on affiliate marketing, but with a major difference—we decided to put <strong>Integrity over Income</strong>. We realized that people aren't just looking for products; they are looking for solutions that actually work without being misled by false promises.</p>
     </section>
 
     <section style="margin-top:40px; background:#f9f9f9; padding:20px; border-radius:10px;">
@@ -1797,7 +1966,7 @@ padding:20px;
 
     <section style="margin-top:40px;">
         <h2 style="color:#2c3e50;">The "No Fake Reviews" Guarantee</h2>
-        <p>One of the strongest pillars of RoopHUB Official is our unwavering commitment to <strong>Ethical Marketing</strong>. In the affiliate industry, it is common to see fake testimonials, doctored "before and after" photos, and falsified identities used to drive sales. At RoopHUB, we have a strict "No Fake" policy.</p>
+        <p>One of the strongest pillars of ProstaVive Official is our unwavering commitment to <strong>Ethical Marketing</strong>. In the affiliate industry, it is common to see fake testimonials, doctored "before and after" photos, and falsified identities used to drive sales. At ProstaVive, we have a strict "No Fake" policy.</p>
         <p><strong>What this means for you:</strong>
             <ul>
                 <li><strong>No Deceptive Testimonials:</strong> We do not create or buy fake reviews to make a product look better than it is.</li>
@@ -1810,7 +1979,7 @@ padding:20px;
 
     <section style="margin-top:40px;">
         <h2 style="color:#2c3e50;">Expertise and Research Process</h2>
-        <p>How do we choose the products featured on roophub.online? Our research process is rigorous. We don't just look at the shiny packaging. We look at:
+        <p>How do we choose the products featured on this platform? Our research process is rigorous. We don't just look at the shiny packaging. We look at:
             <ol>
                 <li><strong>Ingredient Synergy:</strong> Do the ingredients work together effectively based on nutritional science?</li>
                 <li><strong>Facility Standards:</strong> Is the product made in an FDA-registered or GMP-certified facility?</li>
@@ -1820,9 +1989,9 @@ padding:20px;
     </section>
 
     <section style="margin-top:40px; text-align:center; border-top:1px solid #eee; padding-top:30px;">
-        <h2 style="color:#2c3e50;">Why Trust RoopHUB?</h2>
-        <p>We are more than just an "online store." We are a community-focused platform. Whether you are looking to improve your focus, boost your daily energy, or find natural wellness solutions, RoopHUB is here to guide you. We are constantly updating our content to reflect the latest trends and safety standards in the wellness industry.</p>
-        <p>Thank you for choosing RoopHUB Official as your trusted partner in health. We are excited to be a part of your journey toward a better, healthier version of yourself.</p>
+        <h2 style="color:#2c3e50;">Why Trust ProstaVive?</h2>
+        <p>We are more than just an "online store." We are a community-focused platform. Whether you are looking to improve your focus, boost your daily energy, or find natural wellness solutions, ProstaVive is here to guide you. We are constantly updating our content to reflect the latest trends and safety standards in the wellness industry.</p>
+        <p>Thank you for choosing ProstaVive Official as your trusted partner in health. We are excited to be a part of your journey toward a better, healthier version of yourself.</p>
         
         <div style="margin-top:20px;">
             <p><strong>Follow Our Journey</strong></p>
@@ -1860,35 +2029,35 @@ Close ✖
     <h2>Affiliate Disclosure & Full Earnings Disclaimer</h2>
     <p><strong>Last Updated: April 17, 2026</strong></p>
 
-    <p>Welcome to RoopHUB Official (roophub.online). We believe in complete transparency and honesty when it comes to our relationship with our readers and the products we discuss. In compliance with the Federal Trade Commission (FTC) guidelines and Google AdSense program policies, this page serves as our official disclosure regarding affiliate relationships and how we generate revenue to maintain this platform.</p>
+    <p>Welcome to ProstaVive Official (roophub.online). We believe in complete transparency and honesty when it comes to our relationship with our readers and the products we discuss. In compliance with the Federal Trade Commission (FTC) guidelines and Google AdSense program policies, this page serves as our official disclosure regarding affiliate relationships and how we generate revenue to maintain this platform.</p>
 
     <h3>1. What is an Affiliate Relationship?</h3>
-    <p>First and foremost, you should assume that many of the links found on RoopHUB are "affiliate links." This means that if you click on a link and subsequently make a purchase from the official product manufacturer or a third-party retailer, we may receive a small commission from that sale. This is a referral fee provided by the brand as a thank you for directing a customer to their store.</p>
+    <p>First and foremost, you should assume that many of the links found on ProstaVive are "affiliate links." This means that if you click on a link and subsequently make a purchase from the official product manufacturer or a third-party retailer, we may receive a small commission from that sale. This is a referral fee provided by the brand as a thank you for directing a customer to their store.</p>
     
     <p>It is important to understand that this commission comes at absolutely <strong>no additional cost to you</strong>. Whether you visit the official site directly or through our link, the price remains exactly the same. In many cases, because of our professional relationship with these brands, our links may actually provide you with exclusive discounts, limited-time bonuses, or promotional offers that are not available to the general public.</p>
 
     <h3>2. Why Do We Use Affiliate Links?</h3>
-    <p>Maintaining a high-quality digital platform like RoopHUB involves significant operational costs. These include premium domain registration, high-speed secure hosting, advanced website security protocols, professional copywriting, deep-dive research into health ingredients, and technical maintenance. Affiliate marketing is our primary business model, allowing us to keep our content free for all users. Instead of charging a subscription fee or hiding our articles behind a paywall, we earn through these commissions. This allows us to continue our mission of providing valuable wellness information to thousands of readers worldwide.</p>
+    <p>Maintaining a high-quality digital platform like ProstaVive involves significant operational costs. These include premium domain registration, high-speed secure hosting, advanced website security protocols, professional copywriting, deep-dive research into health ingredients, and technical maintenance. Affiliate marketing is our primary business model, allowing us to keep our content free for all users. Instead of charging a subscription fee or hiding our articles behind a paywall, we earn through these commissions. This allows us to continue our mission of providing valuable wellness information to thousands of readers worldwide.</p>
 
     <h3>3. Our Commitment to Editorial Integrity</h3>
-    <p>At RoopHUB, our reputation is our most valuable asset. We understand that our readers trust us to provide accurate and helpful information. Therefore, our affiliate relationships do not influence the information we provide. We do not accept payment to provide a "fake" positive review. Our evaluation of products like Neuro Serge or other wellness supplements is based on official manufacturer data, ingredient analysis, and general market reputation. We only choose to affiliate ourselves with products that we believe offer genuine value to our audience. If we find a product to be ineffective or untrustworthy, we will not promote it, regardless of the potential commission.</p>
+    <p>At ProstaVive, our reputation is our most valuable asset. We understand that our readers trust us to provide accurate and helpful information. Therefore, our affiliate relationships do not influence the information we provide. We do not accept payment to provide a "fake" positive review. Our evaluation of products like Neuro Serge or other wellness supplements is based on official manufacturer data, ingredient analysis, and general market reputation. We only choose to affiliate ourselves with products that we believe offer genuine value to our audience. If we find a product to be ineffective or untrustworthy, we will not promote it, regardless of the potential commission.</p>
 
     <h3>4. Transparency Regarding Product Claims</h3>
-    <p>While we strive to provide the most up-to-date information, it is important to note that RoopHUB is an independent reviewer and not the manufacturer of the products mentioned. Any product claim, statistic, quote, or other representation about a product or service should be verified with the manufacturer or provider. Results from health supplements can vary significantly from person to person based on age, genetics, and lifestyle. We encourage all our readers to perform their own due diligence before making any purchase decision. Your health and safety are paramount, and you should always consult with a licensed healthcare provider before starting any new supplement regimen.</p>
+    <p>While we strive to provide the most up-to-date information, it is important to note that ProstaVive is an independent reviewer and not the manufacturer of the products mentioned. Any product claim, statistic, quote, or other representation about a product or service should be verified with the manufacturer or provider. Results from health supplements can vary significantly from person to person based on age, genetics, and lifestyle. We encourage all our readers to perform their own due diligence before making any purchase decision. Your health and safety are paramount, and you should always consult with a licensed healthcare provider before starting any new supplement regimen.</p>
 
     <h3>5. Google AdSense and Third-Party Advertisements</h3>
-    <p>In addition to affiliate links, RoopHUB may participate in the Google AdSense program. This means you may see automated advertisements served by Google throughout our website. These ads are generated based on your browsing history or the content of the page. Please be aware that RoopHUB does not have direct control over the specific products or services advertised through the AdSense network. Our inclusion of these ads does not constitute an endorsement of the advertised products. We make a clear distinction between our researched content/affiliate recommendations and the automated ads served by third parties.</p>
+    <p>In addition to affiliate links, ProstaVive may participate in the Google AdSense program. This means you may see automated advertisements served by Google throughout our website. These ads are generated based on your browsing history or the content of the page. Please be aware that ProstaVive does not have direct control over the specific products or services advertised through the AdSense network. Our inclusion of these ads does not constitute an endorsement of the advertised products. We make a clear distinction between our researched content/affiliate recommendations and the automated ads served by third parties.</p>
 
     <h3>6. Ethical Standards and Non-Deceptive Practices</h3>
     <p>We strictly adhere to ethical marketing practices. This means we do not use deceptive tactics, such as fake countdown timers (unless they represent a real expiring offer), misleading testimonials, or falsified identity claims to drive sales. We believe that an informed customer is a happy customer. By being upfront about our affiliate status, we hope to build a long-term relationship with you based on trust and mutual respect. We value your presence on our site and are committed to maintaining the highest standards of digital publishing.</p>
 
     <h3>7. Social Media and External Communications</h3>
-    <p>The disclosure mentioned here applies to all communications from RoopHUB, including our YouTube channel content, email newsletters, and social media posts. If we share a link on platforms like Facebook or Instagram, you should assume that those links also carry the same affiliate potential. We aim to be as consistent as possible across all channels so that you are never in doubt about our commercial interests.</p>
+    <p>The disclosure mentioned here applies to all communications from ProstaVive, including our YouTube channel content, email newsletters, and social media posts. If we share a link on platforms like Facebook or Instagram, you should assume that those links also carry the same affiliate potential. We aim to be as consistent as possible across all channels so that you are never in doubt about our commercial interests.</p>
 
     <h3>8. Contact and Further Questions</h3>
-    <p>Your trust is the foundation of RoopHUB. We want you to feel confident and secure while browsing our landing pages and articles. If you have any questions regarding this Affiliate Disclosure, our privacy practices, or our relationship with specific brands, please do not hesitate to reach out to us. You can contact our team directly through the "Contact Us" page on our website. We are more than happy to provide further clarification to ensure you have a transparent and enjoyable experience on our platform.</p>
+    <p>Your trust is the foundation of ProstaVive. We want you to feel confident and secure while browsing our landing pages and articles. If you have any questions regarding this Affiliate Disclosure, our privacy practices, or our relationship with specific brands, please do not hesitate to reach out to us. You can contact our team directly through the "Contact Us" page on our website. We are more than happy to provide further clarification to ensure you have a transparent and enjoyable experience on our platform.</p>
 
-    <p>By continuing to use this website, you acknowledge that you have read and understood this Affiliate Disclosure and agree to its terms. Thank you for supporting RoopHUB Official.</p>
+    <p>By continuing to use this website, you acknowledge that you have read and understood this Affiliate Disclosure and agree to its terms. Thank you for supporting ProstaVive Official.</p>
 </div>
 
 <!-- ✨ BENEFIT POPUP OVERLAY STRUCTURE -->
@@ -1908,7 +2077,7 @@ Close ✖
 <div id="chat-container" style="display:none; position:fixed; bottom:150px; right:20px; width:320px; border:1px solid #ccc; background:#fff; border-radius:15px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index:1000; overflow:hidden; font-family: Arial, sans-serif;">
     
     <div style="background:#007bff; color:white; padding:15px; font-weight:bold; display:flex; justify-content:space-between; align-items:center;">
-        <span>✨RoopHub AI Assistant</span>
+        <span>✨ProstaVive AI Assistant</span>
         <span onclick="toggleChat()" style="cursor:pointer; font-size:20px;">&times;</span>
     </div>
     
@@ -1917,7 +2086,7 @@ Close ✖
     </div>
 
     <div id="chat-box" style="height:220px; overflow-y:auto; padding:10px; background:#f9f9f9;">
-        <p style="margin:0; color:#555;"><b>Bot:</b> Hello! Welcome to RoopHub. How can I help you find the right health solution today?</p>
+        <p style="margin:0; color:#555;"><b>Bot:</b> Hello! Welcome to ProstaVive. How can I help you find the right health solution today?</p>
     </div>
 
     <div style="padding:10px; border-top:1px solid #eee; display:flex;">
@@ -2093,7 +2262,7 @@ window.onload = function(){
    🔥 SLIDER FIX
 ========================= */
 
-let images=[
+let images = [
 "Images/Neuroserge1.jpeg",
 "Images/Neuroserge2.jpeg",
 "Images/Neuroserge3.jpeg",
@@ -2101,7 +2270,7 @@ let images=[
 ];
 
 let index=0;
-let img=document.getElementById("sliderImage");
+let img = document.getElementById("sliderImage");
 
 function showImage(i){
     if(!img) return;
@@ -2109,7 +2278,7 @@ function showImage(i){
     img.style.filter = 'blur(4px)';
     img.style.transform = 'scale(0.9) translateX(-10px)'; // Professional Exit
 
-    setTimeout(()=>{
+    setTimeout(() => {
         img.src = images[i];
         img.style.opacity = 1;
         img.style.filter = 'blur(0)';
@@ -2266,73 +2435,73 @@ function closeBenefitPopup() {
 // Detailed Content Mapping
 const benefitPopupData = {
     "memory_focus": {
-        title: "Cognitive Precision & Neural Speed",
-        icon: "🧠",
-        desc: "Neuro Serge utilizes a high-potency blend of neuro-nutrients designed to optimize synaptic signaling. By enhancing neural plasticity, it facilitates accelerated information processing, ultra-sharp recall, and the ability to maintain executive focus during complex cognitive tasks."
+        title: "Prostate Wellness & Health",
+        icon: "🛡️",
+        desc: "ProstaVive uses high-potency ingredients designed to maintain healthy prostate size and function. By supporting cellular integrity, it helps ensure long-term health and reduces frequent bathroom trips."
     },
     "brain_health": {
-        title: "Neuroprotection & Cellular Integrity",
-        icon: "🛡️",
-        desc: "Our clinical-grade formula prioritizes long-term neurological health. By leveraging powerful antioxidants like Grape Seed and Olive Leaf extracts, Neuro Serge shields neurons from oxidative stress and supports the structural integrity of the blood-brain barrier for lifelong cognitive wellness."
+        title: "Optimized Urinary Flow",
+        icon: "🌊",
+        desc: "Our clinical-grade formula focuses on strengthening the bladder and improving urinary stream. By reducing resistance and inflammation, ProstaVive allows for a stronger, more consistent flow."
     },
     "fatigue_energy": {
-        title: "Metabolic Brain Energy & Clarity",
-        icon: "⚡",
-        desc: "By optimizing cerebral blood flow and mitochondrial efficiency, Neuro Serge effectively eliminates 'brain fog'. It provides a clean, ATP-driven energy source for your mind, ensuring peak mental performance throughout the day without the jittery 'crash' associated with synthetic stimulants."
+        title: "Deep Restful Sleep",
+        icon: "😴",
+        desc: "Say goodbye to interrupted nights. By supporting healthy bladder function, ProstaVive helps reduce the urge to wake up multiple times at night, leading to deeper, more restorative sleep cycles."
     },
     "natural_ingredients": {
-        title: "Pharmacopoeia-Grade Botanical Synergy",
-        icon: "🌿",
-        desc: "We adhere to rigorous quality protocols, utilizing only lab-verified, high-bioavailability botanical extracts. Our formulation is strictly non-GMO, gluten-free, and completely free from synthetic fillers or habit-forming substances, offering a clean, safe, and professional path to mental excellence."
+        title: "Natural Stamina & Vitality",
+        icon: "⚡",
+        desc: "ProstaVive is packed with natural nutrients that boost physical energy and male vitality. It provides a clean energy source for your body, ensuring you feel active and powerful throughout the day."
     },
     "stress_mood": {
-        title: "Stress Adaptation & Mood Balance",
-        icon: "🧘",
-        desc: "Neuro Serge's adaptogenic compounds help modulate the body's stress response, promoting a sense of calm and emotional equilibrium. This leads to improved resilience against daily pressures and a more positive mental outlook."
+        title: "Healthy Inflammatory Response",
+        icon: "🌿",
+        desc: "The adaptogenic compounds in ProstaVive help modulate the body's inflammatory response within the prostate. This leads to improved comfort and resilience against daily physical stressors."
     },
     "learning_retention": {
-        title: "Learning Capacity & Retention",
-        icon: "📚",
-        desc: "By supporting key brain regions involved in learning and memory formation, Neuro Serge enhances your ability to absorb new information, process complex data, and retain knowledge more effectively for academic or professional growth."
+        title: "Hormonal Balance",
+        icon: "⚖️",
+        desc: "By supporting the healthy metabolism of hormones like DHT, ProstaVive enhances your body's natural balance, which is crucial for maintaining strength, mood, and overall male health."
     },
     "sleep_quality": {
-        title: "Restorative Sleep & Brain Rejuvenation",
-        icon: "😴",
-        desc: "Neuro Serge aids in regulating healthy sleep patterns, which is crucial for brain detoxification and memory consolidation. Experience deeper, more restorative sleep, waking up feeling refreshed and mentally sharp."
+        title: "Antioxidant Protection",
+        icon: "🛡️",
+        desc: "ProstaVive provides potent antioxidants that shield cells from oxidative stress. Experience better recovery and cellular rejuvenation, helping you maintain a youthful state of health."
     },
     "neurotransmitter_support": {
-        title: "Neurotransmitter Synthesis & Balance",
-        icon: "🔬",
-        desc: "Our formula provides precursors and cofactors essential for the balanced synthesis of vital neurotransmitters like dopamine, serotonin, and acetylcholine. This supports optimal brain communication, mood regulation, and cognitive function."
+        title: "Botanical Synergy",
+        icon: "🌿",
+        desc: "We utilize only lab-verified, high-bioavailability botanical extracts like Saw Palmetto and Garlic. Our formulation is strictly non-GMO and free from synthetic fillers."
     }
 };
 
 // Specifications Content Mapping
 const specPopupData = {
-    "product_name": { title: "Neuro Serge", icon: "📦", desc: "Neuro Serge is our flagship cognitive enhancement supplement, formulated to meet the highest industry standards for purity and efficacy." },
-    "formula_type": { title: "Synergistic Herbal Blend", icon: "🌱", desc: "A 100% natural, plant-based formula designed to optimize neurological signaling and support long-term cellular health in the brain." },
-    "ingredients": { title: "Bioactive Ingredients", icon: "🔬", desc: "Contains premium extracts like Olive Leaf, Green Tea, and Grape Seed, specifically chosen for their high antioxidant content and neuroprotective benefits." },
+    "product_name": { title: "ProstaVive", icon: "📦", desc: "ProstaVive is a premium male health supplement, formulated to meet the highest industry standards for purity and efficacy." },
+    "formula_type": { title: "Synergistic Male Support", icon: "🌱", desc: "A 100% natural, plant-based formula designed to optimize prostate signaling and support long-term male vitality." },
+    "ingredients": { title: "Bioactive Ingredients", icon: "🔬", desc: "Contains premium extracts like Hibiscus, Garlic, and Saw Palmetto, specifically chosen for their high antioxidant content and health benefits." },
     "form": { title: "Rapid-Absorb Capsules", icon: "💊", desc: "Encapsulated in quick-release shells to ensure maximum bioavailability, allowing the active nutrients to enter your system efficiently." },
     "quantity": { title: "Full Monthly Supply", icon: "🗓️", desc: "Each bottle provides 60 capsules, exactly what you need for a consistent 30-day cognitive support routine." },
     "usage": { title: "Optimal Dosage", icon: "⏰", desc: "For the best results in neural plasticity, take 2 capsules daily. We recommend morning use with a light meal and plenty of water." },
-    "benefits_summary": { title: "Cognitive Outcomes", icon: "✨", desc: "Users report significant improvements in memory recall, executive focus, and the elimination of 'mental fog' within the first few weeks of use." },
+    "benefits_summary": { title: "Vitality Outcomes", icon: "✨", desc: "Users report significant improvements in urinary comfort, sleep quality, and daily energy within the first few weeks of use." },
     "quality": { title: "Verified Quality", icon: "🏆", desc: "Every batch undergoes rigorous lab testing to verify potency and ensure it is free from contaminants or heavy metals." },
     "manufacturing": { title: "USA Manufactured", icon: "🇺🇸", desc: "Proudly produced in state-of-the-art facilities in the United States, following strict Good Manufacturing Practices (GMP)." },
-    "product_type": { title: "Wellness Aid", icon: "🍏", desc: "Classified as a natural dietary supplement, intended to support your body's innate cognitive functions rather than replace medical treatment." },
+    "product_type": { title: "Wellness Aid", icon: "🍏", desc: "Classified as a natural dietary supplement, intended to support your body's innate health functions rather than replace medical treatment." },
     "safety_info": { title: "Safe & Non-Habit Forming", icon: "🛡️", desc: "Our formula is non-addictive and contains no synthetic stimulants, making it safe for daily long-term integration into your lifestyle." },
-    "note": { title: "Healthcare Guidance", icon: "ℹ️", desc: "While Neuro Serge is natural, we always suggest consulting your physician if you are pregnant, nursing, or taking other prescription medications." }
+    "note": { title: "Healthcare Guidance", icon: "ℹ️", desc: "While ProstaVive is natural, we always suggest consulting your physician if you are taking other prescription medications." }
 };
 
 // Comparison Section Content Mapping
 const comparisonPopupData = {
-    "struggle_focus": { title: "Cognitive Dispersion", icon: "❌", desc: "Inability to maintain task saliency, leading to fragmented work hours and mental drift. This often stems from neural nutrient deficiency." },
-    "struggle_memory": { title: "Information Retention Gap", icon: "❌", desc: "Frequent episodes of 'tip-of-the-tongue' syndrome and forgetting critical appointments, causing professional and personal friction." },
-    "struggle_fatigue": { title: "Mitochondrial Sluggishness", icon: "❌", desc: "A persistent feeling of mental exhaustion or 'brain fog' that prevents the initiation of demanding cognitive tasks." },
-    "struggle_productivity": { title: "Output Decline", icon: "❌", desc: "Hours spent at the desk without substantial progress due to low neural energy and high distractibility." },
-    "help_focus": { title: "Hyper-Focus Activation", icon: "✅", desc: "Enhances attention circuitry, allowing for deep concentration even in stimulating environments." },
-    "help_memory": { title: "Neural Encoding Support", icon: "✅", desc: "Strengthens synaptic connections involved in memory consolidation for faster recall and learning." },
-    "help_energy": { title: "Sustained ATP Production", icon: "✅", desc: "Boosts cerebral energy without stimulants, ensuring your brain has the fuel it needs for the entire day." },
-    "help_productivity": { title: "Peak Executive Function", icon: "✅", desc: "Enables efficient decision-making and rapid task completion by optimizing overall neurological health." }
+    "struggle_focus": { title: "Frequent Urination", icon: "❌", desc: "Constant urges to use the bathroom, especially at inconvenient times, often caused by poor prostate health." },
+    "struggle_memory": { title: "Interrupted Sleep", icon: "❌", desc: "Waking up multiple times a night to urinate, leading to fatigue and poor cognitive performance the next day." },
+    "struggle_fatigue": { title: "Weak Urinary Flow", icon: "❌", desc: "A slow or hesitant stream that makes bathroom visits take longer and feel incomplete." },
+    "struggle_productivity": { title: "Low Vitality", icon: "❌", desc: "A general decline in physical energy and stamina that affects your daily productivity and mood." },
+    "help_focus": { title: "Prostate Health Activation", icon: "✅", desc: "Nourishes the prostate with essential minerals to maintain a healthy size and comfortable function." },
+    "help_memory": { title: "Stream Strength Support", icon: "✅", desc: "Strengthens the muscles and signaling involved in urination for a powerful and complete flow." },
+    "help_energy": { title: "Sustained Sleep Quality", icon: "✅", desc: "Helps you stay asleep longer by reducing the nighttime urge to urinate, ensuring you wake up refreshed." },
+    "help_productivity": { title: "Peak Physical Vitality", icon: "✅", desc: "Boosts overall energy levels and physical stamina by optimizing male hormonal and metabolic health." }
 };
 
 document.addEventListener("click", function(e) {
