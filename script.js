@@ -5,7 +5,7 @@ const products = {
       rating: "4.9", 
       price: "Special Discount Available", 
       img: "Images/prostavive vitality.jpeg", 
-      link: "ProstaViveVitalityLandingPage.html",
+      link: "ProstaViveVitality.html",
       features: [
         "Supports Optimal Prostate Wellness",
         "Boosts Natural Vitality & Physical Energy",
@@ -18,7 +18,7 @@ const products = {
       rating: "4.8", 
       price: "Exclusive Limited Time Offer", 
       img: "Images/alphatonic.jpeg", 
-      link: "https://www.example.com",
+      link: "AlphaTonicElite.html",
       features: ["Supports Healthy Testosterone Levels", "Increases Lean Muscle & Strength", "Third-Party Laboratory Tested"]
     },
   ],
