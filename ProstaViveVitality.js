@@ -101,7 +101,7 @@ function submitForm(){
     // 📱 MOBILE UX IMPROVEMENT
     window.scrollTo({ top: 0, behavior: "smooth" });
 
-    alert("✅ Your review submitted successfully!");
+    alert("Review successfully!");
 }
 
 // LOAD MORE
@@ -118,10 +118,10 @@ window.addEventListener("load", function(){
 
 /* ---------- IMAGE PRELOAD (MOBILE FAST) ---------- */
 let images=[
-"Images/Neuroserge1.jpeg",
-"Images/Neuroserge2.jpeg",
-"Images/Neuroserge3.jpeg",
-"Images/Neuroserge4.jpeg"
+"Images/prostavive vitality.jpeg",
+"Images/prostavive vitality2.jpeg",
+"Images/prostavive vitality3.jpeg",
+"Images/prostavive vitality4.jpeg"
 ];
 
 images.forEach(src=>{
@@ -232,7 +232,7 @@ function submitForm() {
     fetch(scriptURL, { method: 'POST', body: formData })
     .then(response => {
         if(response.ok) {
-            alert("Success! Review save ho gaya.");
+            alert("Review successfully submitted!");
             rForm.reset();
             submitBtn.innerText = "Submit";
             submitBtn.disabled = false;
