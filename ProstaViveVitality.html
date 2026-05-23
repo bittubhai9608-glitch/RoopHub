@@ -967,6 +967,83 @@ margin-top: 25px;
     margin: 20px auto;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
 }
+
+/* Professional Horizontal FAQ Styling */
+.prostavive-faq-horizontal {
+    padding: 60px 20px;
+    background: #f8fafc;
+    border-radius: 30px;
+    margin: 40px auto;
+    padding: 25px 10px;
+    background: #ffffff;
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    border: 1px solid #e2e8f0;
+    border: 1px dashed #cbd5e1;
+}
+.faq-section-title {
+    text-align: center;
+    color: #1e40af;
+    font-size: 28px;
+    color: #475569;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.faq-horizontal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+}
+.faq-h-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 35px 25px;
+    background: #f8fafc;
+    border-radius: 15px;
+    padding: 15px 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.faq-h-card:hover {
+    transform: translateY(-8px);
+    transform: translateY(-4px);
+    border-color: #3b82f6;
+    box-shadow: 0 15px 30px rgba(59, 130, 246, 0.15);
+    background: #eff6ff;
+}
+.faq-h-icon {
+    font-size: 40px;
+    color: #27ae60;
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: #3b82f6;
+    margin-bottom: 10px;
+}
+.faq-h-card h4 {
+    color: #1e293b;
+    font-size: 18px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-bottom: 5px;
+}
+.faq-h-more {
+    color: #3b82f6;
+    font-size: 13px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
 </style>
 </head>
 
@@ -1246,6 +1323,37 @@ body {
     <button id="seeMoreBtn" onclick="loadMoreReviews()" style="display:none;">
 See More
 </button>
+</div>
+
+<!-- ⚡ COMPACT PROFESSIONAL FAQ SECTION -->
+<section class="prostavive-faq-horizontal">
+    <h2 class="faq-section-title">Quick Help?</h2>
+    <div class="faq-horizontal-grid">
+        <!-- FAQ Card 1 -->
+        <div class="faq-h-card" onclick="openFaqPopup('🛡️ Is it 100% Safe?', '<p><strong>Yes!</strong> ProstaVive is crafted with pure, lab-tested herbal ingredients. It is 100% non-GMO, non-addictive, and completely safe for daily use.</p>')">
+            <div class="faq-h-icon"><i class="fa-solid fa-shield-check"></i></div>
+            <h4>? Safe to Use?</h4>
+            <span class="faq-h-more">View Answer</span>
+        </div>
+        <!-- FAQ Card 2 -->
+        <div class="faq-h-card" onclick="openFaqPopup('🚀 When will I see results?', '<p>Many users notice a significant difference in urinary comfort within <strong>7-14 days</strong>. For optimal tissue support, 3-6 months use is ideal.</p>')">
+            <div class="faq-h-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h4>? Fast Results?</h4>
+            <span class="faq-h-more">View Answer</span>
+        </div>
+        <!-- FAQ Card 3 -->
+        <div class="faq-h-card" onclick="openFaqPopup('⭐ Why ProstaVive?', '<p>Unlike generic pills, ProstaVive uses a <strong>science-backed synergy</strong> (Saw Palmetto + Garlic) that targets the root cause of prostate swelling.</p>')">
+            <div class="faq-h-icon"><i class="fa-solid fa-star"></i></div>
+            <h4>? Why ProstaVive?</h4>
+            <span class="faq-h-more">View Answer</span>
+        </div>
+        <!-- FAQ Card 4 -->
+        <div class="faq-h-card" onclick="openFaqPopup('🛡️ Is there a Guarantee?', '<p><strong>Absolutely!</strong> Your purchase is 100% Risk-Free. If you are not satisfied with the results, we offer a full money-back guarantee.</p>')">
+            <div class="faq-h-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h4>? Money Back?</h4>
+            <span class="faq-h-more">View Answer</span>
+        </div>
+    </div>
 </div>
 
 
