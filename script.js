@@ -13,14 +13,6 @@ const products = {
         "60-Day Risk-Free Money Back Guarantee"
       ]
     },
-    { 
-      name: "Alpha Tonic Elite", 
-      rating: "4.8", 
-      price: "Exclusive Limited Time Offer", 
-      img: "Images/alphatonic.jpeg", 
-      link: "AlphaTonicElite.html",
-      features: ["Supports Healthy Testosterone Levels", "Increases Lean Muscle & Strength", "Third-Party Laboratory Tested"]
-    },
   ],
 
   "Brain Boost": [
