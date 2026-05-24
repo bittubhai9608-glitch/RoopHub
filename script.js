@@ -821,6 +821,8 @@ function applyLanguage(lang) {
             limited_stock: "⚡ Limited Stock Available",
             best_seller: "🔥 BEST SELLER",
             special_offer: "Special Discount Available",
+            ProstaVive_title: "ProstaVive",
+            ProstaVive_desc: "Support healthy prostate function, urinary flow & natural stamina",
             neuro_title: "Neuro Serge",
             neuro_desc: "Boost memory, improve focus & get mental clarity — naturally",
             unmute_video: "🔊 Unmute Video",
@@ -843,6 +845,8 @@ function applyLanguage(lang) {
             limited_stock: "⚡ स्टॉक सीमित है",
             best_seller: "🔥 बेस्ट सेलर",
             special_offer: "विशेष छूट उपलब्ध है",
+            ProstaVive_title: "ProstaVive",
+            ProstaVive_desc: "स्वस्थ प्रोस्टेट कार्य, मूत्र प्रवाह और प्राकृतिक सहनशक्ति का समर्थन करें",
             neuro_title: "न्यूरो सर्ज",
             neuro_desc: "याददाश्त बढ़ाएं, फोकस सुधारें और मानसिक स्पष्टता पाएं — प्राकृतिक रूप से",
             unmute_video: "🔊 वीडियो आवाज़ चालू करें",
@@ -858,7 +862,7 @@ function applyLanguage(lang) {
     const t = translations[lang] || translations.en;
 
     // Main Heading update karein
-    const heading = document.getElementById('animatedHeading') || document.querySelector('header h1');
+    const heading = document.getElementById('animatedHeading') || document.querySelector('.brand-name');
     if (heading) heading.textContent = t.welcome;
 
     // Search Button update karein
