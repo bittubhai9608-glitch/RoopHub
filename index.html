@@ -400,70 +400,101 @@
   <div id="contactModal" class="full-modal">
     <button onclick="closeModal()" class="modal-close-btn">✖ Close</button>
     <div class="modal-wrapper">
-        <h1 class="modal-title">📞 Contact RoopHub Official</h1>
-        <p style="color: #64748b;">We're here to help! Reach out with any questions, feedback, or business inquiries.</p>
+        <h1 class="modal-title">📞 Official Support Channels</h1>
+        <p style="color: #64748b; font-size: 18px; line-height: 1.6; margin-bottom: 40px;">
+            <strong>RoopHub Official</strong> is a premier global platform dedicated to health and wellness curation. We operate as an integrity-first ecosystem, meaning we don't just sell products; we carefully research and vet the science and manufacturing standards behind every brand we feature. Our goal is to empower you with honest information and access to 100% authentic, lab-verified supplements. 
+            <br><br>
+            We believe that direct communication is the best way to build a healthy community. Instead of filling out long, complicated forms, you can reach our verified support experts immediately through any of the channels below. We are here to help you with product details, delivery updates, or professional wellness advice.
+        </p>
 
-        <section class="modal-section">
-            <h3 style="color: #27ae60; font-size: 18px;">💬 Why Should You Reach Out to Us?</h3>
-            <p>We believe that communication is the key to community growth. Whether you have noticed a technical issue on our landing page, have a product question, or are a brand owner looking for an ethical affiliate partner, we are eager to hear from you.</p>
-        </section>
+        <!-- 🏢 Direct Contact Channels Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 50px;">
+            <!-- Gmail -->
+            <a href="mailto:support@roophub.com" onclick="trackConversion('Email', 'Contact Channel Click')" style="text-decoration:none; color:inherit;">
+                <div style="background: white; padding: 35px 25px; border-radius: 24px; border: 1px solid #e2e8f0; text-align: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 10px 25px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#3b82f6'; this.style.boxShadow='0 20px 40px rgba(59, 130, 246, 0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                    <div style="width: 70px; height: 70px; background: #fee2e2; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fa-solid fa-envelope" style="font-size: 32px; color: #ea4335;"></i>
+                    </div>
+                    <h3 style="color: #1e293b; margin-bottom: 10px; font-size: 20px;">Official Email</h3>
+                    <p style="color: #1e40af; font-weight: 700; font-size: 16px; margin-bottom: 10px;">support@roophub.com</p>
+                    <p style="color: #64748b; font-size: 14px; line-height: 1.5;">Best for official business, partnerships, and detailed product questions. We respond to all emails within 24 hours.</p>
+                </div>
+            </a>
 
-        <section class="modal-section" style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #3b82f6;">
-            <h3 style="color: #1e40af; font-size: 18px;">🔒 Our Commitment to Your Privacy</h3>
-            <p>When you send us a message through our contact form or via email, we ensure that your data is handled with utmost care. We do not sell your personal information or email addresses to third-party marketers. Your satisfaction and security are our priorities.</p>
-        </section>
+            <!-- WhatsApp -->
+            <a href="https://whatsapp.com/channel/0029Vb7Y2ft3QxS4drpeQV02" target="_blank" onclick="trackConversion('WhatsApp', 'Contact Channel Click')" style="text-decoration:none; color:inherit;">
+                <div style="background: white; padding: 35px 25px; border-radius: 24px; border: 1px solid #e2e8f0; text-align: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 10px 25px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#25d366'; this.style.boxShadow='0 20px 40px rgba(37, 211, 102, 0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                    <div style="width: 70px; height: 70px; background: #dcfce7; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fa-brands fa-whatsapp" style="font-size: 36px; color: #25d366;"></i>
+                    </div>
+                    <h3 style="color: #1e293b; margin-bottom: 10px; font-size: 20px;">WhatsApp Hub</h3>
+                    <p style="color: #1e40af; font-weight: 700; font-size: 16px; margin-bottom: 10px;">Join Channel</p>
+                    <p style="color: #64748b; font-size: 14px; line-height: 1.5;">Get instant alerts on flash sales, new product launches, and exclusive member-only discount codes directly on your phone.</p>
+                </div>
+            </a>
 
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 30px 0;">
-            <div style="background: white; padding: 20px; border-radius: 12px; border: 2px solid #e2e8f0; text-align: center;">
-                <i class="fa-solid fa-envelope" style="font-size: 32px; color: #27ae60; margin-bottom: 12px;"></i>
-                <h3 style="color: #1e293b; margin: 12px 0;">📧 Email Support</h3>
-                <p style="color: #27ae60; font-weight: 700; margin: 8px 0;">support@roophub.com</p>
-                <p style="color: #64748b; font-size: 13px;">General inquiries & partnerships</p>
-            </div>
+            <!-- Telegram -->
+            <a href="https://t.me/RoopHubOfficial" target="_blank" onclick="trackConversion('Telegram', 'Contact Channel Click')" style="text-decoration:none; color:inherit;">
+                <div style="background: white; padding: 35px 25px; border-radius: 24px; border: 1px solid #e2e8f0; text-align: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 10px 25px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#0088cc'; this.style.boxShadow='0 20px 40px rgba(0, 136, 204, 0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                    <div style="width: 70px; height: 70px; background: #e0f2fe; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fa-brands fa-telegram" style="font-size: 32px; color: #0088cc;"></i>
+                    </div>
+                    <h3 style="color: #1e293b; margin-bottom: 10px; font-size: 20px;">Telegram Group</h3>
+                    <p style="color: #1e40af; font-weight: 700; font-size: 16px; margin-bottom: 10px;">RoopHub Official</p>
+                    <p style="color: #64748b; font-size: 14px; line-height: 1.5;">A professional space for health enthusiasts. Join our global community for daily research articles and organic health tips.</p>
+                </div>
+            </a>
 
-            <div style="background: white; padding: 20px; border-radius: 12px; border: 2px solid #e2e8f0; text-align: center;">
-                <i class="fa-solid fa-phone" style="font-size: 32px; color: #27ae60; margin-bottom: 12px;"></i>
-                <h3 style="color: #1e293b; margin: 12px 0;">☎️ Phone Support</h3>
-                <p style="color: #27ae60; font-weight: 700; margin: 8px 0;">+91 8271734883</p>
-                <p style="color: #64748b; font-size: 13px;">Mon-Fri, 10 AM - 6 PM IST</p>
-            </div>
+            <!-- Phone -->
+            <a href="tel:8271734883" onclick="trackConversion('Phone', 'Contact Channel Click')" style="text-decoration:none; color:inherit;">
+                <div style="background: white; padding: 35px 25px; border-radius: 24px; border: 1px solid #e2e8f0; text-align: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 10px 25px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#27ae60'; this.style.boxShadow='0 20px 40px rgba(39, 174, 96, 0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                    <div style="width: 70px; height: 70px; background: #dcfce7; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fa-solid fa-phone" style="font-size: 30px; color: #27ae60;"></i>
+                    </div>
+                    <h3 style="color: #1e293b; margin-bottom: 10px; font-size: 20px;">Support Helpline</h3>
+                    <p style="color: #1e40af; font-weight: 700; font-size: 16px; margin-bottom: 10px;">+91 82717 34883</p>
+                    <p style="color: #64748b; font-size: 14px; line-height: 1.5;">Talk to our agents directly for quick resolutions. Available Monday to Friday (10:00 AM to 6:00 PM Indian Standard Time).</p>
+                </div>
+            </a>
         </div>
 
-        <section class="modal-section">
-            <h3 style="color: #27ae60; font-size: 18px; margin-bottom: 16px;">📝 Send Us a Message</h3>
-            <p style="color: #64748b; margin-bottom: 20px;">Fill out the form and our team will respond within 24–48 hours.</p>
-
-            <form id="contact-form" style="display: flex; flex-direction: column; gap: 16px;">
-                <div style="display: flex; flex-direction: column;">
-                    <label style="color: #1e293b; font-weight: 600; margin-bottom: 8px;">Full Name</label>
-                    <input type="text" name="Name" placeholder="Your name" style="padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 14px;" required>
+        <!-- 🗺️ Location Hub Section -->
+        <section style="background: #ffffff; padding: 50px 30px; border-radius: 35px; border: 1px solid #e2e8f0; margin-bottom: 50px; box-shadow: 0 15px 45px rgba(0,0,0,0.03);">
+            <div style="display: flex; gap: 50px; flex-wrap: wrap; align-items: flex-start;">
+                <div style="flex: 1; min-width: 320px;">
+                    <div style="display: inline-block; padding: 10px 20px; background: #fee2e2; color: #ef4444; border-radius: 12px; font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px;">
+                        📍 Global Operations Center
+                    </div>
+                    <h2 style="color: #1e293b; font-size: 32px; font-weight: 800; margin-bottom: 20px; letter-spacing: -0.5px;">Visit Our Main Hub</h2>
+                    <p style="font-size: 18px; color: #334155; line-height: 1.7; margin-bottom: 25px;">
+                        Our administrative headquarters is located in the heart of Bihar. We manage our global digital marketplace and logistics from this central location.
+                    </p>
+                    <div style="background: #f8fafc; padding: 25px; border-radius: 20px; border-left: 6px solid #3b82f6;">
+                        <p style="font-size: 17px; color: #1e293b; margin: 0;">
+                            <strong>Physical Address:</strong><br>
+                            Yadav Nagar, Road No 3,<br>
+                            Muzaffarpur, Bihar,<br>
+                            India - 842001
+                        </p>
+                    </div>
                 </div>
-                
-                <div style="display: flex; flex-direction: column;">
-                    <label style="color: #1e293b; font-weight: 600; margin-bottom: 8px;">Email Address</label>
-                    <input type="email" name="Email" placeholder="your@email.com" style="padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 14px;" required>
+                <div style="flex: 1.2; min-width: 350px; height: 380px; border-radius: 30px; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.12); border: 8px solid #ffffff;">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.4116422998625!2d85.3908!3d26.1209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDA3JzE1LjIiTiA4NcKwMjMnMjYuOSJF!5e0!3m2!1sen!2sin!4v1716500000000!5m2!1sen!2sin" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
-                
-                <div style="display: flex; flex-direction: column;">
-                    <label style="color: #1e293b; font-weight: 600; margin-bottom: 8px;">Subject</label>
-                    <select name="Subject" style="padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 14px;">
-                        <option>General Inquiry</option>
-                        <option>Technical Issue</option>
-                        <option>Product Question</option>
-                        <option>Partnership/Affiliate</option>
-                    </select>
-                </div>
-
-                <div style="display: flex; flex-direction: column;">
-                    <label style="color: #1e293b; font-weight: 600; margin-bottom: 8px;">Message</label>
-                    <textarea name="Message" placeholder="How can we help?" style="padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 14px; min-height: 120px; resize: vertical;" required></textarea>
-                </div>
-
-                <button type="submit" id="contact-btn" style="background: linear-gradient(135deg, #27ae60 0%, #229954 100%); color: white; padding: 12px 24px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; transition: all 0.3s ease;">Send Message Now</button>
-            </form>
+            </div>
         </section>
 
-        <p style="text-align: center; color: #64748b; margin-top: 30px; font-size: 13px;">Thank you for being part of the RoopHub wellness community!</p>
+        <section class="modal-section" style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 6px solid #3b82f6; padding: 30px; border-radius: 20px;">
+            <h3 style="color: #1e40af; font-size: 20px; margin-bottom: 12px;"><i class="fa-solid fa-user-shield"></i> Your Privacy & Security Promise</h3>
+            <p style="margin: 0; color: #1e3a8a; font-size: 15px; line-height: 1.6;">
+                Your personal information is 100% safe with us. We use end-to-end encryption on all our contact channels. Please note: Our official staff will NEVER ask for your bank details, OTP, or passwords over a call or message. Always stay safe and use only the links provided on this page.
+            </p>
+        </section>
+
+        <p style="text-align: center; color: #94a3b8; margin-top: 50px; font-size: 13px; font-weight: 600; letter-spacing: 1px;">© 2026 ROOPHUB OFFICIAL | GLOBAL WELLNESS HUB | ALL RIGHTS RESERVED</p>
     </div>
   </div>
 
