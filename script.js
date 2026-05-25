@@ -431,6 +431,7 @@ function saveProfileChanges() {
 
     const newName = document.getElementById('updateName').value.trim();
     const newPassword = document.getElementById('updatePass').value;
+    const newAddress = document.getElementById('updateAddress')?.value.trim();
 
     if (newName && newName !== user.name) {
         user.name = newName;
@@ -444,6 +445,11 @@ function saveProfileChanges() {
             return;
         }
     }
+
+    if (newAddress && newAddress !== user.address) {
+        user.address = newAddress;
+    }
+
     localStorage.setItem("roophub_user", JSON.stringify(user));
     alert("✅ Profile updated successfully!");
 
@@ -451,12 +457,7 @@ function saveProfileChanges() {
     fetch("https://roophub.onrender.com/auth-action", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
-            name: user.name, 
-            email: user.email, 
-            password: user.password, 
-            type: "UPDATE" 
-        })
+        body: JSON.stringify({ ...user, type: "UPDATE" })
     }).catch(err => console.error("Sync error:", err));
 
     checkAuthStatus(); 
@@ -482,6 +483,12 @@ function ensureAuthModals() {
                         <input type="text" id="signUpName" placeholder="Full Name" required>
                         <input type="email" id="signUpEmail" placeholder="Email" required>
                         <input type="password" id="signUpPassword" placeholder="Password" required>
+                        <input type="text" id="signUpPhone" placeholder="Phone Number (Optional)">
+                        <input type="text" id="signUpAddress" placeholder="Permanent Address" required>
+                        <input type="text" id="signUpCurrentAddress" placeholder="Current Address" required>
+                        <input type="text" id="signUpCountry" placeholder="Country" required>
+                        <input type="text" id="signUpState" placeholder="State" required>
+                        <input type="text" id="signUpZip" placeholder="ZIP Code" required>
                         <button type="submit" class="auth-btn">Sign Up</button>
                     </form>
                 </div>
@@ -614,8 +621,8 @@ function switchProfileTab(tab) {
         ? `<img src="${user.profilePic}" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid #2563eb;">`
         : `<div style="width: 50px; height: 50px; background: linear-gradient(135deg, #2563eb, #1e40af); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold;">${initials}</div>`;
 
-    const memberId = "RH-9532"; // As per your requirement
-    const joinDate = "1 May 2026"; // As per your requirement
+    const memberId = user.memberId || "RH-XXXX";
+    const joinDate = user.joinDate || "1 May 2026";
 
     let tabContent = '';
 
@@ -624,72 +631,12 @@ function switchProfileTab(tab) {
             <div style="font-size: 14px; color: #475569;">
                 <p style="margin: 15px 0; display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 8px;"><strong>📧 Email:</strong> <span style="color: #1e293b;">${user.email}</span></p>
                 <p style="margin: 15px 0; display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 8px;"><strong>🆔 Member ID:</strong> <span style="color: #1e293b; font-family: monospace; font-weight: bold;">${memberId}</span></p>
+                <p style="margin: 15px 0; display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 8px;"><strong>📞 Phone:</strong> <span style="color: #1e293b;">${user.phone || 'N/A'}</span></p>
+                <p style="margin: 15px 0; display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 8px;"><strong>📍 Address:</strong> <span style="color: #1e293b;">${user.address || 'N/A'}</span></p>
                 <p style="margin: 15px 0; display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 8px;"><strong>📅 Joined:</strong> <span style="color: #1e293b;">${joinDate}</span></p>
                 <p style="margin: 15px 0; display: flex; justify-content: space-between;"><strong>✅ Status:</strong> <span style="color: #166534; font-weight: bold;">Active Account</span></p>
                 <p style="margin: 15px 0; display: flex; justify-content: space-between; border-top: 1px dashed #eee; padding-top: 8px;"><strong>🌟 Membership Tier:</strong> <span style="color: #854d0e; font-weight: bold;">Gold Member</span></p>
                 <p style="margin: 15px 0; display: flex; justify-content: space-between;"><strong>⏰ Last Login:</strong> <span style="color: #1e293b;">${new Date().toLocaleString()}</span></p>
-            </div>
-        `;
-    } else if (tab === 'settings') {
-        const isDark = document.body.classList.contains('dark-mode');
-        tabContent = `
-            <div style="display: flex; flex-direction: column; gap: 12px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f8fafc; border-radius: 8px;">
-                    <span style="font-size: 13px; font-weight: 600;">🌙 Dark Mode</span>
-                    <button onclick="toggleDarkMode()" style="padding: 5px 12px; border-radius: 15px; border: 1px solid #cbd5e1; cursor: pointer; background: ${isDark ? '#1e40af' : '#fff'}; color: ${isDark ? '#fff' : '#000'};">
-                        ${isDark ? 'ON' : 'OFF'}
-                    </button>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f8fafc; border-radius: 8px;">
-                    <span style="font-size: 13px; font-weight: 600;">🔔 Email Notifications</span>
-                    <input type="checkbox" checked style="width: 18px; height: 18px; cursor: pointer;">
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f8fafc; border-radius: 8px;">
-                    <span style="font-size: 13px; font-weight: 600;">📩 Newsletter Sub</span>
-                    <input type="checkbox" checked style="width: 18px; height: 18px; cursor: pointer;">
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f8fafc; border-radius: 8px;">
-                    <span style="font-size: 13px; font-weight: 600;">🖼️ Profile Photo</span>
-                    <input type="file" accept="image/*" onchange="handleProfilePicUpload(event)" style="font-size: 11px; width: 150px;">
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f8fafc; border-radius: 8px;">
-                    <span style="font-size: 13px; font-weight: 600;">🌐 Language</span>
-                    <select onchange="changeLanguage(this.value)" style="padding: 5px 8px; border-radius: 6px; border: 1px solid #cbd5e1; width: 150px; cursor: pointer;">
-                        <option value="en" ${(localStorage.getItem('language') || 'en') === 'en' ? 'selected' : ''}>English</option>
-                        <option value="hi" ${(localStorage.getItem('language') || 'en') === 'hi' ? 'selected' : ''}>Hindi</option>
-                        <option value="es" ${(localStorage.getItem('language') || 'en') === 'es' ? 'selected' : ''}>Spanish</option>
-                        <option value="fr" ${(localStorage.getItem('language') || 'en') === 'fr' ? 'selected' : ''}>French (Français)</option>
-                        <option value="de" ${(localStorage.getItem('language') || 'en') === 'de' ? 'selected' : ''}>German (Deutsch)</option>
-                        <option value="ar" ${(localStorage.getItem('language') || 'en') === 'ar' ? 'selected' : ''}>Arabic (العربية)</option>
-                        <option value="pt" ${(localStorage.getItem('language') || 'en') === 'pt' ? 'selected' : ''}>Portuguese (Português)</option>
-                        <option value="zh" ${(localStorage.getItem('language') || 'en') === 'zh' ? 'selected' : ''}>Chinese (中文)</option>
-                        <option value="ja" ${(localStorage.getItem('language') || 'en') === 'ja' ? 'selected' : ''}>Japanese (日本語)</option>
-                        <option value="ru" ${(localStorage.getItem('language') || 'en') === 'ru' ? 'selected' : ''}>Russian (Русский)</option>
-                    </select>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f8fafc; border-radius: 8px;">
-                    <span style="font-size: 13px; font-weight: 600;">🌍 Time Zone</span>
-                    <select onchange="localStorage.setItem('timezone', this.value)" style="padding: 5px 8px; border-radius: 6px; border: 1px solid #cbd5e1; width: 150px; cursor: pointer;">
-                        <option value="utc" ${(localStorage.getItem('timezone') || 'utc') === 'utc' ? 'selected' : ''}>UTC (Universal)</option>
-                        <option value="ist">IST (India - GMT+5:30)</option>
-                        <option value="est">EST (US East - GMT-5)</option>
-                        <option value="cst">CST (US Central - GMT-6)</option>
-                        <option value="pst">PST (US West - GMT-8)</option>
-                        <option value="gmt">GMT (London - GMT+0)</option>
-                        <option value="cet">CET (Europe - GMT+1)</option>
-                        <option value="msk">MSK (Moscow - GMT+3)</option>
-                        <option value="gst">GST (Dubai - GMT+4)</option>
-                        <option value="jst">JST (Tokyo - GMT+9)</option>
-                        <option value="aest">AEST (Sydney - GMT+10)</option>
-                        <option value="brt">BRT (Brazil - GMT-3)</option>
-                        <option value="nzst">NZST (New Zealand - GMT+12)</option>
-                    </select>
-                </div>
-                <div style="display: flex; gap: 10px; margin-top: 5px;">
-                    <button onclick="alert('Preferences Saved!')" style="flex: 1; background: #1e40af; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: 600; cursor: pointer;">Save</button>
-                    <button onclick="resetToDefaultSettings()" style="flex: 1; background: #fff5f5; color: #dc2626; border: 1px solid #feb2b2; padding: 10px; border-radius: 6px; font-weight: 600; cursor: pointer;">Reset</button>
-                </div>
-                <p style="font-size: 11px; color: #64748b; margin: 5px 0;">Preferences update hone mein thoda samay lag sakta hai.</p>
             </div>
         `;
     } else if (tab === 'security') {
@@ -700,8 +647,16 @@ function switchProfileTab(tab) {
                     <input type="text" id="updateName" value="${user.name}" style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;">
                 </div>
                 <div class="input-group">
+                    <label style="font-size: 12px; font-weight: 600;">Update Address</label>
+                    <input type="text" id="updateAddress" value="${user.address || ''}" style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;">
+                </div>
+                <div class="input-group">
                     <label style="font-size: 12px; font-weight: 600;">New Password</label>
                     <input type="password" id="updatePass" placeholder="Leave blank to keep same" style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;">
+                </div>
+                <div class="input-group">
+                    <label style="font-size: 12px; font-weight: 600;">🖼️ Change Profile Photo</label>
+                    <input type="file" accept="image/*" onchange="handleProfilePicUpload(event)" style="font-size: 11px;">
                 </div>
                 <button onclick="saveProfileChanges()" style="background: #1e40af; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: 600; cursor: pointer; margin-top: 5px;">Save Profile</button>
 
@@ -755,8 +710,7 @@ function switchProfileTab(tab) {
         <!-- Professional Tab Navigation -->
         <div style="display: flex; border-bottom: 2px solid #f1f5f9; margin-bottom: 20px; gap: 20px;">
             <button onclick="switchProfileTab('overview')" style="background:none; border:none; padding: 10px 0; cursor:pointer; font-size:13px; font-weight:600; color: ${tab === 'overview' ? '#2563eb' : '#94a3b8'}; border-bottom: 2px solid ${tab === 'overview' ? '#2563eb' : 'transparent'}; margin-bottom: -2px;">Overview</button>
-            <button onclick="switchProfileTab('settings')" style="background:none; border:none; padding: 10px 0; cursor:pointer; font-size:13px; font-weight:600; color: ${tab === 'settings' ? '#2563eb' : '#94a3b8'}; border-bottom: 2px solid ${tab === 'settings' ? '#2563eb' : 'transparent'}; margin-bottom: -2px;">Settings</button>
-            <button onclick="switchProfileTab('security')" style="background:none; border:none; padding: 10px 0; cursor:pointer; font-size:13px; font-weight:600; color: ${tab === 'security' ? '#2563eb' : '#94a3b8'}; border-bottom: 2px solid ${tab === 'security' ? '#2563eb' : 'transparent'}; margin-bottom: -2px;">Security</button>
+            <button onclick="switchProfileTab('security')" style="background:none; border:none; padding: 10px 0; cursor:pointer; font-size:13px; font-weight:600; color: ${tab === 'security' ? '#2563eb' : '#94a3b8'}; border-bottom: 2px solid ${tab === 'security' ? '#2563eb' : 'transparent'}; margin-bottom: -2px;">Profile Management</button>
             <button onclick="switchProfileTab('help')" style="background:none; border:none; padding: 10px 0; cursor:pointer; font-size:13px; font-weight:600; color: ${tab === 'help' ? '#2563eb' : '#94a3b8'}; border-bottom: 2px solid ${tab === 'help' ? '#2563eb' : 'transparent'}; margin-bottom: -2px;">Help</button>
         </div>
 
@@ -1008,15 +962,23 @@ document.addEventListener('DOMContentLoaded', () => {
       const name = document.getElementById('signUpName').value;
       const email = document.getElementById('signUpEmail').value;
       const password = document.getElementById('signUpPassword').value;
+      const phone = document.getElementById('signUpPhone')?.value || "";
+      const address = document.getElementById('signUpAddress')?.value || "";
+      const currentAddress = document.getElementById('signUpCurrentAddress')?.value || "";
+      const country = document.getElementById('signUpCountry')?.value || "";
+      const state = document.getElementById('signUpState')?.value || "";
+      const zip = document.getElementById('signUpZip')?.value || "";
 
-      const userData = { name, email, password };
+      const memberId = "RH-" + Math.floor(1000 + Math.random() * 9000);
+
+      const userData = { name, email, password, phone, address, current_address: currentAddress, country, state, zip, memberId, joinDate: new Date().toLocaleDateString() };
       localStorage.setItem("roophub_user", JSON.stringify(userData));
       
       // Sign Up data direct Google Sheet mein store hoga via Python Backend
       fetch("https://roophub.onrender.com/auth-action", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, password, type: "SIGNUP" })
+          body: JSON.stringify({ ...userData, type: "SIGNUP" })
       })
       .then(res => res.json())
       .catch(err => console.error("Sheet logic error:", err));
