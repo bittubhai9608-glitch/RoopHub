@@ -274,7 +274,25 @@ window.onclick = function(event) {
   }
 };
 
+/**
+ * Conversion Tracking Function
+ * Tracks clicks to external platforms like WhatsApp, Telegram, and Store links
+ */
+function trackConversion(platform, label) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'conversion_click', {
+      'platform': platform,
+      'label': label,
+      'timestamp': new Date().toISOString()
+    });
+    console.log(`[Tracking] Event sent for ${platform}: ${label}`);
+  } else {
+    console.warn(`[Tracking] gtag not found. Interaction logged: ${platform} - ${label}`);
+  }
+}
+
 function openProduct(link) {
+  trackConversion('Affiliate Store', 'User redirected to official brand site');
   if (link) window.location.href = link;
 }
 
