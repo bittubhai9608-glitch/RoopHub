@@ -2653,41 +2653,6 @@ document.addEventListener("click", function(e) {
     }
 });
 
-/* ========================= FORM SUBMISSION LOGIC ========================= */
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyEJmb4hiDCHjL8KMfg0L9k_CMfsITWIuR70e8Xox-bByPxVb79egsUaYF7_Y8rqUH_/exec';
-
-document.addEventListener('submit', e => {
-    if (e.target.id === 'contact-form' || e.target.id === 'reviewForm') {
-        e.preventDefault();
-        const form = e.target;
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerText;
-        
-        submitBtn.disabled = true;
-        submitBtn.innerText = "Processing...";
-
-        fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors'})
-            .then(() => {
-                alert("✅ Submitted successfully!");
-                submitBtn.disabled = false;
-                submitBtn.innerText = originalText;
-                form.reset();
-                if (form.id === 'reviewForm') {
-                    form.style.display = 'none';
-                    if (typeof fetchServerReviews === 'function') fetchServerReviews();
-                } else {
-                    closeModal();
-                }
-            })
-            .catch(error => {
-                alert("❌ Submission error. Please try again.");
-                submitBtn.disabled = false;
-                submitBtn.innerText = originalText;
-            });
-    }
-});
 </script>
-
-<script src="script.js"></script>
 </body>
 </html>
