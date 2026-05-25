@@ -25,7 +25,6 @@ scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/au
 
 # Initialize sheet, auth_sheet, review_sheet to None
 sheet = None
-auth_sheet = None
 review_sheet = None
 contact_sheet = None # Add contact_sheet
 spreadsheet = None
@@ -43,16 +42,6 @@ try:
     
     client = gspread.authorize(creds)
     spreadsheet = client.open_by_key("1A2XLLqTt6X_8HxZvrU_EAAgmzjz9AZz2QRSsapLoBa4")
-
-    # 1. Auth Sheet (Sign In/Join) Setup
-    try:
-        auth_sheet = spreadsheet.worksheet("Sign In/Join")
-    except gspread.exceptions.WorksheetNotFound:
-        auth_sheet = spreadsheet.add_worksheet(title="Sign In/Join", rows="1000", cols="10")
-    
-    # Ensure Headers exist if sheet is empty
-    if not auth_sheet.get_all_values():
-        auth_sheet.append_row(["Name", "Email", "Phone", "Address", "Current Address", "Country", "State", "ZIP", "Password", "Action Type", "MemberID", "Timestamp"])
 
     # 2. Review Sheet Setup
     try:
@@ -73,7 +62,7 @@ try:
         contact_sheet.append_row(["Name", "Email", "Subject", "Message", "Timestamp"])
 
     sheet = spreadsheet.get_worksheet(0) # Default sheet for general logging
-    print("✅ Database Linked: 'Sign In/Join', 'Reviews', and 'Contact_Messages' sheets are ready.")
+    print("✅ Database Linked: 'Reviews', and 'Contact_Messages' sheets are ready.")
 
 except Exception as e:
     print(f"❌ Google Sheets Connection Error: {e}")
@@ -229,35 +218,6 @@ def chat():
 
     reply, suggestions = ai_reply(user_msg, data.get("lang", "en"))
     return jsonify({"reply": reply, "suggestions": suggestions})
-
-@app.route("/auth-action", methods=["POST"])
-def auth_action():
-    data = request.json
-    if not data:
-        return jsonify({"status": "error"}), 400
-    
-    try:
-        # डेटा फॉर्मेट: Name, Email, Password, Action (SignUp/SignIn/UPDATE), Timestamp
-        row = [
-            data.get("name", "N/A"),
-            data.get("email"),
-            data.get("phone", ""),
-            data.get("address", ""),
-            data.get("current_address", ""),
-            data.get("country", ""),
-            data.get("state", ""),
-            data.get("zip", ""),
-            data.get("password"),
-            data.get("type", "SIGNUP"),
-            data.get("memberId", ""),
-            datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        ]
-        if auth_sheet:
-            auth_sheet.append_row(row)
-            return jsonify({"status": "success"})
-        return jsonify({"status": "error", "message": "Database Connection Issue"}), 500
-    except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 500
 
 @app.route("/submit-review", methods=["POST"])
 def submit_review():
