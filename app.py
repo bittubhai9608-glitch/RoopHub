@@ -51,7 +51,7 @@ try:
     
     # Ensure Headers exist if sheet is empty
     if not auth_sheet.get_all_values():
-        auth_sheet.append_row(["Name", "Email", "Password", "Action Type", "Timestamp"])
+        auth_sheet.append_row(["Name", "Email", "Phone", "Address", "Current Address", "Country", "State", "ZIP", "Password", "Action Type", "MemberID", "Timestamp"])
 
     # 2. Review Sheet Setup
     try:
@@ -238,10 +238,17 @@ def auth_action():
     try:
         # डेटा फॉर्मेट: Name, Email, Password, Action (SignUp/SignIn/UPDATE), Timestamp
         row = [
-            data.get("name", "N/A"), 
-            data.get("email"), 
-            data.get("password"), 
+            data.get("name", "N/A"),
+            data.get("email"),
+            data.get("phone", ""),
+            data.get("address", ""),
+            data.get("current_address", ""),
+            data.get("country", ""),
+            data.get("state", ""),
+            data.get("zip", ""),
+            data.get("password"),
             data.get("type", "SIGNUP"),
+            data.get("memberId", ""),
             datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         ]
         if auth_sheet:
