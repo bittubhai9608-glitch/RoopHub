@@ -8,7 +8,8 @@ from datetime import datetime
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-app = Flask(__name__)
+# template_folder='.' set karne se Flask templates ko root directory mein dhundhne lagega
+app = Flask(__name__, template_folder='.')
 CORS(app)
 
 # --- 0. EMAIL CONFIGURATION ---
