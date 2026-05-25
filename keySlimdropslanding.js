@@ -74,7 +74,121 @@ function toggleForm(){
     form.style.display = (form.style.display==="none"||form.style.display==="")?"block":"none";
 }
 
+// This is the function that needs to send data to the Flask backend
 function submitForm(){
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const rating = document.getElementById("rating").value;
+    const comment = document.getElementById("comment").value;
+
+    if(name.length<2 || comment.length<5){
+        alert("Proper review likho");
+        return;
+    }
+
+    // Dynamically get the product name from the H1 tag
+    const productNameElement = document.querySelector('h1[data-i18n="keyslim_Drops_title"]');
+    const productName = productNameElement ? productNameElement.innerText.trim() : "KeySlim Drops"; // Default if not found
+
+    const payload = {
+        name: name,
+        email: email,
+        rating: rating,
+        comment: comment,
+        product: productName // Include product name
+    };
+
+    const submitBtn = document.querySelector('#reviewForm .submit-btn');
+    const originalBtnText = submitBtn.innerText;
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Saving to Database...";
+
+    fetch("https://roophub.onrender.com/submit-review", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+    })
+    .then(res => res.json())
+    .then(result => {
+        if(result.status === "success") {
+            alert("✅ Review submitted successfully and saved to Database!");
+            // Update local reviews and display
+            const newReview={name,email,rating,comment}; // Keep local storage for immediate display
+            realReviews.unshift(newReview);
+            localStorage.setItem("realReviews",JSON.stringify(realReviews));
+            displayReviews();
+            document.getElementById("reviewList").style.display="block";
+            document.getElementById("reviewForm").reset();
+            document.getElementById("reviewForm").style.display="none"; // Hide form after submission
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+            alert("❌ Error: " + (result.message || "Failed to save review"));
+        }
+    })
+    .catch(err => {
+        console.error("Submission error:", err);
+        alert("❌ Server connection failed. Data not stored.");
+    })
+    .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerText = originalBtnText;
+    });
+}
+
+/* =========================
+   🔥 REAL REVIEWS (SAFE STORAGE) - This part is already handled by the fetch above, but keeping local storage for immediate display.
+========================= */
+let realReviews = JSON.parse(localStorage.getItem("realReviews")) || [];
+
+/* =========================
+   🔥 SEE MORE CONTROL
+========================= */
+let visibleCount = 5;
+
+/* =========================
+   🔥 REVIEW FUNCTIONS
+========================= */
+function displayReviews(){
+    let list = document.getElementById("reviewList");
+    let btn = document.getElementById("seeMoreBtn");
+
+    if(!list) return;
+
+    list.innerHTML = "";
+
+    let allReviews = [...fakeReviews, ...realReviews];
+
+    allReviews.slice(0, visibleCount).forEach(r=>{
+        list.innerHTML += `
+        <div class="review-item">
+            <strong>${r.name}</strong> (${r.email}) - ${"⭐".repeat(r.rating)}<br>
+            ${r.comment}
+        </div>`;
+    });
+
+    if(btn){
+        btn.style.display = allReviews.length > visibleCount ? "block" : "none";
+    }
+}
+
+function toggleReviews(){
+    let list = document.getElementById("reviewList");
+
+    if(list.style.display==="none" || list.style.display===""){
+        displayReviews();
+        list.style.display="block";
+    }else{
+        list.style.display="none";
+    }
+}
+
+function toggleForm(){
+    let form=document.getElementById("reviewForm");
+    form.style.display = (form.style.display==="none"||form.style.display==="")?"block":"none";
+}
+
+function submitForm_old(){ // Renamed to avoid conflict, the new one above is active
 
     let name=document.getElementById("name").value;
     let email=document.getElementById("email").value;
@@ -96,12 +210,12 @@ function submitForm(){
     displayReviews();
     document.getElementById("reviewList").style.display="block";
 
-    document.getElementById("reviewForm").reset();
+    document.getElementById("reviewForm").reset(); // Reset form after submission
 
     // 📱 MOBILE UX IMPROVEMENT
     window.scrollTo({ top: 0, behavior: "smooth" });
 
-    alert("✅ Your review submitted successfully!");
+    alert("✅ Your review submitted successfully!"); // Alert user
 }
 
 // LOAD MORE
@@ -209,41 +323,3 @@ img.addEventListener("touchend", e=>{
 });
 }
 });
-
-
-
-
-
-
-
-
-function submitForm() {
-    const rForm = document.getElementById('reviewForm');
-    const submitBtn = document.querySelector('.submit-btn');
-    const scriptURL = 'APNA_URL_YAHAN_PASTE_KAREIN'; 
-
-    submitBtn.innerText = "Sending...";
-    submitBtn.disabled = true;
-
-    // FormData variable banayein
-
-    const formData = new FormData(rForm);
-
-    fetch(scriptURL, { method: 'POST', body: formData })
-    .then(response => {
-        if(response.ok) {
-            alert("Success! Review save ho gaya.");
-            rForm.reset();
-            submitBtn.innerText = "Submit";
-            submitBtn.disabled = false;
-        } else {
-            throw new Error('Network response was not ok.');
-        }
-    })
-    .catch(error => {
-        console.error('Error details:', error); // F12 console mein error dikhayega
-        alert("Error! Data nahi gaya. Check Console (F12)");
-        submitBtn.innerText = "Submit";
-        submitBtn.disabled = false;
-    });
-}
