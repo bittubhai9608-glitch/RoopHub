@@ -278,37 +278,63 @@ function openProduct(link) {
   if (link) window.location.href = link;
 }
 
+/**
+ * Universal function to open modals by type or ID
+ */
+function openModal(type) {
+  const mapping = {
+    'about': 'aboutModal',
+    'contact': 'contactModal',
+    'disclaimer': 'disclaimerModal',
+    'faq': 'faqModal',
+    'terms': 'termsModal',
+    'privacy': 'privacyPolicyModal',
+    'affiliate': 'affiliateModal',
+    'info': 'importantInfoModal'
+  };
+
+  let id = mapping[type] || type;
+  let modal = document.getElementById(id);
+
+  // Fallback for privacy modal ID variations across pages
+  if (!modal && type === 'privacy') {
+    modal = document.getElementById('privacyModal');
+  }
+
+  if (modal) {
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent scrolling background
+  } else {
+    console.warn("Modal not found for type/id:", type);
+  }
+}
+
 function openPrivacyPolicy(){
-  document.getElementById("privacyPolicyModal").style.display = "block";
+  openModal('privacy');
 }
 
 function closePrivacyPolicy(){
-  document.getElementById("privacyPolicyModal").style.display = "none";
+  closeModal('privacyPolicyModal');
 }
 
-
-
 function openTerms(){
-  document.getElementById("termsModal").style.display = "block";
+  openModal('terms');
 }
 
 function closeTerms(){
-  document.getElementById("termsModal").style.display = "none";
+  closeModal('termsModal');
 }
 
-
-
 function openDisclaimer(){
-  document.getElementById("disclaimerModal").style.display = "block";
+  openModal('disclaimer');
 }
 
 function closeDisclaimer(){
-  document.getElementById("disclaimerModal").style.display = "none";
+  closeModal('disclaimerModal');
 }
 
-
 function openFAQ(){
-  document.getElementById("faqModal").style.display = "block";
+  openModal('faq');
 }
 
 
