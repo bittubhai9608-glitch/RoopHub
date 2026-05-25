@@ -421,117 +421,11 @@ function renderMessages(){
 
     box.scrollTop = box.scrollHeight;
 }
-// Password Reset Logic
-function saveProfileChanges() {
-    let user = JSON.parse(localStorage.getItem("roophub_user"));
-    if (!user) {
-        alert("User not logged in.");
-        return;
-    }
-
-    const newName = document.getElementById('updateName').value.trim();
-    const newPassword = document.getElementById('updatePass').value;
-    const newAddress = document.getElementById('updateAddress')?.value.trim();
-
-    if (newName && newName !== user.name) {
-        user.name = newName;
-    }
-
-    if (newPassword) {
-        if (newPassword.length >= 6) { // Basic validation
-            user.password = newPassword;
-        } else {
-            alert("New password must be at least 6 characters long.");
-            return;
-        }
-    }
-
-    if (newAddress && newAddress !== user.address) {
-        user.address = newAddress;
-    }
-
-    localStorage.setItem("roophub_user", JSON.stringify(user));
-    alert("✅ Profile updated successfully!");
-
-    // Sync with Backend
-    fetch("https://roophub.onrender.com/auth-action", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...user, type: "UPDATE" })
-    }).catch(err => console.error("Sync error:", err));
-
-    checkAuthStatus(); 
-    switchProfileTab('security'); 
-}
-
-function ensureAuthModals() {
-    if (!document.getElementById('authModal')) {
-        const modalHTML = `
-            <div id="authModal" class="modal">
-                <div class="modal-content auth-modal-content">
-                    <span class="close" onclick="closeModal('authModal')">&times;</span>
-                    <div class="auth-tabs">
-                        <h3 id="signInTab" onclick="toggleAuth('signin')" class="active-tab">Sign In</h3>
-                        <h3 id="signUpTab" onclick="toggleAuth('signup')">Sign Up</h3>
-                    </div>
-                    <form id="signInForm" class="auth-form">
-                        <input type="email" id="signInEmail" placeholder="Email" required>
-                        <input type="password" id="signInPassword" placeholder="Password" required>
-                        <button type="submit" class="auth-btn">Sign In</button>
-                    </form>
-                    <form id="signUpForm" class="auth-form" style="display:none;">
-                        <input type="text" id="signUpName" placeholder="Full Name" required>
-                        <input type="email" id="signUpEmail" placeholder="Email" required>
-                        <input type="password" id="signUpPassword" placeholder="Password" required>
-                        <input type="text" id="signUpPhone" placeholder="Phone Number (Optional)">
-                        <input type="text" id="signUpAddress" placeholder="Permanent Address" required>
-                        <input type="text" id="signUpCurrentAddress" placeholder="Current Address" required>
-                        <input type="text" id="signUpCountry" placeholder="Country" required>
-                        <input type="text" id="signUpState" placeholder="State" required>
-                        <input type="text" id="signUpZip" placeholder="ZIP Code" required>
-                        <button type="submit" class="auth-btn">Sign Up</button>
-                    </form>
-                </div>
-            </div>
-            <div id="profileModal" class="modal">
-                <div class="modal-content auth-modal-content">
-                    <span class="close" onclick="closeModal('profileModal')">&times;</span>
-                    <div id="profileDetails"></div>
-                    <button onclick="logoutUser()" class="auth-btn" style="background:#ef4444; margin-top:10px;">Log Out</button>
-                </div>
-            </div>`;
-        document.body.insertAdjacentHTML('beforeend', modalHTML);
-    }
-}
-
-function handleForgotPassword(e) {
-    e.preventDefault();
-    const email = prompt("Apna registered email address enter karein:");
-    if (!email) return;
-
-    const savedUser = JSON.parse(localStorage.getItem("roophub_user"));
-    if (savedUser && savedUser.email.toLowerCase() === email.toLowerCase().trim()) {
-        const newPassword = prompt("Naya password set karein (Min 6 characters):");
-        if (newPassword && newPassword.length >= 6) {
-            savedUser.password = newPassword;
-            localStorage.setItem("roophub_user", JSON.stringify(savedUser));
-            alert("✅ Password kamiyabi se update ho gaya hai! Ab naye password se Sign In karein.");
-            toggleAuth('signin');
-        } else if (newPassword) {
-            alert("❌ Password kam se kam 6 characters ka hona chahiye.");
-        }
-    } else {
-        alert("❌ Is email se koi account nahi mila. Pehle Sign Up karein.");
-        toggleAuth('signup');
-    }
-}
-
 // Generic Modal close function
 function closeModal(id) {
     const modals = [
         'aboutModal', 'importantInfoModal', 'privacyPolicyModal', 
-        'termsModal', 'disclaimerModal', 'faqModal', 'contactModal',
-        'privacyModal', 'affiliateModal', 'authModal', 'profileModal'
+        'termsModal', 'disclaimerModal', 'faqModal', 'contactModal', 'privacyModal', 'affiliateModal'
     ];
     
     const targetModals = id ? [id] : modals;
@@ -540,199 +434,6 @@ function closeModal(id) {
         if (m) m.style.display = 'none';
     });
     document.body.style.overflow = 'auto';
-}
-
-// Modal kholne ke liye function (Example)
-function openModal(type) {
-    const modalMap = {
-        'about': 'aboutModal',
-        'info': 'importantInfoModal',
-        'contact': 'contactModal',
-        'faq': 'faqModal',
-        'disclaimer': 'disclaimerModal',
-        'terms': document.getElementById('termsModal') ? 'termsModal' : 'termsModal', // Ensure it points to the correct ID
-        'privacy': document.getElementById('privacyPolicyModal') ? 'privacyPolicyModal' : 'privacyModal',
-        'affiliate': 'affiliateModal',
-        'auth': 'authModal',
-        'profile': 'profileModal'
-    };
-    const id = modalMap[type] || type;
-    const modal = document.getElementById(id);
-    if (modal) {
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-function applyThemeAndSettings() {
-    // Apply Dark Mode
-    const isDark = localStorage.getItem('darkMode') === 'true';
-    if (isDark) {
-        document.body.classList.add('dark-mode');
-    } else {
-        document.body.classList.remove('dark-mode');
-    }
-    // Apply Language (यह applyLanguage फंक्शन द्वारा पहले से ही हैंडल किया जाता है, लेकिन यह सुनिश्चित करने के लिए कि इसे कॉल किया गया है)
-    applyLanguage(localStorage.getItem('language') || 'en');
-    // Timezone आमतौर पर डिस्प्ले/आंतरिक लॉजिक के लिए क्लाइंट-साइड JS द्वारा हैंडल किया जाता है, न कि एक वैश्विक सेटिंग जो UI को बदलती है।
-}
-
-// New function to handle opening auth or profile modal based on login status
-function openAuthOrProfileModal() {
-    const user = JSON.parse(localStorage.getItem("roophub_user"));
-    if (user && user.name) {
-        showProfile(); // User logged in, show profile modal
-    } else {
-        openModal('auth'); // User not logged in, show auth modal
-    }
-}
-
-function checkAuthStatus() {
-    const user = JSON.parse(localStorage.getItem("roophub_user"));
-    const btn = document.querySelector('.header-auth-btn');
-    if (user && user.name && btn) {
-        // Always show the hamburger icon, regardless of login status
-        btn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-        btn.style.padding = "8px 12px";
-        btn.style.background = "#27ae60";
-        btn.style.color = "#ffffff";
-        btn.style.boxShadow = "0 2px 8px rgba(0,0,0,0.2)";
-        btn.onclick = openAuthOrProfileModal; // Use the new function
-    }
-}
-
-function showProfile() {
-    const user = JSON.parse(localStorage.getItem("roophub_user"));
-    if (!user) return;
-
-    const details = document.getElementById('profileDetails');
-    if (details) {
-        switchProfileTab('overview');
-    }
-    openModal('profile');
-}
-
-function switchProfileTab(tab) {
-    const user = JSON.parse(localStorage.getItem("roophub_user"));
-    const details = document.getElementById('profileDetails');
-    const initials = user.name.split(' ').map(n => n[0]).join('').toUpperCase();
-
-    const avatarHtml = user.profilePic 
-        ? `<img src="${user.profilePic}" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid #2563eb;">`
-        : `<div style="width: 50px; height: 50px; background: linear-gradient(135deg, #2563eb, #1e40af); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold;">${initials}</div>`;
-
-    const memberId = user.memberId || "RH-XXXX";
-    const joinDate = user.joinDate || "1 May 2026";
-
-    let tabContent = '';
-
-    if (tab === 'overview') {
-        tabContent = `
-            <div style="font-size: 14px; color: #475569;">
-                <p style="margin: 15px 0; display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 8px;"><strong>📧 Email:</strong> <span style="color: #1e293b;">${user.email}</span></p>
-                <p style="margin: 15px 0; display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 8px;"><strong>🆔 Member ID:</strong> <span style="color: #1e293b; font-family: monospace; font-weight: bold;">${memberId}</span></p>
-                <p style="margin: 15px 0; display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 8px;"><strong>📞 Phone:</strong> <span style="color: #1e293b;">${user.phone || 'N/A'}</span></p>
-                <p style="margin: 15px 0; display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 8px;"><strong>📍 Address:</strong> <span style="color: #1e293b;">${user.address || 'N/A'}</span></p>
-                <p style="margin: 15px 0; display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 8px;"><strong>📅 Joined:</strong> <span style="color: #1e293b;">${joinDate}</span></p>
-                <p style="margin: 15px 0; display: flex; justify-content: space-between;"><strong>✅ Status:</strong> <span style="color: #166534; font-weight: bold;">Active Account</span></p>
-                <p style="margin: 15px 0; display: flex; justify-content: space-between; border-top: 1px dashed #eee; padding-top: 8px;"><strong>🌟 Membership Tier:</strong> <span style="color: #854d0e; font-weight: bold;">Gold Member</span></p>
-                <p style="margin: 15px 0; display: flex; justify-content: space-between;"><strong>⏰ Last Login:</strong> <span style="color: #1e293b;">${new Date().toLocaleString()}</span></p>
-            </div>
-        `;
-    } else if (tab === 'security') {
-        tabContent = `
-            <div style="display: flex; flex-direction: column; gap: 12px;">
-                <div class="input-group">
-                    <label style="font-size: 12px; font-weight: 600;">Update Name</label>
-                    <input type="text" id="updateName" value="${user.name}" style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;">
-                </div>
-                <div class="input-group">
-                    <label style="font-size: 12px; font-weight: 600;">Update Address</label>
-                    <input type="text" id="updateAddress" value="${user.address || ''}" style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;">
-                </div>
-                <div class="input-group">
-                    <label style="font-size: 12px; font-weight: 600;">New Password</label>
-                    <input type="password" id="updatePass" placeholder="Leave blank to keep same" style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;">
-                </div>
-                <div class="input-group">
-                    <label style="font-size: 12px; font-weight: 600;">🖼️ Change Profile Photo</label>
-                    <input type="file" accept="image/*" onchange="handleProfilePicUpload(event)" style="font-size: 11px;">
-                </div>
-                <button onclick="saveProfileChanges()" style="background: #1e40af; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: 600; cursor: pointer; margin-top: 5px;">Save Profile</button>
-
-                <div style="margin-top: 25px; border-top: 1px dashed #e2e8f0; padding-top: 20px;">
-                    <h4 style="margin: 0 0 15px 0; font-size: 14px; color: #1e293b; font-weight: 600;">Security Shield</h4>
-                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f8fafc; border-radius: 8px; margin-bottom: 8px;">
-                        <span style="font-size: 13px; font-weight: 600;">📩 Login Alerts</span>
-                        <input type="checkbox" checked style="width: 18px; height: 18px; cursor: pointer;">
-                    </div>
-                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f8fafc; border-radius: 8px; margin-bottom: 8px;">
-                        <span style="font-size: 13px; font-weight: 600;">🕵️ Privacy Mode</span>
-                        <input type="checkbox" style="width: 18px; height: 18px; cursor: pointer;">
-                    </div>
-                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px;">
-                        <span style="font-size: 13px; font-weight: 600; color: #166534;">🛡️ Security Level</span>
-                        <span style="font-size: 12px; font-weight: 700; color: #15803d;">OPTIMIZED</span>
-                    </div>
-                    <p style="font-size: 11px; color: #64748b; margin-top: 10px;">Aapka account currently secured hai aur tracking protection active hai.</p>
-                </div>
-
-                <div style="margin-top: 25px; padding: 10px; background: #fff5f5; border-radius: 8px; border: 1px solid #fed7d7;">
-                    <h4 style="margin: 0 0 5px 0; font-size: 13px; color: #c53030; font-weight: 600;">Danger Zone</h4>
-                    <button onclick="confirm('Permanent delete?') && logoutUser()" style="background: none; border: none; color: #dc2626; font-size: 12px; cursor: pointer; padding: 0; text-decoration: underline;">❌ Delete Account Forever</button>
-                </div>
-            </div>
-        `;
-    } else if (tab === 'help') {
-        tabContent = `
-            <div style="text-align: center; padding: 10px;">
-                <div style="font-size: 32px; margin-bottom: 10px;">🎧</div>
-                <h4 style="margin: 0 0 10px 0; font-size: 16px; color: #1e293b;">How can we help?</h4>
-                <div style="display: flex; flex-direction: column; gap: 10px;">
-                    <button onclick="showContact()" style="display: block; width: 100%; background: #1e40af; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 13px; cursor: pointer;">📧 Email Support</button>
-                    <a href="https://wa.me/918271734883" target="_blank" style="display: block; background: #22c55e; color: white; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 13px;">💬 WhatsApp Help</a>
-                </div>
-                <p style="font-size: 12px; color: #64748b; margin-top: 15px;"><strong>Call us:</strong> +91 82717 34883</p>
-                <p style="font-size: 11px; color: #94a3b8; margin-top: 5px;">Average response time: 2 hours</p>
-            </div>
-        `;
-    }
-
-    details.innerHTML = `
-        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-            ${avatarHtml}
-            <div>
-                <h3 style="margin: 0; color: #1e293b; font-size: 16px;">${user.name}</h3>
-                <span style="color: #64748b; font-size: 12px;">Premium Member</span>
-            </div>
-        </div>
-
-        <!-- Professional Tab Navigation -->
-        <div style="display: flex; border-bottom: 2px solid #f1f5f9; margin-bottom: 20px; gap: 20px;">
-            <button onclick="switchProfileTab('overview')" style="background:none; border:none; padding: 10px 0; cursor:pointer; font-size:13px; font-weight:600; color: ${tab === 'overview' ? '#2563eb' : '#94a3b8'}; border-bottom: 2px solid ${tab === 'overview' ? '#2563eb' : 'transparent'}; margin-bottom: -2px;">Overview</button>
-            <button onclick="switchProfileTab('security')" style="background:none; border:none; padding: 10px 0; cursor:pointer; font-size:13px; font-weight:600; color: ${tab === 'security' ? '#2563eb' : '#94a3b8'}; border-bottom: 2px solid ${tab === 'security' ? '#2563eb' : 'transparent'}; margin-bottom: -2px;">Profile Management</button>
-            <button onclick="switchProfileTab('help')" style="background:none; border:none; padding: 10px 0; cursor:pointer; font-size:13px; font-weight:600; color: ${tab === 'help' ? '#2563eb' : '#94a3b8'}; border-bottom: 2px solid ${tab === 'help' ? '#2563eb' : 'transparent'}; margin-bottom: -2px;">Help</button>
-        </div>
-
-        <!-- Tab Content -->
-        <div id="tabContentArea" style="min-height: 200px; max-height: calc(100vh - 350px); overflow-y: auto; padding-right: 5px; scrollbar-width: thin; -webkit-overflow-scrolling: touch;">
-            ${tabContent}
-        </div>
-    `;
-}
-
-function handleProfilePicUpload(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const user = JSON.parse(localStorage.getItem("roophub_user"));
-            user.profilePic = e.target.result;
-            localStorage.setItem("roophub_user", JSON.stringify(user));
-            switchProfileTab('settings');
-        };
-        reader.readAsDataURL(file);
-    }
 }
 
 function toggleDarkMode() {
@@ -862,46 +563,6 @@ function applyLanguage(lang) {
     }
 }
 
-function resetToDefaultSettings() {
-    if (confirm("Reset all settings to default?")) {
-        localStorage.removeItem('darkMode');
-        localStorage.removeItem('language');
-        localStorage.removeItem('timezone');
-        document.body.classList.remove('dark-mode');
-        applyLanguage('en');
-        switchProfileTab('settings');
-        alert("Settings have been reset to default values.");
-    }
-}
-
-function logoutUser() {
-    localStorage.removeItem("roophub_user");
-    closeModal('profileModal');
-    checkAuthStatus();
-    alert("Aap kamiyabi se logout ho gaye hain.");
-}
-
-function toggleAuth(type) {
-    const signInForm = document.getElementById('signInForm');
-    const signUpForm = document.getElementById('signUpForm');
-    const signInTab = document.getElementById('signInTab');
-    const signUpTab = document.getElementById('signUpTab');
-
-    if (!signInForm || !signUpForm) return;
-
-    if (type === 'signin') {
-        signInForm.style.display = 'block';
-        signUpForm.style.display = 'none';
-        signInTab.classList.add('active-tab');
-        signUpTab.classList.remove('active-tab');
-    } else {
-        signInForm.style.display = 'none';
-        signUpForm.style.display = 'block';
-        signInTab.classList.remove('active-tab');
-        signUpTab.classList.add('active-tab');
-    }
-}
-
 function showAbout() {
     openModal('about');
 }
@@ -948,74 +609,8 @@ function toggleFAQ(button) {
 
 document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('productContainer')) loadProducts('Men Health'); // केवल उन पेजों पर प्रोडक्ट्स लोड करें जहाँ productContainer है
-  ensureAuthModals(); 
-  applyThemeAndSettings(); // लोकल स्टोरेज से सभी सेटिंग्स लागू करें
   updateHeaderTimeContext();
   setInterval(updateHeaderTimeContext, 60000); // Check for time-based updates every minute
-  checkAuthStatus();
-  
-  // Sign Up Logic
-  const signUpForm = document.getElementById('signUpForm');
-  if (signUpForm) {
-    signUpForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('signUpName').value;
-      const email = document.getElementById('signUpEmail').value;
-      const password = document.getElementById('signUpPassword').value;
-      const phone = document.getElementById('signUpPhone')?.value || "";
-      const address = document.getElementById('signUpAddress')?.value || "";
-      const currentAddress = document.getElementById('signUpCurrentAddress')?.value || "";
-      const country = document.getElementById('signUpCountry')?.value || "";
-      const state = document.getElementById('signUpState')?.value || "";
-      const zip = document.getElementById('signUpZip')?.value || "";
-
-      const memberId = "RH-" + Math.floor(1000 + Math.random() * 9000);
-
-      const userData = { name, email, password, phone, address, current_address: currentAddress, country, state, zip, memberId, joinDate: new Date().toLocaleDateString() };
-      localStorage.setItem("roophub_user", JSON.stringify(userData));
-      
-      // Sign Up data direct Google Sheet mein store hoga via Python Backend
-      fetch("https://roophub.onrender.com/auth-action", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...userData, type: "SIGNUP" })
-      })
-      .then(res => res.json())
-      .catch(err => console.error("Sheet logic error:", err));
-
-      closeModal('authModal');
-      checkAuthStatus();
-      alert(`Welcome ${name}! Your account has been created successfully. 🎉`);
-    });
-  }
-
-  // Sign In Logic
-  const signInForm = document.getElementById('signInForm');
-  if (signInForm) {
-    signInForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = document.getElementById('signInEmail').value;
-      const password = document.getElementById('signInPassword').value;
-      
-      const savedUser = JSON.parse(localStorage.getItem("roophub_user"));
-      if (savedUser && savedUser.email === email && savedUser.password === password) {
-        // Sign In data bhi log hoga
-        fetch("https://roophub.onrender.com/auth-action", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name: savedUser.name, email, password, type: "SIGNIN" })
-        })
-        .then(res => res.json())
-        .catch(err => console.error("Sheet logic error:", err));
-
-        closeModal('authModal');
-        checkAuthStatus();
-        alert(`Welcome back, ${savedUser.name}!`);
-      } else {
-        alert("Invalid email or password. Please Sign Up first if you don't have an account.");
-      }
-    });
-  }
 
   const chatInput = document.getElementById("chatInput");
   if (chatInput) {
@@ -1085,7 +680,9 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const submitBtn = reviewForm.querySelector('.submit-btn');
       // Dynamically get the product name from the H1 tag or badge
-      const productName = document.querySelector('h1')?.innerText || "General Product";
+      const productName = document.querySelector('[data-i18n*="_title"]')?.innerText || 
+                          document.querySelector('h1')?.innerText || 
+                          "General Product";
       
       const formData = new FormData(reviewForm);
       const payload = {
@@ -1097,7 +694,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       submitBtn.disabled = true;
-      submitBtn.innerText = "Saving to Database...";
+      submitBtn.innerText = "Connecting to Server...";
 
       fetch("https://roophub.onrender.com/submit-review", {
         method: "POST",
@@ -1115,7 +712,10 @@ document.addEventListener('DOMContentLoaded', () => {
           alert("❌ Error: " + (result.message || "Failed to save review"));
         }
       })
-      .catch(err => alert("❌ Server connection failed. Data not stored."))
+      .catch(err => {
+        console.error("Submission Error:", err);
+        alert("❌ Server connection failed. The server might be waking up, please try again in 30 seconds.");
+      })
       .finally(() => {
         submitBtn.disabled = false;
         submitBtn.innerText = "Post Review";
