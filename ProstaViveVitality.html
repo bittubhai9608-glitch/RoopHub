@@ -1125,11 +1125,11 @@ margin-top: 25px;
     <h3 class="video-section-title" id="videoTitleTypewriter" data-text="📺 Scientific Breakthrough: Watch How It Works"></h3>
     <div class="video-wrapper">
         <iframe id="ytVideo"
-            src="https://www.youtube.com/embed/hYEtfXSx-xM?si=4Wm7K8xP2YxV8z5M"
+            src="https://www.youtube.com/embed/hYEtfXSx-xM?si=e9V2j5dA-yfexByQ&autoplay=1&mute=1&controls=0&rel=0"
             frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen>
         </iframe>
-        <div class="video-placeholder" id="videoPlaceholder" data-video-id="DBBk_u1uJ7M">
-            <img src="https://img.youtube.com/vi/DBBk_u1uJ7M/hqdefault.jpg" alt="Video Thumbnail" class="video-thumbnail">
+        <div class="video-placeholder" id="videoPlaceholder" data-video-id="hYEtfXSx-xM">
+            <img src="https://img.youtube.com/vi/hYEtfXSx-xM/hqdefault.jpg" alt="Video Thumbnail" class="video-thumbnail">
             <div class="play-button">▶</div>
         </div>
     </div>
@@ -2374,8 +2374,8 @@ function toggleForm(){
 
 /* ---------- 🎥 VIDEO FUNCTIONS ---------- */
 const video = document.getElementById("ytVideo");
-function soundOn(){ video.src = "https://www.youtube.com/embed/DBBk_u1uJ7M?autoplay=1&mute=0"; }
-function soundOff(){ video.src = "https://www.youtube.com/embed/DBBk_u1uJ7M?autoplay=1&mute=1"; }
+function soundOn(){ video.src = "https://www.youtube.com/embed/hYEtfXSx-xM?si=e9V2j5dA-yfexByQ&autoplay=1&mute=0"; }
+function soundOff(){ video.src = "https://www.youtube.com/embed/hYEtfXSx-xM?si=e9V2j5dA-yfexByQ&autoplay=1&mute=1"; }
 window.soundOn = soundOn;
 window.soundOff = soundOff;
 
@@ -2393,6 +2393,7 @@ window.onload = function(){
 ========================= */
 
 let images = [
+"Images/prostavive vitality1.jpeg",
 "Images/prostavive vitality2.jpeg",
 "Images/prostavive vitality3.jpeg",
 "Images/prostavive vitality4.jpeg"
@@ -2649,11 +2650,6 @@ document.addEventListener("click", function(e) {
             <p style="font-size: 17px; line-height: 1.7; color: #334155; background: #ffffff; padding: 25px; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
                 ${data.desc}
             </p>
-            <div style="margin-top: 15px;">
-                <a href="#specs" onclick="closeBenefitPopup()" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 5px;">
-                    🔍 Know More about Ingredients &rarr;
-                </a>
-            </div>
         `;
         openBenefitPopup(popupContent);
     } else if (specRow) {

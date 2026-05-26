@@ -232,7 +232,7 @@ window.addEventListener("load", function(){
 
 /* ---------- IMAGE PRELOAD (MOBILE FAST) ---------- */
 let images=[
-"Images/prostavive vitality.jpeg",
+"Images/prostavive vitality1.jpeg",
 "Images/prostavive vitality2.jpeg",
 "Images/prostavive vitality3.jpeg",
 "Images/prostavive vitality4.jpeg"
