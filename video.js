@@ -572,6 +572,7 @@ let currentVideoType = null;
 // Open Category
 function openCategory(category) {
   currentVideoCategory = category;
+  hideAllInfoSections(); // Hide all info sections first
   
   // Hide landing page, show video type selection
   document.getElementById('videosLanding').style.display = 'none';
@@ -581,7 +582,30 @@ function openCategory(category) {
   const categoryData = videoData[category];
   document.getElementById('categoryTitleType').textContent = `${categoryData.icon} ${categoryData.title} Videos`;
   
+  // Show the corresponding info section
+  const infoSectionId = `${category}InfoSection`;
+  const infoSection = document.getElementById(infoSectionId);
+  if (infoSection) {
+    infoSection.style.display = 'block';
+  }
+
   window.scrollTo(0, 0);
+}
+
+// Helper function to hide all info sections
+function hideAllInfoSections() {
+  document.getElementById('menHealthInfoSection').style.display = 'none';
+  document.getElementById('weightLossInfoSection').style.display = 'none';
+  document.getElementById('brainBoostInfoSection').style.display = 'none';
+  document.getElementById('skinCareInfoSection').style.display = 'none';
+}
+
+// Helper function to show all info sections
+function showAllInfoSections() {
+  document.getElementById('menHealthInfoSection').style.display = 'block';
+  document.getElementById('weightLossInfoSection').style.display = 'block';
+  document.getElementById('brainBoostInfoSection').style.display = 'block';
+  document.getElementById('skinCareInfoSection').style.display = 'block';
 }
 
 // Load Video List
@@ -670,6 +694,7 @@ function goBackToVideoType() {
   document.getElementById('videoTypeSelection').style.display = 'block';
   window.scrollTo(0, 0);
 }
+
 
 function goBackToCategories() {
   currentVideoCategory = null;
