@@ -4,7 +4,7 @@ const products = {
       name: "ProstaVive Vitality", 
       rating: "4.9", 
       price: "Special Discount Available", 
-      img: "Images/prostavivevitality4.jpeg",
+      img: "Images/logoprostavive.jpeg",
       link: "ProstaViveVitality.html",
       features: [
         "Supports Optimal Prostate Wellness",
