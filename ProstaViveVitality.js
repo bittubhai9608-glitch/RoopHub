@@ -5,23 +5,6 @@ function openOfficialSite() {
     window.location.href = "https://8c8140sq3ljwet6b-82d35bxa0.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google";
 }
 
-
-
-/* =========================
-   🔥 FAKE REVIEWS (UNCHANGED)
-========================= */
-let fakeReviews = [
-    {name:"Rahul", email:"rahul@gmail.com", rating:5, comment:"बहुत बढ़िया product 👍"},
-    {name:"Pooja", email:"pooja@gmail.com", rating:4, comment:"Quality achhi hai 😊"},
-    {name:"Amit", email:"amit@gmail.com", rating:5, comment:"Fast delivery 🚀"},
-    {name:"Neha", email:"neha@gmail.com", rating:4, comment:"Value for money 💰"},
-    {name:"Neha", email:"neha@gmail.com", rating:4, comment:"Value for money 💰"},
-    {name:"Neha", email:"neha@gmail.com", rating:4, comment:"Value for money 💰"},
-    {name:"Neha", email:"neha@gmail.com", rating:4, comment:"Value for money 💰"},
-    {name:"Neha", email:"neha@gmail.com", rating:4, comment:"Value for money 💰"},
-    {name:"Ravi", email:"ravi@gmail.com", rating:5, comment:"Highly recommended 🔥"}
-];
-
 /* =========================
    🔥 REAL REVIEWS (SAFE STORAGE)
 ========================= */
