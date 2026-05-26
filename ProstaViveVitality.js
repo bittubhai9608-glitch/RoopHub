@@ -252,7 +252,6 @@ function prevImage(){
     index=(index-1+images.length)%images.length;
     showImage(index);
 }
-
 // GLOBAL ACCESS
 window.nextImage = nextImage;
 window.prevImage = prevImage;
