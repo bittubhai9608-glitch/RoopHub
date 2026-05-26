@@ -10,6 +10,50 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Modal styling to match Index Page */
+    .full-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #f8fafc;
+        z-index: 10000;
+        overflow-y: auto;
+        padding: 40px 20px;
+        font-family: 'Inter', sans-serif;
+        color: #334155;
+    }
+    .modal-close-btn {
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        padding: 10px 20px;
+        background: #ef4444;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        z-index: 10001;
+    }
+    .modal-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .modal-section {
+        margin-bottom: 30px;
+        line-height: 1.8;
+    }
+    .content-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        margin-bottom: 60px;
+    }
+  </style>
 </head>
 <body>
   <header class="video-header">
@@ -163,7 +207,7 @@
     <div class="footer-col">
       <h3>Get to Know Us</h3>
       <ul>
-        <li onclick="window.location.href='index.html#about'" style="cursor:pointer;">About RoopHub</li>
+        <li onclick="showAbout()" style="cursor:pointer;">About Us</li>
         <li onclick="window.location.href='index.html'" style="cursor:pointer;">Back to Home</li>
       </ul>
     </div>
@@ -181,7 +225,13 @@
       <h3>Quick Links</h3>
       <ul>
         <li onclick="window.location.href='index.html'" style="cursor:pointer;">Products</li>
-        <li onclick="window.location.href='index.html'" style="cursor:pointer;">Contact</li>
+        <li onclick="showContact()" style="cursor:pointer;">Contact</li>
+        <li onclick="openFAQ()" style="cursor:pointer;">FAQ</li>
+        <li onclick="openDisclaimer()" style="cursor:pointer;">Disclaimer</li>
+        <li onclick="openPrivacyPolicy()" style="cursor:pointer;">Privacy Policy</li>
+        <li onclick="openTerms()" style="cursor:pointer;">Terms</li>
+        <li onclick="openAffiliate()" style="cursor:pointer;">Affiliate Disclosure</li>
+        <li onclick="showImportantInfo()" style="cursor:pointer;">Important Info</li>
       </ul>
     </div>
   </footer>
@@ -191,6 +241,590 @@
     © 2026 RoopHub. All Rights Reserved.
   </div>
 
+  <!-- FAQ Modal -->
+  <div id="faqModal" class="full-modal">
+    <button onclick="closeModal()" class="modal-close-btn">✖ Close</button>
+    <div class="modal-wrapper">
+        <h1 style="text-align: center; color: #2c3e50;">Frequently Asked Questions (FAQ)</h1>
+        <p style="text-align: center; color: #7f8c8d; margin-bottom: 30px;">Find answers to the most common questions about our platform and the products we review.</p>
+
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">1. What is RoopHUB Official and how does it work?</h3>
+            <p style="line-height: 1.6;">RoopHUB Official is a dedicated wellness and health information platform. Our mission is to research, analyze, and present the most effective health supplements and wellness products available in the market today. We act as a bridge between you and the official product manufacturers. We provide detailed insights, ingredient breakdowns, and usage guides so that you can make an informed decision before purchasing. When you decide to buy a product through our links, we redirect you to the secure, official website of the brand to ensure you get genuine products and the best possible price.</p>
+        </div>
+
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">2. Is the information provided on this website medical advice?</h3>
+            <p style="line-height: 1.6;">No, the information provided on RoopHUB Official is for educational and informational purposes only. While we take great care in researching the products we feature, such as Neuro Serge, we are not medical professionals or licensed doctors. The content on this site should not be used to diagnose, treat, or cure any disease. Every individual has a unique medical history, and what works for one person may not work for another. We strongly recommend consulting with a healthcare professional before starting any new dietary supplement, especially if you have pre-existing health conditions or are taking prescription medication.</p>
+        </div>
+
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">3. Are the products mentioned on RoopHUB sold directly by you?</h3>
+            <p style="line-height: 1.6;">No, RoopHUB does not sell, manufacture, or ship any physical products directly. We are an independent affiliate partner. Our role is to provide information and direct you to the official source. When you click an "Order Now" or "Official Website" button, you are taken to the manufacturer's secure checkout page. This ensures that your payment is handled by a verified brand and that you receive an authentic product with all applicable money-back guarantees provided by the company.</p>
+        </div>
+
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">4. Do I have to pay extra if I buy through your affiliate links?</h3>
+            <p style="line-height: 1.6;">Absolutely not. One of our core principles is transparency. Buying through an affiliate link on RoopHUB does not cost you a single extra penny. In fact, it is often the opposite. Because we maintain professional relationships with these brands, we are sometimes able to offer our readers exclusive discount codes or special bundle pricing that you might not find by visiting the website directly. The commission we earn is paid by the manufacturer as a marketing fee, and it does not affect your final purchase price in any way.</p>
+        </div>
+
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">5. How do you choose which products to promote?</h3>
+            <p style="line-height: 1.6;">We take our reputation very seriously. We refuse to promote products that use deceptive marketing, fake testimonials, or hidden ingredients. Our selection process involves checking the purity of ingredients, the reputation of the manufacturing facility (such as FDA-registered or GMP-certified facilities), and real customer feedback. If a product does not meet our high standards for safety and transparency, it will not be featured on our platform. Our goal is to build long-term trust with our community by only recommending high-quality wellness solutions.</p>
+        </div>
+
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">6. Can I get a refund if the product doesn't work for me?</h3>
+            <p style="line-height: 1.6;">Since the actual purchase happens on the official manufacturer's website, their specific refund policy will apply. Most high-quality supplements we feature come with a 60-day or 90-day money-back guarantee. We always encourage our users to read the "Refund Policy" or "Terms of Sale" on the official product page before completing a purchase. If you need help finding where to contact their support team, you can reach out to us, and we will do our best to guide you to the right place.</p>
+        </div>
+
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">7. Is my data safe when browsing RoopHUB Official?</h3>
+            <p style="line-height: 1.6;">Yes, your security is a top priority for us. Our website uses SSL encryption to ensure that your browsing experience is private and secure. As detailed in our Privacy Policy, we do not collect or store sensitive personal information like your credit card details or home address. We use cookies only to track affiliate referrals and to improve our website's performance. You can browse our articles and reviews with complete peace of mind knowing that your privacy is respected.</p>
+        </div>
+
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">8. How can I contact the RoopHUB team?</h3>
+            <p style="line-height: 1.6;">We love hearing from our community! Whether you have a question about a specific review, want to suggest a product for us to analyze, or have a technical issue with our website, you can reach out to us through our official Contact Us page. We aim to respond to all legitimate inquiries within 24-48 hours. Providing clear communication is part of our commitment to being a transparent and reliable source in the health and wellness space.</p>
+        </div>
+    </div>
+  </div>
+
+  <!-- Disclaimer Modal -->
+  <div id="disclaimerModal" class="full-modal">
+    <button onclick="closeModal()" class="modal-close-btn">✖ Close</button>
+    <div class="modal-wrapper">
+        <h1 style="color: #2c3e50; border-bottom: 3px solid #e74c3c; padding-bottom: 10px;">Medical & Earnings Disclaimer</h1>
+        <p><strong>Last Updated: April 17, 2026</strong></p>
+
+        <p style="margin-top: 20px;">Please read this Disclaimer carefully before using the RoopHUB Official website (roophub.online). By accessing this site, you acknowledge and agree to the following terms regarding the information provided and the products promoted.</p>
+
+        <h3 style="color: #c0392b; margin-top: 30px;">1. Not Medical Advice (Health Disclaimer)</h3>
+        <p>The content provided on RoopHUB Official, including text, graphics, images, and other material, is for informational and educational purposes only. None of the content on this website is intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or another qualified health provider with any questions you may have regarding a medical condition or health goals.</p>
+        <p>Never disregard professional medical advice or delay in seeking it because of something you have read on this website. If you think you may have a medical emergency, call your doctor or emergency services immediately. Reliance on any information provided by RoopHUB Official is solely at your own risk.</p>
+
+        <h3 style="color: #c0392b; margin-top: 30px;">2. Individual Results May Vary</h3>
+        <p>When discussing health supplements such as Neuro Serge, RoopHub, or any other wellness products, it is important to understand that <strong>individual results will vary</strong>. Health supplements are not "magic pills" and their effectiveness depends on various factors including age, genetics, diet, exercise, and overall health condition. Testimonials or case studies found on this site or on the official product pages represent exceptional results and do not guarantee that you will achieve the same outcome. We make no guarantees, warranties, or representations regarding the specific health benefits you may experience.</p>
+
+        <h3 style="color: #c0392b; margin-top: 30px;">3. Affiliate & Earnings Disclaimer</h3>
+        <p>RoopHUB Official is a participant in various affiliate marketing programs. This means that we may earn a commission if you click on a link and make a purchase through our site. This commission is paid by the product manufacturer at no additional cost to you. Our reviews and recommendations are based on our independent research and analysis. While we strive to provide honest and unbiased information, please be aware that our financial relationship with product owners may influence the placement or order of products on this website.</p>
+
+        <h3 style="color: #c0392b; margin-top: 30px;">4. Product Safety & Responsibility</h3>
+        <p>RoopHUB Official does not manufacture, store, or ship any of the products mentioned on this site. We are strictly an informational and referral platform. Before consuming any supplement, we strongly recommend that you read the full ingredient list on the official product label to avoid potential allergic reactions or adverse effects. If you are pregnant, nursing, taking medication, or have a history of heart conditions, consult a licensed healthcare professional before use. Any issues related to product quality, shipping delays, or billing must be addressed directly with the product manufacturer’s customer support.</p>
+
+        <h3 style="color: #c0392b; margin-top: 30px;">5. Accuracy of Information</h3>
+        <p>While we make every effort to ensure that the information on this website is accurate and up-to-date, health research is constantly evolving. RoopHUB Official does not warrant or guarantee the completeness, reliability, or accuracy of the information provided. Any action you take based on the information found on this website is strictly at your own risk, and we will not be liable for any losses or damages in connection with the use of our website.</p>
+
+        <h3 style="color: #c0392b; margin-top: 30px;">6. External Links Disclaimer</h3>
+        <p>Our website contains links to external websites (official product pages) that are not provided or maintained by or in any way affiliated with RoopHUB Official. Please note that we do not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites. Once you leave our domain, you are subject to the privacy policies and terms of the third-party site.</p>
+
+        <h3 style="color: #c0392b; margin-top: 30px;">7. No Warranties</h3>
+        <p>This website is provided "as is" without any representations or warranties, express or implied. RoopHUB Official makes no representations or warranties in relation to this website or the information and materials provided on this website. We do not warrant that this website will be constantly available, or available at all; or that the information on this website is complete, true, accurate or non-misleading.</p>
+
+        <h3 style="color: #c0392b; margin-top: 30px;">8. Consent</h3>
+        <p>By using our website, you hereby consent to our disclaimer and agree to its terms. We reserve the right to update, amend or make any changes to this document at any time without prior notice.</p>
+
+        <div style="background: #fff3cd; border-left: 5px solid #ffc107; padding: 20px; margin-top: 40px; border-radius: 8px;">
+            <p style="margin: 0; color: #856404; font-weight: bold;">Note:</p>
+            <p style="margin-top: 10px; color: #856404;">Statements regarding dietary supplements have not been evaluated by the FDA (Food and Drug Administration). These products are not intended to diagnose, treat, cure, or prevent any disease.</p>
+        </div>
+    </div>
+  </div>
+
+  <!-- Privacy Policy Modal -->
+  <div id="privacyPolicyModal" class="full-modal">
+    <button onclick="closeModal()" class="modal-close-btn">Close ✖</button>
+    <div class="modal-wrapper">
+        <h1 class="modal-title">Privacy Policy for RoopHub Official</h1>
+        <p class="text-muted"><strong>Last Updated: April 17, 2026</strong></p>
+
+        <section class="modal-section">
+            <p>At RoopHUB Official (accessible from roophub.online), one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by RoopHUB and how we use it.</p>
+        </section>
+
+        <section class="modal-section">
+            <h2>1. Information We Collect</h2>
+            <p>The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information. If you contact us directly, we may receive additional information about you such as your name, email address, phone number, and the contents of any attachments you may send us.</p>
+            <p>As an affiliate marketing platform, we do not directly process payments or store credit card details. When you click on a product link, you are redirected to the official manufacturer's website, and any information provided there is subject to their specific privacy policy.</p>
+        </section>
+
+        <section class="modal-section">
+            <h2>2. How We Use Your Information</h2>
+            <p>We use the information we collect in various ways, including to:</p>
+            <ul>
+                <li>Provide, operate, and maintain our website</li>
+                <li>Improve, personalize, and expand our website's user experience</li>
+                <li>Understand and analyze how you use our website</li>
+                <li>Develop new products, services, features, and functionality</li>
+                <li>Communicate with you and provide updates</li>
+                <li>Find and prevent fraud</li>
+            </ul>
+        </section>
+
+        <section class="modal-section">
+            <h2>3. Log Files and Analytics</h2>
+            <p>RoopHUB follows a standard procedure of using log files. These files log visitors when they visit websites. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks.</p>
+        </section>
+
+        <section class="modal-section">
+            <h2>4. Cookies and Web Beacons</h2>
+            <p>Like any other website, RoopHUB uses "cookies". These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
+        </section>
+
+        <section class="modal-section">
+            <h2>5. CCPA & GDPR Rights</h2>
+            <p>Under the CCPA and GDPR, you have rights including access to your data, correction, erasure, and restriction of processing. If you make a request, we have one month to respond to you.</p>
+        </section>
+
+        <section class="modal-section">
+            <h2>6. Children's Information</h2>
+            <p>RoopHUB does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately.</p>
+        </section>
+
+        <section class="modal-section">
+            <h2>7. Consent</h2>
+            <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms and conditions.</p>
+        </section>
+    </div>
+  </div>
+
+  <!-- Terms and Conditions Modal -->
+  <div id="termsModal" class="full-modal">
+    <button onclick="closeModal()" class="modal-close-btn">✖ Close</button>
+    <div class="modal-wrapper">
+        <h1 class="modal-title">Terms and Conditions for RoopHub Official</h1>
+        <p><strong>Last Updated: April 17, 2026</strong></p>
+
+        <p style="margin-top: 20px; line-height: 1.6;">Welcome to RoopHUB Official (roophub.online). These terms and conditions outline the rules and regulations for the use of RoopHUB's Website. By accessing this website, we assume you accept these terms and conditions in full. Do not continue to use RoopHUB Official if you do not agree to all of the terms and conditions stated on this page.</p>
+
+        <h3 class="modal-section">1. Intellectual Property Rights</h3>
+        <p>Unless otherwise stated, RoopHUB and/or its licensors own the intellectual property rights for all material on RoopHUB Official. All intellectual property rights are reserved. You may view and/or print pages from roophub.online for your own personal use subject to restrictions set in these terms and conditions.</p>
+        
+        <h3 class="modal-section">2. Affiliate Disclosure & Third-Party Links</h3>
+        <p>RoopHUB Official is an affiliate marketing website. This means we provide information about third-party products and include links to the official manufacturers' websites. When you click on these links and make a purchase, we may receive a commission. We do not own, manufacture, or ship the products mentioned on our site. Your purchase is made directly from the official brand, and any issues regarding shipping, billing, or product quality must be resolved with the respective manufacturer.</p>
+
+        <h3 class="modal-section">3. Medical & Results Disclaimer</h3>
+        <p>The content provided on RoopHUB is for informational and educational purposes only. It is not intended to be a substitute for professional medical advice, diagnosis, or treatment. We discuss supplements like Neuro Serge and others based on publicly available data and official claims. However, individual results vary, and we do not guarantee any specific health outcomes. Always seek the advice of your physician or other qualified health providers with any questions you may have regarding a medical condition.</p>
+
+        <h3 class="modal-section">4. Limitation of Liability</h3>
+        <p>In no event shall RoopHUB, nor any of its officers, directors, and employees, be liable to you for anything arising out of or in any way connected with your use of this website, whether such liability is under contract, tort, or otherwise. RoopHUB, including its officers and employees, shall not be liable for any indirect, consequential, or special liability arising out of or in any way related to your use of this website or the products promoted herein.</p>
+
+        <h3 class="modal-section">5. Governing Law</h3>
+        <p>These terms and conditions are governed by and construed in accordance with the laws of India, and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location. This ensures a transparent legal framework for our digital operations and affiliate partnerships.</p>
+
+        <h3 class="modal-section">6. Entire Agreement</h3>
+        <p>These Terms, including any legal notices and disclaimers contained on this website, constitute the entire agreement between RoopHUB and you in relation to your use of this website, and supersede all prior agreements and understandings with respect to the same.</p>
+
+        <h3 class="modal-section">7. Contact Us</h3>
+        <p>If you have any questions about these Terms and Conditions, please contact us via our official contact page. We value our community and are committed to maintaining a fair and transparent platform for all wellness enthusiasts.</p>
+
+        <div style="text-align: center; padding: 60px 0; border-top: 1px solid #e2e8f0; margin-top: 50px;">
+            <p style="font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 2px;">© 2026 ROOPHUB OFFICIAL | ALL RIGHTS RESERVED</p>
+        </div>
+    </div>
+  </div>
+
+  <!-- Affiliate Disclosure Modal -->
+  <div id="affiliateModal" class="full-modal">
+    <button onclick="closeModal()" class="modal-close-btn">Close ✖</button>
+    <div class="modal-wrapper">
+        <h2 style="color: #2c3e50; border-bottom: 3px solid #6b25e4; padding-bottom: 10px;">Affiliate Disclosure & Full Earnings Disclaimer</h2>
+        <p><strong>Last Updated: April 17, 2026</strong></p>
+
+        <p style="line-height: 1.8;">Welcome to RoopHUB Official (roophub.online). We believe in complete transparency and honesty when it comes to our relationship with our readers and the products we discuss. In compliance with the Federal Trade Commission (FTC) guidelines and Google AdSense program policies, this page serves as our official disclosure regarding affiliate relationships.</p>
+
+        <h3 style="color: #6b25e4;">1. What is an Affiliate Relationship?</h3>
+        <p style="line-height: 1.8;">Many of the links found on RoopHUB are "affiliate links." If you click on a link and subsequently make a purchase, we may receive a small commission from that sale. This is a referral fee provided by the brand at <strong>no additional cost to you</strong>.</p>
+
+        <h3 style="color: #6b25e4;">2. Why Do We Use Affiliate Links?</h3>
+        <p style="line-height: 1.8;">Affiliate marketing is our primary business model, allowing us to keep our content free for all users. Instead of charging a subscription fee, we earn through these commissions to cover hosting, research, and technical maintenance costs.</p>
+
+        <h3 style="color: #6b25e4;">3. Our Commitment to Editorial Integrity</h3>
+        <p style="line-height: 1.8;">Our reputation is our most valuable asset. We do not accept payment to provide a "fake" positive review. Our evaluation of products like Neuro Serge is based on official manufacturer data and ingredient analysis. We only affiliate with products that we believe offer genuine value.</p>
+
+        <h3 style="color: #6b25e4;">4. Transparency Regarding Product Claims</h3>
+        <p style="line-height: 1.8;">Any product claim, statistic, or quote about a product should be verified with the manufacturer. Results can vary significantly from person to person. We encourage perform your own due diligence before making any purchase.</p>
+
+        <h3 style="color: #6b25e4;">5. Google AdSense and Third-Party Advertisements</h3>
+        <p style="line-height: 1.8;">RoopHUB may participate in the Google AdSense program. Ads served by Google are generated based on your browsing history. Our inclusion of these ads does not constitute an endorsement of the advertised products.</p>
+
+        <h3 style="color: #6b25e4;">6. Ethical Standards</h3>
+        <p style="line-height: 1.8;">We strictly adhere to ethical marketing practices. We do not use deceptive tactics, such as fake countdown timers or misleading testimonials. We believe an informed customer is a happy customer.</p>
+
+        <h3 style="color: #6b25e4;">7. Social Media and External Communications</h3>
+        <p style="line-height: 1.8;">This disclosure applies to all communications from RoopHUB, including YouTube channel content, email newsletters, and social media posts.</p>
+
+        <h3 style="color: #6b25e4;">8. Contact and Further Questions</h3>
+        <p style="line-height: 1.8;">If you have any questions regarding this Affiliate Disclosure, please do not hesitate to reach out to us through our Contact Us page.</p>
+
+        <p style="margin-top: 50px; text-align: center; color: #999; font-size: 0.85em;">
+            By continuing to use this website, you acknowledge that you have read and understood this Affiliate Disclosure.
+        </p>
+    </div>
+  </div>
+
+  <!-- Important Guidelines Modal -->
+  <div id="importantInfoModal" class="full-modal">
+    <button onclick="closeModal()" class="modal-close-btn">✖ Close</button>
+    <div class="modal-wrapper">
+        <h1 class="modal-title">⚠️ Important Guidelines</h1>
+        <p style="color: #64748b;">To maintain a safe and trustworthy community, please avoid these activities.</p>
+
+        <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 16px; border-radius: 8px; margin: 16px 0;">
+            <h4 style="color: #991b1b; margin-top: 0;">❌ Don't Share Personal Information</h4>
+            <p style="color: #7c2d12; margin-bottom: 0;">Never share credit card numbers, passwords, or SSN. We'll never ask via email.</p>
+        </div>
+
+        <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 16px; border-radius: 8px; margin: 16px 0;">
+            <h4 style="color: #991b1b; margin-top: 0;">❌ Don't Post Spam</h4>
+            <p style="color: #7c2d12; margin-bottom: 0;">Avoid external links and repetitive promotional messages.</p>
+        </div>
+
+        <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 16px; border-radius: 8px; margin: 16px 0;">
+            <h4 style="color: #991b1b; margin-top: 0;">❌ No False Claims</h4>
+            <p style="color: #7c2d12; margin-bottom: 0;">All content must be genuine and based on actual experience.</p>
+        </div>
+
+        <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 16px; border-radius: 8px; margin: 16px 0;">
+            <h4 style="color: #991b1b; margin-top: 0;">❌ Don't Engage in Harassment or Bullying</h4>
+            <p style="color: #7c2d12; margin-bottom: 0;">We maintain a Zero Tolerance policy for harassment, hate speech, or personal attacks.</p>
+        </div>
+
+        <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 16px; border-radius: 8px; margin: 16px 0;">
+            <h4 style="color: #991b1b; margin-top: 0;">❌ Don't Attempt to Hack or Manipulate</h4>
+            <p style="color: #7c2d12; margin-bottom: 0;">Security is non-negotiable. Never attempt unauthorized access or cyber-attacks.</p>
+        </div>
+
+        <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 16px; border-radius: 8px; margin: 16px 0;">
+            <h4 style="color: #991b1b; margin-top: 0;">❌ Don't Sell Illegal Items</h4>
+            <p style="color: #7c2d12; margin-bottom: 0;">Do not attempt to sell counterfeit goods or prohibited items.</p>
+        </div>
+
+        <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 16px; border-radius: 8px; margin-top: 30px;">
+            <p style="margin: 0; color: #92400e;"><strong>⚠️ Enforcement Notice:</strong> Violations will result in account suspension or permanent ban.</p>
+        </div>
+
+        <p style="text-align: center; color: #64748b; margin-top: 30px; font-size: 13px;">Thank you for helping us keep RoopHub a trusted space!</p>
+    </div>
+</div>
+
+  <div id="contactModal" class="full-modal">
+    <button onclick="closeModal()" class="modal-close-btn">✖ Close</button>
+    <div class="modal-wrapper">
+        <h1 class="modal-title">📞 Official Support Channels</h1>
+        <p style="color: #64748b; font-size: 18px; line-height: 1.6; margin-bottom: 40px;">
+            <strong>RoopHub Official</strong> is a premier global platform dedicated to health and wellness curation. We operate as an integrity-first ecosystem, meaning we don't just sell products; we carefully research and vet the science and manufacturing standards behind every brand we feature. Our goal is to empower you with honest information and access to 100% authentic, lab-verified supplements. 
+            <br><br>
+            We believe that direct communication is the best way to build a healthy community. Instead of filling out long, complicated forms, you can reach our verified support experts immediately through any of the channels below. We are here to help you with product details, delivery updates, or professional wellness advice.
+        </p>
+
+        <!-- 🏢 Direct Contact Channels Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 50px;">
+            <!-- Gmail -->
+            <a href="mailto:support@roophub.com" style="text-decoration:none; color:inherit;">
+                <div style="background: white; padding: 35px 25px; border-radius: 24px; border: 1px solid #e2e8f0; text-align: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 10px 25px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#3b82f6'; this.style.boxShadow='0 20px 40px rgba(59, 130, 246, 0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                    <div style="width: 70px; height: 70px; background: #fee2e2; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fa-solid fa-envelope" style="font-size: 32px; color: #ea4335;"></i>
+                    </div>
+                    <h3 style="color: #1e293b; margin-bottom: 10px; font-size: 20px;">Official Email</h3>
+                    <p style="color: #1e40af; font-weight: 700; font-size: 16px; margin-bottom: 10px;">support@roophub.com</p>
+                    <p style="color: #64748b; font-size: 14px; line-height: 1.5;">Best for official business, partnerships, and detailed product questions. We respond to all emails within 24 hours.</p>
+                </div>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://whatsapp.com/channel/0029Vb7Y2ft3QxS4drpeQV02" target="_blank" style="text-decoration:none; color:inherit;">
+                <div style="background: white; padding: 35px 25px; border-radius: 24px; border: 1px solid #e2e8f0; text-align: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 10px 25px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#25d366'; this.style.boxShadow='0 20px 40px rgba(37, 211, 102, 0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                    <div style="width: 70px; height: 70px; background: #dcfce7; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fa-brands fa-whatsapp" style="font-size: 36px; color: #25d366;"></i>
+                    </div>
+                    <h3 style="color: #1e293b; margin-bottom: 10px; font-size: 20px;">WhatsApp Hub</h3>
+                    <p style="color: #1e40af; font-weight: 700; font-size: 16px; margin-bottom: 10px;">Join Channel</p>
+                    <p style="color: #64748b; font-size: 14px; line-height: 1.5;">Get instant alerts on flash sales, new product launches, and exclusive member-only discount codes directly on your phone.</p>
+                </div>
+            </a>
+
+            <!-- Telegram -->
+            <a href="https://t.me/RoopHubOfficial" target="_blank" style="text-decoration:none; color:inherit;">
+                <div style="background: white; padding: 35px 25px; border-radius: 24px; border: 1px solid #e2e8f0; text-align: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 10px 25px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#0088cc'; this.style.boxShadow='0 20px 40px rgba(0, 136, 204, 0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                    <div style="width: 70px; height: 70px; background: #e0f2fe; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fa-brands fa-telegram" style="font-size: 32px; color: #0088cc;"></i>
+                    </div>
+                    <h3 style="color: #1e293b; margin-bottom: 10px; font-size: 20px;">Telegram Group</h3>
+                    <p style="color: #1e40af; font-weight: 700; font-size: 16px; margin-bottom: 10px;">RoopHub Official</p>
+                    <p style="color: #64748b; font-size: 14px; line-height: 1.5;">A professional space for health enthusiasts. Join our global community for daily research articles and organic health tips.</p>
+                </div>
+            </a>
+
+            <!-- Phone -->
+            <a href="tel:8271734883" style="text-decoration:none; color:inherit;">
+                <div style="background: white; padding: 35px 25px; border-radius: 24px; border: 1px solid #e2e8f0; text-align: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 10px 25px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#27ae60'; this.style.boxShadow='0 20px 40px rgba(39, 174, 96, 0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                    <div style="width: 70px; height: 70px; background: #dcfce7; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fa-solid fa-phone" style="font-size: 30px; color: #27ae60;"></i>
+                    </div>
+                    <h3 style="color: #1e293b; margin-bottom: 10px; font-size: 20px;">Support Helpline</h3>
+                    <p style="color: #1e40af; font-weight: 700; font-size: 16px; margin-bottom: 10px;">+91 82717 34883</p>
+                    <p style="color: #64748b; font-size: 14px; line-height: 1.5;">Talk to our agents directly for quick resolutions. Available Monday to Friday (10:00 AM to 6:00 PM Indian Standard Time).</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 🏢 Location Hub Section -->
+        <section style="background: #ffffff; padding: 50px 30px; border-radius: 35px; border: 1px solid #e2e8f0; margin-bottom: 50px; box-shadow: 0 15px 45px rgba(0,0,0,0.03);">
+            <div style="display: flex; gap: 50px; flex-wrap: wrap; align-items: flex-start;">
+                <div style="flex: 1; min-width: 320px;">
+                    <div style="display: inline-block; padding: 10px 20px; background: #fee2e2; color: #ef4444; border-radius: 12px; font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px;">
+                        📍 Global Operations Center
+                    </div>
+                    <h2 style="color: #1e293b; font-size: 32px; font-weight: 800; margin-bottom: 20px; letter-spacing: -0.5px;">Visit Our Main Hub</h2>
+                    <p style="font-size: 18px; color: #334155; line-height: 1.7; margin-bottom: 25px;">
+                        Our administrative headquarters is located in the heart of Bihar. We manage our global digital marketplace and logistics from this central location.
+                    </p>
+                    <div style="background: #f8fafc; padding: 25px; border-radius: 20px; border-left: 6px solid #3b82f6;">
+                        <p style="font-size: 17px; color: #1e293b; margin: 0;">
+                            <strong>Physical Address:</strong><br>
+                            Yadav Nagar, Road No 3,<br>
+                            Muzaffarpur, Bihar,<br>
+                            India - 842001
+                        </p>
+                    </div>
+                </div>
+                <div style="flex: 1.2; min-width: 350px; height: 380px; border-radius: 30px; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.12); border: 8px solid #ffffff;">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.4116422998625!2d85.3908!3d26.1209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDA3JzE1LjIiTiA4NcKwMjMnMjYuOSJF!5e0!3m2!1sen!2sin!4v1716500000000!5m2!1sen!2sin" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="modal-section" style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 6px solid #3b82f6; padding: 30px; border-radius: 20px;">
+            <h3 style="color: #1e40af; font-size: 20px; margin-bottom: 12px;"><i class="fa-solid fa-user-shield"></i> Your Privacy & Security Promise</h3>
+            <p style="margin: 0; color: #1e3a8a; font-size: 15px; line-height: 1.6;">
+                Your personal information is 100% safe with us. We use end-to-end encryption on all our contact channels. Please note: Our official staff will NEVER ask for your bank details, OTP, or passwords over a call or message. Always stay safe and use only the links provided on this page.
+            </p>
+        </section>
+
+        <p style="text-align: center; color: #94a3b8; margin-top: 50px; font-size: 13px; font-weight: 600; letter-spacing: 1px;">© 2026 ROOPHUB OFFICIAL | GLOBAL WELLNESS HUB | ALL RIGHTS RESERVED</p>
+    </div>
+  </div>
+
+  <div id="aboutModal" class="full-modal">
+    <button onclick="closeModal()" class="modal-close-btn">✖ Close</button>
+    <div class="modal-wrapper">
+        <!-- 🌟 HERO HEADER -->
+        <div style="text-align:center; padding: 60px 0; background: linear-gradient(to bottom, #ffffff, #f1f5f9); border-radius: 30px; margin-bottom: 50px;">
+            <h1 style="font-size: 4rem; font-weight: 900; color: #0f172a; margin: 0; letter-spacing: -2px;">RoopHub <span style="color: #27ae60;">Official</span></h1>
+            <p style="font-size: 1.5rem; color: #64748b; font-weight: 500; margin-top: 10px;">The Global Standard in Healthcare Curation</p>
+            <div style="width: 120px; height: 6px; background: linear-gradient(90deg, #27ae60, #3b82f6); margin: 30px auto; border-radius: 10px;"></div>
+        </div>
+
+        <!-- 📖 THE GENESIS -->
+        <section class="modal-section" style="background: white; padding: 60px; border-radius: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.03); margin-bottom: 60px;">
+            <h2 style="font-size: 32px; color: #1e293b; margin-bottom: 30px; display: flex; align-items: center; gap: 15px;">
+                <span style="background: #dcfce7; padding: 10px; border-radius: 12px;"><i class="fa-solid fa-seedling" style="color: #166534;"></i></span>
+                The Genesis of RoopHub
+            </h2>
+            <p style="font-size: 18px; color: #475569; line-height: 2; margin-bottom: 25px;">
+                In a world characterized by the "Paradox of Choice," finding genuine healthcare solutions has become a monumental challenge. Thousands of products flood the digital space daily, each claiming to be a revolutionary breakthrough. It was from this noise that <strong>RoopHub</strong> was born—not as another retailer, but as a sanctuary of trust and scientific clarity.
+            </p>
+            <p style="font-size: 18px; color: #475569; line-height: 2;">
+                The name "Roop" represents the essential form and beauty of natural health, while "Hub" signifies our role as the central nexus where science, nature, and the consumer meet. We recognized that the bridge between groundbreaking laboratory research and the average household was broken. Our mission was to fix it by creating the world’s most transparent <strong>Affiliate Healthcare Marketplace</strong>.
+            </p>
+        </section>
+
+        <!-- 🛡️ THE AFFILIATE ADVANTAGE -->
+        <section class="modal-section" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 70px; border-radius: 40px; margin-bottom: 60px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(39, 174, 96, 0.1); border-radius: 50%;"></div>
+            <h2 style="font-size: 32px; color: #fbbf24; border-bottom: 2px solid rgba(251, 191, 36, 0.3); padding-bottom: 20px;">The Ethical Affiliate Model</h2>
+            <p style="font-size: 18px; line-height: 2; color: #cbd5e1; margin-top: 30px;">
+                Unlike traditional stores that are incentivized to sell their own stock regardless of quality, RoopHub operates on a pure **Integrity-First Affiliate Model**. We do not own the manufacturing plants, nor do we store inventory. Why is this an advantage for you? Because it allows us to remain entirely objective.
+                <br><br>
+                Our only incentive is your long-term wellness. If a brand fails to meet our rigorous standards for purity, sustainability, or clinical efficacy, they are immediately removed from our marketplace. We act as your private investigative team, vetting the complex supply chains of global healthcare manufacturers so you don’t have to.
+            </p>
+            <div style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: #fbbf24; margin-bottom: 10px;">Direct-to-Brand</h4>
+                    <p style="font-size: 14px; color: #94a3b8;">When you choose a solution through us, you are linked directly to the official manufacturer, ensuring 100% authenticity and fresh batches.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: #fbbf24; margin-bottom: 10px;">Unbiased Curation</h4>
+                    <p style="font-size: 14px; color: #94a3b8;">We are not limited to one factory. We scour the globe for the highest-rated botanical synergies across every healthcare category.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🔬 THE PILLARS OF SELECTION -->
+        <div class="content-grid" style="gap: 40px; margin-bottom: 60px;">
+            <div style="background: #f8fafc; padding: 40px; border-radius: 30px; border-top: 8px solid #3b82f6;">
+                <h3 style="color: #1e3a8a; font-size: 24px; margin-bottom: 20px;"><i class="fa-solid fa-microscope"></i> Scientific Scrutiny</h3>
+                <p style="color: #475569; line-height: 1.8;">Our research methodology involves analyzing the **Bioavailability** of ingredients. We ensure that every solution we promote uses standardized extracts that the body can actually absorb and utilize for cellular repair and metabolic enhancement.</p>
+            </div>
+            <div style="background: #f8fafc; padding: 40px; border-radius: 30px; border-top: 8px solid #27ae60;">
+                <h3 style="color: #166534; font-size: 24px; margin-bottom: 20px;"><i class="fa-solid fa-industry"></i> Manufacturing Excellence</h3>
+                <p style="color: #475569; line-height: 1.8;">We exclusively partner with manufacturers who operate **FDA-Registered and GMP-Certified** facilities in the USA. This guarantees that every capsule is free from contaminants, heavy metals, and unlisted synthetic additives.</p>
+            </div>
+        </div>
+
+        <!-- 🌍 OUR COMPREHENSIVE CATEGORIES -->
+        <section class="modal-section" style="background: #ffffff; padding: 60px; border-radius: 40px; border: 1px solid #e2e8f0; margin-bottom: 60px;">
+            <h2 style="font-size: 32px; color: #1e293b; text-align: center; margin-bottom: 40px;">The Pillars of Modern Wellness</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                <div>
+                    <h4 style="color: #27ae60; font-size: 20px; margin-bottom: 15px;">Advanced Men's Health</h4>
+                    <p style="color: #64748b; font-size: 15px;">Focusing on hormonal balance, prostate longevity, and physical stamina through clinical-grade botanical synergies that respect the body's natural chemistry.</p>
+                </div>
+                <div>
+                    <h4 style="color: #3b82f6; font-size: 20px; margin-bottom: 15px;">Cognitive Science</h4>
+                    <p style="color: #64748b; font-size: 15px;">Supporting neural plasticity, memory retention, and mental clarity by selecting neuro-nutrients that protect against oxidative stress and age-related decline.</p>
+                </div>
+                <div>
+                    <h4 style="color: #f59e0b; font-size: 20px; margin-bottom: 15px;">Metabolic Management</h4>
+                    <p style="color: #64748b; font-size: 15px;">Promoting healthy weight management and insulin sensitivity through natural compounds that accelerate thermogenesis and optimize nutrient partition.</p>
+                </div>
+                <div>
+                    <h4 style="color: #ec4899; font-size: 20px; margin-bottom: 15px;">Vision & Sensory Health</h4>
+                    <p style="color: #64748b; font-size: 15px;">Curating antioxidant-rich formulas designed to protect the retina from digital strain and support long-term macula health through natural carotenoids.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🤝 THE ROOPHUB MANIFESTO -->
+        <section class="modal-section" style="background: #1e293b; padding: 60px; border-radius: 40px; text-align: center; margin-bottom: 60px;">
+            <h2 style="color: white; font-size: 32px; margin-bottom: 30px;">The RoopHub Manifesto</h2>
+            <p style="color: #94a3b8; font-size: 18px; line-height: 2; max-width: 800px; margin: 0 auto;">
+                We believe that health is not a destination, but a state of being. We believe that transparency is not a marketing buzzword, but a moral obligation. We commit to never using deceptive testimonials, never exaggerating laboratory results, and always placing the **Safety of our Community** above corporate commissions.
+            </p>
+            <div style="margin-top: 40px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <span style="background: #27ae60; color: white; padding: 10px 25px; border-radius: 50px; font-weight: 700;">100% No Fake Reviews</span>
+                <span style="background: #3b82f6; color: white; padding: 10px 25px; border-radius: 50px; font-weight: 700;">Strict Lab Verification</span>
+                <span style="background: #fbbf24; color: #000; padding: 10px 25px; border-radius: 50px; font-weight: 700;">Zero Hidden Additives</span>
+            </div>
+        </section>
+
+        <!-- 📈 GLOBAL IMPACT & FUTURE -->
+        <section class="modal-section" style="padding: 40px; border-radius: 30px; border: 2px dashed #cbd5e1;">
+            <h2 style="font-size: 28px; color: #0f172a; margin-bottom: 25px;">The Future of Digital Wellness</h2>
+            <p style="font-size: 16px; color: #475569; line-height: 1.8;">
+                As RoopHub continues to grow, our vision remains steadfast: to become the world's most trusted data-driven health advisor. We are constantly expanding our research team to include experts in nutrition, biochemistry, and physical therapy. By leveraging AI-driven data analysis alongside human expertise, we aim to predict healthcare trends and provide the most up-to-date recommendations for a healthier global population.
+                <br><br>
+                RoopHub is more than a marketplace. It is a movement. A movement toward a future where everyone has access to honest information, premium natural solutions, and the power to take control of their own vitality.
+            </p>
+        </section>
+
+        <!-- 🏁 FINAL FOOTER -->
+        <div style="text-align: center; padding: 60px 0; border-top: 1px solid #e2e8f0; margin-top: 50px;">
+            <h2 style="color: #27ae60; font-size: 24px;">Thank you for trusting RoopHub.</h2>
+            <p style="color: #64748b; margin-top: 10px;">Your Journey to Extraordinary Health Starts Here.</p>
+            <p style="font-size: 11px; color: #94a3b8; margin-top: 40px; text-transform: uppercase; letter-spacing: 2px;">© 2026 ROOPHUB OFFICIAL MARKETPLACE | ALL RIGHTS RESERVED WORLDWIDE</p>
+        </div>
+    </div>
+  </div>
+
+  <script>
+    function showAbout() {
+        document.getElementById('aboutModal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+    function showContact() {
+        document.getElementById('contactModal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+    function openPrivacyPolicy() {
+        document.getElementById('privacyPolicyModal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+    function openTerms() {
+        document.getElementById('termsModal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+    function openFAQ() {
+        document.getElementById('faqModal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+    function openDisclaimer() {
+        document.getElementById('disclaimerModal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+    function openAffiliate() {
+        document.getElementById('affiliateModal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+    function showImportantInfo() {
+        document.getElementById('importantInfoModal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+        document.querySelectorAll('.full-modal').forEach(m => m.style.display = 'none');
+        document.body.style.overflow = 'auto';
+    }
+  </script>
+
+  <div id="aiFloat" onclick="toggleChat()" style="
+  position:fixed;
+  bottom:80px;
+  right:20px;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color:#fff;
+  border-radius:50px;
+  cursor:pointer;
+  z-index:999;
+  border: 2px solid rgba(255,255,255,0.2);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  ">
+      <span style="font-size: 11px; padding: 12px 20px;">✨ AI Help</span>
+  </div>
+
+  <div id="aiPopup" style="
+  display:none;
+  position:fixed;
+  bottom:140px;
+  right:20px;
+  width:300px;
+  max-width:90vw;
+  background: rgba(248, 250, 252, 0.98);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  z-index:999;
+  overflow:hidden;
+  border: 1px solid #e2e8f0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  ">
+      <div style="
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color:#fff;
+      padding:16px;
+      font-weight: 700;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      letter-spacing: 0.3px;
+      ">
+          <span>✨RoopHub AI Assistant</span>
+          <span onclick="toggleChat()" style="float:right;cursor:pointer;">✖</span>
+      </div>
+      <div id="aiMessages" style="
+      height:250px;
+      overflow-y:auto;
+      padding:15px;
+      background: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      "></div>
+      <!-- Quick Replies Container -->
+      <div id="aiSuggestions" style="display:flex; flex-wrap:wrap; gap:6px; padding:8px; background:#fff; border-top:1px solid #e2e8f0;"></div>
+      <div style="display:flex; padding:10px; border-top:1px solid #e2e8f0; background:#fff;">
+          <input type="text" id="chatInput" placeholder="Write something happy..." style="flex:1; padding:10px; border:1px solid #cbd5e1; border-radius:8px; outline:none;">
+          <button onclick="sendMessage()" style="margin-left:8px; background:#2563eb; color:white; border:none; padding:8px 15px; border-radius:8px; cursor:pointer; font-weight:600;">Send</button>
+      </div>
+  </div>
+
+  <script src="script.js"></script>
   <script src="video.js"></script>
 </body>
 </html>

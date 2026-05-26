@@ -9,7 +9,7 @@ const videoData = {
         title: 'Prostate Health & Sexual Wellness',
         description: 'Complete guide to maintaining prostate health and improving sexual performance naturally',
         duration: '28 minutes',
-        videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        videoUrl: 'https://www.youtube.com/embed/hYEtfXSx-xM',
         keyPoints: '• Prostate health benefits\n• Natural remedies\n• Prevention techniques\n• Lifestyle changes',
         fullText: `<h4>Prostate Health Essentials</h4>
 <p>The prostate gland is a crucial part of male reproductive health. As men age, maintaining prostate health becomes increasingly important. This comprehensive guide covers everything you need to know about natural prostate health management.</p>
@@ -29,7 +29,7 @@ const videoData = {
         title: 'Testosterone Boost & Energy Enhancement',
         description: 'Natural ways to maintain healthy testosterone levels and boost energy',
         duration: '25 minutes',
-        videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        videoUrl: 'https://www.youtube.com/embed/hYEtfXSx-xM',
         keyPoints: '• Testosterone production\n• Energy optimization\n• Muscle development\n• Recovery methods',
         fullText: `<h4>Understanding Testosterone</h4>
 <p>Testosterone is the primary male sex hormone responsible for many characteristics and functions in men. From muscle development to sexual function, testosterone plays a vital role in men's health.</p>
@@ -49,7 +49,7 @@ const videoData = {
         title: 'Complete Men\'s Vitality Formula',
         description: 'All-in-one approach to men\'s health, energy, and vitality',
         duration: '30 minutes',
-        videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        videoUrl: 'https://www.youtube.com/embed/hYEtfXSx-xM',
         keyPoints: '• Holistic health approach\n• Nutrient synergy\n• Overall wellness\n• Long-term benefits',
         fullText: `<h4>Men's Health Vitality Program</h4>
 <p>A comprehensive approach to men's wellness that combines multiple health aspects into one unified program for optimal results.</p>
@@ -69,7 +69,7 @@ const videoData = {
         title: 'Cardiovascular Health for Men',
         description: 'Essential information about heart health and circulation',
         duration: '26 minutes',
-        videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        videoUrl: 'https://www.youtube.com/embed/hYEtfXSx-xM',
         keyPoints: '• Heart health\n• Circulation support\n• Blood pressure\n• Preventive care',
         fullText: `<h4>Heart Health Essentials for Men</h4>
 <p>Cardiovascular health is one of the most important aspects of men's wellness. Men are more susceptible to heart disease at younger ages than women.</p>
@@ -91,7 +91,7 @@ const videoData = {
         title: 'Men\'s Health Quick Tips',
         description: 'Essential 5-minute overview of men\'s wellness basics',
         duration: '5 minutes',
-        videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        videoUrl: 'https://www.youtube.com/embed/hYEtfXSx-xM',
         keyPoints: '• Quick health tips\n• Essential nutrients\n• Daily habits\n• Quick results',
         fullText: `<h4>Quick Start Guide to Men's Health</h4>
 <p>Don't have much time? Here are the essential basics every man should know about health maintenance.</p>
@@ -109,7 +109,7 @@ const videoData = {
         title: 'Supplement Guide for Men',
         description: 'Quick overview of best supplements for male health',
         duration: '7 minutes',
-        videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        videoUrl: 'https://www.youtube.com/embed/hYEtfXSx-xM',
         keyPoints: '• Top supplements\n• Usage guide\n• Benefits summary\n• Getting started',
         fullText: `<h4>Best Supplements for Men</h4>
 <p>Quick reference guide to the most important supplements every man should consider for optimal health.</p>
@@ -127,7 +127,7 @@ const videoData = {
         title: 'Daily Men\'s Health Routine',
         description: 'Create an effective daily health routine in 8 minutes',
         duration: '8 minutes',
-        videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        videoUrl: 'https://www.youtube.com/embed/hYEtfXSx-xM',
         keyPoints: '• Daily routine\n• Time management\n• Consistency tips\n• Results tracking',
         fullText: `<h4>Your Daily Health Routine</h4>
 <p>A simple, practical daily routine you can follow to maintain excellent men's health.</p>
@@ -292,7 +292,7 @@ const videoData = {
         title: 'Neuroscience of Memory & Focus',
         description: 'Understanding brain function and cognitive enhancement',
         duration: '29 minutes',
-        videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        videoUrl: 'https://www.youtube.com/embed/DBBk_u1uJ7M',
         keyPoints: '• Brain anatomy\n• Memory formation\n• Focus mechanisms\n• Enhancement science',
         fullText: `<h4>How Your Brain Works</h4>
 <p>To enhance cognitive function, you first need to understand how your brain works. This video breaks down the neuroscience in simple terms.</p>
@@ -312,7 +312,7 @@ const videoData = {
         title: 'Nootropics & Cognitive Enhancers',
         description: 'Complete guide to brain-boosting supplements',
         duration: '27 minutes',
-        videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        videoUrl: 'https://www.youtube.com/embed/DBBk_u1uJ7M',
         keyPoints: '• Nootropic definition\n• Types of nootropics\n• Research findings\n• Ingredient analysis',
         fullText: `<h4>Understanding Nootropics</h4>
 <p>Nootropics are substances that can enhance cognitive function. Learn which ones are backed by science and how they work.</p>
@@ -332,7 +332,7 @@ const videoData = {
         title: 'Nutrition for Brain Health',
         description: 'Foods and nutrients that boost brain function',
         duration: '25 minutes',
-        videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        videoUrl: 'https://www.youtube.com/embed/DBBk_u1uJ7M',
         keyPoints: '• Brain nutrition\n• Omega-3 benefits\n• Antioxidants\n• Meal planning',
         fullText: `<h4>Brain-Boosting Nutrition</h4>
 <p>What you eat directly affects your brain's ability to function. Learn the best foods for cognitive enhancement.</p>
@@ -351,7 +351,7 @@ const videoData = {
         title: 'Mental Performance Optimization',
         description: 'Techniques to maximize mental clarity and productivity',
         duration: '28 minutes',
-        videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        videoUrl: 'https://www.youtube.com/embed/DBBk_u1uJ7M',
         keyPoints: '• Productivity hacks\n• Focus techniques\n• Mental endurance\n• Performance tips',
         fullText: `<h4>Maximize Your Mental Performance</h4>
 <p>Beyond supplements, there are proven techniques to boost your mental performance significantly.</p>
@@ -372,7 +372,7 @@ const videoData = {
         title: 'Brain Boost Quick Start',
         description: 'Essential brain health tips in 6 minutes',
         duration: '6 minutes',
-        videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        videoUrl: 'https://www.youtube.com/embed/DBBk_u1uJ7M',
         keyPoints: '• Quick tips\n• Easy changes\n• Immediate benefits\n• Starting today',
         fullText: `<h4>Quick Brain Boost Guide</h4>
 <p>Start improving your brain function immediately with these simple changes.</p>
@@ -390,7 +390,7 @@ const videoData = {
         title: 'Top Memory Enhancement Methods',
         description: 'Proven techniques to improve memory',
         duration: '7 minutes',
-        videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        videoUrl: 'https://www.youtube.com/embed/DBBk_u1uJ7M',
         keyPoints: '• Memory techniques\n• Mnemonics\n• Practice methods\n• Results timeline',
         fullText: `<h4>Memory Enhancement Techniques</h4>
 <p>Simple but effective techniques to dramatically improve your memory in just days.</p>
@@ -408,7 +408,7 @@ const videoData = {
         title: 'Focus & Concentration Mastery',
         description: 'Master deep focus in 8 minutes',
         duration: '8 minutes',
-        videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        videoUrl: 'https://www.youtube.com/embed/DBBk_u1uJ7M',
         keyPoints: '• Focus techniques\n• Distraction elimination\n• Deep work\n• Practical tips',
         fullText: `<h4>Master Your Focus</h4>
 <p>Learn the science-backed techniques used by top performers to maintain focus.</p>
@@ -566,12 +566,12 @@ const videoData = {
 };
 
 // Current Selection
-let currentCategory = null;
+let currentVideoCategory = null;
 let currentVideoType = null;
 
 // Open Category
 function openCategory(category) {
-  currentCategory = category;
+  currentVideoCategory = category;
   
   // Hide landing page, show video type selection
   document.getElementById('videosLanding').style.display = 'none';
@@ -588,9 +588,9 @@ function openCategory(category) {
 function loadVideoList(videoType) {
   currentVideoType = videoType;
   
-  if (!currentCategory) return;
+  if (!currentVideoCategory) return;
   
-  const categoryData = videoData[currentCategory];
+  const categoryData = videoData[currentVideoCategory];
   const videos = categoryData[videoType];
   
   // Hide video type selection, show video list
@@ -623,7 +623,7 @@ function loadVideoList(videoType) {
 
 // Play Video
 function playVideo(video, videoType) {
-  const categoryData = videoData[currentCategory];
+  const categoryData = videoData[currentVideoCategory];
   
   // Populate video player modal
   document.getElementById('videoTitle').textContent = video.title;
@@ -672,7 +672,7 @@ function goBackToVideoType() {
 }
 
 function goBackToCategories() {
-  currentCategory = null;
+  currentVideoCategory = null;
   currentVideoType = null;
   document.getElementById('videosLanding').style.display = 'block';
   document.getElementById('videoTypeSelection').style.display = 'none';
@@ -707,4 +707,3 @@ function loadProducts(category) {
 
 console.log('Video.js loaded successfully');
 console.log('Available categories:', Object.keys(videoData));
-
