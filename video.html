@@ -53,6 +53,200 @@
         gap: 40px;
         margin-bottom: 60px;
     }
+
+    /* Professional Horizontal Footer Styling */
+    .video-footer-horizontal {
+        background: #0f172a;
+        color: #94a3b8;
+        padding: 0;
+        margin-top: 60px;
+        border-top: 1px solid #1e293b;
+        font-family: 'Inter', sans-serif;
+    }
+    .footer-top-strip {
+        height: 4px;
+        background: linear-gradient(90deg, #2563eb, #27ae60, #fbbf24);
+    }
+    .footer-main-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .footer-nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px 30px;
+    }
+    .footer-nav-links a {
+        color: #cbd5e1;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .footer-nav-links a:hover {
+        color: #3b82f6;
+        transform: scale(1.05);
+    }
+    .footer-social-strip {
+        display: flex;
+        gap: 15px;
+    }
+    .footer-social-strip a {
+        color: #cbd5e1;
+        font-size: 18px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255,255,255,0.05);
+        border-radius: 50%;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-social-strip a:hover {
+        background: #3b82f6;
+        color: white;
+        transform: translateY(-5px);
+        border-color: #3b82f6;
+    }
+    .footer-legal-strip {
+        text-align: center;
+        padding-top: 25px;
+        border-top: 1px solid rgba(255,255,255,0.05);
+        width: 100%;
+        font-size: 11px;
+        color: #64748b;
+    }
+    .partner-badge {
+        background: #27ae60;
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-weight: 800;
+        font-size: 10px;
+        margin-left: 5px;
+    }
+
+    /* Attractive Back to Home Button Styling */
+    .back-btn {
+        background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        border-radius: 50px;
+        font-size: 13px;
+        font-weight: 800;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: 2px solid rgba(255,255,255,0.1);
+        margin-bottom: 25px;
+    }
+    .back-btn:hover {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    }
+    .back-btn i {
+        transition: transform 0.3s ease;
+    }
+    .back-btn:hover i {
+        transform: translateX(-5px);
+    }
+
+    /* Colorful Gradient & Glow Effect for Library Title */
+    .video-header h1 {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+        font-weight: 900;
+        background: linear-gradient(to right, #3b82f6, #a855f7, #ec4899, #f59e0b, #3b82f6);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: titleGradient 5s linear infinite;
+        filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.4));
+        margin: 20px 0 10px;
+        letter-spacing: -2px;
+        text-transform: uppercase;
+    }
+    @keyframes titleGradient {
+        to { background-position: 200% center; }
+    }
+    .video-subtitle {
+        font-size: 1.1rem;
+        color: #64748b;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        max-width: 600px;
+        margin: 0 auto 30px;
+        opacity: 0.9;
+    }
+
+    /* Glowing Border & Professional 3D Flip/Tilt Animation for Category Cards */
+    .category-grid {
+        perspective: 1000px; /* 3D Depth environment */
+    }
+    .category-card {
+        background: #ffffff;
+        border-radius: 24px;
+        padding: 40px 25px;
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+        border: 2px solid #e2e8f0;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        transform-style: preserve-3d; /* Needed for child 3D movements */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    .category-card:hover {
+        transform: rotateY(12deg) rotateX(8deg) translateY(-15px);
+        border-color: #3b82f6;
+        animation: borderGlowPulse 2s infinite ease-in-out;
+        background: #fdfdff;
+    }
+    /* Elements inside the card moving on 3D Z-axis */
+    .category-icon {
+        font-size: 55px;
+        margin-bottom: 20px;
+        transition: transform 0.5s ease;
+        display: block;
+    }
+    .category-card:hover .category-icon {
+        transform: translateZ(60px) scale(1.2); /* Icon pops out towards user */
+    }
+    .category-card h3 {
+        transition: transform 0.5s ease;
+    }
+    .category-card:hover h3 {
+        transform: translateZ(40px);
+    }
+    .category-card p {
+        transition: transform 0.5s ease;
+        color: #64748b;
+    }
+    .category-card:hover p {
+        transform: translateZ(20px);
+    }
+    @keyframes borderGlowPulse {
+        0% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.3), 0 15px 40px rgba(0,0,0,0.05); border-color: #3b82f6; }
+        50% { box-shadow: 0 0 25px rgba(168, 85, 247, 0.6), 0 20px 50px rgba(0,0,0,0.1); border-color: #a855f7; }
+        100% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.3), 0 15px 40px rgba(0,0,0,0.05); border-color: #3b82f6; }
+    }
   </style>
 </head>
 <body>
@@ -63,11 +257,7 @@
   </header>
 
   <nav class="video-nav">
-    <button onclick="window.location.href='index.html'" data-i18n="nav_home">Home</button>
-    <button onclick="loadProducts('Men Health')" data-i18n="nav_men">Men Health</button>
-    <button onclick="loadProducts('Weight Loss')" data-i18n="nav_weight">Weight Loss</button>
-    <button onclick="loadProducts('Brain Boost')" data-i18n="nav_brain">Brain Boost</button>
-    <button onclick="loadProducts('Skin Care')" data-i18n="nav_skin">Skin Care</button>
+    <span style="color: #475569; font-weight: 700; font-size: 13px; letter-spacing: 0.8px; text-transform: uppercase; background: linear-gradient(90deg, #f0f9ff 0%, #ffffff 100%); padding: 12px 30px; border-radius: 50px; display: inline-block; border: 1px solid #e2e8f0; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">✨ Quality Insights for Your Wellness Journey | Expert-Verified Product Information</span>
   </nav>
 
   <div class="video-container">
@@ -203,43 +393,31 @@
 
   </div>
 
-  <footer class="amazon-footer">
-    <div class="footer-col">
-      <h3>Get to Know Us</h3>
-      <ul>
-        <li onclick="showAbout()" style="cursor:pointer;">About Us</li>
-        <li onclick="window.location.href='index.html'" style="cursor:pointer;">Back to Home</li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h3>Connect With Us</h3>
-      <div class="social-icons">
-        <a href="https://wa.me/918271734883" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="tel:8271734883" title="Phone"><i class="fa-solid fa-phone"></i></a>
-        <a href="https://www.youtube.com" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+  <footer class="video-footer-horizontal">
+    <div class="footer-top-strip"></div>
+    <div class="footer-main-content">
+      <div class="footer-nav-links">
+        <a onclick="showAbout()">About Us</a>
+        <a onclick="openFAQ()">FAQ</a>
+        <a onclick="openDisclaimer()">Disclaimer</a>
+        <a onclick="openPrivacyPolicy()">Privacy Policy</a>
+        <a onclick="openAffiliate()">Affiliate Disclosure</a>
+        <a onclick="openTerms()">Terms</a>
+        <a onclick="showImportantInfo()">Important Info</a>
+        <a onclick="showContact()">Contact</a>
+      </div>
+      
+      <div class="footer-social-strip">
+        <a href="https://wa.me/918271734883" target="_blank" title="WhatsApp Support"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="tel:8271734883" title="Phone Support"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://www.youtube.com" target="_blank" title="YouTube Channel"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      
+      <div class="footer-legal-strip">
+        <p>© 2026 ROOPHUB OFFICIAL. ALL RIGHTS RESERVED. | <span class="partner-badge"><i class="fa-solid fa-handshake"></i> OFFICIAL PARTNER</span></p>
       </div>
     </div>
-
-    <div class="footer-col">
-      <h3>Quick Links</h3>
-      <ul>
-        <li onclick="window.location.href='index.html'" style="cursor:pointer;">Products</li>
-        <li onclick="showContact()" style="cursor:pointer;">Contact</li>
-        <li onclick="openFAQ()" style="cursor:pointer;">FAQ</li>
-        <li onclick="openDisclaimer()" style="cursor:pointer;">Disclaimer</li>
-        <li onclick="openPrivacyPolicy()" style="cursor:pointer;">Privacy Policy</li>
-        <li onclick="openTerms()" style="cursor:pointer;">Terms</li>
-        <li onclick="openAffiliate()" style="cursor:pointer;">Affiliate Disclosure</li>
-        <li onclick="showImportantInfo()" style="cursor:pointer;">Important Info</li>
-      </ul>
-    </div>
   </footer>
-
-  <!-- Bottom bar -->
-  <div class="amazon-bottom">
-    © 2026 RoopHub. All Rights Reserved.
-  </div>
 
   <!-- FAQ Modal -->
   <div id="faqModal" class="full-modal">
