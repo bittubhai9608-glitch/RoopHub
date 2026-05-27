@@ -413,6 +413,17 @@
             </p>
           </div>
           
+          <!-- Chapter Search Bar -->
+          <div style="position: relative; margin-bottom: 10px;">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: #94a3b8;"></i>
+            <input type="text" id="menHealthChapterSearch" placeholder="Search knowledge chapters..." 
+              onkeyup="searchChapters('menHealthChapterSearch', 'menHealthInfoSection')"
+              style="width: 100%; padding: 15px 15px 15px 50px; border-radius: 15px; border: 2px solid #e2e8f0; font-family: inherit; font-size: 15px; outline: none; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.02);"
+              onfocus="this.style.borderColor='#2563eb'; this.style.boxShadow='0 4px 15px rgba(37, 99, 235, 0.1)';"
+              onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.02)';"
+            >
+          </div>
+          
           <!-- Detailed Professional Text Chapters -->
           <div style="display: flex; flex-direction: column; gap: 40px; text-align: justify;">
             
@@ -502,24 +513,92 @@
     <div style="display: flex; gap: 60px; flex-wrap: wrap; align-items: center; position: relative; z-index: 1;">
       <div style="flex: 1.2; min-width: 320px;">
         <div style="display: inline-block; padding: 8px 20px; background: #f0fdf4; color: #166534; border-radius: 50px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px;">
-          🌿 Fitness & Metabolism Guide
+          🌿 Scientific Metabolic Education
         </div>
-        <h2 style="font-size: 38px; color: #0f172a; font-weight: 900; margin-bottom: 25px; line-height: 1.1; letter-spacing: -1px;">Weight <span style="color: #16a34a;">Loss</span></h2>
-        <p style="color: #475569; font-size: 17px; line-height: 1.9; margin-bottom: 30px;">
-          यहाँ पर आपको Weight Loss से संबंधित सभी प्रोडक्ट्स के वीडियो मिलेंगे। हमारा उद्देश्य आपको वजन घटाने की प्रक्रिया, मेटाबॉलिज्म और फिटनेस प्रोडक्ट्स के बारे में सही जानकारी देना है ताकि आप अपने लक्ष्यों को सुरक्षित रूप से प्राप्त कर सकें। आप जिस भी Weight Loss प्रोडक्ट का वीडियो खोज रहे हैं, वह सब आपको यहाँ पर मिल जाएगा। हमारे वीडियो लाइब्रेरी में हर प्रोडक्ट की कार्यप्रणाली और लाभों को विस्तार से समझाया गया है।
-        </p>
+        <h2 style="font-size: 38px; color: #0f172a; font-weight: 900; margin-bottom: 25px; line-height: 1.1; letter-spacing: -1px;">The Science of <span style="color: #16a34a;">Weight Management</span></h2>
+        <div style="margin-bottom: 40px; display: flex; flex-direction: column; gap: 25px;">
+          <!-- Professional Intro Header -->
+          <div style="background: linear-gradient(to right, #f8fafc, #ffffff); padding: 35px; border-radius: 24px; border-left: 6px solid #16a34a; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+            <h3 style="color: #166534; margin-bottom: 15px; font-size: 26px; font-weight: 800; letter-spacing: -0.5px;">Empowering Your Journey Through Research</h3>
+            <p style="color: #334155; font-size: 18px; line-height: 1.8; margin: 0;"><strong>Notice:</strong> The information provided here is strictly for educational purposes, derived from comprehensive metabolic research. We do not promote specific brands in this section. Our mission is to provide you with the biological knowledge necessary to understand how the body manages weight. We strongly recommend that you perform your own independent research and consult a healthcare professional before purchasing any health-related products.</p>
+            <p style="color: #334155; font-size: 18px; line-height: 1.8; margin-top: 20px;">
+              You will find a comprehensive collection of videos in our library covering a wide array of weight management solutions. These videos are designed to guide you, explaining how different products function and how they interact with your physiology. We encourage you to watch and understand these insights thoroughly before making any informed purchase decisions.
+            </p>
+          </div>
+
+          <!-- Chapter Search Bar -->
+          <div style="position: relative; margin-bottom: 10px;">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: #94a3b8;"></i>
+            <input type="text" id="weightLossChapterSearch" placeholder="Search knowledge chapters..." 
+              onkeyup="searchChapters('weightLossChapterSearch', 'weightLossInfoSection')"
+              style="width: 100%; padding: 15px 15px 15px 50px; border-radius: 15px; border: 2px solid #e2e8f0; font-family: inherit; font-size: 15px; outline: none; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.02);"
+              onfocus="this.style.borderColor='#16a34a'; this.style.boxShadow='0 4px 15px rgba(22, 163, 74, 0.1)';"
+              onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.02)';"
+            >
+          </div>
+
+          <!-- Detailed Professional Text Chapters -->
+          <div style="display: flex; flex-direction: column; gap: 40px; text-align: justify;">
+            
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 1: The Biological Blueprint of Weight Regulation</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">Weight loss is far more complex than the traditional "calories in vs. calories out" model suggests. While thermodynamics play a role, human weight regulation is a sophisticated biological system governed by the brain, the gut, and the endocrine system. Understanding your body's "set point" and how it adapts to changes in nutrition is the first step toward achieving a healthy, sustainable transformation.</p>
+            </div>
+
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 2: Metabolic Flexibility — The Key to Efficient Burning</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">Metabolic flexibility refers to the body's ability to switch efficiently between burning carbohydrates and burning stored body fat. In a modern environment of constant food availability, many individuals lose this flexibility, leading to persistent energy crashes and weight gain. Optimizing your metabolic pathways allows your cells to access fat stores as a reliable fuel source, promoting stable energy and natural weight management.</p>
+            </div>
+
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 3: The Hormonal Hierarchy (Insulin & Cortisol)</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">Hormones are the master controllers of fat storage. Insulin, the fat-storage hormone, and cortisol, the stress hormone, play pivotal roles. When insulin levels are chronically high due to sugar intake, fat burning is biochemically inhibited. Similarly, high stress leads to cortisol spikes that encourage abdominal fat accumulation. Balancing these hormones through lifestyle and nutritional timing is essential for long-term metabolic health.</p>
+            </div>
+
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 4: Nutritional Density vs. Caloric Volume</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">True satiety is driven by nutrients, not just bulk. When the body consumes empty calories, hunger signals remain active because the brain is still searching for essential vitamins and minerals. By prioritizing nutritional density, you communicate a state of "abundance" to your nervous system, which naturally regulates appetite and prevents the metabolic slowdown associated with starvation-style dieting.</p>
+            </div>
+
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 5: The Role of Gut Microbiome in Metabolism</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">Emerging science shows that the trillions of bacteria in your gut (the microbiome) significantly influence your weight. Certain bacterial strains are better at extracting energy from food, while others help regulate inflammation and insulin sensitivity. Supporting a diverse and healthy microbiome through fiber and fermented botanical sources is a modern frontier in weight science.</p>
+            </div>
+
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 6: Sleep Architecture and Metabolic Recovery</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">Sleep is a non-negotiable metabolic regulator. Lack of sleep increases ghrelin (the hunger hormone) and decreases leptin (the fullness hormone). Furthermore, sleep deprivation reduces insulin sensitivity in as little as one night. Deep, restorative sleep is the time when the body repairs tissues and optimizes the metabolic software required for efficient fat utilization.</p>
+            </div>
+
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 7: Behavioral Psychology and Sustainability</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">The greatest challenge in weight loss is not losing the weight, but maintaining the change. This requires a shift in behavioral psychology—moving away from temporary "diets" toward permanent lifestyle integration. Understanding the brain's reward systems and dopamine pathways can help in building habits that make healthy choices effortless rather than a constant battle of willpower.</p>
+            </div>
+
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 8: The Power of Proactive Research</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">In an age of information overload, your best tool is your own research. Marketing claims often oversimplify science for profit. We urge you to look at peer-reviewed studies, understand ingredient bioavailability, and check real-world long-term results. Before you invest in any product, use the videos and data provided here to build a foundation of knowledge. An educated decision is a safe decision.</p>
+            </div>
+
+            <div class="info-chapter" style="background: #f0fdf4; padding: 25px; border-radius: 15px; border: 1px solid #bbf7d0;">
+              <h4 style="color: #166534; font-size: 20px; font-weight: 800; margin-bottom: 10px;">Final Guidance & Disclaimer</h4>
+              <p style="color: #14532d; font-size: 15px; line-height: 1.7; margin: 0;">This knowledge hub is created strictly for educational purposes based on research into human physiology. We are not medical doctors, and this is not medical advice. Every body is unique, and weight management should be overseen by a qualified healthcare professional. Before you purchase any product online, do your own thorough research. Read the ingredients, understand the risks, and prioritize your long-term health over short-term promises.</p>
+            </div>
+          </div>
+        </div>
+
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
           <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Effective Weight Management
+            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Metabolic Research
           </div>
           <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Metabolism Boosters
+            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Nutritional Science
           </div>
           <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Natural Fat Burners
+            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Endocrine Education
           </div>
           <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Fitness Education
+            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Verified Insights
           </div>
         </div>
       </div>
@@ -528,12 +607,12 @@
           <i class="fa-solid fa-leaf" style="color: #16a34a;"></i> Our Commitment
         </h3>
         <p style="font-size: 15px; color: #64748b; line-height: 1.7; margin-bottom: 20px;">
-          हमारा मिशन आपको वेट लॉस प्रोडक्ट्स के बारे में वैज्ञानिक और सटीक नॉलेज देना है। हम सुनिश्चित करते हैं कि:
+          Our mission is to empower you with scientific metabolic clarity. We guarantee that:
         </p>
         <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px;">
-          <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">01.</strong> वजन घटाने के सही तरीके</li>
-          <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">02.</strong> हर Weight Loss प्रोडक्ट की जानकारी</li>
-          <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">03.</strong> वैज्ञानिक और सुरक्षित सुझाव</li>
+          <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">01.</strong> No Product Marketing Pressure</li>
+          <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">02.</strong> Pure Biological Weight Knowledge</li>
+          <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">03.</strong> Integrity-First, Research-Backed Guidance</li>
         </ul>
       </div>
     </div>
@@ -546,38 +625,106 @@
     <div style="display: flex; gap: 60px; flex-wrap: wrap; align-items: center; position: relative; z-index: 1;">
       <div style="flex: 1.2; min-width: 320px;">
         <div style="display: inline-block; padding: 8px 20px; background: #f5f3ff; color: #5b21b6; border-radius: 50px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px;">
-          🧠 Cognitive Science Library
+          🧠 Cognitive Science Education
         </div>
-        <h2 style="font-size: 38px; color: #0f172a; font-weight: 900; margin-bottom: 25px; line-height: 1.1; letter-spacing: -1px;">Brain <span style="color: #7c3aed;">Boost</span></h2>
-        <p style="color: #475569; font-size: 17px; line-height: 1.9; margin-bottom: 30px;">
-          यहाँ पर आपको Brain Boost और दिमागी स्वास्थ्य से संबंधित सभी प्रोडक्ट्स के वीडियो मिलेंगे। हमारा उद्देश्य आपको फोकस, याददाश्त और मानसिक स्पष्टता बढ़ाने वाले प्रोडक्ट्स के बारे में सटीक नॉलेज देना है। आप अपनी एकाग्रता सुधारने के लिए जिस भी प्रोडक्ट का वीडियो खोज रहे हैं, वह यहाँ उपलब्ध है। हमारे वीडियो लाइब्रेरी में मस्तिष्क स्वास्थ्य के रहस्यों और अत्याधुनिक समाधानों को सरल भाषा में समझाया गया है।
-        </p>
+        <h2 style="font-size: 38px; color: #0f172a; font-weight: 900; margin-bottom: 25px; line-height: 1.1; letter-spacing: -1px;">The Science of <span style="color: #7c3aed;">Cognitive Enhancement</span></h2>
+        <div style="margin-bottom: 40px; display: flex; flex-direction: column; gap: 25px;">
+          <!-- Professional Intro Header -->
+          <div style="background: linear-gradient(to right, #f8fafc, #ffffff); padding: 35px; border-radius: 24px; border-left: 6px solid #7c3aed; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+            <h3 style="color: #5b21b6; margin-bottom: 15px; font-size: 26px; font-weight: 800; letter-spacing: -0.5px;">Optimizing the Human Mind Through Data</h3>
+            <p style="color: #334155; font-size: 18px; line-height: 1.8; margin: 0;"><strong>Notice:</strong> The following information is provided strictly for educational purposes based on general cognitive research. We do not promote or sell specific products here. Our goal is to empower you with the knowledge required to understand neurological health. We strongly urge you to conduct your own thorough research and consult with a qualified healthcare professional before purchasing or using any brain-health-related products.</p>
+            <p style="color: #334155; font-size: 18px; line-height: 1.8; margin-top: 20px;">
+              Here, you will find a wealth of videos designed to assist you in understanding cognitive health. Our library features detailed videos for various brain boost solutions, providing comprehensive guidance and explanations. We encourage you to watch these videos, gain a thorough understanding, and then make an informed decision.
+            </p>
+          </div>
+
+          <!-- Chapter Search Bar -->
+          <div style="position: relative; margin-bottom: 10px;">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: #94a3b8;"></i>
+            <input type="text" id="brainBoostChapterSearch" placeholder="Search knowledge chapters..." 
+              onkeyup="searchChapters('brainBoostChapterSearch', 'brainBoostInfoSection')"
+              style="width: 100%; padding: 15px 15px 15px 50px; border-radius: 15px; border: 2px solid #e2e8f0; font-family: inherit; font-size: 15px; outline: none; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.02);"
+              onfocus="this.style.borderColor='#7c3aed'; this.style.boxShadow='0 4px 15px rgba(124, 58, 237, 0.1)';"
+              onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.02)';"
+            >
+          </div>
+
+          <!-- Detailed Professional Text Chapters -->
+          <div style="display: flex; flex-direction: column; gap: 40px; text-align: justify;">
+            
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 1: The Evolution of the Modern Mind</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">In today’s hyper-connected era, the human brain is processing more information in a single day than our ancestors did in a lifetime. This constant stimulus can lead to cognitive fatigue and a decline in executive function. Understanding that the brain is a high-demand metabolic organ is the first step toward optimization. Health is not just a sharp memory; it is the resilience of your neural networks under pressure.</p>
+            </div>
+
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 2: Neuroplasticity — The Brain's Superpower</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">Neuroplasticity is the brain's ability to reorganize itself by forming new neural connections throughout life. This allows the neurons in the brain to adjust their activities in response to new situations or changes in their environment. Supporting this process through continuous learning, mental exercises, and proper neuro-nutrition is vital for maintaining cognitive agility as we age.</p>
+            </div>
+
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 3: The Chemical Symphony (Neurotransmitters)</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">The brain communicates via complex chemical messengers called neurotransmitters. Key players like acetylcholine drive memory and learning, while dopamine regulates focus and reward. Imbalances in these chemicals can lead to 'brain fog' and mood instability. Protecting the synthesis and release of these messengers through targeted biological awareness is foundational to mental clarity.</p>
+            </div>
+
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 4: Cerebral Blood Flow and Oxygenation</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">The brain consumes roughly 20% of the body’s total oxygen and glucose. Efficient blood flow is the transport mechanism that ensures these vital resources reach every neuron. Maintaining vascular health and supporting nitric oxide production is essential for sustaining high-level mental performance and preventing cognitive decline over time.</p>
+            </div>
+
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 5: The Gut-Brain Axis</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">Emerging research highlights the profound connection between the enteric nervous system in the gut and the central nervous system in the brain. The trillions of microbes in your gut produce neuroactive compounds that influence mood, stress levels, and focus. A healthy microbiome is often the hidden key to a sharp, high-performing mind.</p>
+            </div>
+
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 6: Sleep — The Cognitive Janitor</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">Sleep is not a passive state but an active period of metabolic maintenance. During deep sleep, the brain’s glymphatic system clears out metabolic waste products that accumulate during waking hours. Without sufficient restorative sleep, cognitive processing speed slows down, and memory consolidation is compromised. Sleep is the ultimate cognitive enhancer.</p>
+            </div>
+
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 7: Dietary Nootropics and Cognitive Reserve</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">Cognitive reserve refers to the brain's ability to improvise and find alternate ways of getting a job done. It is built up through a lifetime of healthy habits. Integrating research-backed micronutrients helps build this reserve, acting as a shield against oxidative stress and protecting neurons from premature aging.</p>
+            </div>
+
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 8: The Importance of Proactive Research</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">In the field of cognitive science, information is power. Before considering any supplement or significant lifestyle change, it is your responsibility to look at independent clinical trials and peer-reviewed data. Marketing for "limitless" brain pills often masks the complexity of neuroscience. Always verify ingredients and their proven safety profiles through neutral scientific sources.</p>
+            </div>
+
+            <div class="info-chapter" style="background: #f5f3ff; padding: 25px; border-radius: 15px; border: 1px solid #ddd6fe;">
+              <h4 style="color: #5b21b6; font-size: 20px; font-weight: 800; margin-bottom: 10px;">Final Guidance & Disclaimer</h4>
+              <p style="color: #4c1d95; font-size: 15px; line-height: 1.7; margin: 0;">This entire section is created purely for the purpose of sharing general cognitive health knowledge. We are not medical professionals, and this is not medical advice. The human brain is the most complex structure in the known universe and requires expert oversight. Before you buy or use any product, do your due diligence. Read the science, verify the data, and consult your physician. Your mental health is your most precious resource—invest in it with careful research.</p>
+            </div>
+          </div>
+        </div>
+
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
           <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #f3e8ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #6b21a8;"><i class="fa-solid fa-check"></i></span> Focus & Mental Clarity
+            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Cognitive Research
           </div>
           <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #f3e8ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #6b21a8;"><i class="fa-solid fa-check"></i></span> Memory Enhancement
+            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Neurological Science
           </div>
           <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #f3e8ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #6b21a8;"><i class="fa-solid fa-check"></i></span> Neural Protection
+            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Brain Vitality
           </div>
           <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #f3e8ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #6b21a8;"><i class="fa-solid fa-check"></i></span> Cognitive Vitality
+            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Scientific Clarity
           </div>
         </div>
       </div>
       <div style="flex: 0.8; min-width: 300px; background: #f8fafc; padding: 40px; border-radius: 35px; border: 1px solid #e2e8f0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
         <h3 style="color: #1e293b; font-size: 20px; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
-          <i class="fa-solid fa-brain" style="color: #7c3aed;"></i> Expert Research
+          <i class="fa-solid fa-brain" style="color: #7c3aed;"></i> Our Promise
         </h3>
         <p style="font-size: 15px; color: #64748b; line-height: 1.7; margin-bottom: 20px;">
-          हम दिमागी स्वास्थ्य के लिए सबसे सटीक और रिसर्च-आधारित जानकारी प्रदान करते हैं। हम सुनिश्चित करते हैं कि:
+          Our mission is to empower you with scientific neurological clarity. We guarantee that:
         </p>
         <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px;">
-          <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">01.</strong> मानसिक स्पष्टता के लिए वीडियो</li>
-          <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">02.</strong> ब्रेन हेल्थ प्रोडक्ट्स का संग्रह</li>
-          <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">03.</strong> रिस���्च-आधारित ब्रेन टिप्स</li>
+          <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">01.</strong> No Product Marketing Pressure</li>
+          <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">02.</strong> Pure Neurological Education</li>
+          <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">03.</strong> Integrity-First, Research-Backed Guidance</li>
         </ul>
       </div>
     </div>
@@ -590,38 +737,106 @@
     <div style="display: flex; gap: 60px; flex-wrap: wrap; align-items: center; position: relative; z-index: 1;">
       <div style="flex: 1.2; min-width: 320px;">
         <div style="display: inline-block; padding: 8px 20px; background: #fdf2f8; color: #9d174d; border-radius: 50px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px;">
-          ✨ Natural Beauty & Science
+          ✨ Dermal Science & Longevity
         </div>
-        <h2 style="font-size: 38px; color: #0f172a; font-weight: 900; margin-bottom: 25px; line-height: 1.1; letter-spacing: -1px;">Skin <span style="color: #ec4899;">Care</span></h2>
-        <p style="color: #475569; font-size: 17px; line-height: 1.9; margin-bottom: 30px;">
-          यहाँ पर आपको Skin Care और त्वचा के स्वास्थ्य से संबंधित सभी प्रोडक्ट्स के वीडियो मिलेंगे। हमारा उद्देश्य आपको प्राकृतिक त्वचा की देखभाल, एंटी-एजिंग और ग्लोइंग स्किन के रहस्यों के बारे में सटीक नॉलेज देना है। आप अपनी त्वचा की खूबसूरती बढ़ाने के लिए जिस भी प्रोडक्ट का वीडियो खोज रहे हैं, वह यहाँ उपलब्ध है। हमारे वीडियो लाइब्रेरी में हर प्रोडक्ट के पीछे के विज्ञान और उनके सही इस्तेमाल के तरीकों को प्रोफेशनल तरीके से समझाया गया है।
-        </p>
+        <h2 style="font-size: 38px; color: #0f172a; font-weight: 900; margin-bottom: 25px; line-height: 1.1; letter-spacing: -1px;">The Science of <span style="color: #ec4899;">Skin Integrity</span></h2>
+        <div style="margin-bottom: 40px; display: flex; flex-direction: column; gap: 25px;">
+          <!-- Professional Intro Header -->
+          <div style="background: linear-gradient(to right, #fdf2f8, #ffffff); padding: 35px; border-radius: 24px; border-left: 6px solid #ec4899; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+            <h3 style="color: #9d174d; margin-bottom: 15px; font-size: 26px; font-weight: 800; letter-spacing: -0.5px;">A Research-Based Guide to Radiant Health</h3>
+            <p style="color: #334155; font-size: 18px; line-height: 1.8; margin: 0;"><strong>Notice:</strong> The information provided here is strictly for educational purposes based on dermatological research. We do not sell or promote specific brands in this section. Our mission is to educate you on the biological requirements of the skin. We strongly advise you to conduct your own thorough research and consult with a qualified specialist before purchasing or using any skincare-related products.</p>
+            <p style="color: #334155; font-size: 18px; line-height: 1.8; margin-top: 20px;">
+              Our library provides a wealth of videos dedicated to assisting you in your skincare journey. You will find detailed explanations for various skincare solutions, guiding you through their scientific principles and usage. We encourage you to watch these videos to gain a deep understanding before making any informed decisions.
+            </p>
+          </div>
+
+          <!-- Chapter Search Bar -->
+          <div style="position: relative; margin-bottom: 10px;">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: #94a3b8;"></i>
+            <input type="text" id="skinCareChapterSearch" placeholder="Search knowledge chapters..." 
+              onkeyup="searchChapters('skinCareChapterSearch', 'skinCareInfoSection')"
+              style="width: 100%; padding: 15px 15px 15px 50px; border-radius: 15px; border: 2px solid #e2e8f0; font-family: inherit; font-size: 15px; outline: none; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.02);"
+              onfocus="this.style.borderColor='#ec4899'; this.style.boxShadow='0 4px 15px rgba(236, 72, 153, 0.1)';"
+              onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.02)';"
+            >
+          </div>
+
+          <!-- Detailed Professional Text Chapters -->
+          <div style="display: flex; flex-direction: column; gap: 40px; text-align: justify;">
+            
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 1: The Integumentary System — Your First Line of Defense</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">The skin is the largest organ of the human body and serves as a vital barrier against environmental pathogens, UV radiation, and physical trauma. Beyond aesthetics, skin health is a reflection of internal physiological stability. Understanding the layers of the skin—the epidermis, dermis, and hypodermis—is essential to recognizing how external factors and internal nutrition impact your long-term appearance and biological resilience.</p>
+            </div>
+
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 2: The Biological Mechanics of Skin Aging</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">Aging of the skin is driven by two distinct processes: intrinsic (genetic) and extrinsic (environmental) aging. While genetics determine the baseline, extrinsic factors like "photoaging" from sun exposure account for up to 80% of visible signs of aging. The breakdown of collagen and elastin fibers leads to loss of structural integrity. Scientific care focuses on preserving these proteins and supporting cellular turnover to maintain a youthful, functional barrier.</p>
+            </div>
+
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 3: The Skin Microbiome — The Living Protection</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">Just like the gut, the skin is home to trillions of beneficial microorganisms. This microbiome plays a critical role in immune signaling and protecting against harmful bacteria. Harsh chemicals and over-cleansing can disrupt this delicate balance, leading to sensitivity and inflammation. Modern dermatological research emphasizes the importance of maintaining a healthy pH and supporting the skin's natural flora for lasting clarity and health.</p>
+            </div>
+
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 4: Internal Nutrition — Feeding Skin from the Inside Out</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">The condition of your skin is deeply influenced by what you consume. Micronutrients like Vitamin C are essential for collagen synthesis, while antioxidants like Vitamin E and polyphenols help neutralize oxidative stress from the inside. Essential fatty acids, particularly Omega-3s, are crucial for maintaining the lipid barrier, which prevents moisture loss and keeps the skin supple. Skin care is not just what you apply; it is what you absorb.</p>
+            </div>
+
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 5: Dermal Elasticity and the Science of Hydration</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">Hydration is the foundation of skin vitality. Dehydrated skin loses its ability to heal and becomes more prone to fine lines. Hyaluronic acid, a molecule naturally occurring in the skin, can hold up to 1,000 times its weight in water, providing the "plumpness" associated with health. Supporting the body’s natural ability to retain moisture through proper lifestyle choices and environmental awareness is key to preventing premature dermal decline.</p>
+            </div>
+
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 6: Oxidative Stress and Photoprotection</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">Free radicals from pollution and UV rays create oxidative stress, which damages skin cells at a DNA level. This is the primary cause of hyperpigmentation and uneven texture. Using broad-spectrum protection and seeking out botanical synergies that offer antioxidant properties can significantly reduce this damage. Proactive protection is more effective than reactive correction.</p>
+            </div>
+
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 7: The Connection Between Stress and Skin Health</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">The brain-skin axis is a well-documented scientific phenomenon. Psychological stress triggers the release of cortisol, which can increase oil production and lead to breakouts or inflammatory conditions like eczema. A holistic approach to skin care includes managing mental well-being and ensuring quality sleep, as the skin performs its primary repair and detoxification work during the nocturnal cycle.</p>
+            </div>
+
+            <div class="info-chapter">
+              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 8: The Importance of Critical Research</h4>
+              <p style="color: #475569; font-size: 16px; line-height: 1.8;">The beauty industry is filled with marketing hyperbole. As a conscious individual, it is your responsibility to look past the packaging. Research clinical studies, understand the bioavailability of ingredients, and verify the safety standards of any manufacturing facility. Never purchase based on a social media trend alone. Use the educational resources provided in our video library to become your own best advocate for health.</p>
+            </div>
+
+            <div class="info-chapter" style="background: #fdf2f8; padding: 25px; border-radius: 15px; border: 1px solid #fbcfe8;">
+              <h4 style="color: #9d174d; font-size: 20px; font-weight: 800; margin-bottom: 10px;">Final Guidance & Disclaimer</h4>
+              <p style="color: #be185d; font-size: 15px; line-height: 1.7; margin: 0;">This knowledge hub is created strictly for sharing biological and health research. We are not medical practitioners. Skin is a sensitive organ, and reactions can occur. Before you use or buy any product found on the internet, do your own due diligence. Read the full ingredient list, check for allergies, and consult with a licensed dermatologist. Your skin health is a long-term investment that requires careful, research-driven choices.</p>
+            </div>
+          </div>
+        </div>
+
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
           <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #fce7f3; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #9d174d;"><i class="fa-solid fa-check"></i></span> Healthy & Glowing Skin
+            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Dermal Research
           </div>
           <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #fce7f3; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #9d174d;"><i class="fa-solid fa-check"></i></span> Anti-Aging Science
+            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Biological Education
           </div>
           <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #fce7f3; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #9d174d;"><i class="fa-solid fa-check"></i></span> Natural Detoxification
+            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Integrity Insights
           </div>
           <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #fce7f3; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #9d174d;"><i class="fa-solid fa-check"></i></span> Expert Beauty Tips
+            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Scientific Clarity
           </div>
         </div>
       </div>
       <div style="flex: 0.8; min-width: 300px; background: #f8fafc; padding: 40px; border-radius: 35px; border: 1px solid #e2e8f0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
         <h3 style="color: #1e293b; font-size: 20px; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
-          <i class="fa-solid fa-sparkles" style="color: #ec4899;"></i> Beauty Promise
+          <i class="fa-solid fa-sparkles" style="color: #ec4899;"></i> Our Promise
         </h3>
         <p style="font-size: 15px; color: #64748b; line-height: 1.7; margin-bottom: 20px;">
-          हम आपकी त्वचा की सेहत के लिए सबसे सुरक्षित और प्रभावी जानकारी प्रदान करते हैं। हम सुनिश्चित करते हैं कि:
+          Our mission is to empower you with scientific dermal clarity. We guarantee that:
         </p>
         <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px;">
-          <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">01.</strong> त्वचा की देखभाल के विस्तृत वीडियो</li>
-          <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">02.</strong> टॉप रेटेड स्किन केयर प्रोडक्ट्स</li>
-          <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">03.</strong> सुरक्षित और असरदार ब्यूटी टिप्स</li>
+          <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">01.</strong> No Product Marketing Pressure</li>
+          <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">02.</strong> Pure Biological Skin Education</li>
+          <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">03.</strong> Integrity-First, Research-Backed Guidance</li>
         </ul>
       </div>
     </div>

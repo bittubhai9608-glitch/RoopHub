@@ -572,6 +572,18 @@ let currentVideoType = null;
 // Open Category
 function openCategory(category) {
   currentVideoCategory = category;
+
+  // Reset all chapter search inputs and reset visibility of all chapters before switching
+  ['menHealth', 'weightLoss', 'brainBoost', 'skinCare'].forEach(cat => {
+    const input = document.getElementById(`${cat}ChapterSearch`);
+    if (input) input.value = '';
+    
+    const section = document.getElementById(`${cat}InfoSection`);
+    if (section) {
+      section.querySelectorAll('.info-chapter').forEach(ch => ch.style.display = 'block');
+    }
+  });
+
   hideAllInfoSections(); // Hide all info sections first
   
   // Hide landing page, show video type selection
@@ -590,6 +602,22 @@ function openCategory(category) {
   }
 
   window.scrollTo(0, 0);
+}
+
+// Search Knowledge Chapters within Info Sections
+function searchChapters(inputId, sectionId) {
+  const query = document.getElementById(inputId).value.toLowerCase().trim();
+  const section = document.getElementById(sectionId);
+  const chapters = section.querySelectorAll('.info-chapter');
+
+  chapters.forEach(chapter => {
+    const text = chapter.innerText.toLowerCase();
+    if (text.includes(query)) {
+      chapter.style.display = 'block';
+    } else {
+      chapter.style.display = 'none';
+    }
+  });
 }
 
 // Helper function to hide all info sections
