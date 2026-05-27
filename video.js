@@ -709,7 +709,9 @@ function loadVideoList(videoType) {
 
 // Filter Video List based on Search Input
 function filterVideoList() {
-  const input = document.getElementById('videoSearchInput');
+  const input = document.getElementById('videoSearchInput') || document.getElementById('heroVideoSearch');
+  if (!input) return;
+
   const query = input.value.toLowerCase().trim();
   const container = document.getElementById('videoListContainer');
   const cards = container.getElementsByClassName('video-item-card');

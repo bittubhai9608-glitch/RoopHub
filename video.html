@@ -323,10 +323,25 @@
 </head>
 <body>
   <header class="video-header">
+    <div class="welcome-badge">WELCOME TO</div>
+    
     <button onclick="window.location.href='index.html'" class="back-btn" title="Back to Home"><i class="fa-solid fa-house"></i></button>
-    <div class="brand-name-top" onclick="window.location.href='index.html'" title="Go to Home"><i class="fa-solid fa-heart-pulse"></i> <span class="text">ROOPHUB</span></div>
-    <h1>📺 Video Library</h1>
+
+    <div class="brand-hero" onclick="window.location.href='index.html'" title="Go to Home">
+      <i class="fa-solid fa-heart-pulse hero-logo-neon"></i> 
+      <span class="brand-text-modern">ROOPHUB</span>
+    </div>
+
+    <h1>VIDEO LIBRARY</h1>
     <p class="video-subtitle">Learn more about our wellness products with expert videos</p>
+
+    <div class="hero-search-container">
+      <i class="fa-solid fa-magnifying-glass hero-search-icon"></i>
+      <input type="text" id="heroVideoSearch" placeholder="Search for your favorite wellness videos..." onkeyup="handleHeroSearch(event)">
+      <button class="hero-filter-btn" title="Filter results">
+        <i class="fa-solid fa-sliders"></i>
+      </button>
+    </div>
   </header>
 
   <nav class="video-nav">
