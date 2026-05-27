@@ -645,6 +645,17 @@ function loadVideoList(videoType) {
   const categoryData = videoData[currentVideoCategory];
   const videos = categoryData[videoType];
   
+  // Clear search input on load
+  const searchInput = document.getElementById('videoSearchInput');
+  if (searchInput) searchInput.value = '';
+
+  const clearBtn = document.getElementById('clearSearchBtn');
+  if (clearBtn) clearBtn.style.display = 'none';
+
+  // Hide no videos message
+  const noVideosMessage = document.getElementById('noVideosMessage');
+  if (noVideosMessage) noVideosMessage.style.display = 'none';
+
   // Hide video type selection, show video list
   document.getElementById('videoTypeSelection').style.display = 'none';
   document.getElementById('videoListDisplay').style.display = 'block';
@@ -657,25 +668,95 @@ function loadVideoList(videoType) {
   const container = document.getElementById('videoListContainer');
   container.innerHTML = '';
   
-  videos.forEach((video, index) => {
-    const videoCard = document.createElement('div');
-    videoCard.className = 'video-item-card';
-    videoCard.innerHTML = `
-      <span class="video-item-number">Video ${index + 1}</span>
-      <h3>${video.title}</h3>
-      <p>${video.description}</p>
-      <div class="video-item-duration"><i class="fa-solid fa-clock"></i> ${video.duration}</div>
+  // Show 3 Skeleton Cards while "loading"
+  for (let i = 0; i < 3; i++) {
+    const skeleton = document.createElement('div');
+    skeleton.className = 'video-skeleton-card';
+    skeleton.innerHTML = `
+      <div style="display: flex; flex-direction: column; flex-grow: 1; gap: 8px;">
+        <div class="skeleton-item" style="width: 60px; height: 16px; border-radius: 10px;"></div>
+        <div class="skeleton-item" style="width: 80%; height: 20px;"></div>
+        <div class="skeleton-item" style="width: 95%; height: 14px;"></div>
+        <div class="skeleton-item" style="width: 40px; height: 12px;"></div>
+      </div>
+      <div class="skeleton-item" style="width: 20px; height: 20px; border-radius: 50%;"></div>
     `;
-    videoCard.onclick = () => playVideo(video, videoType);
-    container.appendChild(videoCard);
-  });
+    container.appendChild(skeleton);
+  }
+
+  // Simulate a professional delay for the loading effect
+  setTimeout(() => {
+    container.innerHTML = '';
+    videos.forEach((video, index) => {
+      const videoCard = document.createElement('div');
+      videoCard.className = 'video-item-card fade-in'; // Added fade-in for smooth entry
+      videoCard.innerHTML = `
+        <div style="display: flex; flex-direction: column; flex-grow: 1;">
+          <span class="video-item-number">Video ${index + 1}</span>
+          <h3>${video.title}</h3>
+          <p>${video.description}</p>
+          <div class="video-item-duration"><i class="fa-solid fa-clock"></i> ${video.duration}</div>
+        </div>
+        <i class="fa-solid fa-chevron-right video-item-arrow"></i>
+      `;
+      videoCard.onclick = () => playVideo(video, videoType);
+      container.appendChild(videoCard);
+    });
+  }, 600);
   
   window.scrollTo(0, 0);
+}
+
+// Filter Video List based on Search Input
+function filterVideoList() {
+  const input = document.getElementById('videoSearchInput');
+  const query = input.value.toLowerCase().trim();
+  const container = document.getElementById('videoListContainer');
+  const cards = container.getElementsByClassName('video-item-card');
+  const noVideosMessage = document.getElementById('noVideosMessage');
+  const clearBtn = document.getElementById('clearSearchBtn');
+
+  if (clearBtn) {
+    clearBtn.style.display = query.length > 0 ? 'block' : 'none';
+  }
+
+  let visibleCount = 0;
+
+  Array.from(cards).forEach(card => {
+    const title = card.querySelector('h3').innerText.toLowerCase();
+    const desc = card.querySelector('p').innerText.toLowerCase();
+    
+    if (title.includes(query) || desc.includes(query)) {
+      card.style.display = 'flex';
+      visibleCount++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  if (noVideosMessage) {
+    noVideosMessage.style.display = (visibleCount === 0) ? 'block' : 'none';
+  }
+}
+
+// Clear Video Search
+function clearSearch() {
+  const input = document.getElementById('videoSearchInput');
+  if (input) {
+    input.value = '';
+    filterVideoList();
+    input.focus();
+  }
 }
 
 // Play Video
 function playVideo(video, videoType) {
   const categoryData = videoData[currentVideoCategory];
+  
+  // Set Dynamic Aspect Ratio Class
+  const playerContainer = document.querySelector('.video-player');
+  playerContainer.classList.remove('long-aspect', 'short-aspect');
+  playerContainer.classList.add(videoType === 'long' ? 'long-aspect' : 'short-aspect');
   
   // Populate video player modal
   document.getElementById('videoTitle').textContent = video.title;
@@ -718,6 +799,17 @@ function closeVideoPlayer() {
 // Go Back Functions
 function goBackToVideoType() {
   currentVideoType = null;
+  // Clear search input on back
+  const searchInput = document.getElementById('videoSearchInput');
+  if (searchInput) searchInput.value = '';
+
+  const clearBtn = document.getElementById('clearSearchBtn');
+  if (clearBtn) clearBtn.style.display = 'none';
+
+  // Hide no videos message
+  const noVideosMessage = document.getElementById('noVideosMessage');
+  if (noVideosMessage) noVideosMessage.style.display = 'none';
+
   document.getElementById('videoListDisplay').style.display = 'none';
   document.getElementById('videoTypeSelection').style.display = 'block';
   window.scrollTo(0, 0);
@@ -727,6 +819,17 @@ function goBackToVideoType() {
 function goBackToCategories() {
   currentVideoCategory = null;
   currentVideoType = null;
+  // Clear search input on back
+  const searchInput = document.getElementById('videoSearchInput');
+  if (searchInput) searchInput.value = '';
+
+  const clearBtn = document.getElementById('clearSearchBtn');
+  if (clearBtn) clearBtn.style.display = 'none';
+
+  // Hide no videos message
+  const noVideosMessage = document.getElementById('noVideosMessage');
+  if (noVideosMessage) noVideosMessage.style.display = 'none';
+
   document.getElementById('videosLanding').style.display = 'block';
   document.getElementById('videoTypeSelection').style.display = 'none';
   document.getElementById('videoListDisplay').style.display = 'none';
