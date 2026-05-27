@@ -319,6 +319,15 @@
         color: #3b82f6;
         transform: translateX(3px);
     }
+
+    /* Professional Glow Effects for Sidebar Navigation */
+    .nav-glow-item { transition: all 0.2s ease-in-out; }
+    .nav-glow-item:hover { transform: translateX(5px); }
+    
+    .nav-glow-men:hover { background: #eff6ff !important; box-shadow: 0 0 20px rgba(37, 99, 235, 0.3); }
+    .nav-glow-weight:hover { background: #f0fdf4 !important; box-shadow: 0 0 20px rgba(22, 163, 74, 0.3); }
+    .nav-glow-brain:hover { background: #f5f3ff !important; box-shadow: 0 0 20px rgba(124, 58, 237, 0.3); }
+    .nav-glow-skin:hover { background: #fdf2f8 !important; box-shadow: 0 0 20px rgba(236, 72, 153, 0.3); }
   </style>
 </head>
 <body>
@@ -509,8 +518,8 @@
   <section id="menHealthInfoSection" class="men-health-info-section" style="max-width: 1200px; margin: 60px auto 0; padding: 50px 30px; background: #ffffff; border-radius: 40px; border: 1px solid #e2e8f0; box-shadow: 0 20px 50px rgba(0,0,0,0.03); position: relative; overflow: hidden; display: block;">
     <div style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);"></div>
     
-    <div style="display: flex; gap: 60px; flex-wrap: wrap; align-items: center; position: relative; z-index: 1;">
-      <div style="flex: 1.2; min-width: 320px;">
+    <div style="display: flex; gap: 40px; flex-wrap: wrap; align-items: flex-start; position: relative; z-index: 1;">
+      <div style="flex: 2.2; min-width: 350px;">
         <div style="display: inline-block; padding: 8px 20px; background: #eff6ff; color: #1e40af; border-radius: 50px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px;">
           🛡️ Expert Video Library
         </div>
@@ -537,7 +546,7 @@
           </div>
           
           <!-- Detailed Professional Text Chapters -->
-          <div style="display: flex; flex-direction: column; gap: 40px; text-align: justify;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; text-align: justify;">
             
             <div class="info-chapter">
               <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 1: The Silent Crisis in Men’s Health</h4>
@@ -568,41 +577,11 @@
               <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 6: Structural Strength and Musculoskeletal Health</h4>
               <p style="color: #475569; font-size: 16px; line-height: 1.8;">A man’s physical frame—his muscles and bones—requires consistent maintenance to prevent age-related decline. Muscle mass is not just about strength; it is a highly active metabolic organ that helps regulate blood sugar and hormone levels. Maintaining musculoskeletal integrity through proper movement and weight-bearing activity ensures you remain functional and injury-resistant throughout your life journey.</p>
             </div>
-
-            <div class="info-chapter">
-              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 7: Mental Health and Emotional Intelligence</h4>
-              <p style="color: #475569; font-size: 16px; line-height: 1.8;">The traditional image of the "stoic" man often leads to the suppression of emotional needs, which can manifest as chronic stress or physical illness. True health includes psychological resilience—the ability to manage stress, maintain social connections, and seek help when needed. Mental well-being is the lens through which you experience your physical vitality; without it, physical health remains incomplete.</p>
-            </div>
-
-            <div class="info-chapter">
-              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 8: The Importance of Proactive Research</h4>
-              <p style="color: #475569; font-size: 16px; line-height: 1.8;">We live in an age of information abundance, but not all information is created equal. Before you consider any supplement, lifestyle change, or purchase, it is imperative to look at peer-reviewed research and verified medical guidelines. Understanding ingredients, their bioavailability, and their interactions with your unique biology is your responsibility as a health-conscious individual. Never rely on marketing claims alone.</p>
-            </div>
-
-            <div class="info-chapter" style="background: #fff8f1; padding: 25px; border-radius: 15px; border: 1px solid #fed7aa;">
-              <h4 style="color: #9a3412; font-size: 20px; font-weight: 800; margin-bottom: 10px;">Final Guidance & Disclaimer</h4>
-              <p style="color: #c2410c; font-size: 15px; line-height: 1.7; margin: 0;">This entire section is created purely for the purpose of sharing general health knowledge. We are not doctors, and this is not medical advice. The male body is a complex system that requires professional oversight. Before you buy or use any product found on the internet, do your due diligence. Read the science, check the reviews from neutral sources, and most importantly, talk to your doctor. Your health is your most valuable asset—treat it with the care and research it deserves.</p>
-            </div>
           </div>
           
         </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Research Based Knowledge
-          </div>
-          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Biology Education
-          </div>
-          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Vitality Insights
-          </div>
-          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Scientific Clarity
-          </div>
-        </div>
       </div>
-      <div style="flex: 0.8; min-width: 300px; background: #f8fafc; padding: 40px; border-radius: 35px; border: 1px solid #e2e8f0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
+      <div style="flex: 1; min-width: 300px; background: #f8fafc; padding: 40px; border-radius: 35px; border: 1px solid #e2e8f0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); position: sticky; top: 100px; align-self: flex-start;">
         <h3 style="color: #1e293b; font-size: 20px; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
           <i class="fa-solid fa-shield-halved" style="color: #2563eb;"></i> Our Promise
         </h3>
@@ -614,6 +593,85 @@
           <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">02.</strong> Pure Biological and Health Education</li>
           <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">03.</strong> Integrity-First, Research-Backed Guidance</li>
         </ul>
+
+        <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+        
+        <div style="background: #fff8f1; padding: 20px; border-radius: 15px; border: 1px solid #fed7aa; margin-bottom: 25px;">
+          <h4 style="color: #9a3412; font-size: 18px; font-weight: 800; margin-bottom: 10px;">Final Guidance & Disclaimer</h4>
+          <p style="color: #c2410c; font-size: 14px; line-height: 1.6; margin: 0;">This section is created for educational purposes. We are not doctors, and this is not medical advice. Consult with a qualified healthcare professional before use. Your health is your most valuable asset—treat it with care.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 14px;">
+            <span style="width: 28px; height: 28px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534; font-size: 12px;"><i class="fa-solid fa-check"></i></span> Research Based Knowledge
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 14px;">
+            <span style="width: 28px; height: 28px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534; font-size: 12px;"><i class="fa-solid fa-check"></i></span> Biology Education
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 14px;">
+            <span style="width: 28px; height: 28px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534; font-size: 12px;"><i class="fa-solid fa-check"></i></span> Vitality Insights
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 14px;">
+            <span style="width: 28px; height: 28px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534; font-size: 12px;"><i class="fa-solid fa-check"></i></span> Scientific Clarity
+          </div>
+        </div>
+
+        <hr style="margin: 25px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+        <!-- Shifted Chapters for Better Space Balance -->
+        <div style="background: #f1f5f9; padding: 20px; border-radius: 20px; margin-bottom: 20px; border: 1px solid #cbd5e1;">
+          <h4 style="color: #1e293b; font-size: 16px; font-weight: 800; margin-bottom: 10px;">Chapter 7: Mental Health and Emotional Intelligence</h4>
+          <p style="color: #475569; font-size: 13px; line-height: 1.6; margin: 0;">True health includes psychological resilience—the ability to manage stress and seek help. Mental well-being is the lens through which you experience physical vitality.</p>
+        </div>
+
+        <div style="background: #f1f5f9; padding: 20px; border-radius: 20px; border: 1px solid #cbd5e1;">
+          <h4 style="color: #1e293b; font-size: 16px; font-weight: 800; margin-bottom: 10px;">Chapter 8: Proactive Research</h4>
+          <p style="color: #475569; font-size: 13px; line-height: 1.6; margin: 0;">Before considering any health change, look at peer-reviewed research. Understanding bioavailability and unique biology is your responsibility as a health-conscious individual.</p>
+        </div>
+
+        <hr style="margin: 25px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+        <!-- New: Quick Tips for Men's Health -->
+        <div style="background: #eef2ff; padding: 20px; border-radius: 20px; margin-bottom: 20px; border: 1px solid #c3dafe;">
+          <h4 style="color: #1e40af; font-size: 16px; font-weight: 800; margin-bottom: 10px;">💡 Quick Tips for Men's Health</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 13px; color: #334155; line-height: 1.8;">
+            <li style="margin-bottom: 5px;"><i class="fa-solid fa-circle-check" style="color: #2563eb; margin-right: 8px;"></i>Prioritize quality sleep (7-9 hours).</li>
+            <li style="margin-bottom: 5px;"><i class="fa-solid fa-circle-check" style="color: #2563eb; margin-right: 8px;"></i>Incorporate strength training regularly.</li>
+            <li style="margin-bottom: 5px;"><i class="fa-solid fa-circle-check" style="color: #2563eb; margin-right: 8px;"></i>Manage stress through mindfulness or hobbies.</li>
+            <li><i class="fa-solid fa-circle-check" style="color: #2563eb; margin-right: 8px;"></i>Regular check-ups are crucial for early detection.</li>
+          </ul>
+        </div>
+
+        <!-- New: Did You Know? for Men's Health -->
+        <div style="background: #fefce8; padding: 20px; border-radius: 20px; border: 1px solid #fde68a;">
+          <h4 style="color: #a16207; font-size: 16px; font-weight: 800; margin-bottom: 10px;">🤔 Did You Know?</h4>
+          <p style="color: #854d0e; font-size: 13px; line-height: 1.6; margin: 0;">
+            Testosterone levels naturally begin to decline in men after age 30, impacting energy, mood, and muscle mass. Lifestyle factors like diet and exercise can significantly influence this decline.
+          </p>
+        </div>
+
+        <hr style="margin: 25px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+        <!-- Quick Category Navigation for Desktop Balance -->
+        <div style="background: #ffffff; padding: 22px; border-radius: 25px; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
+          <h4 style="color: #0f172a; font-size: 16px; font-weight: 800; margin-bottom: 18px; display: flex; align-items: center; gap: 10px;">
+            <i class="fa-solid fa-layer-group" style="color: #2563eb;"></i> Quick Navigation
+          </h4>
+          <div style="display: grid; grid-template-columns: 1fr; gap: 12px;">
+            <div onclick="openCategory('menHealth')" class="nav-glow-item nav-glow-men" style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f8fafc; border-radius: 15px; cursor: pointer;">
+              <span style="font-size: 20px;">💪</span> <span style="font-size: 13px; font-weight: 700; color: #334155;">Men's Health</span>
+            </div>
+            <div onclick="openCategory('weightLoss')" class="nav-glow-item nav-glow-weight" style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f8fafc; border-radius: 15px; cursor: pointer;">
+              <span style="font-size: 20px;">⚖️</span> <span style="font-size: 13px; font-weight: 700; color: #334155;">Weight Loss</span>
+            </div>
+            <div onclick="openCategory('brainBoost')" class="nav-glow-item nav-glow-brain" style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f8fafc; border-radius: 15px; cursor: pointer;">
+              <span style="font-size: 20px;">🧠</span> <span style="font-size: 13px; font-weight: 700; color: #334155;">Brain Boost</span>
+            </div>
+            <div onclick="openCategory('skinCare')" class="nav-glow-item nav-glow-skin" style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f8fafc; border-radius: 15px; cursor: pointer;">
+              <span style="font-size: 20px;">✨</span> <span style="font-size: 13px; font-weight: 700; color: #334155;">Skin Care</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -622,8 +680,8 @@
   <section id="weightLossInfoSection" class="weight-loss-info-section" style="max-width: 1200px; margin: 60px auto 0; padding: 50px 30px; background: #ffffff; border-radius: 40px; border: 1px solid #e2e8f0; box-shadow: 0 20px 50px rgba(0,0,0,0.03); position: relative; overflow: hidden; display: block;">
     <div style="position: absolute; top: -100px; left: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(34, 197, 94, 0.05) 0%, transparent 70%);"></div>
     
-    <div style="display: flex; gap: 60px; flex-wrap: wrap; align-items: center; position: relative; z-index: 1;">
-      <div style="flex: 1.2; min-width: 320px;">
+    <div style="display: flex; gap: 40px; flex-wrap: wrap; align-items: flex-start; position: relative; z-index: 1;">
+      <div style="flex: 2.2; min-width: 350px;">
         <div style="display: inline-block; padding: 8px 20px; background: #f0fdf4; color: #166534; border-radius: 50px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px;">
           🌿 Scientific Metabolic Education
         </div>
@@ -650,7 +708,7 @@
           </div>
 
           <!-- Detailed Professional Text Chapters -->
-          <div style="display: flex; flex-direction: column; gap: 40px; text-align: justify;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; text-align: justify;">
             
             <div class="info-chapter">
               <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 1: The Biological Blueprint of Weight Regulation</h4>
@@ -681,40 +739,10 @@
               <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 6: Sleep Architecture and Metabolic Recovery</h4>
               <p style="color: #475569; font-size: 16px; line-height: 1.8;">Sleep is a non-negotiable metabolic regulator. Lack of sleep increases ghrelin (the hunger hormone) and decreases leptin (the fullness hormone). Furthermore, sleep deprivation reduces insulin sensitivity in as little as one night. Deep, restorative sleep is the time when the body repairs tissues and optimizes the metabolic software required for efficient fat utilization.</p>
             </div>
-
-            <div class="info-chapter">
-              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 7: Behavioral Psychology and Sustainability</h4>
-              <p style="color: #475569; font-size: 16px; line-height: 1.8;">The greatest challenge in weight loss is not losing the weight, but maintaining the change. This requires a shift in behavioral psychology—moving away from temporary "diets" toward permanent lifestyle integration. Understanding the brain's reward systems and dopamine pathways can help in building habits that make healthy choices effortless rather than a constant battle of willpower.</p>
-            </div>
-
-            <div class="info-chapter">
-              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 8: The Power of Proactive Research</h4>
-              <p style="color: #475569; font-size: 16px; line-height: 1.8;">In an age of information overload, your best tool is your own research. Marketing claims often oversimplify science for profit. We urge you to look at peer-reviewed studies, understand ingredient bioavailability, and check real-world long-term results. Before you invest in any product, use the videos and data provided here to build a foundation of knowledge. An educated decision is a safe decision.</p>
-            </div>
-
-            <div class="info-chapter" style="background: #f0fdf4; padding: 25px; border-radius: 15px; border: 1px solid #bbf7d0;">
-              <h4 style="color: #166534; font-size: 20px; font-weight: 800; margin-bottom: 10px;">Final Guidance & Disclaimer</h4>
-              <p style="color: #14532d; font-size: 15px; line-height: 1.7; margin: 0;">This knowledge hub is created strictly for educational purposes based on research into human physiology. We are not medical doctors, and this is not medical advice. Every body is unique, and weight management should be overseen by a qualified healthcare professional. Before you purchase any product online, do your own thorough research. Read the ingredients, understand the risks, and prioritize your long-term health over short-term promises.</p>
-            </div>
-          </div>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Metabolic Research
-          </div>
-          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Nutritional Science
-          </div>
-          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Endocrine Education
-          </div>
-          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Verified Insights
           </div>
         </div>
       </div>
-      <div style="flex: 0.8; min-width: 300px; background: #f8fafc; padding: 40px; border-radius: 35px; border: 1px solid #e2e8f0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
+      <div style="flex: 1; min-width: 300px; background: #f8fafc; padding: 40px; border-radius: 35px; border: 1px solid #e2e8f0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); position: sticky; top: 100px; align-self: flex-start;">
         <h3 style="color: #1e293b; font-size: 20px; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
           <i class="fa-solid fa-leaf" style="color: #16a34a;"></i> Our Commitment
         </h3>
@@ -726,6 +754,85 @@
           <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">02.</strong> Pure Biological Weight Knowledge</li>
           <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">03.</strong> Integrity-First, Research-Backed Guidance</li>
         </ul>
+
+        <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+        <div style="background: #f0fdf4; padding: 20px; border-radius: 15px; border: 1px solid #bbf7d0; margin-bottom: 25px;">
+          <h4 style="color: #166534; font-size: 18px; font-weight: 800; margin-bottom: 10px;">Final Guidance & Disclaimer</h4>
+          <p style="color: #14532d; font-size: 14px; line-height: 1.6; margin: 0;">This knowledge hub is for educational purposes. We are not doctors. Every body is unique; weight management should be overseen by a specialist. Prioritize your long-term health.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 14px;">
+            <span style="width: 28px; height: 28px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534; font-size: 12px;"><i class="fa-solid fa-check"></i></span> Metabolic Research
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 14px;">
+            <span style="width: 28px; height: 28px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534; font-size: 12px;"><i class="fa-solid fa-check"></i></span> Nutritional Science
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 14px;">
+            <span style="width: 28px; height: 28px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534; font-size: 12px;"><i class="fa-solid fa-check"></i></span> Endocrine Education
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 14px;">
+            <span style="width: 28px; height: 28px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534; font-size: 12px;"><i class="fa-solid fa-check"></i></span> Verified Insights
+          </div>
+        </div>
+
+        <hr style="margin: 25px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+        <!-- Shifted Chapters for Better Space Balance -->
+        <div style="background: #f0fdf4; padding: 20px; border-radius: 20px; margin-bottom: 20px; border: 1px solid #bbf7d0;">
+          <h4 style="color: #166534; font-size: 16px; font-weight: 800; margin-bottom: 10px;">Chapter 7: Behavioral Psychology</h4>
+          <p style="color: #14532d; font-size: 13px; line-height: 1.6; margin: 0;">Sustainable change requires a shift in behavioral psychology—moving away from temporary "diets" toward permanent lifestyle integration and building effortless habits.</p>
+        </div>
+
+        <div style="background: #f0fdf4; padding: 20px; border-radius: 20px; border: 1px solid #bbf7d0;">
+          <h4 style="color: #166534; font-size: 16px; font-weight: 800; margin-bottom: 10px;">Chapter 8: Proactive Research</h4>
+          <p style="color: #14532d; font-size: 13px; line-height: 1.6; margin: 0;">Marketing claims often oversimplify science. Use videos and data provided here to build a foundation of knowledge. An educated decision is a safe decision for long-term health.</p>
+        </div>
+
+        <hr style="margin: 25px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+        <!-- New: Quick Tips for Weight Loss -->
+        <div style="background: #eef2ff; padding: 20px; border-radius: 20px; margin-bottom: 20px; border: 1px solid #c3dafe;">
+          <h4 style="color: #1e40af; font-size: 16px; font-weight: 800; margin-bottom: 10px;">💡 Quick Tips for Sustainable Weight Loss</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 13px; color: #334155; line-height: 1.8;">
+            <li style="margin-bottom: 5px;"><i class="fa-solid fa-circle-check" style="color: #2563eb; margin-right: 8px;"></i>Focus on whole, unprocessed foods.</li>
+            <li style="margin-bottom: 5px;"><i class="fa-solid fa-circle-check" style="color: #2563eb; margin-right: 8px;"></i>Stay hydrated with plenty of water.</li>
+            <li style="margin-bottom: 5px;"><i class="fa-solid fa-circle-check" style="color: #2563eb; margin-right: 8px;"></i>Incorporate regular physical activity.</li>
+            <li><i class="fa-solid fa-circle-check" style="color: #2563eb; margin-right: 8px;"></i>Prioritize adequate and restorative sleep.</li>
+          </ul>
+        </div>
+
+        <!-- New: Did You Know? for Weight Loss -->
+        <div style="background: #fefce8; padding: 20px; border-radius: 20px; border: 1px solid #fde68a;">
+          <h4 style="color: #a16207; font-size: 16px; font-weight: 800; margin-bottom: 10px;">🤔 Did You Know?</h4>
+          <p style="color: #854d0e; font-size: 13px; line-height: 1.6; margin: 0;">
+            Muscle tissue burns more calories at rest than fat tissue. Building lean muscle mass can significantly boost your metabolism.
+          </p>
+        </div>
+
+        <hr style="margin: 25px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+        <!-- Quick Category Navigation for Desktop Balance -->
+        <div style="background: #ffffff; padding: 22px; border-radius: 25px; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
+          <h4 style="color: #0f172a; font-size: 16px; font-weight: 800; margin-bottom: 18px; display: flex; align-items: center; gap: 10px;">
+            <i class="fa-solid fa-layer-group" style="color: #16a34a;"></i> Quick Navigation
+          </h4>
+          <div style="display: grid; grid-template-columns: 1fr; gap: 12px;">
+            <div onclick="openCategory('menHealth')" class="nav-glow-item nav-glow-men" style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f8fafc; border-radius: 15px; cursor: pointer;">
+              <span style="font-size: 20px;">💪</span> <span style="font-size: 13px; font-weight: 700; color: #334155;">Men's Health</span>
+            </div>
+            <div onclick="openCategory('weightLoss')" class="nav-glow-item nav-glow-weight" style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f8fafc; border-radius: 15px; cursor: pointer;">
+              <span style="font-size: 20px;">⚖️</span> <span style="font-size: 13px; font-weight: 700; color: #334155;">Weight Loss</span>
+            </div>
+            <div onclick="openCategory('brainBoost')" class="nav-glow-item nav-glow-brain" style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f8fafc; border-radius: 15px; cursor: pointer;">
+              <span style="font-size: 20px;">🧠</span> <span style="font-size: 13px; font-weight: 700; color: #334155;">Brain Boost</span>
+            </div>
+            <div onclick="openCategory('skinCare')" class="nav-glow-item nav-glow-skin" style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f8fafc; border-radius: 15px; cursor: pointer;">
+              <span style="font-size: 20px;">✨</span> <span style="font-size: 13px; font-weight: 700; color: #334155;">Skin Care</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -734,8 +841,8 @@
   <section id="brainBoostInfoSection" class="brain-boost-info-section" style="max-width: 1200px; margin: 60px auto 0; padding: 50px 30px; background: #ffffff; border-radius: 40px; border: 1px solid #e2e8f0; box-shadow: 0 20px 50px rgba(0,0,0,0.03); position: relative; overflow: hidden; display: block;">
     <div style="position: absolute; bottom: -100px; right: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(124, 58, 237, 0.05) 0%, transparent 70%);"></div>
     
-    <div style="display: flex; gap: 60px; flex-wrap: wrap; align-items: center; position: relative; z-index: 1;">
-      <div style="flex: 1.2; min-width: 320px;">
+    <div style="display: flex; gap: 40px; flex-wrap: wrap; align-items: flex-start; position: relative; z-index: 1;">
+      <div style="flex: 2.2; min-width: 350px;">
         <div style="display: inline-block; padding: 8px 20px; background: #f5f3ff; color: #5b21b6; border-radius: 50px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px;">
           🧠 Cognitive Science Education
         </div>
@@ -762,7 +869,7 @@
           </div>
 
           <!-- Detailed Professional Text Chapters -->
-          <div style="display: flex; flex-direction: column; gap: 40px; text-align: justify;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; text-align: justify;">
             
             <div class="info-chapter">
               <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 1: The Evolution of the Modern Mind</h4>
@@ -793,40 +900,10 @@
               <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 6: Sleep — The Cognitive Janitor</h4>
               <p style="color: #475569; font-size: 16px; line-height: 1.8;">Sleep is not a passive state but an active period of metabolic maintenance. During deep sleep, the brain’s glymphatic system clears out metabolic waste products that accumulate during waking hours. Without sufficient restorative sleep, cognitive processing speed slows down, and memory consolidation is compromised. Sleep is the ultimate cognitive enhancer.</p>
             </div>
-
-            <div class="info-chapter">
-              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 7: Dietary Nootropics and Cognitive Reserve</h4>
-              <p style="color: #475569; font-size: 16px; line-height: 1.8;">Cognitive reserve refers to the brain's ability to improvise and find alternate ways of getting a job done. It is built up through a lifetime of healthy habits. Integrating research-backed micronutrients helps build this reserve, acting as a shield against oxidative stress and protecting neurons from premature aging.</p>
-            </div>
-
-            <div class="info-chapter">
-              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 8: The Importance of Proactive Research</h4>
-              <p style="color: #475569; font-size: 16px; line-height: 1.8;">In the field of cognitive science, information is power. Before considering any supplement or significant lifestyle change, it is your responsibility to look at independent clinical trials and peer-reviewed data. Marketing for "limitless" brain pills often masks the complexity of neuroscience. Always verify ingredients and their proven safety profiles through neutral scientific sources.</p>
-            </div>
-
-            <div class="info-chapter" style="background: #f5f3ff; padding: 25px; border-radius: 15px; border: 1px solid #ddd6fe;">
-              <h4 style="color: #5b21b6; font-size: 20px; font-weight: 800; margin-bottom: 10px;">Final Guidance & Disclaimer</h4>
-              <p style="color: #4c1d95; font-size: 15px; line-height: 1.7; margin: 0;">This entire section is created purely for the purpose of sharing general cognitive health knowledge. We are not medical professionals, and this is not medical advice. The human brain is the most complex structure in the known universe and requires expert oversight. Before you buy or use any product, do your due diligence. Read the science, verify the data, and consult your physician. Your mental health is your most precious resource—invest in it with careful research.</p>
-            </div>
-          </div>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Cognitive Research
-          </div>
-          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Neurological Science
-          </div>
-          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Brain Vitality
-          </div>
-          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Scientific Clarity
           </div>
         </div>
       </div>
-      <div style="flex: 0.8; min-width: 300px; background: #f8fafc; padding: 40px; border-radius: 35px; border: 1px solid #e2e8f0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
+      <div style="flex: 1; min-width: 300px; background: #f8fafc; padding: 40px; border-radius: 35px; border: 1px solid #e2e8f0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); position: sticky; top: 100px; align-self: flex-start;">
         <h3 style="color: #1e293b; font-size: 20px; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
           <i class="fa-solid fa-brain" style="color: #7c3aed;"></i> Our Promise
         </h3>
@@ -838,6 +915,85 @@
           <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">02.</strong> Pure Neurological Education</li>
           <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">03.</strong> Integrity-First, Research-Backed Guidance</li>
         </ul>
+
+        <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+        <div style="background: #f5f3ff; padding: 20px; border-radius: 15px; border: 1px solid #ddd6fe; margin-bottom: 25px;">
+          <h4 style="color: #5b21b6; font-size: 18px; font-weight: 800; margin-bottom: 10px;">Final Guidance & Disclaimer</h4>
+          <p style="color: #4c1d95; font-size: 14px; line-height: 1.6; margin: 0;">This knowledge hub is for sharing general cognitive research. We are not doctors. The brain is complex and requires expert oversight. Consult your physician before use. Invest in research-driven choices.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 14px;">
+            <span style="width: 28px; height: 28px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534; font-size: 12px;"><i class="fa-solid fa-check"></i></span> Cognitive Research
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 14px;">
+            <span style="width: 28px; height: 28px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534; font-size: 12px;"><i class="fa-solid fa-check"></i></span> Neurological Science
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 14px;">
+            <span style="width: 28px; height: 28px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534; font-size: 12px;"><i class="fa-solid fa-check"></i></span> Brain Vitality
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 14px;">
+            <span style="width: 28px; height: 28px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534; font-size: 12px;"><i class="fa-solid fa-check"></i></span> Scientific Clarity
+          </div>
+        </div>
+
+        <hr style="margin: 25px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+        <!-- Shifted Chapters for Better Space Balance -->
+        <div style="background: #f5f3ff; padding: 20px; border-radius: 20px; margin-bottom: 20px; border: 1px solid #ddd6fe;">
+          <h4 style="color: #5b21b6; font-size: 16px; font-weight: 800; margin-bottom: 10px;">Chapter 7: Cognitive Reserve</h4>
+          <p style="color: #4c1d95; font-size: 13px; line-height: 1.6; margin: 0;">Cognitive reserve is built through healthy habits and neuro-nutrients, acting as a shield against oxidative stress and protecting neurons from decline.</p>
+        </div>
+
+        <div style="background: #f5f3ff; padding: 20px; border-radius: 20px; border: 1px solid #ddd6fe;">
+          <h4 style="color: #5b21b6; font-size: 16px; font-weight: 800; margin-bottom: 10px;">Chapter 8: Proactive Research</h4>
+          <p style="color: #4c1d95; font-size: 13px; line-height: 1.6; margin: 0;">Always verify ingredients and their safety profiles through neutral scientific sources. Before any change, look at independent clinical trials and peer-reviewed data.</p>
+        </div>
+
+        <hr style="margin: 25px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+        <!-- New: Quick Tips for Brain Boost -->
+        <div style="background: #eef2ff; padding: 20px; border-radius: 20px; margin-bottom: 20px; border: 1px solid #c3dafe;">
+          <h4 style="color: #1e40af; font-size: 16px; font-weight: 800; margin-bottom: 10px;">💡 Quick Tips for Cognitive Health</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 13px; color: #334155; line-height: 1.8;">
+            <li style="margin-bottom: 5px;"><i class="fa-solid fa-circle-check" style="color: #2563eb; margin-right: 8px;"></i>Engage in mentally stimulating activities.</li>
+            <li style="margin-bottom: 5px;"><i class="fa-solid fa-circle-check" style="color: #2563eb; margin-right: 8px;"></i>Consume Omega-3 rich foods.</li>
+            <li style="margin-bottom: 5px;"><i class="fa-solid fa-circle-check" style="color: #2563eb; margin-right: 8px;"></i>Ensure adequate sleep for brain repair.</li>
+            <li><i class="fa-solid fa-circle-check" style="color: #2563eb; margin-right: 8px;"></i>Stay physically active to boost blood flow to the brain.</li>
+          </ul>
+        </div>
+
+        <!-- New: Did You Know? for Brain Boost -->
+        <div style="background: #fefce8; padding: 20px; border-radius: 20px; border: 1px solid #fde68a;">
+          <h4 style="color: #a16207; font-size: 16px; font-weight: 800; margin-bottom: 10px;">🤔 Did You Know?</h4>
+          <p style="color: #854d0e; font-size: 13px; line-height: 1.6; margin: 0;">
+            The human brain weighs only about 3 pounds but consumes roughly 20% of the body's total oxygen and calories.
+          </p>
+        </div>
+
+        <hr style="margin: 25px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+        <!-- Quick Category Navigation for Desktop Balance -->
+        <div style="background: #ffffff; padding: 22px; border-radius: 25px; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
+          <h4 style="color: #0f172a; font-size: 16px; font-weight: 800; margin-bottom: 18px; display: flex; align-items: center; gap: 10px;">
+            <i class="fa-solid fa-layer-group" style="color: #7c3aed;"></i> Quick Navigation
+          </h4>
+          <div style="display: grid; grid-template-columns: 1fr; gap: 12px;">
+            <div onclick="openCategory('menHealth')" class="nav-glow-item nav-glow-men" style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f8fafc; border-radius: 15px; cursor: pointer;">
+              <span style="font-size: 20px;">💪</span> <span style="font-size: 13px; font-weight: 700; color: #334155;">Men's Health</span>
+            </div>
+            <div onclick="openCategory('weightLoss')" class="nav-glow-item nav-glow-weight" style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f8fafc; border-radius: 15px; cursor: pointer;">
+              <span style="font-size: 20px;">⚖️</span> <span style="font-size: 13px; font-weight: 700; color: #334155;">Weight Loss</span>
+            </div>
+            <div onclick="openCategory('brainBoost')" class="nav-glow-item nav-glow-brain" style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f8fafc; border-radius: 15px; cursor: pointer;">
+              <span style="font-size: 20px;">🧠</span> <span style="font-size: 13px; font-weight: 700; color: #334155;">Brain Boost</span>
+            </div>
+            <div onclick="openCategory('skinCare')" class="nav-glow-item nav-glow-skin" style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f8fafc; border-radius: 15px; cursor: pointer;">
+              <span style="font-size: 20px;">✨</span> <span style="font-size: 13px; font-weight: 700; color: #334155;">Skin Care</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -846,8 +1002,8 @@
   <section id="skinCareInfoSection" class="skin-care-info-section" style="max-width: 1200px; margin: 60px auto 0; padding: 50px 30px; background: #ffffff; border-radius: 40px; border: 1px solid #e2e8f0; box-shadow: 0 20px 50px rgba(0,0,0,0.03); position: relative; overflow: hidden; display: block;">
     <div style="position: absolute; top: -100px; left: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(236, 72, 153, 0.05) 0%, transparent 70%);"></div>
     
-    <div style="display: flex; gap: 60px; flex-wrap: wrap; align-items: center; position: relative; z-index: 1;">
-      <div style="flex: 1.2; min-width: 320px;">
+    <div style="display: flex; gap: 40px; flex-wrap: wrap; align-items: flex-start; position: relative; z-index: 1;">
+      <div style="flex: 2.2; min-width: 350px;">
         <div style="display: inline-block; padding: 8px 20px; background: #fdf2f8; color: #9d174d; border-radius: 50px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px;">
           ✨ Dermal Science & Longevity
         </div>
@@ -874,7 +1030,7 @@
           </div>
 
           <!-- Detailed Professional Text Chapters -->
-          <div style="display: flex; flex-direction: column; gap: 40px; text-align: justify;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; text-align: justify;">
             
             <div class="info-chapter">
               <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 1: The Integumentary System — Your First Line of Defense</h4>
@@ -905,40 +1061,10 @@
               <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 6: Oxidative Stress and Photoprotection</h4>
               <p style="color: #475569; font-size: 16px; line-height: 1.8;">Free radicals from pollution and UV rays create oxidative stress, which damages skin cells at a DNA level. This is the primary cause of hyperpigmentation and uneven texture. Using broad-spectrum protection and seeking out botanical synergies that offer antioxidant properties can significantly reduce this damage. Proactive protection is more effective than reactive correction.</p>
             </div>
-
-            <div class="info-chapter">
-              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 7: The Connection Between Stress and Skin Health</h4>
-              <p style="color: #475569; font-size: 16px; line-height: 1.8;">The brain-skin axis is a well-documented scientific phenomenon. Psychological stress triggers the release of cortisol, which can increase oil production and lead to breakouts or inflammatory conditions like eczema. A holistic approach to skin care includes managing mental well-being and ensuring quality sleep, as the skin performs its primary repair and detoxification work during the nocturnal cycle.</p>
-            </div>
-
-            <div class="info-chapter">
-              <h4 style="color: #1e293b; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">Chapter 8: The Importance of Critical Research</h4>
-              <p style="color: #475569; font-size: 16px; line-height: 1.8;">The beauty industry is filled with marketing hyperbole. As a conscious individual, it is your responsibility to look past the packaging. Research clinical studies, understand the bioavailability of ingredients, and verify the safety standards of any manufacturing facility. Never purchase based on a social media trend alone. Use the educational resources provided in our video library to become your own best advocate for health.</p>
-            </div>
-
-            <div class="info-chapter" style="background: #fdf2f8; padding: 25px; border-radius: 15px; border: 1px solid #fbcfe8;">
-              <h4 style="color: #9d174d; font-size: 20px; font-weight: 800; margin-bottom: 10px;">Final Guidance & Disclaimer</h4>
-              <p style="color: #be185d; font-size: 15px; line-height: 1.7; margin: 0;">This knowledge hub is created strictly for sharing biological and health research. We are not medical practitioners. Skin is a sensitive organ, and reactions can occur. Before you use or buy any product found on the internet, do your own due diligence. Read the full ingredient list, check for allergies, and consult with a licensed dermatologist. Your skin health is a long-term investment that requires careful, research-driven choices.</p>
-            </div>
-          </div>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Dermal Research
-          </div>
-          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Biological Education
-          </div>
-          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Integrity Insights
-          </div>
-          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 15px;">
-            <span style="width: 32px; height: 32px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fa-solid fa-check"></i></span> Scientific Clarity
           </div>
         </div>
       </div>
-      <div style="flex: 0.8; min-width: 300px; background: #f8fafc; padding: 40px; border-radius: 35px; border: 1px solid #e2e8f0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
+      <div style="flex: 1; min-width: 300px; background: #f8fafc; padding: 40px; border-radius: 35px; border: 1px solid #e2e8f0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); position: sticky; top: 100px; align-self: flex-start;">
         <h3 style="color: #1e293b; font-size: 20px; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
           <i class="fa-solid fa-sparkles" style="color: #ec4899;"></i> Our Promise
         </h3>
@@ -950,6 +1076,85 @@
           <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">02.</strong> Pure Biological Skin Education</li>
           <li style="display: flex; gap: 10px; font-size: 14px; color: #475569;"><strong style="color: #1e293b;">03.</strong> Integrity-First, Research-Backed Guidance</li>
         </ul>
+
+        <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+        <div style="background: #fdf2f8; padding: 20px; border-radius: 15px; border: 1px solid #fbcfe8; margin-bottom: 25px;">
+          <h4 style="color: #9d174d; font-size: 18px; font-weight: 800; margin-bottom: 10px;">Final Guidance & Disclaimer</h4>
+          <p style="color: #be185d; font-size: 14px; line-height: 1.6; margin: 0;">This knowledge hub is for biological and health research. We are not medical practitioners. Consult a dermatologist before use. Your skin health requires research-driven choices.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 14px;">
+            <span style="width: 28px; height: 28px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534; font-size: 12px;"><i class="fa-solid fa-check"></i></span> Dermal Research
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 14px;">
+            <span style="width: 28px; height: 28px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534; font-size: 12px;"><i class="fa-solid fa-check"></i></span> Biological Education
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 14px;">
+            <span style="width: 28px; height: 28px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534; font-size: 12px;"><i class="fa-solid fa-check"></i></span> Integrity Insights
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; color: #1e293b; font-weight: 700; font-size: 14px;">
+            <span style="width: 28px; height: 28px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534; font-size: 12px;"><i class="fa-solid fa-check"></i></span> Scientific Clarity
+          </div>
+        </div>
+
+        <hr style="margin: 25px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+        <!-- Shifted Chapters for Better Space Balance -->
+        <div style="background: #fdf2f8; padding: 20px; border-radius: 20px; margin-bottom: 20px; border: 1px solid #fbcfe8;">
+          <h4 style="color: #9d174d; font-size: 16px; font-weight: 800; margin-bottom: 10px;">Chapter 7: Stress and Skin</h4>
+          <p style="color: #be185d; font-size: 13px; line-height: 1.6; margin: 0;">Stress triggers cortisol, which can lead to breakouts. A holistic approach includes managing well-being and sleep, as skin repairs during the nocturnal cycle.</p>
+        </div>
+
+        <div style="background: #fdf2f8; padding: 20px; border-radius: 20px; border: 1px solid #fbcfe8;">
+          <h4 style="color: #9d174d; font-size: 16px; font-weight: 800; margin-bottom: 10px;">Chapter 8: Critical Research</h4>
+          <p style="color: #be185d; font-size: 13px; line-height: 1.6; margin: 0;">Research clinical studies and verify safety standards. Never purchase based on trends alone. Become your own best advocate for health through critical research.</p>
+        </div>
+
+        <hr style="margin: 25px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+        <!-- New: Quick Tips for Skin Care -->
+        <div style="background: #eef2ff; padding: 20px; border-radius: 20px; margin-bottom: 20px; border: 1px solid #c3dafe;">
+          <h4 style="color: #1e40af; font-size: 16px; font-weight: 800; margin-bottom: 10px;">💡 Quick Tips for Radiant Skin</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 13px; color: #334155; line-height: 1.8;">
+            <li style="margin-bottom: 5px;"><i class="fa-solid fa-circle-check" style="color: #2563eb; margin-right: 8px;"></i>Always use broad-spectrum SPF daily.</li>
+            <li style="margin-bottom: 5px;"><i class="fa-solid fa-circle-check" style="color: #2563eb; margin-right: 8px;"></i>Stay hydrated by drinking plenty of water.</li>
+            <li style="margin-bottom: 5px;"><i class="fa-solid fa-circle-check" style="color: #2563eb; margin-right: 8px;"></i>Cleanse gently and moisturize regularly.</li>
+            <li><i class="fa-solid fa-circle-check" style="color: #2563eb; margin-right: 8px;"></i>Incorporate antioxidants into your diet.</li>
+          </ul>
+        </div>
+
+        <!-- New: Did You Know? for Skin Care -->
+        <div style="background: #fefce8; padding: 20px; border-radius: 20px; border: 1px solid #fde68a;">
+          <h4 style="color: #a16207; font-size: 16px; font-weight: 800; margin-bottom: 10px;">🤔 Did You Know?</h4>
+          <p style="color: #854d0e; font-size: 13px; line-height: 1.6; margin: 0;">
+            The skin completely renews itself approximately every 27 days. This constant regeneration highlights the importance of consistent care.
+          </p>
+        </div>
+
+        <hr style="margin: 25px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+        <!-- Quick Category Navigation for Desktop Balance -->
+        <div style="background: #ffffff; padding: 22px; border-radius: 25px; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
+          <h4 style="color: #0f172a; font-size: 16px; font-weight: 800; margin-bottom: 18px; display: flex; align-items: center; gap: 10px;">
+            <i class="fa-solid fa-layer-group" style="color: #ec4899;"></i> Quick Navigation
+          </h4>
+          <div style="display: grid; grid-template-columns: 1fr; gap: 12px;">
+            <div onclick="openCategory('menHealth')" class="nav-glow-item nav-glow-men" style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f8fafc; border-radius: 15px; cursor: pointer;">
+              <span style="font-size: 20px;">💪</span> <span style="font-size: 13px; font-weight: 700; color: #334155;">Men's Health</span>
+            </div>
+            <div onclick="openCategory('weightLoss')" class="nav-glow-item nav-glow-weight" style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f8fafc; border-radius: 15px; cursor: pointer;">
+              <span style="font-size: 20px;">⚖️</span> <span style="font-size: 13px; font-weight: 700; color: #334155;">Weight Loss</span>
+            </div>
+            <div onclick="openCategory('brainBoost')" class="nav-glow-item nav-glow-brain" style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f8fafc; border-radius: 15px; cursor: pointer;">
+              <span style="font-size: 20px;">🧠</span> <span style="font-size: 13px; font-weight: 700; color: #334155;">Brain Boost</span>
+            </div>
+            <div onclick="openCategory('skinCare')" class="nav-glow-item nav-glow-skin" style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f8fafc; border-radius: 15px; cursor: pointer;">
+              <span style="font-size: 20px;">✨</span> <span style="font-size: 13px; font-weight: 700; color: #334155;">Skin Care</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
