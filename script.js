@@ -20,7 +20,7 @@ const products = {
       rating: "4.9", 
       price: "Special Discount Available", 
       img: "Images/keyslim1.jpeg",
-      link: "KeyslimDrops.html",
+      link: "keyslimDrops.html",
       features: [
         "Supports Healthy Weight Loss & Appetite Control",
         "Boosts Metabolism & Natural Energy Levels",
