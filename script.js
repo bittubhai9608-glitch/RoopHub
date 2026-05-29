@@ -14,6 +14,21 @@ const products = {
       ]
     },
   ],
+"Weight Loss": [
+    { 
+      name: "Keyslim Drops", 
+      rating: "4.9", 
+      price: "Special Discount Available", 
+      img: "Images/keyslim1.jpeg",
+      link: "KeyslimDrops.html",
+      features: [
+        "Supports Healthy Weight Loss & Appetite Control",
+        "Boosts Metabolism & Natural Energy Levels",
+        "100% Pure Natural & Organic Ingredients",
+        "60-Day Risk-Free Money Back Guarantee"
+      ]
+    },
+  ],
 
   "Brain Boost": [
     { 
@@ -514,6 +529,8 @@ function applyLanguage(lang) {
             special_offer: "Special Discount Available",
             ProstaVive_title: "ProstaVive",
             ProstaVive_desc: "Support healthy prostate function, urinary flow & natural stamina",
+            keyslim_title: "KeySlim Drops",
+            keyslim_desc: "Ignite metabolism, suppress cravings & boost natural energy levels",
             neuro_title: "Neuro Serge",
             neuro_desc: "Boost memory, improve focus & get mental clarity — naturally",
             unmute_video: "🔊 Unmute Video",
@@ -538,6 +555,8 @@ function applyLanguage(lang) {
             special_offer: "विशेष छूट उपलब्ध है",
             ProstaVive_title: "ProstaVive",
             ProstaVive_desc: "स्वस्थ प्रोस्टेट कार्य, मूत्र प्रवाह और प्राकृतिक सहनशक्ति का समर्थन करें",
+            keyslim_title: "KeySlim Drops",
+            keyslim_desc: "मेटाबॉलिज्म को तेज करें, क्रेविंग को कम करें और प्राकृतिक ऊर्जा के स्तर को बढ़ाएं",
             neuro_title: "न्यूरो सर्ज",
             neuro_desc: "याददाश्त बढ़ाएं, फोकस सुधारें और मानसिक स्पष्टता पाएं — प्राकृतिक रूप से",
             unmute_video: "🔊 वीडियो आवाज़ चालू करें",
