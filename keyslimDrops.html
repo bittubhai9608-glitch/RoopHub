@@ -1287,7 +1287,7 @@ body {
 
 <div class="review-box">
 
-    <h2 style="margin-bottom: 20px; font-size: 22px; color: #2c3e50;">Verified Customer Feedback</h2>
+    <h2 style="margin-bottom: 20px; font-size: 22px; color: #2c3e50;">Verified Customer Feedback (Based on Research)</h2>
     
     <!-- SUMMARY SECTION -->
     <div class="review-stats">
@@ -1308,7 +1308,7 @@ body {
 
     <!-- ACTIONS -->
     <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-        <button onclick="window.location.href='https://8c8140sq3ljwet6b-82d35bxa0.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google'" style="flex: 1; padding: 12px; background: #27ae60; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Visit Official Website</button>
+        <a href="https://c4338wkh2nds4w6fojxgog6ras.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" onclick="trackConversion('ClickBank', 'Review Section Buy KeySlim Drops')" style="flex: 1; padding: 12px; background: #27ae60; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; display: flex; justify-content: center; align-items: center;">Visit Official Website</a>
         <button onclick="toggleReviews()" id="toggleListBtn" style="flex: 1; padding: 12px; background: #f8f9fa; color: #2c3e50; border: 1px solid #ddd; border-radius: 8px; font-weight: 600; cursor: pointer;">Show All Reviews</button>
     </div>
     <!-- FORM -->
@@ -2306,11 +2306,11 @@ function detectLanguage(text){ return /[\u0900-\u097F]/.test(text) ? "hi" : "en"
 
 // Fake reviews (always top)
 let fakeReviews = [
-    { name: "These are general user experiences based on research and feedback.", country_name:"", rating:"0", comment:"" },
-    { name: "Sarah Miller", country_name: "USA", rating: 5, comment: "KeySlim Drops have been a game-changer for my weight loss journey! I feel more energetic and my cravings are finally under control. Highly recommend!" },
-    { name: "David Lee", country_name: "Canada", rating: 4, comment: "I was skeptical at first, but after a few weeks, I noticed a real difference in my metabolism. It's easy to use and fits perfectly into my routine. Definitely worth trying if you're looking for a natural boost." },
-    { name: "Priya Sharma", country_name: "India", rating: 5, comment: "I love how convenient these drops are. My energy levels are up, and I don't feel the constant urge to snack anymore. It's helped me stay consistent with my diet." },
-    { name: "Tom Wilson", country_name: "UK", rating: 4, comment: "These drops really helped me curb my late-night cravings. I've seen a steady, healthy weight loss since I started using them. Plus, no jitters or crashes, which is a huge plus!" },
+    { name: "The following experiences are based on ingredients research and clinical data analysis.", country_name:"", rating:"0", comment:"" },
+    { name: "Sarah Miller", country_name: "USA", rating: 5, comment: "KeySlim Drops have been a total game-changer. Based on the ingredients research, I knew it was a solid formula, and it really delivered. My cravings are finally under control!" },
+    { name: "David Lee", country_name: "Canada", rating: 4, comment: "I was skeptical, but the clinical research behind the ingredients in KeySlim Drops convinced me to try it. After 3 weeks, my metabolism feels significantly faster." },
+    { name: "Priya Sharma", country_name: "India", rating: 5, comment: "The convenience of these drops is amazing. Research shows how powerful these natural extracts are for appetite control, and I've felt that difference daily." },
+    { name: "Tom Wilson", country_name: "UK", rating: 4, comment: "Clear results without side effects. I'm glad I found KeySlim Drops. It's obvious that significant research went into this blend because it delivers exactly what it promises." },
 ];
 
 // Load real reviews (user वाले)

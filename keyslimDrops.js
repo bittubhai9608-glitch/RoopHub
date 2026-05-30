@@ -2,7 +2,7 @@
    🔥 OPEN OFFICIAL SITE
 ========================= */
 function openOfficialSite() {
-    window.location.href = "https://8c8140sq3ljwet6b-82d35bxa0.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google";
+    window.location.href = "https://c4338wkh2nds4w6fojxgog6ras.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google";
 }
 
 /* =========================
