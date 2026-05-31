@@ -2,25 +2,8 @@
    🔥 OPEN OFFICIAL SITE
 ========================= */
 function openOfficialSite() {
-    window.location.href = "https://d804a1lm6ed35ye3fp164jvm1p.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google";
+    window.location.href = "https://8c8140sq3ljwet6b-82d35bxa0.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google";
 }
-
-
-
-/* =========================
-   🔥 FAKE REVIEWS (UNCHANGED)
-========================= */
-let fakeReviews = [
-    {name:"Rahul", email:"rahul@gmail.com", rating:5, comment:"बहुत बढ़िया product 👍"},
-    {name:"Pooja", email:"pooja@gmail.com", rating:4, comment:"Quality achhi hai 😊"},
-    {name:"Amit", email:"amit@gmail.com", rating:5, comment:"Fast delivery 🚀"},
-    {name:"Neha", email:"neha@gmail.com", rating:4, comment:"Value for money 💰"},
-    {name:"Neha", email:"neha@gmail.com", rating:4, comment:"Value for money 💰"},
-    {name:"Neha", email:"neha@gmail.com", rating:4, comment:"Value for money 💰"},
-    {name:"Neha", email:"neha@gmail.com", rating:4, comment:"Value for money 💰"},
-    {name:"Neha", email:"neha@gmail.com", rating:4, comment:"Value for money 💰"},
-    {name:"Ravi", email:"ravi@gmail.com", rating:5, comment:"Highly recommended 🔥"}
-];
 
 /* =========================
    🔥 REAL REVIEWS (SAFE STORAGE)
@@ -215,7 +198,7 @@ function submitForm_old(){ // Renamed to avoid conflict, the new one above is ac
     // 📱 MOBILE UX IMPROVEMENT
     window.scrollTo({ top: 0, behavior: "smooth" });
 
-    alert("✅ Your review submitted successfully!"); // Alert user
+    alert("Review successfully!"); // Alert user
 }
 
 // LOAD MORE
@@ -232,10 +215,12 @@ window.addEventListener("load", function(){
 
 /* ---------- IMAGE PRELOAD (MOBILE FAST) ---------- */
 let images=[
-"Images/Neuroserge1.jpeg",
-"Images/Neuroserge2.jpeg",
-"Images/Neuroserge3.jpeg",
-"Images/Neuroserge4.jpeg"
+"Images/prostaViveVitality9.jpeg",
+"Images/prostaViveVitality10.jpeg",
+"Images/prostaViveVitality11.jpeg",
+"Images/prostavive4.jpeg",
+"Images/ProstaViveProme.jpeg",
+"Images/Prostaviveelite.jpeg",
 ];
 
 images.forEach(src=>{
@@ -267,7 +252,6 @@ function prevImage(){
     index=(index-1+images.length)%images.length;
     showImage(index);
 }
-
 // GLOBAL ACCESS
 window.nextImage = nextImage;
 window.prevImage = prevImage;

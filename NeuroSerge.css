@@ -5,47 +5,30 @@
     box-sizing:border-box;
 }
 body{
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    font-family: 'Inter', 'Segoe UI', sans-serif;
-    line-height: 1.6;
-    color: #2d3748;
+    background:#eaeaea;
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.5;
 }
 
 /* CONTAINER */
 .container{
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding:15px;
 }
 
 /* 🔥 SLIDER FIX */
 .slider{
     width:100%;
     position:relative;
-    margin-bottom:20px;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(102, 126, 234, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 300px;
+    margin-bottom:20px;   /* 👉 space banata hai */
 }
 
 /* IMAGE */
 .slider img {
     width:100%;
-    max-width:500px;
-    background: transparent;
+    max-width:100px;
+    background: #000; /* 👉 dark background for better contrast */
     border-radius:15px;
-    transition: opacity 0.5s ease-in-out, transform 0.5s, box-shadow 0.3s;
-    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.25);
-}
-
-.slider img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 20px 45px rgba(102, 126, 234, 0.35);
+    transition: opacity 0.5s ease-in-out, transform 0.5s;
 }
 
 /* BUTTON */
@@ -53,21 +36,11 @@ body{
     position:absolute;
     top:50%;
     transform:translateY(-50%);
-    background:rgba(255,255,255,0.15);
-    backdrop-filter: blur(10px);
+    background:rgba(0,0,0,0.6);
     color:white;
-    border:2px solid rgba(255,255,255,0.3);
-    padding:10px 14px;
+    border:none;
+    padding:8px 12px;
     border-radius:50%;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-size: 18px;
-}
-
-.slider button:hover {
-    background: rgba(255,255,255,0.25);
-    border-color: rgba(255,255,255,0.5);
-    transform: translateY(-50%) scale(1.1);
 }
 
 /* BUTTON POSITION */
@@ -76,34 +49,29 @@ body{
 
 /* CONTENT */
 .box{
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
-    padding:20px;
+    background:#f9f9f9;
+    padding:15px;
     margin-top:10px;
-    border-radius:15px;
-    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.12);
-    border: 1px solid rgba(102, 126, 234, 0.1);
+    border-radius:10px;
 }
 
 /* 📱 MOBILE ONLY IMAGE SIZE */
 @media(max-width:768px){
     .slider img{
-        max-height:220px;
+        max-height:220px;   /* 👉 mobile ke liye fixed */
         object-fit:cover;
     }
-    header h1 { font-size: 2.2rem; }
-    header p.sub-headline { font-size: 1rem; }
-    .slider { min-height: 250px; }
 }
 
 /* 💻 LAPTOP */
 @media(min-width:769px){
     .slider img{
-        max-height:350px;
+        max-height:300px;
     }
 }
 /* 🔥 HERO SECTION */
 .hero{
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1e88e5, #1565c0);
     height: 240px;
     background-size: cover;
     background-position: center;
@@ -164,16 +132,11 @@ border:1px solid #ccc;
 width:100%;
 padding:14px;
 font-size:17px;
-background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+background:#28a745;
 color:#fff;
 border:none;
 border-radius:12px;
 font-weight:bold;
-transition: transform 0.2s;
-}
-#reviewForm button:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(17, 153, 142, 0.3);
 }
 
 /* READ BUTTON */
@@ -183,7 +146,7 @@ margin:10px auto;
 display:block;
 padding:12px;
 font-size:16px;
-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+background:#1e90ff;
 color:#fff;
 border:none;
 border-radius:10px;
@@ -341,6 +304,14 @@ header {
 
 #aboutFull {
   scroll-behavior: smooth;
+}
+
+/* Ensure body and html take full height for sticky footer */
+html, body {
+    height: 100%;
+}
+body {
+    display: flex; flex-direction: column;
 }
 
 
