@@ -3,8 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RoopHub</title>
+<title>Neuro Serge | Premium Brain Support</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="stylesheet" href="auth-profile.css">
+<!-- Global site tag (gtag.js) - Google Analytics Placeholder -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,6 +27,12 @@ body {
     background-size: 400% 400%;
     animation: medicalGlow 15s ease infinite;
     color: #334155; /* Slate dark text for premium readability */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    display: flex;
+    flex-direction: column; /* Allow footer to stick to bottom */
+}
+html {
+    min-height: 100vh; /* Ensure html takes full viewport height */
 }
 @keyframes medicalGlow {
     0% { background-position: 0% 0%; }
@@ -54,8 +69,8 @@ header {
     text-align: center;
     padding: 40px 20px 50px;
     color: #fff;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-bottom: 4px solid #38ef7d;
+    background: radial-gradient(circle at top, #1e40af, #0f172a);
+    border-bottom: 4px solid #fbbf24;
     position: relative;
     overflow: hidden;
 }
@@ -78,8 +93,8 @@ header::before {
 
 .hero-badge {
     display: inline-block;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
     padding: 6px 16px;
     border-radius: 50px;
     font-size: 11px;
@@ -87,8 +102,8 @@ header::before {
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 15px;
-    border: 1px solid rgba(255,255,255,0.3);
-    color: #38ef7d;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fbbf24;
     position: relative;
 }
 
@@ -97,7 +112,7 @@ header h1 {
     font-weight: 800;
     margin-bottom: 10px;
     letter-spacing: -1px;
-    background: linear-gradient(to bottom, #ffffff, #e0e7ff);
+    background: linear-gradient(to bottom, #ffffff, #94a3b8);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -115,7 +130,7 @@ header p.sub-headline {
 
 a.cta-btn{ /* Specificity for header CTA */
     padding: 14px 35px;
-    background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
     color: #fff;
     border-radius: 50px;
     text-decoration: none;
@@ -123,15 +138,14 @@ a.cta-btn{ /* Specificity for header CTA */
     font-weight: 800;
     font-size: 16px;
     text-transform: uppercase;
-    box-shadow: 0 10px 25px rgba(17, 153, 142, 0.4);
-    transition: 0.3s transform, 0.3s box-shadow;
+    box-shadow: 0 10px 25px rgba(217, 119, 6, 0.4); /* Keep original shadow */
+    transition: 0.3s transform;
     position: relative;
     border: 2px solid rgba(255,255,255,0.2);
 }
 
 .cta-btn:hover {
-    transform: scale(1.05) translateY(-2px);
-    box-shadow: 0 15px 35px rgba(17, 153, 142, 0.5);
+    transform: scale(1.05);
 }
 
 .trust-bar {
@@ -151,18 +165,17 @@ a.cta-btn{ /* Specificity for header CTA */
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: linear-gradient(135deg, rgba(34, 197, 94, 0.15) 0%, rgba(17, 153, 142, 0.15) 100%);
-    color: #38ef7d;
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
     padding: 4px 12px;
     border-radius: 4px;
     font-size: 14px;
     font-weight: 600;
-    border: 1px solid rgba(34, 197, 94, 0.3);
 }
 
 /* NEW FEATURES */
 .timer{
-    background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(90deg, #7f1d1d 0%, #ef4444 50%, #7f1d1d 100%);
     color: #fff;
     text-align: center;
     padding: 6px 10px;
@@ -174,8 +187,8 @@ a.cta-btn{ /* Specificity for header CTA */
     gap: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 2px 10px rgba(245, 87, 108, 0.3);
-    margin-bottom: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 25px; /* Added gap from live message */
 }
 #countdown {
     background: rgba(0,0,0,0.25);
@@ -188,16 +201,16 @@ a.cta-btn{ /* Specificity for header CTA */
 .live{
     /* Existing styles for the badge container */
     text-align: center;
-    color: #166534;
-    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
-    border: 2px solid #22c55e;
+    color: #15803d;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
     padding: 5px 15px;
     border-radius: 50px;
     font-weight: 700;
     font-size: 12px;
     width: fit-content;
     margin: 5px auto 20px;
-    box-shadow: 0 4px 10px rgba(34, 197, 94, 0.2);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
 }
 
 /* CONTAINER */
@@ -302,8 +315,8 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 .specs-table tr {
     transition: all 0.2s ease;
 }
-.specs-table tr:nth-child(even) { background-color: #f8fafb; }
-.specs-table tr:hover { background-color: #f0f4ff; }
+.specs-table tr:nth-child(even) { background-color: #f8fafc; }
+.specs-table tr:hover { background-color: #f1f5f9; }
 
 .specs-table td {
     padding: 12px 16px;
@@ -317,10 +330,10 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
     transition: background-color 0.2s ease;
 }
 .spec-row:hover {
-    background-color: #e8ecff !important;
+    background-color: #e0f2fe !important;
 }
 .spec-row:active {
-    background-color: #d0d9ff !important;
+    background-color: #bae6fd !important;
 }
 .spec-label {
     font-weight: 600;
@@ -402,31 +415,31 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
     max-width: 200px;
     padding: 12px 10px;
     font-size: 13px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #1e40af;
     white-space: nowrap;
     border-radius: 8px;
     box-shadow: none;
 }
 
 .video-controls .cta-btn:last-child {
-    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    background: #4b5563;
 }
 
 /* WHY CHOOSE SECTION */
 .description {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+    background: #ffffff;
     padding: 25px;
-    margin: 25px auto;
+    margin: 25px auto; /* Standardized margin for main boxes */
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
-    border: 1px solid rgba(102, 126, 234, 0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
     width: 100%;
 }
 .description h2 {
     font-size: 18px;
-    color: #2d3748;
+    color: #1a202c;
     margin-bottom: 15px;
-    border-left: 5px solid #11998e;
+    border-left: 5px solid #27ae60;
     padding-left: 12px;
 }
 .benefit-grid {
@@ -435,11 +448,11 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
     gap: 8px;
 }
 .benefit-card {
-    background: linear-gradient(135deg, #f0fff4 0%, #dcfce7 100%);
+    background: #f0fff4;
     padding: 12px 15px;
     border-radius: 10px;
-    border: 2px solid #22c55e;
-    color: #166534;
+    border: 1px solid #c6f6d5;
+    color: #2f855a;
     font-size: 15px;
     font-weight: 600;
     display: flex;
@@ -451,9 +464,9 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 .benefit-card:hover {
     transform: translateY(-5px);
-    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
-    border-color: #16a34a;
-    box-shadow: 0 12px 25px rgba(34, 197, 94, 0.3);
+    background-color: #dcfce7;
+    border-color: #22c55e;
+    box-shadow: 0 12px 25px rgba(34, 197, 94, 0.2);
 }
 .benefit-card:active {
     transform: scale(0.96);
@@ -463,10 +476,8 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
     padding: 10px 0;
     white-space: nowrap;
     position: relative;
-    margin: 25px 0;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.08);
+    margin: 25px 0; /* Standardized margin for badges section */
+    background: #fff;
 }
 .badge-track {
     display: flex;
@@ -483,13 +494,13 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 .badge-item {
     background: #ffffff;
-    border: 2px solid #667eea;
+    border: 1px solid #e2e8f0;
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 11px;
     font-weight: 700;
-    color: #667eea;
-    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+    color: #475569;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     display: flex;
     align-items: center;
     white-space: nowrap;
@@ -504,25 +515,25 @@ th{background:#1e90ff;color:#fff}
 .buy-section {
     text-align: center;
     padding: 15px 10px;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+    background: #ffffff;
     margin: 20px auto;
-    border: 2px solid rgba(102, 126, 234, 0.2);
+    border: 1px solid #d1d5db;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     max-width: 600px;
     width: 95%;
 }
 .buy-btn {
     display: inline-block;
     padding: 10px 25px;
-    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
     color: #fff;
     border-radius: 8px;
     text-decoration: none;
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
-    box-shadow: 0 4px 15px rgba(17, 153, 142, 0.3);
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
     transition: all 0.3s ease;
     animation: heartBeat 2s infinite;
     cursor: pointer;
@@ -530,23 +541,23 @@ th{background:#1e90ff;color:#fff}
 }
 .buy-btn:hover {
     transform: scale(1.05) translateY(-3px);
-    box-shadow: 0 15px 30px rgba(17, 153, 142, 0.5);
-    background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
+    box-shadow: 0 15px 30px rgba(230, 81, 0, 0.6);
+    background: linear-gradient(135deg, #e65100 0%, #ff9800 100%);
 }
 /* MINI BUY SECTION */
 .buy-section-sm {
     text-align: center;
     padding: 10px;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+    background: #f9f9f9;
     margin: 15px auto;
-    border: 2px solid rgba(102, 126, 234, 0.15);
+    border: 1px solid #e2e8f0;
     border-radius: 10px;
     max-width: 320px;
 }
 .buy-btn-sm {
     display: inline-block;
     padding: 8px 20px;
-    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
     color: #fff;
     border-radius: 6px;
     text-decoration: none;
@@ -568,22 +579,20 @@ th{background:#1e90ff;color:#fff}
 position:fixed;
 bottom:0;
 width:100%;
-background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+background:#ff9800;
 text-align:center;
 padding:15px;
-box-shadow: 0 -5px 20px rgba(102, 126, 234, 0.2);
 }
 .sticky a{
 color:#fff;
 text-decoration:none;
 font-size:18px;
-font-weight: 700;
 }
 
 /* FOOTER */
 footer{
-background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-color:#cbd5e1;
+background:#131a22; /* गहरा काला रंग */
+color:#aaa; /* हल्का ग्रे टेक्स्ट */
 text-align:center;
 padding: 15px 10px;
 margin-top: 25px;
@@ -596,13 +605,13 @@ margin-top: 25px;
     margin-bottom: 20px;
 }
 .social-link {
-    color: #667eea;
+    color: #2563eb; /* नीला रंग */
     font-size: 22px;
     transition: all 0.3s ease;
     text-decoration: none;
 }
 .social-link:hover {
-    color: #38ef7d;
+    color: #ffffff;
     transform: translateY(-5px);
 }
 /* Bottom Menu Styling */
@@ -616,16 +625,16 @@ margin-top: 25px;
 .bottom-menu button {
     background: none;
     border: none;
-    color: #cbd5e1;
+    color: #aaa; /* हल्का ग्रे टेक्स्ट */
     cursor: pointer;
     font-size: 13px;
     font-weight: 500;
     transition: color 0.3s ease;
-    border-right: 1px solid rgba(255,255,255,0.2);
-    padding-right: 15px;
+    border-right: 1px solid rgba(255,255,255,0.3); /* सफेद लाइन */
+    padding-right: 15px; /* Space for the line */
 }
 .bottom-menu button:hover {
-    color: #38ef7d;
+    color: #2563eb; /* नीला रंग */
     text-decoration: underline;
 }
 /* Remove border from the last button */
@@ -671,47 +680,44 @@ margin-top: 25px;
 }
 .bar-fill { 
     height: 100%; 
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    background: #ffa41c; 
     border-radius: 4px;
     transition: width 1s ease-in-out;
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
 }
 
 .review-card {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+    background: #fff;
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 15px;
-    border: 1px solid rgba(102, 126, 234, 0.1);
+    border: 1px solid #f0f0f0;
     transition: 0.3s;
 }
-.review-card:hover { 
-    border-color: #667eea; 
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.12); 
-}
+.review-card:hover { border-color: #3498db; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
 .user-avatar {
     width: 40px; height: 40px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #eef2f7;
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-weight: bold; color: #ffffff;
+    font-weight: bold; color: #3498db;
 }
 .verified-badge { color: #27ae60; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 4px; }
 .review-text { font-size: 14px; line-height: 1.6; color: #555; }
 
 /* FAQ Professional Styling */
 .faq-section {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+    background: #fff;
     padding: 30px 20px;
     margin: 20px auto;
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     width: 100%;
 }
 .faq-section h2 {
     text-align: center;
-    color: #2d3748;
+    color: #2c3e50;
     margin-bottom: 15px;
     font-size: 24px;
     font-weight: 700;
@@ -730,8 +736,8 @@ margin-top: 25px;
     width: 100%;
     padding: 16px 20px;
     padding: 12px 16px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #ffffff;
+    background: #1e90ff; /* Bright Professional Blue */
+    color: #ffffff; /* White text for contrast */
     border: 1px solid rgba(255,255,255,0.1);
     display: flex;
     justify-content: space-between;
@@ -751,11 +757,11 @@ margin-top: 25px;
     display: inline-block;
 }
 /* Style for active state */
-.faq-item.active { border-color: #667eea; }
-.faq-item.active { border-color: #667eea; box-shadow: 0 4px 10px rgba(102, 126, 234, 0.25); }
+.faq-item.active { border-color: #0056b3; }
+.faq-item.active { border-color: #1e90ff; box-shadow: 0 4px 10px rgba(30, 144, 255, 0.2); }
 .faq-item.active .faq-icon { transform: rotate(135deg); }
-.faq-item.active .faq-question { background: linear-gradient(135deg, #764ba2 0%, #667eea 100%); }
-.faq-item.active .faq-question { background: linear-gradient(135deg, #764ba2 0%, #667eea 100%); }
+.faq-item.active .faq-question { background: #0056b3; }
+.faq-item.active .faq-question { background: #187bcd; }
 .faq-answer {
     max-height: 0;
     overflow: hidden;
@@ -773,6 +779,63 @@ margin-top: 25px;
     margin: 0;
 }
 
+/* Professional Horizontal FAQ Styling */
+.prostavive-faq-horizontal {
+    padding: 25px 10px;
+    background: #ffffff;
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    border: 1px dashed #cbd5e1;
+}
+.faq-section-title {
+    text-align: center;
+    color: #475569;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.faq-horizontal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+}
+.faq-h-card {
+    background: #f8fafc;
+    border-radius: 15px;
+    padding: 15px 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.faq-h-card:hover {
+    transform: translateY(-4px);
+    border-color: #3b82f6;
+    box-shadow: 0 15px 30px rgba(59, 130, 246, 0.15);
+    background: #eff6ff;
+}
+.faq-h-icon {
+    font-size: 30px;
+    color: #3b82f6;
+    margin-bottom: 10px;
+}
+.faq-h-card h4 {
+    color: #1e293b;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.faq-h-more {
+    color: #3b82f6;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
 /* MODERN COMPARISON SECTION */
 .comparison-grid {
     display: grid;
@@ -781,19 +844,18 @@ margin-top: 25px;
     margin-top: 30px;
 }
 .comp-card {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+    background: #fff;
     padding: 30px;
     border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.08);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     border-top: 5px solid;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 .comp-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
 }
-.struggle-card { border-top-color: #f5576c; }
-.benefit-card-side { border-top-color: #11998e; }
+.struggle-card { border-top-color: #e74c3c; }
+.benefit-card-side { border-top-color: #27ae60; }
 .comp-card h3 { margin-bottom: 15px; font-size: 18px; color: #2d3748; }
 .comp-card ul { list-style: none; }
 .comp-card li { 
@@ -829,7 +891,7 @@ margin-top: 25px;
     }
     .slider img { max-width: 100%; }
     .big-rating { font-size: 42px; }
-        .review-stats { flex-direction: column; text-align: center; }
+    .review-stats { flex-direction: column; text-align: center; }
     .slider { min-height: 200px; } /* Reduce slider container height for mobile */
     .rating-bars { width: 100%; }
     a, button, .faq-question { cursor: pointer; }
@@ -851,8 +913,8 @@ margin-top: 25px;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%) scale(0.8);
     width: 90%;
-    max-width: 800px;
-    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+    max-width: 800px; /* Horizontal wide layout */
+    background: #f0fdf4; /* Professional Green */
     border: 4px solid #22c55e;
     border-radius: 25px;
     padding: 35px;
@@ -862,7 +924,7 @@ margin-top: 25px;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .faq-popup-close {
-    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    background: #166534;
     color: white;
     border: none;
     padding: 12px 30px;
@@ -873,10 +935,7 @@ margin-top: 25px;
     font-size: 14px;
     transition: 0.2s;
 }
-.faq-popup-close:hover { 
-    background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
-    transform: scale(1.05); 
-}
+.faq-popup-close:hover { background: #14532d; transform: scale(1.05); }
 
 /* ✨ BENEFIT POPUP STYLES (Blue Theme) */
 #benefitPopupOverlay {
@@ -896,7 +955,7 @@ margin-top: 25px;
     width: 90%;
     max-width: 500px;
     background: #ffffff;
-    border: 4px solid #667eea;
+    border: 4px solid #2563eb;
     border-radius: 25px;
     padding: 35px;
     z-index: 100001;
@@ -906,7 +965,7 @@ margin-top: 25px;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .benefit-popup-close {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #2563eb;
     color: white;
     border: none;
     padding: 12px 30px;
@@ -917,13 +976,120 @@ margin-top: 25px;
     font-size: 14px;
     transition: 0.2s;
 }
-.benefit-popup-close:hover { 
-    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-    transform: scale(1.05); 
-
-    transition: 0.2s;
-}
 .benefit-popup-close:hover { background: #1e40af; transform: scale(1.05); }
+
+/* ============================================================
+   ✨ MODAL CONTENT DECORATION (Privacy, Terms, Disclaimer etc.)
+   ============================================================ */
+#privacyModal, #termsModal, #faqModal, #disclaimerModal, #contactModal, #aboutModal, #affiliateModal {
+    background-color: #f8fafc !important; /* Soft premium background */
+    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Headings Decoration */
+#privacyModal h1, #privacyModal h2, #termsModal h1, #termsModal h2, 
+#disclaimerModal h1, #disclaimerModal h2, #aboutModal h1, #affiliateModal h2, #faqModal h1 {
+    color: #1e40af !important; /* Deep Navy Blue */
+    font-weight: 800;
+    margin-top: 40px;
+    border-bottom: 3px solid #3b82f6; /* Accent line */
+    padding-bottom: 12px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#privacyModal h3, #termsModal h3, #disclaimerModal h3, #affiliateModal h3, #aboutModal h2 {
+    color: #0369a1 !important; /* Professional Blue */
+    margin-top: 30px;
+    font-weight: 700;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Paragraphs & List Items */
+#privacyModal p, #termsModal p, #disclaimerModal p, #affiliateModal p, #aboutModal p, #faqModal p,
+#privacyModal li, #termsModal li, #disclaimerModal li, #affiliateModal li, #aboutModal li {
+    color: #334155 !important; /* Dark Slate Grey for readability */
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Container-like feel for Lists */
+#privacyModal ul, #termsModal ul, #disclaimerModal ul, #aboutModal ul {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+    padding: 30px 50px;
+    max-width: 900px;
+    margin: 20px auto;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+/* Professional Horizontal FAQ Styling */
+.prostavive-faq-horizontal {
+    padding: 25px 10px;
+    background: #ffffff;
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    border: 1px dashed #cbd5e1;
+}
+.faq-section-title {
+    text-align: center;
+    color: #475569;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.faq-horizontal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+}
+.faq-h-card {
+    background: #f8fafc;
+    border-radius: 15px;
+    padding: 15px 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.faq-h-card:hover {
+    transform: translateY(-4px);
+    border-color: #3b82f6;
+    box-shadow: 0 15px 30px rgba(59, 130, 246, 0.15);
+    background: #eff6ff;
+}
+.faq-h-icon {
+    font-size: 30px;
+    color: #3b82f6;
+    margin-bottom: 10px;
+}
+.faq-h-card h4 {
+    color: #1e293b;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.faq-h-more {
+    color: #3b82f6;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
 </style>
 </head>
 
@@ -932,15 +1098,15 @@ margin-top: 25px;
 <div class="subtle-particles"></div>
 
 <header>
-    <div class="hero-badge">🧠 Natural Cognitive Support</div>
+    <div class="hero-badge">🧠 Premium Cognitive & Memory Support</div>
     <h1 data-i18n="neuro_title">Neuro Serge</h1>
-    <p class="sub-headline" data-i18n="neuro_desc">Boost memory, improve focus & get mental clarity naturally</p>
-    
+    <p class="sub-headline" data-i18n="neuro_desc">Sharpen focus, enhance memory recall & unlock mental clarity naturally</p>
+
     <a href="#buy" class="cta-btn">Get Discount Now</a>
     
     <div class="trust-bar">
-        <span class="rating-text">⭐⭐⭐⭐⭐ 4.8/5 (2,347 Reviews)</span>
-        <div class="trusted-badge">✔ Trusted by 3,000+ users globally</div>
+        <span class="rating-text">⭐⭐⭐⭐⭐ 4.8/5 (2,709 Reviews)</span>
+        <div class="trusted-badge">✔ Trusted by 3,500+ users globally</div>
     </div>
 </header>
 <!-- ✅ NEW TIMER -->
@@ -972,18 +1138,18 @@ margin-top: 25px;
     <style>
         .video-section-title {
             text-align: center;
-            color: #ffffff;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #1e40af; /* Dark blue from header */
+            background: #e0f2f7; /* Light blue background */
             padding: 12px 25px;
             border-radius: 10px;
-            font-size: 22px;
+            font-size: 22px; /* Slightly larger */
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin: 0 auto 25px;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
-            width: fit-content;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 0 auto 25px; /* Center and add margin-bottom */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Subtle shadow */
+            width: fit-content; /* Make it a block that fits its content */
+            border: 1px solid #a7d9f0; /* Light border */
         }
         @media (max-width: 768px) {
             .video-section-title {
@@ -1001,8 +1167,6 @@ margin-top: 25px;
         </iframe>
         <div class="video-placeholder" id="videoPlaceholder" data-video-id="DBBk_u1uJ7M">
             <img src="https://img.youtube.com/vi/DBBk_u1uJ7M/hqdefault.jpg" alt="Video Thumbnail" class="video-thumbnail">
-            <div class="play-button">▶</div>
-        </div>
     </div>
     <div class="video-controls">
         <button class="cta-btn" data-i18n="unmute_video" style="padding: 12px 10px; font-size: 13px; background: #15e76d; flex: 1; white-space: nowrap;" onclick="soundOn()">🔊 Unmute Video</button>
@@ -1018,26 +1182,23 @@ margin-top: 25px;
         <div class="comp-card struggle-card">
             <h3>🔴 Common Struggles</h3>
             <ul>
-                <li class="comp-item" data-key="struggle_focus"><span>❌</span> Lack of Focus</li>
-                <li class="comp-item" data-key="struggle_memory"><span>❌</span> Weak Memory</li>
-                <li class="comp-item" data-key="struggle_fatigue"><span>❌</span> Mental Fatigue</li>
-                <li class="comp-item" data-key="struggle_productivity"><span>❌</span> Low Productivity</li>
+                <li class="comp-item" data-key="struggle_focus"><span>❌</span> Chronic Brain Fog</li>
+                <li class="comp-item" data-key="struggle_memory"><span>❌</span> Memory Recall Gaps</li>
+                <li class="comp-item" data-key="struggle_fatigue"><span>❌</span> Mental Exhaustion</li>
+                <li class="comp-item" data-key="struggle_productivity"><span>❌</span> Lack of Focus</li>
             </ul>
         </div>
         <!-- Benefits Card -->
         <div class="comp-card benefit-card-side">
             <h3>🟢 How Neuro Serge Helps</h3>
             <ul>
-                <li class="comp-item" data-key="help_focus"><span>✅</span> Improves Focus</li>
-                <li class="comp-item" data-key="help_memory"><span>✅</span> Supports Memory</li>
-                <li class="comp-item" data-key="help_energy"><span>✅</span> Boosts Mental Energy</li>
-                <li class="comp-item" data-key="help_productivity"><span>✅</span> Enhances Productivity</li>
+                <li class="comp-item" data-key="help_focus"><span>✔️</span> Sharper Mental Clarity</li>
+                <li class="comp-item" data-key="help_memory"><span>✔️</span> Precision Memory Support</li>
+                <li class="comp-item" data-key="help_energy"><span>✔️</span> Sustained Neural Energy</li>
+                <li class="comp-item" data-key="help_productivity"><span>✔️</span> Boosted Cognitive Output</li>
             </ul>
         </div>
     </div>
-    <p class="disclaimer-box">
-        <i>This product is not intended to diagnose, treat, cure, or prevent any disease. Results may vary from person to person.</i>
-    </p>
 </div>
 
 </div>
@@ -1045,46 +1206,47 @@ margin-top: 25px;
 <!-- MINI BUY -->
 <div class="buy-section-sm">
     <div style="font-size: 12px; color: #1e40af; font-weight: 800; margin-bottom: 5px;">🛡️ SECURE CHECKOUT: SAVE 35%</div>
-    <a href="https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" class="buy-btn-sm" data-i18n="visit_store">
+    
+    <a href="https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" onclick="trackConversion('ClickBank', 'Mini Buy Neuro Serge')" class="buy-btn-sm" data-i18n="visit_store">
         🔒 Visit Official Store
     </a>
 </div>
 
 <!-- SPECS -->
 <div class="specs" id="specs">
-    <h2>Product Specifications</h2>
+    <h2>Neuro Serge Specifications</h2>
 <table class="specs-table">
 <tr class="spec-row" data-key="product_name"><td class="spec-label">Product Name</td><td>Neuro Serge</td></tr>
-<tr class="spec-row" data-key="formula_type"><td class="spec-label">Formula Type</td><td>Natural herbal brain support formula</td></tr>
-<tr class="spec-row" data-key="ingredients"><td class="spec-label">Main Ingredients</td><td>Olive leaf, Green tea, Grape seed, Bilberry...</td></tr>
-<tr class="spec-row" data-key="form"><td class="spec-label">Product Form</td><td>Capsules (pills)</td></tr>
-<tr class="spec-row" data-key="quantity"><td class="spec-label">Quantity</td><td>60 Capsules in 1 bottle</td></tr>
-<tr class="spec-row" data-key="usage"><td class="spec-label">How to Use</td><td>Take daily as written on label</td></tr>
-<tr class="spec-row" data-key="benefits_summary"><td class="spec-label">Main Benefits</td><td>Helps memory, improves focus...</td></tr>
-<tr class="spec-row" data-key="quality"><td class="spec-label">Quality Standard</td><td>Made with controlled herbal formula</td></tr>
-<tr class="spec-row" data-key="manufacturing"><td class="spec-label">Manufacturing</td><td>United States (USA)</td></tr>
-<tr class="spec-row" data-key="product_type"><td class="spec-label">Product Type</td><td>Health supplement (not medicine)</td></tr>
-<tr class="spec-row" data-key="safety_info"><td class="spec-label">Safety</td><td>Made from natural ingredients</td></tr>
-<tr class="spec-row" data-key="note"><td class="spec-label">Important Note</td><td>This is not a medicine</td></tr>
+<tr class="spec-row" data-key="formula_type"><td class="spec-label">Formula Type</td><td>Advanced Cognitive Support Complex</td></tr>
+<tr class="spec-row" data-key="ingredients"><td class="spec-label">Main Ingredients</td><td>Olive Leaf, Green Tea, Grape Seed, Bilberry</td></tr>
+<tr class="spec-row" data-key="form"><td class="spec-label">Product Form</td><td>Rapid-Absorb Dietary Capsules</td></tr>
+<tr class="spec-row" data-key="quantity"><td class="spec-label">Quantity</td><td>60 Capsules per Bottle (1-Month Supply)</td></tr>
+<tr class="spec-row" data-key="usage"><td class="spec-label">How to Use</td><td>Take 2 capsules daily with water</td></tr>
+<tr class="spec-row" data-key="benefits_summary"><td class="spec-label">Main Benefits</td><td>Enhances memory, focus & mental clarity</td></tr>
+<tr class="spec-row" data-key="quality"><td class="spec-label">Quality Standard</td><td>Lab-Tested for Purity & Potency</td></tr>
+<tr class="spec-row" data-key="manufacturing"><td class="spec-label">Manufacturing</td><td>Made in a GMP-Certified Facility (USA)</td></tr>
+<tr class="spec-row" data-key="product_type"><td class="spec-label">Product Type</td><td>100% Natural Nootropic Supplement</td></tr>
+<tr class="spec-row" data-key="safety_info"><td class="spec-label">Safety</td><td>Non-GMO, Drug-free & Non-addictive</td></tr>
+<tr class="spec-row" data-key="note"><td class="spec-label">Important Note</td><td>This is a dietary supplement, not medicine</td></tr>
 </table>
 </div>
 <!-- DESCRIPTION -->
 <div class="description">
     <h2>The Science of Excellence: Why Choose Neuro Serge?</h2>
     <div class="benefit-grid" id="benefitGrid">
-        <div class="benefit-card" data-key="memory_focus"><span>✅</span> Advanced Cognitive Enhancement & Memory Precision</div>
-        <div class="benefit-card" data-key="brain_health"><span>✅</span> Holistic Neuroprotection & Cellular Longevity</div>
-        <div class="benefit-card" data-key="fatigue_energy"><span>✅</span> Optimized Neural Energy & Sustained Focus</div>
-        <div class="benefit-card" data-key="natural_ingredients"><span>✅</span> Premium, Lab-Verified Botanical Synergy</div>
-        <div class="benefit-card" data-key="stress_mood"><span>✅</span> Advanced Stress Adaptation & Mood Balance</div>
-        <div class="benefit-card" data-key="learning_retention"><span>✅</span> Enhanced Learning Capacity & Information Retention</div>
-        <div class="benefit-card" data-key="sleep_quality"><span>✅</span> Restorative Sleep Cycle & Brain Rejuvenation</div>
-        <div class="benefit-card" data-key="neurotransmitter_support"><span>✅</span> Balanced Neurotransmitter Synthesis</div>
+        <div class="benefit-card" data-key="memory_focus"><span>⭐</span> Advanced Cognitive Enhancement</div>
+        <div class="benefit-card" data-key="brain_health"><span>⭐</span> Holistic Neuroprotection</div>
+        <div class="benefit-card" data-key="fatigue_energy"><span>⭐</span> Optimized Neural Energy</div>
+        <div class="benefit-card" data-key="natural_ingredients"><span>⭐</span> Lab-Verified Botanical Synergy</div>
+        <div class="benefit-card" data-key="stress_mood"><span>⭐</span> Stress Adaptation & Mood Balance</div>
+        <div class="benefit-card" data-key="learning_retention"><span>⭐</span> Enhanced Learning Capacity</div>
+        <div class="benefit-card" data-key="sleep_quality"><span>⭐</span> Restorative Sleep Cycles</div>
+        <div class="benefit-card" data-key="neurotransmitter_support"><span>⭐</span> Balanced Neurotransmitter Synthesis</div>
     </div>
 </div>
 <style>
 body {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #74ebd5, #9face6);
     font-family: Arial, sans-serif;
 }
 
@@ -1094,9 +1256,8 @@ body {
     margin: 20px auto;
     padding: 15px;
     border-radius: 15px;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.12);
-    border: 1px solid rgba(102, 126, 234, 0.1);
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
 /* Top Layout */
@@ -1158,7 +1319,8 @@ body {
 
 <div class="review-box">
 
-    <h2 style="margin-bottom: 20px; font-size: 22px; color: #2c3e50;">Verified Customer Feedback</h2>
+    <h2 style="margin-bottom: 20px; font-size: 22px; color: #2c3e50;">Verified Customer Feedback (Based on Research)</h2>
+
     
     <!-- SUMMARY SECTION -->
     <div class="review-stats">
@@ -1166,7 +1328,7 @@ body {
             <div class="big-rating">4.9</div>
             <div style="color: #ffa41c; font-size: 20px;">⭐⭐⭐⭐⭐</div>
             <div style="font-size: 14px; color: #0f1111; font-weight: 700; margin-top: 5px;">98% Customer Satisfaction</div>
-            <div style="font-size: 12px; color: #565959;">Global Ratings: 2,347</div>
+            <div style="font-size: 12px; color: #565959;">Global Ratings: 2,709</div>
         </div>
         <div class="rating-bars">
             <div class="bar-row"><span style="min-width: 45px; font-size: 13px;">5 star</span><div class="bar-bg"><div class="bar-fill" style="width: 95%;"></div></div><span style="min-width: 35px; text-align: right;">95%</span></div>
@@ -1179,10 +1341,9 @@ body {
 
     <!-- ACTIONS -->
     <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-        <button onclick="window.location.href='https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google'" style="flex: 1; padding: 12px; background: #27ae60; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Visit Official Website</button>
+        <a href="https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" onclick="trackConversion('ClickBank', 'Review Section Buy Neuro Serge')" style="flex: 1; padding: 12px; background: #27ae60; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; display: flex; justify-content: center; align-items: center;">Visit Official Website</a>
         <button onclick="toggleReviews()" id="toggleListBtn" style="flex: 1; padding: 12px; background: #f8f9fa; color: #2c3e50; border: 1px solid #ddd; border-radius: 8px; font-weight: 600; cursor: pointer;">Show All Reviews</button>
     </div>
-
     <!-- FORM -->
     <form id="reviewForm" autocomplete="off" style="margin-bottom: 20px; padding: 15px; background: #fdfdfd; border: 1px dashed #ccc; border-radius: 10px;">
         <h4 style="margin-bottom: 10px;">Share your experience</h4>
@@ -1197,7 +1358,7 @@ body {
                 <option value="2">2 Stars - Poor</option>
                 <option value="1">1 Star - Terrible</option>
             </select>
-        </div>
+        </div> 
         <textarea id="comment" name="Comment" placeholder="What did you like or dislike about Neuro Serge?" required style="height: 100px;"></textarea>
         <button type="submit" class="submit-btn" style="width:100%; margin-top:10px; padding:12px; background:#27ae60; color:white; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">Post Review</button>
     </form>
@@ -1209,44 +1370,38 @@ See More
 </button>
 </div>
 
-
-
-
-<div class="faq-section">
-    <h2>Frequently Asked Questions</h2>
-
-<div class="faq-item">
-    <button class="faq-question">
-        🛡️ Is Neuro Serge 100% safe and natural for long-term use?
-        <span class="faq-icon">+</span>
-    </button>
-    <div class="faq-answer"><p><strong>Yes, absolutely!</strong> Neuro Serge is crafted with pure, lab-tested herbal ingredients. It is 100% non-GMO, non-addictive, and safe for daily use. Thousands of users trust it every day for sustained mental clarity without any side effects.</p></div>
+<!-- ⚡ COMPACT PROFESSIONAL FAQ SECTION -->
+<section class="prostavive-faq-horizontal">
+    <h2 class="faq-section-title">Quick Help?</h2>
+    <div class="faq-horizontal-grid">
+        <!-- FAQ Card 1 -->
+        <div class="faq-h-card" onclick="openFaqPopup('🛡️ Is Neuro Serge 100% safe?', '<p><strong>Yes!</strong> Neuro Serge is crafted with pure, lab-tested herbal ingredients. It is 100% non-GMO, non-addictive, and safe for daily use by adults seeking cognitive support.</p>')">
+            <div class="faq-h-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h4>? Safe to Use?</h4>
+            <span class="faq-h-more">View Answer</span>
+        </div>
+        <!-- FAQ Card 2 -->
+        <div class="faq-h-card" onclick="openFaqPopup('🚀 When will I see results?', '<p>Many users notice a significant difference in mental alertness and clarity within <strong>7-14 days</strong>. For optimal cognitive resilience, 3-6 months use is recommended.</p>')">
+            <div class="faq-h-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h4>? Fast Results?</h4>
+            <span class="faq-h-more">View Answer</span>
+        </div>
+        <!-- FAQ Card 3 -->
+        <div class="faq-h-card" onclick="openFaqPopup('⭐ Why Neuro Serge?', '<p>Unlike typical caffeine pills, Neuro Serge uses a <strong>science-backed synergy</strong> of neuro-nutrients that nourish brain cells and support neural plasticity without crashes.</p>')">
+            <div class="faq-h-icon"><i class="fa-solid fa-star"></i></div>
+            <h4>? Why Neuro Serge?</h4>
+            <span class="faq-h-more">View Answer</span>
+        </div>
+        <!-- FAQ Card 4 -->
+        <div class="faq-h-card" onclick="openFaqPopup('🛡️ Is there a Guarantee?', '<p><strong>Absolutely!</strong> Your purchase is 100% Risk-Free. If you do not experience sharper focus and memory, we offer a no-questions-asked money-back guarantee.</p>')">
+            <div class="faq-h-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h4>? Money Back?</h4>
+            <span class="faq-h-more">View Answer</span>
+        </div>
+    </div>
 </div>
 
-<div class="faq-item">
-    <button class="faq-question">
-        🚀 How quickly will I notice a boost in my focus and memory?
-        <span class="faq-icon">+</span>
-    </button>
-    <div class="faq-answer"><p>Many users feel a difference in their alertness and focus within the <strong>first 7-10 days</strong>. For the best "Life-Changing" results in memory and cognitive speed, we recommend consistent use for at least 30 to 60 days. It only gets better with time!</p></div>
-</div>
 
-<div class="faq-item">
-    <button class="faq-question">
-        ⭐ Why is Neuro Serge rated #1 compared to other brain boosters?
-        <span class="faq-icon">+</span>
-    </button>
-    <div class="faq-answer"><p>Unlike typical caffeine-filled pills, Neuro Serge uses a <strong>science-backed herbal synergy</strong> that nourishes your brain cells. It provides clean energy and sharp focus without the "crashes" or jitters, making it the most reliable choice for professionals and students.</p></div>
-</div>
-
-<div class="faq-item">
-    <button class="faq-question">
-        🛡️ What if I am not 100% satisfied with my results?
-        <span class="faq-icon">+</span>
-    </button>
-    <div class="faq-answer"><p>Your purchase is completely **Risk-Free!** We are so confident in Neuro Serge that we offer a 100% Satisfaction Guarantee. If you don't feel sharper and more focused, your investment is protected. We value your trust above everything else.</p></div>
-</div>
-</div>
 
 <!-- BADGES -->
 <div class="badges">
@@ -1268,51 +1423,799 @@ See More
 <!-- BUY -->
 <div class="buy-section" id="buy">
     <div style="font-size: 14px; color: #1e40af; font-weight: 800; margin-bottom: 8px;">🛡️ SECURE ORDER: SAVE 35% TODAY</div>
-    <a href="https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" class="buy-btn" data-i18n="visit_store">
+    <a href="https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" onclick="trackConversion('ClickBank', 'Main Buy Neuro Serge')" class="buy-btn" data-i18n="visit_store">
         🔒 Visit Official Store
     </a>
     <div style="margin-top: 8px; font-weight: 600; color: #4b5563; font-size: 11px;">100% Risk-Free Guarantee | SSL Encrypted</div>
 </div>
 
 
+<footer class="main-footer">
+    <div class="footer-content">
+      <ul class="footer-nav-horizontal">
+        <li><a onclick="showAbout()">About Us</a></li>
+        <li><a onclick="openFAQ()">FAQ</a></li>
+        <li><a onclick="openDisclaimer()">Disclaimer</a></li>
+        <li><a onclick="openPrivacyPolicy()">Privacy Policy</a></li>
+        <li><a onclick="openModal('affiliate')">Affiliate</a></li>
+        <li><a onclick="openTerms()">Terms</a></li>
+        <li><a onclick="showImportantInfo()">Info</a></li>
+        <li><a onclick="showContact()">Contact</a></li>
+      </ul>
 
-
-
-
-
-
-<footer class="footer">
-  <!-- Social Media Icons Section -->
-  <div class="social-icons">
-    <a href="javascript:void(0)" onclick="openModal('contact')" class="supportroophub@gmail.com" title="Email Support"><i class="fa-solid fa-envelope"></i></a>
-    <a href="tel:8271734883" class="social-link" title="Phone"><i class="fa-solid fa-phone"></i></a>
-    <a href="https://www.youtube.com" target="_blank" class="https://youtube.com/@roophub-official?si=p-hF3XMVk5vbwgHG" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-    <a href="https://www.google.com/maps?q=Yadav+Nagar+Road+No+3+Muzaffarpur+Bihar" target="_blank" class="social-link" title="Location"><i class="fa-solid fa-location-dot"></i></a>
-    <a href="https://www.facebook.com" target="_blank" class="https://www.facebook.com/share/1E2q8n11CD/" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-    <a href="https://wa.me/918271734883" target="_blank" class="https://whatsapp.com/channel/0029Vb7Y2ft3QxS4drpeQV02" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-    <a href="https://twitter.com" target="_blank" class="https://x.com/Roophub191378" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
-  </div>
-
-  <div class="bottom-menu">
-    <button onclick="openModal('about')">About Us</button>
-    <button onclick="openModal('contact')">Contact</button>
-    <button onclick="openModal('disclaimer')">Disclaimer</button>
-    <button onclick="openModal('faq')">FAQ</button>
-    <button onclick="openModal('terms')">Terms & Conditions</button>
-    <button onclick="openModal('privacy')">Privacy Policy</button>
-    <button onclick="openModal('affiliate')">Affiliate Disclosure</button>
-  </div>
-
-  <p style="font-size: 12px; color: #aaa; border-top: 1px solid #334155; padding-top: 12px;">© 2026 RoopHub Official. All rights reserved.</p>
+      <div class="footer-bottom-section">
+        <div class="social-icons">
+          <a href="javascript:void(0)" onclick="showContact()" title="Email Support"><i class="fa-solid fa-envelope"></i></a>
+          <a href="tel:8271734883" title="Phone Support"><i class="fa-solid fa-phone"></i></a>
+          <a href="https://www.youtube.com" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://wa.me/918271734883" target="_blank" title="WhatsApp Support"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <p class="footer-copyright">&copy; 2026 RoopHub Official. | <span class="affiliate-badge"><i class="fa-solid fa-handshake"></i>Partner</span></p>
+      </div>
+    </div>
 </footer>
 
-<!-- ✨ FAQ POPUP OVERLAY STRUCTURE -->
+<style>
+    /* Footer styles moved from inline to here */
+    .main-footer {
+        padding: 8px 0;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        background: #131a22;
+        color: #cbd5e1; /* Default text color for footer */
+        z-index: 999; /* Ensure footer is above other elements like chat */
+        margin-top: auto; /* Push footer to the bottom */
+    }
+    .main-footer .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 0 20px;
+        gap: 10px;
+    }
+    .main-footer .footer-nav-horizontal {
+        margin: 0;
+        padding: 0;
+        border: none;
+        display: inline-flex;
+        gap: 10px;
+        list-style: none;
+        flex-wrap: wrap;
+    }
+    .main-footer .footer-nav-horizontal li a {
+        font-size: 10px;
+        color: #cbd5e1;
+        cursor: pointer;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    .main-footer .footer-nav-horizontal li a:hover {
+        color: #3b82f6; /* Highlight color on hover */
+    }
+    .main-footer .footer-bottom-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    .main-footer .social-icons {
+        margin: 0;
+        display: flex;
+        gap: 6px;
+    }
+    .main-footer .social-icons a {
+        width: 24px;
+        height: 24px;
+        font-size: 11px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.05);
+        color: #3b82f6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+    .main-footer .social-icons a:hover {
+        background: #3b82f6;
+        color: white;
+    }
+    .main-footer .footer-copyright {
+        font-size: 9px;
+        margin: 0;
+        color: #94a3b8;
+        opacity: 0.8;
+    }
+    .main-footer .affiliate-badge {
+        padding: 2px 6px;
+        font-size: 8px;
+        margin: 0;
+        background: #27ae60;
+        color: white;
+        border-radius: 3px;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .main-footer .affiliate-badge i {
+        font-size: 8px;
+    }
+
+    /* Responsive adjustments for footer */
+    @media (max-width: 768px) {
+        .main-footer .footer-content {
+            flex-direction: column;
+            text-align: center;
+            padding: 10px 15px;
+        }
+        .main-footer .footer-nav-horizontal {
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .main-footer .footer-bottom-section {
+            flex-direction: column;
+            gap: 10px;
+        }
+        .main-footer .social-icons {
+            justify-content: center;
+        }
+    }
+
+    /* Modal styling to match Index Page */
+    .full-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #f8fafc;
+        z-index: 10000;
+        overflow-y: auto;
+        padding: 40px 20px;
+        font-family: 'Inter', sans-serif;
+    }
+    .modal-close-btn {
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        padding: 10px 20px;
+        background: #ef4444;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        z-index: 10001;
+    }
+    .modal-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .modal-title {
+        font-size: 2.5rem;
+        color: #1e40af;
+        margin-bottom: 20px;
+        border-bottom: 3px solid #3b82f6;
+        padding-bottom: 10px;
+    }
+    .modal-section {
+        margin-bottom: 30px;
+        line-height: 1.8;
+        color: #334155;
+    }
+</style>
+
+<!-- Sign In / Sign Up Modal -->
+<div id="authModal" class="modal">
+  <div class="modal-content auth-modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="auth-header">
+        <h2 class="auth-title">Welcome to Neuro Serge!</h2>
+        <p class="auth-tagline">Join our community for exclusive deals and a personalized experience.</p>
+    </div>
+
+    <div class="auth-tabs">
+        <h3 id="signInTab" onclick="toggleAuth('signin')" class="active-tab">Sign In</h3>
+        <h3 id="signUpTab" onclick="toggleAuth('signup')">Sign Up</h3>
+    </div>
+
+    <form id="signInForm" class="auth-form">
+        <div class="input-group">
+            <label for="signInEmail">Email Address</label>
+            <input type="email" id="signInEmail" placeholder="your@example.com" required>
+        </div>
+        <div class="input-group">
+            <label for="signInPassword">Password</label>
+            <input type="password" id="signInPassword" placeholder="••••••••" required>
+        </div>
+        <a href="#" class="forgot-password" onclick="handleForgotPassword(event)">Forgot Password?</a>
+        <button type="submit" class="auth-btn signin-btn">Sign In Securely</button>
+        <p class="auth-privacy-note">By signing in, you agree to our <a href="#" onclick="openModal('privacy')">Privacy Policy</a>.</p>
+    </form>
+
+    <form id="signUpForm" class="auth-form" style="display: none;">
+        <div class="input-group">
+            <label for="signUpName">Full Name</label>
+            <input type="text" id="signUpName" placeholder="John Doe" required>
+        </div>
+        <div class="input-group">
+            <label for="signUpEmail">Email Address</label>
+            <input type="email" id="signUpEmail" placeholder="your@example.com" required>
+        </div>
+        <div class="input-group">
+            <label for="signUpPassword">Create Password</label>
+            <input type="password" id="signUpPassword" placeholder="••••••••" required>
+        </div>
+        <div class="input-group"><label>Phone Number</label><input type="text" id="signUpPhone" placeholder="Optional"></div>
+        <div class="input-group"><label>Permanent Address</label><input type="text" id="signUpAddress" placeholder="Address" required></div>
+        <div class="input-group"><label>Current Address</label><input type="text" id="signUpCurrentAddress" placeholder="Current Address" required></div>
+        <div class="input-group"><label>Country</label><input type="text" id="signUpCountry" placeholder="Country" required></div>
+        <div class="input-group"><label>State</label><input type="text" id="signUpState" placeholder="State" required></div>
+        <div class="input-group"><label>ZIP Code</label><input type="text" id="signUpZip" placeholder="ZIP" required></div>
+        <button type="submit" class="auth-btn signup-btn">Create Your Free Account</button>
+        <p class="auth-privacy-note">By creating an account, you agree to our <a href="#" onclick="openModal('privacy')">Privacy Policy</a>.</p>
+    </form>
+  </div>
+</div>
+
+<!-- User Profile Modal -->
+<div id="profileModal" class="modal">
+  <div class="modal-content auth-modal-content" style="height: auto; max-width: 400px; padding: 30px;">
+    <span class="close" onclick="closeModal('profileModal')">&times;</span>
+    <div style="text-align: center;">
+        <h2 style="color: #1e40af; margin-bottom: 10px;">Welcome to Neuro Serge! 🙏</h2>
+        <h2 style="color: #1e40af; margin-bottom: 10px;">Welcome to RoopHub! 🙏</h2>
+        <p style="color: #64748b; font-size: 14px; margin-bottom: 20px;">Welcome to Neuro Serge!</p>
+        <div id="profileDetails" style="margin: 20px 0; text-align: left; background: #f8fafc; padding: 15px; border-radius: 10px; border: 1px solid #e2e8f0; color: #333;">
+            <!-- User info dynamically injected here -->
+        </div>
+        <button onclick="logoutUser()" class="auth-btn" style="background: #ef4444; width: 100%; border: none; padding: 12px; border-radius: 8px; color: white; font-weight: bold; cursor: pointer; margin-top: 10px;">Log Out</button>
+    </div>
+  </div>
+</div>
+
+<!-- Footer Modals (Shared Data from Index) -->
+<div id="aboutModal" class="full-modal">
+    <button onclick="closeModal()" class="modal-close-btn">✖ Close</button>
+    <div class="modal-wrapper">
+        <!-- 🌟 HERO HEADER -->
+        <div style="text-align:center; padding: 60px 0; background: linear-gradient(to bottom, #ffffff, #f1f5f9); border-radius: 30px; margin-bottom: 50px;">
+            <h1 style="font-size: 4rem; font-weight: 900; color: #0f172a; margin: 0; letter-spacing: -2px;">RoopHub <span style="color: #27ae60;">Official</span></h1>
+            <p style="font-size: 1.5rem; color: #64748b; font-weight: 500; margin-top: 10px;">The Global Standard in Healthcare Curation</p>
+            <div style="width: 120px; height: 6px; background: linear-gradient(90deg, #27ae60, #3b82f6); margin: 30px auto; border-radius: 10px;"></div>
+        </div>
+
+        <!-- 📖 THE GENESIS -->
+        <section class="modal-section" style="background: white; padding: 60px; border-radius: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.03); margin-bottom: 60px;">
+            <h2 style="font-size: 32px; color: #1e293b; margin-bottom: 30px; display: flex; align-items: center; gap: 15px;">
+                <span style="background: #dcfce7; padding: 10px; border-radius: 12px;"><i class="fa-solid fa-seedling" style="color: #166534;"></i></span>
+                The Genesis of RoopHub
+            </h2>
+            <p style="font-size: 18px; color: #475569; line-height: 2; margin-bottom: 25px;">
+                In a world characterized by the "Paradox of Choice," finding genuine healthcare solutions has become a monumental challenge. Thousands of products flood the digital space daily, each claiming to be a revolutionary breakthrough. It was from this noise that <strong>RoopHub</strong> was born—not as another retailer, but as a sanctuary of trust and scientific clarity.
+            </p>
+            <p style="font-size: 18px; color: #475569; line-height: 2;">
+                The name "Roop" represents the essential form and beauty of natural health, while "Hub" signifies our role as the central nexus where science, nature, and the consumer meet. We recognized that the bridge between groundbreaking laboratory research and the average household was broken. Our mission was to fix it by creating the world’s most transparent <strong>Affiliate Healthcare Marketplace</strong>.
+            </p>
+        </section>
+
+        <!-- 🛡️ THE AFFILIATE ADVANTAGE -->
+        <section class="modal-section" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 70px; border-radius: 40px; margin-bottom: 60px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(39, 174, 96, 0.1); border-radius: 50%;"></div>
+            <h2 style="font-size: 32px; color: #fbbf24; border-bottom: 2px solid rgba(251, 191, 36, 0.3); padding-bottom: 20px;">The Ethical Affiliate Model</h2>
+            <p style="font-size: 18px; line-height: 2; color: #cbd5e1; margin-top: 30px;">
+                Unlike traditional stores that are incentivized to sell their own stock regardless of quality, RoopHub operates on a pure **Integrity-First Affiliate Model**. We do not own the manufacturing plants, nor do we store inventory. Why is this an advantage for you? Because it allows us to remain entirely objective.
+                <br><br>
+                Our only incentive is your long-term wellness. If a brand fails to meet our rigorous standards for purity, sustainability, or clinical efficacy, they are immediately removed from our marketplace. We act as your private investigative team, vetting the complex supply chains of global healthcare manufacturers so you don’t have to.
+            </p>
+            <div style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: #fbbf24; margin-bottom: 10px;">Direct-to-Brand</h4>
+                    <p style="font-size: 14px; color: #94a3b8;">When you choose a solution through us, you are linked directly to the official manufacturer, ensuring 100% authenticity and fresh batches.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: #fbbf24; margin-bottom: 10px;">Unbiased Curation</h4>
+                    <p style="font-size: 14px; color: #94a3b8;">We are not limited to one factory. We scour the globe for the highest-rated botanical synergies across every healthcare category.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🔬 THE PILLARS OF SELECTION -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 60px;">
+            <div style="background: #f8fafc; padding: 40px; border-radius: 30px; border-top: 8px solid #3b82f6; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                <h3 style="color: #1e3a8a; font-size: 24px; margin-bottom: 20px;"><i class="fa-solid fa-microscope"></i> Scientific Scrutiny</h3>
+                <p style="color: #475569; line-height: 1.8;">Our research methodology involves analyzing the **Bioavailability** of ingredients. We ensure that every solution we promote uses standardized extracts that the body can actually absorb and utilize for cellular repair and metabolic enhancement.</p>
+            </div>
+            <div style="background: #f8fafc; padding: 40px; border-radius: 30px; border-top: 8px solid #27ae60; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                <h3 style="color: #166534; font-size: 24px; margin-bottom: 20px;"><i class="fa-solid fa-industry"></i> Manufacturing Excellence</h3>
+                <p style="color: #475569; line-height: 1.8;">We exclusively partner with manufacturers who operate **FDA-Registered and GMP-Certified** facilities in the USA. This guarantees that every capsule is free from contaminants, heavy metals, and unlisted synthetic additives.</p>
+            </div>
+        </div>
+
+        <!-- 🌍 OUR COMPREHENSIVE CATEGORIES -->
+        <section class="modal-section" style="background: #ffffff; padding: 60px; border-radius: 40px; border: 1px solid #e2e8f0; margin-bottom: 60px;">
+            <h2 style="font-size: 32px; color: #1e293b; text-align: center; margin-bottom: 40px;">The Pillars of Modern Wellness</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                <div>
+                    <h4 style="color: #27ae60; font-size: 20px; margin-bottom: 15px;">Advanced Men's Health</h4>
+                    <p style="color: #64748b; font-size: 15px;">Focusing on hormonal balance, prostate longevity, and physical stamina through clinical-grade botanical synergies that respect the body's natural chemistry.</p>
+                </div>
+                <div>
+                    <h4 style="color: #3b82f6; font-size: 20px; margin-bottom: 15px;">Cognitive Science</h4>
+                    <p style="color: #64748b; font-size: 15px;">Supporting neural plasticity, memory retention, and mental clarity by selecting neuro-nutrients that protect against oxidative stress and age-related decline.</p>
+                </div>
+                <div>
+                    <h4 style="color: #f59e0b; font-size: 20px; margin-bottom: 15px;">Metabolic Management</h4>
+                    <p style="color: #64748b; font-size: 15px;">Promoting healthy weight management and insulin sensitivity through natural compounds that accelerate thermogenesis and optimize nutrient partition.</p>
+                </div>
+                <div>
+                    <h4 style="color: #ec4899; font-size: 20px; margin-bottom: 15px;">Vision & Sensory Health</h4>
+                    <p style="color: #64748b; font-size: 15px;">Curating antioxidant-rich formulas designed to protect the retina from digital strain and support long-term macula health through natural carotenoids.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🤝 THE ROOPHUB MANIFESTO -->
+        <section class="modal-section" style="background: #1e293b; padding: 60px; border-radius: 40px; text-align: center; margin-bottom: 60px;">
+            <h2 style="color: white; font-size: 32px; margin-bottom: 30px;">The RoopHub Manifesto</h2>
+            <p style="color: #94a3b8; font-size: 18px; line-height: 2; max-width: 800px; margin: 0 auto;">
+                We believe that health is not a destination, but a state of being. We believe that transparency is not a marketing buzzword, but a moral obligation. We commit to never using deceptive testimonials, never exaggerating laboratory results, and always placing the **Safety of our Community** above corporate commissions.
+            </p>
+            <div style="margin-top: 40px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <span style="background: #27ae60; color: white; padding: 10px 25px; border-radius: 50px; font-weight: 700;">100% No Fake Reviews</span>
+                <span style="background: #3b82f6; color: white; padding: 10px 25px; border-radius: 50px; font-weight: 700;">Strict Lab Verification</span>
+                <span style="background: #fbbf24; color: #000; padding: 10px 25px; border-radius: 50px; font-weight: 700;">Zero Hidden Additives</span>
+            </div>
+        </section>
+
+        <!-- 📈 GLOBAL IMPACT & FUTURE -->
+        <section class="modal-section" style="padding: 40px; border-radius: 30px; border: 2px dashed #cbd5e1;">
+            <h2 style="font-size: 28px; color: #0f172a; margin-bottom: 25px;">The Future of Digital Wellness</h2>
+            <p style="font-size: 16px; color: #475569; line-height: 1.8;">
+                As RoopHub continues to grow, our vision remains steadfast: to become the world's most trusted data-driven health advisor. We are constantly expanding our research team to include experts in nutrition, biochemistry, and physical therapy. By leveraging AI-driven data analysis alongside human expertise, we aim to predict healthcare trends and provide the most up-to-date recommendations for a healthier global population.
+                <br><br>
+                RoopHub is more than a marketplace. It is a movement. A movement toward a future where everyone has access to honest information, premium natural solutions, and the power to take control of their own vitality.
+            </p>
+        </section>
+
+        <!-- 🏁 FINAL FOOTER -->
+        <div style="text-align: center; padding: 60px 0; border-top: 1px solid #e2e8f0; margin-top: 50px;">
+            <h2 style="color: #27ae60; font-size: 24px;">Thank you for trusting RoopHub.</h2>
+            <p style="color: #64748b; margin-top: 10px;">Your Journey to Extraordinary Health Starts Here.</p>
+            <p style="font-size: 11px; color: #94a3b8; margin-top: 40px; text-transform: uppercase; letter-spacing: 2px;">© 2026 ROOPHUB OFFICIAL MARKETPLACE | ALL RIGHTS RESERVED WORLDWIDE</p>
+        </div>
+    </div>
+</div>
+
+<div id="faqModal" class="full-modal">
+    <button onclick="closeModal()" class="modal-close-btn">✖ Close</button>
+    <div class="modal-wrapper">
+        <h1 style="text-align: center; color: #2c3e50;">Frequently Asked Questions (FAQ)</h1>
+        <p style="text-align: center; color: #7f8c8d; margin-bottom: 30px;">Find answers to the most common questions about our platform and the products we review.</p>
+
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">1. What is RoopHUB Official and how does it work?</h3>
+            <p style="line-height: 1.6;">RoopHUB Official is a dedicated wellness and health information platform. Our mission is to research, analyze, and present the most effective health supplements and wellness products available in the market today. We act as a bridge between you and the official product manufacturers. We provide detailed insights, ingredient breakdowns, and usage guides so that you can make an informed decision before purchasing. When you decide to buy a product through our links, we redirect you to the secure, official website of the brand to ensure you get genuine products and the best possible price.</p>
+        </div>
+
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">2. Is the information provided on this website medical advice?</h3>
+            <p style="line-height: 1.6;">No, the information provided on RoopHUB Official is for educational and informational purposes only. While we take great care in researching the products we feature, such as Neuro Serge, we are not medical professionals or licensed doctors. The content on this site should not be used to diagnose, treat, or cure any disease. Every individual has a unique medical history, and what works for one person may not work for another. We strongly recommend consulting with a healthcare professional before starting any new dietary supplement, especially if you have pre-existing health conditions or are taking prescription medication.</p>
+        </div>
+
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">3. Are the products mentioned on RoopHUB sold directly by you?</h3>
+            <p style="line-height: 1.6;">No, RoopHUB does not sell, manufacture, or ship any physical products directly. We are an independent affiliate partner. Our role is to provide information and direct you to the official source. When you click an "Order Now" or "Official Website" button, you are taken to the manufacturer's secure checkout page. This ensures that your payment is handled by a verified brand and that you receive an authentic product with all applicable money-back guarantees provided by the company.</p>
+        </div>
+
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">4. Do I have to pay extra if I buy through your affiliate links?</h3>
+            <p style="line-height: 1.6;">Absolutely not. One of our core principles is transparency. Buying through an affiliate link on RoopHUB does not cost you a single extra penny. In fact, it is often the opposite. Because we maintain professional relationships with these brands, we are sometimes able to offer our readers exclusive discount codes or special bundle pricing that you might not find by visiting the website directly. The commission we earn is paid by the manufacturer as a marketing fee, and it does not affect your final purchase price in any way.</p>
+        </div>
+
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">5. How do you choose which products to promote?</h3>
+            <p style="line-height: 1.6;">We take our reputation very seriously. We refuse to promote products that use deceptive marketing, fake testimonials, or hidden ingredients. Our selection process involves checking the purity of ingredients, the reputation of the manufacturing facility (such as FDA-registered or GMP-certified facilities), and real customer feedback. If a product does not meet our high standards for safety and transparency, it will not be featured on our platform. Our goal is to build long-term trust with our community by only recommending high-quality wellness solutions.</p>
+        </div>
+
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">6. Can I get a refund if the product doesn't work for me?</h3>
+            <p style="line-height: 1.6;">Since the actual purchase happens on the official manufacturer's website, their specific refund policy will apply. Most high-quality supplements we feature come with a 60-day or 90-day money-back guarantee. We always encourage our users to read the "Refund Policy" or "Terms of Sale" on the official product page before completing a purchase. If you need help finding where to contact their support team, you can reach out to us, and we will do our best to guide you to the right place.</p>
+        </div>
+
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">7. Is my data safe when browsing RoopHUB Official?</h3>
+            <p style="line-height: 1.6;">Yes, your security is a top priority for us. Our website uses SSL encryption to ensure that your browsing experience is private and secure. As detailed in our Privacy Policy, we do not collect or store sensitive personal information like your credit card details or home address. We use cookies only to track affiliate referrals and to improve our website's performance. You can browse our articles and reviews with complete peace of mind knowing that your privacy is respected.</p>
+        </div>
+
+        <div class="faq-item" style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <h3 style="color: #34495e;">8. How can I contact the RoopHUB team?</h3>
+            <p style="line-height: 1.6;">We love hearing from our community! Whether you have a question about a specific review, want to suggest a product for us to analyze, or have a technical issue with our website, you can reach out to us through our official Contact Us page. We aim to respond to all legitimate inquiries within 24-48 hours. Providing clear communication is part of our commitment to being a transparent and reliable source in the health and wellness space.</p>
+        </div>
+    </div>
+</div>
+
+<div id="disclaimerModal" class="full-modal">
+    <button onclick="closeModal()" class="modal-close-btn">✖ Close</button>
+    <div class="modal-wrapper">
+        <h1 style="color: #2c3e50; border-bottom: 3px solid #e74c3c; padding-bottom: 10px;">Medical & Earnings Disclaimer</h1>
+        <p><strong>Last Updated: April 17, 2026</strong></p>
+
+        <p style="margin-top: 20px;">Please read this Disclaimer carefully before using the RoopHUB Official website (roophub.online). By accessing this site, you acknowledge and agree to the following terms regarding the information provided and the products promoted.</p>
+
+        <h3 style="color: #c0392b; margin-top: 30px;">1. Not Medical Advice (Health Disclaimer)</h3>
+        <p>The content provided on RoopHUB Official, including text, graphics, images, and other material, is for informational and educational purposes only. None of the content on this website is intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or another qualified health provider with any questions you may have regarding a medical condition or health goals.</p>
+        <p>Never disregard professional medical advice or delay in seeking it because of something you have read on this website. If you think you may have a medical emergency, call your doctor or emergency services immediately. Reliance on any information provided by RoopHUB Official is solely at your own risk.</p>
+
+        <h3 style="color: #c0392b; margin-top: 30px;">2. Individual Results May Vary</h3>
+        <p>When discussing health supplements such as Neuro Serge, RoopHub, or any other wellness products, it is important to understand that <strong>individual results will vary</strong>. Health supplements are not "magic pills" and their effectiveness depends on various factors including age, genetics, diet, exercise, and overall health condition. Testimonials or case studies found on this site or on the official product pages represent exceptional results and do not guarantee that you will achieve the same outcome. We make no guarantees, warranties, or representations regarding the specific health benefits you may experience.</p>
+
+        <h3 style="color: #c0392b; margin-top: 30px;">3. Affiliate & Earnings Disclaimer</h3>
+        <p>RoopHUB Official is a participant in various affiliate marketing programs. This means that we may earn a commission if you click on a link and make a purchase through our site. This commission is paid by the product manufacturer at no additional cost to you. Our reviews and recommendations are based on our independent research and analysis. While we strive to provide honest and unbiased information, please be aware that our financial relationship with product owners may influence the placement or order of products on this website.</p>
+
+        <h3 style="color: #c0392b; margin-top: 30px;">4. Product Safety & Responsibility</h3>
+        <p>RoopHUB Official does not manufacture, store, or ship any of the products mentioned on this site. We are strictly an informational and referral platform. Before consuming any supplement, we strongly recommend that you read the full ingredient list on the official product label to avoid potential allergic reactions or adverse effects. If you are pregnant, nursing, taking medication, or have a history of heart conditions, consult a licensed healthcare professional before use. Any issues related to product quality, shipping delays, or billing must be addressed directly with the product manufacturer’s customer support.</p>
+
+        <h3 style="color: #c0392b; margin-top: 30px;">5. Accuracy of Information</h3>
+        <p>While we make every effort to ensure that the information on this website is accurate and up-to-date, health research is constantly evolving. RoopHUB Official does not warrant or guarantee the completeness, reliability, or accuracy of the information provided. Any action you take based on the information found on this website is strictly at your own risk, and we will not be liable for any losses or damages in connection with the use of our website.</p>
+
+        <h3 style="color: #c0392b; margin-top: 30px;">6. External Links Disclaimer</h3>
+        <p>Our website contains links to external websites (official product pages) that are not provided or maintained by or in any way affiliated with RoopHUB Official. Please note that we do not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites. Once you leave our domain, you are subject to the privacy policies and terms of the third-party site.</p>
+
+        <h3 style="color: #c0392b; margin-top: 30px;">7. No Warranties</h3>
+        <p>This website is provided "as is" without any representations or warranties, express or implied. RoopHUB Official makes no representations or warranties in relation to this website or the information and materials provided on this website. We do not warrant that this website will be constantly available, or available at all; or that the information on this website is complete, true, accurate or non-misleading.</p>
+
+        <h3 style="color: #c0392b; margin-top: 30px;">8. Consent</h3>
+        <p>By using our website, you hereby consent to our disclaimer and agree to its terms. We reserve the right to update, amend or make any changes to this document at any time without prior notice.</p>
+
+        <div style="background: #fff3cd; border-left: 5px solid #ffc107; padding: 20px; margin-top: 40px; border-radius: 8px;">
+            <p style="margin: 0; color: #856404; font-weight: bold;">Note:</p>
+            <p style="margin-top: 10px; color: #856404;">Statements regarding dietary supplements have not been evaluated by the FDA (Food and Drug Administration). These products are not intended to diagnose, treat, cure, or prevent any disease.</p>
+        </div>
+    </div>
+</div>
+
+<div id="privacyPolicyModal" class="full-modal">
+    <button onclick="closeModal()" class="modal-close-btn">Close ✖</button>
+    <div class="modal-wrapper">
+        <h1 class="modal-title">Privacy Policy for RoopHub Official</h1>
+        <p class="text-muted"><strong>Last Updated: April 17, 2026</strong></p>
+
+        <section class="modal-section">
+            <p>At RoopHUB Official (accessible from roophub.online), one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by RoopHUB and how we use it.</p>
+        </section>
+
+        <section class="modal-section">
+            <h2>1. Information We Collect</h2>
+            <p>The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information. If you contact us directly, we may receive additional information about you such as your name, email address, phone number, and the contents of any attachments you may send us.</p>
+            <p>As an affiliate marketing platform, we do not directly process payments or store credit card details. When you click on a product link, you are redirected to the official manufacturer's website, and any information provided there is subject to their specific privacy policy.</p>
+        </section>
+
+        <section class="modal-section">
+            <h2>2. How We Use Your Information</h2>
+            <p>We use the information we collect in various ways, including to:</p>
+            <ul>
+                <li>Provide, operate, and maintain our website</li>
+                <li>Improve, personalize, and expand our website's user experience</li>
+                <li>Understand and analyze how you use our website</li>
+                <li>Develop new products, services, features, and functionality</li>
+                <li>Communicate with you and provide updates</li>
+                <li>Find and prevent fraud</li>
+            </ul>
+        </section>
+
+        <section class="modal-section">
+            <h2>3. Log Files and Analytics</h2>
+            <p>RoopHUB follows a standard procedure of using log files. These files log visitors when they visit websites. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks.</p>
+        </section>
+
+        <section class="modal-section">
+            <h2>4. Cookies and Web Beacons</h2>
+            <p>Like any other website, RoopHUB uses "cookies". These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
+        </section>
+
+        <section class="modal-section">
+            <h2>5. CCPA & GDPR Rights</h2>
+            <p>Under the CCPA and GDPR, you have rights including access to your data, correction, erasure, and restriction of processing. If you make a request, we have one month to respond to you.</p>
+        </section>
+
+        <section class="modal-section">
+            <h2>6. Children's Information</h2>
+            <p>RoopHUB does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately.</p>
+        </section>
+
+        <section class="modal-section">
+            <h2>7. Consent</h2>
+            <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms and conditions.</p>
+        </section>
+    </div>
+</div>
+
+<div id="affiliateModal" class="full-modal">
+    <button onclick="closeModal()" class="modal-close-btn">Close ✖</button>
+    <div class="modal-wrapper">
+        <h2 style="color: #2c3e50; border-bottom: 3px solid #6b25e4; padding-bottom: 10px;">Affiliate Disclosure & Full Earnings Disclaimer</h2>
+        <p><strong>Last Updated: April 17, 2026</strong></p>
+
+        <p style="line-height: 1.8;">Welcome to RoopHUB Official (roophub.online). We believe in complete transparency and honesty when it comes to our relationship with our readers and the products we discuss. In compliance with the Federal Trade Commission (FTC) guidelines and Google AdSense program policies, this page serves as our official disclosure regarding affiliate relationships.</p>
+
+        <h3 style="color: #6b25e4;">1. What is an Affiliate Relationship?</h3>
+        <p style="line-height: 1.8;">Many of the links found on RoopHUB are "affiliate links." If you click on a link and subsequently make a purchase, we may receive a small commission from that sale. This is a referral fee provided by the brand at <strong>no additional cost to you</strong>.</p>
+
+        <h3 style="color: #6b25e4;">2. Why Do We Use Affiliate Links?</h3>
+        <p style="line-height: 1.8;">Affiliate marketing is our primary business model, allowing us to keep our content free for all users. Instead of charging a subscription fee, we earn through these commissions to cover hosting, research, and technical maintenance costs.</p>
+
+        <h3 style="color: #6b25e4;">3. Our Commitment to Editorial Integrity</h3>
+        <p style="line-height: 1.8;">Our reputation is our most valuable asset. We do not accept payment to provide a "fake" positive review. Our evaluation of products like Neuro Serge is based on official manufacturer data and ingredient analysis. We only affiliate with products that we believe offer genuine value.</p>
+
+        <h3 style="color: #6b25e4;">4. Transparency Regarding Product Claims</h3>
+        <p style="line-height: 1.8;">Any product claim, statistic, or quote about a product should be verified with the manufacturer. Results can vary significantly from person to person. We encourage perform your own due diligence before making any purchase.</p>
+
+        <h3 style="color: #6b25e4;">5. Google AdSense and Third-Party Advertisements</h3>
+        <p style="line-height: 1.8;">RoopHUB may participate in the Google AdSense program. Ads served by Google are generated based on your browsing history. Our inclusion of these ads does not constitute an endorsement of the advertised products.</p>
+
+        <h3 style="color: #6b25e4;">6. Ethical Standards</h3>
+        <p style="line-height: 1.8;">We strictly adhere to ethical marketing practices. We do not use deceptive tactics, such as fake countdown timers or misleading testimonials. We believe an informed customer is a happy customer.</p>
+
+        <h3 style="color: #6b25e4;">7. Social Media and External Communications</h3>
+        <p style="line-height: 1.8;">This disclosure applies to all communications from RoopHUB, including YouTube channel content, email newsletters, and social media posts.</p>
+
+        <h3 style="color: #6b25e4;">8. Contact and Further Questions</h3>
+        <p style="line-height: 1.8;">If you have any questions regarding this Affiliate Disclosure, please do not hesitate to reach out to us through our Contact Us page.</p>
+
+        <p style="margin-top: 50px; text-align: center; color: #999; font-size: 0.85em;">
+            By continuing to use this website, you acknowledge that you have read and understood this Affiliate Disclosure.
+        </p>
+    </div>
+</div>
+
+<div id="termsModal" class="full-modal">
+    <button onclick="closeModal()" class="modal-close-btn">✖ Close</button>
+    <div class="modal-wrapper">
+        <h1 style="color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px;">Terms and Conditions for RoopHub Official</h1>
+        <p><strong>Last Updated: April 17, 2026</strong></p>
+
+        <p style="margin-top: 20px; line-height: 1.6;">Welcome to RoopHUB Official (roophub.online). These terms and conditions outline the rules and regulations for the use of RoopHUB's Website. By accessing this website, we assume you accept these terms and conditions in full. Do not continue to use RoopHUB Official if you do not agree to all of the terms and conditions stated on this page.</p>
+
+        <h3 style="color: #2980b9; margin-top: 30px;">1. Intellectual Property Rights</h3>
+        <p style="line-height: 1.6;">Unless otherwise stated, RoopHUB and/or its licensors own the intellectual property rights for all material on RoopHUB Official. All intellectual property rights are reserved. You may view and/or print pages from roophub.online for your own personal use subject to restrictions set in these terms and conditions.</p>
+        <p style="line-height: 1.6;">You must not:
+            <ul style="margin-left: 20px; line-height: 1.8;">
+                <li>Republish material from roophub.online without proper attribution.</li>
+                <li>Sell, rent, or sub-license material from our platform.</li>
+                <li>Reproduce, duplicate, or copy material for commercial purposes.</li>
+            </ul>
+        </p>
+
+        <h3 style="color: #2980b9; margin-top: 30px;">2. Affiliate Disclosure & Third-Party Links</h3>
+        <p style="line-height: 1.6;">RoopHUB Official is an affiliate marketing website. This means we provide information about third-party products and include links to the official manufacturers' websites. When you click on these links and make a purchase, we may receive a commission. We do not own, manufacture, or ship the products mentioned on our site. Your purchase is made directly from the official brand, and any issues regarding shipping, billing, or product quality must be resolved with the respective manufacturer.</p>
+
+        <h3 style="color: #2980b9; margin-top: 30px;">3. Medical & Results Disclaimer</h3>
+        <p style="line-height: 1.6;">The content provided on RoopHUB is for informational and educational purposes only. It is not intended to be a substitute for professional medical advice, diagnosis, or treatment. We discuss supplements like Neuro Serge and others based on publicly available data and official claims. However, individual results vary, and we do not guarantee any specific health outcomes. Always seek the advice of your physician or other qualified health providers with any questions you may have regarding a medical condition.</p>
+
+        <h3 style="color: #2980b9; margin-top: 30px;">4. User Comments & Feedback</h3>
+        <p style="line-height: 1.6;">Parts of this website may offer users the opportunity to post and exchange opinions, information, or data. RoopHUB does not screen, edit, or review Comments prior to their appearance on the website and Comments do not reflect the views or opinions of RoopHUB, its agents, or affiliates. We reserve the right to monitor all Comments and to remove any Comments which it considers in its absolute discretion to be inappropriate, offensive, or otherwise in breach of these Terms and Conditions.</p>
+
+        <h3 style="color: #2980b9; margin-top: 30px;">5. Limitation of Liability</h3>
+        <p style="line-height: 1.6;">In no event shall RoopHUB, nor any of its officers, directors, and employees, be liable to you for anything arising out of or in any way connected with your use of this website, whether such liability is under contract, tort, or otherwise. RoopHUB, including its officers and employees, shall not be liable for any indirect, consequential, or special liability arising out of or in any way related to your use of this website or the products promoted herein.</p>
+
+        <h3 style="color: #2980b9; margin-top: 30px;">6. Accuracy of Materials</h3>
+        <p style="line-height: 1.6;">The materials appearing on RoopHUB Official's website could include technical, typographical, or photographic errors. RoopHUB does not warrant that any of the materials on its website are accurate, complete, or current. We may make changes to the materials contained on our website at any time without notice. However, we do not make any commitment to update the materials regularly.</p>
+
+        <h3 style="color: #2980b9; margin-top: 30px;">7. Google AdSense & Advertising</h3>
+        <p style="line-height: 1.6;">RoopHUB uses Google AdSense to serve advertisements. By using this site, you agree to comply with Google’s Advertising Policies. Any interaction with ads is subject to Google’s terms and your own browsing preferences. We are not responsible for the content or claims of the automated ads displayed via the AdSense network.</p>
+
+        <h3 style="color: #2980b9; margin-top: 30px;">8. Governing Law</h3>
+        <p style="line-height: 1.6;">These terms and conditions are governed by and construed in accordance with the laws of India, and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location. This ensures a transparent legal framework for our digital operations and affiliate partnerships.</p>
+
+        <h3 style="color: #2980b9; margin-top: 30px;">9. Variation of Terms</h3>
+        <p style="line-height: 1.6;">RoopHUB is permitted to revise these terms at any time as it sees fit, and by using this website you are expected to review such terms on a regular basis to ensure you understand all terms and conditions governing the use of this website.</p>
+
+        <h3 style="color: #2980b9; margin-top: 30px;">10. Entire Agreement</h3>
+        <p style="line-height: 1.6;">These Terms, including any legal notices and disclaimers contained on this website, constitute the entire agreement between RoopHUB and you in relation to your use of this website, and supersede all prior agreements and understandings with respect to the same.</p>
+
+        <h3 style="color: #2980b9; margin-top: 30px;">11. Contact Us</h3>
+        <p style="line-height: 1.6;">If you have any questions about these Terms and Conditions, please contact us via our official contact page. We value our community and are committed to maintaining a fair and transparent platform for all wellness enthusiasts.</p>
+    </div>
+</div>
+
+<div id="importantInfoModal" class="full-modal">
+    <button onclick="closeModal()" class="modal-close-btn">✖ Close</button>
+    <div class="modal-wrapper">
+        <h1 class="modal-title">⚠️ Important Guidelines</h1>
+        <p style="color: #64748b;">To maintain a safe and trustworthy community, please avoid these activities.</p>
+
+        <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 16px; border-radius: 8px; margin: 16px 0;">
+            <h4 style="color: #991b1b; margin-top: 0;">❌ Don't Share Personal Information</h4>
+            <p style="color: #7c2d12; margin-bottom: 0;">Never share credit card numbers, passwords, or SSN. We'll never ask via email.</p>
+        </div>
+
+        <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 16px; border-radius: 8px; margin: 16px 0;">
+            <h4 style="color: #991b1b; margin-top: 0;">❌ Don't Post Spam</h4>
+            <p style="color: #7c2d12; margin-bottom: 0;">Avoid external links and repetitive promotional messages.</p>
+        </div>
+
+        <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 16px; border-radius: 8px; margin: 16px 0;">
+            <h4 style="color: #991b1b; margin-top: 0;">❌ No False Claims</h4>
+            <p style="color: #7c2d12; margin-bottom: 0;">All content must be genuine and based on actual experience.</p>
+        </div>
+
+        <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 16px; border-radius: 8px; margin: 16px 0;">
+            <h4 style="color: #991b1b; margin-top: 0;">❌ Don't Engage in Harassment or Bullying</h4>
+            <p style="color: #7c2d12; margin-bottom: 0;">We maintain a Zero Tolerance policy for harassment, hate speech, or personal attacks.</p>
+        </div>
+
+        <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 16px; border-radius: 8px; margin: 16px 0;">
+            <h4 style="color: #991b1b; margin-top: 0;">❌ Don't Attempt to Hack or Manipulate</h4>
+            <p style="color: #7c2d12; margin-bottom: 0;">Security is non-negotiable. Never attempt unauthorized access or cyber-attacks.</p>
+        </div>
+
+        <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 16px; border-radius: 8px; margin: 16px 0;">
+            <h4 style="color: #991b1b; margin-top: 0;">❌ Don't Sell Illegal Items</h4>
+            <p style="color: #7c2d12; margin-bottom: 0;">Do not attempt to sell counterfeit goods or prohibited items.</p>
+        </div>
+
+        <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 16px; border-radius: 8px; margin-top: 30px;">
+            <p style="margin: 0; color: #92400e;"><strong>⚠️ Enforcement Notice:</strong> Violations will result in account suspension or permanent ban.</p>
+        </div>
+
+        <p style="text-align: center; color: #64748b; margin-top: 30px; font-size: 13px;">Thank you for helping us keep RoopHub a trusted space!</p>
+    </div>
+</div>
+
+<div id="contactModal" class="full-modal">
+    <button onclick="closeModal()" class="modal-close-btn">✖ Close</button>
+    <div class="modal-wrapper">
+        <h1 class="modal-title">📞 Official Support Channels</h1>
+        <p style="color: #64748b; font-size: 18px; line-height: 1.6; margin-bottom: 40px;">
+            <strong>RoopHub Official</strong> is a premier global platform dedicated to health and wellness curation. We operate as an integrity-first ecosystem, meaning we don't just sell products; we carefully research and vet the science and manufacturing standards behind every brand we feature. Our goal is to empower you with honest information and access to 100% authentic, lab-verified supplements. 
+            <br><br>
+            We believe that direct communication is the best way to build a healthy community. Instead of filling out long, complicated forms, you can reach our verified support experts immediately through any of the channels below. We are here to help you with product details, delivery updates, or professional wellness advice.
+        </p>
+
+        <!-- 🏢 Direct Contact Channels Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 50px;">
+            <!-- Gmail -->
+            <a href="mailto:support@roophub.com" onclick="trackConversion('Email', 'Contact Channel Click')" style="text-decoration:none; color:inherit;">
+                <div style="background: white; padding: 35px 25px; border-radius: 24px; border: 1px solid #e2e8f0; text-align: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 10px 25px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#3b82f6'; this.style.boxShadow='0 20px 40px rgba(59, 130, 246, 0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                    <div style="width: 70px; height: 70px; background: #fee2e2; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fa-solid fa-envelope" style="font-size: 32px; color: #ea4335;"></i>
+                    </div>
+                    <h3 style="color: #1e293b; margin-bottom: 10px; font-size: 20px;">Official Email</h3>
+                    <p style="color: #1e40af; font-weight: 700; font-size: 16px; margin-bottom: 10px;">support@roophub.com</p>
+                    <p style="color: #64748b; font-size: 14px; line-height: 1.5;">Best for official business, partnerships, and detailed product questions. We respond to all emails within 24 hours.</p>
+                </div>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://whatsapp.com/channel/0029Vb7Y2ft3QxS4drpeQV02" target="_blank" onclick="trackConversion('WhatsApp', 'Contact Channel Click')" style="text-decoration:none; color:inherit;">
+                <div style="background: white; padding: 35px 25px; border-radius: 24px; border: 1px solid #e2e8f0; text-align: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 10px 25px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#25d366'; this.style.boxShadow='0 20px 40px rgba(37, 211, 102, 0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                    <div style="width: 70px; height: 70px; background: #dcfce7; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fa-brands fa-whatsapp" style="font-size: 36px; color: #25d366;"></i>
+                    </div>
+                    <h3 style="color: #1e293b; margin-bottom: 10px; font-size: 20px;">WhatsApp Hub</h3>
+                    <p style="color: #1e40af; font-weight: 700; font-size: 16px; margin-bottom: 10px;">Join Channel</p>
+                    <p style="color: #64748b; font-size: 14px; line-height: 1.5;">Get instant alerts on flash sales, new product launches, and exclusive member-only discount codes directly on your phone.</p>
+                </div>
+            </a>
+
+            <!-- Telegram -->
+            <a href="https://t.me/RoopHubOfficial" target="_blank" onclick="trackConversion('Telegram', 'Contact Channel Click')" style="text-decoration:none; color:inherit;">
+                <div style="background: white; padding: 35px 25px; border-radius: 24px; border: 1px solid #e2e8f0; text-align: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 10px 25px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#0088cc'; this.style.boxShadow='0 20px 40px rgba(0, 136, 204, 0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                    <div style="width: 70px; height: 70px; background: #e0f2fe; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fa-brands fa-telegram" style="font-size: 32px; color: #0088cc;"></i>
+                    </div>
+                    <h3 style="color: #1e293b; margin-bottom: 10px; font-size: 20px;">Telegram Group</h3>
+                    <p style="color: #1e40af; font-weight: 700; font-size: 16px; margin-bottom: 10px;">RoopHub Official</p>
+                    <p style="color: #64748b; font-size: 14px; line-height: 1.5;">A professional space for health enthusiasts. Join our global community for daily research articles and organic health tips.</p>
+                </div>
+            </a>
+
+            <!-- Phone -->
+            <a href="tel:8271734883" onclick="trackConversion('Phone', 'Contact Channel Click')" style="text-decoration:none; color:inherit;">
+                <div style="background: white; padding: 35px 25px; border-radius: 24px; border: 1px solid #e2e8f0; text-align: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 10px 25px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#27ae60'; this.style.boxShadow='0 20px 40px rgba(39, 174, 96, 0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                    <div style="width: 70px; height: 70px; background: #dcfce7; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fa-solid fa-phone" style="font-size: 30px; color: #27ae60;"></i>
+                    </div>
+                    <h3 style="color: #1e293b; margin-bottom: 10px; font-size: 20px;">Support Helpline</h3>
+                    <p style="color: #1e40af; font-weight: 700; font-size: 16px; margin-bottom: 10px;">+91 82717 34883</p>
+                    <p style="color: #64748b; font-size: 14px; line-height: 1.5;">Talk to our agents directly for quick resolutions. Available Monday to Friday (10:00 AM to 6:00 PM Indian Standard Time).</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 🏢 Location Hub Section -->
+        <section style="background: #ffffff; padding: 50px 30px; border-radius: 35px; border: 1px solid #e2e8f0; margin-bottom: 50px; box-shadow: 0 15px 45px rgba(0,0,0,0.03);">
+            <div style="display: flex; gap: 50px; flex-wrap: wrap; align-items: flex-start;">
+                <div style="flex: 1; min-width: 320px;">
+                    <div style="display: inline-block; padding: 10px 20px; background: #fee2e2; color: #ef4444; border-radius: 12px; font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px;">
+                        📍 Global Operations Center
+                    </div>
+                    <h2 style="color: #1e293b; font-size: 32px; font-weight: 800; margin-bottom: 20px; letter-spacing: -0.5px;">Visit Our Main Hub</h2>
+                    <p style="font-size: 18px; color: #334155; line-height: 1.7; margin-bottom: 25px;">
+                        Our administrative headquarters is located in the heart of Bihar. We manage our global digital marketplace and logistics from this central location.
+                    </p>
+                    <div style="background: #f8fafc; padding: 25px; border-radius: 20px; border-left: 6px solid #3b82f6;">
+                        <p style="font-size: 17px; color: #1e293b; margin: 0;">
+                            <strong>Physical Address:</strong><br>
+                            Yadav Nagar, Road No 3,<br>
+                            Muzaffarpur, Bihar,<br>
+                            India - 842001
+                        </p>
+                    </div>
+                </div>
+                <div style="flex: 1.2; min-width: 350px; height: 380px; border-radius: 30px; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.12); border: 8px solid #ffffff;">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.4116422998625!2d85.3908!3d26.1209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDA3JzE1LjIiTiA4NcKwMjMnMjYuOSJF!5e0!3m2!1sen!2sin!4v1716500000000!5m2!1sen!2sin" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="modal-section" style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 6px solid #3b82f6; padding: 30px; border-radius: 20px;">
+            <h3 style="color: #1e40af; font-size: 20px; margin-bottom: 12px;"><i class="fa-solid fa-user-shield"></i> Your Privacy & Security Promise</h3>
+            <p style="margin: 0; color: #1e3a8a; font-size: 15px; line-height: 1.6;">
+                Your personal information is 100% safe with us. We use end-to-end encryption on all our contact channels. Please note: Our official staff will NEVER ask for your bank details, OTP, or passwords over a call or message. Always stay safe and use only the links provided on this page.
+            </p>
+        </section>
+
+        <p style="text-align: center; color: #94a3b8; margin-top: 50px; font-size: 13px; font-weight: 600; letter-spacing: 1px;">© 2026 ROOPHUB OFFICIAL | GLOBAL WELLNESS HUB | ALL RIGHTS RESERVED</p>
+    </div>
+</div>
+
+<!-- FAQ POPUP OVERLAY (For direct FAQ clicks if any) -->
 <div id="faqPopupOverlay" onclick="closeFaqPopup()"></div>
 <div id="faqPopupBox">
-    <h3 id="faqPopupQuestion" style="margin-bottom:15px; font-size:22px; color: #15803d; border-bottom: 2px solid #bbf7d0; padding-bottom:12px;"></h3>
-    <div id="faqPopupAnswer" style="font-size:17px; line-height:1.8; color: #166534;"></div>
+    <h3 id="faqPopupQuestion"></h3>
+    <div id="faqPopupAnswer"></div>
     <button class="faq-popup-close" onclick="closeFaqPopup()">Got it, Thanks! ✅</button>
 </div>
+
+<style>
+/* FAQ Popup Styles for Neuro Serge */
+#faqPopupOverlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(8px);
+    z-index: 100000;
+}
+#faqPopupBox {
+    display: none;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 90%;
+    max-width: 800px;
+    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+    border: 4px solid #22c55e;
+    border-radius: 25px;
+    padding: 35px;
+    z-index: 100001;
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
+    color: #14532d;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.faq-popup-close {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 25px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: 0.2s;
+}
+</style>
 
 <!-- ✨ BENEFIT POPUP OVERLAY STRUCTURE -->
 <div id="benefitPopupOverlay" onclick="closeBenefitPopup()"></div>
@@ -1323,524 +2226,6 @@ See More
 
 <script src="script.js"></script>
 
-<!-- PRIVACY POLICY FULL PAGE MODAL -->
-<div id="privacyModal" style="
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:white;
-z-index:9999;
-overflow-y:scroll;
-padding:20px;
-">
-
-    <button onclick="closeModal()" style="
-    position:fixed;
-    right:20px;
-    top:20px;
-    padding:10px 15px;
-    background:rgb(43, 233, 91);
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    ">
-    Close ✖
-    </button>
-
-    <h2>Privacy Policy for RoopHub Official</h2>
-    <p><strong>Last Updated: April 17, 2026</strong></p>
-
-    <p>At RoopHUB Official (accessible from roophub.online), one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by RoopHUB and how we use it. We are committed to protecting your personal data and providing a transparent environment for our users. If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
-
-    <h3>1. Information We Collect</h3>
-    <p>The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information. If you contact us directly, we may receive additional information about you such as your name, email address, phone number, the contents of the message and/or attachments you may send us, and any other information you may choose to provide.</p>
-    <p>As an affiliate marketing platform, we do not directly process payments or store credit card details. When you click on a product link, you are redirected to the official manufacturer's website, and any information provided there is subject to their specific privacy policy.</p>
-
-    <h3>2. How We Use Your Information</h3>
-    <p>We use the information we collect in various ways, including to:
-    <ul>
-        <li>Provide, operate, and maintain our website.</li>
-        <li>Improve, personalize, and expand our website's user experience.</li>
-        <li>Understand and analyze how you use our website.</li>
-        <li>Develop new products, services, features, and functionality.</li>
-        <li>Communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the website, and for marketing and promotional purposes.</li>
-        <li>Find and prevent fraud.</li>
-    </ul>
-    </p>
-
-    <h3>3. Log Files and Analytics</h3>
-    <p>RoopHUB follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this as part of hosting services' analytics. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.</p>
-
-    <h3>4. Cookies and Web Beacons</h3>
-    <p>Like any other website, RoopHUB uses "cookies". These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
-
-    <h3>5. Google DoubleClick DART Cookie</h3>
-    <p>Google is one of the third-party vendors on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to our site and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL – <a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a></p>
-
-    <h3>6. Advertising Partners and Affiliate Links</h3>
-    <p>Some of the advertisers and affiliate partners on our site may use cookies and web beacons. Our advertising partners include Google AdSense and various affiliate networks. Each of our advertising partners has their own Privacy Policy for their policies on user data. For easier access, we hyperlinked to their Privacy Policies below.</p>
-    <p>Third-party ad servers or ad networks use technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on RoopHUB, which are sent directly to users' browsers. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</p>
-    <p>Note that RoopHUB has no access to or control over these cookies that are used by third-party advertisers or affiliate programs.</p>
-
-    <h3>7. Third-Party Privacy Policies</h3>
-    <p>RoopHUB's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites.</p>
-
-    <h3>8. CCPA Privacy Rights (Do Not Sell My Personal Information)</h3>
-    <p>Under the CCPA, among other rights, California consumers have the right to request that a business that collects a consumer's personal data disclose the categories and specific pieces of personal data that a business has collected about consumers. You also have the right to request that a business delete any personal data about the consumer that a business has collected. RoopHUB fully respects these rights for all our users worldwide. If you make a request, we have one month to respond to you.</p>
-
-    <h3>9. GDPR Data Protection Rights</h3>
-    <p>We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:
-    <ul>
-        <li>The right to access – You have the right to request copies of your personal data.</li>
-        <li>The right to rectification – You have the right to request that we correct any information you believe is inaccurate.</li>
-        <li>The right to erasure – You have the right to request that we erase your personal data, under certain conditions.</li>
-        <li>The right to restrict processing – You have the right to request that we restrict the processing of your personal data.</li>
-    </ul>
-    </p>
-
-    <h3>10. Children's Information</h3>
-    <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity. RoopHUB does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
-
-    <h3>11. Consent</h3>
-    <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms and conditions. This policy is designed to ensure a safe and trustworthy browsing experience for all our wellness community members.</p>
-</div>
-
-<!-- TERMS & CONDITIONS FULL PAGE MODAL -->
-<div id="termsModal" style="
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:white;
-z-index:9999;
-overflow-y:scroll;
-padding:20px;
-">
-
-    <button onclick="closeModal()" style="
-    position:fixed;
-    right:20px;
-    top:20px;
-    padding:10px 15px;
-    background:red;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    ">
-    Close ✖
-    </button>
-
-    <h2>Terms and Conditions for RoopHub Official</h2>
-    <p><strong>Last Updated: April 17, 2026</strong></p>
-
-    <p>Welcome to RoopHUB Official (roophub.online). These terms and conditions outline the rules and regulations for the use of RoopHUB's Website. By accessing this website, we assume you accept these terms and conditions in full. Do not continue to use RoopHUB Official if you do not agree to all of the terms and conditions stated on this page.</p>
-
-    <h3>1. Intellectual Property Rights</h3>
-    <p>Unless otherwise stated, RoopHUB and/or its licensors own the intellectual property rights for all material on RoopHUB Official. All intellectual property rights are reserved. You may view and/or print pages from roophub.online for your own personal use subject to restrictions set in these terms and conditions.</p>
-    <p>You must not:
-    <ul>
-        <li>Republish material from roophub.online without proper attribution.</li>
-        <li>Sell, rent, or sub-license material from our platform.</li>
-        <li>Reproduce, duplicate, or copy material for commercial purposes.</li>
-    </ul>
-    </p>
-
-    <h3>2. Affiliate Disclosure & Third-Party Links</h3>
-    <p>RoopHUB Official is an affiliate marketing website. This means we provide information about third-party products and include links to the official manufacturers' websites. When you click on these links and make a purchase, we may receive a commission. We do not own, manufacture, or ship the products mentioned on our site. Your purchase is made directly from the official brand, and any issues regarding shipping, billing, or product quality must be resolved with the respective manufacturer.</p>
-
-    <h3>3. Medical & Results Disclaimer</h3>
-    <p>The content provided on RoopHUB is for informational and educational purposes only. It is not intended to be a substitute for professional medical advice, diagnosis, or treatment. We discuss supplements like Neuro Serge and others based on publicly available data and official claims. However, individual results vary, and we do not guarantee any specific health outcomes. Always seek the advice of your physician or other qualified health providers with any questions you may have regarding a medical condition.</p>
-
-    <h3>4. User Comments & Feedback</h3>
-    <p>Parts of this website may offer users the opportunity to post and exchange opinions, information, or data. RoopHUB does not screen, edit, or review Comments prior to their appearance on the website and Comments do not reflect the views or opinions of RoopHUB, its agents, or affiliates. We reserve the right to monitor all Comments and to remove any Comments which it considers in its absolute discretion to be inappropriate, offensive, or otherwise in breach of these Terms and Conditions.</p>
-
-    <h3>5. Limitation of Liability</h3>
-    <p>In no event shall RoopHUB, nor any of its officers, directors, and employees, be liable to you for anything arising out of or in any way connected with your use of this website, whether such liability is under contract, tort, or otherwise. RoopHUB, including its officers and employees, shall not be liable for any indirect, consequential, or special liability arising out of or in any way related to your use of this website or the products promoted herein.</p>
-
-    <h3>6. Accuracy of Materials</h3>
-    <p>The materials appearing on RoopHUB Official's website could include technical, typographical, or photographic errors. RoopHUB does not warrant that any of the materials on its website are accurate, complete, or current. We may make changes to the materials contained on our website at any time without notice. However, we do not make any commitment to update the materials regularly.</p>
-
-    <h3>7. Google AdSense & Advertising</h3>
-    <p>RoopHUB uses Google AdSense to serve advertisements. By using this site, you agree to comply with Google’s Advertising Policies. Any interaction with ads is subject to Google’s terms and your own browsing preferences. We are not responsible for the content or claims of the automated ads displayed via the AdSense network.</p>
-
-    <h3>8. Governing Law</h3>
-    <p>These terms and conditions are governed by and construed in accordance with the laws of India, and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location. This ensures a transparent legal framework for our digital operations and affiliate partnerships.</p>
-
-    <h3>9. Variation of Terms</h3>
-    <p>RoopHUB is permitted to revise these terms at any time as it sees fit, and by using this website you are expected to review such terms on a regular basis to ensure you understand all terms and conditions governing the use of this website.</p>
-
-    <h3>10. Entire Agreement</h3>
-    <p>These Terms, including any legal notices and disclaimers contained on this website, constitute the entire agreement between RoopHUB and you in relation to your use of this website, and supersede all prior agreements and understandings with respect to the same.</p>
-
-    <h3>11. Contact Us</h3>
-    <p>If you have any questions about these Terms and Conditions, please contact us via our official contact page. We value our community and are committed to maintaining a fair and transparent platform for all wellness enthusiasts.</p>
-</div>
-<!-- FAQ FULL PAGE MODAL -->
-<div id="faqModal" style="
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:white;
-z-index:9999;
-overflow-y:scroll;
-padding:20px;
-">
-
-    <button onclick="closeModal()" style="
-    position:fixed;
-    right:20px;
-    top:20px;
-    padding:10px 15px;
-    background:rgb(43, 233, 113);
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    ">
-    Close ✖
-    </button>
-
-    <h1>Frequently Asked Questions (FAQ)</h1>
-
-    <div class="faq-container" style="max-width: 800px; margin: auto; padding: 20px; font-family: sans-serif;">
-    <h2 style="text-align: center; color: #2c3e50;">Frequently Asked Questions (FAQ)</h2>
-    <p style="text-align: center; color: #7f8c8d; margin-bottom: 30px;">Find answers to the most common questions about our platform and the products we review.</p>
-
-    <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-        <h3 style="color: #34495e;">1. What is RoopHUB Official and how does it work?</h3>
-        <p>RoopHUB Official is a dedicated wellness and health information platform. Our mission is to research, analyze, and present the most effective health supplements and wellness products available in the market today. We act as a bridge between you and the official product manufacturers. We provide detailed insights, ingredient breakdowns, and usage guides so that you can make an informed decision before purchasing. When you decide to buy a product through our links, we redirect you to the secure, official website of the brand to ensure you get genuine products and the best possible price.</p>
-    </div>
-
-    <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-        <h3 style="color: #34495e;">2. Is the information provided on this website medical advice?</h3>
-        <p>No, the information provided on RoopHUB Official is for educational and informational purposes only. While we take great care in researching the products we feature, such as Neuro Serge, we are not medical professionals or licensed doctors. The content on this site should not be used to diagnose, treat, or cure any disease. Every individual has a unique medical history, and what works for one person may not work for another. We strongly recommend consulting with a healthcare professional before starting any new dietary supplement, especially if you have pre-existing health conditions or are taking prescription medication.</p>
-    </div>
-
-    <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-        <h3 style="color: #34495e;">3. Are the products mentioned on RoopHUB sold directly by you?</h3>
-        <p>No, RoopHUB does not sell, manufacture, or ship any physical products directly. We are an independent affiliate partner. Our role is to provide information and direct you to the official source. When you click an "Order Now" or "Official Website" button, you are taken to the manufacturer's secure checkout page. This ensures that your payment is handled by a verified brand and that you receive an authentic product with all applicable money-back guarantees provided by the company.</p>
-    </div>
-
-    <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-        <h3 style="color: #34495e;">4. Do I have to pay extra if I buy through your affiliate links?</h3>
-        <p>Absolutely not. One of our core principles is transparency. Buying through an affiliate link on RoopHUB does not cost you a single extra penny. In fact, it is often the opposite. Because we maintain professional relationships with these brands, we are sometimes able to offer our readers exclusive discount codes or special bundle pricing that you might not find by visiting the website directly. The commission we earn is paid by the manufacturer as a marketing fee, and it does not affect your final purchase price in any way.</p>
-    </div>
-
-    <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-        <h3 style="color: #34495e;">5. How do you choose which products to promote?</h3>
-        <p>We take our reputation very seriously. We refuse to promote products that use deceptive marketing, fake testimonials, or hidden ingredients. Our selection process involves checking the purity of ingredients, the reputation of the manufacturing facility (such as FDA-registered or GMP-certified facilities), and real customer feedback. If a product does not meet our high standards for safety and transparency, it will not be featured on our platform. Our goal is to build long-term trust with our community by only recommending high-quality wellness solutions.</p>
-    </div>
-
-    <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-        <h3 style="color: #34495e;">6. Can I get a refund if the product doesn't work for me?</h3>
-        <p>Since the actual purchase happens on the official manufacturer's website, their specific refund policy will apply. Most high-quality supplements we feature come with a 60-day or 90-day money-back guarantee. We always encourage our users to read the "Refund Policy" or "Terms of Sale" on the official product page before completing a purchase. If you need help finding where to contact their support team, you can reach out to us, and we will do our best to guide you to the right place.</p>
-    </div>
-
-    <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-        <h3 style="color: #34495e;">7. Is my data safe when browsing RoopHUB Official?</h3>
-        <p>Yes, your security is a top priority for us. Our website uses SSL encryption to ensure that your browsing experience is private and secure. As detailed in our Privacy Policy, we do not collect or store sensitive personal information like your credit card details or home address. We use cookies only to track affiliate referrals and to improve our website's performance. You can browse our articles and reviews with complete peace of mind knowing that your privacy is respected.</p>
-    </div>
-
-    <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-        <h3 style="color: #34495e;">8. How can I contact the RoopHUB team?</h3>
-        <p>We love hearing from our community! Whether you have a question about a specific review, want to suggest a product for us to analyze, or have a technical issue with our website, you can reach out to us through our official Contact Us page. We aim to respond to all legitimate inquiries within 24-48 hours. Providing clear communication is part of our commitment to being a transparent and reliable source in the health and wellness space.</p>
-    </div>
-</div>
-
-</div>
-<!-- DISCLAIMER FULL PAGE MODAL -->
-<div id="disclaimerModal" style="
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:white;
-z-index:9999;
-overflow-y:scroll;
-padding:20px;
-">
-
-    <button onclick="closeModal()" style="
-    position:fixed;
-    right:20px;
-    top:20px;
-    padding:10px 15px;
-    background:rgb(43, 6, 252);
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    ">
-    Close ✖
-    </button>
-
-    <h2 style="color:#0e28e9; border-bottom: 2px solid #eee; padding-bottom:10px;">Medical & Earnings Disclaimer</h2>
-    <p><strong>Last Updated: April 17, 2026</strong></p>
-
-    <p>Please read this Disclaimer carefully before using the RoopHUB Official website (roophub.online). By accessing this site, you acknowledge and agree to the following terms regarding the information provided and the products promoted.</p>
-
-    <h3>1. Not Medical Advice (Health Disclaimer)</h3>
-    <p>The content provided on RoopHUB Official, including text, graphics, images, and other material, is for informational and educational purposes only. None of the content on this website is intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or another qualified health provider with any questions you may have regarding a medical condition or health goals.</p>
-    <p>Never disregard professional medical advice or delay in seeking it because of something you have read on this website. If you think you may have a medical emergency, call your doctor or emergency services immediately. Reliance on any information provided by RoopHUB Official is solely at your own risk.</p>
-
-    <h3>2. Individual Results May Vary</h3>
-    <p>When discussing health supplements such as Neuro Serge, Prostavive, or any other wellness products, it is important to understand that <strong>individual results will vary</strong>. Health supplements are not "magic pills" and their effectiveness depends on various factors including age, genetics, diet, exercise, and overall health condition. Testimonials or case studies found on this site or on the official product pages represent exceptional results and do not guarantee that you will achieve the same outcome. We make no guarantees, warranties, or representations regarding the specific health benefits you may experience.</p>
-
-    <h3>3. Affiliate & Earnings Disclaimer</h3>
-    <p>RoopHUB Official is a participant in various affiliate marketing programs. This means that we may earn a commission if you click on a link and make a purchase through our site. This commission is paid by the product manufacturer at no additional cost to you. Our reviews and recommendations are based on our independent research and analysis. While we strive to provide honest and unbiased information, please be aware that our financial relationship with product owners may influence the placement or order of products on this website.</p>
-
-    <h3>4. Product Safety & Responsibility</h3>
-    <p>RoopHUB Official does not manufacture, store, or ship any of the products mentioned on this site. We are strictly an informational and referral platform. Before consuming any supplement, we strongly recommend that you read the full ingredient list on the official product label to avoid potential allergic reactions or adverse effects. If you are pregnant, nursing, taking medication, or have a history of heart conditions, consult a licensed healthcare professional before use. Any issues related to product quality, shipping delays, or billing must be addressed directly with the product manufacturer’s customer support.</p>
-
-    <h3>5. Accuracy of Information</h3>
-    <p>While we make every effort to ensure that the information on this website is accurate and up-to-date, health research is constantly evolving. RoopHUB Official does not warrant or guarantee the completeness, reliability, or accuracy of the information provided. Any action you take based on the information found on this website is strictly at your own risk, and we will not be liable for any losses or damages in connection with the use of our website.</p>
-
-    <h3>6. External Links Disclaimer</h3>
-    <p>Our website contains links to external websites (official product pages) that are not provided or maintained by or in any way affiliated with RoopHUB Official. Please note that we do not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites. Once you leave our domain, you are subject to the privacy policies and terms of the third-party site.</p>
-
-    <h3>7. No Warranties</h3>
-    <p>This website is provided "as is" without any representations or warranties, express or implied. RoopHUB Official makes no representations or warranties in relation to this website or the information and materials provided on this website. We do not warrant that this website will be constantly available, or available at all; or that the information on this website is complete, true, accurate or non-misleading.</p>
-
-    <h3>8. Consent</h3>
-    <p>By using our website, you hereby consent to our disclaimer and agree to its terms. We reserve the right to update, amend or make any changes to this document at any time without prior notice.</p>
-
-    <div style="background:#f9f9f9; padding:15px; border-left:5px solid #0e0bf6; margin-top:20px;">
-        <p style="margin:0; font-size:0.9em;"><strong>Note:</strong> Statements regarding dietary supplements have not been evaluated by the FDA (Food and Drug Administration). These products are not intended to diagnose, treat, cure, or prevent any disease.</p>
-    </div>
-
-</div>
-<!-- CONTACT US FULL PAGE MODAL -->
-<div id="contactModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:white; z-index:9999; overflow-y:scroll; padding:20px; font-family: 'Segoe UI', Tahoma, sans-serif; color: #333;">
-
-    <button onclick="closeModal()" style="position:fixed; right:20px; top:20px; padding:10px 15px; background:rgb(26, 3, 231); color:white; border:none; border-radius:8px; cursor:pointer; font-weight: bold; z-index: 10000;">
-    Close ✖
-    </button>
-
-    <div style="max-width: 800px; margin: 40px auto;">
-        <h1 style="color: #2c3e50; border-bottom: 3px solid #4CAF50; padding-bottom: 10px;">Contact RoopHub Official</h1>
-
-        <p style="font-size: 1.1em; line-height: 1.8;">
-            Welcome to the <strong>RoopHub Official</strong> support center. We understand that in the fast-paced world of digital wellness and affiliate marketing, having a reliable point of contact is essential for building trust and ensuring a smooth user experience. If you have any questions, suggestions, or business inquiries, feel free to contact us at any time. We are always ready to help our users and respond as quickly as possible.
-        </p>
-        
-        <p style="line-height: 1.8;">
-            RoopHub values every user message and feedback because it helps us improve our platform. Whether it is a technical issue regarding our website's performance, a product query about the supplements we review (like Neuro Serge or Prostavive), or a general question about how affiliate marketing works, our team is here to assist you. Our goal is to provide you with the most accurate, well-researched, and transparent information so that you can make informed decisions about your health and wellness journey.
-        </p>
-
-        <h3 style="color: #27ae60; margin-top: 30px;">Why Should You Reach Out to Us?</h3>
-        <p style="line-height: 1.8;">
-            At RoopHub, we believe that communication is the key to community growth. You might want to reach out to us for several reasons. Perhaps you have noticed a technical glitch on our landing page, or maybe you want more clarity on the ingredient profile of a wellness product we have featured. We encourage our readers to be proactive. If you are a brand owner looking for an ethical affiliate partner who values "No Fake Reviews" and "Clean Design," we are eager to hear your proposal.
-        </p>
-        <p style="line-height: 1.8;">
-            Furthermore, if you are a customer who has clicked on one of our affiliate links and has a question about the redirection process, our support staff can guide you. Please remember, however, that since we do not manufacture or ship products directly, specific order-related issues (like tracking numbers or billing) are best handled by the official product manufacturer. But, if you cannot find their contact details, we will go the extra mile to find them for you.
-        </p>
-
-        <h3 style="color: #27ae60; margin-top: 30px;">Our Commitment to Your Privacy</h3>
-        <p style="line-height: 1.8;">
-            When you send us a message through our contact form or via email, we ensure that your data is handled with the utmost care. We do not sell your personal information or email addresses to third-party marketers. Your satisfaction is our priority, and we always aim to provide the best support experience while maintaining a secure digital environment. We use your feedback solely to enhance the quality of our reviews and the technical stability of roophub.online.
-        </p>
-
-        <hr style="margin: 40px 0; border: 0; border-top: 1px solid #eee;">
-
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
-            <div style="flex: 1; min-width: 250px; background: #f9f9f9; padding: 20px; border-radius: 10px;">
-                <h3 style="margin-top: 0; color: #2c3e50;">Email Support</h3>
-                <p style="font-weight: bold; font-size: 1.1em; color: #2980b9;">support@roophub.com</p>
-                <p style="font-size: 0.9em; color: #666;">For general inquiries, technical support, and partnership proposals.</p>
-            </div>
-
-            <div style="flex: 1; min-width: 250px; background: #f9f9f9; padding: 20px; border-radius: 10px;">
-                <h3 style="margin-top: 0; color: #2c3e50;">Phone & Location</h3>
-                <p style="font-weight: bold; color: #333;">Phone: +91 82717 34883</p>
-                <p style="font-weight: bold; color: #333;">Location: India (Global Support)</p>
-                <p style="font-size: 0.9em; color: #666;">Available Monday to Friday, 10:00 AM to 6:00 PM IST.</p>
-            </div>
-        </div>
-
-        <h3 style="margin-top: 40px; color: #2c3e50;">Send Us a Direct Message</h3>
-        <p style="color: #666;">Fill out the form below and our team will get back to you within 24–48 hours.</p>
-
-        <div style="background: #ffffff; border: 1px solid #eee; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-            <form id="contact-form">
-            <label style="font-weight: bold; display: block; margin-bottom: 5px;">Your Full Name</label>
-            <input type="text" name="Name" placeholder="Enter your name" style="width:100%; padding:12px; margin-bottom:20px; border: 1px solid #ccc; border-radius: 6px;" required>
-            
-            <label style="font-weight: bold; display: block; margin-bottom: 5px;">Email Address</label>
-            <input type="email" name="Email" placeholder="Enter your email" style="width:100%; padding:12px; margin-bottom:20px; border: 1px solid #ccc; border-radius: 6px;" required>
-            
-            <label style="font-weight: bold; display: block; margin-bottom: 5px;">Subject</label>
-            <select name="Subject" style="width:100%; padding:12px; margin-bottom:20px; border: 1px solid #ccc; border-radius: 6px;">
-                <option>General Inquiry</option>
-                <option>Technical Issue</option>
-                <option>Product Question</option>
-                <option>Partnership/Affiliate</option>
-            </select>
-
-            <label style="font-weight: bold; display: block; margin-bottom: 5px;">Your Message</label>
-            <textarea name="Message" placeholder="How can we help you?" style="width:100%; padding:12px; margin-bottom:20px; height:150px; border: 1px solid #ccc; border-radius: 6px;" required></textarea>
-
-            <button type="submit" id="contact-btn" style="width: 100%; padding:15px; background:#27ae60; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 1.1em; font-weight: bold; transition: background 0.3s;">
-            Send Message Now
-            </button>
-            </form>
-        </div>
-
-        <p style="margin-top: 50px; text-align: center; color: #999; font-size: 0.85em;">
-            Thank you for being part of the RoopHub wellness community. We strive to maintain the highest standards of digital integrity and user support. Your feedback is the engine of our improvement.
-        </p>
-    </div>
-</div>
-
-<!-- ABOUT US FULL PAGE MODAL -->
-<div id="aboutModal" style="
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:white;
-z-index:9999;
-overflow-y:scroll;
-padding:20px;
-">
-
-    <button onclick="closeModal()" style="
-    position:fixed;
-    right:20px;
-    top:20px;
-    padding:10px 15px;
-    background:rgb(13, 32, 210);
-    color:rgb(211, 193, 193);
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    ">
-    Close ✖
-    </button>
-    
-    <h1 style="text-align:center; color:#27ae60; font-size:2.5em; margin-bottom:10px;">About RoopHUB Official</h1>
-    <p style="text-align:center; color:#7f8c8d; font-style:italic; margin-bottom:40px;">"Empowering Your Wellness Journey Through Transparency and Truth."</p>
-
-    <section>
-        <h2 style="color:#2c3e50; border-bottom:2px solid #27ae60; padding-bottom:5px;">Our Story: The Birth of RoopHUB</h2>
-        <p>Welcome to <strong>RoopHUB Official (roophub.online)</strong>. Our journey began with a simple yet powerful observation: the digital world is flooded with health advice, but finding trustworthy, unbiased, and scientifically backed information is becoming increasingly difficult. In an era where "clickbait" and exaggerated claims dominate the wellness industry, RoopHUB was founded to be a sanctuary of clarity.</p>
-        <p>The name "Roop" signifies form, beauty, and essence, while "HUB" represents a central point of connection. Together, RoopHUB is your central destination for discovering the true essence of wellness. We started as a small digital initiative focused on affiliate marketing, but with a major difference—we decided to put <strong>Integrity over Income</strong>. We realized that people aren't just looking for products; they are looking for solutions that actually work without being misled by false promises.</p>
-    </section>
-
-    <section style="margin-top:40px; background:#f9f9f9; padding:20px; border-radius:10px;">
-        <h2 style="color:#2c3e50;">Our Core Mission & Vision</h2>
-        <p>Our mission is to bridge the gap between high-quality wellness manufacturers and health-conscious individuals. We specialize in deep-diving into the world of dietary supplements, cognitive enhancers (like <em>Neuro Serge</em>), and vitality boosters. Our vision is to become the most trusted affiliate wellness store globally, known not for the volume of products we sell, but for the quality of advice we provide.</p>
-        <p>We believe that an informed customer is a happy customer. By providing detailed ingredient analyses, manufacturing standards, and realistic expectation guides, we empower you to take control of your health with confidence.</p>
-    </section>
-
-    <section style="margin-top:40px;">
-        <h2 style="color:#2c3e50;">The "No Fake Reviews" Guarantee</h2>
-        <p>One of the strongest pillars of RoopHUB Official is our unwavering commitment to <strong>Ethical Marketing</strong>. In the affiliate industry, it is common to see fake testimonials, doctored "before and after" photos, and falsified identities used to drive sales. At RoopHUB, we have a strict "No Fake" policy.</p>
-        <p><strong>What this means for you:</strong>
-            <ul>
-                <li><strong>No Deceptive Testimonials:</strong> We do not create or buy fake reviews to make a product look better than it is.</li>
-                <li><strong>Honest Evaluations:</strong> If a product has a flaw or isn't suitable for everyone, we mention it.</li>
-                <li><strong>Verified Sources:</strong> Our data comes from official manufacturer records and real-world market reputation.</li>
-            </ul>
-        </p>
-        <p>We believe that trust is earned over time, and we are willing to lose a sale to keep your trust. This ethical approach is what sets us apart from thousands of other affiliate sites.</p>
-    </section>
-
-    <section style="margin-top:40px;">
-        <h2 style="color:#2c3e50;">Expertise and Research Process</h2>
-        <p>How do we choose the products featured on roophub.online? Our research process is rigorous. We don't just look at the shiny packaging. We look at:
-            <ol>
-                <li><strong>Ingredient Synergy:</strong> Do the ingredients work together effectively based on nutritional science?</li>
-                <li><strong>Facility Standards:</strong> Is the product made in an FDA-registered or GMP-certified facility?</li>
-                <li><strong>Brand Transparency:</strong> Does the company provide clear contact info and a solid money-back guarantee?</li>
-            </ol>
-        </p>
-    </section>
-
-    <section style="margin-top:40px; text-align:center; border-top:1px solid #eee; padding-top:30px;">
-        <h2 style="color:#2c3e50;">Why Trust RoopHUB?</h2>
-        <p>We are more than just an "online store." We are a community-focused platform. Whether you are looking to improve your focus, boost your daily energy, or find natural wellness solutions, RoopHUB is here to guide you. We are constantly updating our content to reflect the latest trends and safety standards in the wellness industry.</p>
-        <p>Thank you for choosing RoopHUB Official as your trusted partner in health. We are excited to be a part of your journey toward a better, healthier version of yourself.</p>
-        
-        <div style="margin-top:20px;">
-            <p><strong>Follow Our Journey</strong></p>
-            <p>Explore our latest reviews, check out our YouTube storytelling projects, or reach out to us directly through our Contact page. Together, let's redefine wellness.</p>
-        </div>
-    </section>
-</div>
-<!-- AFFILIATE DISCLOSURE MODAL -->
-<div id="affiliateModal" style="
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:white;
-z-index:9999;
-overflow-y:scroll;
-padding:20px;
-">
-
-<button onclick="closeModal()" style="
-position:fixed;
-right:20px;
-top:20px;
-padding:10px 15px;
-background:rgb(107, 37, 228);
-color:white;
-border:none;
-border-radius:8px;
-cursor:pointer;
-">
-Close ✖
-</button>
-    <h2>Affiliate Disclosure & Full Earnings Disclaimer</h2>
-    <p><strong>Last Updated: April 17, 2026</strong></p>
-
-    <p>Welcome to RoopHUB Official (roophub.online). We believe in complete transparency and honesty when it comes to our relationship with our readers and the products we discuss. In compliance with the Federal Trade Commission (FTC) guidelines and Google AdSense program policies, this page serves as our official disclosure regarding affiliate relationships and how we generate revenue to maintain this platform.</p>
-
-    <h3>1. What is an Affiliate Relationship?</h3>
-    <p>First and foremost, you should assume that many of the links found on RoopHUB are "affiliate links." This means that if you click on a link and subsequently make a purchase from the official product manufacturer or a third-party retailer, we may receive a small commission from that sale. This is a referral fee provided by the brand as a thank you for directing a customer to their store.</p>
-    
-    <p>It is important to understand that this commission comes at absolutely <strong>no additional cost to you</strong>. Whether you visit the official site directly or through our link, the price remains exactly the same. In many cases, because of our professional relationship with these brands, our links may actually provide you with exclusive discounts, limited-time bonuses, or promotional offers that are not available to the general public.</p>
-
-    <h3>2. Why Do We Use Affiliate Links?</h3>
-    <p>Maintaining a high-quality digital platform like RoopHUB involves significant operational costs. These include premium domain registration, high-speed secure hosting, advanced website security protocols, professional copywriting, deep-dive research into health ingredients, and technical maintenance. Affiliate marketing is our primary business model, allowing us to keep our content free for all users. Instead of charging a subscription fee or hiding our articles behind a paywall, we earn through these commissions. This allows us to continue our mission of providing valuable wellness information to thousands of readers worldwide.</p>
-
-    <h3>3. Our Commitment to Editorial Integrity</h3>
-    <p>At RoopHUB, our reputation is our most valuable asset. We understand that our readers trust us to provide accurate and helpful information. Therefore, our affiliate relationships do not influence the information we provide. We do not accept payment to provide a "fake" positive review. Our evaluation of products like Neuro Serge or other wellness supplements is based on official manufacturer data, ingredient analysis, and general market reputation. We only choose to affiliate ourselves with products that we believe offer genuine value to our audience. If we find a product to be ineffective or untrustworthy, we will not promote it, regardless of the potential commission.</p>
-
-    <h3>4. Transparency Regarding Product Claims</h3>
-    <p>While we strive to provide the most up-to-date information, it is important to note that RoopHUB is an independent reviewer and not the manufacturer of the products mentioned. Any product claim, statistic, quote, or other representation about a product or service should be verified with the manufacturer or provider. Results from health supplements can vary significantly from person to person based on age, genetics, and lifestyle. We encourage all our readers to perform their own due diligence before making any purchase decision. Your health and safety are paramount, and you should always consult with a licensed healthcare provider before starting any new supplement regimen.</p>
-
-    <h3>5. Google AdSense and Third-Party Advertisements</h3>
-    <p>In addition to affiliate links, RoopHUB may participate in the Google AdSense program. This means you may see automated advertisements served by Google throughout our website. These ads are generated based on your browsing history or the content of the page. Please be aware that RoopHUB does not have direct control over the specific products or services advertised through the AdSense network. Our inclusion of these ads does not constitute an endorsement of the advertised products. We make a clear distinction between our researched content/affiliate recommendations and the automated ads served by third parties.</p>
-
-    <h3>6. Ethical Standards and Non-Deceptive Practices</h3>
-    <p>We strictly adhere to ethical marketing practices. This means we do not use deceptive tactics, such as fake countdown timers (unless they represent a real expiring offer), misleading testimonials, or falsified identity claims to drive sales. We believe that an informed customer is a happy customer. By being upfront about our affiliate status, we hope to build a long-term relationship with you based on trust and mutual respect. We value your presence on our site and are committed to maintaining the highest standards of digital publishing.</p>
-
-    <h3>7. Social Media and External Communications</h3>
-    <p>The disclosure mentioned here applies to all communications from RoopHUB, including our YouTube channel content, email newsletters, and social media posts. If we share a link on platforms like Facebook or Instagram, you should assume that those links also carry the same affiliate potential. We aim to be as consistent as possible across all channels so that you are never in doubt about our commercial interests.</p>
-
-    <h3>8. Contact and Further Questions</h3>
-    <p>Your trust is the foundation of RoopHUB. We want you to feel confident and secure while browsing our landing pages and articles. If you have any questions regarding this Affiliate Disclosure, our privacy practices, or our relationship with specific brands, please do not hesitate to reach out to us. You can contact our team directly through the "Contact Us" page on our website. We are more than happy to provide further clarification to ensure you have a transparent and enjoyable experience on our platform.</p>
-
-    <p>By continuing to use this website, you acknowledge that you have read and understood this Affiliate Disclosure and agree to its terms. Thank you for supporting RoopHUB Official.</p>
-</div>
 
 <!-- ✨ BENEFIT POPUP OVERLAY STRUCTURE -->
 <div id="benefitPopupOverlay" onclick="closeBenefitPopup()"></div>
@@ -1859,7 +2244,7 @@ Close ✖
 <div id="chat-container" style="display:none; position:fixed; bottom:150px; right:20px; width:320px; border:1px solid #ccc; background:#fff; border-radius:15px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index:1000; overflow:hidden; font-family: Arial, sans-serif;">
     
     <div style="background:#007bff; color:white; padding:15px; font-weight:bold; display:flex; justify-content:space-between; align-items:center;">
-        <span>✨RoopHub AI Assistant</span>
+        <span>✨Neuro Serge AI Assistant</span>
         <span onclick="toggleChat()" style="cursor:pointer; font-size:20px;">&times;</span>
     </div>
     
@@ -1868,7 +2253,7 @@ Close ✖
     </div>
 
     <div id="chat-box" style="height:220px; overflow-y:auto; padding:10px; background:#f9f9f9;">
-        <p style="margin:0; color:#555;"><b>Bot:</b> Hello! Welcome to RoopHub. How can I help you find the right health solution today?</p>
+        <p style="margin:0; color:#555;"><b>Bot:</b> Hello! Welcome to Neuro Serge. How can I help you sharpen your mental performance today?</p>
     </div>
 
     <div style="padding:10px; border-top:1px solid #eee; display:flex;">
@@ -1954,12 +2339,13 @@ function detectLanguage(text){ return /[\u0900-\u097F]/.test(text) ? "hi" : "en"
 
 // Fake reviews (always top)
 let fakeReviews = [
-    { name: "These are general user experiences based on research and feedback.", country_name:"", rating:"0", comment:""},
-    {name:"Michael Johnson", country_name:"USA", rating:5, comment:"Good product. Works well for me.👍"},
-    {name:"Liam Smith", country_name:"Canada", rating:4, comment:"I was struggling with this issue for a long time and tried multiple products, but nothing really worked. After using this, I started noticing changes within a few days. The best part is that it’s very easy to use and doesn’t feel complicated at all. I feel much more confident now and would definitely recommend it to others."},
-    {name:"Kavin Rayav", country_name:"India", rating:5, comment:"like how convenient this is. After regular use, I felt a bit more consistent with my daily activities.”"},
-    {name:"Oliver Brown", country_name:"UK", rating:4, comment:"“At first, I wasn’t sure if this would make any difference, but after trying it consistently, I started noticing small changes. It’s easy to include in my routine and doesn’t take much effort. Worth trying if you’re curious."},
+    { name: "The following experiences are based on ingredients research and clinical data analysis.", country_name:"", rating:"0", comment:""},
+    {name:"Michael Johnson", country_name:"USA", rating:5, comment:"Neuro Serge has been a total game-changer. My mental fog has finally cleared, and I feel much more sharp and energetic during the day. This research-backed formula really works!"},
+    {name:"Liam Smith", country_name:"Canada", rating:4, comment:"I was skeptical, but the research behind the ingredients in Neuro Serge convinced me to try it. After 3 weeks, my focus is much deeper and I feel a lot less mental strain. It's safe and effective."},
+    {name:"Kavin Rayav", country_name:"India", rating:5, comment:"The convenience of these capsules is amazing. Based on the cognitive research, I knew it was a solid blend, and the results have been consistent. My memory recall has definitely improved."},
+    {name:"Oliver Brown", country_name:"UK", rating:4, comment:"Better focus and better cognitive health. I'm glad I found Neuro Serge. It’s clear that a lot of research went into this blend because it delivers mental clarity without any side effects."},
 ];
+
 
 // Load real reviews (user वाले)
 let realReviews = [];
@@ -2051,16 +2437,13 @@ let images=[
 "Images/Neuroserge4.jpeg"
 ];
 
-let index=0;
-let img=document.getElementById("sliderImage");
-
 function showImage(i){
     if(!img) return;
     img.style.opacity = 0;
     img.style.filter = 'blur(4px)';
     img.style.transform = 'scale(0.9) translateX(-10px)'; // Professional Exit
 
-    setTimeout(()=>{
+    setTimeout(() => {
         img.src = images[i];
         img.style.opacity = 1;
         img.style.filter = 'blur(0)';
@@ -2217,73 +2600,72 @@ function closeBenefitPopup() {
 // Detailed Content Mapping
 const benefitPopupData = {
     "memory_focus": {
-        title: "Cognitive Precision & Neural Speed",
-        icon: "🧠",
-        desc: "Neuro Serge utilizes a high-potency blend of neuro-nutrients designed to optimize synaptic signaling. By enhancing neural plasticity, it facilitates accelerated information processing, ultra-sharp recall, and the ability to maintain executive focus during complex cognitive tasks."
+        title: "Root-Cause Neural Path Correction",
+        icon: "🛡️",
+        desc: "Neuro Serge penetrates deep into neural pathways to support neurotransmitter function. Instead of just masking fatigue, it acts directly on the source of brain fog to restore mental clarity and cognitive precision naturally."
     },
     "brain_health": {
-        title: "Neuroprotection & Cellular Integrity",
-        icon: "🛡️",
-        desc: "Our clinical-grade formula prioritizes long-term neurological health. By leveraging powerful antioxidants like Grape Seed and Olive Leaf extracts, Neuro Serge shields neurons from oxidative stress and supports the structural integrity of the blood-brain barrier for lifelong cognitive wellness."
+        title: "Enhanced Synaptic Support",
+        icon: "🌊",
+        desc: "This targeted formula strengthens neural connections, ensuring your brain can process and store information more efficiently. Say goodbye to memory gaps, constant mental fatigue, and frustrating lack of concentration."
     },
     "fatigue_energy": {
-        title: "Metabolic Brain Energy & Clarity",
-        icon: "⚡",
-        desc: "By optimizing cerebral blood flow and mitochondrial efficiency, Neuro Serge effectively eliminates 'brain fog'. It provides a clean, ATP-driven energy source for your mind, ensuring peak mental performance throughout the day without the jittery 'crash' associated with synthetic stimulants."
+        title: "Neural Pathway Detox",
+        icon: "😴",
+        desc: "Formulated with active organic neuro-nutrients that gently flush out oxidative waste and cellular toxins from your brain cells. This systematic cleanse protects your neurons and maintains smooth, sharp daily mental function."
     },
     "natural_ingredients": {
-        title: "Pharmacopoeia-Grade Botanical Synergy",
-        icon: "🌿",
-        desc: "We adhere to rigorous quality protocols, utilizing only lab-verified, high-bioavailability botanical extracts. Our formulation is strictly non-GMO, gluten-free, and completely free from synthetic fillers or habit-forming substances, offering a clean, safe, and professional path to mental excellence."
+        title: "Advanced Bioavailability",
+        icon: "⚡",
+        desc: "Built with an advanced absorption matrix, these premium dietary capsules dissolve quickly. This allows your system to absorb and utilize the cognitive-enhancing ingredients much faster, leading to steady mental energy."
     },
     "stress_mood": {
-        title: "Stress Adaptation & Mood Balance",
-        icon: "🧘",
-        desc: "Neuro Serge's adaptogenic compounds help modulate the body's stress response, promoting a sense of calm and emotional equilibrium. This leads to improved resilience against daily pressures and a more positive mental outlook."
+        title: "Optimized Neural Flexibility",
+        icon: "🌿",
+        desc: "Over time, neural pathways can lose flexibility due to stress. This natural blend provides essential structural nutrients that actively maintain healthy brain elasticity, giving you back perfect emotional and focus control."
     },
     "learning_retention": {
-        title: "Learning Capacity & Retention",
-        icon: "📚",
-        desc: "By supporting key brain regions involved in learning and memory formation, Neuro Serge enhances your ability to absorb new information, process complex data, and retain knowledge more effectively for academic or professional growth."
+        title: "Cerebral Blood Flow Optimization",
+        icon: "⚖️",
+        desc: "It enhances healthy blood circulation and micro-circulation directly to the cerebral cortex. This consistent flow ensures that oxygen and healing botanical nutrients reach your brain tissue efficiently for active cellular repair."
     },
     "sleep_quality": {
-        title: "Restorative Sleep & Brain Rejuvenation",
-        icon: "😴",
-        desc: "Neuro Serge aids in regulating healthy sleep patterns, which is crucial for brain detoxification and memory consolidation. Experience deeper, more restorative sleep, waking up feeling refreshed and mentally sharp."
+        title: "Zero Habit-Forming Elements",
+        icon: "🛡️",
+        desc: "Crafted from 100% pure ingredients, this cognitive complex is entirely non-addictive and free from synthetic stimulants. This clean profile makes it safe for daily mental performance maintenance."
     },
     "neurotransmitter_support": {
-        title: "Neurotransmitter Synthesis & Balance",
-        icon: "🔬",
-        desc: "Our formula provides precursors and cofactors essential for the balanced synthesis of vital neurotransmitters like dopamine, serotonin, and acetylcholine. This supports optimal brain communication, mood regulation, and cognitive function."
+        title: "Neural Immune Reinforcement",
+        icon: "🌿",
+        desc: "Packed with high-grade antioxidants, it strengthens your brain's local defenses. This vital shield helps protect your neurons from oxidative stress and environmental toxins, keeping your nervous system resilient."
     }
 };
 
 // Specifications Content Mapping
 const specPopupData = {
-    "product_name": { title: "Neuro Serge", icon: "📦", desc: "Neuro Serge is our flagship cognitive enhancement supplement, formulated to meet the highest industry standards for purity and efficacy." },
-    "formula_type": { title: "Synergistic Herbal Blend", icon: "🌱", desc: "A 100% natural, plant-based formula designed to optimize neurological signaling and support long-term cellular health in the brain." },
-    "ingredients": { title: "Bioactive Ingredients", icon: "🔬", desc: "Contains premium extracts like Olive Leaf, Green Tea, and Grape Seed, specifically chosen for their high antioxidant content and neuroprotective benefits." },
-    "form": { title: "Rapid-Absorb Capsules", icon: "💊", desc: "Encapsulated in quick-release shells to ensure maximum bioavailability, allowing the active nutrients to enter your system efficiently." },
-    "quantity": { title: "Full Monthly Supply", icon: "🗓️", desc: "Each bottle provides 60 capsules, exactly what you need for a consistent 30-day cognitive support routine." },
-    "usage": { title: "Optimal Dosage", icon: "⏰", desc: "For the best results in neural plasticity, take 2 capsules daily. We recommend morning use with a light meal and plenty of water." },
-    "benefits_summary": { title: "Cognitive Outcomes", icon: "✨", desc: "Users report significant improvements in memory recall, executive focus, and the elimination of 'mental fog' within the first few weeks of use." },
-    "quality": { title: "Verified Quality", icon: "🏆", desc: "Every batch undergoes rigorous lab testing to verify potency and ensure it is free from contaminants or heavy metals." },
-    "manufacturing": { title: "USA Manufactured", icon: "🇺🇸", desc: "Proudly produced in state-of-the-art facilities in the United States, following strict Good Manufacturing Practices (GMP)." },
-    "product_type": { title: "Wellness Aid", icon: "🍏", desc: "Classified as a natural dietary supplement, intended to support your body's innate cognitive functions rather than replace medical treatment." },
-    "safety_info": { title: "Safe & Non-Habit Forming", icon: "🛡️", desc: "Our formula is non-addictive and contains no synthetic stimulants, making it safe for daily long-term integration into your lifestyle." },
-    "note": { title: "Healthcare Guidance", icon: "ℹ️", desc: "While Neuro Serge is natural, we always suggest consulting your physician if you are pregnant, nursing, or taking other prescription medications." }
+    "product_name": { title: "Neuro Serge", icon: "📦", desc: "Neuro Serge is a premium brain support supplement designed to optimize cognitive performance, enhance memory recall, and protect long-term neurological health using high-potency natural extracts." },
+    "formula_type": { title: "Cognitive Synergy", icon: "🌱", desc: "Our advanced nootropic formula uses a synergistic blend of antioxidants and neuro-nutrients that work together to support neural plasticity and synaptic speed for better mental agility." },
+    "ingredients": { title: "Bioactive Nootropics", icon: "🔬", desc: "Features lab-verified ingredients like Olive Leaf and Green Tea which are rich in polyphenols. These compounds help protect brain cells from oxidative stress and improve cerebral blood flow for instant clarity." },
+    "form": { title: "Bioavailable Capsules", icon: "💊", desc: "These rapid-absorb capsules are designed to bypass stomach acid and deliver active neuro-nutrients directly to your system, ensuring maximum effectiveness and fast-acting results." },
+    "usage": { title: "Optimal Dosage", icon: "⏰", desc: "For peak mental performance, take two capsules daily with water, ideally in the morning. Consistency is vital for supporting neural pathway repair and maintaining high levels of focus throughout the day." },
+    "benefits_summary": { title: "Cognitive Outcomes", icon: "✨", desc: "Experience a significant reduction in 'brain fog', faster information processing, and a sharper memory. Neuro Serge helps you stay productive and mentally alert even during demanding tasks." },
+    "quality": { title: "Verified Quality", icon: "🏆", desc:"This means the product is manufactured in a facility that adheres to the strictest safety and cleanliness regulations. It undergoes regular audits and strict inspection protocols to guarantee that every single bottle produced is safe, high-quality, completely pure, and completely free from dangerous contaminants." },
+    "manufacturing": { title: "USA Manufactured", icon: "🇺🇸", desc: "All batches are mixed, encapsulated, and packaged within the United States using premium ingredients. This guarantees compliance with strict American manufacturing laws, ensuring you receive a premium product that meets international safety, purity, and quality benchmarks." },
+    "product_type": { title: "Wellness Aid", icon: "🍏", desc: "This product is classified as a dietary supplement and is crafted entirely from plant-derived herbs, essential vitamins, and organic minerals. It is completely free from harsh chemicals, synthetic fillers, or habit-forming substances, making it a safe addition to your long-term health routine." },
+    "safety_info": { title: "Safe & Non-Habit Forming", icon: "🛡️", desc: "The formula is made using clean ingredients that are never genetically modified (Non-GMO) and are completely free from gluten, soy, or dairy allergens. Because it relies purely on clean, tested elements, it does not cause dangerous side effects, making it perfectly safe for regular, daily consumption." },
+    "note": { title: "Expert Guidance", icon: "ℹ️", desc: "While Neuro Serge is natural and safe, we always recommend consulting a healthcare professional before starting any new supplement, especially if you have an existing medical condition or are on medication." }
 };
 
 // Comparison Section Content Mapping
 const comparisonPopupData = {
-    "struggle_focus": { title: "Cognitive Dispersion", icon: "❌", desc: "Inability to maintain task saliency, leading to fragmented work hours and mental drift. This often stems from neural nutrient deficiency." },
-    "struggle_memory": { title: "Information Retention Gap", icon: "❌", desc: "Frequent episodes of 'tip-of-the-tongue' syndrome and forgetting critical appointments, causing professional and personal friction." },
-    "struggle_fatigue": { title: "Mitochondrial Sluggishness", icon: "❌", desc: "A persistent feeling of mental exhaustion or 'brain fog' that prevents the initiation of demanding cognitive tasks." },
-    "struggle_productivity": { title: "Output Decline", icon: "❌", desc: "Hours spent at the desk without substantial progress due to low neural energy and high distractibility." },
-    "help_focus": { title: "Hyper-Focus Activation", icon: "✅", desc: "Enhances attention circuitry, allowing for deep concentration even in stimulating environments." },
-    "help_memory": { title: "Neural Encoding Support", icon: "✅", desc: "Strengthens synaptic connections involved in memory consolidation for faster recall and learning." },
-    "help_energy": { title: "Sustained ATP Production", icon: "✅", desc: "Boosts cerebral energy without stimulants, ensuring your brain has the fuel it needs for the entire day." },
-    "help_productivity": { title: "Peak Executive Function", icon: "✅", desc: "Enables efficient decision-making and rapid task completion by optimizing overall neurological health." }
+    "struggle_focus": { title: "Mental Drift", icon: "❌", desc: "The Struggle: Finding it hard to stay on task or getting easily distracted by surrounding noise. This lack of focus affects work quality and leads to missed deadlines." },
+    "struggle_memory": { title: "Retention Gaps", icon: "❌", desc: "The Struggle: Forgetting important details, names, or where you put your keys. These lapses in memory can be frustrating and stressful in professional environments." },
+    "struggle_fatigue": { title: "Brain Fog", icon: "❌", desc: "The Struggle: Feeling mentally drained even after a full night's sleep. This 'cloudy' feeling makes it difficult to think clearly or initiate complex projects." },
+    "struggle_productivity": { title: "Low Mental Output", icon: "❌", desc: "The Struggle: Spending hours on a simple task because your brain isn't firing on all cylinders. This leads to procrastination and a lack of daily achievement." },
+    "help_focus": { title: "Hyper-Focus Activation", icon: "✅", desc: "Neuro Serge nourishes neural pathways to improve concentration. It helps you enter a state of 'flow' where you can ignore distractions and stay locked into your work." },
+    "help_memory": { title: "Neural Encoding Support", icon: "✅", desc: "The formula strengthens synaptic connections, making it easier for your brain to encode new information and recall stored memories with lightning speed." },
+    "help_energy": { title: "Pure Cognitive Energy", icon: "✅", desc: "By optimizing ATP production in brain cells, Neuro Serge provides steady mental energy. No more afternoon crashes—just pure, clean fuel for your mind." },
+    "help_productivity": { title: "Executive Efficiency", icon: "✅", desc: "Sharpened mental tools allow for faster decision-making and efficient multitasking, helping you get through your to-do list with confidence and ease." }
 };
 
 document.addEventListener("click", function(e) {
@@ -2302,11 +2684,6 @@ document.addEventListener("click", function(e) {
             <p style="font-size: 17px; line-height: 1.7; color: #334155; background: #ffffff; padding: 25px; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
                 ${data.desc}
             </p>
-            <div style="margin-top: 15px;">
-                <a href="#specs" onclick="closeBenefitPopup()" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 5px;">
-                    🔍 Know More about Ingredients &rarr;
-                </a>
-            </div>
         `;
         openBenefitPopup(popupContent);
     } else if (specRow) {

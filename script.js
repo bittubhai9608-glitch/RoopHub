@@ -32,15 +32,19 @@ const products = {
 
   "Brain Boost": [
     { 
-      name: "Neuro Serge", 
-      rating: "4.9", 
-      price: "Limited Time Offer", 
-      img: "Images/neuroserge.jpeg", 
-      link: "NeuroSerge.html",
-      features: ["Sharpen Mental Clarity", "Enhance Memory Recall", "100% Drug-Free"]
-    },
-    { name: "Visiflora Precision Vision", rating:"4.5", price: "$49", img:"Images/visiflora.jpeg", link: "https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
-  ],
+    name: "Neuro Surge",
+    rating: "4.8",
+    price: "Special Discount Available",
+    img: "Images/neuroserge.jpeg",
+    link: "NeuroSerge.html",
+    features: [
+      "Better Focus & Memory",
+      "Boosts Daily Brain Power",
+      "Made with Natural Extracts",
+      "Total Satisfaction Guarantee"
+    ]
+  },
+],
 
   "Skin Care": [
     { name: "Purisaki Berberine Patches", rating:"4.7", price: "Click to Check Price", img: "Images/purisaki2.jpeg", link: "https://ca114xufvmev4q3gvdqr-a76nn.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" },
