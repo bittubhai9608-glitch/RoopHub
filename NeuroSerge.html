@@ -1341,7 +1341,7 @@ body {
 
     <!-- ACTIONS -->
     <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-        <a href="https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" onclick="trackConversion('ClickBank', 'Review Section Buy Neuro Serge')" style="flex: 1; padding: 12px; background: #27ae60; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; display: flex; justify-content: center; align-items: center;">Visit Official Website</a>
+        <a href="https://d804a1lm6ed35ye3fp164jvm1p.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" onclick="trackConversion('ClickBank', 'Review Section Buy Neuro Serge')" style="flex: 1; padding: 12px; background: #27ae60; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; display: flex; justify-content: center; align-items: center;">Visit Official Website</a>
         <button onclick="toggleReviews()" id="toggleListBtn" style="flex: 1; padding: 12px; background: #f8f9fa; color: #2c3e50; border: 1px solid #ddd; border-radius: 8px; font-weight: 600; cursor: pointer;">Show All Reviews</button>
     </div>
     <!-- FORM -->
@@ -1423,7 +1423,7 @@ See More
 <!-- BUY -->
 <div class="buy-section" id="buy">
     <div style="font-size: 14px; color: #1e40af; font-weight: 800; margin-bottom: 8px;">🛡️ SECURE ORDER: SAVE 35% TODAY</div>
-    <a href="https://bb380atn-sfu8kflvon6zfu24u.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" onclick="trackConversion('ClickBank', 'Main Buy Neuro Serge')" class="buy-btn" data-i18n="visit_store">
+    <a href="https://d804a1lm6ed35ye3fp164jvm1p.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" onclick="trackConversion('ClickBank', 'Main Buy Neuro Serge')" class="buy-btn" data-i18n="visit_store">
         🔒 Visit Official Store
     </a>
     <div style="margin-top: 8px; font-weight: 600; color: #4b5563; font-size: 11px;">100% Risk-Free Guarantee | SSL Encrypted</div>
@@ -2431,11 +2431,14 @@ window.onload = function(){
 ========================= */
 
 let images=[
-"Images/Neuroserge1.jpeg",
-"Images/Neuroserge2.jpeg",
-"Images/Neuroserge3.jpeg",
-"Images/Neuroserge4.jpeg"
+    "images/neuroserge1.jpeg",
+    "images/neuroserge2.jpeg",
+    "images/neuroserge3.jpeg",
+    "images/neuroserge4.jpeg"
 ];
+
+let index = 0;
+let img = document.getElementById("sliderImage");
 
 function showImage(i){
     if(!img) return;
