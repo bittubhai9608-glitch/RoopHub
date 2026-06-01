@@ -215,12 +215,10 @@ window.addEventListener("load", function(){
 
 /* ---------- IMAGE PRELOAD (MOBILE FAST) ---------- */
 let images=[
-"Images/prostaViveVitality9.jpeg",
-"Images/prostaViveVitality10.jpeg",
-"Images/prostaViveVitality11.jpeg",
-"Images/prostavive4.jpeg",
-"Images/ProstaViveProme.jpeg",
-"Images/Prostaviveelite.jpeg",
+    "images/neuroserge1.jpeg",
+    "images/neuroserge2.jpeg",
+    "images/neuroserge3.jpeg",
+    "images/neuroserge4.jpeg"
 ];
 
 images.forEach(src=>{
