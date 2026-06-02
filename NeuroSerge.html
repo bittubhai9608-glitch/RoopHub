@@ -2560,17 +2560,6 @@ function closeFaqPopup() {
     }, 250);
 }
 
-document.addEventListener("click", function(e) {
-    const btn = e.target.closest(".faq-question");
-    if (!btn) return;
-    
-    const item = btn.parentElement;
-    const questionText = btn.innerText.replace('+', '').trim();
-    const answerHtml = item.querySelector(".faq-answer").innerHTML;
-    
-    openFaqPopup(questionText, answerHtml);
-});
-
 /* ========================= BENEFIT POPUP LOGIC ========================= */
 function openBenefitPopup(content) {
     const box = document.getElementById('benefitPopupBox');
