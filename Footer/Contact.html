@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | RoopHub Official</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../Images/favicon2.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f8fafc; }
+    
+    .header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 60px 20px; text-align: center; }
+    .header h1 { font-size: 3rem; margin-bottom: 10px; }
+    .header p { font-size: 1.2rem; color: #94a3b8; }
+    
+    .nav-back { position: fixed; top: 20px; left: 20px; z-index: 1000; }
+    .nav-back a { background: rgba(255,255,255,0.9); color: #333; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s; }
+    .nav-back a:hover { background: #27ae60; color: white; transform: translateY(-2px); }
+    
+    .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+    
+    .intro { background: white; border-radius: 20px; padding: 40px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    .intro h2 { color: #1e293b; font-size: 1.8rem; margin-bottom: 20px; }
+    .intro p { color: #64748b; font-size: 1.1rem; }
+    
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-bottom: 30px; }
+    .contact-card { background: white; padding: 35px 25px; border-radius: 20px; text-align: center; transition: all 0.3s; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-decoration: none; color: inherit; }
+    .contact-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    .contact-card .icon { width: 70px; height: 70px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+    .contact-card .icon i { font-size: 30px; }
+    .contact-card h3 { color: #1e293b; margin-bottom: 10px; font-size: 1.2rem; }
+    .contact-card .detail { color: #27ae60; font-weight: 700; font-size: 1.1rem; margin-bottom: 10px; }
+    .contact-card p { font-size: 0.9rem; color: #64748b; }
+    
+    .icon-email { background: #fee2e2; }
+    .icon-email i { color: #ea4335; }
+    .icon-whatsapp { background: #dcfce7; }
+    .icon-whatsapp i { color: #25d366; }
+    .icon-telegram { background: #e0f2fe; }
+    .icon-telegram i { color: #0088cc; }
+    .icon-phone { background: #dcfce7; }
+    .icon-phone i { color: #27ae60; }
+    
+    .location-section { background: white; border-radius: 20px; padding: 50px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .location-info h2 { color: #1e293b; font-size: 1.8rem; margin-bottom: 15px; }
+    .location-info .badge { display: inline-block; padding: 8px 16px; background: #fee2e2; color: #ef4444; border-radius: 12px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 20px; }
+    .location-info p { color: #64748b; margin-bottom: 20px; }
+    .address-box { background: #f8fafc; padding: 25px; border-radius: 15px; border-left: 5px solid #3b82f6; }
+    .address-box p { color: #1e293b; margin: 0; }
+    .map-frame { width: 100%; height: 350px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+    .map-frame iframe { width: 100%; height: 100%; border: none; }
+    
+    .security-notice { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 5px solid #3b82f6; padding: 30px; border-radius: 15px; margin-bottom: 30px; }
+    .security-notice h3 { color: #1e40af; font-size: 1.3rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+    .security-notice p { color: #1e3a8a; font-size: 1rem; }
+    
+    .footer { text-align: center; padding: 40px 20px; background: #0f172a; color: #94a3b8; }
+    .footer p { margin: 5px 0; }
+    .footer a { color: #27ae60; text-decoration: none; }
+    
+    @media (max-width: 768px) {
+      .header h1 { font-size: 2rem; }
+      .location-grid { grid-template-columns: 1fr; }
+      .location-section { padding: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-back">
+    <a href="../index.html"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+  </div>
+
+  <div class="header">
+    <h1><i class="fa-solid fa-envelope"></i> Contact Us</h1>
+    <p>Official Support Channels - We're Here to Help</p>
+  </div>
+
+  <div class="container">
+    <section class="intro">
+      <h2>Get in Touch</h2>
+      <p><strong>RoopHub Official</strong> is a premier global platform dedicated to health and wellness curation. We operate as an integrity-first ecosystem, meaning we don't just sell products; we carefully research and vet the science and manufacturing standards behind every brand we feature.</p>
+      <p style="margin-top: 15px;">We believe that direct communication is the best way to build a healthy community. Instead of filling out long, complicated forms, you can reach our verified support experts immediately through any of the channels below.</p>
+    </section>
+
+    <div class="contact-grid">
+      <a href="mailto:support@roophub.com" class="contact-card">
+        <div class="icon icon-email">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+        <h3>Official Email</h3>
+        <div class="detail">support@roophub.com</div>
+        <p>Best for official business, partnerships, and detailed product questions. Response within 24 hours.</p>
+      </a>
+
+      <a href="https://whatsapp.com/channel/0029Vb7Y2ft3QxS4drpeQV02" target="_blank" class="contact-card">
+        <div class="icon icon-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+        <h3>WhatsApp Hub</h3>
+        <div class="detail">Join Channel</div>
+        <p>Get instant alerts on flash sales, new product launches, and exclusive member-only discount codes.</p>
+      </a>
+
+      <a href="https://t.me/RoopHubOfficial" target="_blank" class="contact-card">
+        <div class="icon icon-telegram">
+          <i class="fa-brands fa-telegram"></i>
+        </div>
+        <h3>Telegram Group</h3>
+        <div class="detail">RoopHub Official</div>
+        <p>A professional space for health enthusiasts. Join our global community for daily research articles.</p>
+      </a>
+
+      <a href="tel:8271734883" class="contact-card">
+        <div class="icon icon-phone">
+          <i class="fa-solid fa-phone"></i>
+        </div>
+        <h3>Support Helpline</h3>
+        <div class="detail">+91 82717 34883</div>
+        <p>Talk to our agents directly. Available Monday to Friday (10:00 AM to 6:00 PM IST).</p>
+      </a>
+    </div>
+
+    <section class="location-section">
+      <div class="location-grid">
+        <div class="location-info">
+          <span class="badge"><i class="fa-solid fa-location-dot"></i> Global Operations Center</span>
+          <h2>Visit Our Main Hub</h2>
+          <p>Our administrative headquarters is located in the heart of Bihar. We manage our global digital marketplace and logistics from this central location.</p>
+          <div class="address-box">
+            <p><strong>Physical Address:</strong><br>
+            Yadav Nagar, Road No 3,<br>
+            Muzaffarpur, Bihar,<br>
+            India - 842001</p>
+          </div>
+        </div>
+        <div class="map-frame">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.4116422998625!2d85.3908!3d26.1209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDA3JzE1LjIiTiA4NcKwMjMnMjYuOSJF!5e0!3m2!1sen!2sin!4v1716500000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="security-notice">
+      <h3><i class="fa-solid fa-user-shield"></i> Your Privacy & Security Promise</h3>
+      <p>Your personal information is 100% safe with us. We use end-to-end encryption on all our contact channels. Please note: Our official staff will NEVER ask for your bank details, OTP, or passwords over a call or message. Always stay safe and use only the links provided on this page.</p>
+    </section>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2026 RoopHub Official. All Rights Reserved.</p>
+    <p><a href="PrivacyPolicy.html">Privacy Policy</a> | <a href="Terms.html">Terms & Conditions</a> | <a href="Disclaimer.html">Disclaimer</a></p>
+  </div>
+</body>
+</html>

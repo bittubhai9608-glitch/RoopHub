@@ -36,7 +36,7 @@ const products = {
     rating: "4.8",
     price: "Special Discount Available",
     img: "Images/neuroserge.jpeg",
-    link: "NeuroSerge.html",
+    link: "Brain_Boost/neuroserge.html",
     features: [
       "Better Focus & Memory",
       "Boosts Daily Brain Power",
