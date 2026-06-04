@@ -1563,6 +1563,27 @@
             transform: translateX(4px);
         }
 
+
+        @media (max-width: 668px) {
+    .products-grid {
+        /* Mobile ke liye 2 columns */
+
+        grid-template-columns: repeat(2, 1fr); 
+        /* Mobile par jagah bachane ke liye gap kam kar rahe hain */
+        gap: 10px; 
+    }
+    .product-card {
+        /* Mobile par card thoda chhota kar rahe hain */
+        border-radius: var(--radius-md);
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Agar mobile par image badi lag rahi ho, toh uski height kam kar sakte hain */
+    .product-image {
+        height: 100px; 
+    }
+}
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -1632,8 +1653,8 @@
     <header class="header">
         <div class="header-container">
             <a href="#" class="logo">
-                <img src="/Images/logoneuro.jpeg" alt="NeuroSerge Logo">
-                <span class="logo-text">NeuroSerge</span>
+                <img src="/Images/favicon2.ico" alt="NeuroSerge Logo">
+                <span class="logo-text">ROOPHUB</span>
             </a>
             <nav>
                 <ul class="nav-menu">
@@ -2160,7 +2181,7 @@
                         </div>
                         <a href="ProstaViveVitality.html" class="product-link">
                             Learn More
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="2" height="2" viewBox="0 0 3 3" fill="none" stroke="currentColor" stroke-width="1">
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
                             </svg>
                         </a>
@@ -2183,7 +2204,7 @@
                         </div>
                         <a href="keyslimDrops.html" class="product-link">
                             Learn More
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1">
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
                             </svg>
                         </a>
@@ -2206,7 +2227,7 @@
                         </div>
                         <a href="CitrusBurnRapidBurnLandingPage.html" class="product-link">
                             Learn More
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="2" height="2" viewBox="0 0 3 3" fill="none" stroke="currentColor" stroke-width="1">
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
                             </svg>
                         </a>
@@ -2359,7 +2380,7 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <div class="logo">
-                        <img src="/Images/logoneuro.jpeg" alt="NeuroSerge Logo" style="width: 40px; height: 40px; border-radius: 6px;">
+                        <img src="/Images/neuroserge4.jpeg" alt="NeuroSerge Logo" style="width: 40px; height: 40px; border-radius: 6px;">
                         <span class="logo-text" style="color: white;">NeuroSerge</span>
                     </div>
                     <p>NeuroSerge is a premium cognitive enhancement supplement designed to help you unlock your brain's full potential. Our scientifically formulated blend of natural nootropics supports focus, memory, and long-term brain health.</p>
@@ -2376,19 +2397,19 @@
                 <div class="footer-links">
                     <h4>Support</h4>
                     <ul>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Shipping Info</a></li>
-                        <li><a href="#">Returns</a></li>
-                        <li><a href="#">Track Order</a></li>
+                        <li><a href="/Footer/AboutUs.html">About Us</a></li>
+                        <li><a href="/Footer/Contact.html">Contact Us</a></li>
+                        <li><a href="/Footer/ReturnPolicy.html">Returns</a></li>
+                        <li><a href="/Footer/ImportantInformation.html">Important Information</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Legal</h4>
                     <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Disclaimer</a></li>
-                        <li><a href="#">Affiliate Disclosure</a></li>
+                        <li><a href="/Footer/PrivacyPolicy.html">Privacy Policy</a></li>
+                        <li><a href="/Footer/Terms.html">Terms of Service</a></li>
+                        <li><a href="/Footer/Disclaimer.html">Disclaimer</a> <a href="/Footer/FAQ.html">| FAQ</a> </li>
+                        <li><a href="/Footer/AffiliateDisclosure.html">Affiliate Disclosure</a></li>
                     </ul>
                 </div>
             </div>
