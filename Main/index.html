@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Affiliate Marketplace - Transform Your Mind & Body With AI Recommended Products">
+    <meta name="keywords" content="AI, Affiliate, Marketplace, Health, Weight Loss, Brain Boost, Skincare">
+    <title>NeuroSerge - AI Affiliate Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sticky Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logoneuro.jpeg" alt="NeuroSerge Logo">
+                <span>NeuroSerge</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#categories" class="nav-link">Categories</a></li>
+                <li><a href="#products" class="nav-link">Products</a></li>
+                <li><a href="#videos" class="nav-link">Videos</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="nav-btn-secondary">Sign In</button>
+                <button class="nav-btn-primary">Get Started</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Slider -->
+    <section class="hero" id="home">
+        <div class="hero-slider">
+            <!-- Slide 1: Men Health -->
+            <div class="slide active" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <div class="slide-content">
+                    <div class="hero-badge">Men Health</div>
+                    <h1 class="hero-title">Premium Men's Wellness Products</h1>
+                    <p class="hero-subtitle">AI-powered recommendations for men's health. From vitality boosters to complete nutrition solutions for active lifestyles.</p>
+                    <div class="hero-buttons">
+                        <a href="menhealth.html" class="btn-primary" style="text-decoration: none;">
+                            <i class="fas fa-shopping-cart"></i> Shop Now
+                        </a>
+                        <button class="btn-secondary">
+                            <i class="fas fa-compass"></i> Explore Products
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&h=450&fit=crop" alt="Men Health" style="max-width: 500px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                </div>
+            </div>
+            <!-- Slide 2: Weight Loss -->
+            <div class="slide" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                <div class="slide-content">
+                    <div class="hero-badge">Weight Loss</div>
+                    <h1 class="hero-title">Achieve Your Fitness Goals</h1>
+                    <p class="hero-subtitle">AI-curated weight management solutions. From fat burners to appetite suppressants for your transformation journey.</p>
+                    <div class="hero-buttons">
+                        <a href="weightloss.html" class="btn-primary" style="text-decoration: none;">
+                            <i class="fas fa-shopping-cart"></i> Shop Now
+                        </a>
+                        <button class="btn-secondary">
+                            <i class="fas fa-compass"></i> Explore Products
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=450&fit=crop" alt="Weight Loss" style="max-width: 500px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                </div>
+            </div>
+            <!-- Slide 3: Brain Boost -->
+            <div class="slide" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <div class="slide-content">
+                    <div class="hero-badge">Brain Boost</div>
+                    <h1 class="hero-title">Enhance Your Cognitive Performance</h1>
+                    <p class="hero-subtitle">AI-recommended nootropics and brain supplements. Boost focus, memory, and mental clarity naturally.</p>
+                    <div class="hero-buttons">
+                        <a href="brainboss.html" class="btn-primary" style="text-decoration: none;">
+                            <i class="fas fa-shopping-cart"></i> Shop Now
+                        </a>
+                        <button class="btn-secondary">
+                            <i class="fas fa-compass"></i> Explore Products
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&h=450&fit=crop" alt="Brain Boost" style="max-width: 500px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                </div>
+            </div>
+            <!-- Slide 4: Skincare -->
+            <div class="slide" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                <div class="slide-content">
+                    <div class="hero-badge">Skincare</div>
+                    <h1 class="hero-title">Radiant Skin Awaits You</h1>
+                    <p class="hero-subtitle">AI-personalized skincare solutions. From anti-aging serums to daily essentials for healthy, glowing skin.</p>
+                    <div class="hero-buttons">
+                        <a href="skincare.html" class="btn-primary" style="text-decoration: none; color: #333;">
+                            <i class="fas fa-shopping-cart"></i> Shop Now
+                        </a>
+                        <button class="btn-secondary" style="color: #333; border-color: #333;">
+                            <i class="fas fa-compass"></i> Explore Products
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&h=450&fit=crop" alt="Skincare" style="max-width: 500px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                </div>
+            </div>
+        </div>
+        <div class="slider-nav">
+            <button class="slider-btn prev" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+            <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+                <span class="dot" onclick="goToSlide(3)"></span>
+            </div>
+            <button class="slider-btn next" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Category Navigation Section -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Browse Categories</h2>
+                <p class="section-subtitle">AI-curated categories for your wellness journey</p>
+            </div>
+            <div class="category-grid">
+                <a href="menhealth.html" class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-male"></i>
+                    </div>
+                    <span class="category-label">Men Health</span>
+                    <div class="category-hover-effect"></div>
+                </a>
+                <a href="weightloss.html" class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-fire-alt"></i>
+                    </div>
+                    <span class="category-label">Weight Loss</span>
+                    <div class="category-hover-effect"></div>
+                </a>
+                <a href="brainboss.html" class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <span class="category-label">Brain Boost</span>
+                    <div class="category-hover-effect"></div>
+                </a>
+                <a href="skincare.html" class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <span class="category-label">Skincare</span>
+                    <div class="category-hover-effect"></div>
+                </a>
+                <a href="#videos" class="category-item">
+                    <div class="category-icon video-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <span class="category-label">Video</span>
+                    <div class="category-hover-effect"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <input type="text" class="search-input" placeholder="Search best product..." id="searchInput">
+                <button class="search-btn">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <div class="search-suggestions">
+                    <span>Popular:</span>
+                    <button class="suggestion-tag">Brain Boost</button>
+                    <button class="suggestion-tag">Weight Loss</button>
+                    <button class="suggestion-tag">Skincare</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Sections Container -->
+    <div class="products-container" id="products">
+        <!-- Men Health Section -->
+        <section class="product-section" id="men-health">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-title-wrapper">
+                        <div class="category-badge">
+                            <i class="fas fa-male"></i>
+                        </div>
+                        <h2 class="section-title">Men Health</h2>
+                    </div>
+                    <a href="menhealth.html" class="more-link">More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="products-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="product-badge">Best Seller</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">TestoBoost Pro</h3>
+                            <p class="product-benefit">Enhance vitality and energy levels naturally</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>(4.8)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$49.99</span>
+                                <span class="original-price">$79.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="product-badge hot">Hot</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">VitaMan Complete</h3>
+                            <p class="product-benefit">Complete daily nutrition for active men</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span>(4.5)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$34.99</span>
+                                <span class="original-price">$54.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">ProStrength Omega-3</h3>
+                            <p class="product-benefit">Premium fish oil for heart health</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>(5.0)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$29.99</span>
+                                <span class="original-price">$44.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <div class="product-badge new">New</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Muscle Fuel Xtreme</h3>
+                            <p class="product-benefit">Advanced protein formula for muscle growth</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>(4.7)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$59.99</span>
+                                <span class="original-price">$89.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 5 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Zinc Max 50mg</h3>
+                            <p class="product-benefit">Immune system support and testosterone booster</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span>(4.4)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$19.99</span>
+                                <span class="original-price">$29.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 6 -->
+                    <div class="product-card">
+                        <div class="product-badge">AI Pick</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Energy Fuel Complex</h3>
+                            <p class="product-benefit">Sustained energy release throughout the day</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>(4.9)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$39.99</span>
+                                <span class="original-price">$59.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weight Loss Section -->
+        <section class="product-section" id="weight-loss">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-title-wrapper">
+                        <div class="category-badge weight-loss">
+                            <i class="fas fa-fire-alt"></i>
+                        </div>
+                        <h2 class="section-title">Weight Loss</h2>
+                    </div>
+                    <a href="#" class="more-link">More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="products-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="product-badge hot">Hot</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">FatBurn Elite</h3>
+                            <p class="product-benefit">Advanced thermogenic fat burner formula</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>(4.9)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$44.99</span>
+                                <span class="original-price">$69.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="product-badge">Best Seller</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Keto Advance 1500</h3>
+                            <p class="product-benefit">Exogenous ketones for rapid ketosis</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>(4.8)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$39.99</span>
+                                <span class="original-price">$59.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Appetite Control+</h3>
+                            <p class="product-benefit">Natural hunger suppressant with fiber</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span>(4.5)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$24.99</span>
+                                <span class="original-price">$39.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <div class="product-badge new">New</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Metabolism Booster</h3>
+                            <p class="product-benefit">Rev up your metabolism naturally</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>(4.7)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$34.99</span>
+                                <span class="original-price">$54.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 5 -->
+                    <div class="product-card">
+                        <div class="product-badge">AI Pick</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Carb Blocker Pro</h3>
+                            <p class="product-benefit">Block carbs before they become fat</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>(4.6)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$29.99</span>
+                                <span class="original-price">$44.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 6 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Green Tea Extract</h3>
+                            <p class="product-benefit">Powerful antioxidant and fat burner</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span>(4.4)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$19.99</span>
+                                <span class="original-price">$34.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brain Boost Section -->
+        <section class="product-section" id="brain-boost">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-title-wrapper">
+                        <div class="category-badge brain-boost">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h2 class="section-title">Brain Boost</h2>
+                    </div>
+                    <a href="#" class="more-link">More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="products-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="product-badge">Best Seller</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">NeuroFocus Pro</h3>
+                            <p class="product-benefit">Enhance focus, memory, and mental clarity</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>(5.0)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$54.99</span>
+                                <span class="original-price">$79.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="product-badge hot">Hot</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Omega Mind Complex</h3>
+                            <p class="product-benefit">DHA-rich formula for brain health</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>(4.8)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$42.99</span>
+                                <span class="original-price">$64.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <div class="product-badge new">New</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Lion's Mane Extract</h3>
+                            <p class="product-benefit">Natural nootropic for cognitive enhancement</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span>(4.6)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$37.99</span>
+                                <span class="original-price">$54.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <div class="product-badge">AI Pick</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Memory Maximizer</h3>
+                            <p class="product-benefit">Advanced formula for recall and retention</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>(4.9)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$47.99</span>
+                                <span class="original-price">$69.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 5 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">B-Complex Ultra</h3>
+                            <p class="product-benefit">Essential B vitamins for brain function</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span>(4.5)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$24.99</span>
+                                <span class="original-price">$39.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 6 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Phosphatidylserine 300</h3>
+                            <p class="product-benefit">Support healthy cognitive decline</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>(4.7)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$32.99</span>
+                                <span class="original-price">$49.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skincare Section -->
+        <section class="product-section" id="skincare">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-title-wrapper">
+                        <div class="category-badge skincare">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h2 class="section-title">Skincare</h2>
+                    </div>
+                    <a href="#" class="more-link">More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="products-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="product-badge">Best Seller</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Retinol Night Cream</h3>
+                            <p class="product-benefit">Advanced anti-aging formula</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>(5.0)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$49.99</span>
+                                <span class="original-price">$74.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="product-badge hot">Hot</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1570194065650-d99fb4b38b17?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Vitamin C Serum</h3>
+                            <p class="product-benefit">Brighten and protect your skin</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>(4.8)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$34.99</span>
+                                <span class="original-price">$54.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <div class="product-badge new">New</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Hyaluronic Acid Gel</h3>
+                            <p class="product-benefit">Deep hydration for plump skin</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span>(4.6)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$28.99</span>
+                                <span class="original-price">$42.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <div class="product-badge">AI Pick</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1570194065650-d99fb4b38b17?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Collagen Peptides</h3>
+                            <p class="product-benefit">Support skin elasticity from within</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>(4.9)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$39.99</span>
+                                <span class="original-price">$59.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 5 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Niacinamide 10%</h3>
+                            <p class="product-benefit">Minimize pores and even skin tone</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>(4.7)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$18.99</span>
+                                <span class="original-price">$29.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 6 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1570194065650-d99fb4b38b17?w=400&h=400&fit=crop" alt="Product">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">SPF 50 Sunscreen</h3>
+                            <p class="product-benefit">Broad spectrum UV protection</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span>(4.5)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$22.99</span>
+                                <span class="original-price">$34.99</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn-buy">Buy Now</button>
+                                <button class="btn-learn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Video Section -->
+    <section class="video-section" id="videos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-play-circle"></i> Video Reviews</h2>
+                <p class="section-subtitle">Watch expert reviews and product demonstrations</p>
+            </div>
+            <div class="video-categories">
+                <div class="video-category">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300&h=300&fit=crop" alt="Men Health Video">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <span class="video-label">Men Health</span>
+                </div>
+                <div class="video-category">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=300&h=300&fit=crop" alt="Weight Loss Video">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <span class="video-label">Weight Loss</span>
+                </div>
+                <div class="video-category">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&h=300&fit=crop" alt="Brain Boost Video">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <span class="video-label">Brain Boost</span>
+                </div>
+                <div class="video-category">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300&h=300&fit=crop" alt="Skin Care Video">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <span class="video-label">Skin Care</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offer Floating Box -->
+    <div class="offer-box" id="offerBox">
+        <div class="offer-content">
+            <div class="offer-badge">
+                <span>-30%</span>
+            </div>
+            <h3 class="offer-title">Special Offer</h3>
+            <p class="offer-text">Get 30% off on your first AI-recommended bundle!</p>
+            <button class="offer-btn">Claim Now</button>
+            <button class="offer-close" onclick="closeOffer()"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="logoneuro.jpeg" alt="NeuroSerge Logo">
+                        <span>NeuroSerge</span>
+                    </div>
+                    <p class="footer-description">AI-powered affiliate marketplace bringing you the best health and wellness products recommended by artificial intelligence.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#videos">Videos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#men-health">Men Health</a></li>
+                        <li><a href="#weight-loss">Weight Loss</a></li>
+                        <li><a href="#brain-boost">Brain Boost</a></li>
+                        <li><a href="#skincare">Skincare</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get AI-powered product recommendations and exclusive offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NeuroSerge. All rights reserved. | AI Affiliate Marketplace</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="index.js"></script>
+</body>
+</html>
