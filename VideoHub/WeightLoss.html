@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Loss - VideoHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">▶</span>
+                <span class="logo-text">VideoHub</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#categories">Categories</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#shorts">Shorts</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" placeholder="Search videos...">
+                <button class="search-btn">🔍</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Category Header -->
+        <section class="category-header weight-loss">
+            <a href="index.html" class="back-button">← Back to Home</a>
+            
+            <!-- Image Slideshow -->
+            <div class="header-slideshow">
+                <div class="slideshow-container">
+                    <div class="slideshow-slide">
+                        <div class="slide-placeholder" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                            <span>🔥</span>
+                        </div>
+                    </div>
+                    <div class="slideshow-slide">
+                        <div class="slide-placeholder" style="background: linear-gradient(135deg, #e67e22, #d35400);">
+                            <span>⚖️</span>
+                        </div>
+                    </div>
+                    <div class="slideshow-slide">
+                        <div class="slide-placeholder" style="background: linear-gradient(135deg, #f39c12, #e74c3c);">
+                            <span>🏃‍♀️</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation Arrows -->
+                <button class="slideshow-arrow prev" aria-label="Previous slide">◀</button>
+                <button class="slideshow-arrow next" aria-label="Next slide">▶</button>
+                <!-- Navigation Dots -->
+                <div class="slideshow-nav">
+                    <button class="slideshow-dot active" aria-label="Slide 1"></button>
+                    <button class="slideshow-dot" aria-label="Slide 2"></button>
+                    <button class="slideshow-dot" aria-label="Slide 3"></button>
+                </div>
+                <!-- Progress Bar -->
+                <div class="slideshow-progress"></div>
+            </div>
+            
+            <h1>🔥 Weight Loss</h1>
+            <p>Effective fat-burning workouts, meal plans, and transformation strategies to help you achieve your dream physique.</p>
+        </section>
+
+        <!-- Filter Buttons -->
+        <div class="filter-container" style="padding: 1rem 5%; margin-top: -1rem;">
+            <button class="filter-btn active" data-filter="all">All Videos</button>
+            <button class="filter-btn" data-filter="long">Long Videos</button>
+            <button class="filter-btn" data-filter="short">Shorts</button>
+        </div>
+
+        <!-- Long Videos Section (16:9) -->
+        <section id="videos" class="video-section">
+            <h2>🎬 Full-Length Videos</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Horizontal format videos (16:9) - Perfect for desktop and detailed workouts</p>
+            <div class="video-carousel">
+                <div class="video-card landscape">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #f39c12, #e67e22);"></div>
+                        <span class="duration">42:15</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>30-Day Fat Burn Challenge</h4>
+                        <p>Complete transformation program</p>
+                        <div class="video-meta">
+                            <span>👁 245K views</span>
+                            <span>👍 18K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card landscape">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #e67e22, #d35400);"></div>
+                        <span class="duration">35:30</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Cardio HIIT Workout</h4>
+                        <p>Burn 500 calories in 35 minutes</p>
+                        <div class="video-meta">
+                            <span>👁 189K views</span>
+                            <span>👍 14K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card landscape">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #f39c12, #e74c3c);"></div>
+                        <span class="duration">28:45</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Keto Diet Guide</h4>
+                        <p>Complete beginner's meal plan</p>
+                        <div class="video-meta">
+                            <span>👁 312K views</span>
+                            <span>👍 25K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card landscape">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #d35400, #c0392b);"></div>
+                        <span class="duration">45:00</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Full Body Fat Burner</h4>
+                        <p>No equipment needed workout</p>
+                        <div class="video-meta">
+                            <span>👁 167K views</span>
+                            <span>👍 12K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card landscape">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #e67e22, #f39c12);"></div>
+                        <span class="duration">38:20</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Intermittent Fasting Guide</h4>
+                        <p>16:8 method for weight loss</p>
+                        <div class="video-meta">
+                            <span>👁 278K views</span>
+                            <span>👍 21K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card landscape">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #c0392b, #e67e22);"></div>
+                        <span class="duration">32:10</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Belly Fat Destroyer</h4>
+                        <p>Target stubborn abdominal fat</p>
+                        <div class="video-meta">
+                            <span>👁 198K views</span>
+                            <span>👍 16K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shorts Section (9:16) -->
+        <section id="shorts" class="video-section">
+            <h2>⚡ Quick Shorts</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Vertical format videos (9:16) - Under 60 seconds, perfect for mobile viewing</p>
+            <div class="shorts-grid">
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #f39c12, #e67e22);"></div>
+                        <span class="duration">0:45</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Metabolism Booster</h4>
+                        <p>Weight Loss</p>
+                    </div>
+                </div>
+
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #e67e22, #d35400);"></div>
+                        <span class="duration">0:38</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Calorie Deficit Tip</h4>
+                        <p>Weight Loss</p>
+                    </div>
+                </div>
+
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #f39c12, #e74c3c);"></div>
+                        <span class="duration">0:55</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Quick Ab Workout</h4>
+                        <p>Weight Loss</p>
+                    </div>
+                </div>
+
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #d35400, #c0392b);"></div>
+                        <span class="duration">0:42</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Healthy Snack Idea</h4>
+                        <p>Weight Loss</p>
+                    </div>
+                </div>
+
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #e67e22, #f39c12);"></div>
+                        <span class="duration">0:50</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Water Intake Hack</h4>
+                        <p>Weight Loss</p>
+                    </div>
+                </div>
+
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #c0392b, #e74c3c);"></div>
+                        <span class="duration">0:35</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Morning Routine</h4>
+                        <p>Weight Loss</p>
+                    </div>
+                </div>
+
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #f39c12, #d35400);"></div>
+                        <span class="duration">0:48</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Fat Burning Food</h4>
+                        <p>Weight Loss</p>
+                    </div>
+                </div>
+
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #e67e22, #c0392b);"></div>
+                        <span class="duration">0:52</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Cardio Tip</h4>
+                        <p>Weight Loss</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>VideoHub</h3>
+                <p>Your ultimate destination for health, fitness, and wellness videos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="Menhealth.html">Men's Health</a></li>
+                    <li><a href="WeightLoss.html">Weight Loss</a></li>
+                    <li><a href="BrainBoost.html">Brain Boost</a></li>
+                    <li><a href="SkinCare.html">Skin Care</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#">📱</a>
+                    <a href="#">📸</a>
+                    <a href="#">🐦</a>
+                    <a href="#">📘</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 VideoHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
