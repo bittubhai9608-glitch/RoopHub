@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Care - VideoHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">▶</span>
+                <span class="logo-text">VideoHub</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#categories">Categories</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#shorts">Shorts</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" placeholder="Search videos...">
+                <button class="search-btn">🔍</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Category Header -->
+        <section class="category-header skin-care">
+            <a href="index.html" class="back-button">← Back to Home</a>
+            
+            <!-- Image Slideshow -->
+            <div class="header-slideshow">
+                <div class="slideshow-container">
+                    <div class="slideshow-slide">
+                        <div class="slide-placeholder" style="background: linear-gradient(135deg, #e91e63, #d4156e);">
+                            <span>✨</span>
+                        </div>
+                    </div>
+                    <div class="slideshow-slide">
+                        <div class="slide-placeholder" style="background: linear-gradient(135deg, #d4156e, #c2185b);">
+                            <span>🌸</span>
+                        </div>
+                    </div>
+                    <div class="slideshow-slide">
+                        <div class="slide-placeholder" style="background: linear-gradient(135deg, #e91e63, #f06292);">
+                            <span>💆‍♀️</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation Arrows -->
+                <button class="slideshow-arrow prev" aria-label="Previous slide">◀</button>
+                <button class="slideshow-arrow next" aria-label="Next slide">▶</button>
+                <!-- Navigation Dots -->
+                <div class="slideshow-nav">
+                    <button class="slideshow-dot active" aria-label="Slide 1"></button>
+                    <button class="slideshow-dot" aria-label="Slide 2"></button>
+                    <button class="slideshow-dot" aria-label="Slide 3"></button>
+                </div>
+                <!-- Progress Bar -->
+                <div class="slideshow-progress"></div>
+            </div>
+            
+            <h1>✨ Skin Care</h1>
+            <p>Achieve glowing, healthy skin with expert routines, product reviews, and natural remedies for all skin types.</p>
+        </section>
+
+        <!-- Filter Buttons -->
+        <div class="filter-container" style="padding: 1rem 5%; margin-top: -1rem;">
+            <button class="filter-btn active" data-filter="all">All Videos</button>
+            <button class="filter-btn" data-filter="long">Long Videos</button>
+            <button class="filter-btn" data-filter="short">Shorts</button>
+        </div>
+
+        <!-- Long Videos Section (16:9) -->
+        <section id="videos" class="video-section">
+            <h2>🎬 Full-Length Videos</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Horizontal format videos (16:9) - Perfect for desktop and detailed workouts</p>
+            <div class="video-carousel">
+                <div class="video-card landscape">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #e91e63, #d4156e);"></div>
+                        <span class="duration">35:20</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Complete Skincare Routine</h4>
+                        <p>Morning and night regimen</p>
+                        <div class="video-meta">
+                            <span>👁 289K views</span>
+                            <span>👍 22K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card landscape">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #d4156e, #c2185b);"></div>
+                        <span class="duration">42:15</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Anti-Aging Secrets</h4>
+                        <p>Look younger naturally</p>
+                        <div class="video-meta">
+                            <span>👁 345K views</span>
+                            <span>👍 28K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card landscape">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #e91e63, #f06292);"></div>
+                        <span class="duration">28:45</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Acne Treatment Guide</h4>
+                        <p>Clear skin in 30 days</p>
+                        <div class="video-meta">
+                            <span>👁 412K views</span>
+                            <span>👍 35K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card landscape">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #c2185b, #ad1457);"></div>
+                        <span class="duration">38:30</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Korean Skincare Routine</h4>
+                        <p>10-step glass skin method</p>
+                        <div class="video-meta">
+                            <span>👁 267K views</span>
+                            <span>👍 21K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card landscape">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #f06292, #ec407a);"></div>
+                        <span class="duration">32:00</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Natural DIY Masks</h4>
+                        <p>Homemade skincare recipes</p>
+                        <div class="video-meta">
+                            <span>👁 198K views</span>
+                            <span>👍 16K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card landscape">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #ad1457, #e91e63);"></div>
+                        <span class="duration">40:10</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Product Ingredient Guide</h4>
+                        <p>What to look for and avoid</p>
+                        <div class="video-meta">
+                            <span>👁 234K views</span>
+                            <span>👍 19K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shorts Section (9:16) -->
+        <section id="shorts" class="video-section">
+            <h2>⚡ Quick Shorts</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Vertical format videos (9:16) - Under 60 seconds, perfect for mobile viewing</p>
+            <div class="shorts-grid">
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #e91e63, #d4156e);"></div>
+                        <span class="duration">0:45</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Glow Up Tip</h4>
+                        <p>Skin Care</p>
+                    </div>
+                </div>
+
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #d4156e, #c2185b);"></div>
+                        <span class="duration">0:38</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Pore Minimizer</h4>
+                        <p>Skin Care</p>
+                    </div>
+                </div>
+
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #e91e63, #f06292);"></div>
+                        <span class="duration">0:55</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Sunscreen Hack</h4>
+                        <p>Skin Care</p>
+                    </div>
+                </div>
+
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #c2185b, #ad1457);"></div>
+                        <span class="duration">0:42</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Dark Circle Fix</h4>
+                        <p>Skin Care</p>
+                    </div>
+                </div>
+
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #f06292, #ec407a);"></div>
+                        <span class="duration">0:50</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Hydration Tip</h4>
+                        <p>Skin Care</p>
+                    </div>
+                </div>
+
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #ad1457, #e91e63);"></div>
+                        <span class="duration">0:35</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Exfoliation Guide</h4>
+                        <p>Skin Care</p>
+                    </div>
+                </div>
+
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #e91e63, #ec407a);"></div>
+                        <span class="duration">0:48</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Vitamin C Serum</h4>
+                        <p>Skin Care</p>
+                    </div>
+                </div>
+
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #d4156e, #f06292);"></div>
+                        <span class="duration">0:52</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Night Routine</h4>
+                        <p>Skin Care</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>VideoHub</h3>
+                <p>Your ultimate destination for health, fitness, and wellness videos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="Menhealth.html">Men's Health</a></li>
+                    <li><a href="WeightLoss.html">Weight Loss</a></li>
+                    <li><a href="BrainBoost.html">Brain Boost</a></li>
+                    <li><a href="SkinCare.html">Skin Care</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#">📱</a>
+                    <a href="#">📸</a>
+                    <a href="#">🐦</a>
+                    <a href="#">📘</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 VideoHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

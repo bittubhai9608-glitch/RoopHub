@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Boost - VideoHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">▶</span>
+                <span class="logo-text">VideoHub</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#categories">Categories</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#shorts">Shorts</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" placeholder="Search videos...">
+                <button class="search-btn">🔍</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Category Header -->
+        <section class="category-header brain-boost">
+            <a href="index.html" class="back-button">← Back to Home</a>
+            
+            <!-- Image Slideshow -->
+            <div class="header-slideshow">
+                <div class="slideshow-container">
+                    <div class="slideshow-slide">
+                        <div class="slide-placeholder" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                            <span>🧠</span>
+                        </div>
+                    </div>
+                    <div class="slideshow-slide">
+                        <div class="slide-placeholder" style="background: linear-gradient(135deg, #8e44ad, #7d3c98);">
+                            <span>💡</span>
+                        </div>
+                    </div>
+                    <div class="slideshow-slide">
+                        <div class="slide-placeholder" style="background: linear-gradient(135deg, #9b59b6, #3498db);">
+                            <span>🎯</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation Arrows -->
+                <button class="slideshow-arrow prev" aria-label="Previous slide">◀</button>
+                <button class="slideshow-arrow next" aria-label="Next slide">▶</button>
+                <!-- Navigation Dots -->
+                <div class="slideshow-nav">
+                    <button class="slideshow-dot active" aria-label="Slide 1"></button>
+                    <button class="slideshow-dot" aria-label="Slide 2"></button>
+                    <button class="slideshow-dot" aria-label="Slide 3"></button>
+                </div>
+                <!-- Progress Bar -->
+                <div class="slideshow-progress"></div>
+            </div>
+            
+            <h1>🧠 Brain Boost</h1>
+            <p>Enhance cognitive function, memory, and mental clarity with proven techniques and brain-training exercises.</p>
+        </section>
+
+        <!-- Filter Buttons -->
+        <div class="filter-container" style="padding: 1rem 5%; margin-top: -1rem;">
+            <button class="filter-btn active" data-filter="all">All Videos</button>
+            <button class="filter-btn" data-filter="long">Long Videos</button>
+            <button class="filter-btn" data-filter="short">Shorts</button>
+        </div>
+
+        <!-- Long Videos Section (16:9) -->
+        <section id="videos" class="video-section">
+            <h2>🎬 Full-Length Videos</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Horizontal format videos (16:9) - Perfect for desktop and detailed workouts</p>
+            <div class="video-carousel">
+                <div class="video-card landscape">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);"></div>
+                        <span class="duration">38:20</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Memory Mastery Course</h4>
+                        <p>Remember anything you want</p>
+                        <div class="video-meta">
+                            <span>👁 156K views</span>
+                            <span>👍 12K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card landscape">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #8e44ad, #7d3c98);"></div>
+                        <span class="duration">45:15</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Meditation for Focus</h4>
+                        <p>Deep concentration techniques</p>
+                        <div class="video-meta">
+                            <span>👁 203K views</span>
+                            <span>👍 18K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card landscape">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #9b59b6, #3498db);"></div>
+                        <span class="duration">32:45</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Brain Foods Guide</h4>
+                        <p>Nutrition for cognitive enhancement</p>
+                        <div class="video-meta">
+                            <span>👁 178K views</span>
+                            <span>👍 14K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card landscape">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #7d3c98, #6c3483);"></div>
+                        <span class="duration">40:00</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Speed Reading Mastery</h4>
+                        <p>Read 3x faster with comprehension</p>
+                        <div class="video-meta">
+                            <span>👁 145K views</span>
+                            <span>👍 11K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card landscape">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #3498db, #2980b9);"></div>
+                        <span class="duration">35:30</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Mental Math Tricks</h4>
+                        <p>Calculate like a human calculator</p>
+                        <div class="video-meta">
+                            <span>👁 189K views</span>
+                            <span>👍 15K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card landscape">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #6c3483, #9b59b6);"></div>
+                        <span class="duration">42:10</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Stress Management</h4>
+                        <p>Control anxiety and boost mental clarity</p>
+                        <div class="video-meta">
+                            <span>👁 167K views</span>
+                            <span>👍 13K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shorts Section (9:16) -->
+        <section id="shorts" class="video-section">
+            <h2>⚡ Quick Shorts</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Vertical format videos (9:16) - Under 60 seconds, perfect for mobile viewing</p>
+            <div class="shorts-grid">
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);"></div>
+                        <span class="duration">0:45</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Memory Palace Tip</h4>
+                        <p>Brain Boost</p>
+                    </div>
+                </div>
+
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #8e44ad, #7d3c98);"></div>
+                        <span class="duration">0:38</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Focus Breathing</h4>
+                        <p>Brain Boost</p>
+                    </div>
+                </div>
+
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #9b59b6, #3498db);"></div>
+                        <span class="duration">0:55</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Brain Exercise</h4>
+                        <p>Brain Boost</p>
+                    </div>
+                </div>
+
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #7d3c98, #6c3483);"></div>
+                        <span class="duration">0:42</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Nootropic Stack</h4>
+                        <p>Brain Boost</p>
+                    </div>
+                </div>
+
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #3498db, #2980b9);"></div>
+                        <span class="duration">0:50</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Mindfulness Hack</h4>
+                        <p>Brain Boost</p>
+                    </div>
+                </div>
+
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #6c3483, #9b59b6);"></div>
+                        <span class="duration">0:35</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Sleep for Brain</h4>
+                        <p>Brain Boost</p>
+                    </div>
+                </div>
+
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #9b59b6, #2980b9);"></div>
+                        <span class="duration">0:48</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Learning Hack</h4>
+                        <p>Brain Boost</p>
+                    </div>
+                </div>
+
+                <div class="video-card portrait">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #8e44ad, #6c3483);"></div>
+                        <span class="duration">0:52</span>
+                        <span class="play-overlay">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Creativity Boost</h4>
+                        <p>Brain Boost</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>VideoHub</h3>
+                <p>Your ultimate destination for health, fitness, and wellness videos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="Menhealth.html">Men's Health</a></li>
+                    <li><a href="WeightLoss.html">Weight Loss</a></li>
+                    <li><a href="BrainBoost.html">Brain Boost</a></li>
+                    <li><a href="SkinCare.html">Skin Care</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#">📱</a>
+                    <a href="#">📸</a>
+                    <a href="#">🐦</a>
+                    <a href="#">📘</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 VideoHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
