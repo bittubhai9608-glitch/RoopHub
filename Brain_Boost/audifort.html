@@ -1,0 +1,2423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NeuroSerge - Advanced Brain Health Supplement. Boost cognitive function, memory, and focus with our scientifically formulated nootropic blend.">
+    <meta name="keywords" content="NeuroSerge, brain supplement, nootropic, cognitive enhancer, memory boost, focus supplement, brain health">
+    <title>NeuroSerge - Advanced Brain Health & Cognitive Support</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset & Base Styles */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #3b82f6;
+            --secondary-color: #0a0b05;
+            --accent-color: #f59e0b;
+            --accent-light: #fbbf24;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-light: #94a3b8;
+            --bg-white: #ffffff;
+            --bg-light: #f8fafc;
+            --bg-gray: #f1f5f9;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 36px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-align: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--accent-color), #d97706);
+            color: white;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5);
+        }
+
+        .btn-large {
+            padding: 20px 48px;
+            font-size: 1.125rem;
+            border-radius: var(--radius-lg);
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .hero-text h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 2rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: white;
+            border-radius: var(--radius-xl);
+            font-size: 0.875rem;
+            font-weight: 600;
+            box-shadow: var(--shadow-md);
+        }
+
+        .badge-icon {
+            color: var(--success-color);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            margin: 0 auto;
+        }
+
+        .floating-badge {
+            position: absolute;
+            background: white;
+            padding: 16px 24px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-badge.rating {
+            top: 20%;
+            left: -30px;
+        }
+
+        .floating-badge.science {
+            bottom: 20%;
+            right: -20px;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .stars {
+            color: var(--accent-color);
+            font-size: 1.25rem;
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: var(--bg-white);
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .trust-bar-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .trust-item svg {
+            color: var(--primary-color);
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background: var(--bg-light);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 32px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .problem-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #fee2e2, #fecaca);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .problem-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--error-color);
+        }
+
+        .problem-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--secondary-color);
+        }
+
+        .problem-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+        }
+
+        .solution-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .solution-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .solution-text p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .solution-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .solution-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+        }
+
+        .solution-features li svg {
+            flex-shrink: 0;
+            color: var(--success-color);
+            margin-top: 2px;
+        }
+
+        .solution-image img {
+            width: 100%;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: var(--bg-white);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 40px 24px;
+            background: var(--bg-light);
+            border-radius: var(--radius-lg);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            background: white;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+
+        .benefit-icon svg {
+            width: 40px;
+            height: 40px;
+            color: white;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--secondary-color);
+        }
+
+        .benefit-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Ingredients Section */
+        .ingredients-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        .ingredients-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .ingredient-card {
+            background: white;
+            padding: 28px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .ingredient-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #dbeafe, #93c5fd);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .ingredient-icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--primary-color);
+        }
+
+        .ingredient-info h4 {
+            font-size: 1.125rem;
+            margin-bottom: 8px;
+            color: var(--secondary-color);
+        }
+
+        .ingredient-info p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* How to Use */
+        .howto-section {
+            background: var(--bg-white);
+        }
+
+        .howto-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .step-card {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .step-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--secondary-color);
+        }
+
+        .step-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            background: var(--bg-light);
+        }
+
+        .reviews-summary {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .rating-big {
+            text-align: center;
+        }
+
+        .rating-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .rating-stars {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin: 8px 0;
+        }
+
+        .rating-count {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .rating-bars {
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .rating-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .rating-bar-label {
+            width: 50px;
+            text-align: right;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .rating-bar {
+            flex: 1;
+            height: 12px;
+            background: var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .rating-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-light));
+            border-radius: 6px;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 28px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .reviewer-avatar {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .reviewer-info h4 {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            margin-bottom: 4px;
+        }
+
+        .review-date {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .review-stars {
+            color: var(--accent-color);
+            margin-bottom: 12px;
+        }
+
+        .review-text {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 12px;
+            padding: 4px 12px;
+            background: #dcfce7;
+            color: var(--success-color);
+            border-radius: var(--radius-xl);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--bg-white);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 8px;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px 0;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            color: var(--primary-color);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            padding: 0 0 20px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-buttons .btn-primary {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .cta-buttons .btn-primary:hover {
+            background: var(--bg-light);
+        }
+
+        .cta-buttons .btn-secondary {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--secondary-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-about p {
+            color: #94a3b8;
+            margin: 16px 0;
+            line-height: 1.7;
+        }
+
+        .footer-links h4 {
+            font-size: 1.125rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .footer-disclaimer {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            margin-top: 24px;
+            font-size: 0.85rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN - Mobile First Approach
+           ============================================ */
+        
+        /* Tablet Styles (768px - 1024px) */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-badges {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-image img {
+                max-width: 350px;
+            }
+
+            .floating-badge {
+                position: relative;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                animation: none !important;
+                display: inline-flex;
+                margin: 10px;
+            }
+
+            .solution-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .solution-image {
+                order: -1;
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+
+            .howto-steps {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+        }
+
+        /* Mobile Styles (481px - 768px) */
+        @media (max-width: 768px) {
+            /* Navigation */
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 20px;
+                flex-direction: column;
+                gap: 0;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                z-index: 999;
+                max-height: calc(100vh - 72px);
+                overflow-y: auto;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu li {
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .nav-menu a {
+                display: block;
+                padding: 16px 20px;
+                font-size: 1.1rem;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                background: var(--bg-light);
+                border-radius: var(--radius-sm);
+            }
+
+            /* Typography */
+            .section {
+                padding: 50px 0;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            /* Hero */
+            .hero {
+                padding: 110px 0 50px;
+            }
+
+            .hero-text h1 {
+                font-size: 1.85rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-text p {
+                font-size: 1.05rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-badges {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 1.5rem;
+            }
+
+            .badge {
+                font-size: 0.8rem;
+                padding: 6px 14px;
+            }
+
+            /* Buttons - Touch-friendly sizing */
+            .btn {
+                padding: 14px 28px;
+                font-size: 0.95rem;
+                min-height: 48px;
+                touch-action: manipulation;
+            }
+
+            .btn-large {
+                padding: 16px 32px;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .hero .btn {
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            /* Cards */
+            .problem-grid,
+            .benefits-grid,
+            .ingredients-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .problem-card,
+            .benefit-card,
+            .ingredient-card {
+                padding: 24px;
+            }
+
+            .benefit-icon {
+                width: 64px;
+                height: 64px;
+            }
+
+            .benefit-icon svg {
+                width: 32px;
+                height: 32px;
+            }
+
+            /* Trust Bar */
+            .trust-bar-content {
+                gap: 16px;
+            }
+
+            .trust-item {
+                font-size: 0.85rem;
+                gap: 8px;
+            }
+
+            .trust-item svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            /* Reviews */
+            .reviews-summary {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .rating-number {
+                font-size: 3rem;
+            }
+
+            .rating-bars {
+                max-width: 100%;
+            }
+
+            /* CTA Section */
+            .cta-section {
+                padding: 60px 0;
+            }
+
+            .cta-section h2 {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+
+            .cta-section p {
+                font-size: 1.05rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 320px;
+            }
+
+            /* Footer */
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer {
+                padding: 40px 0 20px;
+            }
+
+            /* Products */
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            /* FAQ */
+            .faq-question {
+                font-size: 1rem;
+                padding: 16px 0;
+            }
+
+            /* Step cards */
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.25rem;
+            }
+        }
+
+        /* Small Mobile (up to 480px) */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .header-container {
+                padding: 12px 16px;
+            }
+
+            .logo img {
+                width: 32px;
+                height: 32px;
+            }
+
+            .logo-text {
+                font-size: 1.25rem;
+            }
+
+            .section {
+                padding: 40px 0;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .hero {
+                padding: 100px 0 40px;
+            }
+
+            .hero-text h1 {
+                font-size: 1.65rem;
+            }
+
+            .hero-text p {
+                font-size: 0.95rem;
+            }
+
+            .btn {
+                padding: 13px 24px;
+                font-size: 0.9rem;
+                min-height: 44px;
+            }
+
+            .btn-large {
+                padding: 14px 28px;
+                font-size: 0.95rem;
+            }
+
+            .problem-card,
+            .benefit-card,
+            .ingredient-card,
+            .review-card {
+                padding: 20px;
+            }
+
+            .product-card {
+                border-radius: var(--radius-md);
+            }
+
+            .product-image {
+                height: 180px;
+            }
+
+            .product-info {
+                padding: 16px;
+            }
+
+            .cta-section {
+                padding: 50px 0;
+            }
+
+            .cta-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .cta-section p {
+                font-size: 0.95rem;
+            }
+
+            .footer-disclaimer {
+                font-size: 0.75rem;
+                padding: 16px;
+            }
+
+            /* Adjust sticky CTA for small screens */
+            .sticky-cta {
+                padding: 12px 16px;
+            }
+
+            .sticky-cta .btn {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Large Desktop (1200px+) */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1280px;
+            }
+
+            .hero-text h1 {
+                font-size: 3.75rem;
+            }
+
+            .section-title {
+                font-size: 2.75rem;
+            }
+
+            .benefits-grid {
+                gap: 40px;
+            }
+
+            .products-grid {
+                gap: 40px;
+            }
+        }
+
+        /* Extra Large Desktop (1400px+) */
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1400px;
+            }
+
+            .hero-text h1 {
+                font-size: 4rem;
+            }
+        }
+
+        /* Landscape mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .hero {
+                padding: 90px 0 30px;
+            }
+
+            .hero-content {
+                gap: 20px;
+            }
+
+            .hero-text h1 {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .hero-image img {
+                max-height: 150px;
+                width: auto;
+            }
+
+            .floating-badge {
+                display: none;
+            }
+        }
+
+        /* High DPI / Retina displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            img {
+                image-rendering: -webkit-optimize-contrast;
+            }
+        }
+
+        /* Reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* Dark mode support (optional - can be enabled) */
+        @media (prefers-color-scheme: dark) {
+            /* Uncomment below to enable dark mode
+            body {
+                background-color: #0f172a;
+                color: #f1f5f9;
+            }
+            */
+        }
+
+        /* Recommended Products Section */
+        .recommended-products {
+            background: var(--bg-light);
+            padding: 80px 0;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .product-image {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+            background: var(--bg-gray);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--accent-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: var(--radius-xl);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .product-info {
+            padding: 24px;
+        }
+
+        .product-category {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .product-desc {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+
+        .product-stars {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        .product-review-count {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .product-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: gap 0.3s ease;
+        }
+
+        .product-link:hover {
+            gap: 12px;
+        }
+
+        .product-link svg {
+            transition: transform 0.3s ease;
+        }
+
+        .product-link:hover svg {
+            transform: translateX(4px);
+        }
+
+
+        @media (max-width: 668px) {
+    .products-grid {
+        /* Mobile ke liye 2 columns */
+
+        grid-template-columns: repeat(2, 1fr); 
+        /* Mobile par jagah bachane ke liye gap kam kar rahe hain */
+        gap: 10px; 
+    }
+    .product-card {
+        /* Mobile par card thoda chhota kar rahe hain */
+        border-radius: var(--radius-md);
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Agar mobile par image badi lag rahi ho, toh uski height kam kar sakte hain */
+    .product-image {
+        height: 100px; 
+    }
+}
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Sticky CTA for Mobile */
+        .sticky-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 16px;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        .sticky-cta .btn {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .sticky-cta {
+                display: block;
+            }
+
+            body {
+                padding-bottom: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="../Images/favicon2.ico" alt="NeuroSerge Logo">
+                <span class="logo-text">ROOPHUB</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="#ingredients">Ingredients</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badges">
+                        <span class="badge">
+                            <span class="badge-icon">✓</span> GMP Certified
+                        </span>
+                        <span class="badge">
+                            <span class="badge-icon">✓</span> FDA Registered
+                        </span>
+                    </div>
+                    <h1>Unlock Your Brain's <span>Full Potential</span> with NeuroSerge</h1>
+                    <p>Experience enhanced cognitive function, laser-sharp focus, and improved memory with our scientifically formulated nootropic blend. Join thousands who have transformed their mental performance.</p>
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: flex-start;">
+                        <a href="#pricing" class="btn btn-primary btn-large">
+                            Get Started Now
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="#how-it-works" class="btn btn-secondary btn-large">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="../Images/audifortone.jpeg" alt="NeuroSerge Product">
+                    <div class="floating-badge rating">
+                        <div class="stars">★★★★★</div>
+                        <strong>4.9/5 Rating</strong>
+                    </div>
+                    <div class="floating-badge science">
+                        <strong>🔬 Science-Backed</strong>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary);">Clinically Studied</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <div class="container">
+            <div class="trust-bar-content">
+                <div class="trust-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    <span>100% Safe & Secure</span>
+                </div>
+                <div class="trust-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    <span>50,000+ Happy Customers</span>
+                </div>
+                <div class="trust-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="3" width="15" height="13"/>
+                        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                        <circle cx="5.5" cy="18.5" r="2.5"/>
+                        <circle cx="18.5" cy="18.5" r="2.5"/>
+                    </svg>
+                    <span>Fast Shipping</span>
+                </div>
+                <div class="trust-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                    <span>24/7 Support</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem Section -->
+    <section class="section problem-section" id="problem">
+        <div class="container">
+            <h2 class="section-title">Are You Struggling With...</h2>
+            <p class="section-subtitle">You're not alone. Millions of people face these cognitive challenges daily due to stress, poor sleep, and modern lifestyle demands.</p>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3>Brain Fog & Mental Fatigue</h3>
+                    <p>Feeling mentally exhausted, unable to think clearly, or struggling to concentrate on important tasks throughout the day.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="8.5" cy="7" r="4"/>
+                            <line x1="20" y1="8" x2="20" y2="14"/>
+                            <line x1="23" y1="11" x2="17" y2="11"/>
+                        </svg>
+                    </div>
+                    <h3>Poor Memory & Recall</h3>
+                    <p>Forgetting names, appointments, or important information. Struggling to remember what you just read or heard.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                    </div>
+                    <h3>Lack of Focus & Concentration</h3>
+                    <p>Getting easily distracted, unable to stay on task, or finding your mind wandering during important meetings or study sessions.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </div>
+                    <h3>Low Mental Energy</h3>
+                    <p>Feeling mentally drained by afternoon, struggling to stay alert, or relying on caffeine to get through the day.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section solution-section" id="solution">
+        <div class="container">
+            <div class="solution-content">
+                <div class="solution-image">
+                    <img src="../Images/audiforttwo.jpeg" alt="Audifort Supplement">
+                </div>
+                <div class="solution-text">
+                    <h2>Introducing Audifort — Your Brain's Best Friend</h2>
+                    <p>Audifort is a cutting-edge nootropic supplement designed to enhance cognitive performance, boost memory, and support long-term brain health. Our unique formula combines clinically studied ingredients that work synergistically to unlock your mental potential.</p>
+                    <ul class="solution-features">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Enhanced focus and concentration within 30 minutes</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Improved memory retention and recall ability</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Sustained mental energy without crashes</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Long-term neuroprotection and brain health support</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Natural ingredients with zero jitters or crashes</span>
+                        </li>
+                    </ul>
+                    <a href="#pricing" class="btn btn-primary">
+                        Try Audifort Today
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section benefits-section" id="benefits">
+        <div class="container">
+            <h2 class="section-title">Why Choose NeuroSerge?</h2>
+            <p class="section-subtitle">Backed by science, trusted by thousands. Here's what makes NeuroSerge the #1 choice for cognitive enhancement.</p>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <h3>Enhanced Focus</h3>
+                    <p>Experience laser-like concentration and stay on task for extended periods without distraction or mental fatigue.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3>Faster Learning</h3>
+                    <p>Absorb and process new information more efficiently, making studying and skill acquisition faster and easier.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Better Memory</h3>
+                    <p>Improve both short-term and long-term memory recall. Remember names, faces, and important details effortlessly.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                    </div>
+                    <h3>Mental Clarity</h3>
+                    <p>Clear away brain fog and experience crystal-clear thinking. Make decisions faster and with more confidence.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+                            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                            <line x1="6" y1="1" x2="6" y2="4"/>
+                            <line x1="10" y1="1" x2="10" y2="4"/>
+                            <line x1="14" y1="1" x2="14" y2="4"/>
+                        </svg>
+                    </div>
+                    <h3>Sustained Energy</h3>
+                    <p>Enjoy all-day mental stamina without the jitters, anxiety, or crashes associated with caffeine and stimulants.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3>Brain Protection</h3>
+                    <p>Powerful antioxidants and neuroprotective compounds support long-term brain health and cognitive longevity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ingredients Section -->
+    <section class="section ingredients-section" id="ingredients">
+        <div class="container">
+            <h2 class="section-title">Powerful Natural Ingredients</h2>
+            <p class="section-subtitle">Each ingredient in NeuroSerge is carefully selected based on clinical research and proven cognitive benefits.</p>
+            <div class="ingredients-grid">
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <div class="ingredient-info">
+                        <h4>Lion's Mane Mushroom</h4>
+                        <p>Stimulates nerve growth factor (NGF) production, supporting neuron health and cognitive function.</p>
+                    </div>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="16" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                    </div>
+                    <div class="ingredient-info">
+                        <h4>Phosphatidylserine</h4>
+                        <p>Essential phospholipid that supports cell membrane integrity and enhances memory and learning.</p>
+                    </div>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <div class="ingredient-info">
+                        <h4>Bacopa Monnieri</h4>
+                        <p>Ancient Ayurvedic herb shown to improve memory formation and reduce anxiety and stress.</p>
+                    </div>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <div class="ingredient-info">
+                        <h4>L-Theanine</h4>
+                        <p>Promotes relaxed alertness and alpha brain waves, enhancing focus without drowsiness.</p>
+                    </div>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                    </div>
+                    <div class="ingredient-info">
+                        <h4>Rhodiola Rosea</h4>
+                        <p>Adaptogenic herb that combats mental fatigue and enhances cognitive performance under stress.</p>
+                    </div>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        </svg>
+                    </div>
+                    <div class="ingredient-info">
+                        <h4>Ginkgo Biloba</h4>
+                        <p>Increases blood flow to the brain, enhancing oxygen delivery and cognitive performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Use Section -->
+    <section class="section howto-section" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How to Use NeuroSerge</h2>
+            <p class="section-subtitle">Simple, convenient, and easy to incorporate into your daily routine.</p>
+            <div class="howto-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Morning Routine</h3>
+                    <p>Take 2 capsules with breakfast or your morning beverage. Consistency is key for optimal results.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Stay Consistent</h3>
+                    <p>Take NeuroSerge daily for at least 30 days. Most users report noticeable improvements within 2-4 weeks.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Experience Results</h3>
+                    <p>Enjoy enhanced focus, better memory, and sustained mental energy throughout your day.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section reviews-section" id="reviews">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <p class="section-subtitle">Join thousands of satisfied customers who have transformed their cognitive performance with NeuroSerge.</p>
+            
+            <div class="reviews-summary">
+                <div class="rating-big">
+                    <div class="rating-number">4.9</div>
+                    <div class="rating-stars">★★★★★</div>
+                    <div class="rating-count">Based on 2,847 reviews</div>
+                </div>
+                <div class="rating-bars">
+                    <div class="rating-bar-item">
+                        <span class="rating-bar-label">5 ★</span>
+                        <div class="rating-bar"><div class="rating-bar-fill" style="width: 85%;"></div></div>
+                        <span style="font-size: 0.875rem; color: var(--text-secondary);">85%</span>
+                    </div>
+                    <div class="rating-bar-item">
+                        <span class="rating-bar-label">4 ★</span>
+                        <div class="rating-bar"><div class="rating-bar-fill" style="width: 10%;"></div></div>
+                        <span style="font-size: 0.875rem; color: var(--text-secondary);">10%</span>
+                    </div>
+                    <div class="rating-bar-item">
+                        <span class="rating-bar-label">3 ★</span>
+                        <div class="rating-bar"><div class="rating-bar-fill" style="width: 3%;"></div></div>
+                        <span style="font-size: 0.875rem; color: var(--text-secondary);">3%</span>
+                    </div>
+                    <div class="rating-bar-item">
+                        <span class="rating-bar-label">2 ★</span>
+                        <div class="rating-bar"><div class="rating-bar-fill" style="width: 1%;"></div></div>
+                        <span style="font-size: 0.875rem; color: var(--text-secondary);">1%</span>
+                    </div>
+                    <div class="rating-bar-item">
+                        <span class="rating-bar-label">1 ★</span>
+                        <div class="rating-bar"><div class="rating-bar-fill" style="width: 1%;"></div></div>
+                        <span style="font-size: 0.875rem; color: var(--text-secondary);">1%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-avatar">JD</div>
+                        <div class="reviewer-info">
+                            <h4>James Davidson</h4>
+                            <span class="review-date">Verified Purchase • 2 weeks ago</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"NeuroSerge has been a game-changer for my productivity. As a software developer, I need to stay focused for long coding sessions, and this supplement delivers exactly that. No jitters, no crashes — just clean, sustained mental energy."</p>
+                    <span class="verified-badge">✓ Verified Buyer</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-avatar">SM</div>
+                        <div class="reviewer-info">
+                            <h4>Sarah Mitchell</h4>
+                            <span class="review-date">Verified Purchase • 1 month ago</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"I'm a medical student and the amount of information I need to memorize is overwhelming. Since starting NeuroSerge, my recall has improved dramatically. I can study for hours without feeling mentally exhausted. Highly recommend!"</p>
+                    <span class="verified-badge">✓ Verified Buyer</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-avatar">MR</div>
+                        <div class="reviewer-info">
+                            <h4>Michael Roberts</h4>
+                            <span class="review-date">Verified Purchase • 3 weeks ago</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"At 52, I was worried about age-related cognitive decline. NeuroSerge has helped me stay sharp at work and in my personal life. My colleagues have even commented on how focused and energetic I seem. Worth every penny!"</p>
+                    <span class="verified-badge">✓ Verified Buyer</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-avatar">EP</div>
+                        <div class="reviewer-info">
+                            <h4>Emily Parker</h4>
+                            <span class="review-date">Verified Purchase • 1 week ago</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★☆</div>
+                    <p class="review-text">"Great product overall! I've noticed significant improvements in my ability to concentrate during meetings and remember important details. The only reason I'm giving 4 stars is I wish the bottle lasted a bit longer. Otherwise, excellent!"</p>
+                    <span class="verified-badge">✓ Verified Buyer</span>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="#pricing" class="btn btn-primary btn-large">
+                    Join 50,000+ Happy Customers
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommended Products Section -->
+    <section class="recommended-products">
+        <div class="container">
+            <h2 class="section-title">You May Also Like</h2>
+            <p class="section-subtitle">Explore our other premium health supplements designed to enhance your wellness journey.</p>
+            
+            <div class="products-grid">
+                <!-- Product 1 - ProstaVive -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../Images/prostavive1.jpeg" alt="ProstaVive">
+                        <span class="product-badge">Best Seller</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Men's Health</div>
+                        <h3 class="product-name">ProstaVive</h3>
+                        <p class="product-desc">Advanced prostate support formula for optimal men's health and vitality.</p>
+                        <div class="product-rating">
+                            <span class="product-stars">★★★★★</span>
+                            <span class="product-review-count">(1,247 reviews)</span>
+                        </div>
+                        <a href="ProstaViveVitality.html" class="product-link">
+                            Learn More
+                            <svg width="2" height="2" viewBox="0 0 3 3" fill="none" stroke="currentColor" stroke-width="1">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2 - KeySlim Drops -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../Images/keyslim1.jpeg" alt="KeySlim Drops">
+                        <span class="product-badge">Popular</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Weight Management</div>
+                        <h3 class="product-name">KeySlim Drops</h3>
+                        <p class="product-desc">Natural weight management drops to support your fitness goals effectively.</p>
+                        <div class="product-rating">
+                            <span class="product-stars">★★★★★</span>
+                            <span class="product-review-count">(892 reviews)</span>
+                        </div>
+                        <a href="keyslimDrops.html" class="product-link">
+                            Learn More
+                            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3 - CitrusBurn -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../Images/citrusburn1.jpeg" alt="CitrusBurn">
+                        <span class="product-badge">New</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Fat Burner</div>
+                        <h3 class="product-name">CitrusBurn</h3>
+                        <p class="product-desc">Rapid fat-burning formula with natural citrus extracts for accelerated results.</p>
+                        <div class="product-rating">
+                            <span class="product-stars">★★★★☆</span>
+                            <span class="product-review-count">(567 reviews)</span>
+                        </div>
+                        <a href="CitrusBurnRapidBurnLandingPage.html" class="product-link">
+                            Learn More
+                            <svg width="2" height="2" viewBox="0 0 3 3" fill="none" stroke="currentColor" stroke-width="1">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 4 - VisiFlora -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../Images/visiflora.jpeg" alt="VisiFlora">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Digestive Health</div>
+                        <h3 class="product-name">VisiFlora</h3>
+                        <p class="product-desc">Premium probiotic formula for optimal gut health and digestive wellness.</p>
+                        <div class="product-rating">
+                            <span class="product-stars">★★★★★</span>
+                            <span class="product-review-count">(734 reviews)</span>
+                        </div>
+                        <a href="index.html" class="product-link">
+                            Learn More
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Got questions? We've got answers. Everything you need to know about NeuroSerge.</p>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How quickly will I see results?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Many users report feeling increased focus and mental clarity within 30-60 minutes of taking their first dose. For more significant improvements in memory and cognitive function, we recommend taking NeuroSerge consistently for at least 30 days. The full benefits typically become apparent after 4-6 weeks of regular use.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Are there any side effects?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>NeuroSerge is made with natural, well-tolerated ingredients and is generally safe for most adults. Unlike stimulant-based products, NeuroSerge does not cause jitters, anxiety, or crashes. However, as with any supplement, we recommend consulting with your healthcare provider before use, especially if you have any pre-existing medical conditions or are taking prescription medications.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How should I take NeuroSerge?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>For best results, take 2 capsules daily with breakfast or your morning meal. Taking NeuroSerge with food helps optimize absorption of the active ingredients. Be consistent with your timing to maintain stable levels in your system. Do not exceed the recommended dose.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Is NeuroSerge vegan and gluten-free?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! NeuroSerge is 100% vegan-friendly and gluten-free. Our capsules are made from plant-based materials, and all ingredients are sourced from non-animal sources. The product is also free from common allergens including dairy, soy, and nuts. It's manufactured in a GMP-certified, FDA-registered facility.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Can I take NeuroSerge with coffee or other caffeine?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! NeuroSerge works synergistically with caffeine and can actually enhance its benefits while reducing the jitters and crashes. Many users take NeuroSerge with their morning coffee for an extra cognitive boost. However, NeuroSerge is also effective on its own without any caffeine.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="pricing">
+        <div class="container">
+            <h2>Ready to Transform Your Cognitive Performance?</h2>
+            <p>Join thousands of high-performers who have unlocked their brain's full potential with NeuroSerge. Choose your package below and start your journey today.</p>
+            <div class="cta-buttons">
+                <a href="https://amzn.to/4vAZc6W" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.11-.69.75-1.82 1.33-2.92 1.26-.11-1.15.41-2.3 1.02-2.87z"/>
+                    </svg>
+                    Buy on Amazon
+                </a>
+                <a href="https://flipkart.com/neuroserge" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20 6h-8l-2-3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6 10H6v-2h8v2zm4-4H6v-2h12v2z"/>
+                    </svg>
+                    Buy on Flipkart
+                </a>
+                <a href="https://604655spvhmx9z51fgta2hvpcq.hop.clickbank.net/?&campaign=ads&creative=graphics&ad=google" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="2" y1="12" x2="22" y2="12"/>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                    Official Website
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="logo">
+                        <img src="../Images/audifortf.jpeg" alt="Audifort Logo" style="width: 40px; height: 40px; border-radius: 6px;">
+                        <span class="logo-text" style="color: white;">Audifort</span>
+                    </div>
+                    <p>Audifort is a premium cognitive enhancement supplement designed to help you unlock your brain's full potential. Our scientifically formulated blend of natural nootropics supports focus, memory, and long-term brain health.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#ingredients">Ingredients</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="/Footer/AboutUs.html">About Us</a></li>
+                        <li><a href="/Footer/Contact.html">Contact Us</a></li>
+                        <li><a href="/Footer/ReturnPolicy.html">Returns</a></li>
+                        <li><a href="/Footer/ImportantInformation.html">Important Information</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/Footer/PrivacyPolicy.html">Privacy Policy</a></li>
+                        <li><a href="/Footer/Terms.html">Terms of Service</a></li>
+                        <li><a href="/Footer/Disclaimer.html">Disclaimer</a> <a href="/Footer/FAQ.html">| FAQ</a> </li>
+                        <li><a href="/Footer/AffiliateDisclosure.html">Affiliate Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NeuroSerge. All rights reserved.</p>
+                <div class="footer-disclaimer">
+                    <strong>Disclaimer:</strong> These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Results may vary from person to person. This website contains affiliate links, which means we may earn a commission if you make a purchase through our links at no additional cost to you. We only recommend products we believe in and have researched thoroughly.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA for Mobile -->
+    <div class="sticky-cta">
+        <a href="#pricing" class="btn btn-primary">
+            Get NeuroSerge Now
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </a>
+    </div>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                
+                // Toggle current item
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                    button.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (mobileMenuBtn && navMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+                mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+                navMenu.classList.toggle('active');
+                
+                // Update button icon
+                mobileMenuBtn.textContent = isExpanded ? '☰' : '✕';
+            });
+
+            // Close mobile menu when clicking a link
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    mobileMenuBtn.textContent = '☰';
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    mobileMenuBtn.textContent = '☰';
+                }
+            });
+        }
+
+        // Header scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.05)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Animate elements on scroll
+        document.querySelectorAll('.problem-card, .benefit-card, .ingredient-card, .review-card, .step-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
