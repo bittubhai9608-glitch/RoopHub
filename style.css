@@ -8,13 +8,13 @@
     --primary-color: #667eea;
     --secondary-color: #764ba2;
     --accent-color: #f5576c;
-    --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-1: linear-gradient(135deg, #11b64a 0%, #250a94 100%);
+    --gradient-2: linear-gradient(135deg, #14dc78 0%, #0c3689 100%);
     --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     --gradient-4: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --dark-bg: #b2c373;
-    --dark-secondary: #beca91;
-    --dark-tertiary: #b7c384;
+    --dark-bg: #4b4b47;
+    --dark-secondary: #4b4b47;;
+    --dark-tertiary: #4b4b47;;
     --light-bg: #f8f9fa;
     --white: #ffffff;
     --text-primary: #ffffff;
