@@ -583,7 +583,7 @@ img {
 }
 
 .category-label {
-    font-size: 1rem;
+        font-size: 0.7rem; /* टेक्स्ट साइज छोटा किया गया */
     font-weight: 600;
     color: var(--text-secondary);
     transition: var(--transition);
@@ -608,18 +608,27 @@ img {
 }
 
 /* Mobile: Horizontal Row with Auto-Scrolling Animation */
-@media (max-width: 768px) {
+@media (max-width: 100px) {
     .category-grid-wrapper {
         overflow: hidden;
         position: relative;
         padding: 20px 0;
+        overflow-x: auto; /* यूजर अब खुद से मूव/स्वाइप कर सकता है */
+        scrollbar-width: none; /* स्क्रॉल-बार छुपाने के लिए (Firefox) */
+        -webkit-overflow-scrolling: touch; /* मोबाइल पर स्मूथ स्वाइपिंग के लिए */
+    }
+
+    .category-grid-wrapper::-webkit-scrollbar {
+        display: none; /* स्क्रॉल-बार छुपाने के लिए (Chrome/Safari) */
     }
 
     .category-grid-scroll {
         display: flex;
         flex-direction: row;
         align-items: center;
-        animation: categoryScroll 12s linear infinite;
+        animation: categoryScroll 20s linear infinite; /* Infinite loop enabled */
+        width: max-content;
+        display: flex;
     }
 
     .category-grid-scroll:hover {
@@ -630,8 +639,8 @@ img {
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 30px;
-        width: 100%;
+        gap: 20px; /* गैप को थोड़ा कम किया गया */
+        padding-right: 20px; /* सेट के बीच में गैप बनाए रखने के लिए */
         justify-content: flex-start;
     }
 
@@ -648,21 +657,9 @@ img {
     }
 
     @keyframes categoryScroll {
-        0% {
-            transform: translateX(0);
-        }
-        25% {
-            transform: translateX(-110px);
-        }
-        50% {
-            transform: translateX(-220px);
-        }
-        75% {
-            transform: translateX(-330px);
-        }
-        100% {
-            transform: translateX(0);
-        }
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-100%); }
+        100% { transform: translateX(-100%); }
     }
 }
 
@@ -672,22 +669,20 @@ img {
 .search-section {
     padding: 20px 24px;
     background: var(--dark-tertiary);
-    width: 100%;
 }
 
 .search-container {
     width: 100%;
-    max-width: 450px;
+    max-width: 600px; /* Adjusted max-width for a sleeker look */
     margin: 0 auto;
     position: relative;
     background: var(--white);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color, #e2e8f0); /* Lighter border */
     border-radius: 50px;
-    padding: 4px 6px;
+    padding: 10px 15px; /* More compact padding */
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px; /* Adjusted gap */
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     flex-wrap: nowrap;
@@ -695,13 +690,13 @@ img {
 
 .search-container:focus-within {
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    box-shadow: var(--shadow-glow); /* Use existing glow shadow */
 }
 
 .search-icon {
-    padding-left: 8px;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
+    padding-left: 0; /* Padding handled by container */
+    color: var(--text-muted); /* Softer icon color */
+    font-size: 1.1rem; /* Adjusted icon size */
     flex-shrink: 0;
 }
 
@@ -711,9 +706,9 @@ img {
     border: none;
     outline: none;
     color: var(--text-primary);
-    font-size: 0.9rem;
+    font-size: 0.95rem; /* Slightly larger font */
     font-family: var(--font-primary);
-    padding: 6px 0;
+    padding: 0; /* Vertical padding handled by container */
     min-width: 0;
 }
 
@@ -722,24 +717,26 @@ img {
 }
 
 .search-btn {
-    width: 36px;
-    height: 36px;
+    width: 32px; /* Smaller button */
+    height: 32px; /* Smaller button */
     border-radius: 50%;
-    background: var(--gradient-1);
+    background: transparent; /* No background */
     border: none;
-    color: var(--white);
-    font-size: 0.8rem;
+    color: var(--text-muted); /* Subtle icon color */
+    font-size: 1.1rem; /* Icon size */
     cursor: pointer;
     transition: var(--transition);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    box-shadow: none; /* Remove button shadow */
 }
 
 .search-btn:hover {
-    transform: scale(1.05) rotate(15deg);
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    transform: none; /* No transform on hover for subtlety */
+    color: var(--primary-color); /* Highlight on hover */
+    box-shadow: none;
 }
 
 /* Search suggestions - compact horizontal tags */
@@ -999,8 +996,7 @@ img {
     gap: 12px;
 }
 
-.btn-buy,
-.btn-learn {
+.btn-discount {
     flex: 1;
     padding: 12px 20px;
     border-radius: 12px;
@@ -1010,17 +1006,33 @@ img {
     transition: var(--transition);
     border: none;
     font-family: var(--font-primary);
-}
-
-.btn-buy {
     background: var(--gradient-1);
     color: var(--white);
     box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 
-.btn-buy:hover {
+.btn-discount:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+}
+
+.btn-discount .discount-percentage {
+    font-weight: 700;
+    color: var(--accent-color); /* Make percentage stand out */
+}
+
+/* Remove old button styles if they are no longer needed */
+/* .btn-buy, .btn-learn are replaced by .btn-discount */
+/* If you want to keep .btn-buy and .btn-learn for other sections,
+   you might need to adjust their selectors or create new classes. */
+
+/* Adjust product-buttons for single button if needed */
+.product-buttons {
+    justify-content: center; /* Center the single discount button */
 }
 
 .btn-learn {
@@ -1485,7 +1497,7 @@ img {
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.1rem; /* Title छोटा किया गया */
     }
 
     .footer-grid {
@@ -1496,13 +1508,20 @@ img {
 @media (max-width: 768px) {
     .hero {
         min-height: auto;
-        padding-top: 0; /* Removing mobile top padding */
+        padding-top: 0 !important;
+        margin-top: 0 !important;
         padding-bottom: 0;
+        display: block; /* Ensure it doesn't flex-center and create gaps */
     }
 
     .hero-slideshow-container {
         padding: 0;
-        margin: 0;
+        margin: 0 !important;
+        top: 0;
+    }
+
+    .navbar {
+        padding: 8px 0; /* Reduce header height on mobile to save space */
     }
 
     .slider-nav {
@@ -1524,13 +1543,27 @@ img {
         height: 10px;
     }
 
-    .hero-slider {
+    /* The .hero-slider class is not used in index.html for the hero section, removing this rule */
+    /* .hero-slider {
         height: auto;
         min-height: 80vh;
+    } */
+
+    .hero-slideshow { /* Apply changes to the actual slideshow container */
+        min-height: 50vh; /* Adjusted for better mobile fit */
+        aspect-ratio: auto; /* Allow height to be determined by min-height and content, removing fixed ratio */
     }
 
     .slide {
-        padding: 120px 20px 60px;
+        padding: 0; /* Remove padding from slide itself to prevent interference with image display */
+        display: flex; /* Use flex to center the image if object-fit: contain leaves empty space */
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Hide extra text content in hero on mobile if you want it to look just like a banner */
+    .hero-content-simple {
+        padding: 10px;
     }
 
     .hero-title {
@@ -1554,35 +1587,38 @@ img {
     }
 
     .categories {
-        padding: 30px 0 20px;
+        padding: 10px 0 0px; /* Height कम करने के लिए पैडिंग घटाई गई */
     }
 
     .category-grid-wrapper {
         padding: 10px 0;
+        overflow-x: auto;
+        scrollbar-width: none;
     }
 
     .category-grid {
-        gap: 20px;
+        gap: 8px; /* आइकन्स के बीच का गैप कम किया */
     }
 
     .category-icon {
-        width: 80px;
-        height: 80px;
+        width: 55px; /* आइकन साइज छोटा किया गया */
+        height: 55px;
         font-size: 1.5rem;
     }
 
     .search-container {
-        flex-wrap: wrap;
-        border-radius: 20px;
-        padding: 16px;
+        flex-wrap: nowrap; /* Ensure it stays in one line on mobile */
+        padding: 8px 12px; /* More compact padding for mobile */
     }
+
 
     .search-suggestions {
         position: static;
-        margin-top: 12px;
+        margin-top: 5px;
         padding-top: 12px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         width: 100%;
+        display: none; /* Hide suggestions on mobile for a cleaner search bar */
     }
 
     /* Mobile: Show 2 products per row - no empty space */
@@ -1594,6 +1630,12 @@ img {
 
     .product-section {
         padding: 30px 0;
+    }
+
+    .hero-slideshow .slide img {
+        object-fit: cover; /* Ensures the image fills the banner area completely without gaps */
+        width: 100%;
+        height: 100%;
     }
 
     .video-categories {
@@ -1714,11 +1756,10 @@ img {
     }
 
     .product-buttons {
-        gap: 6px;
+        /* No gap needed for single button */
     }
 
-    .btn-buy,
-    .btn-learn {
+    .btn-discount {
         padding: 8px 10px;
         font-size: 0.75rem;
     }

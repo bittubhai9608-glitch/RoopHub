@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initProductInteractions();
     initScrollAnimations();
     initOfferBox();
+    initDiscountButtons(); // Initialize discount buttons
     initMobileMenu();
 });
 
@@ -311,24 +312,6 @@ function initProductInteractions() {
         });
     });
 
-    // Buy Now buttons
-    document.querySelectorAll('.btn-buy').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const productCard = this.closest('.product-card');
-            const productName = productCard.querySelector('.product-title').textContent;
-            addToCart(productName);
-        });
-    });
-
-    // Learn More buttons
-    document.querySelectorAll('.btn-learn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const productCard = this.closest('.product-card');
-            const productName = productCard.querySelector('.product-title').textContent;
-            showProductDetails(productName);
-        });
-    });
-
     // Category item clicks
     document.querySelectorAll('.category-item').forEach(item => {
         item.addEventListener('click', function(e) {
@@ -345,6 +328,35 @@ function initProductInteractions() {
         btn.addEventListener('click', function() {
             const category = this.closest('.video-category').querySelector('.video-label').textContent;
             playVideo(category);
+        });
+    });
+}
+
+// Function to generate a random discount percentage
+function generateRandomDiscount() {
+    const discounts = [20, 30, 40, 50, 60]; // Possible discount percentages
+    const randomIndex = Math.floor(Math.random() * discounts.length);
+    return discounts[randomIndex];
+}
+
+// Function to initialize discount buttons
+function initDiscountButtons() {
+    document.querySelectorAll('.btn-discount').forEach(button => {
+        const discount = generateRandomDiscount();
+        const discountSpan = button.querySelector('.discount-percentage');
+        if (discountSpan) {
+            discountSpan.textContent = `${discount}% OFF`;
+        } else {
+            button.textContent = `Get Discount ${discount}% OFF`; // Fallback if span not found
+        }
+
+        button.addEventListener('click', function() {
+            const productCard = this.closest('.product-card');
+            const productName = productCard.querySelector('.product-title').textContent;
+            showNotification(`Congratulations! You got ${discount}% OFF on "${productName}"!`);
+            this.textContent = 'Discount Applied!';
+            this.disabled = true; // Disable button after click
+            this.style.background = 'var(--secondary-color)'; // Change color to indicate applied
         });
     });
 }
@@ -431,17 +443,6 @@ function toggleWishlist(btn) {
         btn.style.color = '';
         showNotification('Removed from wishlist');
     }
-}
-
-function addToCart(productName) {
-    showNotification(`"${productName}" added to cart!`);
-
-    // Animate the button
-    const btn = event.target;
-    btn.style.transform = 'scale(0.95)';
-    setTimeout(() => {
-        btn.style.transform = '';
-    }, 150);
 }
 
 function showProductDetails(productName) {
