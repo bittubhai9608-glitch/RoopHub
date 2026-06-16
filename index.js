@@ -237,19 +237,22 @@ function initSearchFunctionality() {
     const searchInput = document.getElementById('searchInput');
     const searchBtn = document.querySelector('.search-btn');
     const suggestionTags = document.querySelectorAll('.suggestion-tag');
+    const debouncedPerformSearch = debounce(() => performSearch(false), 300); // Debounced for live search, no scroll
 
     // Search button click
     if (searchBtn) {
-        searchBtn.addEventListener('click', performSearch);
+        searchBtn.addEventListener('click', () => performSearch(true)); // Explicit click, so scroll
     }
 
     // Enter key press
     if (searchInput) {
-        searchInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                performSearch();
-            }
-        });
+        // Remove keypress listener for Enter, as input event handles live search
+        // searchInput.addEventListener('keypress', function(e) {
+        //     if (e.key === 'Enter') {
+        //         performSearch();
+        //     }
+        // });
+        searchInput.addEventListener('input', debouncedPerformSearch); // Live search on input change
 
         // Add focus effect
         searchInput.addEventListener('focus', function() {
@@ -270,17 +273,20 @@ function initSearchFunctionality() {
         tag.addEventListener('click', function() {
             if (searchInput) {
                 searchInput.value = this.textContent;
-                performSearch();
+                performSearch(true); // Suggestion click, so scroll
             }
         });
     });
 }
 
-function performSearch() {
+function performSearch(shouldScroll = false) {
     const searchInput = document.getElementById('searchInput');
     const query = searchInput.value.trim().toLowerCase();
 
-    if (!query) return;
+    // Filter products immediately
+    filterProducts(query);
+
+    if (!query && !shouldScroll) return; // If query is empty and not explicitly scrolling, exit
 
     // Scroll to products section
     const productsSection = document.getElementById('products');
@@ -293,21 +299,39 @@ function performSearch() {
             behavior: 'smooth'
         });
 
-        // Filter products (visual feedback)
-        filterProducts(query);
+            // Show notification only if scrolling to indicate search action
+            showNotification(`Searching for "${query}"...`);
+        } else if (query) {
+            // If no products section to scroll to, but there's a query, show notification
+            showNotification(`Searching for "${query}"...`);
+        }
     }
-}
+
 
 function filterProducts(query) {
     const productCards = document.querySelectorAll('.product-card');
+
+    if (!query) {
+        productCards.forEach(card => {
+            card.style.display = 'block';
+        });
+        return;
+    }
+
     let foundResults = false;
 
     productCards.forEach(card => {
-        const title = card.querySelector('.product-title').textContent.toLowerCase();
-        const benefit = card.querySelector('.product-benefit').textContent.toLowerCase();
+        const titleElement = card.querySelector('.product-title');
+        const benefitElement = card.querySelector('.product-benefit');
+
+        const title = titleElement ? titleElement.textContent.toLowerCase() : '';
+        const benefit = benefitElement ? benefitElement.textContent.toLowerCase() : '';
 
         if (title.includes(query) || benefit.includes(query)) {
             card.style.display = 'block';
+            // Reset animation to re-trigger if already visible
+            card.style.animation = 'none';
+            void card.offsetWidth; // Trigger reflow
             card.style.animation = 'scaleIn 0.5s ease forwards';
             foundResults = true;
         } else {
@@ -315,14 +339,9 @@ function filterProducts(query) {
         }
     });
 
-    // Show all products if no results found
-    if (!foundResults) {
-        productCards.forEach(card => {
-            card.style.display = 'block';
-        });
-
-        // Show notification (could be enhanced with a toast)
-        console.log('No products found matching: ' + query);
+    if (!foundResults && query) {
+        // Optionally, show a message to the user that no products were found
+        // console.log('No products found matching: ' + query);
     }
 }
 
