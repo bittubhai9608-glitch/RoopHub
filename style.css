@@ -1502,7 +1502,7 @@ img {
 @media (max-width: 768px) {
     .hero {
         min-height: auto;
-        padding-top: 0 !important;
+        padding-top: 45px !important;
         margin-top: 0 !important;
         padding-bottom: 0;
         display: block; /* Ensure it doesn't flex-center and create gaps */
@@ -1538,14 +1538,10 @@ img {
     }
 
     /* The .hero-slider class is not used in index.html for the hero section, removing this rule */
-    /* .hero-slider {
-        height: auto;
-        min-height: 80vh;
-    } */
 
-    .hero-slideshow { /* Apply changes to the actual slideshow container */
-        min-height: 50vh; /* Adjusted for better mobile fit */
-        aspect-ratio: auto; /* Allow height to be determined by min-height and content, removing fixed ratio */
+    .hero-slideshow {
+        min-height: auto;
+        aspect-ratio: 16 / 9;
     }
 
     .slide {
