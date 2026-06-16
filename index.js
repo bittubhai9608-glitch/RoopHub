@@ -115,6 +115,10 @@ const slides = document.querySelectorAll('.slide');
 const dots = document.querySelectorAll('.dot');
 const totalSlides = slides.length;
 
+// Touch Swipe variables
+let touchStartX = 0;
+let touchEndX = 0;
+
 function initHeroSlider() {
     // Auto-advance slider
     startAutoSlide();
@@ -125,6 +129,9 @@ function initHeroSlider() {
         heroSection.addEventListener('mouseenter', stopAutoSlide);
         heroSection.addEventListener('mouseleave', startAutoSlide);
     }
+
+    // Initialize touch events for mobile swipe
+    initHeroTouchSwipe();
 }
 
 function startAutoSlide() {
@@ -146,20 +153,49 @@ function prevSlide() {
 }
 
 function goToSlide(index) {
+    const slideshow = document.querySelector('.hero-slideshow');
     // Remove active class from current slide and dot
-    slides[currentSlide].classList.remove('active');
     dots[currentSlide].classList.remove('active');
 
     // Update current slide
     currentSlide = index;
 
-    // Add active class to new slide and dot
-    slides[currentSlide].classList.add('active');
+    // Slide the container and update dot
+    slideshow.style.transform = `translateX(-${index * 100}%)`;
     dots[currentSlide].classList.add('active');
 
     // Reset auto-slide timer
     stopAutoSlide();
     startAutoSlide();
+}
+
+function initHeroTouchSwipe() {
+    const container = document.querySelector('.hero-slideshow-container');
+    if (!container) return;
+
+    // जब यूजर स्क्रीन को छूता है
+    container.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    // जब यूजर उंगली हटाता है
+    container.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleHeroSwipe();
+    }, { passive: true });
+}
+
+function handleHeroSwipe() {
+    const swipeThreshold = 50; // कम से कम इतनी दूरी तक स्वाइप होना चाहिए
+    const diff = touchStartX - touchEndX;
+
+    if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+            nextSlide(); // उंगली बाएँ खिसकाई (Left Swipe) -> अगला स्लाइड
+        } else {
+            prevSlide(); // उंगली दाएँ खिसकाई (Right Swipe) -> पिछला स्लाइड
+        }
+    }
 }
 
 /* ============================================
