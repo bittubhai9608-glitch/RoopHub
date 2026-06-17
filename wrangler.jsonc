@@ -6,17 +6,7 @@
     "enabled": true
   },
   "assets": {
-    "directory": ".",
-    "exclude": [
-      "**/node-*.msi",
-      "**/*.msi",
-      "**/*.exe",
-      "venv",
-      ".venv*",
-      "__pycache__",
-      "creds.json",
-      "requirements.txt"
-    ]
+    "directory": "./public"
   },
   "compatibility_flags": [
     "nodejs_compat"
