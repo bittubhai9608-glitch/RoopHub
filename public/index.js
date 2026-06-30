@@ -576,16 +576,12 @@ function initScrollAnimations() {
 
     // Observe elements
     document.querySelectorAll('.product-card, .category-item, .video-category').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
 
     // Observe sections
     document.querySelectorAll('.product-section, .video-section').forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(30px)';
         section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
         observer.observe(section);
     });
