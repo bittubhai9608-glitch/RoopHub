@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROOPHUb - Premium Shoes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #ff6b6b;
+            --primary-dark: #ee5a5a;
+            --secondary-color: #4ecdc4;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --amazon-color: #ff9900;
+            --max-width: 1200px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        /* Header / Company Name */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-icons a {
+            color: var(--text-dark);
+            font-size: 1.25rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-icons a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Main Product Section */
+        .product-main {
+            padding: 3rem 2rem;
+            background: var(--white);
+        }
+
+        .product-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .product-image {
+            text-align: center;
+            overflow: hidden; /* Ensures the scaled image doesn't overflow its container */
+        }
+
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+        }
+
+        .product-info h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .product-price {
+            font-size: 1.75rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-price del {
+            color: var(--text-light);
+            font-size: 1.25rem;
+            margin-left: 0.5rem;
+        }
+
+        /* Size Options */
+        .size-options {
+            margin-bottom: 1.5rem;
+        }
+
+        .size-options h3 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .size-list {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .size-option {
+            padding: 0.3rem 0.7rem; /* Reduced padding for smaller size options */
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .size-option:hover,
+        .size-option.active {
+            border-color: var(--primary-color);
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Product Details */
+        .product-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .product-details h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .product-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .product-details li {
+            padding: 0.25rem 0;
+            color: var(--text-light);
+            font-size: 0.85rem; /* Reduced font size for product details */
+        }
+
+        .product-details li i {
+            color: var(--secondary-color);
+            margin-right: 0.5rem;
+        }
+
+        /* Buy from Amazon Button */
+        .amazon-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--amazon-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+
+        .amazon-btn:hover {
+            background: #e68a00;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 153, 0, 0.3);
+        }
+
+        /* Social Share */
+        .social-share {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .social-share span {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .social-share a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .social-share .facebook { background: #1877f2; }
+        .social-share .twitter { background: #1da1f2; }
+        .social-share .whatsapp { background: #25d366; }
+        .social-share .gmail { background: #ea4335; }
+
+        .social-share a:hover {
+            transform: scale(1.15);
+        }
+
+        /* About Product Section */
+        .about-product {
+            padding: 3rem 2rem;
+            background: var(--white);
+        }
+
+        .about-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .about-product h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .about-product p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .about-feature {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 10px;
+        }
+
+        .about-feature i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+        }
+
+        .about-feature h4 {
+            font-size: 1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .about-feature p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* You Might Like Section */
+        .you-might-like {
+            padding: 3rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .section-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title h2 {
+            font-size: 1.75rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .products-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden; /* Ensures the scaled image doesn't overflow its container */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+        }
+
+        .product-card img:hover {
+            transform: scale(1.05); /* Zooms in the image by 5% on hover */
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-card-content {
+            padding: 1.25rem;
+        }
+
+        .product-card-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .product-card-content .price {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .product-image img:hover {
+            transform: scale(1.05); /* Zooms in the main product image by 5% on hover */
+        }
+
+        .product-card-content .price del {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-left: 0.5rem;
+        }
+
+        /* Trending Products Section */
+        .trending-products {
+            padding: 3rem 2rem;
+            background: var(--white);
+        }
+
+        .products-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        /* Tags Section */
+        .tags-section {
+            padding: 2rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .tags-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .tags-box {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .tags-box h3 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .tags-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            padding: 0.4rem 1rem;
+            background: var(--bg-light);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Thunder Deals Section */
+        .thunder-deals {
+            padding: 3rem 2rem;
+            background: var(--white);
+        }
+
+        .deal-badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .footer-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color); /* For the 'ROOP' part */
+        }
+
+        .footer-section h3 span {
+            color: var(--white); /* For the 'HUb' part to ensure visibility against the dark footer background */
+        }
+
+        .footer-section p {
+            opacity: 0.8;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .footer-social .facebook { background: #1877f2; }
+        .footer-social .whatsapp { background: #25d366; }
+        .footer-social .twitter { background: #1da1f2; }
+        .footer-social .youtube { background: #ff0000; }
+        .footer-social .telegram { background: #0088cc; }
+
+        .footer-social a:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            max-width: var(--max-width);
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .products-grid-4 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+
+            .product-main {
+                padding: 2rem 1.5rem;
+            }
+
+            .products-grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .products-grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .header-container {
+                padding: 0.75rem 1.5rem;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .about-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .product-info h1 {
+                font-size: 1.5rem;
+            }
+
+            .product-price {
+                font-size: 1.5rem;
+            }
+
+            .size-list {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">ROOP<span>HUb</span></a>
+            <div class="nav-icons">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Product Section -->
+    <section class="product-main">
+        <div class="product-container">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop" alt="Premium Shoes">
+            </div>
+            <div class="product-info">
+                <h1>Premium Running Shoes - Sport Edition</h1>
+                <div class="product-price">₹2,499 <del>₹4,999</del></div>
+
+                <!-- Size Options -->
+                <div class="size-options">
+                    <h3>Size: <span id="selectedSize">UK 7</span></h3>
+                    <div class="size-list">
+                        <div class="size-option active" onclick="selectSize(this)">UK 6</div>
+                        <div class="size-option" onclick="selectSize(this)">UK 7</div>
+                        <div class="size-option" onclick="selectSize(this)">UK 8</div>
+                        <div class="size-option" onclick="selectSize(this)">UK 9</div>
+                        <div class="size-option" onclick="selectSize(this)">UK 10</div>
+                    </div>
+                </div>
+
+                <!-- Product Details -->
+                <div class="product-details">
+                    <h3>Product Details:</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Premium quality material</li>
+                        <li><i class="fas fa-check"></i> Comfortable fit</li>
+                        <li><i class="fas fa-check"></i> Durable sole</li>
+                        <li><i class="fas fa-check"></i> Lightweight design</li>
+                        <li><i class="fas fa-check"></i> Free shipping available</li>
+                    </ul>
+                </div>
+
+                <!-- Buy from Amazon -->
+                <a href="https://www.amazon.com" target="_blank" class="amazon-btn">
+                    <i class="fab fa-amazon"></i> Buy from Amazon
+                </a>
+
+                <!-- Social Share -->
+                <div class="social-share">
+                    <span>Share:</span>
+                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="gmail"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Product Section -->
+    <section class="about-product">
+        <div class="about-container">
+            <h2>About This Product</h2>
+            <p>Experience the ultimate comfort with our Premium Running Shoes. Designed for both style and performance, these shoes feature advanced cushioning technology and breathable materials to keep your feet comfortable all day long.</p>
+            <p>Whether you're hitting the gym, going for a run, or just running errands, these versatile shoes provide the perfect blend of comfort, style, and durability. The lightweight design reduces foot fatigue, while the durable rubber sole ensures excellent traction on any surface.</p>
+
+        </div>
+    </section>
+
+    <!-- You Might Like Section -->
+    <section class="you-might-like">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>You Might Like</h2>
+                <p>Based on your interests</p>
+            </div>
+            <div class="products-grid-2">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1606107557042-94fe97e03830?w=400&h=300&fit=crop" alt="Shoe 1">
+                    <div class="product-card-content">
+                        <h3>Classic White Sneakers</h3>
+                        <div class="price">₹1,999 <del>₹3,499</del></div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400&h=300&fit=crop" alt="Shoe 2">
+                    <div class="product-card-content">
+                        <h3>Sport Running Shoes</h3>
+                        <div class="price">₹2,299 <del>₹4,299</del></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Products Section -->
+    <section class="trending-products">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Trending Products</h2>
+                <p>Most popular this week</p>
+            </div>
+            <div class="products-grid-4">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=400&h=300&fit=crop" alt="Trending 1">
+                    <div class="product-card-content">
+                        <h3>Casual Loafers</h3>
+                        <div class="price">₹1,799</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=400&h=300&fit=crop" alt="Trending 2">
+                    <div class="product-card-content">
+                        <h3>High-Top Sneakers</h3>
+                        <div class="price">₹2,599</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=400&h=300&fit=crop" alt="Trending 3">
+                    <div class="product-card-content">
+                        <h3>Athletic Trainers</h3>
+                        <div class="price">₹2,999</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=400&h=300&fit=crop" alt="Trending 4">
+                    <div class="product-card-content">
+                        <h3>Canvas Slip-Ons</h3>
+                        <div class="price">₹1,499</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tags Section -->
+    <section class="tags-section">
+        <div class="tags-container">
+            <div class="tags-box">
+                <h3>Main Tags</h3>
+                <div class="tags-list">
+                    <span class="tag">Running Shoes</span>
+                    <span class="tag">Sports</span>
+                    <span class="tag">Casual</span>
+                    <span class="tag">Sneakers</span>
+                    <span class="tag">Athletic</span>
+                    <span class="tag">Fashion</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thunder Deals Section -->
+    <section class="thunder-deals">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>⚡ Thunder Deals <span class="deal-badge">Limited Time</span></h2>
+                <p>Grab these amazing deals before they're gone!</p>
+            </div>
+            <div class="products-grid-4">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1491553895911-0055uj8a481?w=400&h=300&fit=crop" alt="Deal 1">
+                    <div class="product-card-content">
+                        <h3>Pro Runner Elite</h3>
+                        <div class="price">₹1,299 <del>₹3,999</del></div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?w=400&h=300&fit=crop" alt="Deal 2">
+                    <div class="product-card-content">
+                        <h3>Urban Walker</h3>
+                        <div class="price">₹999 <del>₹2,999</del></div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=400&h=300&fit=crop" alt="Deal 3">
+                    <div class="product-card-content">
+                        <h3>Street Style</h3>
+                        <div class="price">₹1,499 <del>₹3,499</del></div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=300&fit=crop" alt="Deal 4">
+                    <div class="product-card-content">
+                        <h3>Comfort Plus</h3>
+                        <div class="price">₹1,799 <del>₹4,499</del></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>ROOP<span>HUb</span></h3>
+                <p>Your one-stop destination for premium quality shoes. We provide the best footwear at affordable prices with excellent customer service.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul class="footer-links">
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Track Order</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="footer-social">
+                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="telegram"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ROOPHUb. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Size Selection
+        function selectSize(element) {
+            document.querySelectorAll('.size-option').forEach(opt => {
+                opt.classList.remove('active');
+            });
+            element.classList.add('active');
+            document.getElementById('selectedSize').textContent = element.textContent;
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
