@@ -15,7 +15,20 @@ document.addEventListener('DOMContentLoaded', function() {
     initOfferBox();
     initDiscountButtons(); // Initialize discount buttons
     initMobileMenu();
+    initHomepageLayout();
 });
+
+function initHomepageLayout() {
+    const productsGrid = document.querySelector('#healthcare-products .products-grid');
+    if (!productsGrid) return;
+
+    const applyLayout = () => {
+        productsGrid.style.gridTemplateColumns = 'repeat(2, minmax(0, 1fr))';
+    };
+
+    applyLayout();
+    window.addEventListener('resize', applyLayout);
+}
 
 /* ============================================
    NAVBAR FUNCTIONALITY
