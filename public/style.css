@@ -1027,7 +1027,6 @@ img {
     margin-bottom: 10px;
     line-height: 1.4;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
     
     -webkit-box-orient: vertical;
 
@@ -1540,10 +1539,6 @@ img {
         height: 350px;
     }
 
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .footer-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -1580,7 +1575,7 @@ img {
     }
 
     .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
