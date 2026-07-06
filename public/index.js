@@ -806,5 +806,3 @@ window.addEventListener('load', function() {
 /* ============================================
    CONSOLE WELCOME MESSAGE
    ============================================ */
-console.log('%c🧠 NeuroSerge - AI Affiliate Marketplace', 'color: #667eea; font-size: 20px; font-weight: bold;');
-console.log('%cWelcome to the future of AI-powered health shopping!', 'color: #764ba2; font-size: 14px;');
