@@ -806,3 +806,4 @@ window.addEventListener('load', function() {
 /* ============================================
    CONSOLE WELCOME MESSAGE
    ============================================ */
+   console.log('%cWelcome to ROOPHUb!', 'color: #38ef7d; font-size: 20px; font-weight: bold;');
