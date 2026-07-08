@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const canonicalUrl = new URL(currentPath, window.location.origin).href;
 
     // Update the document title
-    document.title = title;
+   // document.title = title;
 
     // Update or create the meta description tag
     let metaDescription = document.querySelector('meta[name="description"]');
