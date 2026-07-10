@@ -820,7 +820,21 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="/index.html" onclick="this.href='/public/index.html'; return true;">Home</a></li>
+                    <li><a href="/index.html"
+    onclick="
+         fetch('/index.html')
+        .then(r => {
+             if (r.ok) {
+             window.location.href='/index.html';
+             } else {
+              window.location.href='/public/index.html';
+             }
+        })
+   .catch(() => {
+             window.location.href='/public/index.html';
+         });
+    return false;"> Home
+</a></li>
                     <li><a href="/Footer/AboutUs.html" onclick="this.href='/public/Footer/AboutUs.html'; return true;">About</a></li>
                     <li><a href="/Footer/AffiliateDisclosure.html" onclick="this.href='/public/Footer/AffiliateDisclosure.html'; return true;">Disclosure</a></li>
                     <li><a href="/Footer/PrivacyPolicy.html" onclick="this.href='/public/Footer/PrivacyPolicy.html'; return true;">Privacy Policy</a></li>
