@@ -843,7 +843,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+   <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-section">
@@ -853,24 +853,201 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="/index.html" onclick="this.href='/public/index.html'; return true;">Home</a></li>
-                    <li><a href="/Footer/AboutUs.html" onclick="this.href='/public/Footer/AboutUs.html'; return true;">About</a></li>
-                    <li><a href="/Footer/AffiliateDisclosure.html" onclick="this.href='/public/Footer/AffiliateDisclosure.html'; return true;">Disclosure</a></li>
-                    <li><a href="/Footer/PrivacyPolicy.html" onclick="this.href='/public/Footer/PrivacyPolicy.html'; return true;">Privacy Policy</a></li>
-                    <li><a href="/Footer/Terms.html" onclick="this.href='/public/Footer/Terms.html'; return true;">Terms of Service</a></li>
-                    <li><a href="/Footer/Disclaimer.html" onclick="this.href='/public/Footer/Disclaimer.html'; return true;">Disclaimer</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Customer Service</h3>
-                <ul class="footer-links">
-                    <li><a href="/Footer/FAQ.html" onclick="this.href='/public/Footer/FAQ.html'; return true;">FAQ</a></li>
-                    <li><a href="/Footer/Terms.html" onclick="this.href='/public/Footer/Terms.html'; return true;">Terms of Service</a></li>
-                     <li><a href="/Footer/Contact.html" onclick="this.href='/public/Footer/Contact.html'; return true;">Contact</a></li>
-                    <li><a href="/Footer/ReturnPolicy.html" onclick="this.href='/public/Footer/ReturnPolicy.html'; return true;">Returns</a></li>
-                    <li><a href="/Footer/ImportantInformation.html" onclick="this.href='/public/Footer/ImportantInformation.html'; return true;">Important Info.</a></li>
-                </ul>
-            </div>
+                    <!-- Home -->
+                    <li><a href="/index.html"
+                             onclick="
+                                   fetch('/index.html')
+                                    .then(r => {
+                                 if (r.ok) {
+                                     window.location.href='/index.html';
+                                      } else {
+                                      window.location.href='/public/index.html';
+                                       }
+                                     })
+                                    .catch(() => {
+            window.location.href='/public/index.html';
+        });
+    return false;"> Home
+</a></li>
+<!-- About -->
+ <li><a href="/Footer/AboutUs.html"
+   onclick="
+   fetch('/Footer/AboutUs.html')
+   .then(r => {
+      if (r.ok) {
+         window.location.href='/Footer/AboutUs.html';
+      } else {
+         window.location.href='/public/Footer/AboutUs.html';
+      }
+   })
+   .catch(() => {
+      window.location.href='/public/Footer/AboutUs.html';
+   });
+   return false;">
+   About
+</a></li>
+<!--Affiliate Disclosure-->
+<li><a href="/Footer/AffiliateDisclosure.html"
+   onclick="
+   fetch('/Footer/AffiliateDisclosure.html')
+   .then(r => {
+      if (r.ok) {
+         window.location.href='/Footer/AffiliateDisclosure.html';
+      } else {
+         window.location.href='/public/Footer/AffiliateDisclosure.html';
+      }
+   })
+   .catch(() => {
+      window.location.href='/public/Footer/AffiliateDisclosure.html';
+   });
+   return false;">
+   Affiliate Disclosure
+</a></li>
+<!--Privacy Policy-->
+<li><a href="/Footer/PrivacyPolicy.html"
+   onclick="
+   fetch('/Footer/PrivacyPolicy.html')
+   .then(r => {
+      if (r.ok) {
+         window.location.href='/Footer/PrivacyPolicy.html';
+      } else {
+         window.location.href='/public/Footer/PrivacyPolicy.html';
+      }
+   })
+   .catch(() => {
+      window.location.href='/public/Footer/PrivacyPolicy.html';
+   });
+   return false;">
+   Privacy Policy
+</a></li>
+<!--Terms of Service-->
+<li><a href="/Footer/Terms.html"
+   onclick="
+   fetch('/Footer/Terms.html')
+   .then(r => {
+      if (r.ok) {
+         window.location.href='/Footer/Terms.html';
+      } else {
+         window.location.href='/public/Footer/Terms.html';
+      }
+   })
+   .catch(() => {
+      window.location.href='/public/Footer/Terms.html';
+   });
+   return false;">
+   Terms of Service
+</a></li>
+<!--Disclaimer-->
+<li><a href="/Footer/Disclaimer.html"
+   onclick="
+   fetch('/Footer/Disclaimer.html')
+   .then(r => {
+      if (r.ok) {
+         window.location.href='/Footer/Disclaimer.html';
+      } else {
+         window.location.href='/public/Footer/Disclaimer.html';
+      }
+   })
+   .catch(() => {
+      window.location.href='/public/Footer/Disclaimer.html';
+   });
+   return false;">
+   Disclaimer
+</a></li></ul></div>
+<!--Customer Service-->
+<div class="footer-section">
+<h3>Customer Service</h3>
+<!--FAQ-->
+<ul class="footer-links">
+    <li><a href="/Footer/FAQ.html"
+   onclick="
+   fetch('/Footer/FAQ.html')
+   .then(r => {
+      if (r.ok) {
+         window.location.href='/Footer/FAQ.html';
+      } else {
+         window.location.href='/public/Footer/FAQ.html';
+      }
+   })
+   .catch(() => {
+      window.location.href='/public/Footer/FAQ.html';
+   });
+   return false;">
+   FAQ
+</a></li>
+<!--Terms of Service-->
+<li>
+<a href="/Footer/Terms.html"
+   onclick="
+   fetch('/Footer/Terms.html')
+   .then(r => {
+      if (r.ok) {
+         window.location.href='/Footer/Terms.html';
+      } else {
+         window.location.href='/public/Footer/Terms.html';
+      }
+   })
+   .catch(() => {
+      window.location.href='/public/Footer/Terms.html';
+   });
+   return false;">
+   Terms of Service
+</a></li>
+<!--Contact-->
+<li>
+<a href="/Footer/Contact.html"
+   onclick="
+   fetch('/Footer/Contact.html')
+   .then(r => {
+      if (r.ok) {
+         window.location.href='/Footer/Contact.html';
+      } else {
+         window.location.href='/public/Footer/Contact.html';
+      }
+   })
+   .catch(() => {
+      window.location.href='/public/Footer/Contact.html';
+   });
+   return false;">
+   Contact
+</a></li>
+<!--Return Policy-->
+<li>
+<a href="/Footer/ReturnPolicy.html"
+   onclick="
+   fetch('/Footer/ReturnPolicy.html')
+   .then(r => {
+      if (r.ok) {
+         window.location.href='/Footer/ReturnPolicy.html';
+      } else {
+         window.location.href='/public/Footer/ReturnPolicy.html';
+      }
+   })
+   .catch(() => {
+      window.location.href='/public/Footer/ReturnPolicy.html';
+   });
+   return false;">
+   Returns
+</a></li>
+<!--Important Information-->
+<li>
+<a href="/Footer/ImportantInformation.html"
+   onclick="
+   fetch('/Footer/ImportantInformation.html')
+   .then(r => {
+      if (r.ok) {
+         window.location.href='/Footer/ImportantInformation.html';
+      } else {
+         window.location.href='/public/Footer/ImportantInformation.html';
+      }
+   })
+   .catch(() => {
+      window.location.href='/public/Footer/ImportantInformation.html';
+   });
+   return false;">
+   Important Info.
+</a></li></ul></div>
+
             <div class="footer-section">
                 <h3>Connect With Us</h3>
                 <div class="footer-social">
@@ -882,6 +1059,9 @@
                 </div>
             </div>
         </div>
+
+
+        <!-- Footer Bottom -->
         <div class="footer-bottom">
             <p>&copy; 2026 ROOPHUb. All rights reserved.</p>
         </div>
