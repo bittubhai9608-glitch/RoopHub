@@ -1338,10 +1338,10 @@ img {
 /* ============================================
    FOOTER STYLES
    ============================================ */
-.footer {
-    background: var(--dark-secondary);
-    padding: 80px 0 30px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+footer {
+    background: var(--text-dark);
+    color: var(--white);
+    padding: 3rem 2rem 1.5rem;
 }
 
 .footer-grid {
@@ -1349,6 +1349,13 @@ img {
     grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
     gap: 40px;
     margin-bottom: 50px;
+}
+.footer-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
 }
 
 .footer-about .footer-logo {
@@ -1374,11 +1381,26 @@ img {
     background-clip: text;
 }
 
+.footer-section h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color); /* For the 'ROOP' part */
+}
+
+.footer-section h3 span {
+    color: var(--white); /* For the 'HUb' part to ensure visibility against the dark footer background */
+}
+
 .footer-description {
     font-size: 0.95rem;
     color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: 24px;
+}
+.footer-section p {
+    opacity: 0.8;
+    line-height: 1.8;
+    font-size: 0.95rem;
 }
 
 .social-links {
@@ -1405,6 +1427,30 @@ img {
     transform: translateY(-3px);
 }
 
+.footer-social {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.footer-social .facebook { background: #1877f2; }
+.footer-social .whatsapp { background: #25d366; }
+.footer-social .twitter { background: #1da1f2; }
+.footer-social .youtube { background: #ff0000; }
+.footer-social .telegram { background: #0088cc; }
 .footer-links h4 {
     font-size: 1.1rem;
     font-weight: 700;
@@ -1419,14 +1465,15 @@ img {
 }
 
 .footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
     font-size: 0.95rem;
-    color: var(--text-secondary);
-    transition: var(--transition);
 }
 
 .footer-links a:hover {
-    color: var(--primary-color);
-    padding-left: 8px;
+    opacity: 1;
 }
 
 .footer-newsletter h4 {
@@ -1490,14 +1537,13 @@ img {
 }
 
 .footer-bottom {
+    max-width: var(--max-width);
+    margin: 2rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
-    padding-top: 30px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.footer-bottom p {
+    opacity: 0.7;
     font-size: 0.9rem;
-    color: var(--text-secondary);
 }
 
 /* ============================================
