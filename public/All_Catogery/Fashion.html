@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Category Products</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+    padding:20px;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.product-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-5px);
+}
+
+.product-card img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+}
+
+.product-info{
+    padding:10px;
+}
+
+.product-info h3{
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+.price{
+    color:green;
+    font-weight:bold;
+}
+
+.old-price{
+    color:red;
+    text-decoration:line-through;
+    margin-left:8px;
+}
+
+@media(min-width:768px){
+    .product-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h2>Fashion</h2>
+
+<div id="category-products" class="product-grid"></div>
+
+<script>
+
+const products=[
+
+{
+name:"Urban Walker",
+price:"₹999",
+oldPrice:"₹2999",
+image:"https://picsum.photos/300?1"
+},
+
+{
+name:"Street Style",
+price:"₹899",
+oldPrice:"₹2499",
+image:"https://picsum.photos/300?2"
+},
+
+{
+name:"Running Shoes",
+price:"₹1299",
+oldPrice:"₹3299",
+image:"https://picsum.photos/300?3"
+},
+
+{
+name:"Casual Shoes",
+price:"₹799",
+oldPrice:"₹1999",
+image:"https://picsum.photos/300?4"
+},
+
+{
+name:"Sneakers",
+price:"₹1099",
+oldPrice:"₹2799",
+image:"https://picsum.photos/300?5"
+},
+
+{
+name:"Sports Shoes",
+price:"₹1499",
+oldPrice:"₹3499",
+image:"https://picsum.photos/300?6"
+},
+
+{
+name:"Formal Shoes",
+price:"₹1199",
+oldPrice:"₹2899",
+image:"https://picsum.photos/300?7"
+},
+
+{
+name:"Premium Shoes",
+price:"₹1599",
+oldPrice:"₹3999",
+image:"https://picsum.photos/300?8"
+},
+
+{
+name:"Canvas Shoes",
+price:"₹899",
+oldPrice:"₹2299",
+image:"https://picsum.photos/300?9"
+},
+
+{
+name:"Leather Shoes",
+price:"₹1799",
+oldPrice:"₹4599",
+image:"https://picsum.photos/300?10"
+},
+
+{
+name:"Travel Shoes",
+price:"₹999",
+oldPrice:"₹2699",
+image:"https://picsum.photos/300?11"
+},
+
+{
+name:"Classic Shoes",
+price:"₹1399",
+oldPrice:"₹3199",
+image:"https://picsum.photos/300?12"
+}
+
+];
+
+function shuffle(array){
+
+for(let i=array.length-1;i>0;i--){
+
+let j=Math.floor(Math.random()*(i+1));
+
+[array[i],array[j]]=[array[j],array[i]];
+
+}
+
+return array;
+
+}
+
+function loadCategory(){
+
+const container=document.getElementById("category-products");
+
+container.innerHTML="";
+
+const randomProducts=shuffle([...products]).slice(0,8);
+
+randomProducts.forEach(product=>{
+
+container.innerHTML+=`
+
+<div class="product-card">
+
+<img src="${product.image}" alt="${product.name}">
+
+<div class="product-info">
+
+<h3>${product.name}</h3>
+
+<div>
+
+<span class="price">${product.price}</span>
+
+<span class="old-price">${product.oldPrice}</span>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+loadCategory();
+
+</script>
+
+</body>
+</html>
