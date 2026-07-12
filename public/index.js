@@ -5,29 +5,26 @@
 
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all functions
+    // Initialize all functionalities
     initNavbar();
     initHeroSlider();
-    initSmoothScroll();
-    initSearchFunctionality();
-    initProductInteractions();
-    initScrollAnimations();
-    initOfferBox();
-    initDiscountButtons(); // Initialize discount buttons
-    initMobileMenu();
-    initHomepageLayout();
+    initSearch();
+    initViewMore(); // Added this line
+    initDiscountButtons();
+    shuffleProducts(); // Randomize products on load
 });
 
-function initHomepageLayout() {
-    const productsGrid = document.querySelector('#healthcare-products .products-grid');
-    if (!productsGrid) return;
+/* ============================================
+   PRODUCT SHUFFLE FUNCTIONALITY
+   ============================================ */
+function shuffleProducts() {
+    const productGrid = document.querySelector('#healthcare-products .products-grid');
+    if (!productGrid) return;
 
-    const applyLayout = () => {
-        productsGrid.style.gridTemplateColumns = 'repeat(2, minmax(0, 1fr))';
-    };
+    const products = Array.from(productGrid.children);
+    products.sort(() => Math.random() - 0.5);
 
-    applyLayout();
-    window.addEventListener('resize', applyLayout);
+    products.forEach(product => productGrid.appendChild(product));
 }
 
 /* ============================================
@@ -37,7 +34,6 @@ function initNavbar() {
     const navbar = document.getElementById('navbar');
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
-    const navButtons = document.querySelector('.nav-buttons');
 
     // Scroll effect for navbar
     window.addEventListener('scroll', function() {
@@ -64,7 +60,6 @@ function initNavbar() {
         hamburger.addEventListener('click', function() {
             this.classList.toggle('active');
             navMenu.classList.toggle('active');
-            navButtons.classList.toggle('active');
 
             // Animate hamburger
             const spans = this.querySelectorAll('span');
@@ -86,7 +81,6 @@ function initNavbar() {
             if (hamburger.classList.contains('active')) {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
-                navButtons.classList.remove('active');
 
                 const spans = hamburger.querySelectorAll('span');
                 spans[0].style.transform = 'none';
@@ -96,7 +90,6 @@ function initNavbar() {
         });
     });
 }
-
 function updateActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -122,6 +115,7 @@ function updateActiveNavLink() {
 /* ============================================
    HERO SLIDER FUNCTIONALITY
    ============================================ */
+
 let currentSlide = 0;
 let slideInterval;
 const slides = document.querySelectorAll('.slide');
@@ -133,17 +127,7 @@ let touchStartX = 0;
 let touchEndX = 0;
 
 function initHeroSlider() {
-    // Auto-advance slider
     startAutoSlide();
-
-    // Pause on hover
-    const heroSection = document.querySelector('.hero');
-    if (heroSection) {
-        heroSection.addEventListener('mouseenter', stopAutoSlide);
-        heroSection.addEventListener('mouseleave', startAutoSlide);
-    }
-
-    // Initialize touch events for mobile swipe
     initHeroTouchSwipe();
 }
 
@@ -212,86 +196,19 @@ function handleHeroSwipe() {
 }
 
 /* ============================================
-   SMOOTH SCROLL FUNCTIONALITY
+   SCROLL TO TOP
    ============================================ */
-function initSmoothScroll() {
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const navbarHeight = document.getElementById('navbar').offsetHeight;
-                const targetPosition = targetElement.offsetTop - navbarHeight - 20;
-
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-}
-
 function scrollToTop() {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
     });
 }
-
-/* ============================================
-   SEARCH FUNCTIONALITY
-   ============================================ */
-function initSearchFunctionality() {
+function initSearch() {
     const searchInput = document.getElementById('searchInput');
     const searchBtn = document.querySelector('.search-btn');
-    const suggestionTags = document.querySelectorAll('.suggestion-tag');
-    const debouncedPerformSearch = debounce(() => performSearch(false), 300); // Debounced for live search, no scroll
-
-    // Search button click
-    if (searchBtn) {
-        searchBtn.addEventListener('click', () => performSearch(true)); // Explicit click, so scroll
-    }
-
-    // Enter key press
-    if (searchInput) {
-        // Remove keypress listener for Enter, as input event handles live search
-        // searchInput.addEventListener('keypress', function(e) {
-        //     if (e.key === 'Enter') {
-        //         performSearch();
-        //     }
-        // });
-        searchInput.addEventListener('input', debouncedPerformSearch); // Live search on input change
-
-        // Add focus effect
-        searchInput.addEventListener('focus', function() {
-            this.parentElement.style.borderColor = 'var(--primary-color)';
-            this.parentElement.style.boxShadow = 'var(--shadow-glow)';
-        });
-
-        searchInput.addEventListener('blur', function() {
-            if (!this.value) {
-                this.parentElement.style.borderColor = 'rgba(255, 255, 255, 0.15)';
-                this.parentElement.style.boxShadow = 'var(--shadow-md)';
-            }
-        });
-    }
-
-    // Suggestion tag clicks
-    suggestionTags.forEach(tag => {
-        tag.addEventListener('click', function() {
-            if (searchInput) {
-                searchInput.value = this.textContent;
-                performSearch(true); // Suggestion click, so scroll
-            }
-        });
-    });
-}
-
+    searchBtn.addEventListener('click', () => performSearch(true));
+};
 function performSearch(shouldScroll = false) {
     const searchInput = document.getElementById('searchInput');
     const query = searchInput.value.trim().toLowerCase();
@@ -311,12 +228,6 @@ function performSearch(shouldScroll = false) {
             top: targetPosition,
             behavior: 'smooth'
         });
-
-            // Show notification only if scrolling to indicate search action
-            showNotification(`Searching for "${query}"...`);
-        } else if (query) {
-            // If no products section to scroll to, but there's a query, show notification
-            showNotification(`Searching for "${query}"...`);
         }
     }
 
@@ -358,48 +269,6 @@ function filterProducts(query) {
     }
 }
 
-/* ============================================
-   PRODUCT INTERACTIONS
-   ============================================ */
-function initProductInteractions() {
-    // Quick view buttons
-    document.querySelectorAll('.quick-view-btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const productCard = this.closest('.product-card');
-            const productName = productCard.querySelector('.product-title').textContent;
-            showQuickView(productName);
-        });
-    });
-
-    // Wishlist buttons
-    document.querySelectorAll('.wishlist-btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            toggleWishlist(this);
-        });
-    });
-
-    // Category item clicks
-    document.querySelectorAll('.category-item').forEach(item => {
-        item.addEventListener('click', function(e) {
-            // Add click animation
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
-        });
-    });
-
-    // Video play buttons
-    document.querySelectorAll('.play-button').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const category = this.closest('.video-category').querySelector('.video-label').textContent;
-            playVideo(category);
-        });
-    });
-}
-
 // Function to generate a random discount percentage
 function generateRandomDiscount() {
     const discounts = [20, 30, 40, 50, 60]; // Possible discount percentages
@@ -407,9 +276,10 @@ function generateRandomDiscount() {
     return discounts[randomIndex];
 }
 
-// Function to initialize discount buttons
 function initDiscountButtons() {
     document.querySelectorAll('.btn-discount').forEach(button => {
+        // This button class does not exist in the provided HTML,
+        // but keeping the logic in case it's used elsewhere.
         const discount = generateRandomDiscount();
         const discountSpan = button.querySelector('.discount-percentage');
         if (discountSpan) {
@@ -420,8 +290,6 @@ function initDiscountButtons() {
 
         button.addEventListener('click', function() {
             const productCard = this.closest('.product-card');
-            const productName = productCard.querySelector('.product-title').textContent;
-            showNotification(`Congratulations! You got ${discount}% OFF on "${productName}"!`);
             this.textContent = 'Discount Applied!';
             this.disabled = true; // Disable button after click
             this.style.background = 'var(--secondary-color)'; // Change color to indicate applied
@@ -429,381 +297,39 @@ function initDiscountButtons() {
     });
 }
 
-function showQuickView(productName) {
-    // Create and show a quick view modal
-    const modal = document.createElement('div');
-    modal.className = 'quick-view-modal';
-    modal.innerHTML = `
-        <div class="modal-content">
-            <button class="modal-close" onclick="this.parentElement.parentElement.remove()">&times;</button>
-            <h3>${productName}</h3>
-            <p>Quick view content for ${productName} would appear here.</p>
-            <div class="modal-actions">
-                <button class="btn-buy">Add to Cart</button>
-                <button class="btn-learn">View Details</button>
-            </div>
-        </div>
-    `;
+/* ============================================
+   VIEW MORE FUNCTIONALITY
+   ============================================ */
+function initViewMore() {
+    const viewMoreBtn = document.getElementById('viewMoreBtn');
+    if (!viewMoreBtn) return;
 
-    // Add modal styles
-    modal.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10000;
-        backdrop-filter: blur(10px);
-    `;
+    const productGrid = document.querySelector('#healthcare-products .products-grid');
+    if (!productGrid) return;
+    const allProducts = Array.from(productGrid.children);
+    const initialVisibleCount = 8;
 
-    const content = modal.querySelector('.modal-content');
-    content.style.cssText = `
-        background: linear-gradient(135deg, #1a1a3e 0%, #0a0a1a 100%);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 20px;
-        padding: 40px;
-        max-width: 500px;
-        width: 90%;
-        position: relative;
-        color: white;
-        animation: scaleIn 0.3s ease;
-    `;
+    // Hide products beyond the initial count
+    allProducts.forEach((product, index) => {
+        if (index >= initialVisibleCount) {
+            product.style.display = 'none';
+        }
+    });
 
-    content.querySelector('h3').style.cssText = `
-        font-size: 1.5rem;
-        margin-bottom: 16px;
-    `;
+    if (allProducts.length <= initialVisibleCount) {
+        viewMoreBtn.style.display = 'none';
+    }
 
-    content.querySelector('p').style.cssText = `
-        color: rgba(255, 255, 255, 0.8);
-        margin-bottom: 24px;
-    `;
+    viewMoreBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const hiddenProducts = allProducts.filter(p => p.style.display === 'none' || p.style.display === '');
+        const productsToShow = hiddenProducts.slice(0, 4);
+        productsToShow.forEach(product => {
+            product.style.display = 'flex'; // Or 'block', depending on your layout
+        });
 
-    content.querySelector('.modal-actions').style.cssText = `
-        display: flex;
-        gap: 12px;
-    `;
-
-    document.body.appendChild(modal);
-
-    // Close on background click
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            modal.remove();
+        if (hiddenProducts.length <= 4) {
+            viewMoreBtn.style.display = 'none';
         }
     });
 }
-
-function toggleWishlist(btn) {
-    const icon = btn.querySelector('i');
-    if (icon.classList.contains('far')) {
-        icon.classList.remove('far');
-        icon.classList.add('fas');
-        btn.style.color = '#f5576c';
-        showNotification('Added to wishlist!');
-    } else {
-        icon.classList.remove('fas');
-        icon.classList.add('far');
-        btn.style.color = '';
-        showNotification('Removed from wishlist');
-    }
-}
-
-function showProductDetails(productName) {
-    showNotification(`Viewing details for "${productName}"`);
-}
-
-function playVideo(category) {
-    showNotification(`Playing ${category} video...`);
-}
-
-function showNotification(message) {
-    // Remove existing notification if any
-    const existing = document.querySelector('.notification');
-    if (existing) existing.remove();
-
-    const notification = document.createElement('div');
-    notification.className = 'notification';
-    notification.innerHTML = `
-        <i class="fas fa-check-circle"></i>
-        <span>${message}</span>
-    `;
-
-    notification.style.cssText = `
-        position: fixed;
-        top: 100px;
-        right: 30px;
-        background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-        color: white;
-        padding: 16px 24px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-weight: 600;
-        z-index: 10001;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        animation: slideInRight 0.5s ease;
-    `;
-
-    document.body.appendChild(notification);
-
-    setTimeout(() => {
-        notification.style.animation = 'fadeInUp 0.3s ease reverse';
-        setTimeout(() => notification.remove(), 300);
-    }, 3000);
-}
-
-/* ============================================
-   SCROLL ANIMATIONS
-   ============================================ */
-function initScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-fadeInUp');
-                entry.target.style.opacity = '1';
-
-                // Add staggered animation for product cards
-                if (entry.target.classList.contains('product-card')) {
-                    const grid = entry.target.closest('.products-grid');
-                    const cards = grid.querySelectorAll('.product-card');
-                    cards.forEach((card, index) => {
-                        card.style.animationDelay = `${index * 0.1}s`;
-                    });
-                }
-
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Observe elements
-    document.querySelectorAll('.product-card, .category-item, .video-category').forEach(el => {
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-
-    // Observe sections
-    document.querySelectorAll('.product-section, .video-section').forEach(section => {
-        section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-        observer.observe(section);
-    });
-}
-
-/* ============================================
-   OFFER BOX FUNCTIONALITY
-   ============================================ */
-function initOfferBox() {
-    // Show offer box after delay
-    setTimeout(() => {
-        const offerBox = document.getElementById('offerBox');
-        if (offerBox) {
-            offerBox.style.display = 'block';
-        }
-    }, 3000);
-
-    // Offer button click
-    const offerBtn = document.querySelector('.offer-btn');
-    if (offerBtn) {
-        offerBtn.addEventListener('click', function() {
-            showNotification('Discount code applied: WELCOME30');
-            closeOffer();
-        });
-    }
-}
-
-function closeOffer() {
-    const offerBox = document.getElementById('offerBox');
-    if (offerBox) {
-        offerBox.style.animation = 'fadeInUp 0.3s ease reverse';
-        setTimeout(() => {
-            offerBox.style.display = 'none';
-        }, 300);
-    }
-}
-
-/* ============================================
-   MOBILE MENU FUNCTIONALITY
-   ============================================ */
-function initMobileMenu() {
-    // Touch events for better mobile experience
-    let touchStartY = 0;
-    let touchEndY = 0;
-
-    document.addEventListener('touchstart', e => {
-        touchStartY = e.changedTouches[0].screenY;
-    }, { passive: true });
-
-    document.addEventListener('touchend', e => {
-        touchEndY = e.changedTouches[0].screenY;
-        handleSwipe();
-    }, { passive: true });
-
-    function handleSwipe() {
-        const swipeThreshold = 100;
-        const diff = touchStartY - touchEndY;
-
-        if (Math.abs(diff) > swipeThreshold) {
-            if (diff > 0) {
-                // Swipe up - could trigger some action
-            } else {
-                // Swipe down - could trigger some action
-            }
-        }
-    }
-}
-
-/* ============================================
-   UTILITY FUNCTIONS
-   ============================================ */
-
-// Debounce function for performance
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Throttle function for performance
-function throttle(func, limit) {
-    let inThrottle;
-    return function(...args) {
-        if (!inThrottle) {
-            func.apply(this, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
-}
-
-// Format price
-function formatPrice(price) {
-    return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD'
-    }).format(price);
-}
-
-// Lazy loading for images
-function initLazyLoading() {
-    const images = document.querySelectorAll('img[data-src]');
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                observer.unobserve(img);
-            }
-        });
-    });
-
-    images.forEach(img => imageObserver.observe(img));
-}
-
-// Parallax effect for hero section
-function initParallax() {
-    const hero = document.querySelector('.hero');
-    const floatingCards = document.querySelectorAll('.floating-card');
-
-    window.addEventListener('scroll', throttle(() => {
-        const scrolled = window.scrollY;
-        const rate = scrolled * 0.5;
-
-        if (hero && window.innerWidth > 992) {
-            floatingCards.forEach((card, index) => {
-                const speed = (index + 1) * 0.1;
-                card.style.transform = `translateY(${rate * speed}px)`;
-            });
-        }
-    }, 16));
-}
-
-// Particle effect (optional enhancement)
-function createParticles() {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-
-    for (let i = 0; i < 20; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.cssText = `
-            position: absolute;
-            width: ${Math.random() * 4 + 2}px;
-            height: ${Math.random() * 4 + 2}px;
-            background: rgba(255, 255, 255, ${Math.random() * 0.5 + 0.2});
-            border-radius: 50%;
-            top: ${Math.random() * 100}%;
-            left: ${Math.random() * 100}%;
-            animation: particleFloat ${Math.random() * 10 + 10}s linear infinite;
-            animation-delay: ${Math.random() * 5}s;
-            pointer-events: none;
-        `;
-        hero.appendChild(particle);
-    }
-
-    // Add particle animation keyframes
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes particleFloat {
-            0% {
-                transform: translateY(0) translateX(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100vh) translateX(${Math.random() * 100 - 50}px);
-                opacity: 0;
-            }
-        }
-    `;
-    document.head.appendChild(style);
-}
-
-// Newsletter form submission
-document.addEventListener('DOMContentLoaded', function() {
-    const newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            if (email) {
-                showNotification('Thank you for subscribing!');
-                this.reset();
-            }
-        });
-    }
-});
-
-// Initialize parallax and particles
-window.addEventListener('load', function() {
-    initParallax();
-    createParticles();
-    initLazyLoading();
-});
-
-/* ============================================
-   CONSOLE WELCOME MESSAGE
-   ============================================ */
-   console.log('%cWelcome to ROOPHUb!', 'color: #38ef7d; font-size: 20px; font-weight: bold;');
