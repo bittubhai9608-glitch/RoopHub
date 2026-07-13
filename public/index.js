@@ -8,23 +8,30 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all functionalities
     initNavbar();
     initHeroSlider();
-    initSearch();
-    initViewMore(); // Added this line
-    initDiscountButtons();
     shuffleProducts(); // Randomize products on load
+    initSearch();
+    initViewMore(); // Initialize "View More" after shuffling
+    initDiscountButtons();
 });
 
 /* ============================================
    PRODUCT SHUFFLE FUNCTIONALITY
    ============================================ */
 function shuffleProducts() {
-    const productGrid = document.querySelector('#healthcare-products .products-grid');
-    if (!productGrid) return;
+    const productGrids = document.querySelectorAll('.products-grid');
+    if (!productGrids.length) return;
 
-    const products = Array.from(productGrid.children);
-    products.sort(() => Math.random() - 0.5);
+    productGrids.forEach(productGrid => {
+        const products = Array.from(productGrid.children);
+        products.sort(() => Math.random() - 0.5);
 
-    products.forEach(product => productGrid.appendChild(product));
+        // Ensure all products are visible before re-appending and re-hiding by initViewMore
+        products.forEach(product => {
+            product.style.display = ''; // Clear inline display style
+        });
+
+        products.forEach(product => productGrid.appendChild(product));
+    });
 }
 
 /* ============================================
@@ -301,35 +308,45 @@ function initDiscountButtons() {
    VIEW MORE FUNCTIONALITY
    ============================================ */
 function initViewMore() {
-    const viewMoreBtn = document.getElementById('viewMoreBtn');
-    if (!viewMoreBtn) return;
+    // This function can be adapted to handle multiple "View More" sections if needed.
+    // For now, it targets the healthcare products section.
+    const productSections = document.querySelectorAll('.product-section');
 
-    const productGrid = document.querySelector('#healthcare-products .products-grid');
-    if (!productGrid) return;
-    const allProducts = Array.from(productGrid.children);
-    const initialVisibleCount = 8;
+    productSections.forEach(section => {
+        const viewMoreBtn = section.querySelector('.view-more-btn'); // Assuming a common class for view more buttons
+        const productGrid = section.querySelector('.products-grid');
 
-    // Hide products beyond the initial count
-    allProducts.forEach((product, index) => {
-        if (index >= initialVisibleCount) {
-            product.style.display = 'none';
-        }
-    });
+        if (!viewMoreBtn || !productGrid) return;
 
-    if (allProducts.length <= initialVisibleCount) {
-        viewMoreBtn.style.display = 'none';
-    }
+        const allProducts = Array.from(productGrid.children);
+        const initialVisibleCount = 8;
 
-    viewMoreBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const hiddenProducts = allProducts.filter(p => p.style.display === 'none' || p.style.display === '');
-        const productsToShow = hiddenProducts.slice(0, 4);
-        productsToShow.forEach(product => {
-            product.style.display = 'flex'; // Or 'block', depending on your layout
+        // Hide products beyond the initial count after shuffling
+        allProducts.forEach((product, index) => {
+            if (index >= initialVisibleCount) {
+                product.style.display = 'none';
+            } else {
+                product.style.display = 'flex'; // Ensure the first 8 are visible and use flex layout
+            }
         });
 
-        if (hiddenProducts.length <= 4) {
+        if (allProducts.length <= initialVisibleCount) {
             viewMoreBtn.style.display = 'none';
+        } else {
+            viewMoreBtn.style.display = 'inline-flex'; // Or 'block'
         }
+
+        viewMoreBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const hiddenProducts = Array.from(productGrid.children).filter(p => p.style.display === 'none');
+            const productsToShow = hiddenProducts.slice(0, 4);
+            productsToShow.forEach(product => {
+                product.style.display = 'flex'; // Use 'flex' as per your .product-card style
+            });
+
+            if (hiddenProducts.length <= 4) {
+                viewMoreBtn.style.display = 'none';
+            }
+        });
     });
 }
