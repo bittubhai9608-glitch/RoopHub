@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initHeroSlider();
     shuffleProducts(); // Randomize products on load
     initSearch();
-    initViewMore(); // Initialize "View More" after shuffling
     initDiscountButtons();
 });
 
@@ -214,8 +213,14 @@ function scrollToTop() {
 function initSearch() {
     const searchInput = document.getElementById('searchInput');
     const searchBtn = document.querySelector('.search-btn');
+
     searchBtn.addEventListener('click', () => performSearch(true));
+
+    searchInput.addEventListener('input', () => {
+        performSearch(false); // Don't scroll while typing
+    });
 };
+
 function performSearch(shouldScroll = false) {
     const searchInput = document.getElementById('searchInput');
     const query = searchInput.value.trim().toLowerCase();
@@ -223,11 +228,8 @@ function performSearch(shouldScroll = false) {
     // Filter products immediately
     filterProducts(query);
 
-    if (!query && !shouldScroll) return; // If query is empty and not explicitly scrolling, exit
-
-    // Scroll to products section
-    const productsSection = document.getElementById('products');
-    if (productsSection) {
+    if (shouldScroll) {
+        const productsSection = document.getElementById('products');
         const navbarHeight = document.getElementById('navbar').offsetHeight;
         const targetPosition = productsSection.offsetTop - navbarHeight - 20;
 
@@ -235,31 +237,64 @@ function performSearch(shouldScroll = false) {
             top: targetPosition,
             behavior: 'smooth'
         });
+    }
+}
+
+
+function levenshteinDistance(a, b) {
+    if (a.length === 0) return b.length;
+    if (b.length === 0) return a.length;
+
+    const matrix = Array(b.length + 1).fill(null).map(() => Array(a.length + 1).fill(null));
+
+    for (let i = 0; i <= a.length; i++) {
+        matrix[0][i] = i;
+    }
+
+    for (let j = 0; j <= b.length; j++) {
+        matrix[j][0] = j;
+    }
+
+    for (let j = 1; j <= b.length; j++) {
+        for (let i = 1; i <= a.length; i++) {
+            const indicator = a[i - 1] === b[j - 1] ? 0 : 1;
+            matrix[j][i] = Math.min(
+                matrix[j][i - 1] + 1, // deletion
+                matrix[j - 1][i] + 1, // insertion
+                matrix[j - 1][i - 1] + indicator, // substitution
+            );
         }
     }
 
+    return matrix[b.length][a.length];
+}
 
 function filterProducts(query) {
     const productCards = document.querySelectorAll('.product-card');
+    const noResultsMessage = document.getElementById('noResultsMessage');
 
     if (!query) {
         productCards.forEach(card => {
-            card.style.display = 'block';
+            card.style.display = 'flex';
         });
+        noResultsMessage.style.display = 'none';
         return;
     }
 
     let foundResults = false;
+    // Threshold for fuzzy search. A lower number means a stricter match.
+    // This can be adjusted based on desired "fuzziness".
+    const threshold = 3;
 
     productCards.forEach(card => {
         const titleElement = card.querySelector('.product-title');
-        const benefitElement = card.querySelector('.product-benefit');
 
         const title = titleElement ? titleElement.textContent.toLowerCase() : '';
-        const benefit = benefitElement ? benefitElement.textContent.toLowerCase() : '';
+        
+        const distance = levenshteinDistance(query, title);
 
-        if (title.includes(query) || benefit.includes(query)) {
-            card.style.display = 'block';
+        if (title.includes(query) || distance <= threshold) {
+            card.style.display = 'flex';
             // Reset animation to re-trigger if already visible
             card.style.animation = 'none';
             void card.offsetWidth; // Trigger reflow
@@ -271,8 +306,9 @@ function filterProducts(query) {
     });
 
     if (!foundResults && query) {
-        // Optionally, show a message to the user that no products were found
-        // console.log('No products found matching: ' + query);
+        noResultsMessage.style.display = 'block';
+    } else {
+        noResultsMessage.style.display = 'none';
     }
 }
 
@@ -300,53 +336,6 @@ function initDiscountButtons() {
             this.textContent = 'Discount Applied!';
             this.disabled = true; // Disable button after click
             this.style.background = 'var(--secondary-color)'; // Change color to indicate applied
-        });
-    });
-}
-
-/* ============================================
-   VIEW MORE FUNCTIONALITY
-   ============================================ */
-function initViewMore() {
-    // This function can be adapted to handle multiple "View More" sections if needed.
-    // For now, it targets the healthcare products section.
-    const productSections = document.querySelectorAll('.product-section');
-
-    productSections.forEach(section => {
-        const viewMoreBtn = section.querySelector('.view-more-btn'); // Assuming a common class for view more buttons
-        const productGrid = section.querySelector('.products-grid');
-
-        if (!viewMoreBtn || !productGrid) return;
-
-        const allProducts = Array.from(productGrid.children);
-        const initialVisibleCount = 8;
-
-        // Hide products beyond the initial count after shuffling
-        allProducts.forEach((product, index) => {
-            if (index >= initialVisibleCount) {
-                product.style.display = 'none';
-            } else {
-                product.style.display = 'flex'; // Ensure the first 8 are visible and use flex layout
-            }
-        });
-
-        if (allProducts.length <= initialVisibleCount) {
-            viewMoreBtn.style.display = 'none';
-        } else {
-            viewMoreBtn.style.display = 'inline-flex'; // Or 'block'
-        }
-
-        viewMoreBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const hiddenProducts = Array.from(productGrid.children).filter(p => p.style.display === 'none');
-            const productsToShow = hiddenProducts.slice(0, 4);
-            productsToShow.forEach(product => {
-                product.style.display = 'flex'; // Use 'flex' as per your .product-card style
-            });
-
-            if (hiddenProducts.length <= 4) {
-                viewMoreBtn.style.display = 'none';
-            }
         });
     });
 }

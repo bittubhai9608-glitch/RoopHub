@@ -119,6 +119,7 @@
 
     <!-- Product Sections Container -->
     <div class="products-container" id="products">
+        <div id="noResultsMessage" style="display: none; text-align: center; padding: 40px 20px; font-size: 1.2rem; color: #666;">कोई परिणाम नहीं मिला।</div>
         <!-- HealthCare Section -->
         <section class="product-section" id="healthcare-products">
             <div class="container">
@@ -133,8 +134,8 @@
                 <!-- Product Card 1 -->
                 <div class="products-grid">
                     <div class="product-card">
+                        <a href="Men_Health/biodynamix.html" style="text-decoration: none;">
                         <div class="product-image">
-                             <a href="/Men_Health/biodynamix.html" style="text-decoration: none;">
                             <img src="Images/biodynamixone.jpeg" alt="Biodynamix Pro"  style="width:150%; height:200px; object-fit:contain;">
                         </div>
                         <div class="product-info">
@@ -150,14 +151,13 @@
                                 <span>(4.8)</span>
                             </div>
                             <div class="product-price" style="color: #098837; font-weight: bold;">₹2,029 <del style="color:#5c5554">₹3,999</del></div>
-
-                            </a>
                         </div>
+                        </a>
                     </div>
 
                     <!--Product Card 2-->
                     <div class="product-card">
-                        <a href="/Men_Health/prodentim.html" style="text-decoration: none;">
+                        <a href="Men_Health/prodentim.html" style="text-decoration: none;">
                         <div class="product-image">
                             <img src="Images/prodentimeone.jpeg" alt="Prodentime"  style="width:100%; height:200px; object-fit:contain;">
                         </div>
@@ -175,13 +175,14 @@
                             </div>
                             <div class="product-price">
                                 <span class="current-price">₹1,999</span>
-                                <span class="original-price">$54.99</span>
-                            </a></div>
+                                <span class="original-price">₹2,499</span>
+                            </div>
                         </div>
+                        </a>
                     </div>
                     <!--Product Card 3-->
                     <div class="product-card">
-                         <a href="/Men_Health/prostavive.html" style="text-decoration: none;">
+                         <a href="Men_Health/prostavive.html" style="text-decoration: none;">
                         <div class="product-image">
                             <img src="Images/prostaviveone.jpeg" alt="Prostavive"  style="width:100%; height:200px; object-fit:contain;">
                         </div>
@@ -199,14 +200,14 @@
                             </div>
                             <div class="product-price">
                                 <span class="current-price">₹2,299</span>
-                                <span class="original-price">$44.99</span>
-                            </a>
+                                <span class="original-price">₹3,499</span>
                             </div>
                         </div>
+                        </a>
                     </div>
                     <!--Product Card 4-->
                     <div class="product-card">
-                        <a href="/Men_Health/visiflora.html" style="text-decoration: none;">
+                        <a href="Men_Health/visiflora.html" style="text-decoration: none;">
                         <div class="product-image">
                             <img src="Images/visifloraone.jpeg" alt="Visiflora"  style="width:100%; height:200px; object-fit:contain;">
                         </div>
@@ -224,14 +225,14 @@
                             </div>
                             <div class="product-price">
                                 <span class="current-price">₹1,799</span>
-                                <span class="original-price">$89.99</span>
-                        </a>
+                                <span class="original-price">₹2,999</span>
                             </div>
                         </div>
+                        </a>
                     </div>
                     <!-- Product Card 5 -->
                     <div class="product-card">
-                        <a href="public/Shopping/CampusNorthPlus.html" style="text-decoration: none;">
+                        <a href="Shopping/CampusNorthPlus.html" style="text-decoration: none;">
                         <div class="product-image">
                             <img src="Images/CampusNorthPlus.jpeg" alt="Omega-3 Fish Oil"  style="width:100%; height:200px; object-fit:contain;">
                         </div>
@@ -256,7 +257,7 @@
                     </div>
                     <!-- Product Card 6 -->
                     <div class="product-card">
-                        <a href="public/Shopping/Hotstylerunning.html" style="text-decoration: none;">
+                        <a href="Shopping/Hotstylerunning.html" style="text-decoration: none;">
                         <div class="product-image">
                             <img src="ShoesImages/Hotstylerunningshoes.jpeg" alt="Vitamin C Serum"  style="width:100%; height:200px; object-fit:contain;">
                         </div>
@@ -281,7 +282,7 @@
                     </div>
                     <!-- Product Card 7 -->
                     <div class="product-card">
-                        <a href="/Shopping/HushPuppiesShoes.html" style="text-decoration: none;">
+                        <a href="Shopping/HushPuppiesShoes.html" style="text-decoration: none;">
                         <div class="product-image">
                             <img src="Images/HushPuppiesShoes.jpeg" alt="Green Tea Extract"  style="width:100%; height:200px; object-fit:contain;">
                         </div>
@@ -306,22 +307,10 @@
                     </div>
                     <!-- Product Card 8 -->
                     <div class="product-card">
-                        <a href="/YUVRATOBAXIshoes.html" onclick="
-                                   fetch('/Shopping/YUVRATOBAXIshoes.html')
-                                     .then(r => {
-                                    if (r.ok) {
-                                     window.location.href='/YUVRATOBAXIshoes.html';
-                                      } else {
-                                      window.location.href='/public/Shopping/YUVRATOBAXIshoes.html';
-                                       }
-                                     })
-                                    .catch(() => {
-                      window.location.href='public/Shopping/YUVRATOBAXIshoes.html';
-                    });
-                    return false;">
+                        <a href="Shopping/YUVRATOBAXIshoes.html" style="text-decoration: none;">
                         <div class="product-image">
-                            <img src="Images/YUVRATOBAXIshoes.jpeg" onerror="if(this.src.includes('/Images/YUVRATOBAXIshoes.jpeg')){this.src='/public/Images/YUVRATOBAXIshoes.jpeg';}else{this.src='public/Images/default-image.jpeg';}">
-                              </div>
+                            <img src="Images/YUVRATOBAXIshoes.jpeg" alt="Collagen Powder">
+                        </div>
                         <div class="product-info">
                             <h3 class="product-title" style="font-size: 12px;">Hydrolyzed Collagen Powder for skin, hair, and nails.</h3>
                             <div class="product-rating">
@@ -346,22 +335,10 @@
 
                     <!-- Product Card 25 -->
                     <div class="product-card">
-                        <a href="/slimbooster.html" onclick="
-                                   fetch('/Shopping/slimbooster.html')
-                                     .then(r => {
-                                    if (r.ok) {
-                                     window.location.href='/slimbooster.html';
-                                      } else {
-                                      window.location.href='/public/Shopping/slimbooster.html';
-                                       }
-                                     })
-                                    .catch(() => {
-                      window.location.href='public/Shopping/slimbooster.html';
-                    });
-                    return false;">
+                        <a href="Shopping/slimbooster.html" style="text-decoration: none;">
                         <div class="product-image">
-                            <img src="Images/slimbooster.jpeg" onerror="if(this.src.includes('/Images/slimbooster.jpeg')){this.src='/public/Images/slimbooster.jpeg';}else{this.src='public/Images/default-image.jpeg';}">
-                              </div>
+                            <img src="Images/slimbooster.jpeg" alt="Slim Booster">
+                        </div>
                         <div class="product-info">
                             <h3 class="product-title" style="font-size: 12px;">Natural  Powder for skin, hair, and nails.</h3>
                             <div class="product-rating">
@@ -384,7 +361,7 @@
                     
                      <!-- Product Card 9 -->
                     <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
+                        <a href="Weight_Loss/gloco6.html" style="text-decoration: none;">
                         <div class="product-image">
                             <img src="https://images.unsplash.com/photo-1627843563095-f6e94676cfe8?w=400&h=300&fit=crop" alt="Ashwagandha Capsules"  style="width:100%; height:200px; object-fit:contain;">
                         </div>
@@ -409,12 +386,12 @@
                     </div>
                     <!-- Product Card 10 -->
                     <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
+                        <a href="Weight_Loss/gloco6.html" style="text-decoration: none;">
                         <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1605030245168-3d9397a1633a?w=400&h=300&fit=crop" alt="Turmeric Curcumin"  style="width:100%; height:200px; object-fit:contain;">
+                            <img src="Images/gloco.jpeg" alt="Turmeric Curcumin"  style="width:100%; height:200px; object-fit:contain;">
                         </div>
                         <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Turmeric Curcumin for joint support and anti-inflammatory benefits.</h3>
+                            <h3 class="product-title" style="font-size: 12px;">Gloco best Tun for joint support and anti-inflammatory benefits.</h3>
                             <div class="product-rating">
                                 <div class="stars">
                                     <i class="fas fa-star"></i>
@@ -432,659 +409,6 @@
                         </div>
                         </a>
                     </div>
-                    <!-- Product Card 11 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1630379991862-349875a12845?w=400&h=300&fit=crop" alt="Probiotic Supplement"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Probiotic supplement for digestive health.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </div>
-                                <span>(4.4)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹1,899</span>
-                                <span class="original-price">₹2,499</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 12 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1615634261335-5237b48a35a4?w=400&h=300&fit=crop" alt="Biotin Supplement"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Biotin supplement for healthy hair, skin, and nails.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <span>(4.6)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹999</span>
-                                <span class="original-price">₹1,399</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 13 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400&h=300&fit=crop" alt="Smartwatch"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Fitness Tracker Smartwatch with Heart Rate Monitor.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <span>(4.5)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹3,499</span>
-                                <span class="original-price">₹5,999</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 14 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1606741965326-cb990ae10021?w=400&h=300&fit=crop" alt="Wireless Earbuds"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">True Wireless Earbuds with Noise Cancellation.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <span>(4.7)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹2,999</span>
-                                <span class="original-price">₹4,999</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 15 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1622524189146-66e33e74c403?w=400&h=300&fit=crop" alt="Men's Leather Wallet"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Genuine Leather Wallet for Men with RFID blocking.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <span>(4.6)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹899</span>
-                                <span class="original-price">₹1,999</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 16 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1590739242442-33b8f1452f46?w=400&h=300&fit=crop" alt="Women's Handbag"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Stylish Leather Handbag for Women.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span>(4.8)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹2,499</span>
-                                <span class="original-price">₹4,599</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 17 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1629198725333-a594382a331a?w=400&h=300&fit=crop" alt="Organic Face Wash"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Organic Aloe Vera Face Wash for all skin types.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span>(4.9)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹499</span>
-                                <span class="original-price">₹799</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 18 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1598440947619-21226037b4d1?w=400&h=300&fit=crop" alt="Anti-Aging Cream"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Advanced Anti-Aging Cream with Retinol.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <span>(4.7)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹1,899</span>
-                                <span class="original-price">₹2,999</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 19 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=400&h=300&fit=crop" alt="Organic Shampoo"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Organic Herbal Shampoo for hair growth.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <span>(4.8)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹699</span>
-                                <span class="original-price">₹999</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 20 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1587795420589-2a7632390b23?w=400&h=300&fit=crop" alt="Yoga Mat"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Eco-friendly Yoga Mat for fitness enthusiasts.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span>(4.9)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹1,299</span>
-                                <span class="original-price">₹1,999</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 21 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1611601338485-0502d783c169?w=400&h=300&fit=crop" alt="Bluetooth Speaker"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Portable Bluetooth Speaker with deep bass.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <span>(4.6)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹2,299</span>
-                                <span class="original-price">₹3,499</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 22 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1593121925328-3b3a3d770a6c?w=400&h=300&fit=crop" alt="Essential Oil Diffuser"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Aromatherapy Essential Oil Diffuser with 7 colors.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </div>
-                                <span>(4.4)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹1,599</span>
-                                <span class="original-price">₹2,499</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 23 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400&h=300&fit=crop" alt="Modern House Plant"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Indoor House Plant for modern home decor.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span>(5.0)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹899</span>
-                                <span class="original-price">₹1,299</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 24 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop" alt="Running Shoes"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Lightweight Running Shoes for men and women.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <span>(4.7)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹2,999</span>
-                                <span class="original-price">₹4,999</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 13 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400&h=300&fit=crop" alt="Smartwatch"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Fitness Tracker Smartwatch with Heart Rate Monitor.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <span>(4.5)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹3,499</span>
-                                <span class="original-price">₹5,999</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 14 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1606741965326-cb990ae10021?w=400&h=300&fit=crop" alt="Wireless Earbuds"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">True Wireless Earbuds with Noise Cancellation.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <span>(4.7)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹2,999</span>
-                                <span class="original-price">₹4,999</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 15 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1622524189146-66e33e74c403?w=400&h=300&fit=crop" alt="Men's Leather Wallet"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Genuine Leather Wallet for Men with RFID blocking.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <span>(4.6)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹899</span>
-                                <span class="original-price">₹1,999</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 16 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1590739242442-33b8f1452f46?w=400&h=300&fit=crop" alt="Women's Handbag"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Stylish Leather Handbag for Women.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span>(4.8)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹2,499</span>
-                                <span class="original-price">₹4,599</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 17 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1629198725333-a594382a331a?w=400&h=300&fit=crop" alt="Organic Face Wash"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Organic Aloe Vera Face Wash for all skin types.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span>(4.9)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹499</span>
-                                <span class="original-price">₹799</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 18 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1598440947619-21226037b4d1?w=400&h=300&fit=crop" alt="Anti-Aging Cream"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Advanced Anti-Aging Cream with Retinol.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <span>(4.7)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹1,899</span>
-                                <span class="original-price">₹2,999</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 19 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=400&h=300&fit=crop" alt="Organic Shampoo"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Organic Herbal Shampoo for hair growth.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <span>(4.8)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹699</span>
-                                <span class="original-price">₹999</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 20 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1587795420589-2a7632390b23?w=400&h=300&fit=crop" alt="Yoga Mat"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Eco-friendly Yoga Mat for fitness enthusiasts.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span>(4.9)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹1,299</span>
-                                <span class="original-price">₹1,999</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 21 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1611601338485-0502d783c169?w=400&h=300&fit=crop" alt="Bluetooth Speaker"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Portable Bluetooth Speaker with deep bass.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <span>(4.6)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹2,299</span>
-                                <span class="original-price">₹3,499</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 22 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1593121925328-3b3a3d770a6c?w=400&h=300&fit=crop" alt="Essential Oil Diffuser"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Aromatherapy Essential Oil Diffuser with 7 colors.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </div>
-                                <span>(4.4)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹1,599</span>
-                                <span class="original-price">₹2,499</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 23 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400&h=300&fit=crop" alt="Modern House Plant"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Indoor House Plant for modern home decor.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span>(5.0)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹899</span>
-                                <span class="original-price">₹1,299</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <!-- Product Card 24 -->
-                    <div class="product-card">
-                        <a href="/public/Shopping/product1.html" style="text-decoration: none;">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop" alt="Running Shoes"  style="width:100%; height:200px; object-fit:contain;">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title" style="font-size: 12px;">Lightweight Running Shoes for men and women.</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <span>(4.7)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">₹2,999</span>
-                                <span class="original-price">₹4,999</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="view-more-container">
-                    <a href="#" id="viewMoreBtn" class="more-link">View More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
@@ -1092,6 +416,7 @@
 
         <!-- Footer -->
         <footer>
+            <div class="container">
             <div class="footer-container">
                 <div class="footer-section">
                     <h3>ROOP<span>HUb</span></h3>
@@ -1311,6 +636,7 @@
         <!-- Footer Bottom -->
             <div class="footer-bottom">
                 <p>&copy; 2026 ROOPHUb. All rights reserved.</p>
+            </div>
             </div>
         </footer>
 
