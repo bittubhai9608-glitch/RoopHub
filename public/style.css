@@ -1578,7 +1578,7 @@ footer {
 
 .scroll-top:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(37, 99, 235, 0.5);
+    box-shadow: 0 8px 30px rgba(194, 7, 7, 0.5);
 }
 
 /* ============================================
