@@ -604,6 +604,26 @@
                 flex-wrap: wrap;
             }
         }
+
+        .thumbnail-box{
+    display:flex;
+    gap:10px;
+    margin-top:12px;
+    flex-wrap:wrap;
+}
+
+.thumbnail-box img{
+    width:65px;
+    height:65px;
+    object-fit:cover;
+    border:2px solid #ddd;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.thumbnail-box img:hover{
+    border-color:#ff3b30;
+}
     </style>
 </head>
 <body>
@@ -618,10 +638,27 @@
     <!-- Main Product Section -->
     <section class="product-main">
         <div class="product-container">
-            <div class="product-gallery">
-                <img src="/WatchImages/SpyMissionImg.jpeg" alt="Iamges" onerror="if(this.src.includes('SpyMissionImg.jpeg')){this.src='/public/WatchImages/SpyMissionImg.jpeg';}
-                else{ this.src='/public/WatchImages/SpyMissionImg.jpeg';}">
-            </div>
+
+    <div class="product-image">
+
+        <!-- Main Image -->
+        <img id="mainImage"
+             src="/WatchImages/SpyMissionImg.jpeg"
+             alt="Watch"
+             onerror="this.src='/public/WatchImages/SpyMissionImg.jpeg';">
+
+        <!-- Thumbnail Images -->
+        <div class="thumbnail-box">
+            <img src="/WatchImages/SpyMissionImg.jpeg" alt="Watch" onerror="this.src='/public/WatchImages/SpyMissionImg.jpeg';" onclick="changeImage(this)">
+            <img src="/ShoesImages/Hotstylerunningshoes.jpeg" alt="Watch"  onerror="this.src='/public/ShoesImages/Hotstylerunningshoes.jpeg';" onclick="changeImage(this)">
+            <img src="/WatchImages/SpyMissionImg.jpeg" alt="Watch" onerror="this.src='/public/WatchImages/SpyMissionImg.jpeg';" onclick="changeImage(this)">
+            <img src="/ShoesImages/Hotstylerunningshoes.jpeg" alt="Watch"  onerror="this.src='/public/ShoesImages/Hotstylerunningshoes.jpeg';" onclick="changeImage(this)">
+               
+        </div>
+
+    </div>
+
+
             <div class="product-info">
                 <h1>New 4K Wrist Watch Spy Camera Full HD 1080p Security Camera Surveillance Indoor Outdoor HD Video Recording with Inbuilt 32GB SD Card (Series 2)</h1>
                 <div class="product-price" style="color: #070a08;">₹7,124 <del style="color:#2f2726"><M class="R P"></M>₹11,999</del><del class="discount" style="color:#ea4335;">41% OFF</del></div>
@@ -1061,6 +1098,9 @@
                 }
             });
         });
+        function changeImage(img){
+    document.getElementById("mainImage").src = img.src;
+}
     </script>
     <script src="/js/seo-updater.js"></script>
 </body>
