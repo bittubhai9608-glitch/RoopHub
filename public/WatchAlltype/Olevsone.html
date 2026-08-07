@@ -732,11 +732,25 @@
                 <p>Based on your interests</p>
             </div>
             <div class="products-grid-2">
+                <!-- Product Card 1 -->
                 <div class="product-card">
-                    <a href="WatchAlltype/Olevsone.html" style="text-decoration:none;">
-                    <img src="/WatchImages/Olevs4.jpeg" alt="Watch" onerror="this.src='/public/WatchImages/Olevs4.jpeg';" onclick="changeImage(this)">
+                    <a href="/WatchAlltype/Olevs.html"
+                        onclick="
+                    fetch('/WatchAlltype/Olevs.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/WatchAlltype/Olevs.html';
+                  } else {
+                     window.location.href='/public/WatchAlltype/Olevs.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/WatchAlltype/Olevs.html';
+            });
+               return false;" style="text-decoration:none;">
+                      <img src="/WatchImages/Olevs4.jpeg" alt="Watch" onerror="this.src='/public/WatchImages/Olevs4.jpeg';" onclick="changeImage(this)">
                      <div class="product-info">
-                             <h3 class="product-title" style="font-size:12px;">OLEVS Original Men's Quartz Chronograph Wrist Watch – Luxury Stainless Steel Analog Dress Watch with Date & Luminous Hands more...</h3>
+                             <h3 class="product-title" style="font-size:12px; color:black">OLEVS Original Men's Quartz Chronograph Wrist Watch – Luxury Stainless Steel Analog Dress Watch with Date & Luminous Hands more...</h3>
                         
                                <div class="product-rating">
                                  <div class="stars" style="color: #f5181f;">
@@ -745,9 +759,9 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="far fa-star"></i>
-                                </div>
-                            <span style="color:blue">(3.2)</span>
+                            <span style="color:blue">(4.9)</span>
                             </div>
+                        </div>
                         </div>
                         <div class="product-price">
                                 <span class="current-price" style="color:black; font-size: 16px;">₹3,040</span>
@@ -756,12 +770,25 @@
                         </div>
                     </a>
                 </div>
-                <!--produt card 2-->
-                 <div class="product-card">
-                    <a href="/WatchAlltype/SpyMission.html" style="text-decoration:none;">
-                    <img src="/WatchImages/SpyMission3.jpeg" alt="Watch" onerror="this.src='/public/WatchImages/SpyMission3.jpeg';" onclick="changeImage(this)">
+                <!-- Product Card 1 -->
+                <div class="product-card">
+                    <a href="/WatchAlltype/Olevs.html"
+                        onclick="
+                    fetch('/WatchAlltype/Olevs.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/WatchAlltype/Olevs.html';
+                  } else {
+                     window.location.href='/public/WatchAlltype/Olevs.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/WatchAlltype/Olevs.html';
+            });
+               return false;" style="text-decoration:none;">
+                      <img src="/WatchImages/SpyMissionImg.jpeg" alt="Watch" onerror="this.src='/public/WatchImages/SpyMissionImg.jpeg';" onclick="changeImage(this)">
                      <div class="product-info">
-                             <h3 class="product-title" style="font-size:12px;">OLEVS Original Men's Quartz Chronograph Wrist Watch – Luxury Stainless Steel Analog Dress Watch with Date & Luminous Hands more...</h3>
+                             <h3 class="product-title" style="font-size:12px; color:black">Smart Hidden Camera Wrist Watch for Everyday Recording Needs more...</h3>
                         
                                <div class="product-rating">
                                  <div class="stars" style="color: #f5181f;">
@@ -770,14 +797,14 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="far fa-star"></i>
-                                </div>
-                            <span style="color:blue">(4.7)</span>
+                            <span style="color:blue">(4.9)</span>
                             </div>
                         </div>
-                         <div class="product-price">
-                                <span class="current-price" style="color:black; font-size: 16px;">₹7,124</span>
-                                <span class="original-price" style="color:red; font-size: 12px;"><s>₹11,999</s></span>
-                                <span class="discount" style="color:green; font-size:10px;"><b>-41%</b></span>
+                        </div>
+                        <div class="product-price">
+                                <span class="current-price" style="color:black; font-size: 16px;">₹3,040</span>
+                                <span class="original-price" style="color:red; font-size: 12px;"><s>₹3,999</s></span>
+                                <span class="discount" style="color:green; font-size:10px;"><b>-22%</b></span>
                         </div>
                     </a>
                 </div>
