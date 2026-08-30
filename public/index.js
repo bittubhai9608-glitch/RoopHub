@@ -1,7 +1,3 @@
-/* ============================================
-   NeuroSerge - AI Affiliate Marketplace
-   Interactive JavaScript
-   ============================================ */
 
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {

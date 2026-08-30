@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    position: relative;
+    width: 100vw;
+    height: 50px;
+    background-color: wheat;
+    box-sizing: border-box;
+}
+header h2{
+    position: fixed;
+    padding-top: 12px;
+    width: 100vw;
+    height: 50px;
+    background-color: wheat;
+    box-sizing: border-box; 
+}
+.banner{
+    width: 100px;
+}
+.banner img{
+    width: 100vw;
+    height: 400px;
+}
+/* Navigation Bar */
+.navigation{
+    text-align: center;
+    background-color: blue;
+    color: red;
+    padding: 10px;
+}
+.navigation a{
+    font-size: 20px;
+    padding: 0 20px;
+}
+.navigation a:hover{
+    background-color: chartreuse;
+    border-radius: 15px;
+    padding-left: 12px;
+    transform: 1.2s;
+}
+.shoes{
+    background-color: chartreuse;
+    border-radius: 15px;
+}
+/* Mobile */
+@media (max-width:600px){
+    .banner{
+    width: 100px;
+}
+.banner img{
+    width: 100vw;
+    height: 120px;
+}
+/* Navigation Bar */
+.navigation{
+    text-align: center;
+    background-color: blue;
+    color: red;
+    padding: 5px;
+}
+.navigation a{
+    font-size: 13px;
+    padding: 0 10px;
+}
+.navigation a:hover{
+    background-color: chartreuse;
+    border-radius: 10px;
+    padding-left: 8px;
+    transform: 1.2s;
+}
+.shoes{
+    background-color: chartreuse;
+    border-radius: 10px;
+
+
+}
+}
