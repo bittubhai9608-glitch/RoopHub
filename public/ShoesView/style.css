@@ -72,6 +72,7 @@ header h2{
     border-radius: 10px;
     border: 5px solid rgb(132, 106, 123);
 }
+
 /* Mobile */
 @media (max-width:600px){
     .banner{

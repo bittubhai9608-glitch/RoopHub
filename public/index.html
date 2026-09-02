@@ -98,11 +98,22 @@
     <section class="niche-nav-section" style="background-color: #7fdd67; padding: 2px;">
         <div class="container">
             <div class="niche-nav-tabs">
-                <a href="#healthcare-products" class="niche-tab" style="font-size: 15px">
+         <a href="/WatchAlltype/Olevs.html"
+                        onclick="
+                    fetch('/WatchAlltype/Olevs.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/WatchAlltype/Olevs.html';
+                  } else {
+                     window.location.href='/public/WatchAlltype/Olevs.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/WatchAlltype/Olevs.html';
+            });
+               return false;">
                     <i class="fas fa-heartbeat" style="font-size: 25px; color:#ea0e45 "></i> Home
-                </a>
-                <a href="/public/ShoesView/index.html" class="niche-tab" style="font-size: 15px">
-                    <i class="fas fa-tshirt" style="font-size: 25px; color: #17eb10;"></i>Shoes
+                <i class="fas fa-tshirt" style="font-size: 25px; color: #17eb10;"></i>Shoes
                 </a>
                 <a href="#beauty-products" class="niche-tab" style="font-size: 15px">
                     <i class="fas fa-spa" style="font-size: 25px; color: #ff69b4;"></i> Beauty
