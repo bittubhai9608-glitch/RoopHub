@@ -23,6 +23,7 @@ header h2{
 .banner img{
     width: 100%;
     height: 400px;
+    box-sizing: border-box;
 }
 /* Navigation Bar */
 .navigation{
@@ -30,31 +31,36 @@ header h2{
     background-color: blue;
     color: red;
     padding: 10px;
+    box-sizing: border-box;
 }
 .navigation a{
     font-size: 20px;
     padding: 0 20px;
+    box-sizing: border-box;
 }
 .navigation a:hover{
     background-color: chartreuse;
     border-radius: 15px;
     padding-left: 12px;
     transform: 1.2s;
+    box-sizing: border-box;
 }
 .shoes{
     background-color: chartreuse;
     border-radius: 15px;
+    box-sizing: border-box;
 }
 /* for shoes product */
 .gridcontainer{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(5,2fr);
-    gap: 10px;
-    margin: auto;
-    padding: 5px;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
     border: 15px solid pink;
     box-sizing: border-box;
+    overflow: hidden;
 }
 .product{
     height: auto;
@@ -71,6 +77,7 @@ header h2{
     object-fit: contain;
     border-radius: 10px;
     border: 5px solid rgb(132, 106, 123);
+     box-sizing: border-box;
 }
 
 /* Mobile */
@@ -81,6 +88,7 @@ header h2{
 .banner img{
     width: 100%;
     height: 120px;
+     box-sizing: border-box;
 }
 /* Navigation Bar */
 .navigation{
@@ -88,20 +96,24 @@ header h2{
     background-color: blue;
     color: red;
     padding: 5px;
+     box-sizing: border-box;
 }
 .navigation a{
     font-size: 13px;
     padding: 0 10px;
+     box-sizing: border-box;
 }
 .navigation a:hover{
     background-color: chartreuse;
     border-radius: 10px;
     padding-left: 8px;
     transform: 1.2s;
+     box-sizing: border-box;    
 }
 .shoes{
     background-color: chartreuse;
     border-radius: 10px;
+     box-sizing: border-box;
 
 
 }
@@ -109,11 +121,12 @@ header h2{
 .gridcontainer{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 10px;
-    margin: auto;
-    padding: 5px;
+    grid-template-columns: repeat(2,2fr);
+    gap: 5px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 .product{
     width: 100%;
@@ -122,9 +135,7 @@ header h2{
     margin: auto;
     border-radius: 10px;
     overflow: visible;
-}
-.product h3{
-    margin:0;
+     box-sizing: border-box;
 }
 .product img{
     width: 100%;
@@ -132,5 +143,6 @@ header h2{
     object-fit: contain;
     border-radius: 10px;
     border: 2px solid blue;
+    box-sizing: border-box;
 }
 }
