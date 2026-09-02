@@ -98,36 +98,43 @@
     <section class="niche-nav-section" style="background-color: #7fdd67; padding: 2px;">
         <div class="container">
             <div class="niche-nav-tabs">
-         <a href="/WatchAlltype/Olevs.html"
+               <a href="#home-products" class="niche-tab" style="font-size: 15px">
+                    <i class="fas fa-home" style="font-size: 25px; color: #ff69b4;"></i> Home
+                </a>
+                <!-- shoes catogery-->
+                 <a href="/ShoesView/index.html"
                         onclick="
-                    fetch('/WatchAlltype/Olevs.html')
+                    fetch('/ShoesView/index.html')
                 .then(r => {
                 if (r.ok) {
-                   window.location.href='/WatchAlltype/Olevs.html';
+                   window.location.href='/ShoesView/index.html';
                   } else {
-                     window.location.href='/public/WatchAlltype/Olevs.html';
+                     window.location.href='/public/ShoesView/index.html';
               }
                  })
                 .catch(() => {
-              window.location.href='/public/WatchAlltype/Olevs.html';
+              window.location.href='/public/ShoesView/index.html';
             });
-               return false;">
-                    <i class="fas fa-heartbeat" style="font-size: 25px; color:#ea0e45 "></i> Home
-                <i class="fas fa-tshirt" style="font-size: 25px; color: #17eb10;"></i>Shoes
-                </a>
+               return false;" class="niche-tab" style="font-size: 15px">
+             <i class="fas fa-tshirt" style="font-size: 25px; color: #17eb10;"></i>Shoes
+            </a>
+
+    <!-- Beauty Catogery section-->
                 <a href="#beauty-products" class="niche-tab" style="font-size: 15px">
                     <i class="fas fa-spa" style="font-size: 25px; color: #ff69b4;"></i> Beauty
                 </a>
+    <!-- Trending Catogery section-->
                 <a href="#trending-products" class="niche-tab" style="font-size: 15px">
                     <i class="fas fa-fire" style="font-size: 25px; color: #ff4500;"></i> Trending
                 </a>
+    <!-- Electronic Catogery section-->
                 <a href="#electronic-products" class="niche-tab" style="font-size: 15px">
                     <i class="fas fa-laptop" style="font-size: 25px; color: #1e90ff;"></i> Electronic
                 </a>
             </div>
         </div>
     </section>
-
+    
 
     <!-- Home Product Sections Container -->
     <div class="products-container" id="products">
