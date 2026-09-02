@@ -28,13 +28,14 @@ header h2{
 /* Navigation Bar */
 .navigation{
     text-align: center;
-    background-color: blue;
-    color: red;
+    background-color: #1f2937;
+    color: #ffffff;
     padding: 10px;
+    margin: 0;
     box-sizing: border-box;
 }
 .navigation a{
-    font-size: 20px;
+    font-size: 30px;
     padding: 0 20px;
     box-sizing: border-box;
 }
@@ -58,7 +59,7 @@ header h2{
     gap: 5px;
     margin: 0;
     padding: 0;
-    border: 15px solid pink;
+    border: 8px solid #fff1f5;
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -93,13 +94,13 @@ header h2{
 /* Navigation Bar */
 .navigation{
     text-align: center;
-    background-color: blue;
-    color: red;
+    background-color: #1f2937;
+    color: #ffffff;
     padding: 5px;
      box-sizing: border-box;
 }
 .navigation a{
-    font-size: 13px;
+    font-size: 20px;
     padding: 0 10px;
      box-sizing: border-box;
 }
