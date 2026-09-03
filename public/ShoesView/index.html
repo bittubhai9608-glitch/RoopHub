@@ -23,7 +23,20 @@
         <!-- View all Product in the shoes section-->
       <div class="gridcontainer">
         <!-- product 1 -->
-        <div class="product">
+        <div class="product"><a href="/ShoesView/ShoesAll/ATHCOshoes/index.html"
+                        onclick="
+                    fetch('/ShoesView/ShoesAll/ATHCOshoes/index.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/ShoesView/ShoesAll/ATHCOshoes/index.html';
+                  } else {
+                     window.location.href='/public/ShoesView/ShoesAll/ATHCOshoes/index.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/ShoesView/ShoesAll/ATHCOshoes/index.html';
+            });
+               return false;" style="text-decoration:none;">
           <img src="/ShoesView/ShoesImg/Olevs2.jpeg" alt="Watch"  onerror="this.src='/public/ShoesView/ShoesImg/Olevs2.jpeg';" onclick="changeImage(this)">
            <rating style="color: rgb(255, 0, 0); font-size: 15px;">&#9733;&#9733;&#9733;&#9733;&#9734; 4.3</rating>
           <h3 style="font-size: 13px;"><i>Brand : Roopza Ata</i></h3>
@@ -32,7 +45,7 @@
                                 <span class="original-price" style="color:red"><s>₹6,999</s></span>
                                 <span class="discount" style="color:green; font-size:10px;"><b>-83%</b></span>
           <button style="background-color:green; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 10px; margin: 2px 2px; cursor: pointer; border-radius: 20px; text-align: center;">view product</button>
-         </div>
+         </a></div>
           <!-- product 1 -->
         <div class="product">
           <img src="/ShoesView/ShoesImg/Olevs2.jpeg" alt="Watch"  onerror="this.src='/public/ShoesView/ShoesImg/Olevs2.jpeg';" onclick="changeImage(this)">
