@@ -120,15 +120,54 @@
             </a>
 
     <!-- Beauty Catogery section-->
-                <a href="#beauty-products" class="niche-tab" style="font-size: 15px">
+                <a href="/Beauty/index.html"
+                        onclick="
+                    fetch('/Beauty/index.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/Beauty/index.html';
+                  } else {
+                     window.location.href='/public/Beauty/index.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/Beauty/index.html';
+            });
+               return false;" class="niche-tab" style="font-size: 15px">
                     <i class="fas fa-spa" style="font-size: 25px; color: #ff69b4;"></i> Beauty
                 </a>
     <!-- Trending Catogery section-->
-                <a href="#trending-products" class="niche-tab" style="font-size: 15px">
+                <a href="/Trending/index.html"
+                        onclick="
+                    fetch('/Trending/index.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/Trending/index.html';
+                  } else {
+                     window.location.href='/public/Trending/index.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/Trending/index.html';
+            });
+               return false;" class="niche-tab" style="font-size: 15px">
                     <i class="fas fa-fire" style="font-size: 25px; color: #ff4500;"></i> Trending
                 </a>
     <!-- Electronic Catogery section-->
-                <a href="#electronic-products" class="niche-tab" style="font-size: 15px">
+                <a href="/Electronic/index.html"
+                        onclick="
+                    fetch('/Electronic/index.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/Electronic/index.html';
+                  } else {
+                     window.location.href='/public/Electronic/index.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/Electronic/index.html';
+            });
+               return false;" class="niche-tab" style="font-size: 15px">
                     <i class="fas fa-laptop" style="font-size: 25px; color: #1e90ff;"></i> Electronic
                 </a>
             </div>
