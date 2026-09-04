@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>FireBoltt</title>
+    <title>Athco shoes</title>
     <meta name="description" content="Fire-Boltt Ninja Call Pro Max Smartwatch with Bluetooth Calling, 2.0 HD Display, 120+ Sports Modes, AI Voice Assistant, SpO2 & Heart Rate Monitoring, Smart Watch for Men & Women - Black.">
     <link rel="canonical" href="https://roophub.in/Shopping/CampusNorthPlus">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="style.css">
+     <script src="landingpage.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -48,7 +50,6 @@
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
-            align-items: center;
         }
 
         .logo {
@@ -389,20 +390,6 @@
             margin-left: 0.5rem;
         }
 
-        /* Trending Products Section */
-        .trending-products {
-            padding: 0;
-            margin: 0;
-            background: var(--white);
-            border: 5px solid #c0aac1;
-        }
-
-        .products-grid-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 5px;
-        }
-
         /* Tags Section */
         .tags-section {
             padding: 2rem 2rem;
@@ -627,8 +614,6 @@
     <header style="background-color:  wheat;;">
         <div class="header-container">
             <a class="logo">R<span style="color:#070a08">OOP</span><span style="color:#d91212">Hub</span></a>
-            <div class="nav-icons">
-            </div>
         </div>
     </header>
     <!-- Main Product Section -->
@@ -720,7 +705,9 @@
             <p>&bull; The device is battery powered and supports USB connectivity. The included data cable can be used to connect the camera to a compatible computer or USB power source. Before first use, the manufacturer recommends charging the device for approximately one hour. The USB connection can also be used to transfer recorded files to a compatible computer. Actual battery performance may vary depending on recording duration, usage conditions, and other factors. If the device is not used for an extended period, following the manufacturer's battery maintenance instructions is recommended. Users should use a compatible power source and follow the provided charging instructions. Proper charging and connectivity practices can help ensure reliable operation of the wearable camera.</p>
 
         </div>
-    </section>
+
+
+</section>
 
     <!-- You Might Like Section -->
     <section class="you-might-like">
@@ -808,170 +795,102 @@
                 </div>
     </section>
 
-    <!-- Trending Products Section -->
-    <section class="trending-products">
-        <div class="section-container">
-            <div class="section-title">
-                <h2>Trending Products</h2>
-                <p>Most popular this week</p>
-            </div>
-            <div class="products-grid-4">
-                <!--product card 2-->
-                <div class="product-card">
-                    <a href="/WatchAlltype/SpyMissionWrist.html"
-                        onclick="
-                    fetch('/WatchAlltype/SpyMissionWrist.html')
-                .then(r => {
-                if (r.ok) {
-                   window.location.href='/WatchAlltype/SpyMissionWrist.html';
-                  } else {
-                     window.location.href='/public/WatchAlltype/SpyMissionWrist.html';
-              }
-                 })
-                .catch(() => {
-              window.location.href='/public/WatchAlltype/SpyMissionWrist.html';
-            });
-               return false;" style="text-decoration:none;">
-                      <img src="/WatchImages/spymissionwrist1.jpeg" alt="Watch" onerror="this.src='/public/WatchImages/spymissionwrist1.jpeg';" onclick="changeImage(this)">
-                     <div class="product-info">
-                             <h3 class="product-title" style="font-size:12px; color:black">Spy Camera Wrist Watch with Hidden HD Video & Audio Recording more...</h3>
-                        
-                               <div class="product-rating">
-                                 <div class="stars" style="color: #f5181f;">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                            <span style="color:blue">(5.1)</span>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="product-price">
-                                <span class="current-price" style="color:black; font-size: 16px;">₹4,999</span>
-                                <span class="original-price" style="color:red; font-size: 12px;"><s>₹5,999</s></span>
-                                <span class="discount" style="color:green; font-size:10px;"><b>-17%</b></span>
-                        </div>
-                    </a>
-                </div>
-                <!--product card 3-->
-                <div class="product-card">
-                    <a href="/WatchAlltype/Olevs.html"
-                        onclick="
-                    fetch('/WatchAlltype/Olevs.html')
-                .then(r => {
-                if (r.ok) {
-                   window.location.href='/WatchAlltype/Olevs.html';
-                  } else {
-                     window.location.href='/public/WatchAlltype/Olevs.html';
-              }
-                 })
-                .catch(() => {
-              window.location.href='/public/WatchAlltype/Olevs.html';
-            });
-               return false;" style="text-decoration:none;">
-                      <img src="/WatchImages/SpyMissionImg.jpeg" alt="Watch" onerror="this.src='/public/WatchImages/SpyMissionImg.jpeg';" onclick="changeImage(this)">
-                     <div class="product-info">
-                             <h3 class="product-title" style="font-size:12px; color:black">Smart Hidden Camera Wrist Watch for Everyday Recording Needs more...</h3>
-                        
-                               <div class="product-rating">
-                                 <div class="stars" style="color: #f5181f;">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                            <span style="color:blue">(4.9)</span>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="product-price">
-                                <span class="current-price" style="color:black; font-size: 16px;">₹3,040</span>
-                                <span class="original-price" style="color:red; font-size: 12px;"><s>₹3,999</s></span>
-                                <span class="discount" style="color:green; font-size:10px;"><b>-22%</b></span>
-                        </div>
-                    </a>
-                </div>
-                <!--product card 4-->
-                <div class="product-card">
-                    <a href="/WatchAlltype/Olevs.html"
-                        onclick="
-                    fetch('/WatchAlltype/Olevs.html')
-                .then(r => {
-                if (r.ok) {
-                   window.location.href='/WatchAlltype/Olevs.html';
-                  } else {
-                     window.location.href='/public/WatchAlltype/Olevs.html';
-              }
-                 })
-                .catch(() => {
-              window.location.href='/public/WatchAlltype/Olevs.html';
-            });
-               return false;" style="text-decoration:none;">
-                      <img src="/WatchImages/SpyMissionImg.jpeg" alt="Watch" onerror="this.src='/public/WatchImages/SpyMissionImg.jpeg';" onclick="changeImage(this)">
-                     <div class="product-info">
-                             <h3 class="product-title" style="font-size:12px; color:black">Smart Hidden Camera Wrist Watch for Everyday Recording Needs more...</h3>
-                        
-                               <div class="product-rating">
-                                 <div class="stars" style="color: #f5181f;">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                            <span style="color:blue">(4.9)</span>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="product-price">
-                                <span class="current-price" style="color:black; font-size: 16px;">₹3,040</span>
-                                <span class="original-price" style="color:red; font-size: 12px;"><s>₹3,999</s></span>
-                                <span class="discount" style="color:green; font-size:10px;"><b>-22%</b></span>
-                        </div>
-                    </a>
-                </div>
-                 <!-- Product Card 1  Hotstylerunning-->
-                <div class="product-card">
-                    <a href="/WatchAlltype/WatchFireBoltt/FireBoltt.html"
-                        onclick="
-                    fetch('/WatchAlltype/WatchFireBoltt/FireBoltt.html')
-                .then(r => {
-                if (r.ok) {
-                   window.location.href='/WatchAlltype/WatchFireBoltt/FireBoltt.html';
-                  } else {
-                     window.location.href='/public/WatchAlltype/WatchFireBoltt/FireBoltt.html';
-              }
-                 })
-                .catch(() => {
-              window.location.href='/public/WatchAlltype/WatchFireBoltt/FireBoltt.html';
-            });
-               return false;" style="text-decoration:none;">
-                      <img src="/WatchAlltype/WatchFireBoltt/WatchFireBolttImg/FireBoltone1.jpeg" alt="Watch" onerror="this.src='/public/WatchAlltype/WatchFireBoltt/WatchFireBolttImg/FireBoltone1.jpeg';" onclick="changeImage(this)">
-                     <div class="product-info">
-                             <h3 class="product-title" style="font-size:12px; color:black">Fire-Boltt Ninja Call Pro Max Smartwatch with Bluetooth Calling, 2.01" HD Display, 120+ Sports Modes, AI Voice Assistant, SpO2 & Heart Rate more...</h3>
-                        
-                               <div class="product-rating">
-                                 <div class="stars" style="color: #f5181f;">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                            <span style="color:blue">(3.9)</span>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="product-price">
-                                <span class="current-price" style="color:black; font-size: 16px;">₹299</span>
-                                <span class="original-price" style="color:red; font-size: 12px;"><s>₹985</s></span>
-                                <span class="discount" style="color:green; font-size:10px;"><b>-70%</b></span>
-                        </div>
-                    </a>
-                </div>
-                </div>
-            </div>
+
+<!-- Product Gallery Section -->
+    <div class="product-gallery-sub">
+    <!-- Thumbnail Images -->
+    <h1 style="background-color: #98c0bc; text-align: center"> Roopza Deals</h1>
+    <div class="thumbnail-container-sub">
+        <div class="thumbnail-box-sub">
+            <img src="/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg" alt="Watch" onerror="this.src='/public/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg';" onclick="changeImage(this)"
+             onclick="changeImage(this)"
+             class="thumbnail-sub"
+             alt="Smart Watch">
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
         </div>
-    </section>
+         <div class="thumbnail-box-sub">
+            <img src="/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg" alt="Watch" onerror="this.src='/public/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg';" onclick="changeImage(this)"
+             onclick="changeImage(this)"
+             class="thumbnail-sub"
+             alt="Smart Watch">
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+        </div>
+         <div class="thumbnail-box-sub">
+            <img src="/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg" alt="Watch" onerror="this.src='/public/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg';" onclick="changeImage(this)"
+             onclick="changeImage(this)"
+             class="thumbnail-sub"
+             alt="Smart Watch">
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+        </div>
+         <div class="thumbnail-box-sub">
+            <img src="/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg" alt="Watch" onerror="this.src='/public/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg';" onclick="changeImage(this)"
+             onclick="changeImage(this)"
+             class="thumbnail-sub"
+             alt="Smart Watch">
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+        </div>
+         <div class="thumbnail-box-sub">
+            <img src="/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg" alt="Watch" onerror="this.src='/public/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg';" onclick="changeImage(this)"
+             onclick="changeImage(this)"
+             class="thumbnail-sub"
+             alt="Smart Watch">
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+        </div>
+         <div class="thumbnail-box-sub">
+            <img src="/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg" alt="Watch" onerror="this.src='/public/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg';" onclick="changeImage(this)"
+             onclick="changeImage(this)"
+             class="thumbnail-sub"
+             alt="Smart Watch">
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+        </div>
+         <div class="thumbnail-box-sub">
+            <img src="/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg" alt="Watch" onerror="this.src='/public/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg';" onclick="changeImage(this)"
+             onclick="changeImage(this)"
+             class="thumbnail-sub"
+             alt="Smart Watch">
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+        </div>
+         <div class="thumbnail-box-sub">
+            <img src="/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg" alt="Watch" onerror="this.src='/public/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg';" onclick="changeImage(this)"
+             onclick="changeImage(this)"
+             class="thumbnail-sub"
+             alt="Smart Watch">
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
     <!-- Footer -->
     <footer style="background-color: #fff8e7;">
         <div class="footer-container">
