@@ -22,6 +22,30 @@
 <h2 style="background-color:#fff3e0; color: #c62828; text-align: center;  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);"> We Sell The Best Shoes</h2>
         <!-- View all Product in the shoes section-->
       <div class="gridcontainer">
+         <!-- product 2 -->
+        <div class="product"><a href="/Trending/TrendingAll/StashPortableUSB/index.html"
+                        onclick="
+                    fetch('/Trending/TrendingAll/StashPortableUSB/index.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/Trending/TrendingAll/StashPortableUSB/index.html';
+                  } else {
+                     window.location.href='/public/Trending/TrendingAll/StashPortableUSB/index.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/Trending/TrendingAll/StashPortableUSB/index.html';
+            });
+               return false;" style="text-decoration:none;">
+          <img src="/Trending/Trendingimg/StashPortableUSBimage1.png" alt="Watch"  onerror="this.src='/public/Trending/Trendingimg/StashPortableUSBimage1.png';" onclick="changeImage(this)">
+           <rating style="color: rgb(255, 0, 0); font-size: 15px;">&#9733;&#9733;&#9733;&#9733;&#9734; 3.2</rating>
+          <h3 style="font-size: 13px; color:#333333"><i>Brand : SEcret Stash</i></h3>
+          <p style="font-weight: bold; font-size: 18px; color:black">Portable USB Charger Secret Storage Box with Hidden Compartment for Cash, Money...</p>
+            <span class="current-price" style="color:black">₹3,092</span>
+                                <span class="original-price" style="color:red"><s>₹4,948</s></span>
+                                <span class="discount" style="color:rgb(51, 55, 51); font-size:18px;"><sup><b>-38%</b></sup></span>
+          <button style="background-color:green; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 10px; margin: 2px 2px; cursor: pointer; border-radius: 20px; text-align: center;">view product</button>
+         </a></div>
         <!-- product 1 -->
         <div class="product"><a href="/Trending/TrendingAll/Shoes/index.html"
                         onclick="
