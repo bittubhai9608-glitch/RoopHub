@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hotstylerunning Shoes - Buy Online | Roophub</title>
-    <meta name="description" content="Buy Hotstylerunning Shoes online at Roophub. Premium quality, stylish design and best price.">
-    <link rel="canonical" href="https://roophub.in/Shopping/Hotstylerunning.html">
-    <link rel="shortcut icon" type="image/x-icon" href="BannerImages/RoopHubFavicon.ico">
+    <title>SecretStash</title>
+    <meta name="description" content="Fire-Boltt Ninja Call Pro Max Smartwatch with Bluetooth Calling, 2.0 HD Display, 120+ Sports Modes, AI Voice Assistant, SpO2 & Heart Rate Monitoring, Smart Watch for Men & Women - Black.">
+    <link rel="canonical" href="https://roophub.in/Shopping/CampusNorthPlus">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="style.css">
+     <script src="landingpage.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -49,7 +50,6 @@
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
-            align-items: center;
         }
 
         .logo {
@@ -297,18 +297,23 @@
 
         /* You Might Like Section */
         .you-might-like {
-            padding: 3rem 2rem;
-            background: var(--bg-light);
+           margin: 0;
+           padding: 0;
+           height: auto;
+           border: 5px solid #978f8f;
+           background: var(--bg-light);
         }
 
         .section-container {
             max-width: var(--max-width);
             margin: 0 auto;
+            height: auto;
         }
 
         .section-title {
             text-align: center;
             margin-bottom: 2rem;
+            background-color: #d4e4d7;
         }
 
         .section-title h2 {
@@ -324,12 +329,14 @@
         .products-grid-2 {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
+            height: auto;
+            gap: 5px;
         }
 
         .product-card {
             background: var(--white);
-            border-radius: 15px;
+            border-radius: 20px;
+            border: 3px solid #a7b4a9;
             overflow: hidden; /* Ensures the scaled image doesn't overflow its container */
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -341,10 +348,10 @@
         }
 
         .product-card img {
-            width: 100%;
-            height: 200px;
+            width: 100vw;
+            height: auto;
             object-fit: cover;
-            transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+            transition: transform 0.1s ease; /* Smooth transition for zoom effect */
         }
 
         .product-card img:hover {
@@ -353,7 +360,7 @@
 
         .product-card img {
             width: 100%;
-            height: 200px;
+            height: auto;
             object-fit: cover;
         }
 
@@ -381,18 +388,6 @@
             color: var(--text-light);
             font-size: 0.9rem;
             margin-left: 0.5rem;
-        }
-
-        /* Trending Products Section */
-        .trending-products {
-            padding: 3rem 2rem;
-            background: var(--white);
-        }
-
-        .products-grid-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
         }
 
         /* Tags Section */
@@ -440,23 +435,6 @@
             color: var(--white);
         }
 
-        /* Thunder Deals Section */
-        .thunder-deals {
-            padding: 3rem 2rem;
-            background: var(--white);
-        }
-
-        .deal-badge {
-            display: inline-block;
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-left: 0.5rem;
-        }
-
         /* Footer */
         footer {
             background: var(--text-dark);
@@ -486,18 +464,21 @@
             opacity: 0.8;
             line-height: 1.8;
             font-size: 0.95rem;
+            color: black;
         }
 
         .footer-links {
             list-style: none;
+            color: black;
         }
 
         .footer-links li {
             margin-bottom: 0.5rem;
+         color: black;
         }
 
         .footer-links a {
-            color: var(--white);
+            color: black;
             text-decoration: none;
             opacity: 0.8;
             transition: opacity 0.3s ease;
@@ -541,7 +522,7 @@
             max-width: var(--max-width);
             margin: 2rem auto 0;
             padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid black;
             text-align: center;
             opacity: 0.7;
             font-size: 0.9rem;
@@ -586,6 +567,7 @@
 
         @media (max-width: 480px) {
             .products-grid-4 {
+                gap: 5px;
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -605,60 +587,93 @@
                 flex-wrap: wrap;
             }
         }
+
+        .thumbnail-box{
+    display:flex;
+    gap:10px;
+    margin-top:12px;
+    flex-wrap:wrap;
+}
+
+.thumbnail-box img{
+    width:65px;
+    height:65px;
+    object-fit:cover;
+    border:2px solid #ddd;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.thumbnail-box img:hover{
+    border-color:#ff3b30;
+}
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header style="background-color:  wheat;;">
         <div class="header-container">
-            <a href="#" class="logo">ROOP<span>HUb</span></a>
-            <div class="nav-icons">
-            </div>
+            <a class="logo">R<span style="color:#070a08">OOP</span><span style="color:#d91212">Hub</span></a>
         </div>
     </header>
     <!-- Main Product Section -->
     <section class="product-main">
         <div class="product-container">
-            <div class="product-image">
-                <img src="/ShoesImages/Hotstylerunningshoes.jpeg" alt="Iamges" onerror="if(this.src.includes('Hotstylerunningshoes.jpeg')){this.src='/public/ShoesImages/Hotstylerunningshoes.jpeg';}
-                else{ this.src='/public/ShoesImages/Hotstylerunningshoes.jpeg';}">
-            </div>
-            <div class="product-info">
-                <h1>Hotstyle Men's White Canvas Lace-Up Casual Running Sneaker Shoes</h1>
-                <div class="product-price" style="color: #061009;">₹1,240 <del style="color:#6d1a12">₹4,999</del></div>
 
-                <!-- Size Options -->
+    <div class="product-image">
+
+        <!-- Main Image -->
+        <img id="mainImage"
+             src="/Trending/TrendingAll/DronewithDual4K/DronewithDual4Kimg/DronewithDual4Kimage1.png"
+             alt="Watch"
+             onerror="this.src='/public/Trending/TrendingAll/DronewithDual4K/DronewithDual4Kimg/DronewithDual4Kimage1.png';">
+
+        <!-- Thumbnail Images -->
+        <div class="thumbnail-box">
+            <img src="/Trending/TrendingAll/DronewithDual4K/DronewithDual4Kimg/DronewithDual4Kimage1.png" alt="Watch"  onerror="this.src='/public/Trending/TrendingAll/DronewithDual4K/DronewithDual4Kimg/DronewithDual4Kimage1.png';" onclick="changeImage(this)">
+            <img src="/Trending/TrendingAll/DronewithDual4K/DronewithDual4Kimg/DronewithDual4Kimage2.png" alt="Watch"  onerror="this.src='/public/Trending/TrendingAll/DronewithDual4K/DronewithDual4Kimg/DronewithDual4Kimage2.png';" onclick="changeImage(this)">
+            <img src="/Trending/TrendingAll/DronewithDual4K/DronewithDual4Kimg/DronewithDual4Kimage3.png" alt="Watch"  onerror="this.src='/public/Trending/TrendingAll/DronewithDual4K/DronewithDual4Kimg/DronewithDual4Kimage3.png';" onclick="changeImage(this)">
+            <img src="/Trending/TrendingAll/DronewithDual4K/DronewithDual4Kimg/DronewithDual4Kimage4.png" alt="Watch"  onerror="this.src='/public/Trending/TrendingAll/DronewithDual4K/DronewithDual4Kimg/DronewithDual4Kimage4.png';" onclick="changeImage(this)">
+            <img src="/Trending/TrendingAll/DronewithDual4K/DronewithDual4Kimg/DronewithDual4Kimage5.png" alt="Watch"  onerror="this.src='/public/Trending/TrendingAll/DronewithDual4K/DronewithDual4Kimg/DronewithDual4Kimage5.png';" onclick="changeImage(this)">
+               
+        </div>
+
+    </div>
+
+
+            <div class="product-info">
+                <h3>Dual 4K Camera Drone for Adults and Kids | WiFi FPV RC Quadcopter with Live Video, Altitude Hold, 360° Flip, Headless Mode, One-Key Takeoff, Easy Controls, Portable Design, and Carry Case for Indoor and Outdoor Fun – E1</h3>
+                <div class="price" style="color:rgb(52, 132, 9);"><b style="font-size: 24px;">₹1,395</b><span class="discount" style="color:rgb(51, 55, 51); font-size:18px;"></span></div>
+                <div class ="mrp" style="color:black;">M.R.P <del style="color: gray">₹2,999</del><sup><b>-53%</b></sup></div>
+                <!-- Size Options 
                 <div class="size-options">
-                    <h3>Size: <span id="selectedSize">UK 7</span></h3>
+                    <h3>Size: <span id="selectedSize">8 UK</span></h3>
                     <div class="size-list">
-                        <div class="size-option active" onclick="selectSize(this)">UK 6</div>
-                        <div class="size-option" onclick="selectSize(this)">UK 7</div>
-                        <div class="size-option" onclick="selectSize(this)">UK 8</div>
-                        <div class="size-option" onclick="selectSize(this)">UK 9</div>
-                        <div class="size-option" onclick="selectSize(this)">UK 10</div>
+                        <div class="size-option" onclick="selectSize(this)">6 UK</div>
+                        <div class="size-option" onclick="selectSize(this)">7 UK</div>
+                        <div class="size-option active" onclick="selectSize(this)">8 UK</div>
+                        <div class="size-option" onclick="selectSize(this)">9 UK</div>
                     </div>
                 </div>
+            -->
 
                 <!-- Product Details -->
                 <div class="product-details">
                     <h3>Product Details:</h3>
                     <ul>
-                        <li>&bull; <b>Brand:   </b> Hotstyle</li>
-                        <li><b>&bull; Type:    </b> Sneaker Shoes</li>
-                        <li><b>&bull; Material: </b> Canvas</li>
-                        <li><b>&bull; Closure:    </b>Lace-Up</li>
-                        <li><b>&bull; Heel:  </b>No Heel</li>
-                        <li><b>&bull; Style: </b>Casual</li>
-                        <li><b>&bull; Feature:  </b>Flexible</li>
-                        <li><b>&bull; Use:  </b>Running & Walking</li>
-                        <li><b>&bull; Water Resistant:  </b>No</li>
-                        <li><b>&bull; Origin:  </b>India</li>
-                        <li><b>&bull; Care:  </b>clean with dry cloth</li>
-                    </ul>
+                        <li><b>&bull; Product Dimensions :</b> 8 × 8 × 8 cm</li>
+                        <li><b>&bull; Item Weight :</b> 199 g</li>
+                        <li><b>&bull; Manufacturer :</b> Aradhyaimpex2</li>
+                        <li><b>&bull; Country of Origin :</b> China</li>
+                        <li><b>&bull; Net Quantity :</b> 1 Piece</li>
+                        <li><b>&bull; Item Part Number :</b> 4711</li>
+                        <li><b>&bull; Generic Name :</b> Dron95</li>
+                        <li><b>&bull; Best Sellers Rank :</b> #1,717 in Toys & Games</li>
+                      </ul>
                 </div>
 
                 <!-- Buy from Amazon -->
-                <a href="https://link.amazon/B0h33qcli" target="_blank" class="amazon-btn">
+                <a href="https://link.amazon/B04k1Q0vi" target="_blank" class="amazon-btn">
                     <i class="fab fa-amazon"></i> Buy from Amazon
                 </a>
                 <!-- Social Share -->
@@ -666,6 +681,7 @@
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://roophub.in" class="facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://twitter.com/intent/tweet?url=https://roophub.in"
    target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+   <link rel="shortcut icon" type="image/x-icon" href="BannerImages/RoopHubFavicon.ico">
                     <a href="https://wa.me/?text=Check%20this%20website%20https://roophub.in" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
                     <a href="mailto:?subject=Check%20out%20this%20website&body=https://roophub.in" class="gmail"><i class="fas fa-envelope"></i></a>
                 </div>
@@ -677,13 +693,16 @@
     <section class="about-product">
         <div class="about-container">
             <h2>About This Product</h2>
-            <p>&bull; The Hotstyle white sneaker is comfortable and stylish. It is made from canvas material, which is light and easy to wear. The lace-up design helps users get a proper fit. The white color looks attractive and matches many clothes. This shoe is suitable for daily wear and gives a modern sporty look. People can wear it for long hours without much discomfort. It is a good choice for students, office workers, and anyone looking for simple, comfortable, and fashionable footwear.</p>
-            <p>&bull; The Hotstyle sneaker is suitable for many daily activities. It can be worn for walking, shopping, college, and casual outings. The flexible sole helps users move comfortably throughout the day. The shoe provides a secure fit because of its lace-up closure. Its lightweight design makes walking easier and less tiring. The simple style matches different outfits and occasions. This shoe is useful for people who need comfortable footwear for regular use. It offers both convenience and style at an affordable price.</p>
-            <p>&bull; The Hotstyle sneaker is easy to maintain. Users should keep the shoes in a shoe bag when not in use. This helps protect them from dust and stains. The shoes should be aired regularly to remove bad odors and keep them fresh. Dirt can be cleaned using a soft, dry cloth. Shoe polish is not needed for this canvas material. Since the shoe is not water resistant, it should not be used in heavy rain. Proper care helps the shoes last longer.</p>
-            <p>&bull; The Hotstyle white sneaker is a budget-friendly shoe for men. It offers good quality and comfort at a low price. The shoe has useful features such as a flexible design, canvas material, and lace-up closure. It is suitable for everyday use and casual occasions. The stylish white color gives it a smart appearance. Students and working people can easily afford this shoe. It provides good value for money because it combines comfort, style, and durability in one affordable footwear option.</p>
-
+            <p>&bull;<b>1080P HD FPV Camera & Wi-Fi Transmission : </b>Enjoy clear 1080P HD video with real-time Wi-Fi transmission through the mobile app. The 120° wide-angle camera provides a wider view, making it suitable for capturing family moments, outdoor adventures, and scenic landscapes.</p>
+            <p>&bull; <b>Multiple Flight Functions : </b>The drone offers optical-flow positioning, altitude hold, FPV mode, one-key takeoff and landing, 360° flips and rolls, Follow Me, Trajectory Flight, Headless Mode, speed adjustment, and gesture selfie. These features make flying more enjoyable and versatile.</p>
+            <p>&bull; <b>Stable & Easy to Control : </b>Optical-flow positioning helps the drone maintain a stable hover and makes operation easier, especially for beginners. One-key takeoff and landing simplify the flying process, while altitude hold allows the drone to stay steadily in the air.</p>
+            <p>&bull; <b>25–30 Minutes Flight Time : </b>The rechargeable battery provides approximately 25–30 minutes of flight time, giving you more time to enjoy flying. Over-current protection and an emergency-stop function are included to support safer and more reliable operation.</p>
+             <p>&bull; <b>Complete Package : </b>The package includes 1 Drone, 1 Remote Controller, 1 Battery, 1 Spare Blade Set, 1 USB Charging Cable, and 1 Screwdriver. The remote controller requires 3 AAA batteries, which are not included.</p>
+       
         </div>
-    </section>
+
+
+</section>
 
     <!-- You Might Like Section -->
     <section class="you-might-like">
@@ -693,134 +712,185 @@
                 <p>Based on your interests</p>
             </div>
             <div class="products-grid-2">
+                <!-- Product Card 1 -->
                 <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1606107557042-94fe97e03830?w=400&h=300&fit=crop" alt="Shoe 1">
-                    <div class="product-card-content">
-                        <h3>Classic White Sneakers</h3>
-                        <div class="price" style="color: #0f1210;">₹999 <del style="color:#ea4335">₹2,999</del></div>
-
-                    </div>
+                    <a href="/WatchAlltype/Olevsone.html"
+                        onclick="
+                    fetch('/WatchAlltype/Olevsone.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/WatchAlltype/Olevsone.html';
+                  } else {
+                     window.location.href='/public/WatchAlltype/Olevsone.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/WatchAlltype/Olevsone.html';
+            });
+               return false;" style="text-decoration:none;">
+                      <img src="/WatchImages/Olevsone/Olevsone1.jpeg" alt="Watch" onerror="this.src='/public/WatchImages/Olevsone/Olevsone1.jpeg';" onclick="changeImage(this)">
+                     <div class="product-info">
+                             <h3 class="product-title" style="font-size:12px; color:black">OLEVS Original Men's Quartz Chronograph Wrist Watch – Luxury Stainless Steel Analog Dress Watch with Date & Luminous Hands more...</h3>
+                        
+                               <div class="product-rating">
+                                 <div class="stars" style="color: #f5181f;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                            <span style="color:blue">(4.9)</span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="product-price">
+                                <span class="current-price" style="color:black; font-size: 16px;">₹3,040</span>
+                                <span class="original-price" style="color:red; font-size: 12px;"><s>₹3,999</s></span>
+                                <span class="discount" style="color:green; font-size:10px;"><b>-22%</b></span>
+                        </div>
+                    </a>
                 </div>
+                 <!-- Product Card 1 -->
                 <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400&h=300&fit=crop" alt="Shoe 2">
-                    <div class="product-card-content">
-                        <h3>Sport Running Shoes</h3>
-                        <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
+                    <a href="/WatchAlltype/SpyMission.html"
+                        onclick="
+                    fetch('/WatchAlltype/SpyMission.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/WatchAlltype/SpyMission.html';
+                  } else {
+                     window.location.href='/public/WatchAlltype/SpyMission.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/WatchAlltype/Olevs.html';
+            });
+               return false;" style="text-decoration:none;">
+                      <img src="/WatchImages/SpyMissionImg.jpeg" alt="Watch" onerror="this.src='/public/WatchImages/SpyMissionImg.jpeg';" onclick="changeImage(this)">
+                     <div class="product-info">
+                             <h3 class="product-title" style="font-size:12px; color:black">Smart Hidden Camera Wrist Watch for Everyday Recording Needs more...</h3>
+                        
+                               <div class="product-rating">
+                                 <div class="stars" style="color: #f5181f;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                            <span style="color:blue">(4.9)</span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="product-price">
+                                <span class="current-price" style="color:black; font-size: 16px;">₹3,040</span>
+                                <span class="original-price" style="color:red; font-size: 12px;"><s>₹3,999</s></span>
+                                <span class="discount" style="color:green; font-size:10px;"><b>-22%</b></span>
+                        </div>
+                    </a>
                 </div>
-            </div>
-        </div>
     </section>
 
-    <!-- Trending Products Section -->
-    <section class="trending-products">
-        <div class="section-container">
-            <div class="section-title">
-                <h2>Trending Products</h2>
-                <p>Most popular this week</p>
-            </div>
-            <div class="products-grid-4">
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=400&h=300&fit=crop" alt="Trending 1">
-                    <div class="product-card-content">
-                        <h3>Casual Loafers</h3>
-                    <div class="price" style="color:#25d366">₹999 <del style="color:#ff0000">₹2,999</del></div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=400&h=300&fit=crop" alt="Trending 2">
-                    <div class="product-card-content">
-                        <h3>High-Top Sneakers</h3>
-                        <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=400&h=300&fit=crop" alt="Trending 3">
-                    <div class="product-card-content">
-                        <h3>Athletic Trainers</h3>
-                        <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=400&h=300&fit=crop" alt="Trending 3">
-                    <div class="product-card-content">
-                        <h3>Athletic Trainers</h3>
-                        <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=400&h=300&fit=crop" alt="Trending 4">
-                    <div class="product-card-content">
-                        <h3>Canvas Slip-Ons</h3>
-                        <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Tags Section -->
-    <section class="tags-section">
-        <div class="tags-container">
-            <div class="tags-box">
-                <h3>Main Tags</h3>
-                <div class="tags-list">
-                    <span class="tag">Running Shoes</span>
-                    <span class="tag">Sports</span>
-                    <span class="tag">Casual</span>
-                    <span class="tag">Sneakers</span>
-                    <span class="tag">Athletic</span>
-                    <span class="tag">Fashion</span>
-                </div>
-            </div>
+<!-- Product Gallery Section -->
+    <div class="product-gallery-sub">
+    <!-- Thumbnail Images -->
+    <h1 style="background-color: #98c0bc; text-align: center"> Roopza Deals</h1>
+    <div class="thumbnail-container-sub">
+        <div class="thumbnail-box-sub">
+            <img src="/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg" alt="Watch" onerror="this.src='/public/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg';" onclick="changeImage(this)"
+             onclick="changeImage(this)"
+             class="thumbnail-sub"
+             alt="Smart Watch">
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
         </div>
-    </section>
+         <div class="thumbnail-box-sub">
+            <img src="/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg" alt="Watch" onerror="this.src='/public/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg';" onclick="changeImage(this)"
+             onclick="changeImage(this)"
+             class="thumbnail-sub"
+             alt="Smart Watch">
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+        </div>
+         <div class="thumbnail-box-sub">
+            <img src="/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg" alt="Watch" onerror="this.src='/public/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg';" onclick="changeImage(this)"
+             onclick="changeImage(this)"
+             class="thumbnail-sub"
+             alt="Smart Watch">
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+        </div>
+         <div class="thumbnail-box-sub">
+            <img src="/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg" alt="Watch" onerror="this.src='/public/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg';" onclick="changeImage(this)"
+             onclick="changeImage(this)"
+             class="thumbnail-sub"
+             alt="Smart Watch">
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+        </div>
+         <div class="thumbnail-box-sub">
+            <img src="/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg" alt="Watch" onerror="this.src='/public/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg';" onclick="changeImage(this)"
+             onclick="changeImage(this)"
+             class="thumbnail-sub"
+             alt="Smart Watch">
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+        </div>
+         <div class="thumbnail-box-sub">
+            <img src="/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg" alt="Watch" onerror="this.src='/public/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg';" onclick="changeImage(this)"
+             onclick="changeImage(this)"
+             class="thumbnail-sub"
+             alt="Smart Watch">
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+        </div>
+         <div class="thumbnail-box-sub">
+            <img src="/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg" alt="Watch" onerror="this.src='/public/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg';" onclick="changeImage(this)"
+             onclick="changeImage(this)"
+             class="thumbnail-sub"
+             alt="Smart Watch">
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+        </div>
+         <div class="thumbnail-box-sub">
+            <img src="/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg" alt="Watch" onerror="this.src='/public/ShoesView/ShoesAll/ATHCOshoes/ATHCOimg/Boatone1.jpeg';" onclick="changeImage(this)"
+             onclick="changeImage(this)"
+             class="thumbnail-sub"
+             alt="Smart Watch">
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+             <h4> smart watch</h4>
+        </div>
 
-    <!-- Thunder Deals Section -->
-    <section class="thunder-deals">
-        <div class="section-container">
-            <div class="section-title">
-                <h2>⚡ ROOPHUB Deals <span class="deal-badge">Limited Time</span></h2>
-                <p>Grab these amazing deals before they're gone!</p>
-            </div>
-            <div class="products-grid-4">
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1491553895911-0055uj8a481?w=400&h=300&fit=crop" alt="Deal 1">
-                    <div class="product-card-content">
-                        <h3>Pro Runner Elite</h3>
-                        <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?w=400&h=300&fit=crop" alt="Deal 2">
-                    <div class="product-card-content">
-                        <h3>Urban Walker</h3>
-                <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=400&h=300&fit=crop" alt="Deal 3">
-                    <div class="product-card-content">
-                        <h3>Street Style</h3>
-                        <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=300&fit=crop" alt="Deal 4">
-                    <div class="product-card-content">
-                        <h3>Comfort Plus</h3>
-                        <div class="price" style="color: #25d366;">₹1299 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
+</div>
+
+
+
+
+
+
 
     <!-- Footer -->
-    <footer>
+    <footer style="background-color: #fff8e7;">
         <div class="footer-container">
             <div class="footer-section">
-                <h3>ROOP<span>HUb</span></h3>
+                <h3 style="color:red">R<span style="color:black">OOP</span><span style="color:red">Hub</span></h3>
                 <p>ROOPHub is a trusted online marketplace offering quality products through affiliate partnerships and e-commerce. Our mission is to provide authentic products, competitive prices, and a reliable shopping experience across multiple categories.</p>
             </div>
             <div class="footer-section">
@@ -1034,8 +1104,8 @@
         </div>
 
     <!-- Footer Bottom -->
-        <div class="footer-bottom">
-            <p>&copy; 2026 ROOPHUb. All rights reserved.</p>
+        <div class="footer-bottom" style="height: auto;min-height: 100px; overflow: visible; ">
+            <p style="color: black;">&copy; 2026 ROOPHub. All rights reserved.</p>
         </div>
     </footer>
 
@@ -1062,6 +1132,9 @@
                 }
             });
         });
+        function changeImage(img){
+    document.getElementById("mainImage").src = img.src;
+}
     </script>
     <script src="/js/seo-updater.js"></script>
 </body>
