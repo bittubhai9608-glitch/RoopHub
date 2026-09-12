@@ -155,27 +155,28 @@ header h2{
 }
 /* Navigation Bar */
 .navigation{
-    text-align: center;
+    text-align: left;
     background-color: #1f2937;
     color: #ffffff;
-    padding: 5px;
+    padding: 0;
      box-sizing: border-box;
 }
 .navigation a{
-    font-size: 20px;
+    font-size: 15px;
+    text-align: center;
     padding: 0 10px;
      box-sizing: border-box;
 }
 .navigation a:hover{
     background-color: chartreuse;
     border-radius: 10px;
-    padding-left: 8px;
+    padding-left: 2px;
     transform: 1.2s;
      box-sizing: border-box;    
 }
 .shoes{
-    background-color: chartreuse;
-    border-radius: 10px;
+    background-color: rgb(90, 162, 18);
+    border-radius: 9px;
      box-sizing: border-box;
 
 
@@ -183,9 +184,10 @@ header h2{
 /* for shoes product */
 .gridcontainer{
     width: 100%;
+    height: auto;
     display: grid;
-    grid-template-columns: repeat(2,2fr);
-    gap: 5px;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 2px;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -194,17 +196,18 @@ header h2{
 .product{
     width: 100%;
     height: auto;
-    padding: 15px;
+    padding: 1px;
     margin: auto;
-    border-radius: 10px;
+    border-radius: 2px;
     overflow: hidden;
-     box-sizing: border-box;
+    object-fit: contain;
+    box-sizing: border-box;
 }
 .product img{
     width: 100%;
     height: 100%;
     object-fit: contain;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 2px solid blue;
     box-sizing: border-box;
 }

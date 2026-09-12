@@ -30,12 +30,12 @@ header h2{
     text-align: center;
     background-color: #1f2937;
     color: #ffffff;
-    padding: 10px;
+    padding: 5px;
     margin: 0;
     box-sizing: border-box;
 }
 .navigation a{
-    font-size: 30px;
+    font-size: 20px;
     padding: 0 20px;
     box-sizing: border-box;
 }
@@ -47,7 +47,7 @@ header h2{
     box-sizing: border-box;
 }
 .shoes{
-    background-color: chartreuse;
+    background-color: pink;
     border-radius: 15px;
     box-sizing: border-box;
 }
@@ -162,19 +162,20 @@ header h2{
      box-sizing: border-box;
 }
 .navigation a{
-    font-size: 20px;
+    font-size:15px;
     padding: 0 10px;
      box-sizing: border-box;
 }
 .navigation a:hover{
-    background-color: chartreuse;
+    background-color: black;
     border-radius: 10px;
     padding-left: 8px;
     transform: 1.2s;
      box-sizing: border-box;    
 }
 .shoes{
-    background-color: chartreuse;
+    background-color: pink;
+    color: #1f2937;
     border-radius: 10px;
      box-sizing: border-box;
 
@@ -194,9 +195,9 @@ header h2{
 .product{
     width: 100%;
     height: auto;
-    padding: 15px;
+    padding: 5px;
     margin: auto;
-    border-radius: 10px;
+    border-radius: 5px;
     overflow: hidden;
      box-sizing: border-box;
 }
