@@ -162,8 +162,8 @@ header h2{
      box-sizing: border-box;
 }
 .navigation a{
-    font-size: 20px;
-    padding: 0 10px;
+    font-size: 15px;
+    padding: 0 5px;
      box-sizing: border-box;
 }
 .navigation a:hover{
@@ -194,7 +194,7 @@ header h2{
 .product{
     width: 100%;
     height: auto;
-    padding: 15px;
+    padding: 5px;
     margin: auto;
     border-radius: 10px;
     overflow: hidden;
