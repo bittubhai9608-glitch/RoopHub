@@ -162,6 +162,51 @@
                 <h1 style="color: #d3093c; text-align: center; height: 40px; width: 100%; background-color: rgb(228, 228, 228); padding: 0%;">Home</h1>
                 <!-- Product Card (All Product) -->
                 <div class="products-grid" style="size: 100%;">
+                    <!--Product Card 22 Name: Brand : Kraasa   shoes-->
+                    <div class="product-card" style="width:100%; max-width:250px; margin:8px auto; box-sizing:border-box;">
+                    <a href="/Trending/TrendingAll/Shoes/index.html"
+                        onclick="
+                    fetch('/Trending/TrendingAll/Shoes/index.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/Trending/TrendingAll/Shoes/index.html';
+                  } else {
+                     window.location.href='/public/Trending/TrendingAll/Shoes/index.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/Trending/TrendingAll/Shoes/index.html';
+            });
+               return false;" style="text-decoration:none;">
+                         <div class="product-image" style="width:100%;">
+
+                             <img src="/Trending/Trendingimg/firstshoesimg1.jpeg" alt="Watch"  onerror="this.src='/public/Trending/Trendingimg/firstshoesimg1.jpeg';" onclick="changeImage(this)"
+                                  style="width:100%; max-width:100%; height:auto; aspect-ratio:4/3; object-fit:contain; display:block;">
+                         </div>
+                     
+                         <div class="product-info">
+                             <h3 class="product-title" style="font-size:12px;">Men’s Classic Chelsea Ankle Boots with Height Enhancing Heel, Premium PU Upper...</h3>
+                        
+                               <div class="product-rating">
+                                 <div class="stars" style="color: #e01b1b;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            <span style="color:blue">(4.3)</span>
+                            </div>
+                        
+                            <div class="product-price">
+                                <span class="current-price" style="color: black;">₹997</span>
+                                <span class="original-price" style="color: red;"><s>₹2,999</s></span>
+                                <span class="discount" style="color:green; font-size:10px;"><b>-67%</b></span>
+                              </div>
+                              <button style="background-color:rgb(50, 134, 190); color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 10px; margin: 2px 2px; cursor: pointer; border-radius: 20px; text-align: center;">view product</button>
+                        </div>
+                     </a>
+                    </div>
                     <!--Product Card 21 Name: Biodynamix Healthcare Product-->
                     <div class="product-card" style="width:100%; max-width:250px; margin:8px auto; box-sizing:border-box;">
                     <a href="Men_Health/biodynamix.html" style="text-decoration:none;">
@@ -361,7 +406,7 @@
                         </div>
                      </a>
                     </div>
-                     <!--Product Card 16 Name: Boat Product-->
+                     <!--Product Card 16 Name: Boat  watch Product-->
                     <div class="product-card" style="width:100%; max-width:250px; margin:8px auto; box-sizing:border-box;">
                     <a href="WatchAlltype/Asleeshawatch/Asleesha.html" style="text-decoration:none;">
                          <div class="product-image" style="width:100%;">
