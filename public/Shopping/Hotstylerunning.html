@@ -339,9 +339,14 @@
         }
 
         .products-grid-2 {
+           height: auto;
+            object-fit: contain;
+            overflow: auto;
+            padding: 0%;
+            margin: auto;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(2, 2fr);
+            gap: 0px;
         }
 
         .product-card {
@@ -359,9 +364,10 @@
         }
 
         .product-card img {
-            width: 100%;
-            height: 200px;
+           width: 100%;
+            height: auto;
             object-fit: cover;
+            overflow: hidden;
             transition: transform 0.3s ease;
             /* Smooth transition for zoom effect */
         }
@@ -372,9 +378,10 @@
         }
 
         .product-card img {
-            width: 100%;
-            height: 200px;
+           width: 100%;
+            height: auto;
             object-fit: cover;
+            overflow: hidden;
         }
 
         .product-card-content {
@@ -741,164 +748,159 @@
                 because it combines comfort, style, and durability in one affordable footwear option.</p>
 
         </div>
-    </section>
+        <!-- You Might Like Section -->
+        <section class="you-might-like">
+            <div class="section-container">
+                <div class="section-title">
+                    <h2>You Might Like</h2>
+                    <p>Based on your interests</p>
+                </div>
+                <div class="products-grid-2">
+                <!-- Hushpuppies shoes product-->
+                <div class="product-card">
+                    <a href="/Shopping/HushPuppiesShoes.html" onclick="
+                    fetch('/Shopping/HushPuppiesShoes.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/Shopping/HushPuppiesShoes.html';
+                  } else {
+                     window.location.href='/public/Shopping/HushPuppiesShoes.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/Shopping/HushPuppiesShoes.html';
+            });
+               return false;" style="text-decoration:none;">
+                        <img src="/public/Shopping/HushPuppiesShoes.jpeg" alt="Shoe 2">
+                        <div class="product-card-content">
+                            <p style="font-size: 12px; color: black;">Hush Puppies Men's Classic Leather Office Formal
+                                Shoes...</p>
+                            <div class="price" style="color: #25d366;">₹1,884 <del style="color:#ea4335">₹3,299</del>
+                            </div>
+                            <button
+                                style="background-color:rgb(50, 134, 190); color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 10px; margin: 2px 2px; cursor: pointer; border-radius: 20px; text-align: center;">view
+                                product</button>
 
-    <!-- You Might Like Section -->
-    <section class="you-might-like">
-        <div class="section-container">
-            <div class="section-title">
-                <h2>You Might Like</h2>
-                <p>Based on your interests</p>
+                    </a>
+                </div>
             </div>
-            <div class="products-grid-2">
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1606107557042-94fe97e03830?w=400&h=300&fit=crop"
-                        alt="Shoe 1">
-                    <div class="product-card-content">
-                        <h3>Classic White Sneakers</h3>
-                        <div class="price" style="color: #0f1210;">₹999 <del style="color:#ea4335">₹2,999</del></div>
+            <!-- Hoststyle Learnning  shoes product-->
+                    <div class="product-card">
+                        <a href="/Shopping/YUVRATOBAXIshoes.html" onclick="
+                    fetch('/Shopping/YUVRATOBAXIshoes.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/Shopping/YUVRATOBAXIshoes.html';
+                  } else {
+                     window.location.href='/public/Shopping/YUVRATOBAXIshoes.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/Shopping/YUVRATOBAXIshoes.html';
+            });
+               return false;" style="text-decoration:none;">
+                            <img src="/public/Shopping/YUVRATOBAXIshoes.jpeg" alt="Shoe 1">
+                            <div class="product-card-content">
+                                <p style="font-size: 12px; color: black" ;>YUVRATO BAXI 3-Inch Hidden Height Increasing Sneakers | Premium Elevator Shoes for Men...</p>
+                                <div class="price" style="color: #25d366;">₹2,029  <del
+                                        style="color:#ea4335">₹3,999</del>
+                                </div>
+                                <button
+                                    style="background-color:rgb(50, 134, 190); color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 10px; margin: 2px 2px; cursor: pointer; border-radius: 20px; text-align: center;">view
+                                    product</button>
+                        </a>
 
                     </div>
                 </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400&h=300&fit=crop"
-                        alt="Shoe 2">
-                    <div class="product-card-content">
-                        <h3>Sport Running Shoes</h3>
-                        <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Trending Products Section -->
-    <section class="trending-products">
-        <div class="section-container">
-            <div class="section-title">
-                <h2>Trending Products</h2>
-                <p>Most popular this week</p>
             </div>
-            <div class="products-grid-4">
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=400&h=300&fit=crop"
-                        alt="Trending 1">
-                    <div class="product-card-content">
-                        <h3>Casual Loafers</h3>
-                        <div class="price" style="color:#25d366">₹999 <del style="color:#ff0000">₹2,999</del></div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=400&h=300&fit=crop"
-                        alt="Trending 2">
-                    <div class="product-card-content">
-                        <h3>High-Top Sneakers</h3>
-                        <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=400&h=300&fit=crop"
-                        alt="Trending 3">
-                    <div class="product-card-content">
-                        <h3>Athletic Trainers</h3>
-                        <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=400&h=300&fit=crop"
-                        alt="Trending 3">
-                    <div class="product-card-content">
-                        <h3>Athletic Trainers</h3>
-                        <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=400&h=300&fit=crop"
-                        alt="Trending 4">
-                    <div class="product-card-content">
-                        <h3>Canvas Slip-Ons</h3>
-                        <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Tags Section -->
-    <section class="tags-section">
-        <div class="tags-container">
-            <div class="tags-box">
-                <h3>Main Tags</h3>
-                <div class="tags-list">
-                    <span class="tag">Running Shoes</span>
-                    <span class="tag">Sports</span>
-                    <span class="tag">Casual</span>
-                    <span class="tag">Sneakers</span>
-                    <span class="tag">Athletic</span>
-                    <span class="tag">Fashion</span>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Thunder Deals Section -->
-    <section class="thunder-deals">
-        <div class="section-container">
-            <div class="section-title">
-                <h2>⚡ ROOPHUB Deals <span class="deal-badge">Limited Time</span></h2>
-                <p>Grab these amazing deals before they're gone!</p>
-            </div>
-            <div class="products-grid-4">
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1491553895911-0055uj8a481?w=400&h=300&fit=crop"
-                        alt="Deal 1">
-                    <div class="product-card-content">
-                        <h3>Pro Runner Elite</h3>
-                        <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?w=400&h=300&fit=crop"
-                        alt="Deal 2">
-                    <div class="product-card-content">
-                        <h3>Urban Walker</h3>
-                        <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=400&h=300&fit=crop"
-                        alt="Deal 3">
-                    <div class="product-card-content">
-                        <h3>Street Style</h3>
-                        <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=300&fit=crop"
-                        alt="Deal 4">
-                    <div class="product-card-content">
-                        <h3>Comfort Plus</h3>
-                        <div class="price" style="color: #25d366;">₹1299 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>ROOP<span>HUb</span></h3>
-                <p>ROOPHub is a trusted online marketplace offering quality products through affiliate partnerships and
-                    e-commerce. Our mission is to provide authentic products, competitive prices, and a reliable
-                    shopping experience across multiple categories.</p>
+
+
+        <!-- Tags Section -->
+        <section class="tags-section">
+            <div class="tags-container">
+                <div class="tags-box">
+                    <h3>Main Tags</h3>
+                    <div class="tags-list">
+                        <span class="tag">Running Shoes</span>
+                        <span class="tag">Sports</span>
+                        <span class="tag">Casual</span>
+                        <span class="tag">Sneakers</span>
+                        <span class="tag">Athletic</span>
+                        <span class="tag">Fashion</span>
+                    </div>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <!-- Home -->
-                    <li><a href="/index.html" onclick="
+        </section>
+
+        <!-- Thunder Deals Section -->
+        <section class="thunder-deals">
+            <div class="section-container">
+                <div class="section-title">
+                    <h2>⚡ ROOPHUB Deals <span class="deal-badge">Limited Time</span></h2>
+                    <p>Grab these amazing deals before they're gone!</p>
+                </div>
+                <div class="products-grid-4">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1491553895911-0055uj8a481?w=400&h=300&fit=crop"
+                            alt="Deal 1">
+                        <div class="product-card-content">
+                            <h3>Pro Runner Elite</h3>
+                            <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?w=400&h=300&fit=crop"
+                            alt="Deal 2">
+                        <div class="product-card-content">
+                            <h3>Urban Walker</h3>
+                            <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=400&h=300&fit=crop"
+                            alt="Deal 3">
+                        <div class="product-card-content">
+                            <h3>Street Style</h3>
+                            <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=300&fit=crop"
+                            alt="Deal 4">
+                        <div class="product-card-content">
+                            <h3>Comfort Plus</h3>
+                            <div class="price" style="color: #25d366;">₹1299 <del style="color:#ea4335">₹2,999</del>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>ROOP<span>HUb</span></h3>
+                    <p>ROOPHub is a trusted online marketplace offering quality products through affiliate partnerships
+                        and
+                        e-commerce. Our mission is to provide authentic products, competitive prices, and a reliable
+                        shopping experience across multiple categories.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <!-- Home -->
+                        <li><a href="/index.html" onclick="
                                    fetch('/index.html')
                                     .then(r => {
                                  if (r.ok) {
@@ -911,9 +913,9 @@
             window.location.href='/public/index.html';
         });
     return false;"> Home
-                        </a></li>
-                    <!-- About -->
-                    <li><a href="/Footer/AboutUs.html" onclick="
+                            </a></li>
+                        <!-- About -->
+                        <li><a href="/Footer/AboutUs.html" onclick="
    fetch('/Footer/AboutUs.html')
    .then(r => {
       if (r.ok) {
@@ -926,10 +928,10 @@
       window.location.href='/public/Footer/AboutUs.html';
    });
    return false;">
-                            About
-                        </a></li>
-                    <!--Affiliate Disclosure-->
-                    <li><a href="/Footer/AffiliateDisclosure.html" onclick="
+                                About
+                            </a></li>
+                        <!--Affiliate Disclosure-->
+                        <li><a href="/Footer/AffiliateDisclosure.html" onclick="
    fetch('/Footer/AffiliateDisclosure.html')
    .then(r => {
       if (r.ok) {
@@ -942,10 +944,10 @@
       window.location.href='/public/Footer/AffiliateDisclosure.html';
    });
    return false;">
-                            Affiliate Disclosure
-                        </a></li>
-                    <!--Privacy Policy-->
-                    <li><a href="/Footer/PrivacyPolicy.html" onclick="
+                                Affiliate Disclosure
+                            </a></li>
+                        <!--Privacy Policy-->
+                        <li><a href="/Footer/PrivacyPolicy.html" onclick="
    fetch('/Footer/PrivacyPolicy.html')
    .then(r => {
       if (r.ok) {
@@ -958,10 +960,10 @@
       window.location.href='/public/Footer/PrivacyPolicy.html';
    });
    return false;">
-                            Privacy Policy
-                        </a></li>
-                    <!--Terms of Service-->
-                    <li><a href="/Footer/Terms.html" onclick="
+                                Privacy Policy
+                            </a></li>
+                        <!--Terms of Service-->
+                        <li><a href="/Footer/Terms.html" onclick="
    fetch('/Footer/Terms.html')
    .then(r => {
       if (r.ok) {
@@ -974,10 +976,10 @@
       window.location.href='/public/Footer/Terms.html';
    });
    return false;">
-                            Terms of Service
-                        </a></li>
-                    <!--Disclaimer-->
-                    <li><a href="/Footer/Disclaimer.html" onclick="
+                                Terms of Service
+                            </a></li>
+                        <!--Disclaimer-->
+                        <li><a href="/Footer/Disclaimer.html" onclick="
    fetch('/Footer/Disclaimer.html')
    .then(r => {
       if (r.ok) {
@@ -990,16 +992,16 @@
       window.location.href='/public/Footer/Disclaimer.html';
    });
    return false;">
-                            Disclaimer
-                        </a></li>
-                </ul>
-            </div>
-            <!--Customer Service-->
-            <div class="footer-section">
-                <h3>Customer Service</h3>
-                <!--FAQ-->
-                <ul class="footer-links">
-                    <li><a href="/Footer/FAQ.html" onclick="
+                                Disclaimer
+                            </a></li>
+                    </ul>
+                </div>
+                <!--Customer Service-->
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <!--FAQ-->
+                    <ul class="footer-links">
+                        <li><a href="/Footer/FAQ.html" onclick="
    fetch('/Footer/FAQ.html')
    .then(r => {
       if (r.ok) {
@@ -1012,11 +1014,11 @@
       window.location.href='/public/Footer/FAQ.html';
    });
    return false;">
-                            FAQ
-                        </a></li>
-                    <!--Terms of Service-->
-                    <li>
-                        <a href="/Footer/Terms.html" onclick="
+                                FAQ
+                            </a></li>
+                        <!--Terms of Service-->
+                        <li>
+                            <a href="/Footer/Terms.html" onclick="
    fetch('/Footer/Terms.html')
    .then(r => {
       if (r.ok) {
@@ -1029,12 +1031,12 @@
       window.location.href='/public/Footer/Terms.html';
    });
    return false;">
-                            Terms of Service
-                        </a>
-                    </li>
-                    <!--Contact-->
-                    <li>
-                        <a href="/Footer/Contact.html" onclick="
+                                Terms of Service
+                            </a>
+                        </li>
+                        <!--Contact-->
+                        <li>
+                            <a href="/Footer/Contact.html" onclick="
    fetch('/Footer/Contact.html')
    .then(r => {
       if (r.ok) {
@@ -1047,12 +1049,12 @@
       window.location.href='/public/Footer/Contact.html';
    });
    return false;">
-                            Contact
-                        </a>
-                    </li>
-                    <!--Return Policy-->
-                    <li>
-                        <a href="/Footer/ReturnPolicy.html" onclick="
+                                Contact
+                            </a>
+                        </li>
+                        <!--Return Policy-->
+                        <li>
+                            <a href="/Footer/ReturnPolicy.html" onclick="
    fetch('/Footer/ReturnPolicy.html')
    .then(r => {
       if (r.ok) {
@@ -1065,12 +1067,12 @@
       window.location.href='/public/Footer/ReturnPolicy.html';
    });
    return false;">
-                            Returns
-                        </a>
-                    </li>
-                    <!--Important Information-->
-                    <li>
-                        <a href="/Footer/ImportantInformation.html" onclick="
+                                Returns
+                            </a>
+                        </li>
+                        <!--Important Information-->
+                        <li>
+                            <a href="/Footer/ImportantInformation.html" onclick="
    fetch('/Footer/ImportantInformation.html')
    .then(r => {
       if (r.ok) {
@@ -1083,58 +1085,58 @@
       window.location.href='/public/Footer/ImportantInformation.html';
    });
    return false;">
-                            Important Info.
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                                Important Info.
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 
-            <div class="footer-section">
-                <h3>Connect With Us</h3>
-                <div class="footer-social">
-                    <a href="https://www.facebook.com/share/1CscBUE9Rt/" class="facebook"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a href="https://whatsapp.com/channel/0029Vb7Y2ft3QxS4drpeQV02" class="whatsapp"><i
-                            class="fab fa-whatsapp"></i></a>
-                    <a href="https://x.com/bittu_kumar6648" class="twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://youtube.com/@roophub-official?si=046j31dkX4Bt_YPH" class="youtube"><i
-                            class="fab fa-youtube"></i></a>
-                    <a href="https://t.me/+ZR9K2Jxi3-Y1Y2U1" class="telegram"><i class="fab fa-telegram"></i></a>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/share/1CscBUE9Rt/" class="facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://whatsapp.com/channel/0029Vb7Y2ft3QxS4drpeQV02" class="whatsapp"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="https://x.com/bittu_kumar6648" class="twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://youtube.com/@roophub-official?si=046j31dkX4Bt_YPH" class="youtube"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://t.me/+ZR9K2Jxi3-Y1Y2U1" class="telegram"><i class="fab fa-telegram"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-            <p>&copy; 2026 ROOPHUb. All rights reserved.</p>
-        </div>
-    </footer>
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 ROOPHUb. All rights reserved.</p>
+            </div>
+        </footer>
 
-    <script>
-        // Size Selection
-        function selectSize(element) {
-            document.querySelectorAll('.size-option').forEach(opt => {
-                opt.classList.remove('active');
+        <script>
+            // Size Selection
+            function selectSize(element) {
+                document.querySelectorAll('.size-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                element.classList.add('active');
+                document.getElementById('selectedSize').textContent = element.textContent;
+            }
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
             });
-            element.classList.add('active');
-            document.getElementById('selectedSize').textContent = element.textContent;
-        }
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
-    <script src="/js/seo-updater.js"></script>
+        </script>
+        <script src="/js/seo-updater.js"></script>
 </body>
 
 </html>

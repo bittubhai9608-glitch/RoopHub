@@ -763,9 +763,19 @@
             <div class="products-grid-2" style="margin-top: 1.5rem;">
                 <!-- product 1-->
                 <div class="product-card">
-                    <a href="/public/Shopping/CampusNorthPlus.html"
-                        onclick="this.href='/Shopping/CampusNorthPlus.html'; return true;"
-                        style="text-decoration: none; ">
+                     <a href="/Shopping/CampusNorthPlus.html" onclick="
+                    fetch('/Shopping/CampusNorthPlus.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/Shopping/CampusNorthPlus.html';
+                  } else {
+                     window.location.href='/public/Shopping/CampusNorthPlus.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/Shopping/CampusNorthPlus.html';
+            });
+               return false;" style="text-decoration:none;">
                         <img src="/Images/CampusNorthPlus.jpeg" alt="Iamges"
                             style="width:100%; height:200px; object-fit:contain;" onerror="if(this.src.includes('CampusNorthPlus.jpeg')){this.src='/public/Images/CampusNorthPlus.jpeg';}
                     else{ this.src='/public/Images/CampusNorthPlus.jpeg'; }">
@@ -776,7 +786,7 @@
                             </div>
                             <h3 style="font-size: 16px; margin-bottom: 0.5rem;">Campus North Plus 3-Inch Hidden Height
                                 Increasing Sneakers </h3>
-                            <div class="price" style="color: #25d366;">₹2,029 <del style="color:#ea4335">₹3,999</del>
+                            <div class="price" style="color: #25d366;">₹1,240  <del style="color:#ea4335">₹4,999</del>
                             </div>
                     </a>
                 </div>
@@ -785,76 +795,35 @@
 
             <!-- product 2-->
             <div class="product-card">
-                <a href="/public/Shopping/YUVRATOBAXIshoes.html"
-                    onclick="this.href='/Shopping/YUVRATOBAXIshoes.html'; return true;"
-                    style="text-decoration: none; color: #25d366;">
-                    <img src="/Images/YUVRATOBAXIshoes.jpeg" alt="Iamges"
+                <a href="/Shopping/YUVRATOBAXIshoes.html" onclick="
+                    fetch('/Shopping/YUVRATOBAXIshoes.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/Shopping/YUVRATOBAXIshoes.html';
+                  } else {
+                     window.location.href='/public/Shopping/YUVRATOBAXIshoes.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/Shopping/YUVRATOBAXIshoes.html';
+            });
+               return false;" style="text-decoration:none;">
+                    <img src="/public/Shopping/YUVRATOBAXIshoes.jpeg" alt="Iamges"
                         style="width:100%; height:200px; object-fit:contain;" onerror="if(this.src.includes('YUVRATOBAXIshoes.jpeg')){this.src='/public/Images/YUVRATOBAXIshoes.jpeg';}
                     else{ this.src='/public/Images/YUVRATOBAXIshoes.jpeg'; }">
                     <div class="product-card-content">
                         <div class="rating"
                             style="color: #0d0c13; font-size: 10px; margin-bottom: 0.5rem; font-weight: bold;">
-                            <span class="star">⭐</span> 4.4(3,243 Reviews)
+                            <span class="star">⭐</span> 4.7(4,243 Reviews)
                         </div>
-                        <h3 style="font-size: 16px; margin-bottom: 0.5rem;">YUVRATO BAXI 3-Inch Hidden Height Increasing
+                        <h3 style="font-size: 16px; margin-bottom: 0.5rem;">YUVRATO BAXI 3-Inch Hidden Height
+                            Increasing...
                             Sneakers </h3>
                         <div class="price" style="color: #25d366;">₹2,029 <del style="color:#ea4335">₹3,999</del></div>
                 </a>
             </div>
         </div>
         </div>
-        </div>
-    </section>
-
-    <!-- Trending Products Section -->
-    <section class="trending-products">
-        <div class="section-container">
-            <div class="section-title">
-                <h2>Trending Products</h2>
-                <p>Most popular this week</p>
-            </div>
-            <div class="products-grid-4">
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=400&h=300&fit=crop"
-                        alt="Trending 1">
-                    <div class="product-card-content">
-                        <h3>Casual Loafers</h3>
-                        <div class="price" style="color:#25d366">₹999 <del style="color:#ff0000">₹2,999</del></div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=400&h=300&fit=crop"
-                        alt="Trending 2">
-                    <div class="product-card-content">
-                        <h3>High-Top Sneakers</h3>
-                        <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=400&h=300&fit=crop"
-                        alt="Trending 3">
-                    <div class="product-card-content">
-                        <h3>Athletic Trainers</h3>
-                        <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=400&h=300&fit=crop"
-                        alt="Trending 3">
-                    <div class="product-card-content">
-                        <h3>Athletic Trainers</h3>
-                        <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=400&h=300&fit=crop"
-                        alt="Trending 4">
-                    <div class="product-card-content">
-                        <h3>Canvas Slip-Ons</h3>
-                        <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del></div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
