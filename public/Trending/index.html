@@ -1,40 +1,111 @@
 <!DOCTYPE html>
-<head>
-    <title>Shoes</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-     <h2><span style="color: rgb(223, 16, 16);">Roop</span><span style="color: black;">Hub</span>
-   <select onchange="window.location.href=this.value" style="display: block; background-color: #91abc5; display: fixed; position: fixed; top: 20px; right: 0;">
-                <option value=" " style="position: fixed; text-align: center; background-color: #5c86b0;">≡</option>
-                <option  value="/public/index.html">Home</option>
-                <option value="/public/ShoesView">Shoes</option>
-                <option value="/public/Beauty">Beauty</option>
-                <option value="/public/Trending">Trending</option>
-                <option value="/public/Electronic">Electronic</option>
-                <option value="/public/Footer/Contact.html">Contact</option>
-             </select></h2>
-    </header>
 
-        <div class="banner">
-          <img src="/Trending/Trendingimg/Trendingbannerimg.jpeg" alt="Watch"  onerror="this.src='/public/Trending/Trendingimg/Trendingbannerimg.jpeg';" onclick="changeImage(this)">
-        </div>
-        <nav class="navigation">
-            <a>Home</a>
-            <a>Shoes</a>
-            <a>Beauty</a>
-            <a class="shoes">Trending</a>
-            <a>Electronics</a>
-        </nav>
-<h2 style="background-color:#fff3e0; color: #c62828; text-align: center;  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);"> We Sell The Best Shoes</h2>
-        <!-- View all Product in the shoes section-->
-      <div class="gridcontainer">
-          <!-- product 4 Name "DronewithDual4K"  -->
-        <div class="product"><a href="/Trending/TrendingAll/DronewithDual4K/index.html"
-                        onclick="
+<head>
+   <title>Shoes</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <header>
+      <h2><span style="color: rgb(223, 16, 16);">Roop</span><span style="color: black;">Hub</span>
+         <select onchange="window.location.href=this.value"
+            style="display: block; background-color: #91abc5; display: fixed; position: fixed; top: 20px; right: 0;">
+            <option value=" " style="position: fixed; text-align: center; background-color: #5c86b0;">≡</option>
+            <option value="/public/index.html" alter="Home">Home</option>
+            <option value="/public/ShoesView" alter="Shoes">Shoes</option>
+            <option value="/public/Beauty" alter="Beauty">Beauty</option>
+            <option value="/public/Trending" alter="Trending">Trending</option>
+            <option value="/public/Electronic" alter="Electronic">Electronic</option>
+            <option value="/public/Footer/Contact.html" alter="Contact">Contact</option>
+         </select>
+      </h2>
+   </header>
+
+   <div class="banner">
+      <img src="/Trending/Trendingimg/Trendingbannerimg.jpeg" alt="Watch"
+         onerror="this.src='/public/Trending/Trendingimg/Trendingbannerimg.jpeg';" onclick="changeImage(this)">
+   </div>
+   <nav class="navigation">
+      <!--home-->
+      <a href="/index.html" onclick="
+                    fetch('/index.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/index.html';
+                  } else {
+                     window.location.href='/public/index.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/index.html';
+            });
+               return false;" style="text-decoration:none; color:white">Home</a>
+      <!-- Shoes-->
+      <a href="/ShoesView/index.html" onclick="
+                    fetch('/ShoesView/index.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/ShoesView/index.html';
+                  } else {
+                     window.location.href='/public/ShoesView/index.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/ShoesView/index.html';
+            });
+               return false;" style="text-decoration:none; color:white">Shoes</a>
+      <!-- Beauty-->
+      <a href="/Beauty/index.html" onclick="
+                    fetch('/Beauty/index.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/Beauty/index.html';
+                  } else {
+                     window.location.href='/public/Beauty/index.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/Beauty/index.html';
+            });
+               return false;" style="text-decoration:none; color:white">Beauty</a>
+      <!-- Trending-->
+      <a class="shoes" href="/Trending/index.html" onclick="
+                    fetch('/Trending/index.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/Trending/index.html';
+                  } else {
+                     window.location.href='/public/Trending/index.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/Trending/index.html';
+            });
+               return false;" style="text-decoration:none; color:white">Trending</a>
+      <!--Electronic-->
+      <a href="/Electronic/index.html" onclick="
+                    fetch('/Electronic/index.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/Electronic/index.html';
+                  } else {
+                     window.location.href='/public/Electronic/index.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/Electronic/index.html';
+            });
+               return false;" style="text-decoration:none; color:white">Electronics</a>
+   </nav>
+   <h2
+      style="background-color:#fff3e0; color: #c62828; text-align: center;  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
+      We Sell The Best Shoes</h2>
+   <!-- View all Product in the shoes section-->
+   <div class="gridcontainer">
+      <!-- product 4 Name "DronewithDual4K"  -->
+      <div class="product"><a href="/Trending/TrendingAll/DronewithDual4K/index.html" onclick="
                     fetch('/Trending/TrendingAll/DronewithDual4K/index.html')
                 .then(r => {
                 if (r.ok) {
@@ -47,18 +118,20 @@
               window.location.href='/public/Trending/TrendingAll/DronewithDual4K/index.html';
             });
                return false;" style="text-decoration:none;">
-          <img src="/Trending/Trendingimg/DronewithDual4Kimage1.png" alt="Watch"  onerror="this.src='/public/Trending/Trendingimg/DronewithDual4Kimage1.png';" onclick="changeImage(this)">
-           <rating style="color: rgb(255, 0, 0); font-size: 15px;">&#9733;&#9733;&#9733;&#9733;&#9734; 4.6</rating>
-          <h3 style="font-size: 13px; color:#333333"><i>Brand : Frendo</i></h3>
-          <p style="font-weight: bold; font-size: 12px; color:black">Remote Control Stunt Car 4WD | 360° Rotating & Dual-Sided Driving | High-Speed...</p>
-            <span class="current-price" style="color:black">₹990</span>
-                                <span class="original-price" style="color:red"><s>₹2,499</s></span>
-                                <span class="discount" style="color:rgb(51, 55, 51); font-size:18px;"><sup><b>-60%</b></sup></span>
-          <button style="background-color:green; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 10px; margin: 2px 2px; cursor: pointer; border-radius: 20px; text-align: center;">view product</button>
+            <img src="/Trending/Trendingimg/DronewithDual4Kimage1.png" alt="Watch"
+               onerror="this.src='/public/Trending/Trendingimg/DronewithDual4Kimage1.png';" onclick="changeImage(this)">
+            <h3 style="font-size: 13px; color:#333333"><i>Brand : Frendo</i></h3>
+            <p style="font-weight: bold; font-size: 12px; color:black">Dual 4K Camera Drone for Adults and Kids | WiFi
+               FPV RC Quadcopter with Live Video, Altitude Hold...</p>
+            <span class="current-price" style="color:black">₹1,395</span>
+            <span class="original-price" style="color:red"><s>₹2,999</s></span>
+            <span class="discount" style="color:rgb(51, 55, 51); font-size:18px;"><sup><b>-53%</b></sup></span>
+            <button
+               style="background-color:green; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 10px; margin: 2px 2px; cursor: pointer; border-radius: 20px; text-align: center;">view
+               product</button>
          </a></div>
-          <!-- product 3 Name "Remote Control Stunt Car 4WD"  -->
-        <div class="product"><a href="/Trending/TrendingAll/RemoteControlDriftStuntCar4WD/index.html"
-                        onclick="
+      <!-- product 3 Name "Remote Control Stunt Car 4WD"  brand name : Frendo  -->
+      <div class="product"><a href="/Trending/TrendingAll/RemoteControlDriftStuntCar4WD/index.html" onclick="
                     fetch('/Trending/TrendingAll/RemoteControlDriftStuntCar4WD/index.html')
                 .then(r => {
                 if (r.ok) {
@@ -71,18 +144,21 @@
               window.location.href='/public/Trending/TrendingAll/RemoteControlDriftStuntCar4WD/index.html';
             });
                return false;" style="text-decoration:none;">
-          <img src="/Trending/Trendingimg/RemoteControlDriftStuntCar4WDimage1.png" alt="Watch"  onerror="this.src='/public/Trending/Trendingimg/RemoteControlDriftStuntCar4WDimage1.png';" onclick="changeImage(this)">
-           <rating style="color: rgb(255, 0, 0); font-size: 15px;">&#9733;&#9733;&#9733;&#9733;&#9734; 4.6</rating>
-          <h3 style="font-size: 13px; color:#333333"><i>Brand : Frendo</i></h3>
-          <p style="font-weight: bold; font-size: 12px; color:black">Remote Control Stunt Car 4WD | 360° Rotating & Dual-Sided Driving | High-Speed...</p>
+            <img src="/Trending/Trendingimg/RemoteControlDriftStuntCar4WDimage1.png" alt="Watch"
+               onerror="this.src='/public/Trending/Trendingimg/RemoteControlDriftStuntCar4WDimage1.png';"
+               onclick="changeImage(this)">
+            <h3 style="font-size: 13px; color:#333333"><i>Brand : Frendo</i></h3>
+            <p style="font-weight: bold; font-size: 12px; color:black">Remote Control Stunt Car 4WD | 360° Rotating &
+               Dual-Sided Driving | High-Speed...</p>
             <span class="current-price" style="color:black">₹990</span>
-                                <span class="original-price" style="color:red"><s>₹2,499</s></span>
-                                <span class="discount" style="color:rgb(51, 55, 51); font-size:18px;"><sup><b>-60%</b></sup></span>
-          <button style="background-color:green; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 10px; margin: 2px 2px; cursor: pointer; border-radius: 20px; text-align: center;">view product</button>
+            <span class="original-price" style="color:red"><s>₹2,499</s></span>
+            <span class="discount" style="color:rgb(51, 55, 51); font-size:18px;"><sup><b>-60%</b></sup></span>
+            <button
+               style="background-color:green; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 10px; margin: 2px 2px; cursor: pointer; border-radius: 20px; text-align: center;">view
+               product</button>
          </a></div>
-         <!-- product 2 -->
-        <div class="product"><a href="/Trending/TrendingAll/StashPortableUSB/index.html"
-                        onclick="
+      <!-- product 2    Brand : Secret Stash -->
+      <div class="product"><a href="/Trending/TrendingAll/StashPortableUSB/index.html" onclick="
                     fetch('/Trending/TrendingAll/StashPortableUSB/index.html')
                 .then(r => {
                 if (r.ok) {
@@ -95,18 +171,21 @@
               window.location.href='/public/Trending/TrendingAll/StashPortableUSB/index.html';
             });
                return false;" style="text-decoration:none;">
-          <img src="/Trending/Trendingimg/StashPortableUSBimage1.png" alt="Watch"  onerror="this.src='/public/Trending/Trendingimg/StashPortableUSBimage1.png';" onclick="changeImage(this)">
-           <rating style="color: rgb(255, 0, 0); font-size: 15px;">&#9733;&#9733;&#9733;&#9733;&#9734; 3.2</rating>
-          <h3 style="font-size: 13px; color:#333333"><i>Brand : Secret Stash</i></h3>
-          <p style="font-weight: bold; font-size: 12px; color:black">Portable USB Charger Secret Storage Box with Hidden Compartment for Cash, Money...</p>
+            <img src="/Trending/Trendingimg/StashPortableUSBimage1.png" alt="Watch"
+               onerror="this.src='/public/Trending/Trendingimg/StashPortableUSBimage1.png';"
+               onclick="changeImage(this)">
+            <h3 style="font-size: 13px; color:#333333"><i>Brand : Secret Stash</i></h3>
+            <p style="font-weight: bold; font-size: 12px; color:black">Portable USB Charger Secret Storage Box with
+               Hidden Compartment for Cash, Money...</p>
             <span class="current-price" style="color:black">₹3,092</span>
-                                <span class="original-price" style="color:red"><s>₹4,948</s></span>
-                                <span class="discount" style="color:rgb(51, 55, 51); font-size:12px;"><sup><b>-38%</b></sup></span>
-          <button style="background-color:green; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 10px; margin: 2px 2px; cursor: pointer; border-radius: 20px; text-align: center;">view product</button>
+            <span class="original-price" style="color:red"><s>₹4,948</s></span>
+            <span class="discount" style="color:rgb(51, 55, 51); font-size:12px;"><sup><b>-38%</b></sup></span>
+            <button
+               style="background-color:green; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 10px; margin: 2px 2px; cursor: pointer; border-radius: 20px; text-align: center;">view
+               product</button>
          </a></div>
-        <!-- product 1 -->
-        <div class="product"><a href="/Trending/TrendingAll/Shoes/index.html"
-                        onclick="
+      <!-- product 1 -->
+      <div class="product"><a href="/Trending/TrendingAll/Shoes/index.html" onclick="
                     fetch('/Trending/TrendingAll/Shoes/index.html')
                 .then(r => {
                 if (r.ok) {
@@ -119,36 +198,41 @@
               window.location.href='/public/Trending/TrendingAll/Shoes/index.html';
             });
                return false;" style="text-decoration:none;">
-          <img src="/Trending/Trendingimg/firstshoesimg1.jpeg" alt="Watch"  onerror="this.src='/public/Trending/Trendingimg/firstshoesimg1.jpeg';" onclick="changeImage(this)">
-           <rating style="color: rgb(255, 0, 0); font-size: 15px;">&#9733;&#9733;&#9733;&#9733;&#9734; 4.3</rating>
-          <h3 style="font-size: 13px; color:#333333"><i>Brand : Kraasa</i></h3>
-          <p style="font-weight: bold; font-size: 12px; color:black">Men’s Classic Chelsea Ankle Boots with Height Enhancing Heel, Premium PU Upper...</p>
+            <img src="/Trending/Trendingimg/firstshoesimg1.jpeg" alt="Watch"
+               onerror="this.src='/public/Trending/Trendingimg/firstshoesimg1.jpeg';" onclick="changeImage(this)">
+            <h3 style="font-size: 13px; color:#333333"><i>Brand : Kraasa</i></h3>
+            <p style="font-weight: bold; font-size: 12px; color:black">Men’s Classic Chelsea Ankle Boots with Height
+               Enhancing Heel, Premium PU Upper...</p>
             <span class="current-price" style="color:black">₹997</span>
-                                <span class="original-price" style="color:red"><s>₹2,999</s></span>
-                                <span class="discount" style="color:green; font-size:12px;"><b>-67%</b></span>
-          <button style="background-color:green; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 12px; margin: 2px 2px; cursor: pointer; border-radius: 20px; text-align: center;">view product</button>
+            <span class="original-price" style="color:red"><s>₹2,999</s></span>
+            <span class="discount" style="color:green; font-size:12px;"><b>-67%</b></span>
+            <button
+               style="background-color:green; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 12px; margin: 2px 2px; cursor: pointer; border-radius: 20px; text-align: center;">view
+               product</button>
          </a>
       </div>
-         
-         
+
+
    </div>
 
 
 
-<!-- footer-->
- <footer class="footer">
+   <!-- footer-->
+   <footer class="footer">
 
-    <div class="footer-container">
+      <div class="footer-container">
 
-        <div class="footer-box">
-            <h2><span style="color: rgb(223, 16, 16);">R<span style="color: black;">oop<span style="color: red;">Hub</span></span></span></h2>
-            <p>ROOPHub is a trusted online marketplace offering quality products through affiliate partnerships and e-commerce. Our mission is to provide authentic products, competitive prices, and a reliable shopping experience across multiple categories.</p>  
-        </div>
-        <div class="footer-box">
+         <div class="footer-box">
+            <h2><span style="color: rgb(223, 16, 16);">R<span style="color: black;">oop<span
+                        style="color: red;">Hub</span></span></span></h2>
+            <p>ROOPHub is a trusted online marketplace offering quality products through affiliate partnerships and
+               e-commerce. Our mission is to provide authentic products, competitive prices, and a reliable shopping
+               experience across multiple categories.</p>
+         </div>
+         <div class="footer-box">
             <h3>Quick Links</h3>
             <!--Home footer-->
-            <a href="/index.html"
-                                 onclick="
+            <a href="/index.html" onclick="
                                        fetch('/index.html')
                                         .then(r => {
                                      if (r.ok) {
@@ -161,9 +245,8 @@
                 window.location.href='/public/index.html';
             });
         return false;"> Home
-    </a>
-            <a href="/Footer/AboutUs.html"
-       onclick="
+            </a>
+            <a href="/Footer/AboutUs.html" onclick="
        fetch('/Footer/AboutUs.html')
        .then(r => {
           if (r.ok) {
@@ -176,11 +259,10 @@
           window.location.href='/public/Footer/AboutUs.html';
        });
        return false;">
-       About Us
-    </a>
-           <!--Affiliate Disclosure-->
-    <a href="/Footer/AffiliateDisclosure.html"
-       onclick="
+               About Us
+            </a>
+            <!--Affiliate Disclosure-->
+            <a href="/Footer/AffiliateDisclosure.html" onclick="
        fetch('/Footer/AffiliateDisclosure.html')
        .then(r => {
           if (r.ok) {
@@ -193,10 +275,9 @@
           window.location.href='/public/Footer/AffiliateDisclosure.html';
        });
        return false;">
-       Affiliate Disclosure
-    </a>
-            <a href="/Footer/ImportantInformation.html"
-       onclick="
+               Affiliate Disclosure
+            </a>
+            <a href="/Footer/ImportantInformation.html" onclick="
        fetch('/Footer/ImportantInformation.html')
        .then(r => {
           if (r.ok) {
@@ -209,10 +290,9 @@
           window.location.href='/public/Footer/ImportantInformation.html';
        });
        return false;">
-       Important Info.
-    </a>
-           <a href="/Footer/Disclaimer.html"
-       onclick="
+               Important Info.
+            </a>
+            <a href="/Footer/Disclaimer.html" onclick="
        fetch('/Footer/Disclaimer.html')
        .then(r => {
           if (r.ok) {
@@ -225,14 +305,13 @@
           window.location.href='/public/Footer/Disclaimer.html';
        });
        return false;">
-       Disclaimer
-    </a>
-        </div>
+               Disclaimer
+            </a>
+         </div>
 
-        <div class="footer-box">
+         <div class="footer-box">
             <h3>Customer Service</h3>
-            <a href="/Footer/FAQ.html"
-       onclick="
+            <a href="/Footer/FAQ.html" onclick="
        fetch('/Footer/FAQ.html')
        .then(r => {
           if (r.ok) {
@@ -245,10 +324,9 @@
           window.location.href='/public/Footer/FAQ.html';
        });
        return false;">
-       FAQ
-    </a>
-           <a href="/Footer/Terms.html"
-       onclick="
+               FAQ
+            </a>
+            <a href="/Footer/Terms.html" onclick="
        fetch('/Footer/Terms.html')
        .then(r => {
           if (r.ok) {
@@ -261,10 +339,9 @@
           window.location.href='/public/Footer/Terms.html';
        });
        return false;">
-       Terms of Service
-    </a>
-            <a href="/Footer/ReturnPolicy.html"
-       onclick="
+               Terms of Service
+            </a>
+            <a href="/Footer/ReturnPolicy.html" onclick="
        fetch('/Footer/ReturnPolicy.html')
        .then(r => {
           if (r.ok) {
@@ -277,10 +354,9 @@
           window.location.href='/public/Footer/ReturnPolicy.html';
        });
        return false;">
-       Returns
-    </a>
-           <a href="/Footer/PrivacyPolicy.html"
-       onclick="
+               Returns
+            </a>
+            <a href="/Footer/PrivacyPolicy.html" onclick="
        fetch('/Footer/PrivacyPolicy.html')
        .then(r => {
           if (r.ok) {
@@ -293,10 +369,9 @@
           window.location.href='/public/Footer/PrivacyPolicy.html';
        });
        return false;">
-       Privacy Policy
-    </a>
-           <a href="/Footer/Contact.html"
-       onclick="
+               Privacy Policy
+            </a>
+            <a href="/Footer/Contact.html" onclick="
        fetch('/Footer/Contact.html')
        .then(r => {
           if (r.ok) {
@@ -309,24 +384,25 @@
           window.location.href='/public/Footer/Contact.html';
        });
        return false;">
-       Contact
-    </a>
+               Contact
+            </a>
 
-        </div>
+         </div>
 
-        <div class="footer-box">
+         <div class="footer-box">
             <h3>Contact Us</h3>
             <p>+91 82717 34883</p>
             <p>supportroophub@gmail.com</p>
             <p> Bihar, India</p>
-        </div>
-    </div>
+         </div>
+      </div>
 
-    <div class="footer-bottom">
-        <p>© 2026 Roopza. All Rights Reserved.</p>
-    </div>
+      <div class="footer-bottom">
+         <p>© 2026 Roopza. All Rights Reserved.</p>
+      </div>
 
-</footer>
- 
+   </footer>
+
 </body>
+
 </html>

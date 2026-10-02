@@ -21,13 +21,78 @@
         <div class="banner">
           <img src="/ShoesView/ShoesImg/ShoesBanner.jpeg" alt="Watch"  onerror="this.src='/public/ShoesView/ShoesImg/ShoesBanner.jpeg';" onclick="changeImage(this)">
         </div>
-        <nav class="navigation">
-            <a>Home</a>
-            <a class="shoes">Shoes</a>
-            <a>Beauty</a>
-            <a>Trending</a>
-            <a>Electronics</a>
-        </nav>
+       <nav class="navigation">
+      <!--home-->
+      <a href="/index.html" onclick="
+                    fetch('/index.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/index.html';
+                  } else {
+                     window.location.href='/public/index.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/index.html';
+            });
+               return false;" style="text-decoration:none; color:white">Home</a>
+      <!-- Shoes-->
+      <a class="shoes" href="/ShoesView/index.html" onclick="
+                    fetch('/ShoesView/index.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/ShoesView/index.html';
+                  } else {
+                     window.location.href='/public/ShoesView/index.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/ShoesView/index.html';
+            });
+               return false;" style="text-decoration:none; color:white">Shoes</a>
+      <!-- Beauty-->
+      <a href="/Beauty/index.html" onclick="
+                    fetch('/Beauty/index.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/Beauty/index.html';
+                  } else {
+                     window.location.href='/public/Beauty/index.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/Beauty/index.html';
+            });
+               return false;" style="text-decoration:none; color:white">Beauty</a>
+      <!-- Trending-->
+      <a  href="/Trending/index.html" onclick="
+                    fetch('/Trending/index.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/Trending/index.html';
+                  } else {
+                     window.location.href='/public/Trending/index.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/Trending/index.html';
+            });
+               return false;" style="text-decoration:none; color:white">Trending</a>
+      <!--Electronic-->
+      <a href="/Electronic/index.html" onclick="
+                    fetch('/Electronic/index.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/Electronic/index.html';
+                  } else {
+                     window.location.href='/public/Electronic/index.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/Electronic/index.html';
+            });
+               return false;" style="text-decoration:none; color:white">Electronics</a>
+   </nav>
 <h2 style="background-color:#fff3e0; color: #c62828; text-align: center;  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);"> We Sell The Best Shoes</h2>
         <!-- View all Product in the shoes section-->
       <div class="gridcontainer">
