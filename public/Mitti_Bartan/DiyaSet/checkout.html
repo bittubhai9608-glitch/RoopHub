@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mitti Ka Diya - Checkout</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f3f3f3;
+        }
+
+        .checkout-box {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.12);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .product {
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            background: #fafafa;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .product img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-info h2 {
+            margin: 5px 0 10px;
+            font-size: 20px;
+        }
+
+        .product-info p {
+            margin: 7px 0;
+        }
+
+        .minimum {
+            color: #d35400;
+            font-size: 14px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #25D366;
+        }
+
+        textarea {
+            height: 90px;
+            resize: vertical;
+        }
+
+        .total-box {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f7f7f7;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .order-btn {
+            width: 100%;
+            margin-top: 20px;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #25D366;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .order-btn:hover {
+            background: #1ebe5d;
+        }
+
+        @media (max-width: 500px) {
+
+            .checkout-box {
+                padding: 15px;
+            }
+
+            .product img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .product-info h2 {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="checkout-box">
+
+    <h1>Fill this form</h1>
+
+
+    <!-- PRODUCT -->
+
+    <div class="product">
+
+        <img
+            src="/public/Mitti_Bartan/DiyaSet/DiyaSetimg/diyasetimage1.jpeg"
+            alt="Mitti Ka Diya"
+        >
+
+        <div class="product-info">
+
+            <h2>Mitti Ka Diya</h2>
+
+            <p>
+                Price:
+                ₹<span id="productPrice">7</span>
+                / piece
+            </p>
+
+            <p class="minimum">
+                Minimum Order: 20 pieces
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- CUSTOMER FORM -->
+
+    <form id="orderForm">
+
+        <label for="name">
+            Full Name
+        </label>
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Apna naam likhen"
+            required
+        >
+
+
+        <label for="mobile">
+            Mobile Number
+        </label>
+
+        <input
+            type="tel"
+            id="mobile"
+            placeholder="10 digit mobile number"
+            maxlength="10"
+            inputmode="numeric"
+            required
+        >
+
+
+        <label for="quantity">
+            Quantity
+        </label>
+
+        <input
+            type="number"
+            id="quantity"
+            value="20"
+            min="20"
+            required
+        >
+
+        <p class="minimum">
+            Minimum 20 pieces order karna zaroori hai.
+        </p>
+
+
+        <label for="address">
+            Full Address
+        </label>
+
+        <textarea
+            id="address"
+            placeholder="House no., village, road, area..."
+            required
+        ></textarea>
+
+
+        <label for="pincode">
+            Pincode
+        </label>
+
+        <input
+            type="text"
+            id="pincode"
+            placeholder="6 digit pincode"
+            maxlength="6"
+            inputmode="numeric"
+            required
+        >
+
+
+        <!-- TOTAL -->
+
+        <div class="total-box">
+
+            Total Amount:
+            ₹<span id="totalAmount">100</span>
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="order-btn"
+        >
+            Order on WhatsApp
+        </button>
+
+    </form>
+
+</div>
+
+
+<!-- JavaScript file -->
+<script src="javascript.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>RoopHub Traditional Clay Diya</title>
+
+    <meta name="description"
+          content="Buy traditional handmade clay diya from RoopHub. Perfect for Diwali, Puja, festivals and home decoration.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        :root {
+            --primary-color: #ff6b6b;
+            --primary-dark: #ee5a5a;
+            --secondary-color: #4ecdc4;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --amazon-color: #ff9900;
+            --max-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: wheat;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+        }
+
+        .header-container {
+            max-width: var(--max-width);
+            margin: auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #e53935;
+        }
+
+        .logo span {
+            color: #111;
+        }
+
+        .logo .hub {
+            color: #e53935;
+        }
+
+        /* ================= PRODUCT MAIN ================= */
+
+        .product-main {
+            background: var(--white);
+            padding: 3rem 2rem;
+        }
+
+        .product-container {
+            max-width: var(--max-width);
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* ================= PRODUCT IMAGE ================= */
+
+        .product-image {
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            max-height: 550px;
+            object-fit: contain;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+        }
+
+        /* ================= THUMBNAILS ================= */
+
+        .thumbnail-box {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .thumbnail-box img {
+            width: 65px;
+            height: 65px;
+            object-fit: cover;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .thumbnail-box img:hover {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        /* ================= PRODUCT INFO ================= */
+
+        .product-info h1 {
+            font-size: 2.2rem;
+            line-height: 1.25;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .rating {
+            color: #f39c12;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .price-box {
+            margin: 15px 0;
+            padding: 15px;
+            background: #fff8e8;
+            border-radius: 10px;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #d35400;
+        }
+
+        .mrp {
+            margin-left: 10px;
+            color: #777;
+            text-decoration: line-through;
+        }
+
+        .discount {
+            display: inline-block;
+            margin-left: 10px;
+            color: #138a36;
+            font-weight: 700;
+        }
+
+        /* ================= DETAILS ================= */
+
+        .product-details {
+            margin-top: 20px;
+        }
+
+        .product-details h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .product-details ul {
+            padding-left: 20px;
+        }
+
+        .product-details li {
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+
+        /* ================= BUY BUTTON ================= */
+
+        .buy-button {
+            display: inline-block;
+            width: 100%;
+            margin-top: 20px;
+            padding: 15px 20px;
+            text-align: center;
+            border-radius: 8px;
+            background: var(--amazon-color);
+            color: #111;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .buy-button:hover {
+            background: #e68a00;
+            transform: translateY(-2px);
+        }
+
+        /* ================= SHARE ================= */
+
+        .share-section {
+            margin-top: 20px;
+        }
+
+        .share-section h3 {
+            margin-bottom: 10px;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .share-buttons a {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            color: white;
+            font-size: 18px;
+        }
+
+        .facebook {
+            background: #1877f2;
+        }
+
+        .whatsapp {
+            background: #25d366;
+        }
+
+        .twitter {
+            background: #111;
+        }
+
+        .email {
+            background: #777;
+        }
+
+        /* ================= CONTENT SECTION ================= */
+
+        .content-section {
+            max-width: var(--max-width);
+            margin: 30px auto;
+            padding: 35px 25px;
+            background: white;
+            border-radius: 12px;
+        }
+
+        .content-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .content-section p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .feature-list {
+            padding-left: 20px;
+        }
+
+        .feature-list li {
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+
+        /* ================= SPECIFICATIONS ================= */
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .spec-table th,
+        .spec-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .spec-table th {
+            background: #fafafa;
+        }
+
+        /* ================= YOU MIGHT LIKE ================= */
+
+        .related-section {
+            max-width: var(--max-width);
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .related-section h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .related-products {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .related-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            padding-bottom: 20px;
+        }
+
+        .related-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .related-card h3,
+        .related-card p {
+            padding: 0 15px;
+        }
+
+        .related-card h3 {
+            margin-top: 12px;
+        }
+
+        .related-card p {
+            color: var(--text-light);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: wheat;
+            margin-top: 40px;
+            padding: 40px 20px 20px;
+        }
+
+        .footer-container {
+            max-width: var(--max-width);
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .footer-box h3 {
+            margin-bottom: 15px;
+        }
+
+        .footer-box p,
+        .footer-box a {
+            color: #555;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #e53935;
+        }
+
+        .footer-logo span {
+            color: #111;
+        }
+
+        .footer-logo .hub {
+            color: #e53935;
+        }
+
+        .social-footer {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .social-footer a {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            color: #333;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(0,0,0,0.15);
+            margin-top: 30px;
+            padding-top: 20px;
+            color: #555;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 768px) {
+
+            .header-container {
+                padding: 0.8rem 1rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .product-main {
+                padding: 1.5rem 1rem;
+            }
+
+            .product-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .product-image img {
+                max-height: 450px;
+            }
+
+            .product-info h1 {
+                font-size: 1.8rem;
+            }
+
+            .price {
+                font-size: 1.7rem;
+            }
+
+            .related-products {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .product-info h1 {
+                font-size: 1.5rem;
+            }
+
+            .price {
+                font-size: 1.5rem;
+            }
+
+            .mrp,
+            .discount {
+                display: block;
+                margin-left: 0;
+                margin-top: 5px;
+            }
+
+            .thumbnail-box img {
+                width: 55px;
+                height: 55px;
+            }
+
+            .content-section {
+                margin: 15px 10px;
+                padding: 20px 15px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+    <div class="header-container">
+
+        <div class="logo">
+            <span style="color:red;">R</span><span>OOP</span><span class="hub">Hub</span>
+        </div>
+
+    </div>
+</header>
+
+
+<!-- ================= PRODUCT ================= -->
+
+<main class="product-main">
+
+    <div class="product-container">
+
+        <!-- PRODUCT IMAGE -->
+
+        <div class="product-image">
+
+            <img id="mainImage"
+                 src="/public/Mitti_Bartan/DiyaSet/DiyaSetimg/diyasetimage1.jpeg"
+                 alt="RoopHub Traditional Clay Diya">
+
+            <div class="thumbnail-box">
+
+                <img src="/public/Mitti_Bartan/DiyaSet/DiyaSetimg/diyasetimage1.jpeg"
+                     alt="Diya Image 1"
+                     onclick="changeImage(this)">
+
+                <img src="/public/Mitti_Bartan/DiyaSet/DiyaSetimg/diyasetimage1.jpeg"
+                     alt="Diya Image 2"
+                     onclick="changeImage(this)">
+
+                <img src="/public/Mitti_Bartan/DiyaSet/DiyaSetimg/diyasetimage1.jpeg"
+                     alt="Diya Image 3"
+                     onclick="changeImage(this)">
+
+                <img src="/public/Mitti_Bartan/DiyaSet/DiyaSetimg/diyasetimage1.jpeg"
+                     alt="Diya Image 4"
+                     onclick="changeImage(this)">
+
+                <img src="/public/Mitti_Bartan/DiyaSet/DiyaSetimg/diyasetimage1.jpeg"
+                     alt="Diya Image 5"
+                     onclick="changeImage(this)">
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT INFORMATION -->
+
+        <div class="product-info">
+
+            <h1>
+                RoopHub Traditional Handmade Clay Diya
+            </h1>
+
+            <div class="rating">
+                ★★★★★
+                <span style="color:#555;">
+                    4.8/5
+                </span>
+            </div>
+
+
+            <div class="price-box">
+
+                <span class="price">
+                    ₹299
+                </span>
+
+                <span class="mrp">
+                    MRP ₹499
+                </span>
+
+                <span class="discount">
+                    40% OFF
+                </span>
+
+            </div>
+
+
+            <div class="product-details">
+
+                <h3>Product Details</h3>
+
+                <ul>
+
+                    <li>
+                        Brand: <strong>RoopHub</strong>
+                    </li>
+
+                    <li>
+                        Product Type: Traditional Clay Diya
+                    </li>
+
+                    <li>
+                        Material: Natural Clay / Terracotta
+                    </li>
+
+                    <li>
+                        Handmade traditional design
+                    </li>
+
+                    <li>
+                        Suitable for Puja, Diwali and festivals
+                    </li>
+
+                    <li>
+                        Ideal for home decoration
+                    </li>
+
+                    <li>
+                        Pack Size: Please check selected product pack
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- BUY BUTTON -->
+
+            <a href="/public/Mitti_Bartan/DiyaSet/checkout.html"
+               class="buy-button"
+               target="_blank"
+               rel="noopener">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+                Buy Now
+
+            </a>
+
+
+            <!-- SHARE -->
+
+            <div class="share-section">
+
+                <h3>Share This Product</h3>
+
+                <div class="share-buttons">
+
+                    <a class="facebook"
+                       href="#"
+                       target="_blank"
+                       aria-label="Share on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a class="whatsapp"
+                       href="#"
+                       target="_blank"
+                       aria-label="Share on WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+
+                    <a class="twitter"
+                       href="#"
+                       target="_blank"
+                       aria-label="Share on X">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+
+                    <a class="email"
+                       href="#"
+                       aria-label="Share by Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- ================= ABOUT PRODUCT ================= -->
+
+<section class="content-section">
+
+    <h2>About This Product</h2>
+
+    <p>
+        RoopHub Traditional Clay Diya is designed for traditional
+        Indian celebrations, Puja, Diwali and home decoration.
+        The diya gives your home a warm and traditional festive look.
+    </p>
+
+    <p>
+        Made from clay, this traditional diya is suitable for
+        decorating Puja spaces, entrances, balconies, temples and
+        festive corners of your home.
+    </p>
+
+    <p>
+        Bring a traditional Indian touch to your celebrations with
+        RoopHub clay diyas.
+    </p>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="content-section">
+
+    <h2>Key Features</h2>
+
+    <ul class="feature-list">
+
+        <li>Traditional handmade clay design</li>
+
+        <li>Suitable for Diwali and festivals</li>
+
+        <li>Perfect for Puja and religious occasions</li>
+
+        <li>Ideal for home decoration</li>
+
+        <li>Natural clay material</li>
+
+        <li>Traditional Indian look</li>
+
+        <li>Suitable for gifting and festive decoration</li>
+
+    </ul>
+
+</section>
+
+
+<!-- ================= SPECIFICATIONS ================= -->
+
+<section class="content-section">
+
+    <h2>Product Specifications</h2>
+
+    <table class="spec-table">
+
+        <tr>
+            <th>Brand</th>
+            <td>RoopHub</td>
+        </tr>
+
+        <tr>
+            <th>Product Name</th>
+            <td>Traditional Clay Diya</td>
+        </tr>
+
+        <tr>
+            <th>Material</th>
+            <td>Clay / Terracotta</td>
+        </tr>
+
+        <tr>
+            <th>Color</th>
+            <td>Natural Clay</td>
+        </tr>
+
+        <tr>
+            <th>Usage</th>
+            <td>Puja, Diwali, Festival & Decoration</td>
+        </tr>
+
+        <tr>
+            <th>Country of Origin</th>
+            <td>India</td>
+        </tr>
+
+    </table>
+
+</section>
+
+
+<!-- ================= YOU MIGHT LIKE ================= -->
+<!--
+<section class="related-section">
+
+    <h2>You Might Like</h2>
+
+    <div class="related-products">
+
+        <div class="related-card">
+
+            <img src="Images/Diya/Diya2.jpeg"
+                 alt="RoopHub Clay Diya">
+
+            <h3>RoopHub Decorative Clay Diya</h3>
+
+            <p>
+                Traditional clay diya suitable for Puja,
+                Diwali and festive decoration.
+            </p>
+
+        </div>
+
+
+        <div class="related-card">
+
+            <img src="Images/Diya/Diya3.jpeg"
+                 alt="RoopHub Traditional Diya">
+
+            <h3>RoopHub Traditional Diya Set</h3>
+
+            <p>
+                Simple traditional design for festive
+                decoration and special occasions.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+-->
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+
+            <div class="footer-logo">
+                <span style="color:red;">R</span><span>OOP</span><span class="hub">Hub</span>
+            </div>
+
+            <p>
+                RoopHub brings useful products and
+                traditional products for everyday needs,
+                festivals and special occasions.
+            </p>
+
+        </div>
+
+
+        <div class="footer-box">
+
+            <h3>Quick Links</h3>
+
+            <a href="/">Home</a>
+
+            <a href="#">About Us</a>
+
+            <a href="#">Contact</a>
+
+            <a href="#">FAQ</a>
+
+        </div>
+
+
+        <div class="footer-box">
+
+            <h3>Customer Service</h3>
+
+            <a href="#">Privacy Policy</a>
+
+            <a href="#">Terms & Conditions</a>
+
+            <a href="#">Disclaimer</a>
+
+            <a href="#">Important Info</a>
+
+        </div>
+
+
+        <div class="footer-box">
+
+            <h3>Connect With Us</h3>
+
+            <p>
+                Email: bittupandit96081@email.com
+            </p>
+
+            <div class="social-footer">
+
+                <a href="#" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="#" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+
+                <a href="#" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 RoopHub Official. All rights reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    function changeImage(img) {
+
+        const mainImage = document.getElementById("mainImage");
+
+        mainImage.src = img.src;
+
+    }
+
+
+    // Share product
+
+    const productUrl = encodeURIComponent(window.location.href);
+    const productTitle = encodeURIComponent(
+        "RoopHub Traditional Handmade Clay Diya"
+    );
+
+
+    document.querySelector(".facebook").href =
+        "https://www.facebook.com/sharer/sharer.php?u=" + productUrl;
+
+
+    document.querySelector(".whatsapp").href =
+        "https://wa.me/?text=" +
+        productTitle +
+        "%20" +
+        productUrl;
+
+
+    document.querySelector(".twitter").href =
+        "https://twitter.com/intent/tweet?text=" +
+        productTitle +
+        "&url=" +
+        productUrl;
+
+
+    document.querySelector(".email").href =
+        "mailto:?subject=" +
+        productTitle +
+        "&body=" +
+        productUrl;
+
+</script>
+
+</body>
+</html>
