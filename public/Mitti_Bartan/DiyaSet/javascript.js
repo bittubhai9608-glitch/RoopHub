@@ -4,8 +4,7 @@
 
 
 // PRODUCT PRICE
-const productPrice = 7; // ₹7 per piece
-const discountPrice = 5; // ₹5 per piece
+const productPrice = 4; // ₹4 per piece
 
 
 // YOUR WHATSAPP NUMBER
@@ -55,12 +54,12 @@ const totalAmount =
 function updateTotal() {
 
     let quantity =
-        parseInt(quantityInput.value) || 20;
+        parseInt(quantityInput.value) || 30;
 
 
-    // Minimum quantity 20
-    if (quantity < 20) {
-        quantity = 20;
+    // Minimum quantity 30
+    if (quantity < 30) {
+        quantity = 30;
     }
 
 
@@ -138,10 +137,10 @@ orderForm.addEventListener(
         // QUANTITY VALIDATION
         // ==================================
 
-        if (quantity < 20) {
+        if (quantity < 30) {
 
             alert(
-                "Minimum order 20 pieces hai."
+                "Minimum order 30 pieces hai."
             );
 
             quantityInput.focus();

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +26,7 @@
             background: white;
             padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.12);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.12);
         }
 
         h1 {
@@ -140,135 +141,105 @@
 
 <body>
 
-<div class="checkout-box">
+    <div class="checkout-box">
 
-    <h1>Fill this form</h1>
+        <h1>Fill this form</h1>
 
 
-    <!-- PRODUCT -->
+        <!-- PRODUCT -->
 
-    <div class="product">
+        <div class="product">
+            <img src="/Mitti_Bartan/DiyaSet/DiyaSetimg/DeepakThree.jpeg" alt="RoopHub Traditional Clay Diya"
+                onerror="this.src='/public/Mitti_Bartan/DiyaSet/DiyaSetimg/DeepakThree.jpeg';"
+                onclick="changeImage(this)">
 
-        <img
-            src="/public/Mitti_Bartan/DiyaSet/DiyaSetimg/diyasetimage1.jpeg"
-            alt="Mitti Ka Diya"
-        >
+            <div class="product-info">
 
-        <div class="product-info">
-
-            <h2>Mitti Ka Diya</h2>
-
+                <h2>Mitti Ka Diya</h2>
+                <!-- 
             <p>
                 Price:
                 ₹<span id="productPrice">7</span>
                 / piece
             </p>
+             -->
 
-            <p class="minimum">
-                Minimum Order: 20 pieces
-            </p>
+                <p class="minimum">
+                    Minimum Order: 30 pieces
+                </p>
+
+
+            </div>
 
         </div>
+
+
+        <!-- CUSTOMER FORM -->
+
+        <form id="orderForm">
+
+            <label for="name">
+                Full Name
+            </label>
+
+            <input type="text" id="name" placeholder="Enter your full name" required>
+
+
+            <label for="mobile">
+                Mobile Number
+            </label>
+
+            <input type="tel" id="mobile" placeholder="10 digit mobile number" maxlength="10" inputmode="numeric"
+                required>
+
+
+            <label for="quantity">
+                Quantity
+            </label>
+
+            <input type="number" id="quantity" value="30" min="30" required>
+
+            <p class="minimum">
+                Minimum 30 pieces order karna zaroori hai.
+            </p>
+
+
+            <label for="address">
+                Full Address
+            </label>
+
+            <textarea id="address" placeholder="House no., village, road, area..." required></textarea>
+
+
+            <label for="pincode">
+                Pincode
+            </label>
+
+            <input type="text" id="pincode" placeholder="6 digit pincode" maxlength="6" inputmode="numeric" required>
+
+
+            <!-- TOTAL -->
+
+            <div class="total-box">
+
+                Total Amount:
+                ₹<span id="totalAmount">100</span>
+
+            </div>
+
+
+            <button type="submit" class="order-btn">
+                Order on WhatsApp
+            </button>
+
+        </form>
 
     </div>
 
 
-    <!-- CUSTOMER FORM -->
-
-    <form id="orderForm">
-
-        <label for="name">
-            Full Name
-        </label>
-
-        <input
-            type="text"
-            id="name"
-            placeholder="Apna naam likhen"
-            required
-        >
-
-
-        <label for="mobile">
-            Mobile Number
-        </label>
-
-        <input
-            type="tel"
-            id="mobile"
-            placeholder="10 digit mobile number"
-            maxlength="10"
-            inputmode="numeric"
-            required
-        >
-
-
-        <label for="quantity">
-            Quantity
-        </label>
-
-        <input
-            type="number"
-            id="quantity"
-            value="20"
-            min="20"
-            required
-        >
-
-        <p class="minimum">
-            Minimum 20 pieces order karna zaroori hai.
-        </p>
-
-
-        <label for="address">
-            Full Address
-        </label>
-
-        <textarea
-            id="address"
-            placeholder="House no., village, road, area..."
-            required
-        ></textarea>
-
-
-        <label for="pincode">
-            Pincode
-        </label>
-
-        <input
-            type="text"
-            id="pincode"
-            placeholder="6 digit pincode"
-            maxlength="6"
-            inputmode="numeric"
-            required
-        >
-
-
-        <!-- TOTAL -->
-
-        <div class="total-box">
-
-            Total Amount:
-            ₹<span id="totalAmount">100</span>
-
-        </div>
-
-
-        <button
-            type="submit"
-            class="order-btn"
-        >
-            Order on WhatsApp
-        </button>
-
-    </form>
-
-</div>
-
-
-<!-- JavaScript file -->
-<script src="javascript.js"></script>
+    <!-- JavaScript file -->
+    <script src="javascript.js"></script>
 
 </body>
+
 </html>
