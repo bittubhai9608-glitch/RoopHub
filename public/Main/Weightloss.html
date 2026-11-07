@@ -13,6 +13,7 @@
       crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../footer.css">
 </head>
 <body>
     <!-- Sticky Navbar -->
@@ -275,64 +276,235 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer" id="contact">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <div class="footer-logo">
-                        <img src="logoneuro.jpeg" alt="NeuroSerge Logo">
-                        <span>NeuroSerge</span>
-                    </div>
-                    <p class="footer-description">AI-powered affiliate marketplace bringing you the best health and wellness products recommended by artificial intelligence.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#categories">Categories</a></li>
-                        <li><a href="index.html#products">Products</a></li>
-                        <li><a href="index.html#videos">Videos</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Categories</h4>
-                    <ul>
-                        <li><a href="menhealth.html">Men Health</a></li>
-                        <li><a href="weightloss.html">Weight Loss</a></li>
-                        <li><a href="brainboss.html">Brain Boost</a></li>
-                        <li><a href="skincare.html">Skincare</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
-                </div>
-                <div class="footer-newsletter">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe to get AI-powered product recommendations and exclusive offers.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email">
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
+    <footer class="rh-footer">
+      <div class="container">
+         <div class="footer-container rh-footer-grid">
+            <div class="footer-section">
+               <h2 class="rh-footer-brand">
+                  <img src="../BannerImages/RoopHubFavicon.ico" alt="RoopHub logo">
+                  <span><span class="rh-brand-roop">ROOP</span><span class="rh-brand-hub">HUB</span></span>
+               </h2>
+               <p class="rh-footer-description">RoopHub is a trusted online marketplace offering quality products through affiliate partnerships and
+                  e-commerce. Our mission is to provide authentic products, competitive prices, and a reliable shopping
+                  experience across multiple categories.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 NeuroSerge. All rights reserved. | AI Affiliate Marketplace</p>
+            <div class="footer-section">
+               <h3>Quick Links</h3>
+               <ul class="footer-links">
+                  <!-- Home -->
+                  <li><a href="/index.html" onclick="
+                                       fetch('/index.html')
+                                        .then(r => {
+                                     if (r.ok) {
+                                         window.location.href='/index.html';
+                                          } else {
+                                          window.location.href='/public/index.html';
+                                           }
+                                         })
+                                        .catch(() => {
+                window.location.href='/public/index.html';
+            });
+        return false;"> Home
+                     </a></li>
+                  <!-- About -->
+                  <li><a href="/Footer/AboutUs.html" onclick="
+       fetch('/Footer/AboutUs.html')
+       .then(r => {
+          if (r.ok) {
+             window.location.href='/Footer/AboutUs.html';
+          } else {
+             window.location.href='/public/Footer/AboutUs.html';
+          }
+       })
+       .catch(() => {
+          window.location.href='/public/Footer/AboutUs.html';
+       });
+       return false;">
+                        About
+                     </a></li>
+                  <!--Affiliate Disclosure-->
+                  <li><a href="/Footer/AffiliateDisclosure.html" onclick="
+       fetch('/Footer/AffiliateDisclosure.html')
+       .then(r => {
+          if (r.ok) {
+             window.location.href='/Footer/AffiliateDisclosure.html';
+          } else {
+             window.location.href='/public/Footer/AffiliateDisclosure.html';
+          }
+       })
+       .catch(() => {
+          window.location.href='/public/Footer/AffiliateDisclosure.html';
+       });
+       return false;">
+                        Affiliate Disclosure
+                     </a></li>
+                  <!--Privacy Policy-->
+                  <li><a href="/Footer/PrivacyPolicy.html" onclick="
+       fetch('/Footer/PrivacyPolicy.html')
+       .then(r => {
+          if (r.ok) {
+             window.location.href='/Footer/PrivacyPolicy.html';
+          } else {
+             window.location.href='/public/Footer/PrivacyPolicy.html';
+          }
+       })
+       .catch(() => {
+          window.location.href='/public/Footer/PrivacyPolicy.html';
+       });
+       return false;">
+                        Privacy Policy
+                     </a></li>
+                  <!--Terms of Service-->
+                  <li><a href="/Footer/Terms.html" onclick="
+       fetch('/Footer/Terms.html')
+       .then(r => {
+          if (r.ok) {
+             window.location.href='/Footer/Terms.html';
+          } else {
+             window.location.href='/public/Footer/Terms.html';
+          }
+       })
+       .catch(() => {
+          window.location.href='/public/Footer/Terms.html';
+       });
+       return false;">
+                        Terms of Service
+                     </a></li>
+                  <!--Disclaimer-->
+                  <li><a href="/Footer/Disclaimer.html" onclick="
+       fetch('/Footer/Disclaimer.html')
+       .then(r => {
+          if (r.ok) {
+             window.location.href='/Footer/Disclaimer.html';
+          } else {
+             window.location.href='/public/Footer/Disclaimer.html';
+          }
+       })
+       .catch(() => {
+          window.location.href='/public/Footer/Disclaimer.html';
+       });
+       return false;">
+                        Disclaimer
+                     </a></li>
+               </ul>
             </div>
-        </div>
-    </footer>
+            <!--Customer Service-->
+            <div class="footer-section">
+               <h3>Customer Service</h3>
+               <!--FAQ-->
+               <ul class="footer-links">
+                  <li><a href="/Footer/FAQ.html" onclick="
+       fetch('/Footer/FAQ.html')
+       .then(r => {
+          if (r.ok) {
+             window.location.href='/Footer/FAQ.html';
+          } else {
+             window.location.href='/public/Footer/FAQ.html';
+          }
+       })
+       .catch(() => {
+          window.location.href='/public/Footer/FAQ.html';
+       });
+       return false;">
+                        FAQ
+                     </a></li>
+                  <!--Terms of Service-->
+                  <li>
+                     <a href="/Footer/Terms.html" onclick="
+       fetch('/Footer/Terms.html')
+       .then(r => {
+          if (r.ok) {
+             window.location.href='/Footer/Terms.html';
+          } else {
+             window.location.href='/public/Footer/Terms.html';
+          }
+       })
+       .catch(() => {
+          window.location.href='/public/Footer/Terms.html';
+       });
+       return false;">
+                        Terms of Service
+                     </a>
+                  </li>
+                  <!--Contact-->
+                  <li>
+                     <a href="/Footer/Contact.html" onclick="
+       fetch('/Footer/Contact.html')
+       .then(r => {
+          if (r.ok) {
+             window.location.href='/Footer/Contact.html';
+          } else {
+             window.location.href='/public/Footer/Contact.html';
+          }
+       })
+       .catch(() => {
+          window.location.href='/public/Footer/Contact.html';
+       });
+       return false;">
+                        Contact
+                     </a>
+                  </li>
+                  <!--Return Policy-->
+                  <li>
+                     <a href="/Footer/ReturnPolicy.html" onclick="
+       fetch('/Footer/ReturnPolicy.html')
+       .then(r => {
+          if (r.ok) {
+             window.location.href='/Footer/ReturnPolicy.html';
+          } else {
+             window.location.href='/public/Footer/ReturnPolicy.html';
+          }
+       })
+       .catch(() => {
+          window.location.href='/public/Footer/ReturnPolicy.html';
+       });
+       return false;">
+                        Returns
+                     </a>
+                  </li>
+                  <!--Important Information-->
+                  <li>
+                     <a href="/Footer/ImportantInformation.html" onclick="
+       fetch('/Footer/ImportantInformation.html')
+       .then(r => {
+          if (r.ok) {
+             window.location.href='/Footer/ImportantInformation.html';
+          } else {
+             window.location.href='/public/Footer/ImportantInformation.html';
+          }
+       })
+       .catch(() => {
+          window.location.href='/public/Footer/ImportantInformation.html';
+       });
+       return false;">
+                        Important Info.
+                     </a>
+                  </li>
+               </ul>
+            </div>
+
+            <div class="footer-section">
+               <h3>Connect With Us</h3>
+               <div class="footer-social">
+                  <a href="https://www.facebook.com/share/1CscBUE9Rt/" class="facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                  <a href="https://whatsapp.com/channel/0029Vb7Y2ft3QxS4drpeQV02" class="whatsapp"><i
+                        class="fab fa-whatsapp"></i></a>
+                  <a href="https://x.com/bittu_kumar6648" class="twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="https://youtube.com/@roophub-official?si=046j31dkX4Bt_YPH" class="youtube"><i
+                        class="fab fa-youtube"></i></a>
+                  <a href="https://t.me/+ZR9K2Jxi3-Y1Y2U1" class="telegram"><i class="fab fa-telegram"></i></a>
+               </div>
+            </div>
+         </div>
+
+
+         <!-- Footer Bottom -->
+         <div class="footer-bottom">
+            <p>&copy; 2026 ROOPHUB. All rights reserved.</p>
+         </div>
+      </div>
+   </footer>
 
     <!-- Scroll to Top Button -->
     <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">

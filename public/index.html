@@ -20,7 +20,212 @@
          background-color: #28a745;
          /* Example green color */
       }
+
+      .products-container .product-card button {
+         display: none !important;
+      }
+
+      .rh-footer {
+         padding: 3.5rem 1.5rem 1.25rem;
+         color: #1f2937;
+         background:
+            radial-gradient(ellipse at 12% 0%, rgba(217, 16, 10, 0.08), transparent 42%),
+            linear-gradient(135deg, #fffafa 0%, #f3f5f8 100%);
+         border-top: 3px solid #d9100a;
+      }
+
+      .rh-footer > .container {
+         max-width: 1200px;
+         padding: 0;
+      }
+
+      .rh-footer .rh-footer-grid {
+         display: grid;
+         grid-template-columns: minmax(240px, 1.5fr) repeat(3, minmax(150px, 1fr));
+         gap: 2.5rem;
+      }
+
+      .rh-footer .rh-footer-brand {
+         display: flex;
+         align-items: center;
+         gap: 0.8rem;
+         margin: 0 0 1rem;
+         font-family: Arial, sans-serif;
+         font-size: clamp(1.65rem, 3vw, 2.15rem);
+         font-weight: 900;
+         letter-spacing: 1.5px;
+         line-height: 1;
+      }
+
+      .rh-footer .rh-footer-brand img {
+         width: 52px;
+         height: 52px;
+         flex: 0 0 52px;
+         object-fit: cover;
+         border: 2px solid rgba(31, 41, 55, 0.1);
+         border-radius: 14px;
+         background: #fff;
+      }
+
+      .rh-footer .rh-footer-brand .rh-brand-roop {
+         color: #d9100a;
+      }
+
+      .rh-footer .rh-footer-brand .rh-brand-hub {
+         color: #111827;
+      }
+
+      .rh-footer .rh-footer-description {
+         max-width: 390px;
+         color: #4b5563;
+         font-size: 0.92rem;
+         line-height: 1.8;
+      }
+
+      .rh-footer .footer-section h3 {
+         position: relative;
+         display: inline-block;
+         margin: 0 0 1.1rem;
+         padding-bottom: 0.55rem;
+         color: #111827;
+         font-size: 1.05rem;
+         font-weight: 700;
+      }
+
+      .rh-footer .footer-section h3::after {
+         position: absolute;
+         right: 0;
+         bottom: 0;
+         left: 0;
+         height: 2px;
+         border-radius: 2px;
+         background: #e3221b;
+         content: "";
+      }
+
+      .rh-footer .footer-links {
+         display: grid;
+         gap: 0.65rem;
+      }
+
+      .rh-footer .footer-links a {
+         display: inline-block;
+         color: #4b5563;
+         font-size: 0.9rem;
+         line-height: 1.5;
+         opacity: 1;
+         transition: color 0.2s ease, transform 0.2s ease;
+      }
+
+      .rh-footer .footer-links a:hover,
+      .rh-footer .footer-links a:focus-visible {
+         color: #ff514b;
+         transform: translateX(3px);
+      }
+
+      .rh-footer .footer-social {
+         flex-wrap: wrap;
+         gap: 0.65rem;
+      }
+
+      .rh-footer .footer-social a {
+         width: 42px;
+         height: 42px;
+         border: 1px solid rgba(31, 41, 55, 0.12);
+      }
+
+      .rh-footer .footer-social a:focus-visible,
+      .rh-footer .footer-links a:focus-visible {
+         outline: 2px solid #ff514b;
+         outline-offset: 3px;
+      }
+
+      .rh-footer .footer-bottom {
+         margin-top: 2.5rem;
+         padding-top: 1.15rem;
+         border-color: rgba(31, 41, 55, 0.14);
+         color: #6b7280;
+         font-size: 0.85rem;
+      }
+
+      .rh-footer .footer-bottom p {
+         margin: 0;
+      }
+
+      @media (max-width: 900px) {
+         .rh-footer .rh-footer-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 2rem;
+         }
+      }
+
+      @media (max-width: 560px) {
+         .rh-footer {
+            padding: 1.5rem 1rem 0.75rem;
+         }
+
+         .rh-footer .rh-footer-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.15rem 0.85rem;
+         }
+
+         .rh-footer .footer-section:first-child,
+         .rh-footer .footer-section:last-child {
+            grid-column: 1 / -1;
+         }
+
+         .rh-footer .footer-section:first-child {
+            text-align: center;
+         }
+
+         .rh-footer .rh-footer-brand {
+            justify-content: center;
+            margin-bottom: 0.6rem;
+            font-size: 1.55rem;
+         }
+
+         .rh-footer .rh-footer-brand img {
+            width: 42px;
+            height: 42px;
+            flex-basis: 42px;
+         }
+
+         .rh-footer .rh-footer-description {
+            margin: 0 auto;
+            font-size: 0.84rem;
+            line-height: 1.55;
+         }
+
+         .rh-footer .footer-section:not(:first-child) {
+            text-align: center;
+         }
+
+         .rh-footer .footer-section h3 {
+            margin-bottom: 0.65rem;
+            font-size: 0.95rem;
+         }
+
+         .rh-footer .footer-links {
+            justify-items: center;
+            gap: 0.4rem;
+         }
+
+         .rh-footer .footer-links a {
+            font-size: 0.82rem;
+         }
+
+         .rh-footer .footer-social {
+            justify-content: center;
+         }
+
+         .rh-footer .footer-bottom {
+            margin-top: 1.15rem;
+            padding-top: 0.75rem;
+            font-size: 0.78rem;
+         }
+      }
    </style>
+<link rel="stylesheet" href="footer.css">
 </head>
 
 <body>
@@ -231,7 +436,7 @@
     width: 100%;
     height: 115px;
 
-    object-fit: cover;
+    object-fit: contain;
 
     background: #f7f7f7;
 }
@@ -406,9 +611,6 @@
          sorry.</div>
       <!-- Home product-->
       <section class="product-section" id="healthcare-products">
-         <h1
-            style="color: #d3093c; text-align: center; height: 40px; width: 100%; background-color: rgb(228, 228, 228); padding: 0%;">
-            Home</h1>
          <!-- Product Card (All Product) -->
          <div class="products-grid" style="size: 100%;"> 
             <!--Product Card 22 Name: Brand : Kraasa   shoes-->
@@ -1263,17 +1465,20 @@
    </section>
    </div>
    <!-- Footer -->
-   <footer>
+   <footer class="rh-footer">
       <div class="container">
-         <div class="footer-container">
+         <div class="footer-container rh-footer-grid">
             <div class="footer-section">
-               <h3 style="color: rgb(189, 16, 16);">ROOP<span style="color: rgb(10, 4, 4)">HUb</span></h3>
-               <p>ROOPHub is a trusted online marketplace offering quality products through affiliate partnerships and
+               <h2 class="rh-footer-brand">
+                  <img src="BannerImages/RoopHubFavicon.ico" alt="RoopHub logo">
+                  <span><span class="rh-brand-roop">ROOP</span><span class="rh-brand-hub">HUB</span></span>
+               </h2>
+               <p class="rh-footer-description">RoopHub is a trusted online marketplace offering quality products through affiliate partnerships and
                   e-commerce. Our mission is to provide authentic products, competitive prices, and a reliable shopping
                   experience across multiple categories.</p>
             </div>
             <div class="footer-section">
-               <h3 style="color: rgb(203, 42, 42);">Quick Links</h3>
+               <h3>Quick Links</h3>
                <ul class="footer-links">
                   <!-- Home -->
                   <li><a href="/index.html" onclick="
@@ -1374,7 +1579,7 @@
             </div>
             <!--Customer Service-->
             <div class="footer-section">
-               <h3 style="color: rgb(203, 42, 42);">Customer Service</h3>
+               <h3>Customer Service</h3>
                <!--FAQ-->
                <ul class="footer-links">
                   <li><a href="/Footer/FAQ.html" onclick="
@@ -1468,7 +1673,7 @@
             </div>
 
             <div class="footer-section">
-               <h3 style="color: rgb(203, 42, 42);">Connect With Us</h3>
+               <h3>Connect With Us</h3>
                <div class="footer-social">
                   <a href="https://www.facebook.com/share/1CscBUE9Rt/" class="facebook"><i
                         class="fab fa-facebook-f"></i></a>
@@ -1485,7 +1690,7 @@
 
          <!-- Footer Bottom -->
          <div class="footer-bottom">
-            <p>&copy; 2026 ROOPHUb. All rights reserved.</p>
+            <p>&copy; 2026 ROOPHUB. All rights reserved.</p>
          </div>
       </div>
    </footer>
