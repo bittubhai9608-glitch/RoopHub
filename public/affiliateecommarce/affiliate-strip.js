@@ -1,6 +1,6 @@
 (() => {
   const scriptUrl = document.currentScript?.src;
-  if (!scriptUrl || document.querySelector(".affiliate-platform-strip")) {
+  if (!scriptUrl) {
     return;
   }
 
@@ -19,7 +19,7 @@
       align-items: center;
       gap: 8px;
       width: max-content;
-      color: inherit;
+      color: #000;
       font-family: Arial, sans-serif;
       font-size: 48px;
       font-weight: 900;
@@ -37,22 +37,31 @@
     }
     .roophub-site-brand__roop { color: #d9100a; }
     .roophub-site-brand__hub { color: #000; }
-    .roophub-site-brand-heading {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 0;
-    }
-    header.roophub-site-header {
-      position: sticky;
+    .roophub-site-header {
+      position: fixed !important;
       top: 0;
+      right: 0;
+      left: 0;
       z-index: 1000;
+      display: block;
+      height: 75px !important;
+      padding: 10px 0 !important;
+      background: rgba(255, 255, 255, 0.95) !important;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+      backdrop-filter: blur(20px) !important;
+    }
+    .roophub-site-header__container {
       display: flex;
-      min-height: 75px;
+      width: 100%;
+      max-width: 1200px;
+      height: 100%;
       align-items: center;
-      padding: 10px 24px;
-      background: #fff;
-      box-shadow: 0 2px 10px rgb(0 0 0 / 10%);
+      justify-content: space-between;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    body.roophub-header-page {
+      padding-top: 75px !important;
     }
     select.roophub-menu-toggle {
       position: fixed !important;
@@ -153,7 +162,9 @@
       to { transform: translateX(-25%); }
     }
     @media (max-width: 600px) {
-      .roophub-site-brand { font-size: 1.2rem; }
+      .roophub-site-header__container { padding: 0 16px; }
+      .roophub-site-brand { font-size: clamp(1.7rem, 7vw, 2.5rem); }
+      .roophub-site-brand img { width: 36px; height: 34px; }
       .affiliate-platform-strip { padding: 22px 0 20px; }
       .affiliate-platform-strip__logo {
         width: 72px;
@@ -169,87 +180,74 @@
   `;
   document.head.append(style);
 
-  document.querySelectorAll("select").forEach((menu) => {
-    const firstOption = menu.options[0]?.textContent.trim();
-    if (firstOption === "≡" || firstOption === "☰" || firstOption === "☷") {
-      menu.classList.add("roophub-menu-toggle");
-      menu.setAttribute("aria-label", "Open navigation menu");
+  const existingHeader = document.querySelector("#navbar, header, nav.navbar");
+  const header = existingHeader ?? document.createElement("header");
+  header.className = "roophub-site-header";
+  header.removeAttribute("style");
+
+  const container = document.createElement("div");
+  container.className = "roophub-site-header__container";
+
+  const brand = document.createElement("a");
+  brand.className = "roophub-site-brand";
+  brand.href = "/index.html";
+  brand.setAttribute("aria-label", "RoopHub home");
+
+  const logo = document.createElement("img");
+  logo.src = new URL("../BannerImages/RoopHubFavicon.ico", scriptUrl).href;
+  logo.alt = "RoopHub logo";
+
+  const wordmark = document.createElement("span");
+  const roop = document.createElement("span");
+  roop.className = "roophub-site-brand__roop";
+  roop.textContent = "ROOP";
+  const hub = document.createElement("span");
+  hub.className = "roophub-site-brand__hub";
+  hub.textContent = "HUB";
+  wordmark.append(roop, hub);
+  brand.append(logo, wordmark);
+
+  const menu = document.createElement("select");
+  menu.className = "roophub-menu-toggle";
+  menu.setAttribute("aria-label", "Open navigation menu");
+
+  const options = [
+    ["≡", ""],
+    ["Home", "/index.html"],
+    ["Shoes", "/ShoesView/index.html"],
+    ["Beauty", "/Beauty/index.html"],
+    ["Trending", "/Trending/index.html"],
+    ["Electronic", "/Electronic/index.html"],
+    ["Contact", "/Footer/Contact.html"],
+  ];
+
+  for (const [label, value] of options) {
+    const option = document.createElement("option");
+    option.textContent = label;
+    option.value = value;
+    menu.append(option);
+  }
+
+  menu.addEventListener("change", () => {
+    if (menu.value) {
+      window.location.href = menu.value;
     }
   });
 
-  if (!document.querySelector(".nav-logo, .roophub-site-brand")) {
-    const header = document.querySelector("header");
-    const brand = document.createElement("a");
-    brand.className = "roophub-site-brand";
-    brand.href = "/index.html";
-    brand.setAttribute("aria-label", "RoopHub home");
-
-    const logo = document.createElement("img");
-    logo.src = new URL("../BannerImages/RoopHubFavicon.ico", scriptUrl).href;
-    logo.alt = "RoopHub logo";
-
-    const wordmark = document.createElement("span");
-    const roop = document.createElement("span");
-    roop.className = "roophub-site-brand__roop";
-    roop.textContent = "ROOP";
-    const hub = document.createElement("span");
-    hub.className = "roophub-site-brand__hub";
-    hub.textContent = "HUB";
-    wordmark.append(roop, hub);
-    brand.append(logo, wordmark);
-
-    const brandHeading = header
-      ? [...header.querySelectorAll("h1, h2")].find((heading) => {
-          const text = heading.cloneNode(true);
-          text.querySelectorAll("select, button").forEach((control) => control.remove());
-          return /^roop\s*hub$/i.test(text.textContent.replace(/\s+/g, " ").trim());
-        })
-      : null;
-
-    if (brandHeading) {
-      brandHeading.classList.add("roophub-site-brand-heading");
-      brandHeading.replaceChildren(brand, ...brandHeading.querySelectorAll("select, button"));
-    } else if (header) {
-      header.insertBefore(brand, header.firstChild);
-    } else {
-      const brandHeader = document.createElement("header");
-      brandHeader.className = "roophub-site-header";
-      brandHeader.append(brand);
-      document.body.insertBefore(brandHeader, document.body.firstChild);
-    }
+  container.append(brand, menu);
+  header.replaceChildren(container);
+  if (!existingHeader) {
+    document.body.insertBefore(header, document.body.firstChild);
   }
 
-  if (!document.querySelector("select.roophub-menu-toggle")) {
-    const header = document.querySelector("header");
-    if (header) {
-      const menu = document.createElement("select");
-      menu.className = "roophub-menu-toggle";
-      menu.setAttribute("aria-label", "Open navigation menu");
+  const homePaths = ["/", "/index.html", "/public/index.html"];
+  document.body.classList.toggle(
+    "roophub-header-page",
+    !homePaths.includes(window.location.pathname.replace(/\/+$/, "") || "/")
+  );
 
-      const options = [
-        ["Menu", ""],
-        ["Home", "/index.html"],
-        ["Shoes", "/ShoesView/index.html"],
-        ["Beauty", "/Beauty/index.html"],
-        ["Trending", "/Trending/index.html"],
-        ["Electronic", "/Electronic/index.html"],
-        ["Contact", "/Footer/Contact.html"],
-      ];
-
-      for (const [label, value] of options) {
-        const option = document.createElement("option");
-        option.textContent = label;
-        option.value = value;
-        menu.append(option);
-      }
-
-      menu.addEventListener("change", () => {
-        if (menu.value) {
-          window.location.href = menu.value;
-        }
-      });
-      header.append(menu);
-    }
+  if (document.querySelector(".affiliate-platform-strip")) {
+    return;
   }
 
   const strip = document.createElement("section");
