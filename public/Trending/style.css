@@ -182,7 +182,7 @@ header h2{
 }
 /* for shoes product */
 .gridcontainer{
-    width: 100%;
+    width: auto;
     display: grid;
     grid-template-columns: repeat(2,2fr);
     gap: 5px;
