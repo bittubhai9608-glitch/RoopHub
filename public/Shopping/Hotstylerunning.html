@@ -2,12 +2,16 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
     <title>Hotstylerunning Shoes - Buy Online | Roophub</title>
         <link rel="shortcut icon" type="image/x-icon" href="BannerImages/RoopHubFavicon.ico">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9898316121939703"
       crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
+   
+     <style>
         * {
             margin: 0;
             padding: 0;
@@ -336,7 +340,7 @@
         }
 
         .products-grid-2 {
-           height: auto;
+            height: auto;
             object-fit: contain;
             overflow: auto;
             padding: 0%;
@@ -361,7 +365,7 @@
         }
 
         .product-card img {
-           width: 100%;
+            width: 100%;
             height: auto;
             object-fit: cover;
             overflow: hidden;
@@ -375,10 +379,11 @@
         }
 
         .product-card img {
-           width: 100%;
+            width: 100%;
             height: auto;
             object-fit: cover;
             overflow: hidden;
+
         }
 
         .product-card-content {
@@ -415,9 +420,14 @@
         }
 
         .products-grid-4 {
+            height: auto;
+            width: auto;
+            margin: auto;
+            gap: 10px;
+
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
+        
         }
 
         /* Tags Section */
@@ -591,7 +601,10 @@
         /* Responsive Design */
         @media (max-width: 992px) {
             .products-grid-4 {
-                grid-template-columns: repeat(3, 1fr);
+                width: auto;
+                height: auto;
+                margin: auto;
+                grid-template-columns: repeat(4, 1fr);
             }
         }
 
@@ -610,6 +623,8 @@
 
             .products-grid-2 {
                 grid-template-columns: repeat(2, 1fr);
+                object-fit: cover;
+                overflow: hidden;
             }
 
             .header-container {
@@ -647,6 +662,8 @@
             }
         }
     </style>
+    
+    
 <link rel="stylesheet" href="../footer.css">
 </head>
 
@@ -746,45 +763,401 @@
                 because it combines comfort, style, and durability in one affordable footwear option.</p>
 
         </div>
-        <!-- You Might Like Section -->
-        <section class="you-might-like">
-            <div class="section-container">
-                <div class="section-title">
-                    <h2>You Might Like</h2>
-                    <p>Based on your interests</p>
-                </div>
-                <div class="products-grid-2">
-                <!-- Hushpuppies shoes product-->
+      
+          <!-- You Might Like Section -->
+    <section class="you-might-like">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>You Might Like</h2>
+                <p>Based on your interests</p>
+            </div>
+            <div class="products-grid-4">
+                <!-- Product Card 1 -->
                 <div class="product-card">
-                    <a href="/Shopping/HushPuppiesShoes.html" onclick="
-                    fetch('/Shopping/HushPuppiesShoes.html')
+                    <a href="/WatchAlltype/Olevs.html"
+                        onclick="
+                    fetch('/WatchAlltype/Olevs.html')
                 .then(r => {
                 if (r.ok) {
-                   window.location.href='/Shopping/HushPuppiesShoes.html';
+                   window.location.href='/WatchAlltype/Olevs.html';
                   } else {
-                     window.location.href='/public/Shopping/HushPuppiesShoes.html';
+                     window.location.href='/public/WatchAlltype/Olevs.html';
               }
                  })
                 .catch(() => {
-              window.location.href='/public/Shopping/HushPuppiesShoes.html';
+              window.location.href='/public/WatchAlltype/Olevs.html';
             });
                return false;" style="text-decoration:none;">
-                        <img src="/public/Shopping/HushPuppiesShoes.jpeg" alt="Shoe 2">
-                        <div class="product-card-content">
-                            <p style="font-size: 12px; color: black;">Hush Puppies Men's Classic Leather Office Formal
-                                Shoes...</p>
-                            <div class="price" style="color: #25d366;">₹1,884 <del style="color:#ea4335">₹3,299</del>
+                      <img src="/WatchImages/Olevs4.jpeg" alt="Watch" onerror="this.src='/public/WatchImages/Olevs4.jpeg';" onclick="changeImage(this)">
+                     <div class="product-info">
+                             <h3 class="product-title" style="font-size:12px; color:black">OLEVS Original Men's Quartz Chronograph Wrist Watch – Luxury Stainless Steel Analog Dress Watch with Date & Luminous Hands more...</h3>
+                        
+                               <div class="product-rating">
+                                 <div class="stars" style="color: #f5181f;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                            <span style="color:blue">(4.9)</span>
                             </div>
-                            <button
-                                style="background-color:rgb(50, 134, 190); color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 10px; margin: 2px 2px; cursor: pointer; border-radius: 20px; text-align: center;">view
-                                product</button>
-
+                        </div>
+                        </div>
+                         <!-- Product Card 2 -->
+                        <div class="product-price">
+                                <span class="current-price" style="color:black; font-size: 16px;">₹3,040</span>
+                                <span class="original-price" style="color:red; font-size: 12px;"><s>₹3,999</s></span>
+                                <span class="discount" style="color:green; font-size:10px;"><b>-22%</b></span>
+                        </div>
                     </a>
                 </div>
+                 <div class="product-card">
+                    <a href="/WatchAlltype/Olevs.html"
+                        onclick="
+                    fetch('/WatchAlltype/Olevs.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/WatchAlltype/Olevs.html';
+                  } else {
+                     window.location.href='/public/WatchAlltype/Olevs.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/WatchAlltype/Olevs.html';
+            });
+               return false;" style="text-decoration:none;">
+                      <img src="/WatchImages/Olevs4.jpeg" alt="Watch" onerror="this.src='/public/WatchImages/Olevs4.jpeg';" onclick="changeImage(this)">
+                     <div class="product-info">
+                             <h3 class="product-title" style="font-size:12px; color:black">OLEVS Original Men's Quartz Chronograph Wrist Watch – Luxury Stainless Steel Analog Dress Watch with Date & Luminous Hands more...</h3>
+                        
+                               <div class="product-rating">
+                                 <div class="stars" style="color: #f5181f;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                            <span style="color:blue">(4.9)</span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="product-price">
+                                <span class="current-price" style="color:black; font-size: 16px;">₹3,040</span>
+                                <span class="original-price" style="color:red; font-size: 12px;"><s>₹3,999</s></span>
+                                <span class="discount" style="color:green; font-size:10px;"><b>-22%</b></span>
+                        </div>
+                    </a>
+                </div>
+                 <!-- Product Card 3 -->
+                 <div class="product-card">
+                    <a href="/WatchAlltype/Olevs.html"
+                        onclick="
+                    fetch('/WatchAlltype/Olevs.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/WatchAlltype/Olevs.html';
+                  } else {
+                     window.location.href='/public/WatchAlltype/Olevs.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/WatchAlltype/Olevs.html';
+            });
+               return false;" style="text-decoration:none;">
+                      <img src="/WatchImages/Olevs4.jpeg" alt="Watch" onerror="this.src='/public/WatchImages/Olevs4.jpeg';" onclick="changeImage(this)">
+                     <div class="product-info">
+                             <h3 class="product-title" style="font-size:12px; color:black">OLEVS Original Men's Quartz Chronograph Wrist Watch – Luxury Stainless Steel Analog Dress Watch with Date & Luminous Hands more...</h3>
+                        
+                               <div class="product-rating">
+                                 <div class="stars" style="color: #f5181f;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                            <span style="color:blue">(4.9)</span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="product-price">
+                                <span class="current-price" style="color:black; font-size: 16px;">₹3,040</span>
+                                <span class="original-price" style="color:red; font-size: 12px;"><s>₹3,999</s></span>
+                                <span class="discount" style="color:green; font-size:10px;"><b>-22%</b></span>
+                        </div>
+                    </a>
+                </div>
+                <!-- Product Card 4 -->
+                <div class="product-card">
+                    <a href="/WatchAlltype/Olevs.html"
+                        onclick="
+                    fetch('/WatchAlltype/Olevs.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/WatchAlltype/Olevs.html';
+                  } else {
+                     window.location.href='/public/WatchAlltype/Olevs.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/WatchAlltype/Olevs.html';
+            });
+               return false;" style="text-decoration:none;">
+                      <img src="/WatchImages/SpyMissionImg.jpeg" alt="Watch" onerror="this.src='/public/WatchImages/SpyMissionImg.jpeg';" onclick="changeImage(this)">
+                     <div class="product-info">
+                             <h3 class="product-title" style="font-size:12px; color:black">Smart Hidden Camera Wrist Watch for Everyday Recording Needs more...</h3>
+                        
+                               <div class="product-rating">
+                                 <div class="stars" style="color: #f5181f;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                            <span style="color:blue">(4.9)</span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="product-price">
+                                <span class="current-price" style="color:black; font-size: 16px;">₹3,040</span>
+                                <span class="original-price" style="color:red; font-size: 12px;"><s>₹3,999</s></span>
+                                <span class="discount" style="color:green; font-size:10px;"><b>-22%</b></span>
+                        </div>
+                    </a>
+                </div>
+    </section>
+
+    <!-- Trending Products Section -->
+    <section class="trending-products">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Trending Products</h2>
+                <p>Most popular this week</p>
             </div>
-            <!-- Hoststyle Learnning  shoes product-->
-                    <div class="product-card">
-                        <a href="/Shopping/YUVRATOBAXIshoes.html" onclick="
+            <div class="products-grid-4">
+                <!-- Product Card 1 -->
+                <div class="product-card">
+                    <a href="/WatchAlltype/Olevs.html"
+                        onclick="
+                    fetch('/WatchAlltype/Olevs.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/WatchAlltype/Olevs.html';
+                  } else {
+                     window.location.href='/public/WatchAlltype/Olevs.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/WatchAlltype/Olevs.html';
+            });
+               return false;" style="text-decoration:none;">
+                      <img src="/WatchImages/SpyMissionImg.jpeg" alt="Watch" onerror="this.src='/public/WatchImages/SpyMissionImg.jpeg';" onclick="changeImage(this)">
+                     <div class="product-info">
+                             <h3 class="product-title" style="font-size:12px; color:black">Smart Hidden Camera Wrist Watch for Everyday Recording Needs more...</h3>
+                        
+                               <div class="product-rating">
+                                 <div class="stars" style="color: #f5181f;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                            <span style="color:blue">(4.9)</span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="product-price">
+                                <span class="current-price" style="color:black; font-size: 16px;">₹3,040</span>
+                                <span class="original-price" style="color:red; font-size: 12px;"><s>₹3,999</s></span>
+                                <span class="discount" style="color:green; font-size:10px;"><b>-22%</b></span>
+                        </div>
+                    </a>
+                </div>
+                <!--product card 2-->
+                <div class="product-card">
+                    <a href="/WatchAlltype/Olevs.html"
+                        onclick="
+                    fetch('/WatchAlltype/Olevs.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/WatchAlltype/Olevs.html';
+                  } else {
+                     window.location.href='/public/WatchAlltype/Olevs.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/WatchAlltype/Olevs.html';
+            });
+               return false;" style="text-decoration:none;">
+                      <img src="/WatchImages/SpyMissionImg.jpeg" alt="Watch" onerror="this.src='/public/WatchImages/SpyMissionImg.jpeg';" onclick="changeImage(this)">
+                     <div class="product-info">
+                             <h3 class="product-title" style="font-size:12px; color:black">Smart Hidden Camera Wrist Watch for Everyday Recording Needs more...</h3>
+                        
+                               <div class="product-rating">
+                                 <div class="stars" style="color: #f5181f;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                            <span style="color:blue">(4.9)</span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="product-price">
+                                <span class="current-price" style="color:black; font-size: 16px;">₹3,040</span>
+                                <span class="original-price" style="color:red; font-size: 12px;"><s>₹3,999</s></span>
+                                <span class="discount" style="color:green; font-size:10px;"><b>-22%</b></span>
+                        </div>
+                    </a>
+                </div>
+                <!--product card 3-->
+                <div class="product-card">
+                    <a href="/WatchAlltype/Olevs.html"
+                        onclick="
+                    fetch('/WatchAlltype/Olevs.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/WatchAlltype/Olevs.html';
+                  } else {
+                     window.location.href='/public/WatchAlltype/Olevs.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/WatchAlltype/Olevs.html';
+            });
+               return false;" style="text-decoration:none;">
+                      <img src="/WatchImages/SpyMissionImg.jpeg" alt="Watch" onerror="this.src='/public/WatchImages/SpyMissionImg.jpeg';" onclick="changeImage(this)">
+                     <div class="product-info">
+                             <h3 class="product-title" style="font-size:12px; color:black">Smart Hidden Camera Wrist Watch for Everyday Recording Needs more...</h3>
+                        
+                               <div class="product-rating">
+                                 <div class="stars" style="color: #f5181f;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                            <span style="color:blue">(4.9)</span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="product-price">
+                                <span class="current-price" style="color:black; font-size: 16px;">₹3,040</span>
+                                <span class="original-price" style="color:red; font-size: 12px;"><s>₹3,999</s></span>
+                                <span class="discount" style="color:green; font-size:10px;"><b>-22%</b></span>
+                        </div>
+                    </a>
+                </div>
+                <!--product card 4-->
+                <div class="product-card">
+                    <a href="/WatchAlltype/Olevs.html"
+                        onclick="
+                    fetch('/WatchAlltype/Olevs.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/WatchAlltype/Olevs.html';
+                  } else {
+                     window.location.href='/public/WatchAlltype/Olevs.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/WatchAlltype/Olevs.html';
+            });
+               return false;" style="text-decoration:none;">
+                      <img src="/WatchImages/SpyMissionImg.jpeg" alt="Watch" onerror="this.src='/public/WatchImages/SpyMissionImg.jpeg';" onclick="changeImage(this)">
+                     <div class="product-info">
+                             <h3 class="product-title" style="font-size:12px; color:black">Smart Hidden Camera Wrist Watch for Everyday Recording Needs more...</h3>
+                        
+                               <div class="product-rating">
+                                 <div class="stars" style="color: #f5181f;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                            <span style="color:blue">(4.9)</span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="product-price">
+                                <span class="current-price" style="color:black; font-size: 16px;">₹3,040</span>
+                                <span class="original-price" style="color:red; font-size: 12px;"><s>₹3,999</s></span>
+                                <span class="discount" style="color:green; font-size:10px;"><b>-22%</b></span>
+                        </div>
+                    </a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tags Section -->
+    <section class="tags-section">
+        <div class="tags-container">
+            <div class="tags-box">
+                <h3>Main Tags</h3>
+                <div class="tags-list">
+                    <span class="tag">#Running Shoes</span>
+                    <span class="tag">#Sports</span>
+                    <span class="tag">#Casual</span>
+                    <span class="tag">#Sneakers</span>
+                    <span class="tag">#Athletic</span>
+                    <span class="tag">#Fashion</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thunder Deals Section -->
+    <section class="thunder-deals">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>⚡ Thunder Deals <span class="deal-badge">Limited Time</span></h2>
+                <p>Grab these amazing deals before they're gone!</p>
+            </div>
+            <div class="products-grid-4">
+                <!-- Product Card 1  Hotstylerunning-->
+                <div class="product-card">
+                    <a href="/Shopping/Hotstylerunning.html"
+                        onclick="
+                    fetch('/Shopping/Hotstylerunning.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/Shopping/Hotstylerunning.html';
+                  } else {
+                     window.location.href='/public/Shopping/Hotstylerunning.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/Shopping/Hotstylerunning.html';
+            });
+               return false;" style="text-decoration:none;">
+                      <img src="/ShoesImages/Hotstylerunningshoes.jpeg" alt="Watch" onerror="this.src='/public/ShoesImages/Hotstylerunningshoes.jpeg';" onclick="changeImage(this)">
+                     <div class="product-info">
+                             <h3 class="product-title" style="font-size:12px; color:black">Hotstyle Men's White Canvas Lace-Up Casual Running Sneaker Shoes more...</h3>
+                        
+                               <div class="product-rating">
+                                 <div class="stars" style="color: #f5181f;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                            <span style="color:blue">(2.5)</span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="product-price">
+                                <span class="current-price" style="color:black; font-size: 16px;">₹299</span>
+                                <span class="original-price" style="color:red; font-size: 12px;"><s>₹985</s></span>
+                                <span class="discount" style="color:green; font-size:10px;"><b>-70%</b></span>
+                        </div>
+                    </a>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <a href="/Shopping/YUVRATOBAXIshoes.html"
+                        onclick="
                     fetch('/Shopping/YUVRATOBAXIshoes.html')
                 .then(r => {
                 if (r.ok) {
@@ -797,92 +1170,109 @@
               window.location.href='/public/Shopping/YUVRATOBAXIshoes.html';
             });
                return false;" style="text-decoration:none;">
-                            <img src="/public/Shopping/YUVRATOBAXIshoes.jpeg" alt="Shoe 1">
-                            <div class="product-card-content">
-                                <p style="font-size: 12px; color: black" ;>YUVRATO BAXI 3-Inch Hidden Height Increasing Sneakers | Premium Elevator Shoes for Men...</p>
-                                <div class="price" style="color: #25d366;">₹2,029  <del
-                                        style="color:#ea4335">₹3,999</del>
-                                </div>
-                                <button
-                                    style="background-color:rgb(50, 134, 190); color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 10px; margin: 2px 2px; cursor: pointer; border-radius: 20px; text-align: center;">view
-                                    product</button>
-                        </a>
-
-                    </div>
-                </div>
-
-            </div>
-            </div>
-        </section>
-
-
-
-
-
-        <!-- Tags Section -->
-        <section class="tags-section">
-            <div class="tags-container">
-                <div class="tags-box">
-                    <h3>Main Tags</h3>
-                    <div class="tags-list">
-                        <span class="tag">Running Shoes</span>
-                        <span class="tag">Sports</span>
-                        <span class="tag">Casual</span>
-                        <span class="tag">Sneakers</span>
-                        <span class="tag">Athletic</span>
-                        <span class="tag">Fashion</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Thunder Deals Section -->
-        <section class="thunder-deals">
-            <div class="section-container">
-                <div class="section-title">
-                    <h2>⚡ ROOPHUB Deals <span class="deal-badge">Limited Time</span></h2>
-                    <p>Grab these amazing deals before they're gone!</p>
-                </div>
-                <div class="products-grid-4">
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1491553895911-0055uj8a481?w=400&h=300&fit=crop"
-                            alt="Deal 1">
-                        <div class="product-card-content">
-                            <h3>Pro Runner Elite</h3>
-                            <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del>
+                      <img src="/Images/YUVRATOBAXIshoes.jpeg" alt="Watch" onerror="this.src='/public/Images/YUVRATOBAXIshoes.jpeg';" onclick="changeImage(this)">
+                     <div class="product-info">
+                             <h3 class="product-title" style="font-size:12px; color:black">YUVRATO BAXI 3-Inch Hidden Height Increasing Sneakers | Premium Elevator Shoes for Men more...</h3>
+                        
+                               <div class="product-rating">
+                                 <div class="stars" style="color: #f5181f;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                            <span style="color:blue">(4.5)</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?w=400&h=300&fit=crop"
-                            alt="Deal 2">
-                        <div class="product-card-content">
-                            <h3>Urban Walker</h3>
-                            <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del>
-                            </div>
                         </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=400&h=300&fit=crop"
-                            alt="Deal 3">
-                        <div class="product-card-content">
-                            <h3>Street Style</h3>
-                            <div class="price" style="color: #25d366;">₹999 <del style="color:#ea4335">₹2,999</del>
-                            </div>
+                        <div class="product-price">
+                                <span class="current-price" style="color:black; font-size: 16px;">₹2,029</span>
+                                <span class="original-price" style="color:red; font-size: 12px;"><s>₹3,999</s></span>
+                                <span class="discount" style="color:green; font-size:10px;"><b>-49%</b></span>
                         </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=300&fit=crop"
-                            alt="Deal 4">
-                        <div class="product-card-content">
-                            <h3>Comfort Plus</h3>
-                            <div class="price" style="color: #25d366;">₹1299 <del style="color:#ea4335">₹2,999</del>
-                            </div>
-                        </div>
-                    </div>
+                    </a>
                 </div>
+                <!-- Product Card 3 -->
+                <div class="product-card">
+                    <a href="/WatchAlltype/SpyMissionWrist.html"
+                        onclick="
+                    fetch('/WatchAlltype/SpyMissionWrist.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='WatchAlltype/SpyMissionWrist.html';
+                  } else {
+                     window.location.href='/public/WatchAlltype/SpyMissionWrist.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/WatchAlltype/SpyMissionWrist.html';
+            });
+               return false;" style="text-decoration:none;">
+                      <img src="/WatchImages/spymissionwrist2.jpeg" alt="Watch" onerror="this.src='/public/WatchImages/spymissionwrist2.jpeg';" onclick="changeImage(this)">
+                     <div class="product-info">
+                             <h3 class="product-title" style="font-size:12px; color:black">Spy Mission Wrist Watch Featureing Hidden Camera and Audio Recording more...</h3>
+                        
+                               <div class="product-rating">
+                                 <div class="stars" style="color: #f5181f;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                            <span style="color:blue">(5.1)</span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="product-price">
+                                <span class="current-price" style="color:black; font-size: 16px;">₹4,999</span>
+                                <span class="original-price" style="color:red; font-size: 12px;"><s>₹5,999</s></span>
+                                <span class="discount" style="color:green; font-size:10px;"><b>-17%</b></span>
+                        </div>
+                    </a>
+                </div>
+                <!-- Product Card 4 -->
+                <div class="product-card">
+                    <a href="/Shopping/CampusNorthPlus.html"
+                        onclick="
+                    fetch('/Shopping/CampusNorthPlus.html')
+                .then(r => {
+                if (r.ok) {
+                   window.location.href='/Shopping/CampusNorthPlus.html';
+                  } else {
+                     window.location.href='/public/Shopping/CampusNorthPlus.html';
+              }
+                 })
+                .catch(() => {
+              window.location.href='/public/Shopping/CampusNorthPlus.html';
+            });
+               return false;" style="text-decoration:none;">
+                      <img src="/Images/CampusNorthPlus.jpeg" alt="Watch" onerror="this.src='/public/Images/CampusNorthPlus.jpeg';" onclick="changeImage(this)">
+                     <div class="product-info">
+                             <h3 class="product-title" style="font-size:12px; color:black">Campus North Plus Men's Lightweight Running Shoes more...</h3>
+                        
+                               <div class="product-rating">
+                                 <div class="stars" style="color: #f5181f;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                            <span style="color:blue">(4.4)</span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="product-price">
+                                <span class="current-price" style="color:black; font-size: 16px;">₹1,669</span>
+                                <span class="original-price" style="color:red; font-size: 12px;"><s>₹8,099</s></span>
+                                <span class="discount" style="color:green; font-size:10px;"><b>-38%</b></span>
+                        </div>
+                    </a>
+                </div>
+                <!-- Product Ended-->
             </div>
-        </section>
+        </div>
+    </section>
+
 
         <!-- Footer -->
         <footer class="rh-footer">
